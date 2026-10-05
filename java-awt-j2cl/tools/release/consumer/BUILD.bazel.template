@@ -1,0 +1,31 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
+load("@rules_closure//closure:defs.bzl", "closure_js_library")
+
+j2cl_library(
+    name = "showcase",
+    srcs = glob(["*.java"], exclude = ["ConsumerSmokeTest.java"]),
+    deps = [
+        "@webawt//:webawt",
+        "@j2cl//:jsinterop-annotations-j2cl",
+        "@elemental2//:elemental2-dom-j2cl",
+        "@elemental2//:elemental2-promise-j2cl",
+    ],
+)
+
+closure_js_library(name = "app", srcs = ["app.js"], deps = [":showcase"])
+
+j2cl_application(
+    name = "browser_application",
+    entry_points = ["webawt.dual_showcase.app"],
+    deps = [":app"],
+)
+
+java_test(
+    name = "consumer_smoke",
+    srcs = ["ConsumerSmokeTest.java"],
+    test_class = "ConsumerSmokeTest",
+    data = [":browser_application", "fonts/DejaVuSans.ttf"],
+    size = "large",
+    tags = ["no-sandbox"],
+    deps = ["@webawt_test_maven//:com_microsoft_playwright_playwright", "@webawt_test_maven//:junit_junit"],
+)

@@ -1,0 +1,1673 @@
+{
+  "revision": "1ae803e4f8c52e470c94563059eca4b4b8397c8c",
+  "source_root": "C:\\Work\\MPS-Web",
+  "method": "Tracked Java/Kotlin qualified-reference scan and tracked JAR class-byte reference scan; not full symbol resolution",
+  "sources_scanned": 29907,
+  "reference_counts": {
+    "java.nio.file.Path": 47,
+    "java.nio.file.Files": 24,
+    "java.nio.charset.Charset": 15,
+    "java.nio.charset.StandardCharsets": 7,
+    "java.nio.file.Paths": 7,
+    "java.nio.file.FileSystems": 4,
+    "java.nio.charset": 4,
+    "java.nio.file.StandardCopyOption": 4,
+    "java.nio.ByteBuffer": 3,
+    "java.nio.file.DirectoryStream": 3,
+    "java.nio.file.FileSystem": 3,
+    "java.nio.CharBuffer": 2,
+    "java.nio.channels.ClosedChannelException": 1,
+    "java.nio.channels.ReadableByteChannel": 1,
+    "java.nio.file.Files.isDirectory": 1,
+    "java.nio.file.Files.newDirectoryStream": 1,
+    "java.nio.file.Path.of": 1,
+    "java.nio.file.FileSystemNotFoundException": 1,
+    "java.nio.file.attribute.BasicFileAttributes": 1
+  },
+  "source_references": [
+    {
+      "file": "IdeaPlugin/mps-core/src/jetbrains/mps/idea/core/library/ModuleXmlRootDetector.java",
+      "sha256": "b978a20378775b5383de4f455fa249f7009e6a7dfd5fdabcd10098db559d26e6",
+      "lines": [
+        {
+          "line": 43,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "core/generator/source/jetbrains/mps/generator/trace/ClientToken.java",
+      "sha256": "5852ecda723b19a4ba9c3abf9a5048af0b61356fdefea02b0546ff6bda331ceb",
+      "lines": [
+        {
+          "line": 20,
+          "references": [
+            "java.nio.ByteBuffer"
+          ],
+          "source": "import java.nio.ByteBuffer;"
+        },
+        {
+          "line": 21,
+          "references": [
+            "java.nio.channels.ClosedChannelException"
+          ],
+          "source": "import java.nio.channels.ClosedChannelException;"
+        },
+        {
+          "line": 22,
+          "references": [
+            "java.nio.channels.ReadableByteChannel"
+          ],
+          "source": "import java.nio.channels.ReadableByteChannel;"
+        }
+      ]
+    },
+    {
+      "file": "core/generator/source/jetbrains/mps/generator/trace/LabelTrace.java",
+      "sha256": "5fd3ef72fd6df7b9f6ce3c0ecbe5ba5450b7c119b8a4906e50e30ad24f00b4b5",
+      "lines": [
+        {
+          "line": 25,
+          "references": [
+            "java.nio.ByteBuffer"
+          ],
+          "source": "import java.nio.ByteBuffer;"
+        }
+      ]
+    },
+    {
+      "file": "core/generator/source/jetbrains/mps/generator/trace/RuleTrace2.java",
+      "sha256": "1b541fe6ddf1140d5309470ace5d0447c0a1693317c5dc82349fa124dd0f3b60",
+      "lines": [
+        {
+          "line": 23,
+          "references": [
+            "java.nio.ByteBuffer"
+          ],
+          "source": "import java.nio.ByteBuffer;"
+        }
+      ]
+    },
+    {
+      "file": "core/java-stub/source_gen/jetbrains/mps/baseLanguage/javastub/SingleZipWithJavaSources.java",
+      "sha256": "a4f2300e4d53db0677325c29a0922ef132f328a0e501c7390d4c885d20ca01c7",
+      "lines": [
+        {
+          "line": 20,
+          "references": [
+            "java.nio.charset.StandardCharsets"
+          ],
+          "source": "import java.nio.charset.StandardCharsets;"
+        }
+      ]
+    },
+    {
+      "file": "core/kernel/source/jetbrains/mps/reloading/SDKDiscovery.java",
+      "sha256": "7e52db6e6727adc3d4777743c1bfd9676e54a448f4c4aa7670721552829e1b1a",
+      "lines": [
+        {
+          "line": 35,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        },
+        {
+          "line": 36,
+          "references": [
+            "java.nio.file.DirectoryStream"
+          ],
+          "source": "import java.nio.file.DirectoryStream;"
+        },
+        {
+          "line": 37,
+          "references": [
+            "java.nio.file.FileSystems"
+          ],
+          "source": "import java.nio.file.FileSystems;"
+        },
+        {
+          "line": 38,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        },
+        {
+          "line": 111,
+          "references": [
+            "java.nio.file.FileSystem"
+          ],
+          "source": "java.nio.file.FileSystem jrtfs = FileSystems.getFileSystem(URI.create(\"jrt:/\"));"
+        },
+        {
+          "line": 113,
+          "references": [
+            "java.nio.file.Files.isDirectory"
+          ],
+          "source": "if (java.nio.file.Files.isDirectory(jdkRoot)) {"
+        },
+        {
+          "line": 114,
+          "references": [
+            "java.nio.file.Files.newDirectoryStream"
+          ],
+          "source": "try (DirectoryStream<Path> ds = java.nio.file.Files.newDirectoryStream(jdkRoot)) {"
+        }
+      ]
+    },
+    {
+      "file": "core/make-runtime/source/jetbrains/mps/make/BaseModuleContainer.java",
+      "sha256": "734656d39396fa11daf37d3db6266a783952cfc25f15c0264e053cc32c6105c4",
+      "lines": [
+        {
+          "line": 12,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "core/make-runtime/source/jetbrains/mps/make/ClassFileWriter.java",
+      "sha256": "49f843bba2262d8cd4476729d6cecdcd126c1bf1e6e20c3272a89eaf3f74c12f",
+      "lines": [
+        {
+          "line": 33,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "core/make-runtime/source/jetbrains/mps/make/FileWithPosition.java",
+      "sha256": "7726ec2aad2abb8e7d8e53c9ffeb162598a39163119624443ca49ae0a1af779d",
+      "lines": [
+        {
+          "line": 21,
+          "references": [
+            "java.nio.file.FileSystems"
+          ],
+          "source": "import java.nio.file.FileSystems;"
+        },
+        {
+          "line": 22,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "core/make-runtime/source/jetbrains/mps/make/JavaCompilerImpl.java",
+      "sha256": "a5f06e4f56211dcb2b1d9ed8a1af4aa7b1f62cd255fc8a46862b47524161868f",
+      "lines": [
+        {
+          "line": 42,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        },
+        {
+          "line": 43,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "core/make-runtime/source/jetbrains/mps/make/ModuleMaker.java",
+      "sha256": "b818022afe1755807cb80fc25b070632e7ec886d44a4897e1c46b551c49e3adb",
+      "lines": [
+        {
+          "line": 59,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "core/make-runtime/source/jetbrains/mps/make/kotlin/JvmKotlinCompilerRunner.kt",
+      "sha256": "30bd086a6cbb97ff6fc0e24e63f44e1a1d22d9485e9023e724494442ba28fbd8",
+      "lines": [
+        {
+          "line": 10,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path"
+        }
+      ]
+    },
+    {
+      "file": "core/make-runtime/source/jetbrains/mps/make/kotlin/KotlinBuildFileSerialization.kt",
+      "sha256": "edaddccc9e91f5f2da4aaf4c69495d0abacaa870c765139bfd60ad1b23ddf460",
+      "lines": [
+        {
+          "line": 13,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files"
+        }
+      ]
+    },
+    {
+      "file": "core/make-runtime/source/jetbrains/mps/make/kotlin/KotlinCompilerOptions.kt",
+      "sha256": "4e3f5d462efb907ab31772710cff4b907110b521f4ff1668a28b87164b76f5b2",
+      "lines": [
+        {
+          "line": 12,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files"
+        }
+      ]
+    },
+    {
+      "file": "core/make-runtime/source/jetbrains/mps/make/kotlin/KotlinCompilerRunner.kt",
+      "sha256": "ff9703e3ce5069be4b91d88b50ae81a7185e97a05a6ec645c7f9b2ffe4519b23",
+      "lines": [
+        {
+          "line": 14,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files"
+        },
+        {
+          "line": 15,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path"
+        },
+        {
+          "line": 16,
+          "references": [
+            "java.nio.file.Paths"
+          ],
+          "source": "import java.nio.file.Paths"
+        }
+      ]
+    },
+    {
+      "file": "core/make-runtime/source/jetbrains/mps/make/kotlin/KotlinModule.kt",
+      "sha256": "e8a244de592be37a24d9de8f0a3c57de3c0de4fa0b1b74310ab92f39d67e9f08",
+      "lines": [
+        {
+          "line": 5,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path"
+        }
+      ]
+    },
+    {
+      "file": "core/make-runtime/test/jetbrains/mps/make/TestMakeOnRealProject.java",
+      "sha256": "f949b019feb25ddc6557c960d6eb9f29fbed1d49eb9c419cb2700191667f8d3d",
+      "lines": [
+        {
+          "line": 63,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        },
+        {
+          "line": 64,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "core/textgen/source/jetbrains/mps/text/TextUnit.java",
+      "sha256": "ff14f617dca812ffb2a80423c98dd5c2ea0b2981af32be403d9c33701b2e6756",
+      "lines": [
+        {
+          "line": 22,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        }
+      ]
+    },
+    {
+      "file": "core/textgen/source/jetbrains/mps/text/impl/BinaryTextUnit.java",
+      "sha256": "82515b473c4215e70285ad0c6bfc5ee55b45a708241a6a67076bba6551cefb9b",
+      "lines": [
+        {
+          "line": 14,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        }
+      ]
+    },
+    {
+      "file": "core/textgen/source/jetbrains/mps/text/impl/JavaTextUnit.java",
+      "sha256": "1e56bf8468bad75540fdf9980b2cbcf8a7dd693debab1ddc0b40940d2e7c14ce",
+      "lines": [
+        {
+          "line": 22,
+          "references": [
+            "java.nio.charset.StandardCharsets"
+          ],
+          "source": "import java.nio.charset.StandardCharsets;"
+        }
+      ]
+    },
+    {
+      "file": "core/textgen/source/jetbrains/mps/text/impl/ModelOutline.java",
+      "sha256": "6a0083c9fc3d13a6b3a668052fca712e879eb418012ab4a69b4b6dc15cce99a5",
+      "lines": [
+        {
+          "line": 27,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        }
+      ]
+    },
+    {
+      "file": "core/textgen/source/jetbrains/mps/text/impl/RegularTextUnit.java",
+      "sha256": "9722fe1d0acc7ac6ba35a866c10b4a30903a6a1bb73814c3bcc452f312c5e275",
+      "lines": [
+        {
+          "line": 29,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        }
+      ]
+    },
+    {
+      "file": "core/textgen/source/jetbrains/mps/text/rt/TextGenModelOutline.java",
+      "sha256": "b9487782b1056925e33a4eb44a2d675633a193a11812fa256056f23b04bca49d",
+      "lines": [
+        {
+          "line": 28,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        }
+      ]
+    },
+    {
+      "file": "core/tool/ant/source_gen/jetbrains/mps/build/ant/MpsLoadTask.java",
+      "sha256": "894751d6672afd3c2d6c410f28ccf3b63174e94609246c82978711624163e3b1",
+      "lines": [
+        {
+          "line": 23,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        },
+        {
+          "line": 270,
+          "references": [
+            "java.nio.charset"
+          ],
+          "source": "final String[] packages = {\"java.base/java.io\", \"java.base/java.lang\", \"java.base/java.lang.reflect\", \"java.base/java.net\", \"java.base/java.nio\", \"java.base/java.nio.charset\", \"java.base/java.text\", \"java.base/java.time\", \"java.base/java.util\", \"java.base/java.util.concurrent\", \"java.base/java.util.concurrent.atomic\", \"java.base/jdk.internal.ref\", \"java.base/jdk.internal.vm\", \"java.base/sun.nio.ch\", \"java.base/sun.nio.fs\", \"java.base/sun.security.ssl\", \"java.base/sun.security.util\", \"java.desktop/com.apple.eawt\", \"java.desktop/com.apple.eawt.event\", \"java.desktop/com.apple.laf\", \"java.desktop/sun.awt.X11\", \"java.desktop/java.awt\", \"java.desktop/java.awt.dnd.peer\", \"java.desktop/java.awt.event\", \"java.desktop/java.awt.image\", \"java.desktop/java.awt.peer\", \"java.desktop/javax.swing\", \"java.desktop/javax.swing.plaf.basic\", \"java.desktop/javax.swing.text\", \"java.desktop/javax.swing.text.html\", \"java.desktop/sun.awt.datatransfer\", \"java.desktop/sun.awt.image\", \"java.desktop/sun.awt.windows\", \"java.desktop/sun.awt\", \"java.desktop/sun.font\", \"java.desktop/sun.java2d\", \"java.desktop/sun.swing\", \"jdk.attach/sun.tools.attach\", \"jdk.compiler/com.sun.tools.javac.api\", \"jdk.internal.jvmstat/sun.jvmstat.monitor\", \"jdk.jdi/com.sun.tools.jdi\"};"
+        }
+      ]
+    },
+    {
+      "file": "core/tool/common/source_gen/jetbrains/mps/tool/common/JDOMUtil.java",
+      "sha256": "d2c59d19a62a57a37937e4a10c0f2a0254b5e14e822af940818f7c187de07ccd",
+      "lines": [
+        {
+          "line": 6,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        },
+        {
+          "line": 7,
+          "references": [
+            "java.nio.charset.StandardCharsets"
+          ],
+          "source": "import java.nio.charset.StandardCharsets;"
+        }
+      ]
+    },
+    {
+      "file": "core/tool/environment/source_gen/jetbrains/mps/core/tool/environment/util/LogInitializer.java",
+      "sha256": "94c2b1c305daf945f3960aadbac1e30c2b3921d732c418898b59aecc76e3df98",
+      "lines": [
+        {
+          "line": 7,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        },
+        {
+          "line": 8,
+          "references": [
+            "java.nio.file.Paths"
+          ],
+          "source": "import java.nio.file.Paths;"
+        },
+        {
+          "line": 9,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        }
+      ]
+    },
+    {
+      "file": "core/tool/environment/source_gen/jetbrains/mps/tool/environment/PlatformPlugins.java",
+      "sha256": "9ec31b6f4346d61cdd2fd3a5e3e2c32eeaffb8a13ed0fc6640d77f81cede6cd8",
+      "lines": [
+        {
+          "line": 18,
+          "references": [
+            "java.nio.CharBuffer"
+          ],
+          "source": "import java.nio.CharBuffer;"
+        }
+      ]
+    },
+    {
+      "file": "core/vfs/j2cl_src/jetbrains/vfs/IFile.java",
+      "sha256": "3812ae9656ce7fda3bed4cf2b42111f40db58e3104d35c23021b308347d4ea38",
+      "lines": [
+        {
+          "line": 34,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "* An abstraction of path names similar to the {@link java.nio.file.Path}."
+        },
+        {
+          "line": 89,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "* @see java.nio.file.Path#toRealPath"
+        }
+      ]
+    },
+    {
+      "file": "core/vfs/source/jetbrains/mps/util/FileUtil.java",
+      "sha256": "0ad4997882d73f832b4c57a05c41f783044a918374e54059acbd97cdde2f8199",
+      "lines": [
+        {
+          "line": 39,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        },
+        {
+          "line": 40,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        },
+        {
+          "line": 41,
+          "references": [
+            "java.nio.file.StandardCopyOption"
+          ],
+          "source": "import java.nio.file.StandardCopyOption;"
+        },
+        {
+          "line": 152,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "java.nio.file.Path source = from.toPath();"
+        },
+        {
+          "line": 153,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "java.nio.file.Path toPath = to.toPath();"
+        },
+        {
+          "line": 155,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "java.nio.file.Path target = Files.isDirectory(toPath)"
+        },
+        {
+          "line": 159,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "java.nio.file.Path parent = target.getParent();"
+        }
+      ]
+    },
+    {
+      "file": "core/vfs/source/jetbrains/mps/vfs/IFile.java",
+      "sha256": "0232b80fc6433b3421ba84124b396f9de39d96bfbfa2b8cc18bc53ba9729b701",
+      "lines": [
+        {
+          "line": 39,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "* An abstraction of path names similar to the {@link java.nio.file.Path}."
+        },
+        {
+          "line": 94,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "* @see java.nio.file.Path#toRealPath"
+        },
+        {
+          "line": 359,
+          "references": [
+            "java.nio.file.Path.of"
+          ],
+          "source": "return java.nio.file.Path.of(p1).startsWith(java.nio.file.Path.of(p2));"
+        }
+      ]
+    },
+    {
+      "file": "core/vfs/source/jetbrains/mps/vfs/iofs/jrt/JrtIoFile.java",
+      "sha256": "36382da6b17270ee275e43ac74336a9936cd347f7c61a6d095ecb4b005bedd42",
+      "lines": [
+        {
+          "line": 36,
+          "references": [
+            "java.nio.file.DirectoryStream"
+          ],
+          "source": "import java.nio.file.DirectoryStream;"
+        },
+        {
+          "line": 37,
+          "references": [
+            "java.nio.file.FileSystems"
+          ],
+          "source": "import java.nio.file.FileSystems;"
+        },
+        {
+          "line": 38,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        },
+        {
+          "line": 39,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        },
+        {
+          "line": 294,
+          "references": [
+            "java.nio.file.FileSystem"
+          ],
+          "source": "java.nio.file.FileSystem jrtfs = FileSystems.getFileSystem(URI.create(\"jrt:/\"));"
+        }
+      ]
+    },
+    {
+      "file": "jps/jps-plugin/testSrc/jetbrains/mps/jps/make/tests/MpsJpsBuildTestCase.java",
+      "sha256": "acbb064562af6576b9346c9a5454d15b9391c5ccd3c835fa4ad21ef61e81612a",
+      "lines": [
+        {
+          "line": 42,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "languages/baseLanguage/baseLanguage/sandbox/source_gen/jetbrains/mps/baseLanguage/sandbox/internal/InternalAnonymousClassUsage.java",
+      "sha256": "8d0095f528cb34501a347d45dd0282c86712a6da89f2c767e150fa3d7c76322e",
+      "lines": [
+        {
+          "line": 7,
+          "references": [
+            "java.nio.CharBuffer"
+          ],
+          "source": "import java.nio.CharBuffer;"
+        }
+      ]
+    },
+    {
+      "file": "languages/languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/constraints/EncodingLiteral_Constraints.java",
+      "sha256": "3212b336585dc5a126a181990d12025c6c5a74a61489721aef204104ed9cb377",
+      "lines": [
+        {
+          "line": 13,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        }
+      ]
+    },
+    {
+      "file": "languages/languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/editor/ConceptTextGenDeclaration_EditorBuilder_a.java",
+      "sha256": "b28a078d4b642a247bd3eb29b259fd081c28f9c0f3349a14dab0b1d92b695e6c",
+      "lines": [
+        {
+          "line": 64,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        }
+      ]
+    },
+    {
+      "file": "mps-platform/src/org/jetbrains/intellij/build/mps/MPSBuilder.kt",
+      "sha256": "75014a2d3d2e0d19f92614e27d938210541dd75abb871d672fc0f5f9c41cc0d2",
+      "lines": [
+        {
+          "line": 10,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files"
+        },
+        {
+          "line": 11,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path"
+        },
+        {
+          "line": 12,
+          "references": [
+            "java.nio.file.StandardCopyOption"
+          ],
+          "source": "import java.nio.file.StandardCopyOption"
+        }
+      ]
+    },
+    {
+      "file": "mps-platform/src/org/jetbrains/intellij/build/mps/MPSProperties.kt",
+      "sha256": "971bc495b6489077c23597b8482ab66b6884a901e5240a8e7e2c24a46d083a70",
+      "lines": [
+        {
+          "line": 12,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files"
+        },
+        {
+          "line": 13,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path"
+        },
+        {
+          "line": 14,
+          "references": [
+            "java.nio.file.StandardCopyOption"
+          ],
+          "source": "import java.nio.file.StandardCopyOption"
+        }
+      ]
+    },
+    {
+      "file": "plugins/debugger-java/runtime/source_gen/jetbrains/mps/debugger/java/runtime/evaluation/container/EvaluationModule.java",
+      "sha256": "3a4708253addab5f6e0176b348410c6b44253c63f001280a81d814716a2e6651",
+      "lines": [
+        {
+          "line": 22,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        }
+      ]
+    },
+    {
+      "file": "plugins/execution-configurations/junit/source_gen/jetbrains/mps/baseLanguage/unitTest/execution/client/TestParameters.java",
+      "sha256": "fdadb3aba1edec8497d39e5aa7d0963ee2b963f141d667dcdf13fb97c3b0ce67",
+      "lines": [
+        {
+          "line": 61,
+          "references": [
+            "java.nio.charset"
+          ],
+          "source": "ListSequence.fromList(myAdditionalJvmArgs).addElement(\"--add-opens=java.base/java.nio.charset=ALL-UNNAMED\");"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mcp-tools/src/jetbrains/mps/agents/mcp/tools/AbstractOps.kt",
+      "sha256": "7b09603a8789234e0a5b48c55553734973479a068e65a085faa2dba10de15f33",
+      "lines": [
+        {
+          "line": 72,
+          "references": [
+            "java.nio.file.Paths"
+          ],
+          "source": "import java.nio.file.Paths"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mcp-tools/src/jetbrains/mps/agents/mcp/tools/AgentConfigRootResolver.kt",
+      "sha256": "ec4021984b3c0192a6e43c9149423c080cd3baab89a80947efdabc90f83c4793",
+      "lines": [
+        {
+          "line": 3,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files"
+        },
+        {
+          "line": 4,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mcp-tools/src/jetbrains/mps/agents/mcp/tools/JetBrainsMPSInitMcpToolset.kt",
+      "sha256": "ab10d9ff6c7f367e29378964acac0f57bbed395d00fa86d706ddc2f9ce7a33a0",
+      "lines": [
+        {
+          "line": 9,
+          "references": [
+            "java.nio.file.FileSystem"
+          ],
+          "source": "import java.nio.file.FileSystem"
+        },
+        {
+          "line": 10,
+          "references": [
+            "java.nio.file.FileSystemNotFoundException"
+          ],
+          "source": "import java.nio.file.FileSystemNotFoundException"
+        },
+        {
+          "line": 11,
+          "references": [
+            "java.nio.file.FileSystems"
+          ],
+          "source": "import java.nio.file.FileSystems"
+        },
+        {
+          "line": 12,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files"
+        },
+        {
+          "line": 13,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path"
+        },
+        {
+          "line": 14,
+          "references": [
+            "java.nio.file.Paths"
+          ],
+          "source": "import java.nio.file.Paths"
+        },
+        {
+          "line": 15,
+          "references": [
+            "java.nio.file.StandardCopyOption"
+          ],
+          "source": "import java.nio.file.StandardCopyOption"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mcp-tools/src/jetbrains/mps/agents/mcp/tools/JetBrainsMPSProjectMcpToolset.kt",
+      "sha256": "5734c61ee053a4e774724ef77b58478be0e1435fb9304bdf7fc9d6318d70dfd1",
+      "lines": [
+        {
+          "line": 26,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path"
+        },
+        {
+          "line": 27,
+          "references": [
+            "java.nio.file.Paths"
+          ],
+          "source": "import java.nio.file.Paths"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mcp-tools/test/jetbrains/mps/agents/mcp/tools/AbstractOpsPropertyProblemsTest.kt",
+      "sha256": "d8f480dcd44a9826c2166b7c4876ca56913d897a3b73ac7d73800d6c4624e4ad",
+      "lines": [
+        {
+          "line": 51,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mcp-tools/test/jetbrains/mps/agents/mcp/tools/JetBrainsMPSInitMcpToolsetIntegrationTest.kt",
+      "sha256": "e95ebe6380b590b062c42cb9505e7c9e08d8f68269bcdf938cbb666688ae7598",
+      "lines": [
+        {
+          "line": 6,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files"
+        },
+        {
+          "line": 7,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path"
+        },
+        {
+          "line": 8,
+          "references": [
+            "java.nio.file.Paths"
+          ],
+          "source": "import java.nio.file.Paths"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mcp-tools/test/jetbrains/mps/agents/mcp/tools/JetBrainsMPSInitMcpToolsetTest.kt",
+      "sha256": "8360bf9fcebf7e13396d0476d57539b72663ecae3f14dc4d35b0d1df7adc62d7",
+      "lines": [
+        {
+          "line": 17,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files"
+        },
+        {
+          "line": 18,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mps-build/solutions/jetbrains.mps.build.mps.migration/source_gen/jetbrains/mps/build/migration/MigrationWorker.java",
+      "sha256": "4ccd73b549912b9ad9aebcf05f45f2642b885e3bcd49796b47e23fcf48617a05",
+      "lines": [
+        {
+          "line": 18,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mps-core/languages/core.properties/source_gen/jetbrains/mps/core/properties/textGen/TextGenAspectDescriptor.java",
+      "sha256": "7f528850059aa14b0c21af3df5c76648f81844cb38f1e732ec4fdc5558e07f5d",
+      "lines": [
+        {
+          "line": 13,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mps-idea-integration/MPSPlugin/source_gen/jetbrains/mps/plugin/InstallIDEAPlugin_Action.java",
+      "sha256": "457600e704c29fd80a0cfcb985eccc94ec86fec175b5d4c265b7cf79eb2a60f7",
+      "lines": [
+        {
+          "line": 20,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mps-testing/languages/junit5/source_gen/jetbrains/mps/lang/test/junit5/tcutil/ComparisonFailureData.java",
+      "sha256": "f7d708df3aa8236bb29e7c7cbf29e993b07cf4e3f60f993259d1c11a0c455e4d",
+      "lines": [
+        {
+          "line": 13,
+          "references": [
+            "java.nio.charset.StandardCharsets"
+          ],
+          "source": "import java.nio.charset.StandardCharsets;"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mps-vcs/solutions/jetbrains.mps.ide.vcs/source_gen/jetbrains/mps/vcs/integration/NonMPSProjectCheckoutListener.java",
+      "sha256": "4c1fb5b82f51e1db3aa371bf70591783a6a01c302db7e05957f77c00f4da85d1",
+      "lines": [
+        {
+          "line": 9,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mps-vcs/solutions/jetbrains.mps.ide.vcs/source_gen/jetbrains/mps/vcs/integration/ProjectCheckoutListener.java",
+      "sha256": "2241e68ad39f48f272adc101e99b7030898e128d37166b62bb449a9a721f4cf6",
+      "lines": [
+        {
+          "line": 9,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mps-vcs/solutions/jetbrains.mps.ide.vcs/source_gen/jetbrains/mps/vcs/integration/ProjectDirMPSCheckoutListener.java",
+      "sha256": "fb88fd4038d4fbcd1a52f382e5c0f426c9a2e48fce0fb4f99a17309fc895de5e",
+      "lines": [
+        {
+          "line": 9,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        },
+        {
+          "line": 10,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mps-vcs/vcs-platform/solutions/jetbrains.mps.ide.vcs.platform/source_gen/jetbrains/mps/vcs/diff/ui/merge/MergeRootsPane.java",
+      "sha256": "ba2145d34f8952defbe91ece6b724f76c5d4626784654555131d3e51d521984d",
+      "lines": [
+        {
+          "line": 65,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        },
+        {
+          "line": 75,
+          "references": [
+            "java.nio.charset.StandardCharsets"
+          ],
+          "source": "import java.nio.charset.StandardCharsets;"
+        }
+      ]
+    },
+    {
+      "file": "plugins/mps-vcs/vcs-platform/solutions/jetbrains.mps.ide.vcs.platform/source_gen/jetbrains/mps/vcs/platform/integration/ModelMergeViewer.java",
+      "sha256": "700bfa30f9694a927912cec7d6c9c8ec39b0bec083b652cc940f54a42c1d1383",
+      "lines": [
+        {
+          "line": 45,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        }
+      ]
+    },
+    {
+      "file": "startup/src/jetbrains/mps/Launcher.java",
+      "sha256": "682d49120606692d5ba81a782a078025394d9e7cc64bb228ad09452a772e77f8",
+      "lines": [
+        {
+          "line": 11,
+          "references": [
+            "java.nio.file.DirectoryStream"
+          ],
+          "source": "import java.nio.file.DirectoryStream;"
+        },
+        {
+          "line": 12,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        },
+        {
+          "line": 13,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        },
+        {
+          "line": 14,
+          "references": [
+            "java.nio.file.Paths"
+          ],
+          "source": "import java.nio.file.Paths;"
+        }
+      ]
+    },
+    {
+      "file": "testbench/jetbrains.mps.testbench.make/tests_gen/jetbrains/mps/testbench/ModuleGenerationHolder.java",
+      "sha256": "b3e03b0fb43c8220e26435233d428d3e03edb62e7953199a255eb500be07eb24",
+      "lines": [
+        {
+          "line": 11,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "testbench/jetbrains.mps.testbench/source_gen/jetbrains/mps/testbench/junit/suites/BaseCheckerTest.java",
+      "sha256": "47bea35b2df832fdd60003db8bb659d1a3d12e7417f5bd9a1b7a056544a05126",
+      "lines": [
+        {
+          "line": 29,
+          "references": [
+            "java.nio.charset.StandardCharsets"
+          ],
+          "source": "import java.nio.charset.StandardCharsets;"
+        }
+      ]
+    },
+    {
+      "file": "testbench/tests/jetbrains/mps/make/JavaCompilerTest.java",
+      "sha256": "abaa5cf77218291d969bcda16a789066893f7647ca44d60c2a1805b73384440c",
+      "lines": [
+        {
+          "line": 37,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        },
+        {
+          "line": 38,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "testbench/testsolutions/execution-test/tests/test_gen/jetbrains/mps/execution/impl/configurations/tests/outproces/MPSInstance_Test.java",
+      "sha256": "9b1223d80df8e6b20d9aac2962df893d732c49d9fd4019d90b70cf8d03e41c86",
+      "lines": [
+        {
+          "line": 73,
+          "references": [
+            "java.nio.charset"
+          ],
+          "source": "params += \" --add-opens=java.base/java.nio.charset=ALL-UNNAMED\";"
+        }
+      ]
+    },
+    {
+      "file": "testbench/testsolutions/refactoring.test/test_gen/jetbrains/mps/refactoring/test/test/AbstractRefactoringTest.java",
+      "sha256": "669934b909e3d5db11cd11f61a8df8c1f5a6da9d9442ca2cb5e063adcb953049",
+      "lines": [
+        {
+          "line": 13,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        }
+      ]
+    },
+    {
+      "file": "tools/tools/source/jetbrains/mps/excluded/Utils.java",
+      "sha256": "25a7118a7d3ce48cfdb53c8029d4979e35347e5822784c4c6ae86ec4d9d1c624",
+      "lines": [
+        {
+          "line": 32,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        },
+        {
+          "line": 33,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        },
+        {
+          "line": 34,
+          "references": [
+            "java.nio.file.attribute.BasicFileAttributes"
+          ],
+          "source": "import java.nio.file.attribute.BasicFileAttributes;"
+        }
+      ]
+    },
+    {
+      "file": "workbench/mps-platform/jetbrains.mps.ide.platform/source_gen/jetbrains/mps/ide/make/WorkbenchMakeService.java",
+      "sha256": "f4b98b747e697993b511e0f0943c05570a336810586fd5ab20072ffca6643ebd",
+      "lines": [
+        {
+          "line": 32,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        },
+        {
+          "line": 33,
+          "references": [
+            "java.nio.file.Files"
+          ],
+          "source": "import java.nio.file.Files;"
+        }
+      ]
+    },
+    {
+      "file": "workbench/mps-platform/jetbrains.mps.ide.platform/source_gen/jetbrains/mps/ide/platform/OpenedPackages.java",
+      "sha256": "3fbee5f195ce383d57223e11c8a595da11124f260f9983ea86a4abdf42fdf6a5",
+      "lines": [
+        {
+          "line": 10,
+          "references": [
+            "java.nio.charset"
+          ],
+          "source": "private static final String[] packages = {\"java.base/java.io\", \"java.base/java.lang\", \"java.base/java.lang.reflect\", \"java.base/java.net\", \"java.base/java.nio\", \"java.base/java.nio.charset\", \"java.base/java.text\", \"java.base/java.time\", \"java.base/java.util\", \"java.base/java.util.concurrent\", \"java.base/java.util.concurrent.atomic\", \"java.base/jdk.internal.ref\", \"java.base/jdk.internal.vm\", \"java.base/sun.nio.ch\", \"java.base/sun.nio.fs\", \"java.base/sun.security.ssl\", \"java.base/sun.security.util\", \"java.desktop/java.awt\", \"java.desktop/java.awt.dnd.peer\", \"java.desktop/java.awt.event\", \"java.desktop/java.awt.image\", \"java.desktop/java.awt.peer\", \"java.desktop/javax.swing\", \"java.desktop/javax.swing.plaf.basic\", \"java.desktop/javax.swing.text\", \"java.desktop/javax.swing.text.html\", \"java.desktop/javax.swing.text.html.parser\", \"java.desktop/sun.awt.datatransfer\", \"java.desktop/sun.awt.image\", \"java.desktop/sun.awt\", \"java.desktop/sun.font\", \"java.desktop/sun.java2d\", \"java.desktop/sun.swing\", \"jdk.attach/sun.tools.attach\", \"jdk.compiler/com.sun.tools.javac.api\", \"jdk.internal.jvmstat/sun.jvmstat.monitor\", \"jdk.jdi/com.sun.tools.jdi\", \"java.management/sun.management\"};"
+        }
+      ]
+    },
+    {
+      "file": "workbench/mps-platform/source/jetbrains/mps/ide/vfs/ProjectStoreDirAddToVFSSnapshot.java",
+      "sha256": "fc173dd1da13d6359b2cca5b4ce9ca7217a7394f3dbc0594327db610d326ed04",
+      "lines": [
+        {
+          "line": 26,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "workbench/mps-platform/source/jetbrains/mps/library/contributor/PluginLibraryContributor.java",
+      "sha256": "c3036b2670a532e2305997279df21d280ee338bc062b3b637b3687b56e335fab",
+      "lines": [
+        {
+          "line": 29,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "workbench/mps-platform/source/jetbrains/mps/nodefs/MPSNodeVirtualFile.java",
+      "sha256": "e448ba6f0f71a7c6a1a7112e6d4ff3a9679f5b8d271e19a7b83b95462f532d05",
+      "lines": [
+        {
+          "line": 45,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        },
+        {
+          "line": 46,
+          "references": [
+            "java.nio.charset.StandardCharsets"
+          ],
+          "source": "import java.nio.charset.StandardCharsets;"
+        }
+      ]
+    },
+    {
+      "file": "workbench/mps-platform/source/jetbrains/mps/nodefs/NodeVirtualFileSystem.java",
+      "sha256": "c109769e5ffabd52aaaac0b0af6f66fc7fc0a5dfaea5a90e7ee1e41a08054c13",
+      "lines": [
+        {
+          "line": 310,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "// to java.nio.file.Path (see com.intellij.openapi.fileEditor.impl.EditorsSplitters#updateFileName(), MPS-31691)"
+        }
+      ]
+    },
+    {
+      "file": "workbench/mps-platform/source/jetbrains/mps/refactoring/ModuleRenameInfo.java",
+      "sha256": "4434855afa937d6acb9a6e2b578e946fd63feec1f09c38a7c9577f1324ce291c",
+      "lines": [
+        {
+          "line": 12,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "workbench/mps-platform/source/jetbrains/mps/refactoring/Renamer.java",
+      "sha256": "aa6e876612a2a8968b7078f1c68170b9aa02083ffe7a889ccbad14bca1d7cb77",
+      "lines": [
+        {
+          "line": 51,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "workbench/mps-workbench/jetbrains.mps.ide/source_gen/jetbrains/mps/ide/actions/CloneModule_Action.java",
+      "sha256": "1efb7c811db268417f57751411cc940ebf180cadd13165ff9e5b062838469a31",
+      "lines": [
+        {
+          "line": 23,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    },
+    {
+      "file": "workbench/mps-workbench/jetbrains.mps.ide/source_gen/jetbrains/mps/ide/make/TextPreviewFile.java",
+      "sha256": "3d3e4e788b0cfdb4fa9c24b255052abbfaf9fe81b07a53b888bf2988672a32d4",
+      "lines": [
+        {
+          "line": 10,
+          "references": [
+            "java.nio.charset.Charset"
+          ],
+          "source": "import java.nio.charset.Charset;"
+        }
+      ]
+    },
+    {
+      "file": "workbench/mps-workbench/source/jetbrains/mps/intellij/integration/MPSRecentProjectsManagerBase.kt",
+      "sha256": "b4ab71c22348b941b4d95e663c53ca7ae3d6ab6d9424e9157d0ecbe39dad6e7a",
+      "lines": [
+        {
+          "line": 17,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path"
+        }
+      ]
+    },
+    {
+      "file": "workbench/mps-workbench/source/jetbrains/mps/workbench/actions/OpenMPSProjectTrustProjectHelper.kt",
+      "sha256": "d1e21587e9338cf41eb0c516f30575f5810f3d63ed3bac3fa1dde35e1d2b0cb9",
+      "lines": [
+        {
+          "line": 27,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path"
+        }
+      ]
+    },
+    {
+      "file": "workbench/mps-workbench/source/jetbrains/mps/workbench/dialogs/project/newproject/ProjectFactory.java",
+      "sha256": "626910baa27d95fa61f2e309804999fb0d1df2a55f234ab6c16b1485467c2f7a",
+      "lines": [
+        {
+          "line": 52,
+          "references": [
+            "java.nio.file.Path"
+          ],
+          "source": "import java.nio.file.Path;"
+        }
+      ]
+    }
+  ],
+  "tracked_jars": [
+    {
+      "file": "build/home/.ant/lib/commons-net-1.4.1.jar",
+      "sha256": "05a3611dedf90d0ab3e8ed83dec4ee49200148c09425437eb9348562fde7d83c",
+      "classes": {}
+    },
+    {
+      "file": "build/home/.ant/lib/ecj.jar",
+      "sha256": "98546ef0b44a4c134355ffdd5eab157c64b77bc63b4b541ce2079e57a1c37d5b",
+      "classes": {
+        "org/eclipse/jdt/internal/compiler/apt/dispatch/BatchProcessingEnvImpl.class": [
+          "java.nio.charset.Charset"
+        ],
+        "org/eclipse/jdt/internal/compiler/apt/util/Archive.class": [
+          "java.nio.charset.Charset"
+        ],
+        "org/eclipse/jdt/internal/compiler/apt/util/ArchiveFileObject.class": [
+          "java.nio.charset.Charset"
+        ],
+        "org/eclipse/jdt/internal/compiler/apt/util/EclipseFileManager.class": [
+          "java.nio.charset.Charset"
+        ],
+        "org/eclipse/jdt/internal/compiler/apt/util/EclipseFileObject.class": [
+          "java.nio.charset.Charset"
+        ],
+        "org/eclipse/jdt/internal/compiler/apt/util/Util.class": [
+          "java.nio.Buffer",
+          "java.nio.ByteBuffer",
+          "java.nio.CharBuffer",
+          "java.nio.charset.Charset",
+          "java.nio.charset.CharsetDecoder",
+          "java.nio.charset.CoderResult",
+          "java.nio.charset.CodingErrorAction",
+          "java.nio.charset.IllegalCharsetNameException",
+          "java.nio.charset.UnsupportedCharsetException"
+        ],
+        "org/eclipse/jdt/internal/compiler/tool/Archive.class": [
+          "java.nio.charset.Charset"
+        ],
+        "org/eclipse/jdt/internal/compiler/tool/ArchiveFileObject.class": [
+          "java.nio.charset.Charset"
+        ],
+        "org/eclipse/jdt/internal/compiler/tool/EclipseCompiler.class": [
+          "java.nio.charset.Charset"
+        ],
+        "org/eclipse/jdt/internal/compiler/tool/EclipseFileManager.class": [
+          "java.nio.charset.Charset"
+        ],
+        "org/eclipse/jdt/internal/compiler/tool/EclipseFileObject.class": [
+          "java.nio.charset.Charset"
+        ],
+        "org/eclipse/jdt/internal/compiler/tool/Util.class": [
+          "java.nio.Buffer",
+          "java.nio.ByteBuffer",
+          "java.nio.CharBuffer",
+          "java.nio.charset.Charset",
+          "java.nio.charset.CharsetDecoder",
+          "java.nio.charset.CoderResult",
+          "java.nio.charset.CodingErrorAction",
+          "java.nio.charset.IllegalCharsetNameException",
+          "java.nio.charset.UnsupportedCharsetException"
+        ]
+      }
+    },
+    {
+      "file": "build/home/.ant/lib/jakarta-oro-2.0.8.jar",
+      "sha256": "e00ccdad5df7eb43fdee44232ef64602bf63807c2d133a7be83ba09fd49af26e",
+      "classes": {}
+    },
+    {
+      "file": "build/home/.ant/lib/jsch-0.1.49.jar",
+      "sha256": "f4f8f3a0d576e1d9ae4d73d8dbbef3b1347750b90060229a67acc31e97cc235e",
+      "classes": {}
+    },
+    {
+      "file": "build/ivy/ivy-2.4.0.jar",
+      "sha256": "ce81cb234406b093b5b8de9f6f5b2a50ed0824d6a235891353e8d3e941a53970",
+      "classes": {
+        "org/apache/ivy/plugins/lock/FileBasedLockStrategy$NIOFileLocker$LockData.class": [
+          "java.nio.channels.FileLock"
+        ],
+        "org/apache/ivy/plugins/lock/FileBasedLockStrategy$NIOFileLocker.class": [
+          "java.nio.channels.FileChannel",
+          "java.nio.channels.FileLock"
+        ]
+      }
+    },
+    {
+      "file": "languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar",
+      "sha256": "294fb88c272598b9a5dcae15f13d228e64134256de941fbc28917a994beeb075",
+      "classes": {}
+    },
+    {
+      "file": "languages/baseLanguage/collections/languages/trove/runtime/lib/trove-src-2.1.0.jar",
+      "sha256": "45c04b7b00b6e9d347ae34fb3e670bb70c9ca1b7d89a0abcec0c80fe4a483c08",
+      "classes": {}
+    },
+    {
+      "file": "plugins/mps-build/solutions/jetbrains.mps.build.sandbox/samples/buildA/abcde.jar",
+      "sha256": "259b5e308ceea5d5e1df6ed122b6c2dad4fbc03e6ca0148c4dad0a07010098e5",
+      "classes": {}
+    },
+    {
+      "file": "samples/robot_Kaja/solutions/JavaKajak/images/kaja_images.jar",
+      "sha256": "71b59bc84aa6ff9f412b674d5f928b394007e5f6183e2f8d1254c744fd118caf",
+      "classes": {}
+    },
+    {
+      "file": "testbench/modules/testCompilation/lib/test.jar",
+      "sha256": "e5a173e87a8cccbc6a5d1645130ac0cd31edd9d0b2f52f837c9744b1e17b27ab",
+      "classes": {}
+    },
+    {
+      "file": "testbench/modules/testPackaged/testPackagedLanguage/lib/dummy.jar",
+      "sha256": "57cd749d48ff355509cbec2593a40baedb5f8cc8e24df840c8c79647d265bbb0",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/etc/ant-bootstrap.jar",
+      "sha256": "17390db617431eb4d02916fa998003569c07976d8a780e8d99ec58b07070c0fa",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-antlr.jar",
+      "sha256": "2ac6bfb36c8aa04bdc1f9ab4154a0de22dfafacd4c20b17b2b80f885610d4707",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-apache-bcel.jar",
+      "sha256": "9c265d62ac03a56e60fb16d74938bb06f9660152eaef41e9adebb084c4ee2f02",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-apache-bsf.jar",
+      "sha256": "a914492a42ff4fdaa0f77f6c9ad60204b6f5f28c1ac93df87c4c47a98596573d",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-apache-log4j.jar",
+      "sha256": "25de021de4e8c8e6732fc6526b49fbf7181e3b62c80d267c88cb2aaf16de32af",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-apache-oro.jar",
+      "sha256": "24edb803e9891e421370c3ee3162943dab407ad8ac7e48fb4d2415358b3a586e",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-apache-regexp.jar",
+      "sha256": "d06988af2eb83959af134b042a65971664db4fa6f823e08aff901121d28a9383",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-apache-resolver.jar",
+      "sha256": "bc850fc2be8c922feb9d312b2f9d859606e1706beb870d069575ae48a956edd6",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-commons-logging.jar",
+      "sha256": "a33135fe92f2452681d1de299d788279568837c32d4a434b72529eae476a4eff",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-commons-net.jar",
+      "sha256": "f0d7366cc344705854a9924d3ba10a82d0d06e5d4b3fe34a8441409b8618ff60",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-icontract.jar",
+      "sha256": "2fdcb3b0388c7dc0b253672cf72c71840f66da9473cae999e79d6b98b108af69",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-jai.jar",
+      "sha256": "dd68d64500c913b1cfc39e5a988806758a726893ccf883f09c9efb87d88178b2",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-javamail.jar",
+      "sha256": "4bccac9c8b08baf936dcd1a43d41a2e6ccc131c70100c596f927e4923416677c",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-jdepend.jar",
+      "sha256": "c0d42b014c300cb98200aa9a911e08a82ea9351702c845983aa969f80f571a4c",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-jmf.jar",
+      "sha256": "c99b470469694c547794317da5f3f6afd74dea698f1b42ca5b25f6aa2643eab7",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-jsch.jar",
+      "sha256": "e46c9b3a2a9ede9722f24f25339beb55694eeeb8f765b23d1cdd7c5e201d0ef3",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-junit.jar",
+      "sha256": "d38d19626bf11437033a7345aec58512cb18f4096915d6916167e1fcd07b71af",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-launcher.jar",
+      "sha256": "bdc0a7920c18601f83030e951dbfd092505128d8db55121b96a4472748ee0b20",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-netrexx.jar",
+      "sha256": "dbf2e6a9d00bdd9e01ec614f45bea640477fa2fd05a260deea9babf5e1c829eb",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-nodeps.jar",
+      "sha256": "9a02e9d2587d28ee593cad8191609186875a697998b5988640f4f2200fe21a22",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-starteam.jar",
+      "sha256": "f8328f7dd5de0acd21a1a51fee51b927fc72401a128358a54e8799e7ca6a996f",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-stylebook.jar",
+      "sha256": "bec113460b746bb6af010095269c7a74da375286b7357f61638d7aa0edeeaf93",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-swing.jar",
+      "sha256": "ca0920cc36f6a9be644b522a7f1b48230cfe103689c2966ef293dd1111ff6d87",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-trax.jar",
+      "sha256": "1ea4c979dc68065e4a609431cdb33f2c4bfbf1ee8d0afabafe523a930dac1636",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-vaj.jar",
+      "sha256": "89d676e342f01b404d15431596ccfb502fc31f9aa48f2225935f7e2e1e6f0f6c",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-weblogic.jar",
+      "sha256": "e32983138115773ade1566a462b05ff0d97d30fed2117b63b700eefd1c70e9ca",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-xalan1.jar",
+      "sha256": "3d7809a7d04b954fc81904758833e502f796beeeb16d6737e8f949f2242b9e50",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant-xslp.jar",
+      "sha256": "e1c605c4a616a7e27102d8e85ca6d810dce63dad34535f55707ba59d5fe7e88d",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/ant.jar",
+      "sha256": "f06a601c718a7c9262d74b7ec3baad14c82584e89235089b4f821d6a44d9e1e4",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/xercesImpl.jar",
+      "sha256": "7512957342dc34290f27c0d5fd4313e00acb1e6dbe2992fd4ca66b46d7200035",
+      "classes": {}
+    },
+    {
+      "file": "tools/ant/lib/xml-apis.jar",
+      "sha256": "1c2867be1faa73c67e9232631241eb1df4cd0763048646e7bb575a9980e9d7e5",
+      "classes": {}
+    },
+    {
+      "file": "tools/tools/lib/xmlunit-1.5.jar",
+      "sha256": "b041399902889bef7fa489370d0e8f4d862812938beb14c88d93d250d464fb0d",
+      "classes": {}
+    }
+  ],
+  "limitations": [
+    "Selected browser MPS modules have not been defined",
+    "Untracked/downloaded dependencies are not a complete resolved classpath",
+    "Import and qualified-reference matches do not establish member-level coverage",
+    "Serialized MPS models were not read"
+  ]
+}

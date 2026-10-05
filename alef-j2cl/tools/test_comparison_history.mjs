@@ -1,0 +1,32 @@
+import {createRequire} from 'node:module';
+import assert from 'node:assert/strict';
+const {chromium}=createRequire('C:/Codex/org-jdom-j2cl/package.json')('playwright');
+const browser=await chromium.launch({headless:true}),page=await browser.newPage({viewport:{width:1500,height:1150}}),errors=[];
+page.on('pageerror',e=>errors.push(String(e)));
+try{
+  await page.goto(process.env.ALEF_EXAMPLE_URL||'http://127.0.0.1:8814/');
+  await page.waitForFunction(()=>window.alefExample?.status()==='READY');
+  const project=await page.evaluate(()=>window.alefExample.projectTree()),root=project.models.flatMap(m=>m.roots).find(r=>r.concept==='ObjectModel');
+  await page.locator('mps-project-view').getByRole('treeitem',{name:root.name,exact:true}).click();
+  const box=await page.locator('#alef-editor').boundingBox();
+  await page.mouse.click(box.x+230,box.y+55);await page.keyboard.press('End');await page.keyboard.type('X');
+  await page.waitForFunction(()=>window.alefExample.projectTree().models.some(m=>m.roots.some(r=>r.name==='HuishoudenX')));
+  await page.evaluate(()=>window.alefExample.undo());
+  assert.equal(await page.evaluate(()=>window.alefExample.canRedo()),true);
+  const slash=root.id.lastIndexOf('/'),graph={models:[{reference:root.id.slice(0,slash),moduleId:'40c0c5ad-8f73-405e-b474-b1ba540eeb48',moduleName:'History fixture',name:'History fixture',roots:[{id:root.id.slice(slash+1),concept:'471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938',conceptName:'gegevensspraak.structure.ObjectModel',properties:{'ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001':'Read-only history fixture'},children:[],references:[]}]}]};
+  await page.evaluate(graph=>window.alefExample.prepareComparison('history-check',JSON.stringify(graph),JSON.stringify(graph)),graph);
+  await page.waitForFunction(()=>window.alefExample.comparisonStatus('history-check')==='READY');
+  assert.equal(await page.evaluate(()=>window.alefExample.canUndo()),false,'Loading comparison models adds no undo step');
+  assert.equal(await page.evaluate(()=>window.alefExample.canRedo()),true,'Loading comparison models retains redo');
+  assert.deepEqual(await page.evaluate(()=>window.alefExample.projectTree()),project);
+  await page.evaluate(()=>window.alefExample.closeComparison('history-check'));
+  assert.equal(await page.evaluate(()=>window.alefExample.canRedo()),true,'Disposing comparison models retains redo');
+  await page.evaluate(()=>window.alefExample.redo());
+  await page.waitForFunction(()=>window.alefExample.projectTree().models.some(m=>m.roots.some(r=>r.name==='HuishoudenX')));
+  await page.evaluate(()=>window.alefExample.undo());
+  assert.deepEqual(await page.evaluate(()=>window.alefExample.projectTree()),project);
+  await page.evaluate(graph=>{window.alefExample.prepareComparison('cancel-check',JSON.stringify(graph),JSON.stringify(graph));window.alefExample.closeComparison('cancel-check');},graph);
+  assert.equal(await page.evaluate(()=>window.alefExample.comparisonStatus('cancel-check')),'CLOSED');
+  assert.deepEqual(errors,[]);
+  console.log('PASS: real generated editor edit/undo; overlapping snapshot IDs; comparison load/disposal preserves redo; redo restores edit; cancellation leaves workspace intact. Standalone in-memory models only.');
+}finally{await browser.close();}

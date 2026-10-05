@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "bundles": [
+    {
+      "name": "point",
+      "path": "bazel-bin/samples/point/point_application.js",
+      "maxRawBytes": 8192,
+      "maxGzipBytes": 3584
+    },
+    {
+      "name": "showcase",
+      "path": "bazel-bin/samples/showcase/showcase_application.js",
+      "maxRawBytes": 192512,
+      "maxGzipBytes": 62464
+    },
+    {
+      "name": "dual-showcase",
+      "path": "bazel-bin/samples/dual_showcase/browser_application.js",
+      "maxRawBytes": 376832,
+      "maxGzipBytes": 126976
+    }
+  ]
+}

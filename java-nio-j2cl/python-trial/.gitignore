@@ -1,0 +1,8 @@
+/generated/
+/nio-stubs-*/
+__pycache__/
+/bazel-*
+/reports/
+/.cache/
+/.idea/
+*.iml

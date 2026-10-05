@@ -1,0 +1,669 @@
+{
+  "source": "workbench/mps-icons",
+  "assets": [
+    {
+      "path": "mps/workbench/mps-icons/source/actions/addToVcs.png",
+      "name": "/actions/addToVcs.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 278,
+      "sha256": "c4d380b46b0d1cbc443257aaa9e90ecb610d1416213388974f6647440b67bcf3"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/actions/groupByCategory.png",
+      "name": "/actions/groupByCategory.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 405,
+      "sha256": "984393159072f539bf9043b1b2d2b38b25f9dadd87056e37ace651d56a6d954e"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/actions/groupByModel.png",
+      "name": "/actions/groupByModel.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 295,
+      "sha256": "76b8737f65ff2ac116203e1d36bd6216a68479b1153fc929e186a915f697ac2b"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/actions/groupByModule.png",
+      "name": "/actions/groupByModule.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 287,
+      "sha256": "a218b161bd2cad9a066b721b01595985f3670ff4f1a61e25472f158a6194a268"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/actions/groupByRoot.png",
+      "name": "/actions/groupByRoot.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 371,
+      "sha256": "6cd8072c817dc26a7d237119c15fc9931816f25955f076d7cbc67103e763f3c9"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/actions/groupSearched.png",
+      "name": "/actions/groupSearched.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 454,
+      "sha256": "fe487339c07ac6f448f8f1dc06992a9ff46a454fe05b797aafe3bbe7ff31c436"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/actions/importModulesFromFolder.png",
+      "name": "/actions/importModulesFromFolder.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 450,
+      "sha256": "7278ab9c09eccb612588c09b845ec3afaf2ff30dd9615befc34a02f3194126ff"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/actions/migrationBulb.png",
+      "name": "/actions/migrationBulb.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 543,
+      "sha256": "1707b2c339e80a83a1dac39aa3c8987cc4fd6bd5541fb120bb552ecced35499f"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/actions/searchedNodes.png",
+      "name": "/actions/searchedNodes.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 338,
+      "sha256": "4e21d432870b52cfe2748161e8e92955b42d51fc64ae2e2b2320276707b1e847"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/actions/showCellInExplorer.png",
+      "name": "/actions/showCellInExplorer.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 445,
+      "sha256": "2fa935734e99c3d01bb3113948ac00573b468d57dc4994123954a46bf352203a"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/actions/showOnlyStrongSubtypes.png",
+      "name": "/actions/showOnlyStrongSubtypes.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 251,
+      "sha256": "2395625cfd60615c5b8cf932708bbc22d5bc42c91401356bb4b896a8f03bc015"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/ant/build.png",
+      "name": "/ant/build.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 250,
+      "sha256": "294c00730f4791024bfb36d0de787bb7981777da418973a443c3f3fb3f5cdfed"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/cellExplorer/cellActionKey.png",
+      "name": "/cellExplorer/cellActionKey.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 311,
+      "sha256": "3a88ade91d5dae1c739ebb09ac0b77c0b2a10e671e3a34b48822651a607da9b3"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/cellExplorer/cellComponent.png",
+      "name": "/cellExplorer/cellComponent.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 321,
+      "sha256": "0d5f5156ce63041933392cd98a1f0c29838e489474a59bbbecf88fdcb9ab3fb6"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/cellExplorer/cellConst.png",
+      "name": "/cellExplorer/cellConst.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 233,
+      "sha256": "1fcee19d404f363e01e0722cd4f812ee591df9c4f8d633da7c58d5f123288027"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/cellExplorer/cellDefault.png",
+      "name": "/cellExplorer/cellDefault.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 243,
+      "sha256": "18d002efac4a487020e594d5ef04df0ae1dfc9e8fcb380a704269a3e961757bb"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/cellExplorer/cellError.png",
+      "name": "/cellExplorer/cellError.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 233,
+      "sha256": "cda12fe7fb5301048ec7bcceb6fef5fadda8e98bde2c0f6acf152b78e98fe83e"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/cellExplorer/cellExplorer.png",
+      "name": "/cellExplorer/cellExplorer.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 307,
+      "sha256": "1b1ee59dd5df1d5dead10191b58b0cb92b10bb5228819e05c5b0e47b3df73def"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/cellExplorer/cellKeyMap.png",
+      "name": "/cellExplorer/cellKeyMap.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 315,
+      "sha256": "fe6e4b330c4d027ebd9ec263f708a198360aceef8d05993a3a2d83a34be069b3"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/cellExplorer/cellProperty.png",
+      "name": "/cellExplorer/cellProperty.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 227,
+      "sha256": "ba1b48932d2e40ed9e0b286e68060f609445cb61c17a0a64b49fc3efc41226dd"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/cellExplorer/cells.png",
+      "name": "/cellExplorer/cells.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 250,
+      "sha256": "a6bbb1e26bc2d57836958436ac1130ac3b378ae2f61f94bcff263758b0f10c73"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/debugger/addBreakpoint.svg",
+      "name": "/debugger/addBreakpoint.svg",
+      "width": 16,
+      "height": 16,
+      "bytes": 342,
+      "sha256": "f8495eb451525dcc9da0300065758e7b332b6edd6af07b471ba630eecfb7fa9e"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/debugger/deleteBreakpoint.svg",
+      "name": "/debugger/deleteBreakpoint.svg",
+      "width": 16,
+      "height": 16,
+      "bytes": 281,
+      "sha256": "81a1aba48fdce725ed7c58b716a3c7ef8867e23c29b96ecb9feff42019281927"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/debugger/goToSource.png",
+      "name": "/debugger/goToSource.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 422,
+      "sha256": "068f412595def1d71c4b4030aef5fc3b36f6ff809daf80717e585cf408a787c8"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/general/dependencies.png",
+      "name": "/general/dependencies.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 166,
+      "sha256": "1fdfd6f9c6f736e9416042b32e9a4b25ba49107a5e5390b887d99f64043cca9a"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/general/generatorsPriorities.png",
+      "name": "/general/generatorsPriorities.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 198,
+      "sha256": "680fd4479989c8c3810cadfad7968e17e348d0dba31cab3eefeb5faa3f21e5f3"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/general/java.png",
+      "name": "/general/java.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 214,
+      "sha256": "9c84a6392223d8b2503e43c0b9af4c4bc9d886a4705cafcdcb8824a40fc5d7ea"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/general/modelChecker.png",
+      "name": "/general/modelChecker.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 233,
+      "sha256": "487861258e698ae4b1b58d65cc4d913d02fb0dd87e910a66828e447601173e3b"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/general/runtime.png",
+      "name": "/general/runtime.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 191,
+      "sha256": "a329d60bc2876d9423f10c8278f646e9dcc0af2c8dd137205d618d555ec0b0d3"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/general/usedLanguages.png",
+      "name": "/general/usedLanguages.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 157,
+      "sha256": "98db9af94ec9a2fbb014fe8b203c8d652038905cab76e64d8ee29240b8e32f75"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/generator/copy-operation.png",
+      "name": "/generator/copy-operation.png",
+      "width": 12,
+      "height": 12,
+      "bytes": 3289,
+      "sha256": "1a7c7b3dc599897a622ec3aaa344b560d4f29f13838046bb04c6cc3d37d60bbe"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/generator/input.png",
+      "name": "/generator/input.png",
+      "width": 12,
+      "height": 12,
+      "bytes": 260,
+      "sha256": "964add762ba6fb3c9dec020e194f4d344b624e09d70edd3e421c3541f1afd7d5"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/generator/macro.png",
+      "name": "/generator/macro.png",
+      "width": 12,
+      "height": 12,
+      "bytes": 3299,
+      "sha256": "6738f028077bd1a809c78d8edeb26b159937937c089dc633213e4d50d1ecfa46"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/generator/mapping-script.png",
+      "name": "/generator/mapping-script.png",
+      "width": 12,
+      "height": 12,
+      "bytes": 3292,
+      "sha256": "60d5ea7c85814b98c014bade367a67f05564fae45977d1b13c2dd46b242b3d3b"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/generator/output.png",
+      "name": "/generator/output.png",
+      "width": 12,
+      "height": 12,
+      "bytes": 245,
+      "sha256": "51ea39fb5d6f547e8c37a1104ec1eceee9802ba6ff14229157b787f746c026b9"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/generator/rule-consequence.png",
+      "name": "/generator/rule-consequence.png",
+      "width": 12,
+      "height": 12,
+      "bytes": 3309,
+      "sha256": "687cdad90f1257271ddd22a8b2166b146d5a18978e683909560a86457ce39ff8"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/generator/rule.png",
+      "name": "/generator/rule.png",
+      "width": 12,
+      "height": 12,
+      "bytes": 3316,
+      "sha256": "a52cb2af13a9154efc2ddead94a4a995161569ba4965ad7a9204eb1c659de4ec"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/generator/switch.png",
+      "name": "/generator/switch.png",
+      "width": 12,
+      "height": 12,
+      "bytes": 3311,
+      "sha256": "7381ff5df0c76a8adea129f84cd2665593e1ef04d66aefeb7bda23127bff144d"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/generator/template.png",
+      "name": "/generator/template.png",
+      "width": 12,
+      "height": 12,
+      "bytes": 3289,
+      "sha256": "1a7c7b3dc599897a622ec3aaa344b560d4f29f13838046bb04c6cc3d37d60bbe"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/ideaIntegration/connected.png",
+      "name": "/ideaIntegration/connected.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 559,
+      "sha256": "b7b91c8be8760c3947fce495fdbde93bdb595a2a12acea626ae86f7f3203bf83"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/ideaIntegration/connected_with_errors.png",
+      "name": "/ideaIntegration/connected_with_errors.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 559,
+      "sha256": "a61e004d6928c8c15fe25c072b3d9e4a055c521c2a364d019233b324e8cfa943"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/ideaIntegration/disconnected.png",
+      "name": "/ideaIntegration/disconnected.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 618,
+      "sha256": "03ff2713266613944506c3475aa45f0b7d0af3f1c107b7f8b8fb64396d049a4d"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/ideaIntegration/trying.png",
+      "name": "/ideaIntegration/trying.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 616,
+      "sha256": "558c38ce79055812e774b9e44621f92109617b5a3aa404fdf16a49f8902b6d62"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/mps_16.svg",
+      "name": "/mps_16.svg",
+      "width": 16,
+      "height": 16,
+      "bytes": 1738,
+      "sha256": "73363efc5b5469341b4dccacb886a937583cb216e3d3ae5e6495ec02f61a0f3e"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/action.png",
+      "name": "/nodes/action.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 220,
+      "sha256": "ced3f611717a932bccdc29a6dd1f5542e3068dfbb6bb6bb6902e06e3bb62a907"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/behavior.png",
+      "name": "/nodes/behavior.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 189,
+      "sha256": "93f641ccf75474d674406f6676127f6dbf8d4958becaa2e6db778f30f273a34b"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/constraint.png",
+      "name": "/nodes/constraint.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 178,
+      "sha256": "b2f840b6a842d320e135dd5732b5ab02b10357b3c67cac417ac8173850d480e1"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/dataFlow.png",
+      "name": "/nodes/dataFlow.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 269,
+      "sha256": "9cc2db087d4dc9ffbcb4cac081d2cf2fc9f2635358cd1a99ca119f204e94c979"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/default.png",
+      "name": "/nodes/default.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 143,
+      "sha256": "5ef8dd22b2bc9e327332722f5c741daa4147548489a87cc38dbacb1633b7385d"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/devkit.png",
+      "name": "/nodes/devkit.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 171,
+      "sha256": "e4cb78e9bf52fb25f1c8e3a3b97c0bb9dc7ccb59fce65aa148f0653015b354fc"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/editor.png",
+      "name": "/nodes/editor.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 162,
+      "sha256": "81a538b772641663223368fca1ab9e865d87f1395a7bf8c39e0165b2270ae7df"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/generator.png",
+      "name": "/nodes/generator.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 195,
+      "sha256": "99e04235ca7a98e4b1c23ea5f9bff07e7737671569dc0a405969c2dc0ad1186f"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/language.png",
+      "name": "/nodes/language.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 135,
+      "sha256": "dd902b9c0e1996346177a7c576965d8a33701073161399c5039e3f8b0cc1d44b"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/mappingConf.png",
+      "name": "/nodes/mappingConf.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 204,
+      "sha256": "e0fdb7afcaea7969be622d4313ca1f61531e11ffb63769480099146e6fd5c27f"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/model.png",
+      "name": "/nodes/model.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 174,
+      "sha256": "68473ed146ffcb0e72313abe7696b7144642278e65a22aaf47a805094b019699"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/models/accessoryModel.png",
+      "name": "/nodes/models/accessoryModel.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 176,
+      "sha256": "2712d96f229565cca2afce2bc0e4897edf0ce61edb0d0e4147f3dcd67b25f272"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/models/aspect.png",
+      "name": "/nodes/models/aspect.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 158,
+      "sha256": "e89c8f462997c606c61a480492f472ee702601e9f3f9b930dc7a22cdfd75ebf7"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/models/templatesModel.png",
+      "name": "/nodes/models/templatesModel.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 130,
+      "sha256": "7fff2dfb2ff3f5682cba2e490371f7e76365bb73f04bdc5b0cd2b7e3ce52242a"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/models/tests.png",
+      "name": "/nodes/models/tests.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 1117,
+      "sha256": "4fbc68ab525bc115ecf6adfa2e59a5a83316a117bed64b895547b515f8389419"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/node.png",
+      "name": "/nodes/node.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 188,
+      "sha256": "1c3aec21aad41b1b96f7dfa0c8542b910f1f6e1a6c2c0ddc819f2b50764f1a5d"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/reduction.png",
+      "name": "/nodes/reduction.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 224,
+      "sha256": "6ceef561bb517fb8608487d682b1152905acb1a6463a091859e6d67b0d17da7d"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/refactoring.png",
+      "name": "/nodes/refactoring.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 165,
+      "sha256": "8c99415bd6c49a461029ed81f616ba5e0cfea42ec1ddbdc1d322d4e9644493d7"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/renderer.svg",
+      "name": "/nodes/renderer.svg",
+      "width": 16,
+      "height": 16,
+      "bytes": 671,
+      "sha256": "4396dcaa4b4979c2990144a15391dfee653d67b05835576ec363e7bf58dc1d5c"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/rootNode.png",
+      "name": "/nodes/rootNode.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 244,
+      "sha256": "ad76959287479926eb503b621ffb73b0b9696a53f0be3c84b2dcbc2ee8393849"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/rule.png",
+      "name": "/nodes/rule.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 200,
+      "sha256": "1b0ec0ee168036ea7cb9160d9b2f952117e8dd342bf36150c4fff46df80b64c9"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/solution.png",
+      "name": "/nodes/solution.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 210,
+      "sha256": "7c9d4e1ca4c79639416ead88071a653507f2c814ca67305aa335b9db6cf9e3ef"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/structure.png",
+      "name": "/nodes/structure.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 229,
+      "sha256": "565901be6d73e51da1c8f9995f817b3e3fdcfae051300829e6806ec7910e84fc"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/textGen.png",
+      "name": "/nodes/textGen.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 161,
+      "sha256": "eaa9b05b0bbb18b0b0e0aa013d934435e5b1eb456343d3ff331e1b49da32a063"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/transient.svg",
+      "name": "/nodes/transient.svg",
+      "width": 16,
+      "height": 16,
+      "bytes": 313,
+      "sha256": "472185fca4e46b75ba0b555aed8163e5c5474ecee9f8b8913afd93f0a258c615"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/transientDisable.svg",
+      "name": "/nodes/transientDisable.svg",
+      "width": 16,
+      "height": 16,
+      "bytes": 313,
+      "sha256": "eb2613d728ff1a9dde2acc35fcd0dd24a1cae9179049e25c571a3f3420bd305d"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/type.png",
+      "name": "/nodes/type.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 161,
+      "sha256": "27cee1fb48193e80f40d92d22285208ae8defa7a231ac8d2884fd8c2b45a0a7f"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/unknown.png",
+      "name": "/nodes/unknown.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 220,
+      "sha256": "12fa437d8fec9b358338e30782b59388411aa74291a7880827b3a9c5563b660b"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/usages-result-overlay.png",
+      "name": "/nodes/usages-result-overlay.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 111,
+      "sha256": "25fc3044ec11e533bc972d81d5e502c49439d0b35ac8e9eb3d93d193b9a97537"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/nodes/usagesFinder.png",
+      "name": "/nodes/usagesFinder.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 239,
+      "sha256": "08c6740f65a0f625d79cc077234f33d3f07429a41f0b1ad35f232c4adf55db9c"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/projectPane/logicalView.png",
+      "name": "/projectPane/logicalView.png",
+      "width": 16,
+      "height": 16,
+      "bytes": 269,
+      "sha256": "21963d02820f55e245f373b18def93f93ca0b2fc595d8c5fff4adbe53be87cb6"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/small/error.png",
+      "name": "/small/error.png",
+      "width": 12,
+      "height": 12,
+      "bytes": 477,
+      "sha256": "5a371a5b374a35998cc0bcd823174e33e73510d92d5dc966a6ac90ff8be86ae6"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/toolWindows/OpenTerminal_13x13.svg",
+      "name": "/toolWindows/OpenTerminal_13x13.svg",
+      "width": 13,
+      "height": 13,
+      "bytes": 498,
+      "sha256": "fb7f076e91cf38c679ba408673cd8b2b301cfa50f93fa4d76970c96f8e4b8a63"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/toolWindows/cellExplorer.png",
+      "name": "/toolWindows/cellExplorer.png",
+      "width": 13,
+      "height": 13,
+      "bytes": 1192,
+      "sha256": "81cafb76c3f4594554a3bfa85e1805081e62e2c599da835b3df064b9913f1da8"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/toolWindows/default.png",
+      "name": "/toolWindows/default.png",
+      "width": 13,
+      "height": 13,
+      "bytes": 137,
+      "sha256": "5140b84f36e6772be59c5f3895885c06ac4c7b46f630fdf67e24416872aaf126"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/toolWindows/dependencyAnalyzer.svg",
+      "name": "/toolWindows/dependencyAnalyzer.svg",
+      "width": 16,
+      "height": 16,
+      "bytes": 1051,
+      "sha256": "b07a62dedb6208d7e8cbb9318985c491c006381c47eae90f2b2f8a1f212fc238"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/toolWindows/modelChecker.png",
+      "name": "/toolWindows/modelChecker.png",
+      "width": 13,
+      "height": 13,
+      "bytes": 222,
+      "sha256": "8264598c8f4d9ec6cfda77d7810fe67461b86539f6d85ef30c68fe29b3760255"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/toolWindows/terminal.svg",
+      "name": "/toolWindows/terminal.svg",
+      "width": 16,
+      "height": 16,
+      "bytes": 349,
+      "sha256": "80e1e147a9496dff71bb735f3f010bbe97bb1aa36a85b16da2f9d98c5856975e"
+    },
+    {
+      "path": "mps/workbench/mps-icons/source/toolWindows/typeTraceView.png",
+      "name": "/toolWindows/typeTraceView.png",
+      "width": 13,
+      "height": 13,
+      "bytes": 149,
+      "sha256": "e5114dfb5780b41870e3d32eec766a769cdbc88d5d1af7dc00e540bc6aa1d574"
+    }
+  ]
+}

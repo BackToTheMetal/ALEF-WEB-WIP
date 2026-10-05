@@ -1,0 +1,18 @@
+exports_files([
+    "README.md",
+    "IMPLEMENTATION_PLAN.md",
+    "IMPLEMENTATION_STATUS.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+])
+
+filegroup(
+    name = "jre-overlay-sources",
+    srcs = glob(["overlay/jre/java/**/*.java"]),
+    visibility = ["//visibility:public"],
+)
+
+test_suite(
+    name = "all-tests",
+    tests = ["//tests/java/com/javaioj2cl:JavaIoJ2clTest"],
+)

@@ -1,0 +1,7 @@
+{
+  "name": "alef-mps-project-view",
+  "private": true,
+  "type": "module",
+  "scripts": { "test:project-view": "node tools/test_project_view.mjs" },
+  "dependencies": { "vue": "3.5.43" }
+}

@@ -1,0 +1,9 @@
+KernelUtilitiesTest.run() executes the same operations against untouched upstream JVM MPS, the replacement sources on the JVM, and the compiled browser kernel. The test package deliberately matches SourcePaths so its package-private diagnostics can be checked without reflection.
+
+The 120 exact result rows cover Scanner line separators (CRLF, LF, CR, NEL, line separator and paragraph separator), adjacent/final separators, UTF-8 and malformed byte sequences, one-byte and larger reads, failures at every byte boundary, and read/write closure. Vertical tab and form feed remain ordinary line content. The diagnostic cases verify quoting, null arguments, argument rendering order, source-root registration, and the upstream constructor that ignores its root-path argument. Message checks cover its epoch-millisecond timestamp, cause identity, kind, help URL, and text.
+
+Diagnostic rendering order is measured for an explicit getMessage() call after construction. J2CL 20260402 NormalizeConstructors.createThrowableInit() also passes the completed Throwable to the native Error constructor, which renders it through Throwable.toString() and getMessage(). The JVM does not perform that extra construction-time rendering. The fixture resets its argument-render tracker after construction; it does not claim equal getMessage() invocation counts across the runtimes or change production exception behavior.
+
+Run tools/run_kernel_utilities_oracle.py with --annotations-jar pointing to the real JetBrains annotations JAR; add --check to verify the committed golden and provenance. The recorded baseline is Java 21.0.12 with UTF-8 and en-US settings. The browser entry publishes kernelUtilitiesResult for comparison with jvm-expected.txt.
+
+This suite does not claim validation of archive storage, class loading, the class-loader disposal minute threshold, localized resource bundles, or constraint-rule contexts. Those need their own integration or boundary tests.

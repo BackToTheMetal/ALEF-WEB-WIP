@@ -1,0 +1,118 @@
+package alefj2cl;
+import org.jetbrains.mps.openapi.model.SNode;
+import linguistics.runtime.Renderer;
+public final class RendererRegistry {
+  public static Renderer create(String name, SNode node) {
+    switch (name) {
+      case "gegevensspraak.linguistics.BasisEenheid_Renderer": return new gegevensspraak.linguistics.BasisEenheid_Renderer(node);
+      case "gegevensspraak.linguistics.BooleanLiteral_Renderer": return new gegevensspraak.linguistics.BooleanLiteral_Renderer(node);
+      case "gegevensspraak.linguistics.Concatenatie_Renderer": return new gegevensspraak.linguistics.Concatenatie_Renderer(node);
+      case "gegevensspraak.linguistics.DatumTijdLiteral_Renderer": return new gegevensspraak.linguistics.DatumTijdLiteral_Renderer(node);
+      case "gegevensspraak.linguistics.DimensieFilter_Renderer": return new gegevensspraak.linguistics.DimensieFilter_Renderer(node);
+      case "gegevensspraak.linguistics.EenheidConversie_Renderer": return new gegevensspraak.linguistics.EenheidConversie_Renderer(node);
+      case "gegevensspraak.linguistics.EenheidMacht_Renderer": return new gegevensspraak.linguistics.EenheidMacht_Renderer(node);
+      case "gegevensspraak.linguistics.Eenheid_Renderer": return new gegevensspraak.linguistics.Eenheid_Renderer(node);
+      case "gegevensspraak.linguistics.EnumWaardeRef_Renderer": return new gegevensspraak.linguistics.EnumWaardeRef_Renderer(node);
+      case "gegevensspraak.linguistics.EnumeratieWaarde_Renderer": return new gegevensspraak.linguistics.EnumeratieWaarde_Renderer(node);
+      case "gegevensspraak.linguistics.GedimensioneerdeLiteralPunt_Renderer": return new gegevensspraak.linguistics.GedimensioneerdeLiteralPunt_Renderer(node);
+      case "gegevensspraak.linguistics.GedimensioneerdeLiteral_Renderer": return new gegevensspraak.linguistics.GedimensioneerdeLiteral_Renderer(node);
+      case "gegevensspraak.linguistics.LabelFilterAlles_Renderer": return new gegevensspraak.linguistics.LabelFilterAlles_Renderer(node);
+      case "gegevensspraak.linguistics.LabelFilterInterval_Renderer": return new gegevensspraak.linguistics.LabelFilterInterval_Renderer(node);
+      case "gegevensspraak.linguistics.LabelFilterVerzameling_Renderer": return new gegevensspraak.linguistics.LabelFilterVerzameling_Renderer(node);
+      case "gegevensspraak.linguistics.LabelRef_Renderer": return new gegevensspraak.linguistics.LabelRef_Renderer(node);
+      case "gegevensspraak.linguistics.Label_Renderer": return new gegevensspraak.linguistics.Label_Renderer(node);
+      case "gegevensspraak.linguistics.Naamwoord_Renderer": return new gegevensspraak.linguistics.Naamwoord_Renderer(node);
+      case "gegevensspraak.linguistics.NumeriekeLiteral_Renderer": return new gegevensspraak.linguistics.NumeriekeLiteral_Renderer(node);
+      case "gegevensspraak.linguistics.ObjectListLiteral_Renderer": return new gegevensspraak.linguistics.ObjectListLiteral_Renderer(node);
+      case "gegevensspraak.linguistics.ObjectReference_Renderer": return new gegevensspraak.linguistics.ObjectReference_Renderer(node);
+      case "gegevensspraak.linguistics.PercentageLiteral_Renderer": return new gegevensspraak.linguistics.PercentageLiteral_Renderer(node);
+      case "gegevensspraak.linguistics.Rekendatum_Renderer": return new gegevensspraak.linguistics.Rekendatum_Renderer(node);
+      case "gegevensspraak.linguistics.Rekenjaar_Renderer": return new gegevensspraak.linguistics.Rekenjaar_Renderer(node);
+      case "gegevensspraak.linguistics.TekstLiteral_Renderer": return new gegevensspraak.linguistics.TekstLiteral_Renderer(node);
+      case "regelspraak.linguistics.AantalQuantificatie_Renderer": return new regelspraak.linguistics.AantalQuantificatie_Renderer(node);
+      case "regelspraak.linguistics.AbsoluteWaarde_Renderer": return new regelspraak.linguistics.AbsoluteWaarde_Renderer(node);
+      case "regelspraak.linguistics.ActieIndienVoorwaarde_Renderer": return new regelspraak.linguistics.ActieIndienVoorwaarde_Renderer(node);
+      case "regelspraak.linguistics.Afronden_Renderer": return new regelspraak.linguistics.Afronden_Renderer(node);
+      case "regelspraak.linguistics.Afronding_Renderer": return new regelspraak.linguistics.Afronding_Renderer(node);
+      case "regelspraak.linguistics.Aggregatie_Renderer": return new regelspraak.linguistics.Aggregatie_Renderer(node);
+      case "regelspraak.linguistics.AlleOnderwerp_Renderer": return new regelspraak.linguistics.AlleOnderwerp_Renderer(node);
+      case "regelspraak.linguistics.Alle_Renderer": return new regelspraak.linguistics.Alle_Renderer(node);
+      case "regelspraak.linguistics.ArithmetischeExpressie_Renderer": return new regelspraak.linguistics.ArithmetischeExpressie_Renderer(node);
+      case "regelspraak.linguistics.AttribuutSelector_Renderer": return new regelspraak.linguistics.AttribuutSelector_Renderer(node);
+      case "regelspraak.linguistics.BegrensdeExpressie_Renderer": return new regelspraak.linguistics.BegrensdeExpressie_Renderer(node);
+      case "regelspraak.linguistics.Combinatie_Renderer": return new regelspraak.linguistics.Combinatie_Renderer(node);
+      case "regelspraak.linguistics.Concatenatie_Renderer": return new regelspraak.linguistics.Concatenatie_Renderer(node);
+      case "regelspraak.linguistics.Conditie_Renderer": return new regelspraak.linguistics.Conditie_Renderer(node);
+      case "regelspraak.linguistics.ConsistentieRegel_Renderer": return new regelspraak.linguistics.ConsistentieRegel_Renderer(node);
+      case "regelspraak.linguistics.DagsoortDefinitie_Renderer": return new regelspraak.linguistics.DagsoortDefinitie_Renderer(node);
+      case "regelspraak.linguistics.DatumElementUit_Renderer": return new regelspraak.linguistics.DatumElementUit_Renderer(node);
+      case "regelspraak.linguistics.DatumMetJaarEnVerstekwaardenVoorMaandEnDag_Renderer": return new regelspraak.linguistics.DatumMetJaarEnVerstekwaardenVoorMaandEnDag_Renderer(node);
+      case "regelspraak.linguistics.DatumMetJaarMaandDagEnTijd_Renderer": return new regelspraak.linguistics.DatumMetJaarMaandDagEnTijd_Renderer(node);
+      case "regelspraak.linguistics.DatumMetJaarMaandEnDag_Renderer": return new regelspraak.linguistics.DatumMetJaarMaandEnDag_Renderer(node);
+      case "regelspraak.linguistics.DatumTijdVerschil_Renderer": return new regelspraak.linguistics.DatumTijdVerschil_Renderer(node);
+      case "regelspraak.linguistics.DeDag_Renderer": return new regelspraak.linguistics.DeDag_Renderer(node);
+      case "regelspraak.linguistics.DimAttribuutSelector_Renderer": return new regelspraak.linguistics.DimAttribuutSelector_Renderer(node);
+      case "regelspraak.linguistics.DimensieAggregatie_Renderer": return new regelspraak.linguistics.DimensieAggregatie_Renderer(node);
+      case "regelspraak.linguistics.EerstePaasdag_Renderer": return new regelspraak.linguistics.EerstePaasdag_Renderer(node);
+      case "regelspraak.linguistics.EigenschapInitialisatie_Renderer": return new regelspraak.linguistics.EigenschapInitialisatie_Renderer(node);
+      case "regelspraak.linguistics.EigenschapSelector_Renderer": return new regelspraak.linguistics.EigenschapSelector_Renderer(node);
+      case "regelspraak.linguistics.ElfproefCheck_Renderer": return new regelspraak.linguistics.ElfproefCheck_Renderer(node);
+      case "regelspraak.linguistics.EnkeleVoorwaarde_Renderer": return new regelspraak.linguistics.EnkeleVoorwaarde_Renderer(node);
+      case "regelspraak.linguistics.EnkelvoudigeRegelVersieConditie_Renderer": return new regelspraak.linguistics.EnkelvoudigeRegelVersieConditie_Renderer(node);
+      case "regelspraak.linguistics.FeitCreatie_Renderer": return new regelspraak.linguistics.FeitCreatie_Renderer(node);
+      case "regelspraak.linguistics.Geen_Renderer": return new regelspraak.linguistics.Geen_Renderer(node);
+      case "regelspraak.linguistics.Gelijkstelling_Renderer": return new regelspraak.linguistics.Gelijkstelling_Renderer(node);
+      case "regelspraak.linguistics.GrensWaarde_Renderer": return new regelspraak.linguistics.GrensWaarde_Renderer(node);
+      case "regelspraak.linguistics.Haakjes_Renderer": return new regelspraak.linguistics.Haakjes_Renderer(node);
+      case "regelspraak.linguistics.IsAfgevuurd_Renderer": return new regelspraak.linguistics.IsAfgevuurd_Renderer(node);
+      case "regelspraak.linguistics.IsDagsoort_Renderer": return new regelspraak.linguistics.IsDagsoort_Renderer(node);
+      case "regelspraak.linguistics.IsGevuld_Renderer": return new regelspraak.linguistics.IsGevuld_Renderer(node);
+      case "regelspraak.linguistics.IsInconsistent_Renderer": return new regelspraak.linguistics.IsInconsistent_Renderer(node);
+      case "regelspraak.linguistics.IsLeeg_Renderer": return new regelspraak.linguistics.IsLeeg_Renderer(node);
+      case "regelspraak.linguistics.IsNumeriekMetLengte_Renderer": return new regelspraak.linguistics.IsNumeriekMetLengte_Renderer(node);
+      case "regelspraak.linguistics.KenmerkToekenning_Renderer": return new regelspraak.linguistics.KenmerkToekenning_Renderer(node);
+      case "regelspraak.linguistics.Leeg_Renderer": return new regelspraak.linguistics.Leeg_Renderer(node);
+      case "regelspraak.linguistics.NumeriekeWaarde_Renderer": return new regelspraak.linguistics.NumeriekeWaarde_Renderer(node);
+      case "regelspraak.linguistics.ObjectCreatie_Renderer": return new regelspraak.linguistics.ObjectCreatie_Renderer(node);
+      case "regelspraak.linguistics.OnderwerpRef_Renderer": return new regelspraak.linguistics.OnderwerpRef_Renderer(node);
+      case "regelspraak.linguistics.Onderwerp_Renderer": return new regelspraak.linguistics.Onderwerp_Renderer(node);
+      case "regelspraak.linguistics.Ontkenbaar_Renderer": return new regelspraak.linguistics.Ontkenbaar_Renderer(node);
+      case "regelspraak.linguistics.Ontvanger_Renderer": return new regelspraak.linguistics.Ontvanger_Renderer(node);
+      case "regelspraak.linguistics.ParameterRef_Renderer": return new regelspraak.linguistics.ParameterRef_Renderer(node);
+      case "regelspraak.linguistics.Predicaat_Renderer": return new regelspraak.linguistics.Predicaat_Renderer(node);
+      case "regelspraak.linguistics.PredicatieveBepaling_Renderer": return new regelspraak.linguistics.PredicatieveBepaling_Renderer(node);
+      case "regelspraak.linguistics.RolOfKenmerkCheck_Renderer": return new regelspraak.linguistics.RolOfKenmerkCheck_Renderer(node);
+      case "regelspraak.linguistics.RolSelector_Renderer": return new regelspraak.linguistics.RolSelector_Renderer(node);
+      case "regelspraak.linguistics.SamengesteldPredicaat_Renderer": return new regelspraak.linguistics.SamengesteldPredicaat_Renderer(node);
+      case "regelspraak.linguistics.SamengesteldeVoorwaarde_Renderer": return new regelspraak.linguistics.SamengesteldeVoorwaarde_Renderer(node);
+      case "regelspraak.linguistics.Selectie_Renderer": return new regelspraak.linguistics.Selectie_Renderer(node);
+      case "regelspraak.linguistics.SorteerCriterium_Renderer": return new regelspraak.linguistics.SorteerCriterium_Renderer(node);
+      case "regelspraak.linguistics.SubSelectie_Renderer": return new regelspraak.linguistics.SubSelectie_Renderer(node);
+      case "regelspraak.linguistics.Subconditie_Renderer": return new regelspraak.linguistics.Subconditie_Renderer(node);
+      case "regelspraak.linguistics.TekstDeel_Renderer": return new regelspraak.linguistics.TekstDeel_Renderer(node);
+      case "regelspraak.linguistics.TekstExpressie_Renderer": return new regelspraak.linguistics.TekstExpressie_Renderer(node);
+      case "regelspraak.linguistics.TermList_Renderer": return new regelspraak.linguistics.TermList_Renderer(node);
+      case "regelspraak.linguistics.Term_Renderer": return new regelspraak.linguistics.Term_Renderer(node);
+      case "regelspraak.linguistics.TransactieObject_Renderer": return new regelspraak.linguistics.TransactieObject_Renderer(node);
+      case "regelspraak.linguistics.Uniciteit_Renderer": return new regelspraak.linguistics.Uniciteit_Renderer(node);
+      case "regelspraak.linguistics.UnivOnderwerp_Renderer": return new regelspraak.linguistics.UnivOnderwerp_Renderer(node);
+      case "regelspraak.linguistics.UnivVarRef_Renderer": return new regelspraak.linguistics.UnivVarRef_Renderer(node);
+      case "regelspraak.linguistics.VariabeleRef_Renderer": return new regelspraak.linguistics.VariabeleRef_Renderer(node);
+      case "regelspraak.linguistics.Variabele_Renderer": return new regelspraak.linguistics.Variabele_Renderer(node);
+      case "regelspraak.linguistics.Verdeler_Renderer": return new regelspraak.linguistics.Verdeler_Renderer(node);
+      case "regelspraak.linguistics.Verdeling_Renderer": return new regelspraak.linguistics.Verdeling_Renderer(node);
+      case "regelspraak.linguistics.Vergelijking_Renderer": return new regelspraak.linguistics.Vergelijking_Renderer(node);
+      case "regelspraak.linguistics.VerminderdMet_Renderer": return new regelspraak.linguistics.VerminderdMet_Renderer(node);
+      case "regelspraak.linguistics.WerkwoordPredicaat_Renderer": return new regelspraak.linguistics.WerkwoordPredicaat_Renderer(node);
+      case "regelspraak.linguistics.Worteltrekken_Renderer": return new regelspraak.linguistics.Worteltrekken_Renderer(node);
+      default: return null;
+    }
+  }
+  public static linguistics.runtime.EnumRenderer createEnum(String name) {
+    switch (name) {
+      case "gegevensspraak.linguistics.TijdsGranulariteit_Renderer": return new gegevensspraak.linguistics.TijdsGranulariteit_Renderer();
+      case "regelspraak.linguistics.AggregatieFunctie_Renderer": return new regelspraak.linguistics.AggregatieFunctie_Renderer();
+      default: return null;
+    }
+  }
+}

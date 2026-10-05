@@ -1,0 +1,23 @@
+/* Package membership follows the existing lock column. */
+.project .tree button{grid-template-columns:13px 16px minmax(0,1fr) 6px 16px 16px}
+.project .tree-package{grid-column:6;display:flex;align-items:center;justify-content:center;width:16px;height:20px;cursor:help;color:#93857a}
+.project .tree-package>.svg{width:14px;height:14px;stroke-width:1.6}
+.project .tree-package.linked{color:var(--accent);background:#ffead8;border-radius:3px}
+.project .tree-package.linked>.svg{stroke-width:2}
+.project .tree-package.finalized{color:#7b7975}
+.project .tree-package.absent{visibility:hidden}
+.file-menu-heading>.muted{line-height:1.5}
+.file-toolbar #file-release-menu summary>span{max-width:175px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.package-destinations{display:grid;gap:8px;margin:16px 0}
+.modal .package-destinations label{display:flex;align-items:flex-start;gap:10px;margin:0;padding:12px;border:1px solid var(--line);border-radius:5px;cursor:pointer}
+.modal .package-destinations input{flex:0 0 16px;width:16px;height:16px;margin:2px 0 0;accent-color:var(--accent)}
+.package-destinations small{display:block;color:var(--muted);line-height:1.5;margin-top:4px}
+.linked-destinations{display:flex;align-items:center;gap:8px;padding:10px;background:#fff0e2;border:1px solid #f5cfad;border-radius:5px;font-size:12px;line-height:1.5}
+.linked-destinations>.svg{flex:0 0 18px;color:var(--accent)}
+.root-preview{margin:0 24px;padding:18px 22px;max-width:900px;background:#fff;border:1px solid var(--line);border-radius:5px}
+.root-preview-title{display:flex;align-items:center;gap:8px;font-size:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.root-preview-title>span{font-size:11px;color:var(--muted);margin-left:auto}
+.root-preview pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.9 Consolas,monospace;min-height:140px;margin:20px 0}
+.root-preview-inspector{padding:16px 24px;font-size:12px}
+.root-preview-inspector p{color:var(--muted)}
+@media(max-width:800px){.root-preview{margin:0 12px;padding:14px}.root-preview-title{flex-wrap:wrap}.file-toolbar #file-release-menu summary>span{max-width:135px}}

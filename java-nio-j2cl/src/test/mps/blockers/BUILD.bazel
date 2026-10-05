@@ -1,0 +1,8 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+# Diagnostic target. Stock J2CL lacks String.format; this remains outside NIO scope.
+j2cl_library(
+    name = "mps-file-position",
+    srcs = ["FileWithPosition.java", "Immutable.java"],
+    deps = ["//:java-nio"],
+    tags = ["manual"],
+)

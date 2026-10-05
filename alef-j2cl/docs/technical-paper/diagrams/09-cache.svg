@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="500" height="217" preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 217" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="500" height="217"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-217)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="500" height="217" rx="4" ry="0" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.5; fill: rgb(98%,98%,99%); fill-rule: evenodd;"/>
+			<rect x="12" y="158" width="152" height="45" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="43.74487304687499" y="182.85" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,365) scale(1,-1)">Authorized selection</text>
+			<text x="44.236328125" y="170.85" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,341) scale(1,-1)">Baseline + exact versions</text>
+			<rect x="190" y="158" width="145" height="45" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="217.985595703125" y="182.85" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,365) scale(1,-1)">Durable graph cache</text>
+			<text x="227.1939208984375" y="170.85" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,341) scale(1,-1)">Decoder-aware keys</text>
+			<rect x="363" y="158" width="124" height="45" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="398.7470703125" y="182.85" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,365) scale(1,-1)">Comparison</text>
+			<text x="390.5473876953125" y="170.85" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,341) scale(1,-1)">Derived display only</text>
+			<polyline points="164 180.5, 190 180.5" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="190 180.5, 185.6121 182.8971, 185.6121 178.1029" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<polyline points="335 180.5, 363 180.5" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="363 180.5, 358.6121 182.8971, 358.6121 178.1029" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="190" y="66" width="145" height="46" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="211.736572265625" y="91.35" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,182) scale(1,-1)">Decode missing history</text>
+			<text x="226.977734375" y="79.35" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,158) scale(1,-1)">One contents worker</text>
+			<rect x="12" y="66" width="152" height="46" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="29.480224609374993" y="91.35" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,182) scale(1,-1)">Accepted workspace graph</text>
+			<text x="37.2788818359375" y="79.35" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,158) scale(1,-1)">Retained after activation/save</text>
+			<polyline points="262.5 158, 262.5 112" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="262.5 112, 264.8971 116.3879, 260.1029 116.3879" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="267.395849609375" y="129" width="21.20830078124999" height="10" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(98%,98%,99%); fill-rule: evenodd;"/>
+			<text x="270.395849609375" y="131" style="font-family: Body; font-size: 7.4px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,262) scale(1,-1)">Miss</text>
+			<polyline points="88 66, 262.5 203" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="262.5 203, 257.5684 202.1758, 260.529 198.4049" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="132.3046875" y="126" width="27.390625" height="10" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(98%,98%,99%); fill-rule: evenodd;"/>
+			<text x="135.3046875" y="128" style="font-family: Body; font-size: 7.4px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,256) scale(1,-1)">Reuse</text>
+			<text x="138.591796875" y="30" style="font-family: Body; font-size: 8px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,60) scale(1,-1)">Retain decoded inputs, then compose and cache the selection.</text>
+			<text x="144.16015625" y="15" style="font-family: Body; font-size: 8px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,30) scale(1,-1)">Neither a cache hit nor a display graph counts as validation.</text>
+		</g>
+	</g>
+</svg>

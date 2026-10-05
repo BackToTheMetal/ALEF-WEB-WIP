@@ -1,0 +1,15 @@
+diff --git a/src/main/java/java/net/BUILD.bazel b/src/main/java/java/net/BUILD.bazel
+--- a/src/main/java/java/net/BUILD.bazel
++++ b/src/main/java/java/net/BUILD.bazel
+@@ -4,10 +4,5 @@
+ 
+ j2cl_library(
+     name = "uri-j2cl",
+-    srcs = [
+-        "URI.java",
+-        "URISyntaxException.java",
+-        "MalformedURLException.java",
+-        "URL.java",
+-    ],
++    srcs = [],
+ )

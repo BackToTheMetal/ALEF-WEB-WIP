@@ -1,0 +1,25 @@
+flowchart LR
+  classDef browser fill:#d9eee3,stroke:#548768,color:#142e20;
+  classDef desktop fill:#fff0cd,stroke:#aa8735,color:#352909;
+  classDef auxiliary fill:#e8e1f4,stroke:#8c78ae,color:#30223f;
+  classDef absent fill:#f1f3f5,stroke:#a8adb5,color:#434851;
+
+  P["gnu.trove<br/>15 main MPS types · 8 browser"]:::browser
+  D["gnu.trove.decorator<br/>0 main · 0 browser<br/>15 auxiliary types"]:::auxiliary
+  O["Object collections<br/>THashMap · THashSet"]:::browser
+  M["Primitive maps<br/>TIntObjectHashMap · TLongObjectHashMap<br/>TLongIntHashMap · TObjectIntHashMap"]:::browser
+  L["Editor list<br/>TIntArrayList"]:::browser
+  S["Hash strategy<br/>TObjectHashingStrategy"]:::browser
+  G["Generator hash base<br/>THash"]:::desktop
+  I["Workbench integer set<br/>TIntHashSet"]:::desktop
+  A["Other language-runtime lists<br/>TByteArrayList · TDoubleArrayList<br/>TFloatArrayList · TLongArrayList<br/>TShortArrayList"]:::desktop
+  U["Remaining exported types<br/>No direct main-MPS reference<br/>Some are internal dependencies"]:::absent
+  P --- D
+  P --- O
+  P --- M
+  P --- L
+  P --- S
+  P --- G
+  P --- I
+  P --- A
+  P --- U

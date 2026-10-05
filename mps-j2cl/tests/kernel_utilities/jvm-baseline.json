@@ -1,0 +1,13 @@
+{
+  "java_version": "21.0.12.1",
+  "encoding": "UTF-8",
+  "locale": "en-US",
+  "oracle_sources": [
+    "core/kernel/kernelSolution/source_gen/jetbrains/mps/util/StringsIO.java",
+    "core/kernel/source/jetbrains/mps/messages/Message.java",
+    "core/kernel/source/jetbrains/mps/extapi/persistence/SourcePaths.java",
+    "core/kernel/source/jetbrains/mps/extapi/persistence/FileKindIsNotAllowedException.java"
+  ],
+  "coverage": "Scanner line delimiters, partial UTF-8/read/close failures, output closure, message timestamps, diagnostic text and toString ordering",
+  "result_rows": 120
+}

@@ -1,0 +1,15 @@
+{
+  "policy": "Supported flows must execute real behavior; unsupported requests fail. An omitted signature is not a source-compatible stub.",
+  "entries": [
+    {"member":"org.jdom.xpath.XPathFactory.compile / elements (all overloads)","behavior":"UnsupportedOperationException","excludedConsumer":"MPS tools/tools/source/jetbrains/mps/excluded/IDEAProject.java","enableWhen":"A browser consumer requires XPath and a non-reflective engine is implemented and tested"},
+    {"member":"org.jdom.input.sax.XMLReaders.DTDVALIDATING / XSDVALIDATING.createXMLReader","behavior":"JDOMException","reason":"No validating parser; no schema or external resource resolution","enableWhen":"A supported corpus requires validation and a J2CL implementation exists"},
+    {"member":"PortableXmlReader.parse(String), SAXBuilder/SAXEngine/SAXBuilderEngine.build(String)","behavior":"IOException for system-ID-only input","reason":"No implicit filesystem or network loading; pass buffered input"},
+    {"member":"SAXBuilder/SAXEngine/SAXBuilderEngine.build(File/URL)","behavior":"Signature excluded","reason":"Parameter types absent from pinned J2CL JRE; no duplicate java.* stubs introduced"},
+    {"member":"org.jdom.input.DOMBuilder, org.jdom.xpath.XPath, org.jdom.xpath.jaxen.*, org.jdom.xpath.util.*","behavior":"Types excluded","reason":"Desktop DOM/Jaxen and legacy XPath outside selected profile"},
+    {"member":"Format.setEncoding(unsupported)","behavior":"UnsupportedOperationException; existing format unchanged","reason":"Only UTF-8, UTF-16/LE/BE, Latin1 and ASCII implemented"},
+    {"member":"PortableXmlReader DTD/unknown entities/XML 1.1","behavior":"SAXParseException","reason":"Defined nonvalidating XML 1.0 profile; never silently discard an unsupported declaration"},
+    {"member":"PortableXmlReader enabling validation/external entities or disabling namespace/security processing","behavior":"SAXNotSupportedException; unknown feature/property gives SAXNotRecognizedException","reason":"Fixed portable XML backend"},
+    {"member":"CloneBase.clone; subtype clones on Element/Attribute/Text/CDATA/XMLOutputter without a custom implementation","behavior":"UnsupportedOperationException","reason":"J2CL has no Object.clone; Element adds protected newCloneInstance hook"},
+    {"member":"Private Java object serialization hooks","behavior":"Removed; Serializable remains a marker","reason":"Java object serialization is outside the browser runtime"}
+  ]
+}

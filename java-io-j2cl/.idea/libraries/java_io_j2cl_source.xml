@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="java-io-j2cl-source">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/java-io-j2cl-source.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

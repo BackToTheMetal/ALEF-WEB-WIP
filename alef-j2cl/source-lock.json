@@ -1,0 +1,14 @@
+{
+  "alef": {
+    "url": "https://github.com/belastingdienst/ALEF.git",
+    "commit": "96dd99ff70cb88112e578088e2d4b70d6efc4327",
+    "branch_at_checkout": "develop"
+  },
+  "generation": {
+    "mps": "2025.1",
+    "extensions": "2025.1.3226.9d3d593",
+    "maven": "3.9.11"
+  },
+  "bazel": "8.3.1",
+  "j2cl": "20260402"
+}

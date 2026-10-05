@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model ref="r:11111111-2222-3333-4444-555555555555(example.browser.fixture)" content="header">
+  <persistence version="9" />
+  <attribute name="test" value="metadata &lt;&gt;&amp;&quot;&#xA;&#x9;&#x1f642;" />
+  <languages />
+  <imports />
+</model>
+

@@ -1,0 +1,110 @@
+load(":runtime-tests.bzl", "runtime_tests")
+
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+# Stable consumer entry point; implementation package labels may change.
+j2cl_library(
+    name = "webawt",
+    exports = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:awt-foundation-j2cl",
+        "//src/main/java/java/awt:desktop-j2cl",
+        "//src/main/java/java/awt:image-core-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:image-ops-j2cl",
+        "//src/main/java/java/awt:image-renderable-j2cl",
+        "//src/main/java/java/awt:painting-j2cl",
+        "//src/main/java/java/awt/color:color-space-j2cl",
+        "//src/main/java/java/awt/datatransfer:datatransfer-j2cl",
+        "//src/main/java/java/beans:beans-j2cl",
+        "//src/main/java/java/net:uri-j2cl",
+        "//src/main/java/java/text:text-j2cl",
+        "//src/main/java/org/webawt:webawt-j2cl",
+        "//src/main/java/org/webawt/internal/browser:browser-elemental2-j2cl",
+        "//src/main/java/org/webawt/internal/peer:peer-api-j2cl",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+test_suite(
+    name = "all-tests",
+    tests = [
+        "//src/test/portable/com/webawt/portable:ImplicitKeyStrokeJvmTest",
+        "//src/test/portable/com/webawt/portable:ImplicitKeyStrokeJ2clTest",
+        "//src/test/portable/com/webawt/portable:ExtendedApiConsumerJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableEventDispatchJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableCheckboxJ2clTest",
+        "//src/test/dualshowcase/org/webawt/samples/dualshowcase:DualShowcaseJ2clTest",
+        "//src/test/browser/com/webawt/browser:Elemental2BrowserDocumentTest",
+        "//src/test/portable/com/webawt/portable:DnDJ2clTest",
+        "//src/test/portable/com/webawt/portable:DesktopJ2clTest",
+        "//src/test/portable/com/webawt/portable:BufferedImageJ2clTest",
+        "//src/test/portable/com/webawt/portable:FontAndInputJ2clTest",
+        "//src/test/portable/com/webawt/portable:GraphicsEnvironmentJ2clTest",
+        "//src/test/point/com/webawt/point:PointTest",
+        "//src/test/portable/com/webawt/portable:PortableAccessibilityJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableAccessibilityJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableBeansJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableBeansJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableComponentJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableComponentJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableDnDJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableDnDJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableDesktopJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableDesktopJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableEventJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableEventJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableFontValueJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableFontValueJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableGeometryJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableGeometryJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableGridBagJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableGridBagJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableImageJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableImageJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableIccJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableIccJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableMenuJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableMenuJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableRasterValueJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableRasterValueJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableScrollJ2clTest",
+        "//src/test/portable/com/webawt/portable:ImagePipelineJ2clTest",
+        "//src/test/portable/com/webawt/portable:KeyboardFocusManagerJ2clTest",
+        "//src/test/portable/com/webawt/portable:ToolkitJ2clTest",
+        "//src/test/portable/com/webawt/portable:EventQueueJ2clTest",
+        "//src/test/portable/com/webawt/portable:CanvasGraphicsJ2clTest",
+        "//src/test/portable/com/webawt/portable:ColorConvertOpJ2clTest",
+        "//src/test/portable/com/webawt/portable:ColorConvertOpJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableValueTypesJ2clTest",
+        "//src/test/portable/com/webawt/portable:PortableValueTypesJvmTest",
+        "//src/test/portable/com/webawt/portable:WindowEventJ2clTest",
+    ],
+)
+
+test_suite(
+    name = "display-tests",
+    tests = [
+        "//src/test/portable/com/webawt/portable:ExtendedApiConsumerJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableEventDispatchJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableCheckboxJvmTest",
+        "//src/test/dualshowcase/org/webawt/samples/dualshowcase:DualShowcaseJvmTest",
+        "//src/test/portable/com/webawt/portable:PortableScrollJvmTest",
+    ],
+)
+
+test_suite(
+    name = "modern-browser-tests",
+    tests = [
+        "//src/test/playwright/com/webawt/playwright:DualShowcaseChromiumTest",
+        "//src/test/playwright/com/webawt/playwright:DualShowcaseFirefoxTest",
+        "//src/test/playwright/com/webawt/playwright:DualShowcaseWebKitTest",
+        "//src/test/playwright/com/webawt/playwright:WebAwtChromiumTest",
+        "//src/test/playwright/com/webawt/playwright:WebAwtFirefoxTest",
+        "//src/test/playwright/com/webawt/playwright:WebAwtWebKitTest",
+    ],
+)
+
+runtime_tests()
+
+exports_files(glob(["src/test/runtime/**/*.java", "src/test/runtime/**/*.js", "src/test/runtime/**/*.txt"]))

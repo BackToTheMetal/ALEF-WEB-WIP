@@ -1,0 +1,10 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
+load("@rules_closure//closure:defs.bzl", "closure_js_library")
+
+j2cl_library(
+    name = "contracts",
+    srcs = glob(["contract/**/*.java", "portable/**/*.java", "browser/**/*.java", "mps-source/**/*.java"]),
+    deps = ["//:jdom", "//:sax-api", "@j2cl//:jsinterop-annotations-j2cl"],
+)
+closure_js_library(name = "app", srcs = ["browser/app.js"], deps = [":contracts"])
+j2cl_application(name = "browser", entry_points = ["mpsxml.app"], deps = [":app"], jre_class_metadata = "SIMPLE")

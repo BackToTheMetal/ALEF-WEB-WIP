@@ -1,0 +1,488 @@
+[
+  {
+    "action": "AddLanguageImport",
+    "keys": [
+      "ctrl L"
+    ],
+    "kind": "desktop",
+    "command": "Desktop language-import dialog; compiled languages are installed by the browser host."
+  },
+  {
+    "action": "AddModelImportByRoot",
+    "keys": [
+      "ctrl R"
+    ],
+    "kind": "desktop",
+    "command": "Desktop root/import chooser; browser model loading is handled by the application."
+  },
+  {
+    "action": "AddModelImport",
+    "keys": [
+      "ctrl M"
+    ],
+    "kind": "desktop",
+    "command": "Desktop model-import dialog."
+  },
+  {
+    "action": "Backspace",
+    "keys": [
+      "BACK_SPACE"
+    ],
+    "kind": "cell",
+    "command": "BACKSPACE"
+  },
+  {
+    "action": "CollapseAll",
+    "keys": [
+      "ctrl shift SUBTRACT",
+      "ctrl shift MINUS"
+    ],
+    "kind": "cell",
+    "command": "FOLD_ALL"
+  },
+  {
+    "action": "CollapseRecursively",
+    "keys": [
+      "ctrl alt MINUS"
+    ],
+    "kind": "cell",
+    "command": "FOLD_RECURSIVELY"
+  },
+  {
+    "action": "Collapse",
+    "keys": [
+      "ctrl SUBTRACT",
+      "ctrl MINUS"
+    ],
+    "kind": "cell",
+    "command": "FOLD"
+  },
+  {
+    "action": "Comment",
+    "keys": [
+      "ctrl SLASH"
+    ],
+    "kind": "cell",
+    "command": "COMMENT"
+  },
+  {
+    "action": "CompleteSmart",
+    "keys": [
+      "ctrl shift SPACE"
+    ],
+    "kind": "cell",
+    "command": "COMPLETE_SMART"
+  },
+  {
+    "action": "Complete",
+    "keys": [
+      "ctrl SPACE"
+    ],
+    "kind": "cell",
+    "command": "COMPLETE"
+  },
+  {
+    "action": "CopyThisDown",
+    "keys": [
+      "ctrl D"
+    ],
+    "kind": "host",
+    "command": "duplicate",
+    "implementation": "jetbrains.mps.ide.editor.actions.CopyThisDown_Action",
+    "writes": true
+  },
+  {
+    "action": "DeleteLine",
+    "keys": [
+      "ctrl Y"
+    ],
+    "kind": "host",
+    "command": "deleteLine",
+    "implementation": "jetbrains.mps.ide.editor.actions.DeleteLine_Action",
+    "writes": true
+  },
+  {
+    "action": "DeleteToWordEnd",
+    "keys": [
+      "ctrl DELETE"
+    ],
+    "kind": "cell",
+    "command": "DELETE_TO_WORD_END"
+  },
+  {
+    "action": "Delete",
+    "keys": [
+      "DELETE"
+    ],
+    "kind": "cell",
+    "command": "DELETE"
+  },
+  {
+    "action": "End",
+    "keys": [
+      "END"
+    ],
+    "kind": "cell",
+    "command": "END"
+  },
+  {
+    "action": "Escape",
+    "keys": [
+      "ESCAPE"
+    ],
+    "kind": "host",
+    "command": "escape",
+    "implementation": "jetbrains.mps.ide.editor.actions.Escape_Action",
+    "writes": false
+  },
+  {
+    "action": "ExpandAll",
+    "keys": [
+      "ctrl shift ADD",
+      "ctrl shift EQUALS"
+    ],
+    "kind": "cell",
+    "command": "UNFOLD_ALL"
+  },
+  {
+    "action": "ExpandRecursively",
+    "keys": [
+      "ctrl alt EQUALS"
+    ],
+    "kind": "cell",
+    "command": "UNFOLD_RECURSIVELY"
+  },
+  {
+    "action": "Expand",
+    "keys": [
+      "ctrl ADD",
+      "ctrl EQUALS"
+    ],
+    "kind": "cell",
+    "command": "UNFOLD"
+  },
+  {
+    "action": "ExtractComponent",
+    "keys": [
+      "ctrl alt C"
+    ],
+    "kind": "desktop",
+    "command": "Desktop refactoring infrastructure."
+  },
+  {
+    "action": "FindNext",
+    "keys": [
+      "F3"
+    ],
+    "kind": "cell",
+    "command": "FIND_NEXT"
+  },
+  {
+    "action": "FindPrevious",
+    "keys": [
+      "shift F3"
+    ],
+    "kind": "cell",
+    "command": "FIND_PREV"
+  },
+  {
+    "action": "Find",
+    "keys": [
+      "ctrl F"
+    ],
+    "kind": "cell",
+    "command": "FIND"
+  },
+  {
+    "action": "FoldSelection",
+    "keys": [
+      "ctrl PERIOD"
+    ],
+    "kind": "cell",
+    "command": "TOGGLE_FOLDING"
+  },
+  {
+    "action": "GoToDeclarationInMenu",
+    "keys": [
+      "ctrl B"
+    ],
+    "kind": "host",
+    "command": "declaration",
+    "implementation": "jetbrains.mps.ide.editor.actions.GoToDeclarationInMenu_Action",
+    "writes": false
+  },
+  {
+    "action": "GoToDeclaration",
+    "keys": [
+      "ctrl B"
+    ],
+    "kind": "host",
+    "command": "declaration",
+    "implementation": "jetbrains.mps.ide.editor.actions.GoToDeclaration_Action",
+    "writes": false
+  },
+  {
+    "action": "Home",
+    "keys": [
+      "HOME"
+    ],
+    "kind": "cell",
+    "command": "HOME"
+  },
+  {
+    "action": "InsertBefore",
+    "keys": [
+      "INSERT",
+      "shift ENTER"
+    ],
+    "kind": "host",
+    "command": "insertBefore",
+    "implementation": "jetbrains.mps.ide.editor.actions.InsertBefore_Action",
+    "writes": true
+  },
+  {
+    "action": "InsertPlaceholder",
+    "keys": [
+      "ctrl shift ENTER"
+    ],
+    "kind": "host",
+    "command": "insertPlaceholder",
+    "implementation": "jetbrains.mps.ide.editor.actions.InsertPlaceholder_Action",
+    "writes": true
+  },
+  {
+    "action": "Insert",
+    "keys": [
+      "ENTER"
+    ],
+    "kind": "host",
+    "command": "insert",
+    "implementation": "jetbrains.mps.ide.editor.actions.Insert_Action",
+    "writes": true
+  },
+  {
+    "action": "JumpToContextAssistant",
+    "keys": [
+      "ctrl alt ENTER"
+    ],
+    "kind": "host",
+    "command": "contextAssistant",
+    "implementation": "jetbrains.mps.ide.editor.actions.JumpToContextAssistant_Action",
+    "writes": false
+  },
+  {
+    "action": "LocalEnd",
+    "keys": [
+      "ctrl RIGHT"
+    ],
+    "kind": "cell",
+    "command": "LOCAL_END"
+  },
+  {
+    "action": "LocalHome",
+    "keys": [
+      "ctrl LEFT"
+    ],
+    "kind": "cell",
+    "command": "LOCAL_HOME"
+  },
+  {
+    "action": "MoveDown",
+    "keys": [
+      "DOWN"
+    ],
+    "kind": "cell",
+    "command": "DOWN"
+  },
+  {
+    "action": "MoveElementsDown",
+    "keys": [
+      "ctrl shift DOWN"
+    ],
+    "kind": "host",
+    "command": "moveDown",
+    "implementation": "jetbrains.mps.ide.editor.actions.MoveElementsDown_Action",
+    "writes": true
+  },
+  {
+    "action": "MoveElementsUp",
+    "keys": [
+      "ctrl shift UP"
+    ],
+    "kind": "host",
+    "command": "moveUp",
+    "implementation": "jetbrains.mps.ide.editor.actions.MoveElementsUp_Action",
+    "writes": true
+  },
+  {
+    "action": "MoveLeft",
+    "keys": [
+      "LEFT"
+    ],
+    "kind": "cell",
+    "command": "LEFT"
+  },
+  {
+    "action": "MoveRight",
+    "keys": [
+      "RIGHT"
+    ],
+    "kind": "cell",
+    "command": "RIGHT"
+  },
+  {
+    "action": "MoveUp",
+    "keys": [
+      "UP"
+    ],
+    "kind": "cell",
+    "command": "UP"
+  },
+  {
+    "action": "RootEnd",
+    "keys": [
+      "ctrl END"
+    ],
+    "kind": "cell",
+    "command": "ROOT_END"
+  },
+  {
+    "action": "RootHome",
+    "keys": [
+      "ctrl HOME"
+    ],
+    "kind": "cell",
+    "command": "ROOT_HOME"
+  },
+  {
+    "action": "SelectAll",
+    "keys": [
+      "ctrl A"
+    ],
+    "kind": "cell",
+    "command": "SELECT_ALL"
+  },
+  {
+    "action": "SelectDown",
+    "keys": [
+      "ctrl DOWN",
+      "ctrl shift W"
+    ],
+    "kind": "cell",
+    "command": "SELECT_DOWN"
+  },
+  {
+    "action": "SelectLeft",
+    "keys": [
+      "shift LEFT"
+    ],
+    "kind": "cell",
+    "command": "SELECT_LEFT"
+  },
+  {
+    "action": "SelectLocalEnd",
+    "keys": [
+      "ctrl shift RIGHT"
+    ],
+    "kind": "cell",
+    "command": "SELECT_LOCAL_END"
+  },
+  {
+    "action": "SelectLocalHome",
+    "keys": [
+      "ctrl shift LEFT"
+    ],
+    "kind": "cell",
+    "command": "SELECT_LOCAL_HOME"
+  },
+  {
+    "action": "SelectNext",
+    "keys": [
+      "shift DOWN"
+    ],
+    "kind": "cell",
+    "command": "SELECT_NEXT"
+  },
+  {
+    "action": "SelectPrevious",
+    "keys": [
+      "shift UP"
+    ],
+    "kind": "cell",
+    "command": "SELECT_PREVIOUS"
+  },
+  {
+    "action": "SelectRight",
+    "keys": [
+      "shift RIGHT"
+    ],
+    "kind": "cell",
+    "command": "SELECT_RIGHT"
+  },
+  {
+    "action": "SelectUp",
+    "keys": [
+      "ctrl UP",
+      "ctrl W"
+    ],
+    "kind": "cell",
+    "command": "SELECT_UP"
+  },
+  {
+    "action": "ShowGenerationActions",
+    "keys": [
+      "alt INSERT"
+    ],
+    "kind": "desktop",
+    "command": "Desktop generation action group."
+  },
+  {
+    "action": "core.ShowNodeMessages",
+    "keys": [
+      "alt shift M"
+    ],
+    "kind": "desktop",
+    "command": "Desktop node-message tool window; Ctrl+F1 shows the selected diagnostic in the browser."
+  },
+  {
+    "action": "ShowReflectiveEditor",
+    "keys": [
+      "ctrl OPEN_BRACKET"
+    ],
+    "kind": "host",
+    "command": "reflective",
+    "implementation": "jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action",
+    "writes": false
+  },
+  {
+    "action": "ShowReflectiveEditorsForSubtree",
+    "keys": [
+      "ctrl shift OPEN_BRACKET"
+    ],
+    "kind": "host",
+    "command": "reflectiveSubtree",
+    "implementation": "jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action",
+    "writes": false
+  },
+  {
+    "action": "ShowRegularEditor",
+    "keys": [
+      "ctrl CLOSE_BRACKET",
+      "ctrl shift CLOSE_BRACKET"
+    ],
+    "kind": "host",
+    "command": "regular",
+    "implementation": "jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action",
+    "writes": false
+  },
+  {
+    "action": "ShowSurroundWithIntentions",
+    "keys": [
+      "ctrl alt T"
+    ],
+    "kind": "host",
+    "command": "surround",
+    "implementation": "jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action",
+    "writes": true
+  }
+]

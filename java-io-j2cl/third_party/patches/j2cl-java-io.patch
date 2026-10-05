@@ -1,0 +1,1884 @@
+diff --git a/jre/java/java/io/BufferedInputStream.java b/jre/java/java/io/BufferedInputStream.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/BufferedInputStream.java
+@@ -0,0 +1,15 @@
++package java.io;
++
++/** Lightweight buffering-compatible wrapper over J2CL's existing InputStream. */
++public class BufferedInputStream extends FilterInputStream {
++  public BufferedInputStream(InputStream input) {
++    this(input, 8192);
++  }
++
++  public BufferedInputStream(InputStream input, int size) {
++    super(input);
++    if (size <= 0) {
++      throw new IllegalArgumentException("Buffer size <= 0");
++    }
++  }
++}
+diff --git a/jre/java/java/io/BufferedOutputStream.java b/jre/java/java/io/BufferedOutputStream.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/BufferedOutputStream.java
+@@ -0,0 +1,15 @@
++package java.io;
++
++/** Lightweight buffering-compatible wrapper over J2CL's existing OutputStream. */
++public class BufferedOutputStream extends FilterOutputStream {
++  public BufferedOutputStream(OutputStream output) {
++    this(output, 8192);
++  }
++
++  public BufferedOutputStream(OutputStream output, int size) {
++    super(output);
++    if (size <= 0) {
++      throw new IllegalArgumentException("Buffer size <= 0");
++    }
++  }
++}
+diff --git a/jre/java/java/io/BufferedReader.java b/jre/java/java/io/BufferedReader.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/BufferedReader.java
+@@ -0,0 +1,132 @@
++package java.io;
++
++/** Reader wrapper with line handling and delegated mark/reset behavior. */
++public class BufferedReader extends Reader {
++  private final Reader input;
++  private int pending = -1;
++  private int markedPending = -1;
++  private boolean closed;
++
++  public BufferedReader(Reader input, int size) {
++    if (input == null) {
++      throw new NullPointerException("input");
++    }
++    if (size <= 0) {
++      throw new IllegalArgumentException("Buffer size <= 0");
++    }
++    this.input = input;
++  }
++
++  public BufferedReader(Reader input) {
++    this(input, 8192);
++  }
++
++  private void ensureOpen() throws IOException {
++    if (closed) {
++      throw new IOException("Stream closed");
++    }
++  }
++
++  @Override
++  public int read() throws IOException {
++    ensureOpen();
++    if (pending != -1) {
++      int value = pending;
++      pending = -1;
++      return value;
++    }
++    return input.read();
++  }
++
++  @Override
++  public int read(char[] buffer, int offset, int length) throws IOException {
++    ensureOpen();
++    if (buffer == null) {
++      throw new NullPointerException("buffer");
++    }
++    if (offset < 0 || length < 0 || offset > buffer.length - length) {
++      throw new IndexOutOfBoundsException();
++    }
++    if (length == 0) {
++      return 0;
++    }
++    int count = 0;
++    if (pending != -1) {
++      buffer[offset++] = (char) pending;
++      pending = -1;
++      length--;
++      count++;
++    }
++    if (length == 0) {
++      return count;
++    }
++    int read = input.read(buffer, offset, length);
++    return read == -1 ? (count == 0 ? -1 : count) : count + read;
++  }
++
++  public String readLine() throws IOException {
++    ensureOpen();
++    StringBuilder line = new StringBuilder();
++    int value;
++    while ((value = read()) != -1) {
++      if (value == '\n') {
++        break;
++      }
++      if (value == '\r') {
++        int next = read();
++        if (next != '\n' && next != -1) {
++          pending = next;
++        }
++        break;
++      }
++      line.append((char) value);
++    }
++    return value == -1 && line.length() == 0 ? null : line.toString();
++  }
++
++  @Override
++  public long skip(long count) throws IOException {
++    ensureOpen();
++    if (count < 0) {
++      throw new IllegalArgumentException("skip value is negative");
++    }
++    long skipped = 0;
++    while (skipped < count && read() != -1) {
++      skipped++;
++    }
++    return skipped;
++  }
++
++  @Override
++  public boolean ready() throws IOException {
++    ensureOpen();
++    return pending != -1 || input.ready();
++  }
++
++  @Override
++  public boolean markSupported() {
++    return input.markSupported();
++  }
++
++  @Override
++  public void mark(int readAheadLimit) throws IOException {
++    ensureOpen();
++    input.mark(readAheadLimit);
++    markedPending = pending;
++  }
++
++  @Override
++  public void reset() throws IOException {
++    ensureOpen();
++    input.reset();
++    pending = markedPending;
++  }
++
++  @Override
++  public void close() throws IOException {
++    if (!closed) {
++      closed = true;
++      input.close();
++    }
++  }
++}
+diff --git a/jre/java/java/io/CharArrayReader.java b/jre/java/java/io/CharArrayReader.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/CharArrayReader.java
+@@ -0,0 +1,100 @@
++package java.io;
++
++/** In-memory character reader. */
++public class CharArrayReader extends Reader {
++  protected char[] buf;
++  protected int pos;
++  protected int markedPos;
++  protected int count;
++
++  public CharArrayReader(char[] buffer) {
++    this(buffer, 0, buffer.length);
++  }
++
++  public CharArrayReader(char[] buffer, int offset, int length) {
++    if (buffer == null) {
++      throw new NullPointerException("buffer");
++    }
++    if (offset < 0 || length < 0 || offset > buffer.length - length) {
++      throw new IllegalArgumentException();
++    }
++    buf = buffer;
++    pos = offset;
++    markedPos = offset;
++    count = Math.min(offset + length, buffer.length);
++  }
++
++  private void ensureOpen() throws IOException {
++    if (buf == null) {
++      throw new IOException("Stream closed");
++    }
++  }
++
++  @Override
++  public int read() throws IOException {
++    ensureOpen();
++    return pos >= count ? -1 : buf[pos++];
++  }
++
++  @Override
++  public int read(char[] buffer, int offset, int length) throws IOException {
++    ensureOpen();
++    if (buffer == null) {
++      throw new NullPointerException("buffer");
++    }
++    if (offset < 0 || length < 0 || offset > buffer.length - length) {
++      throw new IndexOutOfBoundsException();
++    }
++    if (length == 0) {
++      return 0;
++    }
++    if (pos >= count) {
++      return -1;
++    }
++    int actual = Math.min(length, count - pos);
++    for (int i = 0; i < actual; i++) {
++      buffer[offset + i] = buf[pos + i];
++    }
++    pos += actual;
++    return actual;
++  }
++
++  @Override
++  public long skip(long amount) throws IOException {
++    ensureOpen();
++    if (amount <= 0) {
++      return 0;
++    }
++    int actual = (int) Math.min(amount, count - pos);
++    pos += actual;
++    return actual;
++  }
++
++  @Override
++  public boolean ready() throws IOException {
++    ensureOpen();
++    return pos < count;
++  }
++
++  @Override
++  public boolean markSupported() {
++    return true;
++  }
++
++  @Override
++  public void mark(int readAheadLimit) throws IOException {
++    ensureOpen();
++    markedPos = pos;
++  }
++
++  @Override
++  public void reset() throws IOException {
++    ensureOpen();
++    pos = markedPos;
++  }
++
++  @Override
++  public void close() {
++    buf = null;
++  }
++}
+diff --git a/jre/java/java/io/CharArrayWriter.java b/jre/java/java/io/CharArrayWriter.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/CharArrayWriter.java
+@@ -0,0 +1,97 @@
++package java.io;
++
++/** Growable in-memory character writer. */
++public class CharArrayWriter extends Writer {
++  protected char[] buf;
++  protected int count;
++
++  public CharArrayWriter() {
++    this(32);
++  }
++
++  public CharArrayWriter(int initialSize) {
++    if (initialSize < 0) {
++      throw new IllegalArgumentException("Negative initial size: " + initialSize);
++    }
++    buf = new char[initialSize];
++  }
++
++  private void ensureCapacity(int minimum) {
++    if (minimum <= buf.length) {
++      return;
++    }
++    int nextLength = Math.max(minimum, Math.max(1, buf.length * 2));
++    char[] next = new char[nextLength];
++    for (int i = 0; i < count; i++) {
++      next[i] = buf[i];
++    }
++    buf = next;
++  }
++
++  @Override
++  public void write(int value) {
++    ensureCapacity(count + 1);
++    buf[count++] = (char) value;
++  }
++
++  @Override
++  public void write(char[] source, int offset, int length) {
++    if (source == null) {
++      throw new NullPointerException("source");
++    }
++    if (offset < 0 || length < 0 || offset > source.length - length) {
++      throw new IndexOutOfBoundsException();
++    }
++    ensureCapacity(count + length);
++    for (int i = 0; i < length; i++) {
++      buf[count + i] = source[offset + i];
++    }
++    count += length;
++  }
++
++  @Override
++  public void write(String value, int offset, int length) {
++    if (value == null) {
++      throw new NullPointerException("value");
++    }
++    if (offset < 0 || length < 0 || offset > value.length() - length) {
++      throw new IndexOutOfBoundsException();
++    }
++    ensureCapacity(count + length);
++    for (int i = 0; i < length; i++) {
++      buf[count + i] = value.charAt(offset + i);
++    }
++    count += length;
++  }
++
++  public void writeTo(Writer output) throws IOException {
++    output.write(buf, 0, count);
++  }
++
++  public void reset() {
++    count = 0;
++  }
++
++  public char[] toCharArray() {
++    char[] result = new char[count];
++    for (int i = 0; i < count; i++) {
++      result[i] = buf[i];
++    }
++    return result;
++  }
++
++  public int size() {
++    return count;
++  }
++
++  @Override
++  public String toString() {
++    return new String(buf, 0, count);
++  }
++
++  @Override
++  public void flush() {}
++
++  @Override
++  public void close() {}
++}
+diff --git a/jre/java/java/io/DataInput.java b/jre/java/java/io/DataInput.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/DataInput.java
+@@ -0,0 +1,33 @@
++package java.io;
++
++public interface DataInput {
++  void readFully(byte[] buffer) throws IOException;
++
++  void readFully(byte[] buffer, int offset, int length) throws IOException;
++
++  int skipBytes(int count) throws IOException;
++
++  boolean readBoolean() throws IOException;
++
++  byte readByte() throws IOException;
++
++  int readUnsignedByte() throws IOException;
++
++  short readShort() throws IOException;
++
++  int readUnsignedShort() throws IOException;
++
++  char readChar() throws IOException;
++
++  int readInt() throws IOException;
++
++  long readLong() throws IOException;
++
++  float readFloat() throws IOException;
++
++  double readDouble() throws IOException;
++
++  String readLine() throws IOException;
++
++  String readUTF() throws IOException;
++}
+diff --git a/jre/java/java/io/DataInputStream.java b/jre/java/java/io/DataInputStream.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/DataInputStream.java
+@@ -0,0 +1,180 @@
++package java.io;
++
++/** Big-endian primitive input over J2CL's existing InputStream. */
++public class DataInputStream extends FilterInputStream implements DataInput {
++  public DataInputStream(InputStream input) {
++    super(input);
++  }
++
++  @Override
++  public final int read(byte[] buffer) throws IOException {
++    return in.read(buffer, 0, buffer.length);
++  }
++
++  @Override
++  public final int read(byte[] buffer, int offset, int length) throws IOException {
++    return in.read(buffer, offset, length);
++  }
++
++  @Override
++  public final void readFully(byte[] buffer) throws IOException {
++    readFully(buffer, 0, buffer.length);
++  }
++
++  @Override
++  public final void readFully(byte[] buffer, int offset, int length) throws IOException {
++    if (buffer == null) {
++      throw new NullPointerException("buffer");
++    }
++    if (offset < 0 || length < 0 || offset > buffer.length - length) {
++      throw new IndexOutOfBoundsException();
++    }
++    int consumed = 0;
++    while (consumed < length) {
++      int count = in.read(buffer, offset + consumed, length - consumed);
++      if (count < 0) {
++        throw new EOFException();
++      }
++      if (count == 0) {
++        int value = in.read();
++        if (value < 0) {
++          throw new EOFException();
++        }
++        buffer[offset + consumed] = (byte) value;
++        consumed++;
++      } else {
++        consumed += count;
++      }
++    }
++  }
++
++  @Override
++  public final int skipBytes(int count) throws IOException {
++    int skipped = 0;
++    while (skipped < count) {
++      long step = in.skip(count - skipped);
++      if (step <= 0) {
++        if (in.read() < 0) {
++          break;
++        }
++        step = 1;
++      }
++      skipped += (int) step;
++    }
++    return skipped;
++  }
++
++  private int required() throws IOException {
++    int value = in.read();
++    if (value < 0) {
++      throw new EOFException();
++    }
++    return value;
++  }
++
++  @Override
++  public final boolean readBoolean() throws IOException {
++    return required() != 0;
++  }
++
++  @Override
++  public final byte readByte() throws IOException {
++    return (byte) required();
++  }
++
++  @Override
++  public final int readUnsignedByte() throws IOException {
++    return required();
++  }
++
++  @Override
++  public final short readShort() throws IOException {
++    return (short) ((required() << 8) | required());
++  }
++
++  @Override
++  public final int readUnsignedShort() throws IOException {
++    return (required() << 8) | required();
++  }
++
++  @Override
++  public final char readChar() throws IOException {
++    return (char) readUnsignedShort();
++  }
++
++  @Override
++  public final int readInt() throws IOException {
++    return (required() << 24) | (required() << 16) | (required() << 8) | required();
++  }
++
++  @Override
++  public final long readLong() throws IOException {
++    return ((long) readInt() << 32) | (readInt() & 0xffffffffL);
++  }
++
++  @Override
++  public final float readFloat() throws IOException {
++    return Float.intBitsToFloat(readInt());
++  }
++
++  @Override
++  public final double readDouble() throws IOException {
++    return Double.longBitsToDouble(readLong());
++  }
++
++  @Override
++  public final String readLine() throws IOException {
++    StringBuilder result = new StringBuilder();
++    int value;
++    while ((value = in.read()) >= 0) {
++      if (value == '\n' || value == '\r') {
++        break;
++      }
++      result.append((char) value);
++    }
++    return value < 0 && result.length() == 0 ? null : result.toString();
++  }
++
++  @Override
++  public final String readUTF() throws IOException {
++    return readUTF(this);
++  }
++
++  public static final String readUTF(DataInput input) throws IOException {
++    int byteLength = input.readUnsignedShort();
++    byte[] data = new byte[byteLength];
++    input.readFully(data);
++    char[] characters = new char[byteLength];
++    int inputIndex = 0;
++    int outputIndex = 0;
++    while (inputIndex < byteLength) {
++      int first = data[inputIndex++] & 0xff;
++      if ((first & 0x80) == 0) {
++        characters[outputIndex++] = (char) first;
++      } else if ((first & 0xe0) == 0xc0) {
++        if (inputIndex >= byteLength) {
++          throw new UTFDataFormatException("partial character at end");
++        }
++        int second = data[inputIndex++] & 0xff;
++        if ((second & 0xc0) != 0x80) {
++          throw new UTFDataFormatException("malformed input");
++        }
++        characters[outputIndex++] = (char) (((first & 0x1f) << 6) | (second & 0x3f));
++      } else if ((first & 0xf0) == 0xe0) {
++        if (inputIndex + 1 >= byteLength) {
++          throw new UTFDataFormatException("partial character at end");
++        }
++        int second = data[inputIndex++] & 0xff;
++        int third = data[inputIndex++] & 0xff;
++        if ((second & 0xc0) != 0x80 || (third & 0xc0) != 0x80) {
++          throw new UTFDataFormatException("malformed input");
++        }
++        characters[outputIndex++] =
++            (char) (((first & 0x0f) << 12) | ((second & 0x3f) << 6) | (third & 0x3f));
++      } else {
++        throw new UTFDataFormatException("malformed input");
++      }
++    }
++    return new String(characters, 0, outputIndex);
++  }
++}
+diff --git a/jre/java/java/io/DataOutput.java b/jre/java/java/io/DataOutput.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/DataOutput.java
+@@ -0,0 +1,31 @@
++package java.io;
++
++public interface DataOutput {
++  void write(int value) throws IOException;
++
++  void write(byte[] buffer) throws IOException;
++
++  void write(byte[] buffer, int offset, int length) throws IOException;
++
++  void writeBoolean(boolean value) throws IOException;
++
++  void writeByte(int value) throws IOException;
++
++  void writeShort(int value) throws IOException;
++
++  void writeChar(int value) throws IOException;
++
++  void writeInt(int value) throws IOException;
++
++  void writeLong(long value) throws IOException;
++
++  void writeFloat(float value) throws IOException;
++
++  void writeDouble(double value) throws IOException;
++
++  void writeBytes(String value) throws IOException;
++
++  void writeChars(String value) throws IOException;
++
++  void writeUTF(String value) throws IOException;
++}
+diff --git a/jre/java/java/io/DataOutputStream.java b/jre/java/java/io/DataOutputStream.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/DataOutputStream.java
+@@ -0,0 +1,121 @@
++package java.io;
++
++/** Big-endian primitive output over J2CL's existing OutputStream. */
++public class DataOutputStream extends FilterOutputStream implements DataOutput {
++  protected int written;
++
++  public DataOutputStream(OutputStream output) {
++    super(output);
++  }
++
++  private void increment(int count) {
++    int next = written + count;
++    written = next < 0 ? Integer.MAX_VALUE : next;
++  }
++
++  @Override
++  public synchronized void write(int value) throws IOException {
++    out.write(value);
++    increment(1);
++  }
++
++  @Override
++  public synchronized void write(byte[] buffer, int offset, int length) throws IOException {
++    out.write(buffer, offset, length);
++    increment(length);
++  }
++
++  @Override
++  public void flush() throws IOException {
++    out.flush();
++  }
++
++  @Override
++  public final void writeBoolean(boolean value) throws IOException {
++    write(value ? 1 : 0);
++  }
++
++  @Override
++  public final void writeByte(int value) throws IOException {
++    write(value);
++  }
++
++  @Override
++  public final void writeShort(int value) throws IOException {
++    write(value >>> 8);
++    write(value);
++  }
++
++  @Override
++  public final void writeChar(int value) throws IOException {
++    writeShort(value);
++  }
++
++  @Override
++  public final void writeInt(int value) throws IOException {
++    write(value >>> 24);
++    write(value >>> 16);
++    write(value >>> 8);
++    write(value);
++  }
++
++  @Override
++  public final void writeLong(long value) throws IOException {
++    writeInt((int) (value >>> 32));
++    writeInt((int) value);
++  }
++
++  @Override
++  public final void writeFloat(float value) throws IOException {
++    writeInt(Float.floatToIntBits(value));
++  }
++
++  @Override
++  public final void writeDouble(double value) throws IOException {
++    writeLong(Double.doubleToLongBits(value));
++  }
++
++  @Override
++  public final void writeBytes(String value) throws IOException {
++    for (int i = 0; i < value.length(); i++) {
++      writeByte(value.charAt(i));
++    }
++  }
++
++  @Override
++  public final void writeChars(String value) throws IOException {
++    for (int i = 0; i < value.length(); i++) {
++      writeChar(value.charAt(i));
++    }
++  }
++
++  @Override
++  public final void writeUTF(String value) throws IOException {
++    int encodedLength = 0;
++    for (int i = 0; i < value.length(); i++) {
++      int character = value.charAt(i);
++      encodedLength += character >= 0x0001 && character <= 0x007f ? 1 : character > 0x07ff ? 3 : 2;
++    }
++    if (encodedLength > 65535) {
++      throw new UTFDataFormatException("encoded string too long: " + encodedLength + " bytes");
++    }
++    writeShort(encodedLength);
++    for (int i = 0; i < value.length(); i++) {
++      int character = value.charAt(i);
++      if (character >= 0x0001 && character <= 0x007f) {
++        writeByte(character);
++      } else if (character > 0x07ff) {
++        writeByte(0xe0 | ((character >> 12) & 0x0f));
++        writeByte(0x80 | ((character >> 6) & 0x3f));
++        writeByte(0x80 | (character & 0x3f));
++      } else {
++        writeByte(0xc0 | ((character >> 6) & 0x1f));
++        writeByte(0x80 | (character & 0x3f));
++      }
++    }
++  }
++
++  public final int size() {
++    return written;
++  }
++}
+diff --git a/jre/java/java/io/EOFException.java b/jre/java/java/io/EOFException.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/EOFException.java
+@@ -0,0 +1,10 @@
++package java.io;
++
++/** Signals that an input stream ended before a complete value was read. */
++public class EOFException extends IOException {
++  public EOFException() {}
++
++  public EOFException(String message) {
++    super(message);
++  }
++}
+diff --git a/jre/java/java/io/File.java b/jre/java/java/io/File.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/File.java
+@@ -0,0 +1,264 @@
++package java.io;
++
++/**
++ * Lexical browser profile of {@code File}.
++ *
++ * <p>The class represents a path but is not connected to persistent storage. Queries describe a
++ * permanently absent filesystem; operations that would create resources fail explicitly.
++ */
++public class File implements Serializable, Comparable<File> {
++  private static final long serialVersionUID = 301077366599181567L;
++
++  public static final char separatorChar = '/';
++  public static final String separator = "/";
++  public static final char pathSeparatorChar = ':';
++  public static final String pathSeparator = ":";
++
++  private final String path;
++
++  public File(String pathname) {
++    if (pathname == null) {
++      throw new NullPointerException("pathname");
++    }
++    path = pathname;
++  }
++
++  public File(String parent, String child) {
++    this(join(parent, child));
++  }
++
++  public File(File parent, String child) {
++    this(parent == null ? child : join(parent.path, child));
++  }
++
++  private static String join(String parent, String child) {
++    if (child == null) {
++      throw new NullPointerException("child");
++    }
++    if (parent == null || parent.length() == 0) {
++      return child;
++    }
++    char last = parent.charAt(parent.length() - 1);
++    return last == '/' || last == '\\' ? parent + child : parent + separatorChar + child;
++  }
++
++  private static int lastSeparator(String value) {
++    return Math.max(value.lastIndexOf('/'), value.lastIndexOf('\\'));
++  }
++
++  public String getName() {
++    int separatorIndex = lastSeparator(path);
++    return path.substring(separatorIndex + 1);
++  }
++
++  public String getParent() {
++    int separatorIndex = lastSeparator(path);
++    if (separatorIndex < 0) {
++      return null;
++    }
++    if (separatorIndex == 0) {
++      return path.length() == 1 ? null : path.substring(0, 1);
++    }
++    return path.substring(0, separatorIndex);
++  }
++
++  public File getParentFile() {
++    String parent = getParent();
++    return parent == null ? null : new File(parent);
++  }
++
++  public String getPath() {
++    return path;
++  }
++
++  public boolean isAbsolute() {
++    if (path.length() == 0) {
++      return false;
++    }
++    char first = path.charAt(0);
++    return first == '/' || first == '\\' || (path.length() > 1 && path.charAt(1) == ':');
++  }
++
++  public String getAbsolutePath() {
++    return isAbsolute() ? path : separator + path;
++  }
++
++  public File getAbsoluteFile() {
++    return new File(getAbsolutePath());
++  }
++
++  public String getCanonicalPath() throws IOException {
++    return getAbsolutePath();
++  }
++
++  public File getCanonicalFile() throws IOException {
++    return new File(getCanonicalPath());
++  }
++
++  public boolean canRead() {
++    return false;
++  }
++
++  public boolean canWrite() {
++    return false;
++  }
++
++  public boolean exists() {
++    return false;
++  }
++
++  public boolean isDirectory() {
++    return false;
++  }
++
++  public boolean isFile() {
++    return false;
++  }
++
++  public boolean isHidden() {
++    return false;
++  }
++
++  public long lastModified() {
++    return 0L;
++  }
++
++  public long length() {
++    return 0L;
++  }
++
++  public boolean createNewFile() throws IOException {
++    throw unsupported("createNewFile");
++  }
++
++  public boolean delete() {
++    return false;
++  }
++
++  public void deleteOnExit() {
++    throw new UnsupportedOperationException("java.io.File.deleteOnExit has no browser backend");
++  }
++
++  public String[] list() {
++    return null;
++  }
++
++  public String[] list(FilenameFilter filter) {
++    return null;
++  }
++
++  public File[] listFiles() {
++    return null;
++  }
++
++  public File[] listFiles(FilenameFilter filter) {
++    return null;
++  }
++
++  public File[] listFiles(FileFilter filter) {
++    return null;
++  }
++
++  public boolean mkdir() {
++    return false;
++  }
++
++  public boolean mkdirs() {
++    return false;
++  }
++
++  public boolean renameTo(File destination) {
++    if (destination == null) {
++      throw new NullPointerException("destination");
++    }
++    return false;
++  }
++
++  public boolean setLastModified(long time) {
++    if (time < 0L) {
++      throw new IllegalArgumentException("Negative time");
++    }
++    return false;
++  }
++
++  public boolean setReadOnly() {
++    return false;
++  }
++
++  public boolean setWritable(boolean writable, boolean ownerOnly) {
++    return false;
++  }
++
++  public boolean setWritable(boolean writable) {
++    return false;
++  }
++
++  public boolean setReadable(boolean readable, boolean ownerOnly) {
++    return false;
++  }
++
++  public boolean setReadable(boolean readable) {
++    return false;
++  }
++
++  public boolean setExecutable(boolean executable, boolean ownerOnly) {
++    return false;
++  }
++
++  public boolean setExecutable(boolean executable) {
++    return false;
++  }
++
++  public boolean canExecute() {
++    return false;
++  }
++
++  public static File[] listRoots() {
++    return new File[0];
++  }
++
++  public long getTotalSpace() {
++    return 0L;
++  }
++
++  public long getFreeSpace() {
++    return 0L;
++  }
++
++  public long getUsableSpace() {
++    return 0L;
++  }
++
++  public static File createTempFile(String prefix, String suffix, File directory)
++      throws IOException {
++    throw unsupported("createTempFile");
++  }
++
++  public static File createTempFile(String prefix, String suffix) throws IOException {
++    throw unsupported("createTempFile");
++  }
++
++  private static IOException unsupported(String operation) {
++    return new IOException("java.io.File." + operation + " has no browser storage backend");
++  }
++
++  @Override
++  public int compareTo(File other) {
++    return path.compareTo(other.path);
++  }
++
++  @Override
++  public boolean equals(Object other) {
++    return other instanceof File && path.equals(((File) other).path);
++  }
++
++  @Override
++  public int hashCode() {
++    return path.hashCode();
++  }
++
++  @Override
++  public String toString() {
++    return path;
++  }
++}
+diff --git a/jre/java/java/io/FileFilter.java b/jre/java/java/io/FileFilter.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/FileFilter.java
+@@ -0,0 +1,6 @@
++package java.io;
++
++@FunctionalInterface
++public interface FileFilter {
++  boolean accept(File pathname);
++}
+diff --git a/jre/java/java/io/FileInputStream.java b/jre/java/java/io/FileInputStream.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/FileInputStream.java
+@@ -0,0 +1,24 @@
++package java.io;
++
++/** Filesystem-backed input is deliberately unavailable in the browser profile. */
++public class FileInputStream extends InputStream {
++  private final String path;
++
++  public FileInputStream(String name) throws FileNotFoundException {
++    path = name;
++    throw unavailable(name);
++  }
++
++  public FileInputStream(File file) throws FileNotFoundException {
++    this(file == null ? null : file.getPath());
++  }
++
++  private static FileNotFoundException unavailable(String path) {
++    return new FileNotFoundException(String.valueOf(path) + " (no browser filesystem backend)");
++  }
++
++  @Override
++  public int read() throws IOException {
++    throw new IOException(path + " (no browser filesystem backend)");
++  }
++}
+diff --git a/jre/java/java/io/FileNotFoundException.java b/jre/java/java/io/FileNotFoundException.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/FileNotFoundException.java
+@@ -0,0 +1,10 @@
++package java.io;
++
++/** Browser-profile file access failure. */
++public class FileNotFoundException extends IOException {
++  public FileNotFoundException() {}
++
++  public FileNotFoundException(String message) {
++    super(message);
++  }
++}
+diff --git a/jre/java/java/io/FileOutputStream.java b/jre/java/java/io/FileOutputStream.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/FileOutputStream.java
+@@ -0,0 +1,32 @@
++package java.io;
++
++/** Filesystem-backed output is deliberately unavailable in the browser profile. */
++public class FileOutputStream extends OutputStream {
++  private final String path;
++
++  public FileOutputStream(String name) throws FileNotFoundException {
++    this(name, false);
++  }
++
++  public FileOutputStream(String name, boolean append) throws FileNotFoundException {
++    path = name;
++    throw unavailable(name);
++  }
++
++  public FileOutputStream(File file) throws FileNotFoundException {
++    this(file, false);
++  }
++
++  public FileOutputStream(File file, boolean append) throws FileNotFoundException {
++    this(file == null ? null : file.getPath(), append);
++  }
++
++  private static FileNotFoundException unavailable(String path) {
++    return new FileNotFoundException(String.valueOf(path) + " (no browser filesystem backend)");
++  }
++
++  @Override
++  public void write(int value) throws IOException {
++    throw new IOException(path + " (no browser filesystem backend)");
++  }
++}
+diff --git a/jre/java/java/io/FileReader.java b/jre/java/java/io/FileReader.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/FileReader.java
+@@ -0,0 +1,22 @@
++package java.io;
++
++import java.nio.charset.Charset;
++
++/** File reader declaration; construction fails because no browser filesystem is present. */
++public class FileReader extends InputStreamReader {
++  public FileReader(String fileName) throws FileNotFoundException {
++    super(new FileInputStream(fileName));
++  }
++
++  public FileReader(File file) throws FileNotFoundException {
++    super(new FileInputStream(file));
++  }
++
++  public FileReader(String fileName, Charset charset) throws IOException {
++    super(new FileInputStream(fileName), charset);
++  }
++
++  public FileReader(File file, Charset charset) throws IOException {
++    super(new FileInputStream(file), charset);
++  }
++}
+diff --git a/jre/java/java/io/FileWriter.java b/jre/java/java/io/FileWriter.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/FileWriter.java
+@@ -0,0 +1,38 @@
++package java.io;
++
++import java.nio.charset.Charset;
++
++/** File writer declaration; construction fails because no browser filesystem is present. */
++public class FileWriter extends OutputStreamWriter {
++  public FileWriter(String fileName) throws IOException {
++    super(new FileOutputStream(fileName));
++  }
++
++  public FileWriter(String fileName, boolean append) throws IOException {
++    super(new FileOutputStream(fileName, append));
++  }
++
++  public FileWriter(File file) throws IOException {
++    super(new FileOutputStream(file));
++  }
++
++  public FileWriter(File file, boolean append) throws IOException {
++    super(new FileOutputStream(file, append));
++  }
++
++  public FileWriter(String fileName, Charset charset) throws IOException {
++    super(new FileOutputStream(fileName), charset);
++  }
++
++  public FileWriter(String fileName, Charset charset, boolean append) throws IOException {
++    super(new FileOutputStream(fileName, append), charset);
++  }
++
++  public FileWriter(File file, Charset charset) throws IOException {
++    super(new FileOutputStream(file), charset);
++  }
++
++  public FileWriter(File file, Charset charset, boolean append) throws IOException {
++    super(new FileOutputStream(file, append), charset);
++  }
++}
+diff --git a/jre/java/java/io/FilenameFilter.java b/jre/java/java/io/FilenameFilter.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/FilenameFilter.java
+@@ -0,0 +1,6 @@
++package java.io;
++
++@FunctionalInterface
++public interface FilenameFilter {
++  boolean accept(File dir, String name);
++}
+diff --git a/jre/java/java/io/IOError.java b/jre/java/java/io/IOError.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/IOError.java
+@@ -0,0 +1,10 @@
++package java.io;
++
++/** Error wrapper retained for source compatibility. */
++public class IOError extends Error {
++  private static final long serialVersionUID = 67100927991680413L;
++
++  public IOError(Throwable cause) {
++    super(cause);
++  }
++}
+diff --git a/jre/java/java/io/InputStreamReader.java b/jre/java/java/io/InputStreamReader.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/InputStreamReader.java
+@@ -0,0 +1,118 @@
++package java.io;
++
++import java.nio.charset.Charset;
++import javaemul.internal.EmulatedCharset;
++
++/** Character reader backed by J2CL's existing charset implementations. */
++public class InputStreamReader extends Reader {
++  private final InputStream input;
++  private final Charset charset;
++  private char[] characters;
++  private int position;
++  private boolean closed;
++
++  public InputStreamReader(InputStream input) {
++    this(input, Charset.defaultCharset());
++  }
++
++  public InputStreamReader(InputStream input, String charsetName)
++      throws UnsupportedEncodingException {
++    if (input == null) {
++      throw new NullPointerException("input");
++    }
++    if (charsetName == null) {
++      throw new NullPointerException("charsetName");
++    }
++    try {
++      this.input = input;
++      charset = Charset.forName(charsetName);
++    } catch (RuntimeException exception) {
++      throw new UnsupportedEncodingException(charsetName);
++    }
++  }
++
++  public InputStreamReader(InputStream input, Charset charset) {
++    if (input == null || charset == null) {
++      throw new NullPointerException();
++    }
++    this.input = input;
++    this.charset = charset;
++  }
++
++  public String getEncoding() {
++    return closed ? null : charset.name();
++  }
++
++  private void load() throws IOException {
++    if (closed) {
++      throw new IOException("Stream closed");
++    }
++    if (characters != null) {
++      return;
++    }
++    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
++    byte[] buffer = new byte[1024];
++    int count;
++    while ((count = input.read(buffer, 0, buffer.length)) != -1) {
++      if (count == 0) {
++        int value = input.read();
++        if (value == -1) {
++          break;
++        }
++        bytes.write(value);
++      } else {
++        bytes.write(buffer, 0, count);
++      }
++    }
++    byte[] encoded = bytes.toByteArray();
++    if (!(charset instanceof EmulatedCharset)) {
++      throw new UnsupportedEncodingException(charset.name());
++    }
++    characters = ((EmulatedCharset) charset).decodeString(encoded, 0, encoded.length);
++  }
++
++  @Override
++  public int read() throws IOException {
++    load();
++    return position >= characters.length ? -1 : characters[position++];
++  }
++
++  @Override
++  public int read(char[] buffer, int offset, int length) throws IOException {
++    if (buffer == null) {
++      throw new NullPointerException("buffer");
++    }
++    if (offset < 0 || length < 0 || offset > buffer.length - length) {
++      throw new IndexOutOfBoundsException();
++    }
++    if (length == 0) {
++      return 0;
++    }
++    load();
++    if (position >= characters.length) {
++      return -1;
++    }
++    int count = Math.min(length, characters.length - position);
++    for (int i = 0; i < count; i++) {
++      buffer[offset + i] = characters[position + i];
++    }
++    position += count;
++    return count;
++  }
++
++  @Override
++  public boolean ready() throws IOException {
++    if (closed) {
++      throw new IOException("Stream closed");
++    }
++    return characters != null ? position < characters.length : input.available() > 0;
++  }
++
++  @Override
++  public void close() throws IOException {
++    if (!closed) {
++      closed = true;
++      input.close();
++    }
++  }
++}
+diff --git a/jre/java/java/io/LineNumberReader.java b/jre/java/java/io/LineNumberReader.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/LineNumberReader.java
+@@ -0,0 +1,88 @@
++package java.io;
++
++/** Buffered reader that tracks line endings consumed through its own read methods. */
++public class LineNumberReader extends BufferedReader {
++  private int lineNumber;
++  private int markedLineNumber;
++  private boolean lastWasCarriageReturn;
++
++  public LineNumberReader(Reader input) {
++    super(input);
++  }
++
++  public LineNumberReader(Reader input, int size) {
++    super(input, size);
++  }
++
++  public void setLineNumber(int lineNumber) {
++    this.lineNumber = lineNumber;
++  }
++
++  public int getLineNumber() {
++    return lineNumber;
++  }
++
++  @Override
++  public int read() throws IOException {
++    int value = super.read();
++    if (value == '\r') {
++      lineNumber++;
++      lastWasCarriageReturn = true;
++    } else if (value == '\n') {
++      if (!lastWasCarriageReturn) {
++        lineNumber++;
++      }
++      lastWasCarriageReturn = false;
++    } else if (value != -1) {
++      lastWasCarriageReturn = false;
++    }
++    return value;
++  }
++
++  @Override
++  public int read(char[] buffer, int offset, int length) throws IOException {
++    int count = super.read(buffer, offset, length);
++    for (int i = 0; i < count; i++) {
++      char value = buffer[offset + i];
++      if (value == '\r') {
++        lineNumber++;
++        lastWasCarriageReturn = true;
++      } else if (value == '\n') {
++        if (!lastWasCarriageReturn) {
++          lineNumber++;
++        }
++        lastWasCarriageReturn = false;
++      } else {
++        lastWasCarriageReturn = false;
++      }
++    }
++    return count;
++  }
++
++  @Override
++  public String readLine() throws IOException {
++    int lineNumberBeforeRead = lineNumber;
++    String line = super.readLine();
++    // BufferedReader.readLine() dispatches to this class' read(), so a physical
++    // line terminator has already advanced the counter. Only an unterminated
++    // final line needs an explicit increment here.
++    if (line != null && lineNumber == lineNumberBeforeRead) {
++      lineNumber++;
++    }
++    lastWasCarriageReturn = false;
++    return line;
++  }
++
++  @Override
++  public void mark(int readAheadLimit) throws IOException {
++    super.mark(readAheadLimit);
++    markedLineNumber = lineNumber;
++  }
++
++  @Override
++  public void reset() throws IOException {
++    super.reset();
++    lineNumber = markedLineNumber;
++    lastWasCarriageReturn = false;
++  }
++}
+diff --git a/jre/java/java/io/NotSerializableException.java b/jre/java/java/io/NotSerializableException.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/NotSerializableException.java
+@@ -0,0 +1,9 @@
++package java.io;
++
++public class NotSerializableException extends ObjectStreamException {
++  public NotSerializableException(String className) {
++    super(className);
++  }
++
++  public NotSerializableException() {}
++}
+diff --git a/jre/java/java/io/ObjectInput.java b/jre/java/java/io/ObjectInput.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/ObjectInput.java
+@@ -0,0 +1,18 @@
++package java.io;
++
++public interface ObjectInput extends DataInput, AutoCloseable {
++  Object readObject() throws ClassNotFoundException, IOException;
++
++  int read() throws IOException;
++
++  int read(byte[] buffer) throws IOException;
++
++  int read(byte[] buffer, int offset, int length) throws IOException;
++
++  long skip(long count) throws IOException;
++
++  int available() throws IOException;
++
++  @Override
++  void close() throws IOException;
++}
+diff --git a/jre/java/java/io/ObjectInputStream.java b/jre/java/java/io/ObjectInputStream.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/ObjectInputStream.java
+@@ -0,0 +1,114 @@
++package java.io;
++
++/** Primitive reads are supported; JVM object deserialization fails explicitly. */
++public class ObjectInputStream extends InputStream implements ObjectInput {
++  private final InputStream input;
++  private final DataInputStream data;
++
++  public ObjectInputStream(InputStream input) throws IOException {
++    if (input == null) {
++      throw new NullPointerException("input");
++    }
++    this.input = input;
++    data = new DataInputStream(input);
++  }
++
++  public final Object readObject() throws IOException, ClassNotFoundException {
++    throw new NotSerializableException("Object deserialization is unavailable in J2CL");
++  }
++
++  @Override
++  public int read() throws IOException {
++    return input.read();
++  }
++
++  @Override
++  public int read(byte[] buffer, int offset, int length) throws IOException {
++    return input.read(buffer, offset, length);
++  }
++
++  @Override
++  public int available() throws IOException {
++    return input.available();
++  }
++
++  @Override
++  public void close() throws IOException {
++    input.close();
++  }
++
++  @Override
++  public void readFully(byte[] buffer) throws IOException {
++    data.readFully(buffer);
++  }
++
++  @Override
++  public void readFully(byte[] buffer, int offset, int length) throws IOException {
++    data.readFully(buffer, offset, length);
++  }
++
++  @Override
++  public int skipBytes(int count) throws IOException {
++    return data.skipBytes(count);
++  }
++
++  @Override
++  public boolean readBoolean() throws IOException {
++    return data.readBoolean();
++  }
++
++  @Override
++  public byte readByte() throws IOException {
++    return data.readByte();
++  }
++
++  @Override
++  public int readUnsignedByte() throws IOException {
++    return data.readUnsignedByte();
++  }
++
++  @Override
++  public short readShort() throws IOException {
++    return data.readShort();
++  }
++
++  @Override
++  public int readUnsignedShort() throws IOException {
++    return data.readUnsignedShort();
++  }
++
++  @Override
++  public char readChar() throws IOException {
++    return data.readChar();
++  }
++
++  @Override
++  public int readInt() throws IOException {
++    return data.readInt();
++  }
++
++  @Override
++  public long readLong() throws IOException {
++    return data.readLong();
++  }
++
++  @Override
++  public float readFloat() throws IOException {
++    return data.readFloat();
++  }
++
++  @Override
++  public double readDouble() throws IOException {
++    return data.readDouble();
++  }
++
++  @Override
++  public String readLine() throws IOException {
++    return data.readLine();
++  }
++
++  @Override
++  public String readUTF() throws IOException {
++    return data.readUTF();
++  }
++}
+diff --git a/jre/java/java/io/ObjectOutput.java b/jre/java/java/io/ObjectOutput.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/ObjectOutput.java
+@@ -0,0 +1,19 @@
++package java.io;
++
++public interface ObjectOutput extends DataOutput, AutoCloseable {
++  void writeObject(Object value) throws IOException;
++
++  @Override
++  void write(int value) throws IOException;
++
++  @Override
++  void write(byte[] buffer) throws IOException;
++
++  @Override
++  void write(byte[] buffer, int offset, int length) throws IOException;
++
++  void flush() throws IOException;
++
++  @Override
++  void close() throws IOException;
++}
+diff --git a/jre/java/java/io/ObjectOutputStream.java b/jre/java/java/io/ObjectOutputStream.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/ObjectOutputStream.java
+@@ -0,0 +1,101 @@
++package java.io;
++
++/** Primitive writes are supported; JVM object serialization fails explicitly. */
++public class ObjectOutputStream extends OutputStream implements ObjectOutput {
++  private final OutputStream output;
++  private final DataOutputStream data;
++
++  public ObjectOutputStream(OutputStream output) throws IOException {
++    if (output == null) {
++      throw new NullPointerException("output");
++    }
++    this.output = output;
++    data = new DataOutputStream(output);
++  }
++
++  public final void writeObject(Object value) throws IOException {
++    String description = value == null ? "null" : "object";
++    throw new NotSerializableException(
++        description + " (object serialization is unavailable in J2CL)");
++  }
++
++  @Override
++  public void write(int value) throws IOException {
++    data.write(value);
++  }
++
++  @Override
++  public void write(byte[] buffer) throws IOException {
++    data.write(buffer, 0, buffer.length);
++  }
++
++  @Override
++  public void write(byte[] buffer, int offset, int length) throws IOException {
++    data.write(buffer, offset, length);
++  }
++
++  @Override
++  public void flush() throws IOException {
++    output.flush();
++  }
++
++  @Override
++  public void close() throws IOException {
++    output.close();
++  }
++
++  @Override
++  public void writeBoolean(boolean value) throws IOException {
++    data.writeBoolean(value);
++  }
++
++  @Override
++  public void writeByte(int value) throws IOException {
++    data.writeByte(value);
++  }
++
++  @Override
++  public void writeShort(int value) throws IOException {
++    data.writeShort(value);
++  }
++
++  @Override
++  public void writeChar(int value) throws IOException {
++    data.writeChar(value);
++  }
++
++  @Override
++  public void writeInt(int value) throws IOException {
++    data.writeInt(value);
++  }
++
++  @Override
++  public void writeLong(long value) throws IOException {
++    data.writeLong(value);
++  }
++
++  @Override
++  public void writeFloat(float value) throws IOException {
++    data.writeFloat(value);
++  }
++
++  @Override
++  public void writeDouble(double value) throws IOException {
++    data.writeDouble(value);
++  }
++
++  @Override
++  public void writeBytes(String value) throws IOException {
++    data.writeBytes(value);
++  }
++
++  @Override
++  public void writeChars(String value) throws IOException {
++    data.writeChars(value);
++  }
++
++  @Override
++  public void writeUTF(String value) throws IOException {
++    data.writeUTF(value);
++  }
++}
+diff --git a/jre/java/java/io/ObjectStreamException.java b/jre/java/java/io/ObjectStreamException.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/ObjectStreamException.java
+@@ -0,0 +1,9 @@
++package java.io;
++
++public abstract class ObjectStreamException extends IOException {
++  protected ObjectStreamException(String message) {
++    super(message);
++  }
++
++  protected ObjectStreamException() {}
++}
+diff --git a/jre/java/java/io/PipedInputStream.java b/jre/java/java/io/PipedInputStream.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/PipedInputStream.java
+@@ -0,0 +1,33 @@
++package java.io;
++
++/** Thread-coordinated pipes are outside the single-threaded browser profile. */
++public class PipedInputStream extends InputStream {
++  public PipedInputStream(PipedOutputStream source) throws IOException {
++    throw unsupported();
++  }
++
++  public PipedInputStream(PipedOutputStream source, int pipeSize) throws IOException {
++    throw unsupported();
++  }
++
++  public PipedInputStream() {}
++
++  public PipedInputStream(int pipeSize) {
++    if (pipeSize <= 0) {
++      throw new IllegalArgumentException("Pipe Size <= 0");
++    }
++  }
++
++  public void connect(PipedOutputStream source) throws IOException {
++    throw unsupported();
++  }
++
++  @Override
++  public int read() throws IOException {
++    throw unsupported();
++  }
++
++  private static IOException unsupported() {
++    return new IOException("Piped streams require blocking threads and are unavailable in J2CL");
++  }
++}
+diff --git a/jre/java/java/io/PipedOutputStream.java b/jre/java/java/io/PipedOutputStream.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/PipedOutputStream.java
+@@ -0,0 +1,23 @@
++package java.io;
++
++/** Thread-coordinated pipes are outside the single-threaded browser profile. */
++public class PipedOutputStream extends OutputStream {
++  public PipedOutputStream(PipedInputStream sink) throws IOException {
++    throw unsupported();
++  }
++
++  public PipedOutputStream() {}
++
++  public synchronized void connect(PipedInputStream sink) throws IOException {
++    throw unsupported();
++  }
++
++  @Override
++  public void write(int value) throws IOException {
++    throw unsupported();
++  }
++
++  private static IOException unsupported() {
++    return new IOException("Piped streams require blocking threads and are unavailable in J2CL");
++  }
++}
+diff --git a/jre/java/java/io/UTFDataFormatException.java b/jre/java/java/io/UTFDataFormatException.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/io/UTFDataFormatException.java
+@@ -0,0 +1,10 @@
++package java.io;
++
++/** Signals malformed or oversized modified UTF-8 data. */
++public class UTFDataFormatException extends IOException {
++  public UTFDataFormatException() {}
++
++  public UTFDataFormatException(String message) {
++    super(message);
++  }
++}
+diff --git a/jre/java/java/lang/ClassNotFoundException.java b/jre/java/java/lang/ClassNotFoundException.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/lang/ClassNotFoundException.java
+@@ -0,0 +1,18 @@
++package java.lang;
++
++/** Signature prerequisite for ObjectInputStream in the J2CL browser profile. */
++public class ClassNotFoundException extends ReflectiveOperationException {
++  public ClassNotFoundException() {}
++
++  public ClassNotFoundException(String message) {
++    super(message);
++  }
++
++  public ClassNotFoundException(String message, Throwable cause) {
++    super(message, cause);
++  }
++
++  public ClassNotFoundException(Throwable cause) {
++    super(cause);
++  }
++}
+diff --git a/jre/java/java/lang/ReflectiveOperationException.java b/jre/java/java/lang/ReflectiveOperationException.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/lang/ReflectiveOperationException.java
+@@ -0,0 +1,18 @@
++package java.lang;
++
++/** Minimal hierarchy prerequisite for class-loading-related checked exceptions. */
++public class ReflectiveOperationException extends Exception {
++  public ReflectiveOperationException() {}
++
++  public ReflectiveOperationException(String message) {
++    super(message);
++  }
++
++  public ReflectiveOperationException(String message, Throwable cause) {
++    super(message, cause);
++  }
++
++  public ReflectiveOperationException(Throwable cause) {
++    super(cause);
++  }
++}

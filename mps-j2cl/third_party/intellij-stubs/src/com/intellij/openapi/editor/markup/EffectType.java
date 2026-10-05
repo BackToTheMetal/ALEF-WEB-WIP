@@ -1,0 +1,2 @@
+package com.intellij.openapi.editor.markup;
+public enum EffectType { LINE_UNDERSCORE, BOLD_LINE_UNDERSCORE, STRIKEOUT, WAVE_UNDERSCORE, BOXED, ROUNDED_BOX, BOLD_DOTTED_LINE, SEARCH_MATCH }

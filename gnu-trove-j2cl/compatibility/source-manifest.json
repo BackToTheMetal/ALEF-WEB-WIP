@@ -1,0 +1,1032 @@
+[
+  {
+    "file": "gnu/trove/CanonicalEquality.java",
+    "status": "ported",
+    "upstreamSha256": "cba97b989c2b445952228311d950b2982648029d4b7f9c82723f2e1e9011d48a"
+  },
+  {
+    "file": "gnu/trove/Equality.java",
+    "status": "ported",
+    "upstreamSha256": "0c55b4d8ac4494245e50f4d6dbf17eb66b093f8957694bbb58fb52a64c01013e"
+  },
+  {
+    "file": "gnu/trove/HashFunctions.java",
+    "status": "ported",
+    "upstreamSha256": "dceb803e4c799ba64bdeb29200fe73d04968ae8f8b0b42d662a8217a9bb7571b"
+  },
+  {
+    "file": "gnu/trove/IdentityEquality.java",
+    "status": "ported",
+    "upstreamSha256": "74ae397381b0c97a19f2800bbc4e679aac9a1ada929a2e536bb6e66a54d8da36"
+  },
+  {
+    "file": "gnu/trove/PrimeFinder.java",
+    "status": "ported",
+    "upstreamSha256": "a71ebb5406d6f825fa50e7244f2c0f064c2ae86877a1062b70d34bd45f2518d7"
+  },
+  {
+    "file": "gnu/trove/SerializationProcedure.java",
+    "status": "excluded",
+    "reason": "JVM object streams"
+  },
+  {
+    "file": "gnu/trove/TByteArrayList.java",
+    "status": "ported",
+    "upstreamSha256": "a31c00baae024ad107a5cad47608c52e4e7680c0e900181dc18c511944825963"
+  },
+  {
+    "file": "gnu/trove/TByteByteHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "d428d04cc8613ac818f661ce7aa160450d558e5c9acf2c4824dac5f7f8aa7aa3"
+  },
+  {
+    "file": "gnu/trove/TByteByteIterator.java",
+    "status": "ported",
+    "upstreamSha256": "19725b0e8912dad3255c52ffbf95e333caa4d1c9904affd9e1e8b6e7fdc7fd32"
+  },
+  {
+    "file": "gnu/trove/TByteByteProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "c969cfd7feae62b82ef3ddb46ec42ca112621148d08ceba1da2b3870e38db0a8"
+  },
+  {
+    "file": "gnu/trove/TByteDoubleHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "d33306719dbc33c4fcba92bd2cd2221bc4f514c1a303476b6c7c38422cd3195b"
+  },
+  {
+    "file": "gnu/trove/TByteDoubleIterator.java",
+    "status": "ported",
+    "upstreamSha256": "da04fb3f9f4ed44fd34adc56b66f7f92d40452c9af838e2183532aa07dd488ec"
+  },
+  {
+    "file": "gnu/trove/TByteDoubleProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "a2e3087ae31448e2f19d6a98fb4fbedf644c331c55e616709be0a188bb989470"
+  },
+  {
+    "file": "gnu/trove/TByteFloatHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "2722044637429144c73bc0390afdccd0eb16736ff7eca10cb72205576a9ca5d7"
+  },
+  {
+    "file": "gnu/trove/TByteFloatIterator.java",
+    "status": "ported",
+    "upstreamSha256": "488ac17849f24900be05929b86deecf1aef23f27558a2a9334012740a20f435c"
+  },
+  {
+    "file": "gnu/trove/TByteFloatProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "d2dae816d0de208df981c9374bcf3be83a09161e2466528f1f6b1264d4f35e26"
+  },
+  {
+    "file": "gnu/trove/TByteFunction.java",
+    "status": "ported",
+    "upstreamSha256": "b8634fa0c9883fe74346d831014894c1d55577a708f7d00bb87213a72e90b1d6"
+  },
+  {
+    "file": "gnu/trove/TByteHash.java",
+    "status": "ported",
+    "upstreamSha256": "26acaac64ad0bb6e2b1a7f98bd05cd58c493d48ac4a1a3b037af92b62143d780"
+  },
+  {
+    "file": "gnu/trove/TByteHashSet.java",
+    "status": "ported",
+    "upstreamSha256": "ad764ad2a6cd5daf33bc36b2ebebae2ac2ecb134862e64eebdc1877f8bf20bc9"
+  },
+  {
+    "file": "gnu/trove/TByteHashingStrategy.java",
+    "status": "ported",
+    "upstreamSha256": "2a949ad56501ce380d62da96b9032b669d0f0bc19000457bab80ee9fdc7f2afc"
+  },
+  {
+    "file": "gnu/trove/TByteIntHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "45f34d504b8b368f7bd2211a746ddedcadc29884cf0f3e35c7d0db8c6892b640"
+  },
+  {
+    "file": "gnu/trove/TByteIntIterator.java",
+    "status": "ported",
+    "upstreamSha256": "dd1f486a1661ca1c4fbed9595b40537da4c6a4d87b7a20582a5bb293c4f68d44"
+  },
+  {
+    "file": "gnu/trove/TByteIntProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "97bbe32b8d836626a85aec2f5c03c375a15e71118130fe3b6a85766f319a9b70"
+  },
+  {
+    "file": "gnu/trove/TByteIterator.java",
+    "status": "ported",
+    "upstreamSha256": "dd7e399f98682d61ef1bcd8ca23c47e2e1771973bb91aa26d7d950325a7016de"
+  },
+  {
+    "file": "gnu/trove/TByteLongHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "40cbf030cc7ab606e52e0f8a493a917355a92e8df49b7a4d7062d84396f38463"
+  },
+  {
+    "file": "gnu/trove/TByteLongIterator.java",
+    "status": "ported",
+    "upstreamSha256": "02be6247de72a46edaf39ce00d4a8d6cb5d8730e182d7ad9227e0d0060b7d572"
+  },
+  {
+    "file": "gnu/trove/TByteLongProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "39d1482015c731fec8c851f5eb350c3969920a88cbc612c28df6c886d6b51425"
+  },
+  {
+    "file": "gnu/trove/TByteObjectHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "b39e2770afe591e7210e7b540c913c481a04efe1315dd7120f45d4efb144695c"
+  },
+  {
+    "file": "gnu/trove/TByteObjectIterator.java",
+    "status": "ported",
+    "upstreamSha256": "ee0db050cef9344ed750d44bcd603a8efaeb4d28ad1f396f307024be4c2a5542"
+  },
+  {
+    "file": "gnu/trove/TByteObjectProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "5beb77595c2777d2d0a793f531b57b38a6972eaab720a2c2e6e14e735260c1ef"
+  },
+  {
+    "file": "gnu/trove/TByteProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "ddd60ad50c9c7ade829542b2851de4e4cab968ad200f2fd1535d24b7a06f0651"
+  },
+  {
+    "file": "gnu/trove/TDoubleArrayList.java",
+    "status": "ported",
+    "upstreamSha256": "4c4060a337cd273131018091043470676b65a1448b339235488c725418a439d1"
+  },
+  {
+    "file": "gnu/trove/TDoubleByteHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "58df3fe18690c5ba7cce9dbae10987e47d7994856e7111fea41417312b110a49"
+  },
+  {
+    "file": "gnu/trove/TDoubleByteIterator.java",
+    "status": "ported",
+    "upstreamSha256": "fc686e8db8e0de4df993363b4031e78b7d234384ce8a13d1d42909ea82b2ae71"
+  },
+  {
+    "file": "gnu/trove/TDoubleByteProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "b089b862923829540bb96e82d2b1f6d9679bc10723f45b4568c9c607f5119d72"
+  },
+  {
+    "file": "gnu/trove/TDoubleDoubleHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "083df4fc6dd61639ef86aba6a3cd479d95939ba5622d737c44fef4745c1fc7d3"
+  },
+  {
+    "file": "gnu/trove/TDoubleDoubleIterator.java",
+    "status": "ported",
+    "upstreamSha256": "4b84e97a8b8ec5700143b45df04ea41f0ec646d422d9af324b82e367981464a4"
+  },
+  {
+    "file": "gnu/trove/TDoubleDoubleProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "b131b1fccc4ea4af148d1eca4ee4d6c4c01cfe06e9dbd6d6d67e0f8023c2e1ad"
+  },
+  {
+    "file": "gnu/trove/TDoubleFloatHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "7db3cc11cc6c497c972cff625c37d6aa1b4b551387d37e162bd9b8d5bc3a06e3"
+  },
+  {
+    "file": "gnu/trove/TDoubleFloatIterator.java",
+    "status": "ported",
+    "upstreamSha256": "c01f21116c6c6b9d845cf6c1a60ff0af86ce517d13caa5bd895e98491da210dd"
+  },
+  {
+    "file": "gnu/trove/TDoubleFloatProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "8e3955f503262b6fde71bad393668f048b9e461c47c468dda328a1d6caf86ac2"
+  },
+  {
+    "file": "gnu/trove/TDoubleFunction.java",
+    "status": "ported",
+    "upstreamSha256": "d19059f78981f33f929571d23fd4924ecdca33767a8b3d8bd2cb12a3f93caf95"
+  },
+  {
+    "file": "gnu/trove/TDoubleHash.java",
+    "status": "ported",
+    "upstreamSha256": "5c28c5d5a44b46bdd65999fe6154a7b5e4a58a74cf0f5b9c0a7c867d0e7e14db"
+  },
+  {
+    "file": "gnu/trove/TDoubleHashSet.java",
+    "status": "ported",
+    "upstreamSha256": "5eff6854785f06fc72db704079a0aac49de1ce43843c80e111b9959698fc4ebd"
+  },
+  {
+    "file": "gnu/trove/TDoubleHashingStrategy.java",
+    "status": "ported",
+    "upstreamSha256": "f8e10e45b3e27ae85626f7c22abd60825112adde3af9159040fa10fa651a663e"
+  },
+  {
+    "file": "gnu/trove/TDoubleIntHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "5e3c82a9ba0edb58198d756230742ba77b39eab3fa87714212aad4705c2258fe"
+  },
+  {
+    "file": "gnu/trove/TDoubleIntIterator.java",
+    "status": "ported",
+    "upstreamSha256": "c496c6ac70a1fd4e462cc79d94971ee6964daf6b8b9d58c2c754d4d2849f1353"
+  },
+  {
+    "file": "gnu/trove/TDoubleIntProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "5d140b9505a35c9ee31ba6dcc5a1eab8234a52378d5ef73941bf108a34339e27"
+  },
+  {
+    "file": "gnu/trove/TDoubleIterator.java",
+    "status": "ported",
+    "upstreamSha256": "c406014925a4653c78e584c948c1135fde3a0bc77714e2dbe2ff51c8e3ec94a8"
+  },
+  {
+    "file": "gnu/trove/TDoubleLongHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "87a94fc3a088f952cd403ab8a94ab7b7524526c60fb1ea36cc413217828bdbf5"
+  },
+  {
+    "file": "gnu/trove/TDoubleLongIterator.java",
+    "status": "ported",
+    "upstreamSha256": "b684627228d33f8b84c69b5ec15ad8317db4a282c9412b01f46d04c30a11c2e9"
+  },
+  {
+    "file": "gnu/trove/TDoubleLongProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "8116031334632c61d6db02ef8d421deb0b16cdada18ec81be2a17e290eec3c2f"
+  },
+  {
+    "file": "gnu/trove/TDoubleObjectHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "21068660647d58cdd7747324370e41a5f3d7bbb387a194bc296ce8dacad3845c"
+  },
+  {
+    "file": "gnu/trove/TDoubleObjectIterator.java",
+    "status": "ported",
+    "upstreamSha256": "37b3f1256f64f9dda60f13fe3d622966fcb595138eb5e7844c7c7d11b7a6bb11"
+  },
+  {
+    "file": "gnu/trove/TDoubleObjectProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "17907736567651146ea80b3a929a4b7ba8f5947e9c7d86be27e79094c5aff483"
+  },
+  {
+    "file": "gnu/trove/TDoubleProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "863b2537694bb3380c4c902795c0aa7a29eb40e1033e91cd6a801068da8caa30"
+  },
+  {
+    "file": "gnu/trove/TFloatArrayList.java",
+    "status": "ported",
+    "upstreamSha256": "8aa61cb24fe5db4f2df302160555965c96be1f73cf7e3c6d9d1ff2d80b2b5c17"
+  },
+  {
+    "file": "gnu/trove/TFloatByteHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "7081f437869276b5c32184b96a35e14ff1ca0e921c0395843533125fc2eb3ec3"
+  },
+  {
+    "file": "gnu/trove/TFloatByteIterator.java",
+    "status": "ported",
+    "upstreamSha256": "3f95f56d00c2853abaf6732f005bfb9f19c189b4705e5bd9ad7376579e78e10e"
+  },
+  {
+    "file": "gnu/trove/TFloatByteProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "64f730ac4424720c175941f66150060c1dbab39ba71ec1341cb02b95e18a482d"
+  },
+  {
+    "file": "gnu/trove/TFloatDoubleHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "6d63d9467dc2036a6e2f21714f02e3e434498acc1a9529398fc16ee8f296e39a"
+  },
+  {
+    "file": "gnu/trove/TFloatDoubleIterator.java",
+    "status": "ported",
+    "upstreamSha256": "308141efdf9280489b22006f1bad265bbd58d1e55bd9a93c02f745a3a7f00ee3"
+  },
+  {
+    "file": "gnu/trove/TFloatDoubleProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "c8e2b209ca81bf0bb6ac8d8a0e05d372c698df6f99e0f8a5b60d020a7bbd7d2f"
+  },
+  {
+    "file": "gnu/trove/TFloatFloatHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "7070e915f9147a6369a1f0bba2c0580ddd615a13434c36a3506800cb69db3b14"
+  },
+  {
+    "file": "gnu/trove/TFloatFloatIterator.java",
+    "status": "ported",
+    "upstreamSha256": "24325c36c68f2279d1af2f973e5a144c26b92878ce887eddb88245fb68f8c4ae"
+  },
+  {
+    "file": "gnu/trove/TFloatFloatProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "615a55f06203e79cb6801e6008cdf0d0a1583c8c0a77d495ba16366b7c816668"
+  },
+  {
+    "file": "gnu/trove/TFloatFunction.java",
+    "status": "ported",
+    "upstreamSha256": "696bc868517e5ff4e4bcc47a782df48147128b80c86772918cc858f0caab703d"
+  },
+  {
+    "file": "gnu/trove/TFloatHash.java",
+    "status": "ported",
+    "upstreamSha256": "0f5aa1942a7764bb1a0bced8f633b576565cd3bcc206b0e8bfc95a0b806f93be"
+  },
+  {
+    "file": "gnu/trove/TFloatHashSet.java",
+    "status": "ported",
+    "upstreamSha256": "95bce64b426940ab80958c5b2f2fd2e9c265d80f2853c7f7c339dff3509c9fb3"
+  },
+  {
+    "file": "gnu/trove/TFloatHashingStrategy.java",
+    "status": "ported",
+    "upstreamSha256": "049e0104d3d75e39b6e7f7a41112ea7070b257bab2a010ca0b21296de4d1d1e6"
+  },
+  {
+    "file": "gnu/trove/TFloatIntHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "0db7fbce5362e3b405847550d582a073debec77ed3d896330a1a67c9136d98f1"
+  },
+  {
+    "file": "gnu/trove/TFloatIntIterator.java",
+    "status": "ported",
+    "upstreamSha256": "e8136a34a5302a1cb5ace6cda44018e72a13117b6b5602b452196e57690fa7e3"
+  },
+  {
+    "file": "gnu/trove/TFloatIntProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "987c9744696863dc6af25763201f961356b50de73fea5edf76d065eb94d67e0f"
+  },
+  {
+    "file": "gnu/trove/TFloatIterator.java",
+    "status": "ported",
+    "upstreamSha256": "5876da56c1e0268fd5b05b58070426f20c6fb9b93980cb79bf2487da50534830"
+  },
+  {
+    "file": "gnu/trove/TFloatLongHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "f31f19ea1dcfbf06eb073fd77ca23f3544857e17b2f43646a6df94134eb173f9"
+  },
+  {
+    "file": "gnu/trove/TFloatLongIterator.java",
+    "status": "ported",
+    "upstreamSha256": "fe9d172b6bea5740f1fe1c5aeaabfdd39d3e231ee63be407b091a486fb933952"
+  },
+  {
+    "file": "gnu/trove/TFloatLongProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "35c4490e61f103691205c4f3aa47f017fbc1121cdeba0b9818d517117a872bbd"
+  },
+  {
+    "file": "gnu/trove/TFloatObjectHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "df29bbe7b79b2593f55e24a4af160ad25eac925b492fffe0d1ae41a6b7d48942"
+  },
+  {
+    "file": "gnu/trove/TFloatObjectIterator.java",
+    "status": "ported",
+    "upstreamSha256": "89c4812a26e1b0bd6672f2c6358f8afd145690c9b896c5f52b5e914768e76ead"
+  },
+  {
+    "file": "gnu/trove/TFloatObjectProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "99c916457e0ffada2c56a369e159401fa79b58517a6c9b90e7343c0b92a72fc5"
+  },
+  {
+    "file": "gnu/trove/TFloatProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "62d798519297b4f10090c52bf078bb0c2f9acd3254ec30abf229243716c41d42"
+  },
+  {
+    "file": "gnu/trove/THash.java",
+    "status": "ported",
+    "upstreamSha256": "67ab9d91334de259d7fa0826dd4f8b0cfe1ecb7a052e084910910e1e536cb0ed"
+  },
+  {
+    "file": "gnu/trove/THashIterator.java",
+    "status": "ported",
+    "upstreamSha256": "49eef768a0d029982b954aad08821e635e5f83be4fa2553adb591ea199d2c9c7"
+  },
+  {
+    "file": "gnu/trove/THashMap.java",
+    "status": "ported",
+    "upstreamSha256": "f7b793119e4d7e25c7162df62e05a3df0c950aa69129697af1b98427008492ea"
+  },
+  {
+    "file": "gnu/trove/THashSet.java",
+    "status": "ported",
+    "upstreamSha256": "db8a62ed3f45bec3ac7901004df4f398224ccc668ea5190347ead235db9ca8cf"
+  },
+  {
+    "file": "gnu/trove/TIntArrayList.java",
+    "status": "ported",
+    "upstreamSha256": "2facc144fdc91f9ae71baf46e4ab972d111c6363b3e2394c5dca91cf0316a613"
+  },
+  {
+    "file": "gnu/trove/TIntByteHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "b6126bc5be70711a465ce30b3256c5e3febc17bfbffb5976f3dce7368dc3d681"
+  },
+  {
+    "file": "gnu/trove/TIntByteIterator.java",
+    "status": "ported",
+    "upstreamSha256": "67286cb3476d65ec8a5f572cd8e78cf448cff6974825cd17d59099ed997ccbc6"
+  },
+  {
+    "file": "gnu/trove/TIntByteProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "1ff783a8dc13bfd145989fdbbea3f5907e2d5f71a3cba5be4b6430f430d1a4bd"
+  },
+  {
+    "file": "gnu/trove/TIntDoubleHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "42d6860b5802bf648cf27b2cd58279ae6e9a89b80c668e8e2f51df514a0a9e2a"
+  },
+  {
+    "file": "gnu/trove/TIntDoubleIterator.java",
+    "status": "ported",
+    "upstreamSha256": "043cccf29f36b38f78bed22909a141c49bb527bbfa4bf34732d71260dec156b4"
+  },
+  {
+    "file": "gnu/trove/TIntDoubleProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "41a70b2f741b77d9682640be06da6cf40d0ad8d9d83efdd08e82848df3616963"
+  },
+  {
+    "file": "gnu/trove/TIntFloatHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "de2d34c746e5ba5bb1e85c6ed8cf0bf2cab9654400293b86981fc88494972e89"
+  },
+  {
+    "file": "gnu/trove/TIntFloatIterator.java",
+    "status": "ported",
+    "upstreamSha256": "6b3c8fec7319e21aa4ce476676c68095031f5f38f244ab2d2f54f6833a5c3ec2"
+  },
+  {
+    "file": "gnu/trove/TIntFloatProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "fc8c57a12c29be7fa0ecaa6793676a584d9a627abba5edc16623f24f1e43515b"
+  },
+  {
+    "file": "gnu/trove/TIntFunction.java",
+    "status": "ported",
+    "upstreamSha256": "797b883fad9aa9054623641c1cd989b1cbeba855e94f65f38bf4ea9fe5d66cbf"
+  },
+  {
+    "file": "gnu/trove/TIntHash.java",
+    "status": "ported",
+    "upstreamSha256": "0d0d9fc28508a22b9a1f81ad651ce04cbfea9951689df7d4691add9637d0dc17"
+  },
+  {
+    "file": "gnu/trove/TIntHashSet.java",
+    "status": "ported",
+    "upstreamSha256": "d42f6c4a61bbbc2c070f09353def3e59fc664d16cfa4abbefb1ffa5bd9f2ddf7"
+  },
+  {
+    "file": "gnu/trove/TIntHashingStrategy.java",
+    "status": "ported",
+    "upstreamSha256": "52a2c4af74e471d10bca53be9e97b5249b1eb91a097a0b6b8ce79a2d2529a647"
+  },
+  {
+    "file": "gnu/trove/TIntIntHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "87f75b43cddf51a6030d55a9003bffb358a49e116a3e268dc22b5c98dcd8e22d"
+  },
+  {
+    "file": "gnu/trove/TIntIntIterator.java",
+    "status": "ported",
+    "upstreamSha256": "a221f52697fd73efcf63c21a54fa0b3fc996fb39361d1394e66716553478d1f8"
+  },
+  {
+    "file": "gnu/trove/TIntIntProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "97361b294500c19167d0a0693ad48d4141bcedccaea18a5998fc93def395282b"
+  },
+  {
+    "file": "gnu/trove/TIntIterator.java",
+    "status": "ported",
+    "upstreamSha256": "23a4201938f575b067c7d34993b95faf5717e9729ba9b6e23b21b92b11dc35aa"
+  },
+  {
+    "file": "gnu/trove/TIntLongHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "acbfe91c8d1bd9ef0a53cb07b841395d6d678817e3efb3d8902197315a2f9b24"
+  },
+  {
+    "file": "gnu/trove/TIntLongIterator.java",
+    "status": "ported",
+    "upstreamSha256": "c2396f4ef993c59bf503f70736db41189577a7b11e64836dfba67bee3ebe9227"
+  },
+  {
+    "file": "gnu/trove/TIntLongProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "ede36103c98c1ddfc6d850649ffef4a2b35dacb1b2f0b2d0079cd0dcb597c512"
+  },
+  {
+    "file": "gnu/trove/TIntObjectHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "001e3e97ba5d956fe54823292bcfa081bf85b2cb88f6313a4ba694e64bb06307"
+  },
+  {
+    "file": "gnu/trove/TIntObjectIterator.java",
+    "status": "ported",
+    "upstreamSha256": "16e0e23cc5654fc26094b60b8bc806393182bb718885ea0be157c67b99103661"
+  },
+  {
+    "file": "gnu/trove/TIntObjectProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "26219a68656dc32b5dc28720675b2faa9575d79d45ea74f8bbf75e1093b740d6"
+  },
+  {
+    "file": "gnu/trove/TIntProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "c9d0ea7e38164c073984fd4860eb44d651f4620c6de179fb9665bb10f4a483bd"
+  },
+  {
+    "file": "gnu/trove/TIntStack.java",
+    "status": "excluded",
+    "reason": "Outside pinned MPS dependency closure"
+  },
+  {
+    "file": "gnu/trove/TIterator.java",
+    "status": "ported",
+    "upstreamSha256": "3e26d61ed997840b8b2b7493046123039c38fc2b5a5cc212121135d3daa17cf3"
+  },
+  {
+    "file": "gnu/trove/TLinkable.java",
+    "status": "excluded",
+    "reason": "Outside pinned MPS dependency closure"
+  },
+  {
+    "file": "gnu/trove/TLinkableAdaptor.java",
+    "status": "excluded",
+    "reason": "Outside pinned MPS dependency closure"
+  },
+  {
+    "file": "gnu/trove/TLinkedList.java",
+    "status": "excluded",
+    "reason": "Outside pinned MPS dependency closure"
+  },
+  {
+    "file": "gnu/trove/TLongArrayList.java",
+    "status": "ported",
+    "upstreamSha256": "5a5c71aa63d0df507b55bc85ac459cf37d4212296cb0d14c4ae6b52414db16ce"
+  },
+  {
+    "file": "gnu/trove/TLongByteHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "71dbe4eefcdf6e5a6e035100853b09f4f9e9c5b8b21db297a151ed2bd17936b6"
+  },
+  {
+    "file": "gnu/trove/TLongByteIterator.java",
+    "status": "ported",
+    "upstreamSha256": "a6101ca42f3a8c6e17a751c8e41a2366b9300fdc1754429fca0e3966b6833d55"
+  },
+  {
+    "file": "gnu/trove/TLongByteProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "3fe898abc333bedf2d1502fb750c4bebd8f69146b821d5b9cf9c6fcb93935f98"
+  },
+  {
+    "file": "gnu/trove/TLongDoubleHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "b21e37da4774ad80411f29368831d90459f6de1e40ad13741c881525a710251f"
+  },
+  {
+    "file": "gnu/trove/TLongDoubleIterator.java",
+    "status": "ported",
+    "upstreamSha256": "c7c77e58e962f2e7f841747e5d68131ba663223976d83d779005e5de6eeb31e8"
+  },
+  {
+    "file": "gnu/trove/TLongDoubleProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "5c59945445fdce475f3f2c29c5b24505c10c59191b0acce549cdd02b2e276fce"
+  },
+  {
+    "file": "gnu/trove/TLongFloatHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "a575c9fecf56d2dc304c21f3d18b410b690d943b566a526fc1e4b9f524e58de1"
+  },
+  {
+    "file": "gnu/trove/TLongFloatIterator.java",
+    "status": "ported",
+    "upstreamSha256": "9c16be4ad4ab84f648deed75e5d2c75dab2a476f97112f4ef4776ccbec2f75fe"
+  },
+  {
+    "file": "gnu/trove/TLongFloatProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "05e5d4ec1deebc387cbd5e2185af3afa492a0eb5d2dff722661748e3f879d947"
+  },
+  {
+    "file": "gnu/trove/TLongFunction.java",
+    "status": "ported",
+    "upstreamSha256": "40bb1d67010ed59e4888d9c16509c5edff57d169a939ab9509f85d52f8d604df"
+  },
+  {
+    "file": "gnu/trove/TLongHash.java",
+    "status": "ported",
+    "upstreamSha256": "494f9b4f651e3d5b094954c00e204db29845257eb5c375e01a2f1da0e89c2b41"
+  },
+  {
+    "file": "gnu/trove/TLongHashSet.java",
+    "status": "ported",
+    "upstreamSha256": "52acc20b681240024ae66fb560d07db808c2da2a4cb6677393d7c77c860aa952"
+  },
+  {
+    "file": "gnu/trove/TLongHashingStrategy.java",
+    "status": "ported",
+    "upstreamSha256": "f0076048f4ceb0407056ab3b2fe755e29b86afa035c0582d7065c793da9aebe3"
+  },
+  {
+    "file": "gnu/trove/TLongIntHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "e11b1b331c721acd6ec0151973d124c6223487ff5192074bcf049960419f21d1"
+  },
+  {
+    "file": "gnu/trove/TLongIntIterator.java",
+    "status": "ported",
+    "upstreamSha256": "70f30995190833200016e64ac2507bc2e24d3abcd9ace999503a62ca3035286a"
+  },
+  {
+    "file": "gnu/trove/TLongIntProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "0ab2730dd58e986bd066d8369952072a0793d6def2db7db9b4416c40e6e35b42"
+  },
+  {
+    "file": "gnu/trove/TLongIterator.java",
+    "status": "ported",
+    "upstreamSha256": "5fac6abcce22353ec9c8efb5d4dafb146d3b9cc193a45c718394ccc4032c58da"
+  },
+  {
+    "file": "gnu/trove/TLongLongHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "b48259ee417ff9f29fa6e7bdf265553687d556a094ed35bb1447f3959e5041de"
+  },
+  {
+    "file": "gnu/trove/TLongLongIterator.java",
+    "status": "ported",
+    "upstreamSha256": "7a0a0189a36b54a7e7863036ee1b0cb925e2976aa7731a85258ab9afb0d81433"
+  },
+  {
+    "file": "gnu/trove/TLongLongProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "3f53244f8bc86a912adfd6ac23e39c1d020a45bac6d940b5ba66984b5ba374a9"
+  },
+  {
+    "file": "gnu/trove/TLongObjectHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "28a2395fe2514573c590eca10e995f5110c20d69eda27605bf119474cdc0eab6"
+  },
+  {
+    "file": "gnu/trove/TLongObjectIterator.java",
+    "status": "ported",
+    "upstreamSha256": "2ec772d1af3eb1716928a63df54feecf7362d41f084cd706426d3f9c00ee00df"
+  },
+  {
+    "file": "gnu/trove/TLongObjectProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "031e209e058c9d1d5db42511b3d6ce7998724f0b8679c484b068ae7a04d91635"
+  },
+  {
+    "file": "gnu/trove/TLongProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "29c4f84e9b3c5b14edca191146348167edec3a648228acb072345a0428240f10"
+  },
+  {
+    "file": "gnu/trove/TObjectByteHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "6348c6644e76032661dc0c860f036787359bd8ddfac65f949e651522133c2bbc"
+  },
+  {
+    "file": "gnu/trove/TObjectByteIterator.java",
+    "status": "ported",
+    "upstreamSha256": "f377765606f47a472a860f9a06437cf45ca93d238fb7b87370aab0691ffeeec1"
+  },
+  {
+    "file": "gnu/trove/TObjectByteProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "569a1cf96259825cadfc99c720d2e6de8b26eeeccce5c57b0ad81e8b1172f8e4"
+  },
+  {
+    "file": "gnu/trove/TObjectCanonicalHashingStrategy.java",
+    "status": "ported",
+    "upstreamSha256": "c507b13fd4de41283315153ca190439cf3808b300b40a1689e44374b6da101f9"
+  },
+  {
+    "file": "gnu/trove/TObjectDoubleHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "7eca21deb87110cfd6d4d0c6b7bfa263e83c288b4ff579308d9dac0aa1d0f2db"
+  },
+  {
+    "file": "gnu/trove/TObjectDoubleIterator.java",
+    "status": "ported",
+    "upstreamSha256": "fa146fffe2d3d75b202b3889588135ee11f942c7506b66a1818acad10479b9d5"
+  },
+  {
+    "file": "gnu/trove/TObjectDoubleProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "06a1c2afc20737b3de43890af7712f7f6ac98ca3a16a26a43adad26ee67d63b4"
+  },
+  {
+    "file": "gnu/trove/TObjectFloatHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "4506e3b41bc7dde56091465572d7b6902c26e163653e0b540d60e2deea553f75"
+  },
+  {
+    "file": "gnu/trove/TObjectFloatIterator.java",
+    "status": "ported",
+    "upstreamSha256": "9cd2fe718e9e5648174740ea47e9a56e7d867df393beff5f959671f179c82deb"
+  },
+  {
+    "file": "gnu/trove/TObjectFloatProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "68ac1a15a228a3016d5e2fcd7bc197079e4bb116ccb6e0c898b030dcadcf9c67"
+  },
+  {
+    "file": "gnu/trove/TObjectFunction.java",
+    "status": "ported",
+    "upstreamSha256": "36a25f26d45dd1f4698b23afc0ca5f8ae63f0ffe450f9e35898b55a8373ecb0e"
+  },
+  {
+    "file": "gnu/trove/TObjectHash.java",
+    "status": "ported",
+    "upstreamSha256": "adc5cba7c0a238556b75a5c9a71d4162ddfad74888829d0abe427d032d58c5d9"
+  },
+  {
+    "file": "gnu/trove/TObjectHashIterator.java",
+    "status": "ported",
+    "upstreamSha256": "2140b9db95a3d0e7e4b5e6026cdca94838f9d2cf7eba996b84f41b0d4c9f3cb9"
+  },
+  {
+    "file": "gnu/trove/TObjectHashingStrategy.java",
+    "status": "ported",
+    "upstreamSha256": "709360b6d19f394d6cda12066052b5a0eefaa51816bc201198c5400b29417997"
+  },
+  {
+    "file": "gnu/trove/TObjectIdentityHashingStrategy.java",
+    "status": "ported",
+    "upstreamSha256": "89bbb5145bba70ae405365dbbc63df33006161bf83e23c14c6caa2bedcf3c095"
+  },
+  {
+    "file": "gnu/trove/TObjectIntHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "3ef133f3740d8fc7663e51f1e35740af1f1dd78d1d994b31018c1318c0e5e280"
+  },
+  {
+    "file": "gnu/trove/TObjectIntIterator.java",
+    "status": "ported",
+    "upstreamSha256": "cd635954bc4728129f8f6e7324a95329dd6e8c39204c5aa0c0fb07f919f6b4ab"
+  },
+  {
+    "file": "gnu/trove/TObjectIntProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "bfe424cf257a207bd3c51753d7152a58dad222ce1fe7d14c1c653fec7be3ae67"
+  },
+  {
+    "file": "gnu/trove/TObjectLongHashMap.java",
+    "status": "ported",
+    "upstreamSha256": "551991fafb15693ae13fdb7e0cb1df9570dd418ab69ff3b830230a5ab265e311"
+  },
+  {
+    "file": "gnu/trove/TObjectLongIterator.java",
+    "status": "ported",
+    "upstreamSha256": "4c38a704375473b5daa589a431b7c37b476f2e3469b8b9e40376bbd9afa8c1e5"
+  },
+  {
+    "file": "gnu/trove/TObjectLongProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "4f56e663269bea8f3bde3abcbff7f7a0e8d098696d1c17d9501b226528423479"
+  },
+  {
+    "file": "gnu/trove/TObjectObjectProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "d4113c2a93ec4c6cccf51bf978108f130557c4e1c6ef3082022460de6128c00e"
+  },
+  {
+    "file": "gnu/trove/TObjectProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "e99219b9ccce832d62bfd36f179fc51145fca36dac1c96645d02f4b473a5d3ea"
+  },
+  {
+    "file": "gnu/trove/TPrimitiveHash.java",
+    "status": "ported",
+    "upstreamSha256": "f4312c0373ecc48ef36ae33a120c5a7e9ca5b3472e380031212041c7a5c36bf6"
+  },
+  {
+    "file": "gnu/trove/TPrimitiveIterator.java",
+    "status": "ported",
+    "upstreamSha256": "4496d12c7527007e7a0f8f48b8500f9755b63a99a24fd519f50b35ba01d8166f"
+  },
+  {
+    "file": "gnu/trove/ToObjectArrayProcedure.java",
+    "status": "ported",
+    "upstreamSha256": "c2bee4343447da7eb37ebc4f56d77825adc2c8813d926a80d6b362b06440ea32"
+  },
+  {
+    "file": "gnu/trove/decorator/TByteByteHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "b3024efad1a5bd027573e46405ac83897952c2f73693f19dca3a72f9078faf00"
+  },
+  {
+    "file": "gnu/trove/decorator/TByteDoubleHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "35ca8796b28b21eafcb90d8f065af480816a6180bcd2d2d0ec3667fef2b60ce3"
+  },
+  {
+    "file": "gnu/trove/decorator/TByteFloatHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "2ba23094ab1b90650e920191fe881668b003bef9f63b43f4381bf32c3be1b5bf"
+  },
+  {
+    "file": "gnu/trove/decorator/TByteHashSetDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "d6881d5647e19000f636be83b4eb3f40842f2b83523bf9c10e44ebdad64ffee8"
+  },
+  {
+    "file": "gnu/trove/decorator/TByteIntHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "6cfe494e15e523b21bc13d2ea0324dc0e54b46fcd504180a8a4fa530e429f7da"
+  },
+  {
+    "file": "gnu/trove/decorator/TByteLongHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "a74c769ed57dd8340c8b1e99cf3537a415b1f27911d48b4699f14fa7401170f6"
+  },
+  {
+    "file": "gnu/trove/decorator/TByteObjectHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "42fb10a849e7cf2f1ab9346a90a9206a7a5d5182601ad69ac4151ff47b00c5b6"
+  },
+  {
+    "file": "gnu/trove/decorator/TDoubleByteHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "7b731eb5d625ffc3d63a719ace310bee1662c346c879a2f6aa320e31723e054d"
+  },
+  {
+    "file": "gnu/trove/decorator/TDoubleDoubleHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "d16ce67d0e5de6a5e3fddd3d1f4cc05a857bd11b046bba18e55d809fe7c23b43"
+  },
+  {
+    "file": "gnu/trove/decorator/TDoubleFloatHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "52131781abcc7d01101997966f18d1156accd60927aa3101f92737c297fdcf5d"
+  },
+  {
+    "file": "gnu/trove/decorator/TDoubleHashSetDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "4a1cd76eb7ccd40894ff604d650fd9abeb37257c524de322fac19fe08f0cf316"
+  },
+  {
+    "file": "gnu/trove/decorator/TDoubleIntHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "aac22bfb61be83f8dd811385389cf7bc9fbc2f9c3d831c485faddccb7531f2e9"
+  },
+  {
+    "file": "gnu/trove/decorator/TDoubleLongHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "39c54c494234a353b154f72507ad1d894ddf0546dac7aa993809a2e77d38d146"
+  },
+  {
+    "file": "gnu/trove/decorator/TDoubleObjectHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "c8e2634ee251854e9e43ce31f8535dd8bf31a970e52bc9124ab254c2abf84dc7"
+  },
+  {
+    "file": "gnu/trove/decorator/TFloatByteHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "41c6e038d679f0a5360b3345650dc495b61c850e8822941646d0bc9cd78698ee"
+  },
+  {
+    "file": "gnu/trove/decorator/TFloatDoubleHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "713b81578c322add636e1eed161c2df420a6ad82ab77da57981ef71d03cc9f8b"
+  },
+  {
+    "file": "gnu/trove/decorator/TFloatFloatHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "a9213a120c039dbe0d96bf5f59a14aa1e3e5f1d8d811ca68e9856d12f2c0ffd7"
+  },
+  {
+    "file": "gnu/trove/decorator/TFloatHashSetDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "9bce1c7a07dc08eb77555cab4946db036edb6fe7ae0907aa4507c8bdb460f3ff"
+  },
+  {
+    "file": "gnu/trove/decorator/TFloatIntHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "444d2ece436e62ee8d87cfd29537ad757f51f66651c978ba94d9c73164934f9b"
+  },
+  {
+    "file": "gnu/trove/decorator/TFloatLongHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "63899e8ea0fe081b0417027e1e3d1d7db4326b5329c341cd3773ebf8a5c2976f"
+  },
+  {
+    "file": "gnu/trove/decorator/TFloatObjectHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "4b31f2977c458ded5a5a907568f93fc543669afd9d85bd3d122299b5952d0717"
+  },
+  {
+    "file": "gnu/trove/decorator/TIntByteHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "6400c746c2cbbd394b13c6e45e87884ec3b70d97248f68c330791968207cd883"
+  },
+  {
+    "file": "gnu/trove/decorator/TIntDoubleHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "444d64db1412993cc6ace3daf8856a0f02faed052664acad5b74d733b59f6cfb"
+  },
+  {
+    "file": "gnu/trove/decorator/TIntFloatHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "771c3caff8fb2643098460bbe226541d7fca5214e4cb490dd1977aeec641a614"
+  },
+  {
+    "file": "gnu/trove/decorator/TIntHashSetDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "3629c90587e1816f61bae23d8ae9e68f67e0e799721f99b01d279abd584db57d"
+  },
+  {
+    "file": "gnu/trove/decorator/TIntIntHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "2df7f9d32375740cd2a033879a555d69ccfc3bc21d6f15312714b62e05df127b"
+  },
+  {
+    "file": "gnu/trove/decorator/TIntLongHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "c4e23a08dfb5e035f07d9b4c03e244104ab09cfa60dd5ca4f0b206b48e376a29"
+  },
+  {
+    "file": "gnu/trove/decorator/TIntObjectHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "2d3941a845881e4aae5031ff9984bec41169e2054565124c525c72821c8d9f03"
+  },
+  {
+    "file": "gnu/trove/decorator/TLongByteHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "c9f069121b150a924d57bdef31c558ac6029ecdde9849f4dd035c7afb8a4f53e"
+  },
+  {
+    "file": "gnu/trove/decorator/TLongDoubleHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "b83c5846d2648169eb66f0e885db150a6f22ece87e13c42e968c7f591e187073"
+  },
+  {
+    "file": "gnu/trove/decorator/TLongFloatHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "ee509802aaddc9a5ad6b11720b7e17e79213ad1299c7a5acd87a670809bb622a"
+  },
+  {
+    "file": "gnu/trove/decorator/TLongHashSetDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "071acd354474b88b11f2d6d593c0fe126a067150d61a74bf029be9ef88369574"
+  },
+  {
+    "file": "gnu/trove/decorator/TLongIntHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "5fb528663252c7a06955f2132ca41f16094fb9f32984d245248cbaecf55f9847"
+  },
+  {
+    "file": "gnu/trove/decorator/TLongLongHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "003bcf9e30978e254a2a7afb1d0eef16b26bfffb638885bdaa184893cc50f1db"
+  },
+  {
+    "file": "gnu/trove/decorator/TLongObjectHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "c3d3659c799c5fd36849da1f7ef128b4635555051c60f853d64c2603339420bd"
+  },
+  {
+    "file": "gnu/trove/decorator/TObjectByteHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "113dc6caf7bda60f32ab2e366b41435e7c94386450c6fb22087f3e8e81c3b1dc"
+  },
+  {
+    "file": "gnu/trove/decorator/TObjectDoubleHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "bce20c941ad59d9591e1db79f5f871e41a844320aa2960a02c77a4825e2af912"
+  },
+  {
+    "file": "gnu/trove/decorator/TObjectFloatHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "2d8547d8efb4e98528153d4f3b860a02727f8d337d0d71833e8f65f3103a1f86"
+  },
+  {
+    "file": "gnu/trove/decorator/TObjectIntHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "cd34001fadaf5a6a0d72382019712e0929c1b9461147397f0e7b83deba45cbb7"
+  },
+  {
+    "file": "gnu/trove/decorator/TObjectLongHashMapDecorator.java",
+    "status": "ported",
+    "upstreamSha256": "e4fc3fd7060b9097cb8053fb93c9dfa9a95d264fe8fa9a153f0ec57e7c654e70"
+  }
+]

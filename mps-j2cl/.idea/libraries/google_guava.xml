@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="google-guava">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mps/plugins/mps-java/workbench/tests/jetbrains.mps.ide.java.testMaterial/resources/testData/realCodeBase/google-guava.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

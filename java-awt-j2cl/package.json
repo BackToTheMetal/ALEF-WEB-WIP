@@ -1,0 +1,7 @@
+{
+  "name": "java-awt-j2cl-tests",
+  "private": true,
+  "devDependencies": {
+    "playwright": "1.62.0"
+  }
+}

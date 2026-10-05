@@ -1,0 +1,38 @@
+import {createRequire} from 'node:module';
+import path from 'node:path';
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+const root = path.resolve(import.meta.dirname, '..');
+const require = createRequire(path.join(root, '../org-jdom-j2cl/package.json'));
+const {chromium} = require('playwright');
+const browser = await chromium.launch({headless: true});
+const page = await browser.newPage({viewport: {width: 1100, height: 680}});
+const errors = [];
+page.on('pageerror', error => errors.push(String(error)));
+page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+try {
+  const servedBundle = Buffer.from(await (await fetch('http://127.0.0.1:8799/editor.js')).arrayBuffer());
+  const bundleHash = crypto.createHash('sha256').update(servedBundle).digest('hex');
+  if (!servedBundle.equals(fs.readFileSync(path.join(root, 'bazel-bin/editor_live_browser.js')))) throw new Error('Demo server needs restart: bundle differs from current optimized output');
+  await page.goto('http://127.0.0.1:8799/');
+  await page.waitForFunction(() => globalThis.editorLiveResult === 'PASS' && !document.getElementById('edit').disabled, null, {timeout: 30000});
+  await page.getByRole('button', {name: 'Introduce type error', exact: true}).click();
+  await page.waitForFunction(() => globalThis.editorAutomaticErrors() > 0 && document.getElementById('status').textContent.includes('Type errors: 1'), null, {timeout: 15000});
+  await page.screenshot({path: path.join(root, 'out/editor-live/demo-error.png')});
+  await page.getByRole('button', {name: 'Edit value', exact: true}).click();
+  await page.waitForFunction(() => globalThis.editorKeyboardState() === 'READY');
+  await page.keyboard.type('7');
+  await page.waitForFunction(() => globalThis.editorModelValue() === '7' && globalThis.editorAutomaticErrors() === 0 && document.getElementById('status').textContent === 'Value: 7 · Type errors: 0', null, {timeout: 15000});
+  await page.keyboard.press('Control+z');
+  await page.waitForFunction(() => globalThis.editorModelValue() === 'invalid');
+  await page.keyboard.press('Control+Shift+z');
+  await page.waitForFunction(() => globalThis.editorModelValue() === '7' && globalThis.editorAutomaticErrors() === 0 && document.getElementById('status').textContent === 'Value: 7 · Type errors: 0', null, {timeout: 15000});
+  await page.screenshot({path: path.join(root, 'out/editor-live/demo-edited.png')});
+  await page.getByRole('button', {name: 'Close editor', exact: true}).click();
+  await page.waitForFunction(() => document.getElementById('status').textContent === 'Editor closed. Reload to reopen.');
+  if (await page.locator('textarea[data-webswing-input-method]').count()) throw new Error('IME proxy remains after disposal');
+  if (errors.length) throw new Error(errors.join('\n'));
+  const record = {passed: true, url: page.url(), sha256: bundleHash, checks: ['current optimized output', 'startup', 'diagnostic button', 'native typing', 'automatic diagnostic removal', 'keyboard undo/redo', 'dispose button'], errors};
+  fs.writeFileSync(path.join(root, 'out/editor-demo-result.json'), JSON.stringify(record, null, 2) + '\n');
+  console.log(JSON.stringify(record));
+} finally { await browser.close(); }

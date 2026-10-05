@@ -1,0 +1,1713 @@
+{
+  "description": "Sportclub: jeugd tot 18 jaar betaalt 75 euro per jaar, volwassenen 125 euro. Fictieve voorbeeldtarieven.",
+  "cases": [
+    {
+      "name": "Noor",
+      "age": 10,
+      "expected": 75,
+      "title": "Jeugdlid van 10 jaar"
+    },
+    {
+      "name": "Sam",
+      "age": 17,
+      "expected": 75,
+      "title": "Laatste jeugdjaar: 17 jaar"
+    },
+    {
+      "name": "Mila",
+      "age": 18,
+      "expected": 125,
+      "title": "Vanaf de 18e verjaardag"
+    },
+    {
+      "name": "Daan",
+      "age": 35,
+      "expected": 125,
+      "title": "Volwassene van 35 jaar"
+    },
+    {
+      "name": "Ada",
+      "age": 70,
+      "expected": 125,
+      "title": "Volwassen tarief bij 70 jaar"
+    }
+  ],
+  "models": [
+    {
+      "reference": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+      "moduleId": "2560172c-bf97-4139-bd27-f0ae2e2c6e63",
+      "moduleName": "Servicespraak",
+      "modelId": "r:c204ca50-5bed-4269-9f2c-761e6cef807e",
+      "name": "serviceEnBerichtTypesInAparteModellen.Service",
+      "roots": [
+        {
+          "id": "1044341176923823138",
+          "concept": "d8af31be-1847-4d5b-8686-78e232d4e0f8/2142746120988295507",
+          "conceptName": "servicespraak.structure.Service",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Contributieservice",
+            "d8af31be-1847-4d5b-8686-78e232d4e0f8/2142746120988295507/8879350159213016767": "scb",
+            "d8af31be-1847-4d5b-8686-78e232d4e0f8/2142746120988295507/8879350159213016781": "leden",
+            "d8af31be-1847-4d5b-8686-78e232d4e0f8/2142746120988295507/167431707442496703": "1.0.0",
+            "d8af31be-1847-4d5b-8686-78e232d4e0f8/2142746120988295507/2657656834115692059": "SC",
+            "d8af31be-1847-4d5b-8686-78e232d4e0f8/2142746120988295507/235016714107005849": "https://example.org/sportclub",
+            "d8af31be-1847-4d5b-8686-78e232d4e0f8/2142746120988295507/2657656834115692067": "https://example.org/sportclub",
+            "d8af31be-1847-4d5b-8686-78e232d4e0f8/2142746120988295507/2657656834115692076": "sc"
+          },
+          "children": [
+            {
+              "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/2142746120988295507/2486720710064795935",
+              "node": {
+                "id": "7918582596632155366",
+                "concept": "d8af31be-1847-4d5b-8686-78e232d4e0f8/2486720710064725693",
+                "conceptName": "servicespraak.structure.Entrypoint",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "BerekenContributie",
+                  "d8af31be-1847-4d5b-8686-78e232d4e0f8/2486720710064725693/3136425091197698285": "BC",
+                  "d8af31be-1847-4d5b-8686-78e232d4e0f8/2486720710064725693/2486720710064786893": "berekenContributie",
+                  "d8af31be-1847-4d5b-8686-78e232d4e0f8/2486720710064725693/8067237117422729517": "https://example.org/sportclub/berekenContributie",
+                  "d8af31be-1847-4d5b-8686-78e232d4e0f8/2486720710064725693/2486720710071299815": "rekenmoment",
+                  "d8af31be-1847-4d5b-8686-78e232d4e0f8/2486720710064725693/8267513940666745543": "Contributie",
+                  "d8af31be-1847-4d5b-8686-78e232d4e0f8/2486720710064725693/2486720710071297888": "ContributieAanvraag",
+                  "d8af31be-1847-4d5b-8686-78e232d4e0f8/2486720710064725693/2486720710071297889": "ContributieAntwoord"
+                },
+                "children": [
+                  {
+                    "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/2486720710064725693/489580120366705953",
+                    "node": {
+                      "id": "7918582596632155367",
+                      "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/5308348422954264413",
+                      "conceptName": "regelspraak.structure.RegelsetRef",
+                      "properties": {},
+                      "children": [],
+                      "references": [
+                        {
+                          "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/5308348422954264413/5308348422954265446",
+                          "kind": "STATIC",
+                          "model": "r:f23e78a1-109d-417a-a300-bd12e639886c(serviceEnBerichtTypesInAparteModellen.Regels)",
+                          "nodeId": "2693988139012429253",
+                          "resolveInfo": "Contributieregels"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/2486720710064725693/2486720710071270540",
+                    "node": {
+                      "id": "7918582596632155368",
+                      "concept": "d8af31be-1847-4d5b-8686-78e232d4e0f8/8880636053084576132",
+                      "conceptName": "servicespraak.structure.ComplexInvoerBerichtVeld",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "deelnemer",
+                        "d8af31be-1847-4d5b-8686-78e232d4e0f8/8880636053083348511/8614874206088486540": "1",
+                        "d8af31be-1847-4d5b-8686-78e232d4e0f8/8880636053083348511/8614874206088486545": "1"
+                      },
+                      "children": [],
+                      "references": [
+                        {
+                          "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/8880636053083348511/8880636053083348520",
+                          "kind": "STATIC",
+                          "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                          "nodeId": "9067876873502995386",
+                          "resolveInfo": "Deelnemergegevens"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/2486720710064725693/2486720710071270541",
+                    "node": {
+                      "id": "7918582596632155369",
+                      "concept": "d8af31be-1847-4d5b-8686-78e232d4e0f8/8880636053084603182",
+                      "conceptName": "servicespraak.structure.ComplexUitvoerBerichtVeld",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "deelnemer",
+                        "d8af31be-1847-4d5b-8686-78e232d4e0f8/8880636053083348511/8614874206088486540": "1",
+                        "d8af31be-1847-4d5b-8686-78e232d4e0f8/8880636053083348511/8614874206088486545": "1"
+                      },
+                      "children": [],
+                      "references": [
+                        {
+                          "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/8880636053083348511/8880636053083348520",
+                          "kind": "STATIC",
+                          "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                          "nodeId": "1807338903342740073",
+                          "resolveInfo": "Contributieberekening"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "references": []
+              }
+            }
+          ],
+          "references": []
+        },
+        {
+          "id": "1044341176923823137",
+          "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232781",
+          "conceptName": "testspraak.structure.ServiceTestSet",
+          "properties": {
+            "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232781/8803452945676232903": "Contributie controleren"
+          },
+          "children": [
+            {
+              "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232781/8803452945676245612",
+              "node": {
+                "id": "900029000000000017",
+                "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785",
+                "conceptName": "testspraak.structure.ServiceTest",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Jeugdlid van 10 jaar"
+                },
+                "children": [
+                  {
+                    "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785/8803452945676554669",
+                    "node": {
+                      "id": "900029000000000018",
+                      "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177",
+                      "conceptName": "testspraak.structure.TestInvoerBericht",
+                      "properties": {
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177/8803452945675786235": "2026"
+                      },
+                      "children": [
+                        {
+                          "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177/8803452945675838248",
+                          "node": {
+                            "id": "900029000000000019",
+                            "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675845067",
+                            "conceptName": "testspraak.structure.ComplexTestBerichtVeld",
+                            "properties": {},
+                            "children": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675845067/6438506741833356934",
+                                "node": {
+                                  "id": "900029000000000020",
+                                  "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929",
+                                  "conceptName": "testspraak.structure.InvoerSubBericht",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929/6438506741833356938",
+                                      "node": {
+                                        "id": "900029000000000026",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814",
+                                        "conceptName": "testspraak.structure.ElementairTestBerichtVeld",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814/8803452945675844818": "Noor"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "900029000000000016",
+                                            "resolveInfo": "naam"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929/6438506741833356938",
+                                      "node": {
+                                        "id": "900029000000000021",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814",
+                                        "conceptName": "testspraak.structure.ElementairTestBerichtVeld",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814/8803452945675844818": "10"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "7918582596632155363",
+                                            "resolveInfo": "leeftijd"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              }
+                            ],
+                            "references": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                "kind": "STATIC",
+                                "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                "nodeId": "7918582596632155368",
+                                "resolveInfo": "deelnemer"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785/6404605531306943378",
+                    "node": {
+                      "id": "900029000000000022",
+                      "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492",
+                      "conceptName": "testspraak.structure.TestUitvoerBericht",
+                      "properties": {
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/7255199331167036142": "1.0.0",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307070318": "1",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307070481": "SERVICE_OK",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/1749813525838931583": "true"
+                      },
+                      "children": [
+                        {
+                          "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307076153",
+                          "node": {
+                            "id": "900029000000000023",
+                            "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076169",
+                            "conceptName": "testspraak.structure.ComplexeVeldVerwachting",
+                            "properties": {},
+                            "children": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076169/6438506741833356945",
+                                "node": {
+                                  "id": "900029000000000024",
+                                  "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356942",
+                                  "conceptName": "testspraak.structure.UitvoerSubBericht",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356942/6438506741833356949",
+                                      "node": {
+                                        "id": "900029000000000025",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076159",
+                                        "conceptName": "testspraak.structure.ElementaireVeldVerwachting",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076159/6404605531307076166": "75"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307070317/6404605531307076156",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "7918582596632155365",
+                                            "resolveInfo": "jaarcontributie"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              }
+                            ],
+                            "references": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307070317/6404605531307076156",
+                                "kind": "STATIC",
+                                "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                "nodeId": "7918582596632155369",
+                                "resolveInfo": "deelnemer"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": []
+              }
+            },
+            {
+              "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232781/8803452945676245612",
+              "node": {
+                "id": "900029000000000027",
+                "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785",
+                "conceptName": "testspraak.structure.ServiceTest",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Laatste jeugdjaar: 17 jaar"
+                },
+                "children": [
+                  {
+                    "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785/8803452945676554669",
+                    "node": {
+                      "id": "900029000000000028",
+                      "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177",
+                      "conceptName": "testspraak.structure.TestInvoerBericht",
+                      "properties": {
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177/8803452945675786235": "2026"
+                      },
+                      "children": [
+                        {
+                          "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177/8803452945675838248",
+                          "node": {
+                            "id": "900029000000000029",
+                            "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675845067",
+                            "conceptName": "testspraak.structure.ComplexTestBerichtVeld",
+                            "properties": {},
+                            "children": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675845067/6438506741833356934",
+                                "node": {
+                                  "id": "900029000000000030",
+                                  "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929",
+                                  "conceptName": "testspraak.structure.InvoerSubBericht",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929/6438506741833356938",
+                                      "node": {
+                                        "id": "900029000000000036",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814",
+                                        "conceptName": "testspraak.structure.ElementairTestBerichtVeld",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814/8803452945675844818": "Sam"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "900029000000000016",
+                                            "resolveInfo": "naam"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929/6438506741833356938",
+                                      "node": {
+                                        "id": "900029000000000031",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814",
+                                        "conceptName": "testspraak.structure.ElementairTestBerichtVeld",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814/8803452945675844818": "17"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "7918582596632155363",
+                                            "resolveInfo": "leeftijd"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              }
+                            ],
+                            "references": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                "kind": "STATIC",
+                                "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                "nodeId": "7918582596632155368",
+                                "resolveInfo": "deelnemer"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785/6404605531306943378",
+                    "node": {
+                      "id": "900029000000000032",
+                      "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492",
+                      "conceptName": "testspraak.structure.TestUitvoerBericht",
+                      "properties": {
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/7255199331167036142": "1.0.0",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307070318": "1",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307070481": "SERVICE_OK",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/1749813525838931583": "true"
+                      },
+                      "children": [
+                        {
+                          "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307076153",
+                          "node": {
+                            "id": "900029000000000033",
+                            "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076169",
+                            "conceptName": "testspraak.structure.ComplexeVeldVerwachting",
+                            "properties": {},
+                            "children": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076169/6438506741833356945",
+                                "node": {
+                                  "id": "900029000000000034",
+                                  "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356942",
+                                  "conceptName": "testspraak.structure.UitvoerSubBericht",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356942/6438506741833356949",
+                                      "node": {
+                                        "id": "900029000000000035",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076159",
+                                        "conceptName": "testspraak.structure.ElementaireVeldVerwachting",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076159/6404605531307076166": "75"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307070317/6404605531307076156",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "7918582596632155365",
+                                            "resolveInfo": "jaarcontributie"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              }
+                            ],
+                            "references": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307070317/6404605531307076156",
+                                "kind": "STATIC",
+                                "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                "nodeId": "7918582596632155369",
+                                "resolveInfo": "deelnemer"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": []
+              }
+            },
+            {
+              "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232781/8803452945676245612",
+              "node": {
+                "id": "900029000000000037",
+                "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785",
+                "conceptName": "testspraak.structure.ServiceTest",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Vanaf de 18e verjaardag"
+                },
+                "children": [
+                  {
+                    "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785/8803452945676554669",
+                    "node": {
+                      "id": "900029000000000038",
+                      "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177",
+                      "conceptName": "testspraak.structure.TestInvoerBericht",
+                      "properties": {
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177/8803452945675786235": "2026"
+                      },
+                      "children": [
+                        {
+                          "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177/8803452945675838248",
+                          "node": {
+                            "id": "900029000000000039",
+                            "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675845067",
+                            "conceptName": "testspraak.structure.ComplexTestBerichtVeld",
+                            "properties": {},
+                            "children": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675845067/6438506741833356934",
+                                "node": {
+                                  "id": "900029000000000040",
+                                  "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929",
+                                  "conceptName": "testspraak.structure.InvoerSubBericht",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929/6438506741833356938",
+                                      "node": {
+                                        "id": "900029000000000046",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814",
+                                        "conceptName": "testspraak.structure.ElementairTestBerichtVeld",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814/8803452945675844818": "Mila"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "900029000000000016",
+                                            "resolveInfo": "naam"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929/6438506741833356938",
+                                      "node": {
+                                        "id": "900029000000000041",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814",
+                                        "conceptName": "testspraak.structure.ElementairTestBerichtVeld",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814/8803452945675844818": "18"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "7918582596632155363",
+                                            "resolveInfo": "leeftijd"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              }
+                            ],
+                            "references": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                "kind": "STATIC",
+                                "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                "nodeId": "7918582596632155368",
+                                "resolveInfo": "deelnemer"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785/6404605531306943378",
+                    "node": {
+                      "id": "900029000000000042",
+                      "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492",
+                      "conceptName": "testspraak.structure.TestUitvoerBericht",
+                      "properties": {
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/7255199331167036142": "1.0.0",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307070318": "1",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307070481": "SERVICE_OK",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/1749813525838931583": "true"
+                      },
+                      "children": [
+                        {
+                          "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307076153",
+                          "node": {
+                            "id": "900029000000000043",
+                            "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076169",
+                            "conceptName": "testspraak.structure.ComplexeVeldVerwachting",
+                            "properties": {},
+                            "children": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076169/6438506741833356945",
+                                "node": {
+                                  "id": "900029000000000044",
+                                  "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356942",
+                                  "conceptName": "testspraak.structure.UitvoerSubBericht",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356942/6438506741833356949",
+                                      "node": {
+                                        "id": "900029000000000045",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076159",
+                                        "conceptName": "testspraak.structure.ElementaireVeldVerwachting",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076159/6404605531307076166": "125"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307070317/6404605531307076156",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "7918582596632155365",
+                                            "resolveInfo": "jaarcontributie"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              }
+                            ],
+                            "references": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307070317/6404605531307076156",
+                                "kind": "STATIC",
+                                "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                "nodeId": "7918582596632155369",
+                                "resolveInfo": "deelnemer"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": []
+              }
+            },
+            {
+              "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232781/8803452945676245612",
+              "node": {
+                "id": "900029000000000047",
+                "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785",
+                "conceptName": "testspraak.structure.ServiceTest",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Volwassene van 35 jaar"
+                },
+                "children": [
+                  {
+                    "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785/8803452945676554669",
+                    "node": {
+                      "id": "900029000000000048",
+                      "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177",
+                      "conceptName": "testspraak.structure.TestInvoerBericht",
+                      "properties": {
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177/8803452945675786235": "2026"
+                      },
+                      "children": [
+                        {
+                          "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177/8803452945675838248",
+                          "node": {
+                            "id": "900029000000000049",
+                            "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675845067",
+                            "conceptName": "testspraak.structure.ComplexTestBerichtVeld",
+                            "properties": {},
+                            "children": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675845067/6438506741833356934",
+                                "node": {
+                                  "id": "900029000000000050",
+                                  "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929",
+                                  "conceptName": "testspraak.structure.InvoerSubBericht",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929/6438506741833356938",
+                                      "node": {
+                                        "id": "900029000000000056",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814",
+                                        "conceptName": "testspraak.structure.ElementairTestBerichtVeld",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814/8803452945675844818": "Daan"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "900029000000000016",
+                                            "resolveInfo": "naam"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929/6438506741833356938",
+                                      "node": {
+                                        "id": "900029000000000051",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814",
+                                        "conceptName": "testspraak.structure.ElementairTestBerichtVeld",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814/8803452945675844818": "35"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "7918582596632155363",
+                                            "resolveInfo": "leeftijd"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              }
+                            ],
+                            "references": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                "kind": "STATIC",
+                                "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                "nodeId": "7918582596632155368",
+                                "resolveInfo": "deelnemer"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785/6404605531306943378",
+                    "node": {
+                      "id": "900029000000000052",
+                      "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492",
+                      "conceptName": "testspraak.structure.TestUitvoerBericht",
+                      "properties": {
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/7255199331167036142": "1.0.0",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307070318": "1",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307070481": "SERVICE_OK",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/1749813525838931583": "true"
+                      },
+                      "children": [
+                        {
+                          "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307076153",
+                          "node": {
+                            "id": "900029000000000053",
+                            "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076169",
+                            "conceptName": "testspraak.structure.ComplexeVeldVerwachting",
+                            "properties": {},
+                            "children": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076169/6438506741833356945",
+                                "node": {
+                                  "id": "900029000000000054",
+                                  "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356942",
+                                  "conceptName": "testspraak.structure.UitvoerSubBericht",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356942/6438506741833356949",
+                                      "node": {
+                                        "id": "900029000000000055",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076159",
+                                        "conceptName": "testspraak.structure.ElementaireVeldVerwachting",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076159/6404605531307076166": "125"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307070317/6404605531307076156",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "7918582596632155365",
+                                            "resolveInfo": "jaarcontributie"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              }
+                            ],
+                            "references": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307070317/6404605531307076156",
+                                "kind": "STATIC",
+                                "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                "nodeId": "7918582596632155369",
+                                "resolveInfo": "deelnemer"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": []
+              }
+            },
+            {
+              "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232781/8803452945676245612",
+              "node": {
+                "id": "900029000000000057",
+                "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785",
+                "conceptName": "testspraak.structure.ServiceTest",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Volwassen tarief bij 70 jaar"
+                },
+                "children": [
+                  {
+                    "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785/8803452945676554669",
+                    "node": {
+                      "id": "900029000000000058",
+                      "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177",
+                      "conceptName": "testspraak.structure.TestInvoerBericht",
+                      "properties": {
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177/8803452945675786235": "2026"
+                      },
+                      "children": [
+                        {
+                          "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675745177/8803452945675838248",
+                          "node": {
+                            "id": "900029000000000059",
+                            "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675845067",
+                            "conceptName": "testspraak.structure.ComplexTestBerichtVeld",
+                            "properties": {},
+                            "children": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675845067/6438506741833356934",
+                                "node": {
+                                  "id": "900029000000000060",
+                                  "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929",
+                                  "conceptName": "testspraak.structure.InvoerSubBericht",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929/6438506741833356938",
+                                      "node": {
+                                        "id": "900029000000000066",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814",
+                                        "conceptName": "testspraak.structure.ElementairTestBerichtVeld",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814/8803452945675844818": "Ada"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "900029000000000016",
+                                            "resolveInfo": "naam"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356929/6438506741833356938",
+                                      "node": {
+                                        "id": "900029000000000061",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814",
+                                        "conceptName": "testspraak.structure.ElementairTestBerichtVeld",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675844814/8803452945675844818": "70"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "7918582596632155363",
+                                            "resolveInfo": "leeftijd"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              }
+                            ],
+                            "references": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945675838251/8803452945675844916",
+                                "kind": "STATIC",
+                                "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                "nodeId": "7918582596632155368",
+                                "resolveInfo": "deelnemer"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232785/6404605531306943378",
+                    "node": {
+                      "id": "900029000000000062",
+                      "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492",
+                      "conceptName": "testspraak.structure.TestUitvoerBericht",
+                      "properties": {
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/7255199331167036142": "1.0.0",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307070318": "1",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307070481": "SERVICE_OK",
+                        "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/1749813525838931583": "true"
+                      },
+                      "children": [
+                        {
+                          "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307053492/6404605531307076153",
+                          "node": {
+                            "id": "900029000000000063",
+                            "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076169",
+                            "conceptName": "testspraak.structure.ComplexeVeldVerwachting",
+                            "properties": {},
+                            "children": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076169/6438506741833356945",
+                                "node": {
+                                  "id": "900029000000000064",
+                                  "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356942",
+                                  "conceptName": "testspraak.structure.UitvoerSubBericht",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6438506741833356942/6438506741833356949",
+                                      "node": {
+                                        "id": "900029000000000065",
+                                        "concept": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076159",
+                                        "conceptName": "testspraak.structure.ElementaireVeldVerwachting",
+                                        "properties": {
+                                          "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307076159/6404605531307076166": "125"
+                                        },
+                                        "children": [],
+                                        "references": [
+                                          {
+                                            "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307070317/6404605531307076156",
+                                            "kind": "STATIC",
+                                            "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                            "nodeId": "7918582596632155365",
+                                            "resolveInfo": "jaarcontributie"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              }
+                            ],
+                            "references": [
+                              {
+                                "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/6404605531307070317/6404605531307076156",
+                                "kind": "STATIC",
+                                "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+                                "nodeId": "7918582596632155369",
+                                "resolveInfo": "deelnemer"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": []
+              }
+            }
+          ],
+          "references": [
+            {
+              "role": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0/8803452945676232781/2486720710136334110",
+              "kind": "STATIC",
+              "model": "r:c204ca50-5bed-4269-9f2c-761e6cef807e(serviceEnBerichtTypesInAparteModellen.Service)",
+              "nodeId": "7918582596632155366",
+              "resolveInfo": "BerekenContributie"
+            }
+          ]
+        },
+        {
+          "id": "9067876873502995386",
+          "concept": "d8af31be-1847-4d5b-8686-78e232d4e0f8/1482961590271922254",
+          "conceptName": "servicespraak.structure.Invoerberichtmapping",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Deelnemergegevens"
+          },
+          "children": [
+            {
+              "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/1482961590271922253/1482961590271922261",
+              "node": {
+                "id": "900029000000000016",
+                "concept": "d8af31be-1847-4d5b-8686-78e232d4e0f8/2657656834081800124",
+                "conceptName": "servicespraak.structure.DirectInvoerAttribuut",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "naam"
+                },
+                "children": [],
+                "references": [
+                  {
+                    "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/2657656834082458620/2657656834082458621",
+                    "kind": "STATIC",
+                    "model": "r:cc89ebc4-c984-4cbd-a55e-6c35a6a79db7(serviceEnBerichtTypesInAparteModellen.Gegevens)",
+                    "nodeId": "7918582596632155323",
+                    "resolveInfo": "naam"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/1482961590271922253/1482961590271922261",
+              "node": {
+                "id": "7918582596632155363",
+                "concept": "d8af31be-1847-4d5b-8686-78e232d4e0f8/2657656834081800124",
+                "conceptName": "servicespraak.structure.DirectInvoerAttribuut",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "leeftijd"
+                },
+                "children": [],
+                "references": [
+                  {
+                    "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/2657656834082458620/2657656834082458621",
+                    "kind": "STATIC",
+                    "model": "r:cc89ebc4-c984-4cbd-a55e-6c35a6a79db7(serviceEnBerichtTypesInAparteModellen.Gegevens)",
+                    "nodeId": "7918582596632155325",
+                    "resolveInfo": "leeftijd"
+                  }
+                ]
+              }
+            }
+          ],
+          "references": [
+            {
+              "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/1482961590271922253/2657656834086768020",
+              "kind": "STATIC",
+              "model": "r:cc89ebc4-c984-4cbd-a55e-6c35a6a79db7(serviceEnBerichtTypesInAparteModellen.Gegevens)",
+              "nodeId": "7918582596632155321",
+              "resolveInfo": "Deelnemer"
+            }
+          ]
+        },
+        {
+          "id": "1807338903342740073",
+          "concept": "d8af31be-1847-4d5b-8686-78e232d4e0f8/1482961590271922255",
+          "conceptName": "servicespraak.structure.Uitvoerberichtmapping",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Contributieberekening"
+          },
+          "children": [
+            {
+              "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/1482961590271922253/1482961590271922261",
+              "node": {
+                "id": "7918582596632155365",
+                "concept": "d8af31be-1847-4d5b-8686-78e232d4e0f8/2657656834081829135",
+                "conceptName": "servicespraak.structure.DirectUitvoerAttribuut",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "jaarcontributie"
+                },
+                "children": [],
+                "references": [
+                  {
+                    "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/2657656834082458620/2657656834082458621",
+                    "kind": "STATIC",
+                    "model": "r:cc89ebc4-c984-4cbd-a55e-6c35a6a79db7(serviceEnBerichtTypesInAparteModellen.Gegevens)",
+                    "nodeId": "7918582596632155329",
+                    "resolveInfo": "jaarcontributie"
+                  }
+                ]
+              }
+            }
+          ],
+          "references": [
+            {
+              "role": "d8af31be-1847-4d5b-8686-78e232d4e0f8/1482961590271922253/2657656834086768020",
+              "kind": "STATIC",
+              "model": "r:cc89ebc4-c984-4cbd-a55e-6c35a6a79db7(serviceEnBerichtTypesInAparteModellen.Gegevens)",
+              "nodeId": "7918582596632155321",
+              "resolveInfo": "Deelnemer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "r:cc89ebc4-c984-4cbd-a55e-6c35a6a79db7(serviceEnBerichtTypesInAparteModellen.Gegevens)",
+      "moduleId": "2560172c-bf97-4139-bd27-f0ae2e2c6e63",
+      "moduleName": "Servicespraak",
+      "modelId": "r:cc89ebc4-c984-4cbd-a55e-6c35a6a79db7",
+      "name": "serviceEnBerichtTypesInAparteModellen.Gegevens",
+      "roots": [
+        {
+          "id": "2693988139012429372",
+          "concept": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938",
+          "conceptName": "gegevensspraak.structure.ObjectModel",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Sportclub"
+          },
+          "children": [
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "7918582596632155321",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152157008",
+                "conceptName": "gegevensspraak.structure.ObjectType",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Deelnemer",
+                  "471364db-8078-4933-b2ef-88232bfa34fc/653687101152157008/6528193855467571737": "true",
+                  "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "deelnemers"
+                },
+                "children": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152157008/653687101152189607",
+                    "node": {
+                      "id": "7918582596632155323",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152178956",
+                      "conceptName": "gegevensspraak.structure.Attribuut",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "naam"
+                      },
+                      "children": [
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152178956/5917060184181247471",
+                          "node": {
+                            "id": "7918582596632155322",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/8878823228840241647",
+                            "conceptName": "gegevensspraak.structure.TekstType",
+                            "properties": {},
+                            "children": [],
+                            "references": []
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152157008/653687101152189607",
+                    "node": {
+                      "id": "7918582596632155325",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152178956",
+                      "conceptName": "gegevensspraak.structure.Attribuut",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "leeftijd"
+                      },
+                      "children": [
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152178956/5917060184181247471",
+                          "node": {
+                            "id": "7918582596632155324",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5917060184181247326",
+                            "conceptName": "gegevensspraak.structure.NumeriekType",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/3257175120315973651/3257175120318322318": "0"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152157008/653687101152189607",
+                    "node": {
+                      "id": "7918582596632155329",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152178956",
+                      "conceptName": "gegevensspraak.structure.Attribuut",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "jaarcontributie"
+                      },
+                      "children": [
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152178956/5917060184181247471",
+                          "node": {
+                            "id": "7918582596632155328",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5917060184181247326",
+                            "conceptName": "gegevensspraak.structure.NumeriekType",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/3257175120315973651/3257175120318322318": "2"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": []
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "7918582596632155340",
+                "concept": "09c04f52-88c5-4bd6-a481-cabab9f61ff5/4485080112264973245",
+                "conceptName": "contexts.structure.Witruimte",
+                "properties": {},
+                "children": [],
+                "references": []
+              }
+            }
+          ],
+          "references": []
+        }
+      ]
+    },
+    {
+      "reference": "r:f23e78a1-109d-417a-a300-bd12e639886c(serviceEnBerichtTypesInAparteModellen.Regels)",
+      "moduleId": "2560172c-bf97-4139-bd27-f0ae2e2c6e63",
+      "moduleName": "Servicespraak",
+      "modelId": "r:f23e78a1-109d-417a-a300-bd12e639886c",
+      "name": "serviceEnBerichtTypesInAparteModellen.Regels",
+      "roots": [
+        {
+          "id": "2693988139012429253",
+          "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101158189440",
+          "conceptName": "regelspraak.structure.Regelgroep",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Contributieregels"
+          },
+          "children": [
+            {
+              "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101158189440/9154144551704439187",
+              "node": {
+                "id": "900029000000000001",
+                "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/9154144551704438971",
+                "conceptName": "regelspraak.structure.Regel",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Jeugdcontributie"
+                },
+                "children": [
+                  {
+                    "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/6223277501270327848/6223277501273432772",
+                    "node": {
+                      "id": "900029000000000002",
+                      "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1480463129960505090",
+                      "conceptName": "regelspraak.structure.RegelVersie",
+                      "properties": {},
+                      "children": [
+                        {
+                          "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/7004474094244907415/5118870146818423030",
+                          "node": {
+                            "id": "900029000000000003",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5478077304742085581",
+                            "conceptName": "gegevensspraak.structure.Geldigheidsperiode",
+                            "properties": {},
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1480463129960505090/1480463129960505094",
+                          "node": {
+                            "id": "900029000000000004",
+                            "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101152476296",
+                            "conceptName": "regelspraak.structure.ActieIndienVoorwaarde",
+                            "properties": {},
+                            "children": [
+                              {
+                                "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101152476296/1480463129960504793",
+                                "node": {
+                                  "id": "900029000000000005",
+                                  "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101152476297",
+                                  "conceptName": "regelspraak.structure.Gelijkstelling",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101152476297/653687101152498719",
+                                      "node": {
+                                        "id": "900029000000000006",
+                                        "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404748412380",
+                                        "conceptName": "regelspraak.structure.Selectie",
+                                        "properties": {},
+                                        "children": [
+                                          {
+                                            "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/5696347358893285502/6774523643279660910",
+                                            "node": {
+                                              "id": "900029000000000007",
+                                              "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/347899601029311684",
+                                              "conceptName": "regelspraak.structure.AttribuutSelector",
+                                              "properties": {},
+                                              "children": [],
+                                              "references": [
+                                                {
+                                                  "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404748429508/7647149462025448902",
+                                                  "kind": "STATIC",
+                                                  "model": "r:cc89ebc4-c984-4cbd-a55e-6c35a6a79db7(serviceEnBerichtTypesInAparteModellen.Gegevens)",
+                                                  "nodeId": "7918582596632155329",
+                                                  "resolveInfo": "jaarcontributie"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/5696347358893285502/9009487889885775372",
+                                            "node": {
+                                              "id": "900029000000000008",
+                                              "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404748017953",
+                                              "conceptName": "regelspraak.structure.UnivOnderwerp",
+                                              "properties": {},
+                                              "children": [],
+                                              "references": [
+                                                {
+                                                  "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404748429508/7647149462025448902",
+                                                  "kind": "STATIC",
+                                                  "model": "r:cc89ebc4-c984-4cbd-a55e-6c35a6a79db7(serviceEnBerichtTypesInAparteModellen.Gegevens)",
+                                                  "nodeId": "7918582596632155321",
+                                                  "resolveInfo": "Deelnemer"
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        ],
+                                        "references": []
+                                      }
+                                    },
+                                    {
+                                      "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101152476297/653687101152498722",
+                                      "node": {
+                                        "id": "900029000000000009",
+                                        "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5917060184181965945",
+                                        "conceptName": "gegevensspraak.structure.NumeriekeLiteral",
+                                        "properties": {
+                                          "471364db-8078-4933-b2ef-88232bfa34fc/558527188464633210/558527188465081158": "75"
+                                        },
+                                        "children": [],
+                                        "references": []
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              },
+                              {
+                                "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101152476296/1480463129960504796",
+                                "node": {
+                                  "id": "900029000000000010",
+                                  "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/993564824856099500",
+                                  "conceptName": "regelspraak.structure.EnkeleVoorwaarde",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/993564824856099500/993564824856119364",
+                                      "node": {
+                                        "id": "900029000000000011",
+                                        "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404748412380",
+                                        "conceptName": "regelspraak.structure.Selectie",
+                                        "properties": {},
+                                        "children": [
+                                          {
+                                            "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/5696347358893285502/6774523643279660910",
+                                            "node": {
+                                              "id": "900029000000000012",
+                                              "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/347899601029311684",
+                                              "conceptName": "regelspraak.structure.AttribuutSelector",
+                                              "properties": {},
+                                              "children": [],
+                                              "references": [
+                                                {
+                                                  "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404748429508/7647149462025448902",
+                                                  "kind": "STATIC",
+                                                  "model": "r:cc89ebc4-c984-4cbd-a55e-6c35a6a79db7(serviceEnBerichtTypesInAparteModellen.Gegevens)",
+                                                  "nodeId": "7918582596632155325",
+                                                  "resolveInfo": "leeftijd"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/5696347358893285502/9009487889885775372",
+                                            "node": {
+                                              "id": "900029000000000013",
+                                              "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404772184160",
+                                              "conceptName": "regelspraak.structure.OnderwerpRef",
+                                              "properties": {},
+                                              "children": [],
+                                              "references": [
+                                                {
+                                                  "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404772184160/1024280404772185483",
+                                                  "kind": "STATIC",
+                                                  "model": "r:f23e78a1-109d-417a-a300-bd12e639886c(serviceEnBerichtTypesInAparteModellen.Regels)",
+                                                  "nodeId": "900029000000000008",
+                                                  "resolveInfo": "Persoon"
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        ],
+                                        "references": []
+                                      }
+                                    },
+                                    {
+                                      "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/993564824856099500/993564824856103627",
+                                      "node": {
+                                        "id": "900029000000000014",
+                                        "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/6747529342263124657",
+                                        "conceptName": "regelspraak.structure.Vergelijking",
+                                        "properties": {
+                                          "7bbaf860-5f96-44b4-9731-6e00ae137ece/6747529342263124657/6747529342263127133": "5brrC35IcXt/LT"
+                                        },
+                                        "children": [
+                                          {
+                                            "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/6747529342263124657/6747529342263128125",
+                                            "node": {
+                                              "id": "900029000000000015",
+                                              "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5917060184181965945",
+                                              "conceptName": "gegevensspraak.structure.NumeriekeLiteral",
+                                              "properties": {
+                                                "471364db-8078-4933-b2ef-88232bfa34fc/558527188464633210/558527188465081158": "18"
+                                              },
+                                              "children": [],
+                                              "references": []
+                                            }
+                                          }
+                                        ],
+                                        "references": []
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              }
+                            ],
+                            "references": []
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": []
+              }
+            },
+            {
+              "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101158189440/9154144551704439187",
+              "node": {
+                "id": "7918582596632155342",
+                "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/9154144551704438971",
+                "conceptName": "regelspraak.structure.Regel",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Volwassenencontributie"
+                },
+                "children": [
+                  {
+                    "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/6223277501270327848/6223277501273432772",
+                    "node": {
+                      "id": "7918582596632155343",
+                      "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1480463129960505090",
+                      "conceptName": "regelspraak.structure.RegelVersie",
+                      "properties": {},
+                      "children": [
+                        {
+                          "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/7004474094244907415/5118870146818423030",
+                          "node": {
+                            "id": "7918582596632155344",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5478077304742085581",
+                            "conceptName": "gegevensspraak.structure.Geldigheidsperiode",
+                            "properties": {},
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1480463129960505090/1480463129960505094",
+                          "node": {
+                            "id": "7918582596632155345",
+                            "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101152476296",
+                            "conceptName": "regelspraak.structure.ActieIndienVoorwaarde",
+                            "properties": {},
+                            "children": [
+                              {
+                                "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101152476296/1480463129960504793",
+                                "node": {
+                                  "id": "7918582596632155346",
+                                  "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101152476297",
+                                  "conceptName": "regelspraak.structure.Gelijkstelling",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101152476297/653687101152498719",
+                                      "node": {
+                                        "id": "7918582596632155348",
+                                        "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404748412380",
+                                        "conceptName": "regelspraak.structure.Selectie",
+                                        "properties": {},
+                                        "children": [
+                                          {
+                                            "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/5696347358893285502/6774523643279660910",
+                                            "node": {
+                                              "id": "7918582596632155349",
+                                              "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/347899601029311684",
+                                              "conceptName": "regelspraak.structure.AttribuutSelector",
+                                              "properties": {},
+                                              "children": [],
+                                              "references": [
+                                                {
+                                                  "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404748429508/7647149462025448902",
+                                                  "kind": "STATIC",
+                                                  "model": "r:cc89ebc4-c984-4cbd-a55e-6c35a6a79db7(serviceEnBerichtTypesInAparteModellen.Gegevens)",
+                                                  "nodeId": "7918582596632155329",
+                                                  "resolveInfo": "jaarcontributie"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/5696347358893285502/9009487889885775372",
+                                            "node": {
+                                              "id": "7918582596632155347",
+                                              "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404748017953",
+                                              "conceptName": "regelspraak.structure.UnivOnderwerp",
+                                              "properties": {},
+                                              "children": [],
+                                              "references": [
+                                                {
+                                                  "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404748429508/7647149462025448902",
+                                                  "kind": "STATIC",
+                                                  "model": "r:cc89ebc4-c984-4cbd-a55e-6c35a6a79db7(serviceEnBerichtTypesInAparteModellen.Gegevens)",
+                                                  "nodeId": "7918582596632155321",
+                                                  "resolveInfo": "Deelnemer"
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        ],
+                                        "references": []
+                                      }
+                                    },
+                                    {
+                                      "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101152476297/653687101152498722",
+                                      "node": {
+                                        "id": "900029000000000000",
+                                        "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5917060184181965945",
+                                        "conceptName": "gegevensspraak.structure.NumeriekeLiteral",
+                                        "properties": {
+                                          "471364db-8078-4933-b2ef-88232bfa34fc/558527188464633210/558527188465081158": "125"
+                                        },
+                                        "children": [],
+                                        "references": []
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              },
+                              {
+                                "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101152476296/1480463129960504796",
+                                "node": {
+                                  "id": "7918582596632155354",
+                                  "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/993564824856099500",
+                                  "conceptName": "regelspraak.structure.EnkeleVoorwaarde",
+                                  "properties": {},
+                                  "children": [
+                                    {
+                                      "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/993564824856099500/993564824856119364",
+                                      "node": {
+                                        "id": "7918582596632155356",
+                                        "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404748412380",
+                                        "conceptName": "regelspraak.structure.Selectie",
+                                        "properties": {},
+                                        "children": [
+                                          {
+                                            "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/5696347358893285502/6774523643279660910",
+                                            "node": {
+                                              "id": "7918582596632155357",
+                                              "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/347899601029311684",
+                                              "conceptName": "regelspraak.structure.AttribuutSelector",
+                                              "properties": {},
+                                              "children": [],
+                                              "references": [
+                                                {
+                                                  "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404748429508/7647149462025448902",
+                                                  "kind": "STATIC",
+                                                  "model": "r:cc89ebc4-c984-4cbd-a55e-6c35a6a79db7(serviceEnBerichtTypesInAparteModellen.Gegevens)",
+                                                  "nodeId": "7918582596632155325",
+                                                  "resolveInfo": "leeftijd"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/5696347358893285502/9009487889885775372",
+                                            "node": {
+                                              "id": "7918582596632155355",
+                                              "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404772184160",
+                                              "conceptName": "regelspraak.structure.OnderwerpRef",
+                                              "properties": {},
+                                              "children": [],
+                                              "references": [
+                                                {
+                                                  "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/1024280404772184160/1024280404772185483",
+                                                  "kind": "STATIC",
+                                                  "model": "r:f23e78a1-109d-417a-a300-bd12e639886c(serviceEnBerichtTypesInAparteModellen.Regels)",
+                                                  "nodeId": "7918582596632155347",
+                                                  "resolveInfo": "Persoon"
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        ],
+                                        "references": []
+                                      }
+                                    },
+                                    {
+                                      "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/993564824856099500/993564824856103627",
+                                      "node": {
+                                        "id": "7918582596632155358",
+                                        "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/6747529342263124657",
+                                        "conceptName": "regelspraak.structure.Vergelijking",
+                                        "properties": {
+                                          "7bbaf860-5f96-44b4-9731-6e00ae137ece/6747529342263124657/6747529342263127133": "5brrC35IcXD/GE"
+                                        },
+                                        "children": [
+                                          {
+                                            "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/6747529342263124657/6747529342263128125",
+                                            "node": {
+                                              "id": "7918582596632155359",
+                                              "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5917060184181965945",
+                                              "conceptName": "gegevensspraak.structure.NumeriekeLiteral",
+                                              "properties": {
+                                                "471364db-8078-4933-b2ef-88232bfa34fc/558527188464633210/558527188465081158": "18"
+                                              },
+                                              "children": [],
+                                              "references": []
+                                            }
+                                          }
+                                        ],
+                                        "references": []
+                                      }
+                                    }
+                                  ],
+                                  "references": []
+                                }
+                              }
+                            ],
+                            "references": []
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": []
+              }
+            },
+            {
+              "role": "7bbaf860-5f96-44b4-9731-6e00ae137ece/653687101158189440/9154144551704439187",
+              "node": {
+                "id": "7918582596632155360",
+                "concept": "09c04f52-88c5-4bd6-a481-cabab9f61ff5/4485080112264973245",
+                "conceptName": "contexts.structure.Witruimte",
+                "properties": {},
+                "children": [],
+                "references": []
+              }
+            }
+          ],
+          "references": []
+        }
+      ]
+    }
+  ]
+}

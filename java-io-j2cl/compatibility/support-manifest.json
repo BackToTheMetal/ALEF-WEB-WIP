@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "j2clVersion": "20260402",
+  "profile": "MPS browser migration compile profile",
+  "policy": "No browser persistence backend and no localStorage or IndexedDB dependency",
+  "overlayTypes": {
+    "inMemoryAndProtocol": [
+      "java.io.BufferedInputStream",
+      "java.io.BufferedOutputStream",
+      "java.io.BufferedReader",
+      "java.io.CharArrayReader",
+      "java.io.CharArrayWriter",
+      "java.io.DataInput",
+      "java.io.DataInputStream",
+      "java.io.DataOutput",
+      "java.io.DataOutputStream",
+      "java.io.InputStreamReader",
+      "java.io.LineNumberReader"
+    ],
+    "lexicalOnly": [
+      "java.io.File"
+    ],
+    "failFastRuntime": [
+      "java.io.FileInputStream",
+      "java.io.FileOutputStream",
+      "java.io.FileReader",
+      "java.io.FileWriter",
+      "java.io.ObjectInputStream",
+      "java.io.ObjectOutputStream",
+      "java.io.PipedInputStream",
+      "java.io.PipedOutputStream"
+    ],
+    "declarationsAndExceptions": [
+      "java.io.EOFException",
+      "java.io.FileFilter",
+      "java.io.FilenameFilter",
+      "java.io.FileNotFoundException",
+      "java.io.IOError",
+      "java.io.NotSerializableException",
+      "java.io.ObjectInput",
+      "java.io.ObjectOutput",
+      "java.io.ObjectStreamException",
+      "java.io.UTFDataFormatException",
+      "java.lang.ClassNotFoundException",
+      "java.lang.ReflectiveOperationException"
+    ]
+  },
+  "behavior": {
+    "java.io.File": "Path parsing, comparison, and identity are deterministic. Filesystem queries report absent resources; mutations return false or throw an explicit unsupported IOException.",
+    "fileStreams": "Construction throws FileNotFoundException because this profile has no browser filesystem.",
+    "objectSerialization": "Primitive ObjectInput/ObjectOutput operations delegate to data streams; readObject and writeObject throw NotSerializableException.",
+    "pipedStreams": "Operations throw IOException because blocking thread pipes do not map to J2CL's browser execution model.",
+    "characterDecoding": "InputStreamReader buffers its input and decodes with J2CL's built-in EmulatedCharset implementations."
+  },
+  "deferred": [
+    "java.io.FileDescriptor",
+    "java.io.RandomAccessFile",
+    "java.io.SequenceInputStream",
+    "java.io.PushbackInputStream",
+    "java.io.PushbackReader",
+    "java.io.File.toPath() until the java-nio-j2cl patch is composed",
+    "java.io.File.toURI() until java.net.URI ownership is agreed with WebAWT",
+    "JVM-compatible object serialization",
+    "Any persistent browser storage backend"
+  ]
+}

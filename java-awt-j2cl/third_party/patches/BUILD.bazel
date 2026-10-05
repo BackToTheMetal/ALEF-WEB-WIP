@@ -1,0 +1,1 @@
+exports_files(["elemental2-1.3.2-w3c-css.patch", "j2cl-reflection-base.patch", "j2cl-type-support.patch", "j2cl-invocation-support.patch"])

@@ -1,0 +1,18 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_test")
+
+j2cl_test(
+    name = "Elemental2BrowserDocumentTest",
+    srcs = ["Elemental2BrowserDocumentTest.java"],
+    test_class = "com.webawt.browser.Elemental2BrowserDocumentTest",
+    deps = [
+        "//src/main/java/java/awt:awt-foundation-j2cl",
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:painting-j2cl",
+        "//src/main/java/org/webawt/internal/browser:browser-elemental2-j2cl",
+        "//src/main/java/org/webawt/internal/peer:peer-api-j2cl",
+        "@elemental2//:elemental2-dom-j2cl",
+        "@j2cl//:junit",
+    ],
+)

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="typesSandbox.mps">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mps/languages/baseLanguage/collections/solutions/internalCollections.sandbox/typesSandbox.mps.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

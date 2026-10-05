@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="kaja_images">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mps/samples/robot_Kaja/solutions/JavaKajak/images/kaja_images.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

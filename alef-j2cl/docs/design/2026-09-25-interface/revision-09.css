@@ -1,0 +1,86 @@
+/* Orange visual refresh of the design study. Layout and workflow logic stay intact. */
+:root{
+  --ink:#302821;--muted:#75685f;--line:#e9dfd7;--soft:#fff8f2;
+  --accent:#bb430d;--accent-bright:#f97316;--accent-hover:#a83c0a;
+  --green:var(--accent);--tint:#fff0e3;--amber:#966009;--amber-bg:#fff4d9;
+  --red:#b23c39;--red-bg:#fff0ef;--success:#23764d;--success-bg:#e8f6ee;
+}
+body{background:#fbf5f0}
+button{transition:background-color .14s,border-color .14s,color .14s,box-shadow .14s}
+button:hover{background:#fff5eb;border-color:#edbb97}
+button.primary{background:var(--accent);border-color:var(--accent);box-shadow:0 2px 5px #bb430d1c;font-weight:600}
+button.primary:hover:not(:disabled){background:var(--accent-hover);border-color:var(--accent-hover);box-shadow:0 3px 8px #bb430d29}
+button.primary:disabled{background:#f4d2bc;border-color:#f4d2bc;color:#976547;opacity:1;box-shadow:none}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+input[type=checkbox]{accent-color:var(--accent)}
+.study{background:#fff0e2;border-color:#f5d4ba;color:#795b44}
+.study strong{color:#aa450e}
+.study a{border-color:#d8a37b}
+.study .demo-edit{border-color:#dfbca2;background:#fff9f3}
+.topbar{background:#fffdfb;box-shadow:0 1px 0 #f5ede6;position:relative;z-index:6}
+.brand{color:#382a20}
+.mark{background:var(--accent-bright);box-shadow:0 3px 9px #ec681b2a}
+nav button:hover{background:#fff6ed;color:var(--accent)}
+nav button.active{color:var(--accent);background:#fff0e3;border-bottom-color:var(--accent-bright)}
+.avatar{background:#ffe3cc;color:#9d400f}
+.app-settings:hover,.app-settings.active{background:var(--tint);color:var(--accent)}
+.connection,.file-toolbar .file-lock.held{color:var(--success)}
+.statusbar{background:#fffaf6}
+.project,.change-project,.tabs,.changed-files{background:#fffaf5}
+.panel-title,.change-project-head{color:#513e30}
+.tree-group{color:#796350}
+.tree button:hover,.change-tree button:hover{background:#fff0e2}
+.tree button.selected,.change-tree button.active,.changed-files button.selected{background:#ffe8d5;color:#a23c0c;box-shadow:inset 3px 0 var(--accent-bright)}
+.type-icon,.tree button .type-icon{border-color:#d7bda9;background:#fffdfb;color:#88654c}
+.tree button.selected .type-icon,.change-tree button.active .type-icon{border-color:#eeab7c;color:#a23c0c;background:#fff4ea}
+.search,.release-search{border-color:#e6d7cb;box-shadow:0 1px 2px #73401d04}
+.search:focus-within,.release-search:focus-within{border-color:var(--accent);box-shadow:0 0 0 2px #ffeddc}
+.doc-tab:before{background:var(--accent-bright);height:3px}
+.root-ver,.release-version-heading{background:#fff0e3;border-color:#f0bc95;color:#a13c0a}
+.file-toolbar{background:#fffdfb}
+.file-toolbar .file-lock:hover{background:#fff2e8;border-color:#f0d4c0}
+.file-version-state{color:#766085}
+.file-save-state.pending{color:#a54b0c}
+.file-menu[open]>summary,.file-menu>summary:hover{background:#ffeddc;color:var(--accent)}
+.file-menu-panel,.comparison-options-list,.menu{border-color:#edd3c0;box-shadow:0 8px 26px #7c3a1721}
+.file-toolbar .file-menu-action:hover{background:#fff0e3;color:var(--accent)}
+.dock-tabs{background:#fffaf6}
+.count{background:#ffe8d6;color:#a5420e}
+.context-feedback,.inline-thread{background:#fffaf5;border-color:#ecd3be}
+.context-feedback summary{color:#855029}
+.inline-thread.resolved{background:#f6faf7;border-color:#dbe9df}
+.line-comment:hover,.number-line:hover .line-comment,.line-comment:focus-visible,.line-comment.has-thread{background:#fff0e3;border-color:#eabd9a;color:var(--accent)}
+.page,.review-shell{background:#fff8f2}
+.page-heading h1,.review-shell h1{font-weight:650;color:#3b291d}
+.release-table-wrap,.environment-table,.manifest-box,.review-article,.card,.inline-comparison{box-shadow:0 3px 12px #83461b06}
+.release-table th,.environment-table th,.manifest-table th,.history th{background:#fff1e6;color:#80604a}
+.release-table tbody tr:hover,.environment-table tbody tr:hover,.manifest-table tbody tr:hover{background:#fffaf5}
+.release-version{color:#b3440b}
+.release-table .title-link{color:#62412b}
+.release-table .title-link:hover{color:var(--accent)}
+.segmented button.active,.diff-mode button.active{background:#ffe8d3;color:#a63e0b;font-weight:600}
+.review-tabs button.active,.pr-tabs button.active,.subnav button.active,.dock-tabs button.active{border-bottom-color:var(--accent-bright)}
+.compare-controls{background:#fff7ef}
+.change-detail-head{background:#fffdfb}
+.diff-version-row,.diff-title,.manifest-foot,.diff-caption,.immutable-strip,.evidence{background:#fffaf5}
+.pill{background:var(--success-bg);color:var(--success)}
+.pill.neutral{background:#eeedf9;color:#655198}
+.pill.warn{background:var(--amber-bg);color:var(--amber)}
+.pill.danger{background:var(--red-bg);color:var(--red)}
+.approved-note{background:var(--success-bg);border-color:#cce4d6;color:var(--success)}
+.gate-pass,.check-line .svg,.evidence .svg{color:var(--success)}
+.change-kind.M{background:#fff0d9;color:#99600b}
+.change-kind.R,.change-kind.V{background:#edf0fe;color:#5e62a6}
+.simulation{background:#fff5dd;border-color:#efdaaa;color:#896111}
+.subtle-banner{background:#fff3e8;border-color:#f1d3b9;color:#8e542b}
+.subtle-banner.warn{background:var(--amber-bg);border-color:#efdaaa;color:var(--amber)}
+.path-number{border-color:#f1bb92;background:#ffe9d6;color:#aa400a;font-weight:700}
+.promotion-path .svg{color:#d67c40}
+.rollout-context{background:#fffaf6}
+.progress-track{background:#ffe8d5}
+.progress-track>span{background:var(--accent-bright)}
+.package,.pr-meta code{background:#fff4ea}
+.toast{background:#493024;border-color:#794f36;box-shadow:0 8px 25px #582b1929}
+.modal{background:#3e2a224a}
+.load-stage{border-color:var(--line)}
+@media(prefers-reduced-motion:reduce){button{transition:none}}

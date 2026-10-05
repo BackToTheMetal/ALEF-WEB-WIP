@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="abcde">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mps/plugins/mps-build/solutions/jetbrains.mps.build.sandbox/samples/buildA/abcde.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

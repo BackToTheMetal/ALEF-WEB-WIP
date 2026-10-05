@@ -1,0 +1,29 @@
+load("@j2cl//jre/java:jdk_system.bzl", "jdk_system")
+load(":compile_api.bzl", "jre_headers")
+
+# Stock J2CL core signatures are needed by the transpiler (e.g. Throwable helpers).
+jre_headers(name = "core-api")
+jdk_system(name = "compile-system", bootclasspath = ":core-api")
+
+# Missing JDK types are supplied as header-only compile inputs, never JS sources.
+genrule(
+    name = "jdk-headers",
+    srcs = [".cache/jdk-reference.jar", "filter_api.py", ":core-api"],
+    tools = ["@bazel_tools//tools/jdk:ijar"],
+    outs = ["jdk-api-headers.jar"],
+    cmd = "python3 $(location filter_api.py) $(location @bazel_tools//tools/jdk:ijar) " +
+          "$(location .cache/jdk-reference.jar) $@ $(locations :core-api)",
+)
+
+filegroup(name = "sources", srcs = glob(["generated/src/java/nio/**/*.java"]))
+
+genrule(
+    name = "nio-stubs",
+    srcs = [":sources", ":core-api", ":compile-system", ":jdk-headers", "transpile.py"],
+    tools = ["@j2cl//transpiler/java/com/google/j2cl/transpiler:J2clCommandLineRunner"],
+    outs = ["nio-stubs.js.zip"],
+    cmd = "python3 $(location transpile.py) " +
+          "$(location @j2cl//transpiler/java/com/google/j2cl/transpiler:J2clCommandLineRunner) " +
+          "$(location :compile-system) $(location :core-api) $(location :jdk-headers) " +
+          "$@ $(locations :sources)",
+)

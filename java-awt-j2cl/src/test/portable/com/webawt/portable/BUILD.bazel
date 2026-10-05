@@ -1,0 +1,683 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library", "j2cl_test")
+
+j2cl_test(
+    name = "PortableEventDispatchJ2clTest",
+    srcs = ["PortableEventDispatchTest.java"],
+    test_class = "com.webawt.portable.PortableEventDispatchTest",
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+java_test(
+    name = "PortableEventDispatchJvmTest",
+    srcs = ["PortableEventDispatchTest.java"],
+    jvm_flags = ["-Djava.awt.headless=false"],
+    test_class = "com.webawt.portable.PortableEventDispatchTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+j2cl_test(
+    name = "PortableCheckboxJ2clTest",
+    srcs = ["PortableCheckboxTest.java"],
+    test_class = "com.webawt.portable.PortableCheckboxTest",
+    deps = [
+        "//src/main/java/java/awt:components-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+java_test(
+    name = "PortableCheckboxJvmTest",
+    srcs = ["PortableCheckboxTest.java"],
+    jvm_flags = ["-Djava.awt.headless=false"],
+    test_class = "com.webawt.portable.PortableCheckboxTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+j2cl_library(
+    name = "portable-dnd-scenarios-j2cl",
+    srcs = ["PortableDnDScenarios.java"],
+    deps = [
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt/datatransfer:datatransfer-j2cl",
+    ],
+)
+
+j2cl_library(
+    name = "portable-icc-scenarios-j2cl",
+    srcs = ["PortableIccScenarios.java"],
+    deps = ["//src/main/java/java/awt/color:color-space-j2cl"],
+)
+
+j2cl_library(
+    name = "portable-desktop-scenarios-j2cl",
+    srcs = ["PortableDesktopScenarios.java"],
+    deps = ["//src/main/java/java/awt:desktop-j2cl"],
+)
+
+j2cl_test(
+    name = "PortableDesktopJ2clTest",
+    srcs = ["PortableDesktopJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableDesktopJ2clTest",
+    deps = [
+        ":portable-desktop-scenarios-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "DesktopJ2clTest",
+    srcs = ["DesktopJ2clTest.java"],
+    test_class = "com.webawt.portable.DesktopJ2clTest",
+    deps = [
+        "//src/main/java/java/awt:desktop-j2cl",
+        "//src/main/java/java/net:uri-j2cl",
+        "//src/main/java/org/webawt/internal/peer:peer-api-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "PortableIccJ2clTest",
+    srcs = ["PortableIccJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableIccJ2clTest",
+    deps = [
+        ":portable-icc-scenarios-j2cl",
+        "//src/main/java/java/awt/color:color-space-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "PortableDnDJ2clTest",
+    srcs = ["PortableDnDJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableDnDJ2clTest",
+    deps = [
+        ":portable-dnd-scenarios-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "DnDJ2clTest",
+    srcs = ["DnDJ2clTest.java"],
+    test_class = "com.webawt.portable.DnDJ2clTest",
+    deps = [
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt/datatransfer:datatransfer-j2cl",
+        "//src/main/java/org/webawt/internal/peer:peer-api-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_library(
+    name = "portable-component-scenarios-j2cl",
+    srcs = ["PortableComponentScenarios.java"],
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:image-objects-j2cl",
+    ],
+)
+
+j2cl_test(
+    name = "PortableComponentJ2clTest",
+    srcs = ["PortableComponentJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableComponentJ2clTest",
+    deps = [
+        ":portable-component-scenarios-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_library(
+    name = "portable-menu-scenarios-j2cl",
+    srcs = ["PortableMenuScenarios.java"],
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "//src/main/java/javax/accessibility:accessibility-j2cl",
+    ],
+)
+
+j2cl_test(
+    name = "PortableMenuJ2clTest",
+    srcs = ["PortableMenuJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableMenuJ2clTest",
+    deps = [
+        ":portable-menu-scenarios-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_library(
+    name = "portable-grid-bag-scenarios-j2cl",
+    srcs = ["PortableGridBagScenarios.java"],
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+    ],
+)
+
+j2cl_test(
+    name = "PortableGridBagJ2clTest",
+    srcs = ["PortableGridBagJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableGridBagJ2clTest",
+    deps = [
+        ":portable-grid-bag-scenarios-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_library(
+    name = "portable-scroll-scenarios-j2cl",
+    srcs = ["PortableScrollScenarios.java"],
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "//src/main/java/javax/accessibility:accessibility-j2cl",
+    ],
+)
+
+j2cl_library(
+    name = "portable-raster-value-scenarios-j2cl",
+    srcs = ["PortableRasterValueScenarios.java"],
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "//src/main/java/java/awt:image-core-j2cl",
+        "//src/main/java/java/awt:image-objects-j2cl",
+        "//src/main/java/java/awt:image-ops-j2cl",
+        "//src/main/java/java/awt:image-renderable-j2cl",
+        "//src/main/java/java/awt:painting-j2cl",
+    ],
+)
+
+j2cl_test(
+    name = "PortableRasterValueJ2clTest",
+    srcs = ["PortableRasterValueJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableRasterValueJ2clTest",
+    deps = [
+        ":portable-raster-value-scenarios-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "PortableScrollJ2clTest",
+    srcs = ["PortableScrollJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableScrollJ2clTest",
+    deps = [
+        ":portable-scroll-scenarios-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_library(
+    name = "portable-accessibility-scenarios-j2cl",
+    srcs = ["PortableAccessibilityScenarios.java"],
+    deps = [
+        "//src/main/java/java/beans:beans-j2cl",
+        "//src/main/java/javax/accessibility:accessibility-j2cl",
+    ],
+)
+
+j2cl_test(
+    name = "PortableAccessibilityJ2clTest",
+    srcs = ["PortableAccessibilityJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableAccessibilityJ2clTest",
+    deps = [
+        ":portable-accessibility-scenarios-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_library(
+    name = "portable-image-scenarios-j2cl",
+    srcs = ["PortableImageScenarios.java"],
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:image-core-j2cl",
+        "//src/main/java/java/awt:image-objects-j2cl",
+    ],
+)
+
+j2cl_library(
+    name = "portable-beans-scenarios-j2cl",
+    srcs = ["PortableBeansScenarios.java"],
+    deps = ["//src/main/java/java/beans:beans-j2cl"],
+)
+
+j2cl_test(
+    name = "CanvasGraphicsJ2clTest",
+    srcs = ["CanvasGraphicsJ2clTest.java"],
+    test_class = "com.webawt.portable.CanvasGraphicsJ2clTest",
+    deps = [
+        "//samples/dual_showcase:shared-j2cl",
+        "//src/main/java/java/text:text-j2cl",
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:image-core-j2cl",
+        "//src/main/java/java/awt:painting-j2cl",
+        "//src/main/java/org/webawt/internal/graphics:canvas-graphics-j2cl",
+        "//src/main/java/org/webawt/internal/peer:peer-api-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "BufferedImageJ2clTest",
+    srcs = ["BufferedImageJ2clTest.java"],
+    test_class = "com.webawt.portable.BufferedImageJ2clTest",
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:image-objects-j2cl",
+        "//src/main/java/java/awt:painting-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "FontAndInputJ2clTest",
+    srcs = ["FontAndInputJ2clTest.java"],
+    test_class = "com.webawt.portable.FontAndInputJ2clTest",
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "//src/main/java/java/awt:font-j2cl",
+        "//src/main/java/java/text:text-j2cl",
+        "//src/main/java/javax/accessibility:accessibility-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "EventQueueJ2clTest",
+    srcs = ["EventQueueJ2clTest.java"],
+    test_class = "com.webawt.portable.EventQueueJ2clTest",
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:event-queue-j2cl",
+        "//src/main/java/org/webawt/internal/peer:peer-api-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "GraphicsEnvironmentJ2clTest",
+    srcs = ["GraphicsEnvironmentJ2clTest.java"],
+    test_class = "com.webawt.portable.GraphicsEnvironmentJ2clTest",
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "//src/main/java/java/awt:font-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:image-objects-j2cl",
+        "//src/main/java/java/awt:painting-j2cl",
+        "//src/main/java/org/webawt/internal/peer:peer-api-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "ImagePipelineJ2clTest",
+    srcs = ["ImagePipelineJ2clTest.java"],
+    test_class = "com.webawt.portable.ImagePipelineJ2clTest",
+    deps = [
+        "//src/main/java/java/awt:image-core-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "PortableImageJ2clTest",
+    srcs = ["PortableImageJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableImageJ2clTest",
+    deps = [
+        ":portable-image-scenarios-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "ColorConvertOpJ2clTest",
+    srcs = ["ColorConvertOpJ2clTest.java"],
+    test_class = "com.webawt.portable.ColorConvertOpJ2clTest",
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:image-core-j2cl",
+        "//src/main/java/java/awt:image-ops-j2cl",
+        "//src/main/java/java/awt/color:color-space-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_library(
+    name = "portable-event-scenarios-j2cl",
+    srcs = ["PortableEventScenarios.java"],
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "//src/main/java/java/awt:font-j2cl",
+    ],
+)
+
+j2cl_test(
+    name = "ToolkitJ2clTest",
+    srcs = ["ToolkitJ2clTest.java"],
+    test_class = "com.webawt.portable.ToolkitJ2clTest",
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "//src/main/java/java/awt:font-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:image-core-j2cl",
+        "//src/main/java/java/awt:image-objects-j2cl",
+        "//src/main/java/java/awt:painting-j2cl",
+        "//src/main/java/java/awt/datatransfer:datatransfer-j2cl",
+        "//src/main/java/java/net:uri-j2cl",
+        "//src/main/java/org/webawt/internal/peer:peer-api-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "WindowEventJ2clTest",
+    srcs = ["WindowEventJ2clTest.java"],
+    test_class = "com.webawt.portable.WindowEventJ2clTest",
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:image-objects-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "KeyboardFocusManagerJ2clTest",
+    srcs = ["KeyboardFocusManagerJ2clTest.java"],
+    test_class = "com.webawt.portable.KeyboardFocusManagerJ2clTest",
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "//src/main/java/java/beans:beans-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "PortableBeansJ2clTest",
+    srcs = ["PortableBeansJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableBeansJ2clTest",
+    deps = [
+        ":portable-beans-scenarios-j2cl",
+        "//src/main/java/java/beans:beans-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_library(
+    name = "portable-value-scenarios-j2cl",
+    srcs = ["PortableValueTypesScenarios.java"],
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "//src/main/java/java/awt:painting-j2cl",
+    ],
+)
+
+j2cl_test(
+    name = "PortableEventJ2clTest",
+    srcs = ["PortableEventJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableEventJ2clTest",
+    deps = [
+        ":portable-event-scenarios-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_library(
+    name = "portable-geometry-scenarios-j2cl",
+    srcs = ["PortableGeometryScenarios.java"],
+    deps = ["//src/main/java/java/awt:awt-j2cl"],
+)
+
+j2cl_test(
+    name = "PortableValueTypesJ2clTest",
+    srcs = ["PortableValueTypesJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableValueTypesJ2clTest",
+    deps = [
+        ":portable-value-scenarios-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_test(
+    name = "PortableGeometryJ2clTest",
+    srcs = ["PortableGeometryJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableGeometryJ2clTest",
+    deps = [
+        ":portable-geometry-scenarios-j2cl",
+        "//src/main/java/java/awt:awt-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+j2cl_library(
+    name = "portable-font-value-scenarios-j2cl",
+    srcs = [
+        "PortableAttributedIterator.java",
+        "PortableFontValueScenarios.java",
+    ],
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:painting-j2cl",
+        "//src/main/java/java/text:text-j2cl",
+    ],
+)
+
+j2cl_test(
+    name = "PortableFontValueJ2clTest",
+    srcs = ["PortableFontValueJ2clTest.java"],
+    test_class = "com.webawt.portable.PortableFontValueJ2clTest",
+    deps = [
+        "//samples/dual_showcase:shared-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/text:text-j2cl",
+        "//src/main/java/org/webawt/internal/peer:peer-api-j2cl",
+        ":portable-font-value-scenarios-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+java_test(
+    name = "PortableFontValueJvmTest",
+    srcs = [
+        "PortableAttributedIterator.java",
+        "PortableFontValueJvmTest.java",
+        "PortableFontValueScenarios.java",
+    ],
+    test_class = "com.webawt.portable.PortableFontValueJvmTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableDnDJvmTest",
+    srcs = [
+        "PortableDnDJ2clTest.java",
+        "PortableDnDScenarios.java",
+    ],
+    test_class = "com.webawt.portable.PortableDnDJ2clTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableIccJvmTest",
+    srcs = [
+        "PortableIccJ2clTest.java",
+        "PortableIccScenarios.java",
+    ],
+    test_class = "com.webawt.portable.PortableIccJ2clTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableDesktopJvmTest",
+    srcs = [
+        "PortableDesktopJ2clTest.java",
+        "PortableDesktopScenarios.java",
+    ],
+    test_class = "com.webawt.portable.PortableDesktopJ2clTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableComponentJvmTest",
+    srcs = [
+        "PortableComponentJ2clTest.java",
+        "PortableComponentScenarios.java",
+    ],
+    test_class = "com.webawt.portable.PortableComponentJ2clTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableMenuJvmTest",
+    srcs = [
+        "PortableMenuJvmTest.java",
+        "PortableMenuScenarios.java",
+    ],
+    jvm_flags = ["-Djava.awt.headless=false"],
+    test_class = "com.webawt.portable.PortableMenuJvmTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableGridBagJvmTest",
+    srcs = [
+        "PortableGridBagJ2clTest.java",
+        "PortableGridBagScenarios.java",
+    ],
+    test_class = "com.webawt.portable.PortableGridBagJ2clTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableScrollJvmTest",
+    srcs = [
+        "PortableScrollJvmTest.java",
+        "PortableScrollScenarios.java",
+    ],
+    jvm_flags = ["-Djava.awt.headless=false"],
+    test_class = "com.webawt.portable.PortableScrollJvmTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableRasterValueJvmTest",
+    srcs = [
+        "PortableRasterValueJ2clTest.java",
+        "PortableRasterValueScenarios.java",
+    ],
+    test_class = "com.webawt.portable.PortableRasterValueJ2clTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableAccessibilityJvmTest",
+    srcs = [
+        "PortableAccessibilityJ2clTest.java",
+        "PortableAccessibilityScenarios.java",
+    ],
+    test_class = "com.webawt.portable.PortableAccessibilityJ2clTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableImageJvmTest",
+    srcs = [
+        "PortableImageJ2clTest.java",
+        "PortableImageScenarios.java",
+    ],
+    test_class = "com.webawt.portable.PortableImageJ2clTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "ColorConvertOpJvmTest",
+    srcs = ["ColorConvertOpJ2clTest.java"],
+    test_class = "com.webawt.portable.ColorConvertOpJ2clTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableBeansJvmTest",
+    srcs = [
+        "PortableBeansJ2clTest.java",
+        "PortableBeansScenarios.java",
+    ],
+    test_class = "com.webawt.portable.PortableBeansJ2clTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableEventJvmTest",
+    srcs = [
+        "PortableEventJ2clTest.java",
+        "PortableEventScenarios.java",
+    ],
+    test_class = "com.webawt.portable.PortableEventJ2clTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableGeometryJvmTest",
+    srcs = [
+        "PortableGeometryJ2clTest.java",
+        "PortableGeometryScenarios.java",
+    ],
+    test_class = "com.webawt.portable.PortableGeometryJ2clTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(
+    name = "PortableValueTypesJvmTest",
+    srcs = [
+        "PortableValueTypesJ2clTest.java",
+        "PortableValueTypesScenarios.java",
+    ],
+    test_class = "com.webawt.portable.PortableValueTypesJ2clTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+j2cl_test(
+    name = "ExtendedApiConsumerJ2clTest",
+    srcs = ["ExtendedApiConsumerTest.java"],
+    test_class = "com.webawt.portable.ExtendedApiConsumerTest",
+    deps = [
+        "//src/main/java/java/awt:painting-j2cl",
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/beans:beans-j2cl",
+        "@j2cl//:junit",
+    ],
+)
+
+java_test(
+    name = "ExtendedApiConsumerJvmTest",
+    srcs = ["ExtendedApiConsumerTest.java"],
+    test_class = "com.webawt.portable.ExtendedApiConsumerTest",
+    deps = ["@webawt_test_maven//:junit_junit"],
+)
+
+java_test(name = "ImplicitKeyStrokeJvmTest", srcs = ["ImplicitKeyStrokeTest.java"], test_class = "com.webawt.portable.ImplicitKeyStrokeTest", deps = ["@webawt_test_maven//:junit_junit"])
+j2cl_test(name = "ImplicitKeyStrokeJ2clTest", srcs = ["ImplicitKeyStrokeTest.java"], test_class = "com.webawt.portable.ImplicitKeyStrokeTest", deps = ["//src/main/java/java/awt:graphics-api-j2cl", "@j2cl//:junit"])

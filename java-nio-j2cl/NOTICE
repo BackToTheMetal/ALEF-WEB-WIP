@@ -1,0 +1,16 @@
+Java NIO source compatibility profile for J2CL
+
+New stub declarations and tooling are provided under the Apache License 2.0.
+NIO signatures were extracted from OpenJDK 21.0.12; no OpenJDK method bodies were copied.
+
+Modified J2CL sources and the original patch baselines retain Google's Apache 2.0 notices.
+J2CL release: v20260402. Changes add NIO declarations and charset metadata/failure methods.
+
+third_party/java-io-j2cl/overlay contains pinned source snapshots owned by the sibling
+java-io-j2cl project. third_party/WebAWT/overlay contains its canonical URI, URL,
+URISyntaxException and MalformedURLException sources. Snapshot checksums and ownership
+are recorded in compatibility/dependency-snapshots.json.
+
+Unchanged MPS Java fixtures retain their source notices and originate from JetBrains MPS,
+revision 1ae803e4f8c52e470c94563059eca4b4b8397c8c, under Apache License 2.0.
+Exact fixture paths and checksums are recorded in compatibility/mps-fixtures.json.

@@ -1,0 +1,182 @@
+[
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/BufferedInputStream.java",
+    "sha256": "319c682fa353926f602b5dbe67455cfa881840a6d2b381b02d3788d62ee70b08"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/BufferedOutputStream.java",
+    "sha256": "3d2def0c788a921a37ed0b5f7173cb28cda90dbd48d76c045e4d3995c03fba9d"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/BufferedReader.java",
+    "sha256": "13f28aaa52f1ec45244a295318f9b15cbc5a2eb3ba7a29811aec6aefac9bc1dd"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/CharArrayReader.java",
+    "sha256": "8cb7e0efda20ddb2339e247e7175134aa69ab02dc79293e209a8c42fac704589"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/CharArrayWriter.java",
+    "sha256": "663d564688bf67d3ccb3e1fdb42943a4ee51d6ec72e7193d3de3f19720432772"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/DataInput.java",
+    "sha256": "eaf163756e854b38ca96c6e40492af61ae5abdffceb43cdef14cdde0af3b1a27"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/DataInputStream.java",
+    "sha256": "a6d42475945844e35912fdb385ac3bee75b7d54bebac03cb0e824dcef4a6549a"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/DataOutput.java",
+    "sha256": "23fe51835c1d523074c6d2924beb70725b9e0e0d2c971376f76efbf19f721521"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/DataOutputStream.java",
+    "sha256": "ccfcdd123890ed315af30c4ea9aaeec104870afc5961b447a7401d97488a4561"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/EOFException.java",
+    "sha256": "095cd47f39090d8caece082e0fb92ecac9854f6cd1e1472d68901faeb7c4308c"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/File.java",
+    "sha256": "487e2e049bcc44aacd1b4a48016c716a7678ca25460eb4adb6bfbd25fa778f40"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/FileFilter.java",
+    "sha256": "21a3fa8339dff44959f025cbda0a1bfa59451ce867b9ae537d68b5202032e1db"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/FileInputStream.java",
+    "sha256": "c3af4fff0e6f059b6ac937cb4467758f5d82b5a4e9a8425d48fbda96bab5e7be"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/FileNotFoundException.java",
+    "sha256": "844bbaa167b57bf68c47a83ab71cb798f32c59c5b71df7bb01cf5a25d0ce95cc"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/FileOutputStream.java",
+    "sha256": "4fb6d436fe51b44577e474f5c93ad2e507420b84bbadd97b9d391c03abfe7785"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/FileReader.java",
+    "sha256": "263d3d5615f066bd30f855f6db676008adeee648cc5cf58eb4c3aaf91adb761c"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/FileWriter.java",
+    "sha256": "579b5c831238e5015d5a129289d098f818cab4bb4104fdeb2b01e34bceacb8d9"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/FilenameFilter.java",
+    "sha256": "8ac097285665553b1a20fcbf8385977df00a278eb62ec65e0268be37a84f4394"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/IOError.java",
+    "sha256": "1025c97bef4f65488a5fe4633de2483368e0c098b60708d2de4983995436b8ca"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/InputStreamReader.java",
+    "sha256": "db543370aa63eea6dee4391ef5b95720df7881084cad3e8d46eafbe147db5002"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/LineNumberReader.java",
+    "sha256": "2ecb80b5b357f6986e8ff1dab992b4c41b5636772876b19bced8fb89c245f5e9"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/NotSerializableException.java",
+    "sha256": "335898459bbaf84806c0527b3b9aca59d8882e0ca1036bd84c9ec76549489dd1"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/ObjectInput.java",
+    "sha256": "8c06ff2e5a998c3cf8022469c0e5270df10d5028324cb60d83d55ce05246b14f"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/ObjectInputStream.java",
+    "sha256": "79c3bc03839c35ae1b0f0cb2c59bc13bfd95641346e5a13700609dae0ad8d48d"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/ObjectOutput.java",
+    "sha256": "f50aea28519d2f42c5e3a882607490f605c769a10d2f298902a1ca1070f23186"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/ObjectOutputStream.java",
+    "sha256": "c9f73e9a227caa59bc8bfef7bac8f047ab994a0de7b776ba027e9f6c7a50d5d3"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/ObjectStreamException.java",
+    "sha256": "53a7981ca1fb18ca7f2cede63f739520751c183730772a5bdf7dd72a21f96acc"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/PipedInputStream.java",
+    "sha256": "51f582c6faabf66bb2ab75a78d044b1938d14b599407306b1889e011791ebfd6"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/PipedOutputStream.java",
+    "sha256": "24272e170b93e38eb66bd18220001d0c2110e28dddadcbc036958db9798be835"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/io/UTFDataFormatException.java",
+    "sha256": "9a1a71368fcf822c0f71f8b52fa35567a41d70a30aa7095aa10494af77256b1c"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/lang/ClassNotFoundException.java",
+    "sha256": "98c559f3c76b3e87d19131c41e5f07e1781459f0142ffcca9676d9cdf6fb6443"
+  },
+  {
+    "owner": "java-io-j2cl",
+    "path": "java/lang/ReflectiveOperationException.java",
+    "sha256": "3f6c94f39c458a193eda55d8ec5b41dbb6fdb05b384e518e86f01547c25fa623"
+  },
+  {
+    "owner": "WebAWT",
+    "path": "java/net/MalformedURLException.java",
+    "sha256": "b4932df9dbd2aee296a8c70d408b93833728d78b05f78de7f11b72bf53143f0c"
+  },
+  {
+    "owner": "WebAWT",
+    "path": "java/net/URI.java",
+    "sha256": "90f057ccccb53dbeda4fa18f6282219a28421e98fb6d21795242ec50a720f3f8"
+  },
+  {
+    "owner": "WebAWT",
+    "path": "java/net/URISyntaxException.java",
+    "sha256": "d4862662716403292aeeedf72644f2c964c208bd76412f2ac198df1110822437"
+  },
+  {
+    "owner": "WebAWT",
+    "path": "java/net/URL.java",
+    "sha256": "8a72673eeda348dc418e5a0b78df9817a03b5f3b02386544a0174fab0458e592"
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-08",
+  "status": "PASS",
+  "scope": "Main-thread J2CL profile and independent root-owned-patch consumer; not full MPS or Java SE concurrency",
+  "j2cl": "20260402",
+  "bazel": "8.3.1",
+  "mps_commit": "1ae803e4f8c52e470c94563059eca4b4b8397c8c",
+  "browser_result": "PASS: 496 checks in optimized J2CL JavaScript; main-thread timers verified",
+  "browser_javascript_sha256": "b852bcd3b72765447358ef9a4fdf01e972d45b4288927db43e50e1586136a286",
+  "consumer_result": "PASS: independent root module consumed the JRE overlay",
+  "consumer_javascript_sha256": "6600b31cc048a0d2af817f2b66901f583f8ac3e0ee6b0ec0dff987c19ccea887",
+  "compiled_class_coverage": {
+    "inventoried_classes": 50,
+    "inventoried_concurrent_classes": 48,
+    "emitted_classes": 50,
+    "overlay_classes": 37,
+    "upstream_classes": 13
+  },
+  "header_jar_sha256": "20a7b883f06a1a7c4a99c97474f66d87ce0a88d8278a8f9574d42449c4e8a9f3",
+  "patch_sha256": "e4e661b1c3275994fb8859848b4d9449d89aa63e6ecf6ce3154715a6b6728060",
+  "copied_patch_matches": true,
+  "review_regression_checks": 60,
+  "canonical_java_sources": 57
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "projectPackages": [
+    "java.awt",
+    "java.awt.color",
+    "java.awt.datatransfer",
+    "java.awt.desktop",
+    "java.awt.dnd",
+    "java.awt.event",
+    "java.awt.font",
+    "java.awt.geom",
+    "java.awt.im",
+    "java.awt.im.spi",
+    "java.awt.image",
+    "java.awt.image.renderable",
+    "java.beans",
+    "java.net",
+    "java.text",
+    "javax.accessibility"
+  ],
+  "j2clPackages": [
+    "java.io",
+    "java.lang",
+    "java.lang.annotation",
+    "java.lang.constant",
+    "java.lang.invoke",
+    "java.lang.reflect",
+    "java.lang.runtime",
+    "java.math",
+    "java.nio.charset",
+    "java.security",
+    "java.sql",
+    "java.util",
+    "java.util.concurrent",
+    "java.util.concurrent.atomic",
+    "java.util.function",
+    "java.util.logging",
+    "java.util.stream",
+    "javax.annotation.processing"
+  ],
+  "collisions": [],
+  "missingTypesInOwnedPackages": [
+    "java.io.Externalizable",
+    "java.util.Hashtable",
+    "java.lang.ClassLoader"
+  ],
+  "j2clTypeInventorySha256": "8477e47f68ab487c3e2a352efe03512075978d699a88574568d1d51d0dd6464e"
+}

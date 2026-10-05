@@ -1,0 +1,357 @@
+{
+  "description": "Reviewed exact signature adaptations. Validation never regenerates this allowlist.",
+  "entries": [
+    {
+      "class": "gnu.trove.TByteByteHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TByteByteHashMap.clone()",
+      "replacement": "public gnu.trove.TByteByteHashMap gnu.trove.TByteByteHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TByteDoubleHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TByteDoubleHashMap.clone()",
+      "replacement": "public gnu.trove.TByteDoubleHashMap gnu.trove.TByteDoubleHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TByteFloatHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TByteFloatHashMap.clone()",
+      "replacement": "public gnu.trove.TByteFloatHashMap gnu.trove.TByteFloatHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TByteHash",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TByteHash.clone()",
+      "replacement": "public abstract java.lang.Object gnu.trove.TByteHash.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TByteHashSet",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TByteHash.clone()",
+      "replacement": "public gnu.trove.TByteHashSet gnu.trove.TByteHashSet.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TByteIntHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TByteIntHashMap.clone()",
+      "replacement": "public gnu.trove.TByteIntHashMap gnu.trove.TByteIntHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TByteLongHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TByteLongHashMap.clone()",
+      "replacement": "public gnu.trove.TByteLongHashMap gnu.trove.TByteLongHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TDoubleByteHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TDoubleByteHashMap.clone()",
+      "replacement": "public gnu.trove.TDoubleByteHashMap gnu.trove.TDoubleByteHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TDoubleDoubleHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TDoubleDoubleHashMap.clone()",
+      "replacement": "public gnu.trove.TDoubleDoubleHashMap gnu.trove.TDoubleDoubleHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TDoubleFloatHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TDoubleFloatHashMap.clone()",
+      "replacement": "public gnu.trove.TDoubleFloatHashMap gnu.trove.TDoubleFloatHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TDoubleHash",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TDoubleHash.clone()",
+      "replacement": "public abstract java.lang.Object gnu.trove.TDoubleHash.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TDoubleHashSet",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TDoubleHash.clone()",
+      "replacement": "public gnu.trove.TDoubleHashSet gnu.trove.TDoubleHashSet.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TDoubleIntHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TDoubleIntHashMap.clone()",
+      "replacement": "public gnu.trove.TDoubleIntHashMap gnu.trove.TDoubleIntHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TDoubleLongHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TDoubleLongHashMap.clone()",
+      "replacement": "public gnu.trove.TDoubleLongHashMap gnu.trove.TDoubleLongHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TFloatByteHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TFloatByteHashMap.clone()",
+      "replacement": "public gnu.trove.TFloatByteHashMap gnu.trove.TFloatByteHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TFloatDoubleHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TFloatDoubleHashMap.clone()",
+      "replacement": "public gnu.trove.TFloatDoubleHashMap gnu.trove.TFloatDoubleHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TFloatFloatHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TFloatFloatHashMap.clone()",
+      "replacement": "public gnu.trove.TFloatFloatHashMap gnu.trove.TFloatFloatHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TFloatHash",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TFloatHash.clone()",
+      "replacement": "public abstract java.lang.Object gnu.trove.TFloatHash.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TFloatHashSet",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TFloatHash.clone()",
+      "replacement": "public gnu.trove.TFloatHashSet gnu.trove.TFloatHashSet.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TFloatIntHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TFloatIntHashMap.clone()",
+      "replacement": "public gnu.trove.TFloatIntHashMap gnu.trove.TFloatIntHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TFloatLongHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TFloatLongHashMap.clone()",
+      "replacement": "public gnu.trove.TFloatLongHashMap gnu.trove.TFloatLongHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.THash",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.THash.clone()",
+      "replacement": "public abstract java.lang.Object gnu.trove.THash.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.THashSet",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public gnu.trove.TObjectHash<T> gnu.trove.TObjectHash.clone()",
+      "replacement": "public gnu.trove.THashSet<E> gnu.trove.THashSet.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TIntByteHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TIntByteHashMap.clone()",
+      "replacement": "public gnu.trove.TIntByteHashMap gnu.trove.TIntByteHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TIntDoubleHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TIntDoubleHashMap.clone()",
+      "replacement": "public gnu.trove.TIntDoubleHashMap gnu.trove.TIntDoubleHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TIntFloatHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TIntFloatHashMap.clone()",
+      "replacement": "public gnu.trove.TIntFloatHashMap gnu.trove.TIntFloatHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TIntHash",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TIntHash.clone()",
+      "replacement": "public abstract java.lang.Object gnu.trove.TIntHash.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TIntHashSet",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TIntHash.clone()",
+      "replacement": "public gnu.trove.TIntHashSet gnu.trove.TIntHashSet.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TIntIntHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TIntIntHashMap.clone()",
+      "replacement": "public gnu.trove.TIntIntHashMap gnu.trove.TIntIntHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TIntLongHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TIntLongHashMap.clone()",
+      "replacement": "public gnu.trove.TIntLongHashMap gnu.trove.TIntLongHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TLongByteHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TLongByteHashMap.clone()",
+      "replacement": "public gnu.trove.TLongByteHashMap gnu.trove.TLongByteHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TLongDoubleHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TLongDoubleHashMap.clone()",
+      "replacement": "public gnu.trove.TLongDoubleHashMap gnu.trove.TLongDoubleHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TLongFloatHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TLongFloatHashMap.clone()",
+      "replacement": "public gnu.trove.TLongFloatHashMap gnu.trove.TLongFloatHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TLongHash",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TLongHash.clone()",
+      "replacement": "public abstract java.lang.Object gnu.trove.TLongHash.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TLongHashSet",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TLongHash.clone()",
+      "replacement": "public gnu.trove.TLongHashSet gnu.trove.TLongHashSet.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TLongIntHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TLongIntHashMap.clone()",
+      "replacement": "public gnu.trove.TLongIntHashMap gnu.trove.TLongIntHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TLongLongHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TLongLongHashMap.clone()",
+      "replacement": "public gnu.trove.TLongLongHashMap gnu.trove.TLongLongHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TObjectByteHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public gnu.trove.TObjectHash<T> gnu.trove.TObjectHash.clone()",
+      "replacement": "public gnu.trove.TObjectByteHashMap<K> gnu.trove.TObjectByteHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TObjectDoubleHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public gnu.trove.TObjectHash<T> gnu.trove.TObjectHash.clone()",
+      "replacement": "public gnu.trove.TObjectDoubleHashMap<K> gnu.trove.TObjectDoubleHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TObjectFloatHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public gnu.trove.TObjectHash<T> gnu.trove.TObjectHash.clone()",
+      "replacement": "public gnu.trove.TObjectFloatHashMap<K> gnu.trove.TObjectFloatHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TObjectHash",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public gnu.trove.TObjectHash<T> gnu.trove.TObjectHash.clone()",
+      "replacement": "public abstract gnu.trove.TObjectHash<T> gnu.trove.TObjectHash.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TObjectIntHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public gnu.trove.TObjectHash<T> gnu.trove.TObjectHash.clone()",
+      "replacement": "public gnu.trove.TObjectIntHashMap<K> gnu.trove.TObjectIntHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TObjectLongHashMap",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public gnu.trove.TObjectHash<T> gnu.trove.TObjectHash.clone()",
+      "replacement": "public gnu.trove.TObjectLongHashMap<K> gnu.trove.TObjectLongHashMap.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    },
+    {
+      "class": "gnu.trove.TPrimitiveHash",
+      "kind": "METHOD",
+      "member": "clone()",
+      "reference": "public java.lang.Object gnu.trove.TPrimitiveHash.clone()",
+      "replacement": "public abstract java.lang.Object gnu.trove.TPrimitiveHash.clone()",
+      "reason": "Explicit copies; abstract bases require clone implementations; concrete subclasses override to preserve subtype state"
+    }
+  ]
+}

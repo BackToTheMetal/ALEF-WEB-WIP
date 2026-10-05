@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="dummy">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mps/testbench/modules/testPackaged/testPackagedLanguage/lib/dummy.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

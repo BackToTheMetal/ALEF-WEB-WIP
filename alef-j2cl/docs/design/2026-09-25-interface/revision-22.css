@@ -1,0 +1,2 @@
+/* Let the project row background show through the package indicator. */
+.project .tree-package.linked{background:transparent}

@@ -1,0 +1,21 @@
+{
+  "status": "Signature closure only; not complete external APIs",
+  "types": [
+    "java.lang.ClassLoader",
+    "java.lang.Readable",
+    "java.lang.Thread",
+    "java.net.DatagramSocket",
+    "java.net.InetAddress",
+    "java.net.NetworkInterface",
+    "java.net.ProtocolFamily",
+    "java.net.ServerSocket",
+    "java.net.Socket",
+    "java.net.SocketAddress",
+    "java.net.SocketOption",
+    "java.security.BasicPermission",
+    "java.security.Permission",
+    "java.security.Principal",
+    "java.time.Instant",
+    "java.util.concurrent.ThreadFactory"
+  ]
+}

@@ -1,0 +1,15 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
+load("@rules_closure//closure:defs.bzl", "closure_js_library")
+
+j2cl_library(
+    name = "contracts-j2cl",
+    srcs = glob(["contract/**/*.java", "browser/**/*.java", "regression/**/*.java", "mps/**/*.java"]),
+    deps = ["//:trove-j2cl", "@j2cl//:jsinterop-annotations-j2cl"],
+)
+closure_js_library(name = "app", srcs = ["browser/app.js"], deps = [":contracts-j2cl"])
+j2cl_application(
+    name = "browser_application",
+    entry_points = ["trovej2cl.app"],
+    deps = [":app"],
+    jre_class_metadata = "SIMPLE",
+)

@@ -1,0 +1,7 @@
+{
+  "locales": ",en,en-US,en-GB,nl,nl-NL",
+  "defaultLocale": "en-US",
+  "currencies": "XXX",
+  "timeZones": "UTC,GMT,Europe/Amsterdam,Europe/London,America/New_York,Australia/Sydney,Asia/Tokyo",
+  "defaultTimeZone": "UTC"
+}

@@ -1,0 +1,104 @@
+name: java-awt-j2cl validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: webawt-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17.0.16+8'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install runtime test tools
+        run: npm ci --ignore-scripts
+      - uses: bazel-contrib/setup-bazel@0.19.0
+        with:
+          bazelisk-cache: true
+          disk-cache: ${{ github.workflow }}
+          repository-cache: true
+      - name: Check source formatting
+        shell: pwsh
+        run: |
+          ./tools/quality/Check-JavaFormatting.ps1
+          ./tools/quality/Check-JavaFormatting.ps1 -SourceDirectory samples/dual_showcase
+      - name: Check dependency policy
+        run: python3 tools/quality/check_production_dependencies.py
+      - name: Test validation tooling
+        run: |
+          python3 -m unittest discover -s tools/quality -p 'test_*.py'
+          python3 -m unittest discover -s tools/release -p 'test_*.py'
+      - name: Install pinned browsers and operating-system dependencies
+        run: bazel run //src/test/playwright/com/webawt/playwright:playwright_cli -- install --with-deps chromium firefox webkit
+      - name: Run JVM and J2CL tests
+        run: bazel test //:all-tests --nocache_test_results --test_output=errors
+      - name: Run display-dependent stock AWT tests
+        run: bazel test //:display-tests --nocache_test_results --test_output=errors --run_under='xvfb-run -a'
+      - name: Run modern browser matrix
+        run: bazel test //:modern-browser-tests --nocache_test_results --test_output=errors
+      - name: Build complete graph
+        run: bazel build //...
+      - name: Validate shared runtime contracts
+        run: python3 tools/validate_runtime.py --skip-build
+      - name: Audit J2CL package ownership
+        run: |
+          python3 tools/compatibility/check_net_profile.py
+          python3 tools/compatibility/check_package_ownership.py
+      - name: Enforce optimized bundle budgets
+        run: python3 tools/quality/check_bundle_budgets.py
+      - name: Validate emitted API
+        run: |
+          python3 -m unittest discover -s tools/compatibility -p 'test_*.py'
+          python3 tools/compatibility/export_webawt_api.py
+          pwsh -NoProfile -File ./tools/compatibility/New-CompatibilityManifest.ps1
+          pwsh -NoProfile -File ./tools/compatibility/New-CompatibilityReport.ps1
+          python3 tools/compatibility/check_profile_lock.py
+          python3 tools/compatibility/compare_webawt_api.py --fail-on-incomplete-api
+          python3 tools/compatibility/build_completeness_worklist.py
+          python3 tools/compatibility/export_extended_api.py
+          python3 tools/compatibility/audit_extended_api.py --require-complete
+          python3 tools/compatibility/graphics_showcase_coverage.py --require-complete
+          python3 tools/compatibility/generate_consumer_probes.py --check
+          python3 tools/compatibility/compile_reference_probes.py
+      - name: Publish validation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: webawt-validation-reports
+          if-no-files-found: warn
+          path: |
+            compatibility/package-ownership-report.json
+            compatibility/consumer-probe-coverage.json
+            compatibility/bundle-size-report.json
+            compatibility/api-completeness-worklist.json
+            compatibility/webawt-api-validation.json
+            compatibility/webawt-api-validation.md
+            compatibility/stock-profile-lock.json
+            compatibility/compatibility-manifest.json
+            compatibility/openjdk-extended-api.json
+            compatibility/webawt-extended-api.json
+            compatibility/extended-api-dispositions.json
+            compatibility/prerequisite-types.json
+            compatibility/extended-api-worklist.json
+            compatibility/extended-api-worklist.md
+            compatibility/graphics2d-showcase-coverage.json
+            compatibility/graphics2d-showcase-coverage.md
+            compatibility/graphics2d-showcase-reviews.json
+            bazel-testlogs/**/test.xml
+            bazel-testlogs/**/test.log
+            bazel-testlogs/**/test.outputs/**

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MPS editor runtime demo</title>
+<style>
+  body { margin: 0; background: #edf0f4; color: #202b3a; font: 15px system-ui, sans-serif; }
+  header { padding: 22px 28px 16px; }
+  h1 { margin: 0 0 8px; font-size: 24px; }
+  p { margin: 8px 0; }
+  header button { border: 1px solid #aab5c5; border-radius: 6px; background: white; padding: 8px 13px; margin: 6px 6px 6px 0; cursor: pointer; }
+  header button:disabled { opacity: .5; cursor: default; }
+  #status { font-family: ui-monospace, monospace; }
+  #mps-editor-root { position: relative; margin-left: 28px; }
+</style>
+<header>
+  <h1>MPS editor runtime</h1>
+  <p>A handwritten test language running with real MPS editor cells, model updates and typechecking.</p>
+  <p>Select the number and type an integer. Invalid text produces a type error.</p>
+  <p>Ctrl/Cmd+Z undoes an edit; Ctrl/Cmd+Shift+Z redoes it.</p>
+  <button id="edit" disabled>Edit value</button>
+  <button id="invalid" disabled>Introduce type error</button>
+  <button id="close" disabled>Close editor</button>
+  <p id="status" role="status">Starting the editor and checking its runtime…</p>
+</header>
+<script>
+(() => {
+  const status = document.getElementById('status');
+  const buttons = [...document.querySelectorAll('header button')];
+  let ready = false, closed = false;
+  let timer;
+  function fail(message) {
+    status.textContent = 'Editor error: ' + message;
+    buttons.forEach(button => button.disabled = true);
+    clearInterval(timer);
+  }
+  function act(callback) {
+    try { callback(); } catch (error) { fail(error.message ?? String(error)); }
+  }
+  document.getElementById('edit').onclick = () => act(() => window.prepareEditorKeyboard());
+  document.getElementById('invalid').onclick = () => act(() => window.showEditorDiagnostic());
+  document.getElementById('close').onclick = () => act(() => {
+    window.disposeEditorLive(); closed = true; buttons.forEach(button => button.disabled = true);
+  });
+  timer = setInterval(() => act(() => {
+    const state = window.editorKeyboardState?.();
+    if (state?.startsWith('FAIL:')) { fail(state); return; }
+    if (closed) {
+      status.textContent = state === 'DISPOSED' ? 'Editor closed. Reload to reopen.' : 'Closing editor…';
+      if (state === 'DISPOSED') clearInterval(timer);
+      return;
+    }
+    const result = window.editorLiveResult;
+    if (result && result !== 'PASS') { fail(result); return; }
+    if (!result) { status.textContent = window.editorProgress?.() ?? 'Starting…'; return; }
+    if (!ready) { ready = true; buttons.forEach(button => button.disabled = false); }
+    status.textContent = 'Value: ' + window.editorModelValue() + ' · Type errors: ' + window.editorAutomaticErrors();
+  }), 150);
+  window.addEventListener('error', event => fail(event.message || 'The editor script could not run.'));
+  const bundle = document.createElement('script');
+  bundle.src = '/editor.js';
+  bundle.onerror = () => fail('Could not load /editor.js. Restart the demo server and reload.');
+  document.body.appendChild(bundle);
+})();
+</script>
+</html>

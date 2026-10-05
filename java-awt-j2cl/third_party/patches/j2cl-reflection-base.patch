@@ -1,0 +1,23 @@
+diff --git a/jre/java/java/lang/ReflectiveOperationException.java b/jre/java/java/lang/ReflectiveOperationException.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/lang/ReflectiveOperationException.java
+@@ -0,0 +1,18 @@
++package java.lang;
++
++/** Minimal hierarchy prerequisite for class-loading-related checked exceptions. */
++public class ReflectiveOperationException extends Exception {
++  public ReflectiveOperationException() {}
++
++  public ReflectiveOperationException(String message) {
++    super(message);
++  }
++
++  public ReflectiveOperationException(String message, Throwable cause) {
++    super(message, cause);
++  }
++
++  public ReflectiveOperationException(Throwable cause) {
++    super(cause);
++  }
++}

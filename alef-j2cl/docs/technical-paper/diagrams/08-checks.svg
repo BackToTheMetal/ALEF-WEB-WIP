@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="500" height="247" preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 247" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="500" height="247"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-247)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="500" height="247" rx="4" ry="0" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.5; fill: rgb(98%,98%,99%); fill-rule: evenodd;"/>
+			<rect x="15" y="182" width="216" height="52" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="72.48046875" y="210.35" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,420) scale(1,-1)">Interactive browser test</text>
+			<text x="57.94101562499999" y="198.35" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,396) scale(1,-1)">Resident draft; transient debug results</text>
+			<rect x="269" y="182" width="216" height="52" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="323.7294921875" y="210.35" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,420) scale(1,-1)">Fixed package candidate</text>
+			<text x="322.74658203125" y="198.35" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,396) scale(1,-1)">Saved versions + toolchain pins</text>
+			<rect x="269" y="92" width="216" height="55" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="318.730712890625" y="121.85" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,243) scale(1,-1)">Isolated native MPS worker</text>
+			<text x="310.6626953125" y="109.85" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,219) scale(1,-1)">Validate models; run Testspraak cases</text>
+			<rect x="269" y="14" width="216" height="44" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="337.484375" y="38.349999999999994" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,76) scale(1,-1)">Retained evidence</text>
+			<text x="316.0072021484375" y="26.349999999999994" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,52) scale(1,-1)">Report + source integrity + package</text>
+			<rect x="15" y="92" width="216" height="55" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="89.2412109375" y="121.85" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,243) scale(1,-1)">Editor feedback</text>
+			<text x="56.0103759765625" y="109.85" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,219) scale(1,-1)">Not retained release approval evidence</text>
+			<polyline points="123 182, 123 147" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="123 147, 125.3971 151.3879, 120.6029 151.3879" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<polyline points="377 182, 377 147" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="377 147, 379.3971 151.3879, 374.6029 151.3879" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<polyline points="377 92, 377 58" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="377 58, 379.3971 62.38791, 374.6029 62.38791" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="82.310546875" y="44" style="font-family: Body; font-size: 8px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,88) scale(1,-1)">Same language family;</text>
+			<text x="50.5078125" y="30" style="font-family: Body; font-size: 8px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,60) scale(1,-1)">different execution and evidence scopes.</text>
+		</g>
+	</g>
+</svg>

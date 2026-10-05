@@ -1,0 +1,398 @@
+{
+  "generated_nio_types": [
+    "java.nio.Buffer",
+    "java.nio.BufferOverflowException",
+    "java.nio.BufferUnderflowException",
+    "java.nio.ByteBuffer",
+    "java.nio.ByteOrder",
+    "java.nio.CharBuffer",
+    "java.nio.DoubleBuffer",
+    "java.nio.FloatBuffer",
+    "java.nio.IntBuffer",
+    "java.nio.InvalidMarkException",
+    "java.nio.LongBuffer",
+    "java.nio.MappedByteBuffer",
+    "java.nio.ReadOnlyBufferException",
+    "java.nio.ShortBuffer",
+    "java.nio.channels.AcceptPendingException",
+    "java.nio.channels.AlreadyBoundException",
+    "java.nio.channels.AlreadyConnectedException",
+    "java.nio.channels.AsynchronousByteChannel",
+    "java.nio.channels.AsynchronousChannel",
+    "java.nio.channels.AsynchronousChannelGroup",
+    "java.nio.channels.AsynchronousCloseException",
+    "java.nio.channels.AsynchronousFileChannel",
+    "java.nio.channels.AsynchronousServerSocketChannel",
+    "java.nio.channels.AsynchronousSocketChannel",
+    "java.nio.channels.ByteChannel",
+    "java.nio.channels.CancelledKeyException",
+    "java.nio.channels.Channel",
+    "java.nio.channels.Channels",
+    "java.nio.channels.ClosedByInterruptException",
+    "java.nio.channels.ClosedChannelException",
+    "java.nio.channels.ClosedSelectorException",
+    "java.nio.channels.CompletionHandler",
+    "java.nio.channels.ConnectionPendingException",
+    "java.nio.channels.DatagramChannel",
+    "java.nio.channels.FileChannel",
+    "java.nio.channels.FileLock",
+    "java.nio.channels.FileLockInterruptionException",
+    "java.nio.channels.GatheringByteChannel",
+    "java.nio.channels.IllegalBlockingModeException",
+    "java.nio.channels.IllegalChannelGroupException",
+    "java.nio.channels.IllegalSelectorException",
+    "java.nio.channels.InterruptedByTimeoutException",
+    "java.nio.channels.InterruptibleChannel",
+    "java.nio.channels.MembershipKey",
+    "java.nio.channels.MulticastChannel",
+    "java.nio.channels.NetworkChannel",
+    "java.nio.channels.NoConnectionPendingException",
+    "java.nio.channels.NonReadableChannelException",
+    "java.nio.channels.NonWritableChannelException",
+    "java.nio.channels.NotYetBoundException",
+    "java.nio.channels.NotYetConnectedException",
+    "java.nio.channels.OverlappingFileLockException",
+    "java.nio.channels.Pipe",
+    "java.nio.channels.ReadPendingException",
+    "java.nio.channels.ReadableByteChannel",
+    "java.nio.channels.ScatteringByteChannel",
+    "java.nio.channels.SeekableByteChannel",
+    "java.nio.channels.SelectableChannel",
+    "java.nio.channels.SelectionKey",
+    "java.nio.channels.Selector",
+    "java.nio.channels.ServerSocketChannel",
+    "java.nio.channels.ShutdownChannelGroupException",
+    "java.nio.channels.SocketChannel",
+    "java.nio.channels.UnresolvedAddressException",
+    "java.nio.channels.UnsupportedAddressTypeException",
+    "java.nio.channels.WritableByteChannel",
+    "java.nio.channels.WritePendingException",
+    "java.nio.channels.spi.AbstractInterruptibleChannel",
+    "java.nio.channels.spi.AbstractSelectableChannel",
+    "java.nio.channels.spi.AbstractSelectionKey",
+    "java.nio.channels.spi.AbstractSelector",
+    "java.nio.channels.spi.AsynchronousChannelProvider",
+    "java.nio.channels.spi.SelectorProvider",
+    "java.nio.charset.CharacterCodingException",
+    "java.nio.charset.CharsetDecoder",
+    "java.nio.charset.CharsetEncoder",
+    "java.nio.charset.CoderMalfunctionError",
+    "java.nio.charset.CoderResult",
+    "java.nio.charset.CodingErrorAction",
+    "java.nio.charset.MalformedInputException",
+    "java.nio.charset.UnmappableCharacterException",
+    "java.nio.charset.spi.CharsetProvider",
+    "java.nio.file.AccessDeniedException",
+    "java.nio.file.AccessMode",
+    "java.nio.file.AtomicMoveNotSupportedException",
+    "java.nio.file.ClosedDirectoryStreamException",
+    "java.nio.file.ClosedFileSystemException",
+    "java.nio.file.ClosedWatchServiceException",
+    "java.nio.file.CopyOption",
+    "java.nio.file.DirectoryIteratorException",
+    "java.nio.file.DirectoryNotEmptyException",
+    "java.nio.file.DirectoryStream",
+    "java.nio.file.FileAlreadyExistsException",
+    "java.nio.file.FileStore",
+    "java.nio.file.FileSystem",
+    "java.nio.file.FileSystemAlreadyExistsException",
+    "java.nio.file.FileSystemException",
+    "java.nio.file.FileSystemLoopException",
+    "java.nio.file.FileSystemNotFoundException",
+    "java.nio.file.FileSystems",
+    "java.nio.file.FileVisitOption",
+    "java.nio.file.FileVisitResult",
+    "java.nio.file.FileVisitor",
+    "java.nio.file.Files",
+    "java.nio.file.InvalidPathException",
+    "java.nio.file.LinkOption",
+    "java.nio.file.LinkPermission",
+    "java.nio.file.NoSuchFileException",
+    "java.nio.file.NotDirectoryException",
+    "java.nio.file.NotLinkException",
+    "java.nio.file.OpenOption",
+    "java.nio.file.Path",
+    "java.nio.file.PathMatcher",
+    "java.nio.file.Paths",
+    "java.nio.file.ProviderMismatchException",
+    "java.nio.file.ProviderNotFoundException",
+    "java.nio.file.ReadOnlyFileSystemException",
+    "java.nio.file.SecureDirectoryStream",
+    "java.nio.file.SimpleFileVisitor",
+    "java.nio.file.StandardCopyOption",
+    "java.nio.file.StandardOpenOption",
+    "java.nio.file.StandardWatchEventKinds",
+    "java.nio.file.WatchEvent",
+    "java.nio.file.WatchKey",
+    "java.nio.file.WatchService",
+    "java.nio.file.Watchable",
+    "java.nio.file.attribute.AclEntry",
+    "java.nio.file.attribute.AclEntryFlag",
+    "java.nio.file.attribute.AclEntryPermission",
+    "java.nio.file.attribute.AclEntryType",
+    "java.nio.file.attribute.AclFileAttributeView",
+    "java.nio.file.attribute.AttributeView",
+    "java.nio.file.attribute.BasicFileAttributeView",
+    "java.nio.file.attribute.BasicFileAttributes",
+    "java.nio.file.attribute.DosFileAttributeView",
+    "java.nio.file.attribute.DosFileAttributes",
+    "java.nio.file.attribute.FileAttribute",
+    "java.nio.file.attribute.FileAttributeView",
+    "java.nio.file.attribute.FileOwnerAttributeView",
+    "java.nio.file.attribute.FileStoreAttributeView",
+    "java.nio.file.attribute.FileTime",
+    "java.nio.file.attribute.GroupPrincipal",
+    "java.nio.file.attribute.PosixFileAttributeView",
+    "java.nio.file.attribute.PosixFileAttributes",
+    "java.nio.file.attribute.PosixFilePermission",
+    "java.nio.file.attribute.PosixFilePermissions",
+    "java.nio.file.attribute.UserDefinedFileAttributeView",
+    "java.nio.file.attribute.UserPrincipal",
+    "java.nio.file.attribute.UserPrincipalLookupService",
+    "java.nio.file.attribute.UserPrincipalNotFoundException",
+    "java.nio.file.spi.FileSystemProvider",
+    "java.nio.file.spi.FileTypeDetector"
+  ],
+  "generated_top_level_count": 152,
+  "preserved": {
+    "java.nio.charset.Charset": "Preserve the parent profile's augmented J2CL charset implementation, required by java.lang.String.",
+    "java.nio.charset.StandardCharsets": "Preserve the parent profile's supported UTF-8 and ISO-8859-1 constants and implementation.",
+    "java.nio.charset.IllegalCharsetNameException": "Already owned by upstream J2CL.",
+    "java.nio.charset.UnsupportedCharsetException": "Already owned by upstream J2CL."
+  },
+  "excluded": {
+    "java.nio.channels.FileChannel#map(java.nio.channels.FileChannel.MapMode,long,long,java.lang.foreign.Arena)": "Java 21 preview foreign-memory API; foreign memory types are absent from this J2CL profile."
+  },
+  "reused_sources": [
+    {
+      "source": "src/main/super/java/lang/ClassLoader.java",
+      "sha256": "a4700772578a9796be8576e73956e75d4b46c521347835aa97b1653ed91fd680"
+    },
+    {
+      "source": "src/main/super/java/lang/Readable.java",
+      "sha256": "5774d5639bdd3baf00c983a5f1acd6dea4ea49bb3c0f274cabc9ad0583bc557f"
+    },
+    {
+      "source": "src/main/super/java/lang/Thread.java",
+      "sha256": "5405d964b5059111da672bf2a37737f1dc7027a0af2b7684dfbb43371aad3f57"
+    },
+    {
+      "source": "src/main/super/java/net/DatagramSocket.java",
+      "sha256": "16f75c315180ef5238050193ce7ad098e511f88f6b3ef84a15a71a837aabb6f7"
+    },
+    {
+      "source": "src/main/super/java/net/InetAddress.java",
+      "sha256": "b35e483c6d0c4eb19c0b65890f2ad59d82fa4c9b1481fbe9ce769313ab0a86fa"
+    },
+    {
+      "source": "src/main/super/java/net/NetworkInterface.java",
+      "sha256": "3db0aa49fa88fddd4dfa5dba7f120eca11579cba1117b3f1f83b4170e6986280"
+    },
+    {
+      "source": "src/main/super/java/net/ProtocolFamily.java",
+      "sha256": "cd674e02ddeedfe24d71c1988d5521327a2109264f76baa354e4fac3e659b229"
+    },
+    {
+      "source": "src/main/super/java/net/ServerSocket.java",
+      "sha256": "8956ad553b266eaac5cee2ce0672d789dcc453cc5b82c897b0a42932aac4b4ad"
+    },
+    {
+      "source": "src/main/super/java/net/Socket.java",
+      "sha256": "70fb6754b7363017adc3a59abfd3d28577f9ea12f4a8d5b8685720d747c4b899"
+    },
+    {
+      "source": "src/main/super/java/net/SocketAddress.java",
+      "sha256": "0f7aa23acd5b259d8773ac458e363e234ff25cf1eac9ecf8a916a8c0faf86b2e"
+    },
+    {
+      "source": "src/main/super/java/net/SocketOption.java",
+      "sha256": "69eceac7aac0536b2c1f1e153da5d6182ed1d9bb2633344654d13b880c077c54"
+    },
+    {
+      "source": "src/main/super/java/nio/charset/Charset.java",
+      "sha256": "f10e2a359e83cd8c35f93421997973280ffb8960d020d0fa0e036ba7116f59cb"
+    },
+    {
+      "source": "src/main/super/java/nio/charset/StandardCharsets.java",
+      "sha256": "9267803744a325bf709addf41d24efbf6e2d4451a1fd6d97348d46eb4df9abae"
+    },
+    {
+      "source": "src/main/super/java/security/BasicPermission.java",
+      "sha256": "b0e7f620957d3047aa19e1c02c7320a69d429e270f69671be6f66d17ccf2b185"
+    },
+    {
+      "source": "src/main/super/java/security/Permission.java",
+      "sha256": "34c43e3ae0680423c32815d2150feb2334f4ce68e6cd35b7900b56b0ffbb7f5a"
+    },
+    {
+      "source": "src/main/super/java/security/Principal.java",
+      "sha256": "9b8978c006cc27409865d1a8647f89ffae19f2a92bd10d760f051dbdbdf459be"
+    },
+    {
+      "source": "src/main/super/java/time/Instant.java",
+      "sha256": "ea5af62ee14d3c9cca338d4e6194a03692bd9cdabf7e7a63c50c5c611a7e0bf8"
+    },
+    {
+      "source": "src/main/super/java/util/concurrent/ThreadFactory.java",
+      "sha256": "78c1843eb3bc4b5cc05e52d04918d52471e4474dc255c062887bbf3c8da2e644"
+    },
+    {
+      "source": "src/main/super/javaemul/internal/EmulatedCharset.java",
+      "sha256": "74af445cec4da45654abd6e1106fbdadac59d0c8ac1fab1520cfc6bc00d9af0c"
+    },
+    {
+      "source": "src/main/super/javaemul/internal/nio/UnsupportedNio.java",
+      "sha256": "bfd5812c0183194bf0fffed00b01de2c5dff8891b0dc5b3c2ebe0b6aef01aef0"
+    },
+    {
+      "source": "src/main/super/module-info.java",
+      "sha256": "e9961856593e1f35e3efec6882b97cdec306d78b48a70555be77d3bbac3969c2"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/BufferedInputStream.java",
+      "sha256": "319c682fa353926f602b5dbe67455cfa881840a6d2b381b02d3788d62ee70b08"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/BufferedOutputStream.java",
+      "sha256": "3d2def0c788a921a37ed0b5f7173cb28cda90dbd48d76c045e4d3995c03fba9d"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/BufferedReader.java",
+      "sha256": "13f28aaa52f1ec45244a295318f9b15cbc5a2eb3ba7a29811aec6aefac9bc1dd"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/CharArrayReader.java",
+      "sha256": "8cb7e0efda20ddb2339e247e7175134aa69ab02dc79293e209a8c42fac704589"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/CharArrayWriter.java",
+      "sha256": "663d564688bf67d3ccb3e1fdb42943a4ee51d6ec72e7193d3de3f19720432772"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/DataInput.java",
+      "sha256": "eaf163756e854b38ca96c6e40492af61ae5abdffceb43cdef14cdde0af3b1a27"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/DataInputStream.java",
+      "sha256": "a6d42475945844e35912fdb385ac3bee75b7d54bebac03cb0e824dcef4a6549a"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/DataOutput.java",
+      "sha256": "23fe51835c1d523074c6d2924beb70725b9e0e0d2c971376f76efbf19f721521"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/DataOutputStream.java",
+      "sha256": "ccfcdd123890ed315af30c4ea9aaeec104870afc5961b447a7401d97488a4561"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/EOFException.java",
+      "sha256": "095cd47f39090d8caece082e0fb92ecac9854f6cd1e1472d68901faeb7c4308c"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/File.java",
+      "sha256": "487e2e049bcc44aacd1b4a48016c716a7678ca25460eb4adb6bfbd25fa778f40"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/FileFilter.java",
+      "sha256": "21a3fa8339dff44959f025cbda0a1bfa59451ce867b9ae537d68b5202032e1db"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/FileInputStream.java",
+      "sha256": "c3af4fff0e6f059b6ac937cb4467758f5d82b5a4e9a8425d48fbda96bab5e7be"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/FileNotFoundException.java",
+      "sha256": "844bbaa167b57bf68c47a83ab71cb798f32c59c5b71df7bb01cf5a25d0ce95cc"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/FileOutputStream.java",
+      "sha256": "4fb6d436fe51b44577e474f5c93ad2e507420b84bbadd97b9d391c03abfe7785"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/FileReader.java",
+      "sha256": "263d3d5615f066bd30f855f6db676008adeee648cc5cf58eb4c3aaf91adb761c"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/FileWriter.java",
+      "sha256": "579b5c831238e5015d5a129289d098f818cab4bb4104fdeb2b01e34bceacb8d9"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/FilenameFilter.java",
+      "sha256": "8ac097285665553b1a20fcbf8385977df00a278eb62ec65e0268be37a84f4394"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/IOError.java",
+      "sha256": "1025c97bef4f65488a5fe4633de2483368e0c098b60708d2de4983995436b8ca"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/InputStreamReader.java",
+      "sha256": "db543370aa63eea6dee4391ef5b95720df7881084cad3e8d46eafbe147db5002"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/LineNumberReader.java",
+      "sha256": "2ecb80b5b357f6986e8ff1dab992b4c41b5636772876b19bced8fb89c245f5e9"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/NotSerializableException.java",
+      "sha256": "335898459bbaf84806c0527b3b9aca59d8882e0ca1036bd84c9ec76549489dd1"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/ObjectInput.java",
+      "sha256": "8c06ff2e5a998c3cf8022469c0e5270df10d5028324cb60d83d55ce05246b14f"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/ObjectInputStream.java",
+      "sha256": "79c3bc03839c35ae1b0f0cb2c59bc13bfd95641346e5a13700609dae0ad8d48d"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/ObjectOutput.java",
+      "sha256": "f50aea28519d2f42c5e3a882607490f605c769a10d2f298902a1ca1070f23186"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/ObjectOutputStream.java",
+      "sha256": "c9f73e9a227caa59bc8bfef7bac8f047ab994a0de7b776ba027e9f6c7a50d5d3"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/ObjectStreamException.java",
+      "sha256": "53a7981ca1fb18ca7f2cede63f739520751c183730772a5bdf7dd72a21f96acc"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/PipedInputStream.java",
+      "sha256": "51f582c6faabf66bb2ab75a78d044b1938d14b599407306b1889e011791ebfd6"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/PipedOutputStream.java",
+      "sha256": "24272e170b93e38eb66bd18220001d0c2110e28dddadcbc036958db9798be835"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/io/UTFDataFormatException.java",
+      "sha256": "9a1a71368fcf822c0f71f8b52fa35567a41d70a30aa7095aa10494af77256b1c"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/lang/ClassNotFoundException.java",
+      "sha256": "98c559f3c76b3e87d19131c41e5f07e1781459f0142ffcca9676d9cdf6fb6443"
+    },
+    {
+      "source": "third_party/java-io-j2cl/overlay/java/lang/ReflectiveOperationException.java",
+      "sha256": "3f6c94f39c458a193eda55d8ec5b41dbb6fdb05b384e518e86f01547c25fa623"
+    },
+    {
+      "source": "third_party/WebAWT/overlay/java/net/MalformedURLException.java",
+      "sha256": "b4932df9dbd2aee296a8c70d408b93833728d78b05f78de7f11b72bf53143f0c"
+    },
+    {
+      "source": "third_party/WebAWT/overlay/java/net/URI.java",
+      "sha256": "90f057ccccb53dbeda4fa18f6282219a28421e98fb6d21795242ec50a720f3f8"
+    },
+    {
+      "source": "third_party/WebAWT/overlay/java/net/URISyntaxException.java",
+      "sha256": "d4862662716403292aeeedf72644f2c964c208bd76412f2ac198df1110822437"
+    },
+    {
+      "source": "third_party/WebAWT/overlay/java/net/URL.java",
+      "sha256": "8a72673eeda348dc418e5a0b78df9817a03b5f3b02386544a0174fab0458e592"
+    }
+  ],
+  "patch_sha256": "10d2897e984675de711f2afdaedad260f70bd4aa3bcdf5d11fff6fe5b13eea35",
+  "stub_bodies": "Unmodified Metalava RuntimeException(\"Stub!\") bodies"
+}

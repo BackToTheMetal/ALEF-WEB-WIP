@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NIO stubs: why is there a filter?</title>
+  <style>
+    :root { color-scheme: light dark; --bg: #f6f7f8; --paper: #ffffff; --ink: #17232d; --muted: #52616c; --line: #cbd4db; --source: #086b61; --source-bg: #e8f5f0; --context: #405aa8; --context-bg: #edf0fc; --note: #885314; --note-bg: #fff4df; --code: #132b35; --code-ink: #e7f1f6; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #111a20; --paper: #18252d; --ink: #e7eef3; --muted: #adbeca; --line: #41525e; --source: #8bdbcb; --source-bg: #193d37; --context: #b3c4ff; --context-bg: #273550; --note: #f0c383; --note-bg: #403423; --code: #0e1b22; --code-ink: #e7f1f6; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main, header, footer { width: min(1080px, calc(100% - 40px)); margin-inline: auto; }
+    header { padding: 30px 0 18px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+    header strong { color: var(--ink); letter-spacing: .06em; }
+    a { color: var(--context); text-underline-offset: 3px; }
+    h1 { font-size: clamp(32px, 5vw, 54px); line-height: 1.12; letter-spacing: -.035em; max-width: 840px; margin: 18px 0 22px; }
+    h2 { font-size: clamp(23px, 3vw, 30px); line-height: 1.25; margin: 0 0 14px; letter-spacing: -.02em; }
+    h3 { font-size: 18px; margin: 0 0 8px; }
+    p { margin: 0 0 15px; }
+    .intro { padding: 46px 0 38px; }
+    .intro p { max-width: 810px; font-size: 19px; }
+    .eyebrow { color: var(--muted); font-size: 12px; letter-spacing: .13em; text-transform: uppercase; font-weight: 650; }
+    section { padding: 34px 0; border-top: 1px solid var(--line); }
+    section > p { max-width: 880px; }
+    .number { color: var(--muted); font-weight: 400; margin-right: 12px; }
+    .small { font-size: 13px; color: var(--muted); }
+    .tag { display: inline-block; padding: 3px 10px; border-radius: 5px; font-size: 12px; font-weight: 650; letter-spacing: .025em; }
+    .source { background: var(--source-bg); color: var(--source); }
+    .context { background: var(--context-bg); color: var(--context); }
+    code { font: .9em/1.6 ui-monospace, "Cascadia Code", Consolas, monospace; overflow-wrap: anywhere; }
+    .flow { display: grid; grid-template-columns: minmax(0, 1fr) 35px minmax(0, 1fr) 35px minmax(0, 1fr); align-items: stretch; margin: 23px 0 14px; }
+    .node { padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); min-width: 0; }
+    .node b { display: block; font-size: 18px; margin: 5px 0; line-height: 1.4; }
+    .node p { margin: 7px 0 0; font-size: 14px; color: var(--muted); }
+    .source-node { border-top: 4px solid var(--source); }
+    .context-node { border-top: 4px solid var(--context); }
+    .arrow { display: grid; place-items: center; font-size: 25px; color: var(--muted); }
+    .answer { border-left: 3px solid var(--source); padding: 11px 17px; margin-top: 20px; background: var(--source-bg); }
+    .answer p, .note p { margin: 0; }
+    .note { border-left: 3px solid var(--note); background: var(--note-bg); padding: 14px 18px; margin: 20px 0 0; }
+    pre { background: var(--code); color: var(--code-ink); padding: 23px; border-radius: 10px; white-space: pre-wrap; overflow-wrap: anywhere; margin: 22px 0 12px; }
+    pre code { font-size: 14px; }
+    mark { background: #d7e7ff; color: #172c57; padding: 2px 4px; border-radius: 3px; }
+    .compile-diagram { margin: 24px 0; }
+    .inputs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .drop { text-align: center; font-size: 25px; color: var(--muted); }
+    .compiler { padding: 20px; text-align: center; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; }
+    .compiler strong { display: block; font-size: 21px; }
+    .output { max-width: 560px; margin-inline: auto; text-align: center; }
+    .filter-flow { grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr) 30px minmax(0, 1fr) 30px minmax(0, 1fr); }
+    .filter-flow .node { padding: 16px; }
+    .filter-flow .count { font-size: 29px; font-variant-numeric: tabular-nums; }
+    .choices { display: flex; gap: 8px; flex-wrap: wrap; margin: 20px 0 14px; }
+    button { font: inherit; font-size: 14px; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 9px 13px; cursor: pointer; }
+    button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid var(--context); outline-offset: 3px; }
+    .example { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
+    .route { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 10px 0; font-weight: 600; }
+    .route span:first-child, .route span:last-child { padding: 7px 12px; border-radius: 5px; background: var(--context-bg); color: var(--context); }
+    .example p { margin-bottom: 0; }
+    .comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px; margin-top: 24px; }
+    .comparison article { border-left: 3px solid var(--line); padding-left: 18px; }
+    .comparison p { font-size: 15px; }
+    details { padding: 17px 0; border-top: 1px solid var(--line); }
+    summary { cursor: pointer; font-weight: 650; }
+    details p, details ul { margin-top: 12px; }
+    li { margin: 6px 0; }
+    footer { border-top: 1px solid var(--line); padding: 25px 0 40px; font-size: 13px; color: var(--muted); }
+    @media (max-width: 740px) { .flow, .filter-flow, .inputs, .comparison { grid-template-columns: 1fr; } .arrow { transform: rotate(90deg); height: 34px; } main, header, footer { width: calc(100% - 30px); } .intro { padding-top: 32px; } .inputs { gap: 12px; } .node { padding: 17px; } pre { padding: 16px; } }
+    @media print { :root { color-scheme: light; } body { background: white; color: black; font-size: 11pt; } header, main, footer { width: 100%; } button { display: none; } section, .node, pre, .example { break-inside: avoid; } .intro { padding-top: 20px; } }
+  </style>
+</head>
+<body>
+  <header><strong>JAVA.NIO / PYTHON TRIAL</strong><span>Explanation of the current build · 2 October 2026</span></header>
+  <main>
+    <div class="intro">
+      <div class="eyebrow">The distinction that matters</div>
+      <h1>You can generate the NIO stubs directly.</h1>
+      <p>That is already what <code>generate.py</code> does. <strong>No dependency filtering is needed to create those Java files.</strong></p>
+      <p>The filtering was added for the next step: compiling those files with J2CL. It prepares the other Java types the compiler needs to understand the NIO API.</p>
+    </div>
+
+    <section aria-labelledby="generation-title">
+      <h2 id="generation-title"><span class="number">01</span>Create the Java stubs</h2>
+      <p>Read the public and protected API from the selected JDK, keep its declarations, and replace concrete method bodies with a throwing body.</p>
+      <div class="flow" role="group" aria-label="Selected JDK NIO API goes through generate.py to become 156 Java stub source files. No filter is involved.">
+        <div class="node source-node"><span class="tag source">API input</span><b>JDK 17.0.16</b><code>java.nio.*</code><p>Signatures read from the installed JDK using <code>javap</code>.</p></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node source-node"><span class="tag source">generate.py</span><b>Keep the API</b><p>Types, methods, constructors, fields, and inheritance. Emit throwing bodies where applicable.</p></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node source-node"><span class="tag source">Java output</span><b>156 source files</b><code>generated/src/java/nio/…</code><p>163 public/protected types, including nested types.</p></div>
+      </div>
+      <div class="answer"><p><strong>If you only want Java stub sources, this is the result.</strong> <code>filter_api.py</code> does not participate in generating them.</p></div>
+      <p class="small" style="margin-top: 13px">The generator also validates the files with the selected JDK's <code>javac</code>, which already knows that JDK's other types. Abstract methods remain abstract; enums retain compiler-generated behavior.</p>
+    </section>
+
+    <section aria-labelledby="types-title">
+      <h2 id="types-title"><span class="number">02</span>A throwing body still has a signature</h2>
+      <p>This method is in your generated <code>java.nio.file.Paths</code> class:</p>
+      <pre><code>public static java.nio.file.Path get(<mark>java.net.URI p0</mark>) {
+    throw new UnsupportedOperationException("Stub!");
+}</code></pre>
+      <p>The method does no file or network work. But the compiler must still resolve <code>java.net.URI</code> to check the declaration. The same applies to parameter types, return types, superclasses, interfaces, and declared exceptions throughout NIO.</p>
+      <p><strong>The package you generate is NIO. The set of types needed to compile it is larger.</strong> Those external type declarations do not automatically become JavaScript output.</p>
+    </section>
+
+    <section aria-labelledby="compile-title">
+      <h2 id="compile-title"><span class="number">03</span>J2CL receives sources and type declarations</h2>
+      <p>J2CL uses its own core Java declarations. Its supplied API is smaller than a full desktop JDK, so this trial adds declarations for missing types such as <code>URI</code>, <code>File</code>, and <code>BasicPermission</code>.</p>
+      <div class="compile-diagram" role="group" aria-label="Generated NIO sources, stock J2CL core headers, and extra JDK headers feed J2CL. Only the NIO sources are transpiled into the output library.">
+        <div class="inputs">
+          <div class="node source-node"><span class="tag source">Source input</span><b>Your NIO stubs</b><p>156 generated Java files.<br><strong>These are transpiled.</strong></p></div>
+          <div class="node context-node"><span class="tag context">Compiler reference</span><b>J2CL core headers</b><p>J2CL's declarations for core types, such as <code>String</code> and <code>Throwable</code>.</p></div>
+          <div class="node context-node"><span class="tag context">Compiler reference</span><b>Extra JDK headers</b><p>Declarations for types J2CL does not supply.<br><strong>This is the filter's output.</strong></p></div>
+        </div>
+        <div class="drop" aria-hidden="true">↓</div>
+        <div class="compiler"><strong>J2CL compiler</strong><span>Resolve types and check Java → transpile the listed NIO source files</span></div>
+        <div class="drop" aria-hidden="true">↓</div>
+        <div class="node source-node output"><span class="tag source">Library output</span><b>nio-stubs.js.zip</b><p>NIO JavaScript modules, source maps, and the generated Java sources.<br>The extra reference classes are not emitted as implementations.</p></div>
+      </div>
+      <p class="small">The current output check confirms 156 unchanged Java sources, 171 JavaScript implementation modules (including compiler helpers), and zero files outside <code>java/nio/</code>.</p>
+    </section>
+
+    <section aria-labelledby="filter-title">
+      <h2 id="filter-title"><span class="number">04</span>Why this build contains a filter</h2>
+      <p><strong>I chose to copy a broad set of JDK classes as the starting reference library.</strong> That library contains both useful missing types and types J2CL already supplies. The filtering is a consequence of that choice.</p>
+      <p>The filter removes overlapping definitions so the build uses J2CL's versions of core types. Then <code>ijar</code> removes method bodies and other entries unnecessary for the resulting compile-time API.</p>
+      <div class="flow filter-flow" role="group" aria-label="6108 cached non-NIO JDK class entries, minus 312 already supplied by J2CL, leaves 5796. ijar removes method bodies and another 774 class entries, leaving 5022 header class entries.">
+        <div class="node context-node"><span class="eyebrow">Cached JDK classes</span><b class="count">6,108</b><p>Already excludes all NIO.<br>Still contains JDK bytecode.</p></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node context-node"><span class="eyebrow">Remove duplicates</span><b class="count">−312</b><p>Classes already supplied by J2CL.<br>5,796 remain.</p></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node context-node"><span class="eyebrow">Run ijar</span><b class="count">−774</b><p>Additional class entries removed.<br>Method bodies stripped.</p></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node context-node"><span class="eyebrow">Extra headers</span><b class="count">5,022</b><p><code>jdk-api-headers.jar</code><br>Type information for compilation.</p></div>
+      </div>
+      <p class="small">These are class-file counts, including nested and internal types. The 774 figure counts removed class entries, not removed methods. This is not a minimal set of NIO dependencies.</p>
+
+      <h3 style="margin-top: 27px">Follow one type through the build</h3>
+      <div class="choices" role="group" aria-label="Choose a type to see how it is handled">
+        <button type="button" data-example="string" aria-pressed="true" aria-controls="type-example">java.lang.String</button>
+        <button type="button" data-example="uri" aria-pressed="false" aria-controls="type-example">java.net.URI</button>
+        <button type="button" data-example="charset" aria-pressed="false" aria-controls="type-example">java.nio.charset.Charset</button>
+      </div>
+      <div class="example" id="type-example" aria-live="polite" aria-atomic="true">
+        <strong id="example-heading">String: J2CL already provides it</strong>
+        <div class="route"><span id="route-from">Cached JDK String.class</span><span aria-hidden="true">→</span><span id="route-to">Removed from the extra JAR</span></div>
+        <p id="example-detail">The compiler uses J2CL's String declaration. The filter removes the duplicate JDK class; it does not delete anything from your generated NIO sources.</p>
+      </div>
+      <noscript><p><code>URI</code> is retained as a declaration because J2CL does not supply it. <code>Charset</code> is absent from the cached reference JAR because the generator already excluded NIO; your generated Charset stub is a source input.</p></noscript>
+    </section>
+
+    <section aria-labelledby="necessary-title">
+      <h2 id="necessary-title"><span class="number">05</span>What is necessary, and what is a design choice?</h2>
+      <p><a href="nio-jdk-dependencies.html">See the measured dependency list: 19 extra JDK declarations suffice for the current NIO compilation.</a></p>
+      <div class="comparison">
+        <article><h3>Necessary for compilation</h3><p>The compiler must have compatible declarations for all types referred to by the NIO API. Making every method throw does not remove that requirement.</p></article>
+        <article><h3>A choice in this trial</h3><p>Copying thousands of JDK classes and filtering them is one way to provide those declarations. A curated, compatible declaration JAR could replace this preparation step. That alternative has not been implemented here.</p></article>
+      </div>
+      <div class="answer"><p><strong>Your intuition about generation is correct:</strong> take the NIO API and generate throwing stubs. The extra machinery exists to make those stubs compile with J2CL's particular Java environment.</p></div>
+      <div class="note"><p><strong>Compiling a library is a separate boundary from running an application.</strong> This archive is not a linked browser application. A consumer still needs a compatible runtime and must resolve overlapping NIO types when linking. Compile-time headers do not provide runtime implementations.</p></div>
+    </section>
+
+    <section aria-labelledby="questions-title">
+      <h2 id="questions-title">The remaining points of confusion</h2>
+      <details open><summary>Does J2CL already include java.nio?</summary><p>The pinned J2CL version <code>20260402</code> includes four top-level classes in <code>java.nio.charset</code>: <code>Charset</code>, <code>IllegalCharsetNameException</code>, <code>StandardCharsets</code>, and <code>UnsupportedCharsetException</code>. Its headers also contain one nested Charset class.</p><p>Your four generated versions are still transpilation inputs. The filter does not replace them with J2CL implementations.</p></details>
+      <details><summary>Is the NIO check inside filter_api.py redundant?</summary><p>Yes, for the current pipeline. <code>generate.py</code> already excludes <code>java/nio/</code> and <code>module-info.class</code> from the cached reference JAR. The checks in <code>filter_api.py</code> are defensive. They remove zero additional entries in the current input.</p></details>
+      <details><summary>Why not give J2CL the original JDK JAR unchanged?</summary><p>It contains overlapping core definitions, and desktop JDK declarations are not interchangeable with J2CL's core declarations and compiler-specific helpers. The filter keeps J2CL's definitions authoritative. Stripping bodies is a separate concern: it makes the extra JAR an explicit compile-time API artifact.</p><p>Merely placing bytecode on a classpath does not itself transpile it. The source list controls what this build emits.</p></details>
+      <details><summary>Why did CharArrayReader appear before?</summary><p>The earlier build reused external implementation sources. The current build does not. The cached JDK reference JAR may contain <code>CharArrayReader.class</code>, and the extra header JAR can contain its declaration. Neither makes it a NIO source input or an output JavaScript class.</p></details>
+      <details><summary>Which files implement these steps?</summary><ul><li><a href="../generate.py">generate.py</a>: writes and validates the NIO stubs; also saves the broad JDK reference JAR.</li><li><a href="../filter_api.py">filter_api.py</a>: removes overlap and invokes <code>ijar</code>.</li><li><a href="../compile_api.bzl">compile_api.bzl</a>: exposes J2CL's core compile-time JARs.</li><li><a href="../transpile.py">transpile.py</a>: passes the NIO source list and reference declarations to J2CL.</li><li><a href="../BUILD.bazel">BUILD.bazel</a>: connects the build steps.</li><li><a href="../check_output.py">check_output.py</a>: verifies package boundaries, source identity, and type coverage.</li></ul></details>
+    </section>
+  </main>
+  <footer>Based on the current python-trial sources and local build artifacts. Source API: Temurin JDK 17.0.16. J2CL: 20260402. Counts verified on 2 October 2026. This page explains the existing build; it does not change it.</footer>
+  <script>
+    (() => {
+      const examples = {
+        string: { heading: 'String: J2CL already provides it', from: 'Cached JDK String.class', to: 'Removed from the extra JAR', detail: "The compiler uses J2CL's String declaration. The filter removes the duplicate JDK class; it does not delete anything from your generated NIO sources." },
+        uri: { heading: 'URI: needed by NIO, missing from J2CL', from: 'Cached JDK URI.class', to: 'Retained as a header by ijar', detail: 'The compiler can now resolve the URI parameter in Paths.get(URI). The header contains no method implementation bodies and is not emitted as a URI JavaScript implementation.' },
+        charset: { heading: 'Charset: your generated NIO source is transpiled', from: 'Generated Charset.java', to: 'NIO JavaScript output', detail: 'The cached JDK reference JAR has no NIO classes, so this type never passes through filter_api.py. Stock J2CL also has a Charset header; your generated source is used for this transpilation. Resolving overlapping runtime types when linking is a separate consumer task.' }
+      };
+      const controls = Array.from(document.querySelectorAll('[data-example]'));
+      const heading = document.getElementById('example-heading');
+      const from = document.getElementById('route-from');
+      const to = document.getElementById('route-to');
+      const detail = document.getElementById('example-detail');
+      controls.forEach(button => button.addEventListener('click', () => {
+        const selected = examples[button.dataset.example];
+        if (!selected) return;
+        controls.forEach(control => control.setAttribute('aria-pressed', String(control === button)));
+        heading.textContent = selected.heading;
+        from.textContent = selected.from;
+        to.textContent = selected.to;
+        detail.textContent = selected.detail;
+      }));
+    })();
+  </script>
+</body>
+</html>

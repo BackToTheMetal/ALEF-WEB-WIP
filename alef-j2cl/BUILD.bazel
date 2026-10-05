@@ -1,0 +1,193 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
+load("@rules_closure//closure:defs.bzl", "closure_js_library")
+load(":alef-sources.bzl", "ALEF_SOURCES")
+load(":extension-sources.bzl", "EXTENSION_SOURCES")
+load(":mps-sources.bzl", "MPS_SOURCES")
+load("@mps_j2cl//:mps-browser-projects.bzl", "MPS_BROWSER_NAMES")
+
+package(default_visibility = ["//visibility:public"])
+exports_files(glob(["third_party/**/*.patch"]))
+
+j2cl_library(
+    name = "scrollbar_paint_contracts",
+    srcs = ["tests/ScrollBarPaintContracts.java"],
+    deps = ["@webawt//:webawt", "@javax-swing-j2cl//src/main:javax-swing-j2cl", "@elemental2//:elemental2-dom-j2cl"],
+)
+closure_js_library(
+    name = "scrollbar_paint_entry",
+    srcs = ["tests/scrollbar-paint.js"],
+    deps = [":scrollbar_paint_contracts"],
+)
+j2cl_application(
+    name = "scrollbar_paint_browser",
+    entry_points = ["alefj2cl.scrollbarPaint"],
+    deps = [":scrollbar_paint_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "font_measurement_probe",
+    srcs = ["tests/FontMeasurementProbe.java"],
+    deps = ["@webawt//src/main/java/org/webawt/internal/browser:browser-elemental2-j2cl"],
+)
+closure_js_library(
+    name = "font_measurement_entry",
+    srcs = ["tests/font-measurements.js"],
+    deps = [":font_measurement_probe"],
+)
+j2cl_application(
+    name = "font_measurement_browser",
+    entry_points = ["alefj2cl.fontMeasurements"],
+    deps = [":font_measurement_entry"],
+)
+
+j2cl_library(
+    name = "list_selection_contracts",
+    srcs = ["tests/ListSelectionContracts.java"],
+    deps = ["@webawt//:webawt", "@javax-swing-j2cl//src/main:javax-swing-j2cl", "@elemental2//:elemental2-dom-j2cl"],
+)
+closure_js_library(
+    name = "list_selection_entry",
+    srcs = ["tests/list-selection.js"],
+    deps = [":list_selection_contracts"],
+)
+j2cl_application(
+    name = "list_selection_browser",
+    entry_points = ["alefj2cl.listSelection"],
+    deps = [":list_selection_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+# The languages and runtime helpers form cycles and compile in one source unit.
+j2cl_library(
+    name = "editor_update_contracts",
+    srcs = ["tests/EditorUpdateContracts.java"],
+    deps = [":alef_languages", ":dependencies", "@mps_j2cl//:browser_editor_host", "@mps_j2cl//:browser_platform", "@webawt//:webawt", "@javax-swing-j2cl//src/main:javax-swing-j2cl"],
+)
+closure_js_library(
+    name = "editor_update_entry",
+    srcs = ["tests/editor-updates.js"],
+    deps = [":editor_update_contracts"],
+)
+j2cl_application(
+    name = "editor_update_browser",
+    entry_points = ["alefj2cl.editorUpdates"],
+    deps = [":editor_update_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+alias(name = "regelspraak", actual = ":alef_languages")
+alias(name = "gegevensspraak", actual = ":alef_languages")
+alias(name = "servicespraak", actual = ":alef_languages")
+alias(name = "testspraak", actual = ":alef_languages")
+
+j2cl_library(
+    name = "alef_languages",
+    srcs = ALEF_SOURCES + glob(["browser-src/**/*.java", "j2cl-src/mps/browser/financial/*.java"]),
+    # Generated upstream Java is checked by javac/J2CL; retain its existing semantics.
+    javacopts = ["-XepDisableAllChecks"],
+    deps = ["@mps_j2cl//:mps_" + (p[4:] if p.startswith("mps-") and p != "mps-platform" else p).replace("-", "_").lower() for p in MPS_BROWSER_NAMES] + [
+        ":dependencies",
+        ":alef_extensions",
+        ":alef_mps",
+        "@mps_j2cl//:browser_platform",
+        "@mps_j2cl//:intellij_stubs",
+        "@mps_j2cl//:extension_annotations",
+        "@webawt//:webawt",
+        "@javax-swing-j2cl//src/main:javax-swing-j2cl",
+        "@gnu_trove_j2cl//:trove-j2cl",
+        "@org_jdom_j2cl//:jdom",
+        "@org_jdom_j2cl//:sax-api",
+        "@j2cl//:jsinterop-annotations-j2cl",
+    ],
+)
+
+j2cl_library(
+    name = "alef_extensions",
+    srcs = EXTENSION_SOURCES + glob(["extension-support/**/*.java"]),
+    deps = ["@mps_j2cl//:mps_" + (p[4:] if p.startswith("mps-") and p != "mps-platform" else p).replace("-", "_").lower() for p in MPS_BROWSER_NAMES] + [
+        ":dependencies",
+        ":alef_mps",
+        "@j2cl//:jsinterop-annotations-j2cl",
+        "@mps_j2cl//:intellij_stubs",
+        "@mps_j2cl//:extension_annotations",
+        "@webawt//:webawt",
+        "@javax-swing-j2cl//src/main:javax-swing-j2cl",
+        "@gnu_trove_j2cl//:trove-j2cl",
+    ],
+)
+
+j2cl_library(
+    name = "alef_mps",
+    srcs = MPS_SOURCES,
+    javacopts = ["-XepDisableAllChecks"],
+    deps = ["@mps_j2cl//:mps_" + (p[4:] if p.startswith("mps-") and p != "mps-platform" else p).replace("-", "_").lower() for p in MPS_BROWSER_NAMES] + [
+        ":dependencies",
+        "@mps_j2cl//:intellij_stubs",
+        "@mps_j2cl//:extension_annotations",
+        "@webawt//:webawt",
+        "@javax-swing-j2cl//src/main:javax-swing-j2cl",
+        "@gnu_trove_j2cl//:trove-j2cl",
+        "@org_jdom_j2cl//:jdom",
+        "@org_jdom_j2cl//:sax-api",
+    ],
+)
+
+j2cl_library(
+    name = "dependencies",
+    exports = [
+        "@mps_extensions_j2cl//:runtime",
+        "@walkingkooka_java_time//:java-time-j2cl",
+        "@mps_j2cl//:alef_language_support",
+    ],
+)
+
+j2cl_library(
+    name = "jre_contracts",
+    srcs = ["tests/JreContracts.java"],
+    deps = ["@walkingkooka_java_time//:java-time-j2cl"],
+)
+closure_js_library(
+    name = "dependency_contracts_entry",
+    srcs = ["tests/dependencies.js"],
+    deps = [":jre_contracts", "@mps_extensions_j2cl//:contracts"],
+)
+j2cl_application(
+    name = "dependency_contracts_browser",
+    entry_points = ["alefj2cl.dependencies"],
+    deps = [":dependency_contracts_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "language_contracts",
+    srcs = ["tests/LanguageContracts.java"],
+    deps = [":alef_languages", ":dependencies", "@mps_j2cl//:browser_editor_host", "@mps_j2cl//:browser_platform", "@webawt//:webawt", "@javax-swing-j2cl//src/main:javax-swing-j2cl"],
+)
+closure_js_library(
+    name = "language_contracts_entry",
+    srcs = ["tests/languages.js"],
+    deps = [":language_contracts"],
+)
+j2cl_application(
+    name = "language_contracts_browser",
+    entry_points = ["alefj2cl.languages"],
+    deps = [":language_contracts_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "editor_example",
+    srcs = glob(["example/*.java"]),
+    deps = [":alef_languages", ":dependencies", "@mps_j2cl//:browser_editor_host", "@mps_j2cl//:browser_platform", "@mps_j2cl//:intellij_stubs", "@webawt//:webawt", "@javax-swing-j2cl//src/main:javax-swing-j2cl"],
+)
+closure_js_library(
+    name = "editor_example_entry",
+    srcs = ["example/entry.js"],
+    deps = [":editor_example"],
+)
+j2cl_application(
+    name = "editor_example_browser",
+    entry_points = ["alefj2cl.example.entry"],
+    deps = [":editor_example_entry"],
+    jre_class_metadata = "SIMPLE",
+)

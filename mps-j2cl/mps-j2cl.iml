@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/.work" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="mpsj2cl" />
+      <sourceFolder url="file://$MODULE_DIR$/third_party/j2cl/api-support/jre/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="lib3" level="project" />
+    <orderEntry type="library" name="lib2" level="project" />
+    <orderEntry type="module" module-name="components" />
+    <orderEntry type="module" module-name="util4" />
+    <orderEntry type="module" module-name="tests" />
+    <orderEntry type="module" module-name="mps-platform" />
+    <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="module" module-name="kernel2" />
+    <orderEntry type="module" module-name="runtime14" />
+    <orderEntry type="module" module-name="project-check" />
+    <orderEntry type="module" module-name="kernelSolution" />
+    <orderEntry type="module" module-name="mps-icons" />
+    <orderEntry type="module" module-name="platform2" />
+    <orderEntry type="module" module-name="smodel2" />
+    <orderEntry type="module" module-name="mps-editor" />
+    <orderEntry type="module" module-name="openapi2" />
+    <orderEntry type="module" module-name="kernelSolution2" />
+    <orderEntry type="module" module-name="typesystemIntegration" />
+    <orderEntry type="module" module-name="intentions-runtime" />
+    <orderEntry type="module" module-name="openapi" />
+    <orderEntry type="module" module-name="jetbrains.mps.ide.platform" />
+    <orderEntry type="module" module-name="project3" />
+    <orderEntry type="module" module-name="vfs2" />
+    <orderEntry type="module" module-name="browser" />
+    <orderEntry type="module" module-name="webswing" />
+    <orderEntry type="module" module-name="constraints" />
+    <orderEntry type="module" module-name="findUsages-runtime2" />
+    <orderEntry type="module" module-name="mps-workbench" />
+    <orderEntry type="module" module-name="mps-ui" />
+    <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="smodel" />
+    <orderEntry type="module" module-name="util2" />
+    <orderEntry type="module" module-name="behavior-runtime" />
+    <orderEntry type="module" module-name="typechecking2" />
+    <orderEntry type="module" module-name="runtime2" />
+    <orderEntry type="module" module-name="platform4" />
+    <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="mps-messaging" />
+    <orderEntry type="module" module-name="j2cl" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="mps-platform2" />
+    <orderEntry type="module" module-name="webawt" />
+    <orderEntry type="module" module-name="editor-runtime2" />
+    <orderEntry type="module" module-name="mps-icons2" />
+    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="actions-runtime" />
+    <orderEntry type="module" module-name="behavior-api" />
+    <orderEntry type="module" module-name="core" />
+    <orderEntry type="module" module-name="jetbrains.mps.ide.platform2" />
+    <orderEntry type="module" module-name="typechecking" />
+    <orderEntry type="module" module-name="intellij-stubs" />
+    <orderEntry type="module" module-name="testbench" />
+    <orderEntry type="module" module-name="project" />
+    <orderEntry type="module" module-name="vfs" />
+    <orderEntry type="module" module-name="persistence" />
+    <orderEntry type="module" module-name="typesystemEngine2" />
+    <orderEntry type="module" module-name="editor-api" />
+  </component>
+</module>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="500" height="245" preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 245" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="500" height="245"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-245)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="500" height="245" rx="4" ry="0" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.5; fill: rgb(98%,98%,99%); fill-rule: evenodd;"/>
+			<rect x="15" y="186" width="225" height="46" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="75.488525390625" y="211.35" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,422) scale(1,-1)">Command model events</text>
+			<text x="81.27744140625" y="199.35" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,398) scale(1,-1)">Normal incremental update</text>
+			<rect x="260" y="186" width="225" height="46" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="317.737548828125" y="211.35" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,422) scale(1,-1)">Transient / direct updates</text>
+			<text x="317.077294921875" y="199.35" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,398) scale(1,-1)">Tracked writes and updater calls</text>
+			<rect x="129" y="114" width="241" height="34" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="179.985107421875" y="128.0" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,256) scale(1,-1)">Build or synchronize editor cells</text>
+			<polyline points="127.5 186, 249.5 148" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="249.5 148, 246.0235 151.5936, 244.5977 147.0162" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<polyline points="372.5 186, 249.5 148" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="249.5 148, 254.4 147.0049, 252.9848 151.5855" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="20" y="23" width="222" height="49" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="83.238037109375" y="49.849999999999994" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,99) scale(1,-1)">Coalesced completion</text>
+			<text x="90.120068359375" y="37.849999999999994" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,75) scale(1,-1)">Layout, validate, repaint</text>
+			<rect x="262" y="23" width="222" height="49" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="332.739501953125" y="49.849999999999994" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,99) scale(1,-1)">Viewport exposure</text>
+			<text x="310.9431884765625" y="37.849999999999994" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,75) scale(1,-1)">Scroll requests visible-region repaint</text>
+			<polyline points="249.5 114, 131 72" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="131 72, 135.9366 71.20645, 134.335 75.72527" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="162.4462890625" y="8" style="font-family: Body; font-size: 7.5px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,16) scale(1,-1)">Both paths finish by painting the visible editor region.</text>
+		</g>
+	</g>
+</svg>

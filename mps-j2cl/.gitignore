@@ -1,0 +1,6 @@
+/mps/
+/.work/
+/out/
+/bazel-*
+__pycache__/
+*.pyc

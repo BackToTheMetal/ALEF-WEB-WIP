@@ -1,0 +1,626 @@
+﻿path,role,sha256
+C:/Codex/mps-j2cl/.bazelignore,"root build, selection, or project metadata",91c002176ee567b724a4076933d03b826a78f185b45d2135ae1bcd62389245ad
+C:/Codex/mps-j2cl/.bazelrc,"root build, selection, or project metadata",60b397c140aad0863d7e33b000c6946d2f66f48fd57512b235011ac8df218858
+C:/Codex/mps-j2cl/.bazelversion,"root build, selection, or project metadata",48e51831bf76f0672ff5b9e63837b782d36c9ed50cf7af38f5e7ea8989aa0517
+C:/Codex/mps-j2cl/.gitignore,"root build, selection, or project metadata",99505ced2d271eee2c0c4e7e9a4a447b61f646ccf391ba8d58f50af013af718b
+C:/Codex/mps-j2cl/BUILD.bazel,"root build, selection, or project metadata",d8b8610d4f3f69eca19a106977e862e576f6703c14ffefb764070deae41cf3aa
+C:/Codex/mps-j2cl/KOTLIN-AND-EDITOR-DEPENDENCIES.md,documentation or compatibility manifest,09425161b92fb8cbb57ccc6ddb714400f8aa6f18a01a788d872e3b2724ade5d6
+C:/Codex/mps-j2cl/MODULE.bazel,"root build, selection, or project metadata",388cc3a7b869cc69ebd1e42c92763258800763c8609aae26d5bc5618c3411521
+C:/Codex/mps-j2cl/MPS-EDITOR-J2CL-PLAN.md,documentation or compatibility manifest,b5941f9a532a750c2cc128a75dea2bd550696f7546e9d9e0284473f2986c5647
+C:/Codex/mps-j2cl/MPS-J2CL-PLAN.md,documentation or compatibility manifest,99843d70e7d8a7c53f19a1ec1dcc347626e1288e2cdd81fd6f43804bbb769c19
+C:/Codex/mps-j2cl/README.md,documentation or compatibility manifest,2e53ad599524b5844521f3e4124ec6fc1023fdac683d145c31bc2396d0256413
+C:/Codex/mps-j2cl/completion-matching-tests.bzl,"root build, selection, or project metadata",c6285bc301b5a83f31c3c22257d940f324433a30f910974e64180f9cb131b9e6
+C:/Codex/mps-j2cl/dependency-views.json,"root build, selection, or project metadata",15c2ec738e0eba2b9cb35bb9d5db3dd4d0af16fd7de6701398e3b4f6b5a6cd51
+C:/Codex/mps-j2cl/editor-action-sources.bzl,"root build, selection, or project metadata",a797a659435334fa0cfedd624bdd308abf651da6db4e1d8677d3f1d14ded2a29
+C:/Codex/mps-j2cl/editor-foundation-tests.bzl,"root build, selection, or project metadata",52f0ef6443b38afd145e00300ccc62c11d1bbae2eac57fc722896580b6be312e
+C:/Codex/mps-j2cl/editor-jre-tests.bzl,"root build, selection, or project metadata",fbd53b4f03b23131d381b582df187f5f5133e14d2893e7b34bc64aba701d1d59
+C:/Codex/mps-j2cl/editor-live-tests.bzl,"root build, selection, or project metadata",aa79717b3b92d8ae9fafce8e3d6b41a8083b199bf178a106e8e5ffb0caa1f7f8
+C:/Codex/mps-j2cl/editor-runtime-tests.bzl,"root build, selection, or project metadata",96b97f5f34e597473fb7b8080d8e2f3c4e31d672a06991aff5ad37d84fa5c5a1
+C:/Codex/mps-j2cl/financial-calculations.bzl,"root build, selection, or project metadata",29410ec01d4cc8ab8dfa905ec2eb4ec2c1a4d98bc0f3c9414155ad7501fb8b4a
+C:/Codex/mps-j2cl/financial-sources.bzl,"root build, selection, or project metadata",0d877584eb64de772874ae175479b8048f530ad955610477c82ccb02efc3dc50
+C:/Codex/mps-j2cl/intellij-stubs.bzl,"root build, selection, or project metadata",05b108927a57954d0d558b00a5da53b12185907cb27d3c29d495216c36318453
+C:/Codex/mps-j2cl/mps-browser-projects.bzl,"root build, selection, or project metadata",258a3008ee323f7692027d6213d49391725e0433502253f6ae7d8283c8831928
+C:/Codex/mps-j2cl/mps-j2cl.iml,"root build, selection, or project metadata",4ed1f0801898c6c628d56551d8f559492857b8addf2522cc486d573c1a84021f
+C:/Codex/mps-j2cl/mps-overrides.bzl,"root build, selection, or project metadata",1d413fcf16e399ccdd752415aa49b77b6f7f295f3be7e436ca1cdf6828e11a18
+C:/Codex/mps-j2cl/mps-projects.bzl,"root build, selection, or project metadata",4971a1afc578e7390293663a4a5bd7b66f75b8a98a00f52f7a4b47a651e4857e
+C:/Codex/mps-j2cl/mps-rules.bzl,"root build, selection, or project metadata",029be1123455bcf0153a5a5f7771f781552d66998f50d5057a7f9ae479da1720
+C:/Codex/mps-j2cl/source-lock.json,"root build, selection, or project metadata",f953aeb16c1372c8f18d357a375b391e066c1af3d7d85430194af03da170a9d8
+C:/Codex/mps-j2cl/webawt-net.BUILD.bazel,"root build, selection, or project metadata",3f8089fdd5be1c40f75d76958f149a9d4fcd5e119010280089c87de6439a61e4
+C:/Codex/mps-j2cl/browser/browser.iml,runtime or demo sources/assets (detailed in dedicated inventory),76313ae77f9e3842b744c28e84616668792bdaa49a39518aad25da50344d2921
+C:/Codex/mps-j2cl/browser/editor-demo.html,runtime or demo sources/assets (detailed in dedicated inventory),1d840ce750e098a5015c372f1f1229b99878923f4470d253f5624164c490a3d5
+C:/Codex/mps-j2cl/browser/financial/BrowserModelReader.java,runtime or demo sources/assets (detailed in dedicated inventory),d0e1e650e6654153de6957f3be1cc0d9928cc0bc6d9cdd6cc629ce97cf43ee4a
+C:/Codex/mps-j2cl/browser/financial/FinancialClassLoader.java,runtime or demo sources/assets (detailed in dedicated inventory),fcd425b7df918c80ee0e437007f65e5cd5ccfe5dc53d793fc4ac9d400a2988f4
+C:/Codex/mps-j2cl/browser/financial/FinancialDemo.java,runtime or demo sources/assets (detailed in dedicated inventory),09f3585ab180b774ba291bf0ea3ddf05dd5ef843829794217207c9226a682ccf
+C:/Codex/mps-j2cl/browser/financial/FinancialLanguages.java,runtime or demo sources/assets (detailed in dedicated inventory),c4015ab004d8056cb980433f9158285e45d3dfa8d1aa39a7cd6801b2b52ea252
+C:/Codex/mps-j2cl/browser/financial/PrimitiveModelResource.java,runtime or demo sources/assets (detailed in dedicated inventory),9bb9803c20e6df94ee1a4c2d1f945a449179beab84f7447e91ccd9032f17de6c
+C:/Codex/mps-j2cl/browser/financial/RuntimeTypesLanguage.java,runtime or demo sources/assets (detailed in dedicated inventory),da3dc607f4d173940f5648151e7e569913470995e16db3a963e720ebad16a41c
+C:/Codex/mps-j2cl/browser/financial/entry.js,runtime or demo sources/assets (detailed in dedicated inventory),29f2e1c02cf83a5936c37863aabfaeeb2766bbe13c25790c05465b839dc4aa91
+C:/Codex/mps-j2cl/browser/financial/index.html,runtime or demo sources/assets (detailed in dedicated inventory),6a24267b04305998fc789e79b027eca353c2453794384472b50f5429618a32b4
+C:/Codex/mps-j2cl/browser/src/mpsj2cl/editor/BrowserEditorActionBindings.java,runtime or demo sources/assets (detailed in dedicated inventory),5fe348686de4133f8d30698572669c783711e92f61a88f3090ba77f36da17822
+C:/Codex/mps-j2cl/browser/src/mpsj2cl/editor/BrowserEditorHost.java,runtime or demo sources/assets (detailed in dedicated inventory),610582a0502759c4595451b302466a43984775623ec3990b7d42a76a429a383c
+C:/Codex/mps-j2cl/browser/src/mpsj2cl/editor/BrowserEditorShortcuts.java,runtime or demo sources/assets (detailed in dedicated inventory),f5b4f9c83e11d75230dbd770efe11155e42408e218af63394bce9022ce8980f0
+C:/Codex/mps-j2cl/browser/src/mpsj2cl/editor/BrowserMpsAssetData.java,runtime or demo sources/assets (detailed in dedicated inventory),a77da6bba0148e6eaef37bebb6e17e4979239716f44757615e33caca473d5e43
+C:/Codex/mps-j2cl/browser/src/mpsj2cl/editor/BrowserMpsAssets.java,runtime or demo sources/assets (detailed in dedicated inventory),140b28cc57735bf0ed4d23fbf33e0083309db8fc9f40e5763e80fcb0d92d2cc1
+C:/Codex/mps-j2cl/browser/src/mpsj2cl/editor/BrowserResourceIcon.java,runtime or demo sources/assets (detailed in dedicated inventory),ee3df09c47a3d5cd833779e84793d489335b97787b065d2ac82e7fe94030017e
+C:/Codex/mps-j2cl/browser/src/mpsj2cl/editor/BrowserSelectionFactories.java,runtime or demo sources/assets (detailed in dedicated inventory),abda38187f3f5ff6a1546552c39e0c08812addb894b88bdac0c939ecc79adb14
+C:/Codex/mps-j2cl/browser/src/mpsj2cl/editor/BrowserStyleRegistry.java,runtime or demo sources/assets (detailed in dedicated inventory),dbf344c063db08bdea88e6b5c2dad7d0311aebbd3d683b61dea34d84a70f5e6f
+C:/Codex/mps-j2cl/compatibility/action-dispatcher.json,documentation or compatibility manifest,95eec0865e3e8b13c99f99938e697a3dd6605e20877f9753f2e8c1009543ff0b
+C:/Codex/mps-j2cl/compatibility/browser-profile.json,documentation or compatibility manifest,45f12aa8de634fb993afd8da9097f6ec18896b9e4a39dd4a87267907a3e14dda
+C:/Codex/mps-j2cl/compatibility/browser-projects.json,documentation or compatibility manifest,1987548472744dd79ef9a636c19f8006be31f038081489c3f7a3973d54a19ca9
+C:/Codex/mps-j2cl/compatibility/editor-assets.json,documentation or compatibility manifest,f26333fecaf64fcc95fef793c08de2e709ca49e6231517b111fa134de985a614
+C:/Codex/mps-j2cl/compatibility/editor-companion-imports.json,documentation or compatibility manifest,300a3a87489f6db9a662d13fe2a180199432d2e64bbe6efb0b32ae51c0af426f
+C:/Codex/mps-j2cl/compatibility/editor-plan-inventory.json,documentation or compatibility manifest,e64c88f31e9dfbce166856019c13e27946b2518863079fe093060c5f953dd672
+C:/Codex/mps-j2cl/compatibility/editor-shortcuts.json,documentation or compatibility manifest,a7b78ca9f5158aa6b4679b1c8a36d0a9e1ad9f8216a860dc373d0b2830dc22fc
+C:/Codex/mps-j2cl/compatibility/financial-language-profile.json,documentation or compatibility manifest,05a6c184c309a394c885851aecf124db70d8e129b015df60389ce01fcfc92ed6
+C:/Codex/mps-j2cl/compatibility/intellij-api.json,documentation or compatibility manifest,5e187590cfa0e758333e7326099684605be8d95085b3a4c6d732a78b4b162861
+C:/Codex/mps-j2cl/compatibility/intellij-usage.json,documentation or compatibility manifest,e6494bbd0fa8669d2c94925d400ee65b2863696e22235201951724c91886987f
+C:/Codex/mps-j2cl/compatibility/java-characters.json,documentation or compatibility manifest,f9ee11ab35d4e9d50a92cf8e5fcdb058ed1ddbc53062aaf7ba5f97e7471f8530
+C:/Codex/mps-j2cl/compatibility/java-identifiers.json,documentation or compatibility manifest,40f6bc5cfc0577cea482b9eab8de1d72fcdf644bf8183869e5b7191625b54ef5
+C:/Codex/mps-j2cl/compatibility/kernel-platform.json,documentation or compatibility manifest,984fb358cc5cf68a1ac48025781138fb41f92034ff73775af5159130b091a8ba
+C:/Codex/mps-j2cl/compatibility/kernel-utilities.json,documentation or compatibility manifest,668ff3606b00fd6a30cb24d1021eab16925db93ec8e1fbe53081b4da8eb9d5e9
+C:/Codex/mps-j2cl/compatibility/mps-projects.json,documentation or compatibility manifest,17b2f2d3752be925cc69ad8ede9e071d93e94cec2670cb59bc79d5e77c24ef82
+C:/Codex/mps-j2cl/compatibility/regex-unicode.json,documentation or compatibility manifest,51e33341d9c1e7932c5f1197d6064228251ef9b496d40b20b7025568a644b9e6
+C:/Codex/mps-j2cl/docs/editor-foundation.md,documentation or compatibility manifest,cea714e2a2753dc798acea75ac22e0b1ea697cbcbcd13ed0a85ca8411af8b5ee
+C:/Codex/mps-j2cl/docs/editor-icon-resources.md,documentation or compatibility manifest,1214c390f0ce3a96f1ecb76fc2ce86e57206ce9201bfa9b5217230f85ffd4c83
+C:/Codex/mps-j2cl/docs/editor-runtime-adaptations.md,documentation or compatibility manifest,25c23cb7e9a80788c5902d581331b564185e67f08380a5c7aa1baaef847d49bb
+C:/Codex/mps-j2cl/docs/financial-calculations.md,documentation or compatibility manifest,2448a249ee5c05d14507a6fb626eb63d06e7b1b7e4f896db2b50d73a548ab095
+C:/Codex/mps-j2cl/docs/formatting.md,documentation or compatibility manifest,6f4f0552f42a7daa9a13e7bc30d54c9dc68b08019956812c1741c1c6af175457
+C:/Codex/mps-j2cl/docs/intellij-browser-boundary.md,documentation or compatibility manifest,2b69ee8b554076202cf11e3a47cc7ebf3b1c8e5ed7e61e890fbeed554f2e3375
+C:/Codex/mps-j2cl/docs/runtime-factories.md,documentation or compatibility manifest,bdbbc2bf5a4f01ff1915095d8ac8893127511135997fc6079036fc3eadbe36b7
+C:/Codex/mps-j2cl/docs/ui-dependencies.md,documentation or compatibility manifest,2599564fb82b1c04a99c577ed22212075b033ee284693ba8043a5bb32fb7e4ea
+C:/Codex/mps-j2cl/docs/validation.md,documentation or compatibility manifest,ee77ac727239b95b0becc214374fbd040f08ddbc73c0fb06923ab4b3cc481610
+C:/Codex/mps-j2cl/docs/web-model-loading-proposal.md,documentation or compatibility manifest,3da2f17ebba19b8535c41fa143a379f69c6d96f76733e7ed735f64109f433052
+C:/Codex/mps-j2cl/docs/images/mps-j2cl-build-architecture.md,documentation or compatibility manifest,abfa9bc13e81d34e0a189194fcacbedf025fafa90f71649af4def81b441d3ee0
+C:/Codex/mps-j2cl/tests/tests.iml,test fixture or browser test entry,c43c320396b0ecde9f0dd81ca8b8496eb9b125e3d8ec1dab73911ee9050438ef
+C:/Codex/mps-j2cl/tests/api_basics/CoreApiTest.java,test fixture or browser test entry,3a9dd472aff0e1193dc685624b5c48d9dd74a423f5fc792e18d1898eeefd81ec
+C:/Codex/mps-j2cl/tests/api_basics/entry.js,test fixture or browser test entry,d95f8d33b6c7b0d16bd8608b77f19fb9cda21ab3366242ee0c668f635a49f826
+C:/Codex/mps-j2cl/tests/api_basics/jvm-expected.txt,test fixture or browser test entry,2ca963aef73a03138283bf239a388d9eab1d1d0d379320f2de0f9d145735b1fb
+C:/Codex/mps-j2cl/tests/class_support/ClassSupportTest.java,test fixture or browser test entry,7f82ee314ba0103d5e159c9a164ff2b439eca700eb1e6edc0a79d372be6fb01e
+C:/Codex/mps-j2cl/tests/class_support/FixtureTypes.java,test fixture or browser test entry,98de03322cc455da2c3e4d9dd03b86f6edcac92d21d6a32ca847e038bf106ba5
+C:/Codex/mps-j2cl/tests/class_support/InteropBoundaryTest.java,test fixture or browser test entry,c85ffc34f8d4980b23f8b37413ca94b760e50c069370d4bdc626ec574e511bfd
+C:/Codex/mps-j2cl/tests/class_support/entry.js,test fixture or browser test entry,32d89359bbe3b149a421da5e5e8f34d1d56ceff915369a1d6f1571e4a4f64c38
+C:/Codex/mps-j2cl/tests/class_support/jvm-expected.txt,test fixture or browser test entry,89c23f49699f4f47d1efb1f8af0293456813feb087da9d6e4800376376e0c7d5
+C:/Codex/mps-j2cl/tests/classloader/ClassLoaderTest.java,test fixture or browser test entry,0ccf72c3c1a5849ec9144f0c8da7a8351e52e91d562433fc5f2853368148a895
+C:/Codex/mps-j2cl/tests/classloader/ModuleClassLoaderTest.java,test fixture or browser test entry,d44229811eef9312fc994cad32598e978a2dad05a3a1af362f93c64a2350847d
+C:/Codex/mps-j2cl/tests/classloader/entry.js,test fixture or browser test entry,12136062b33c834d7de6e2af67ee7711287cf906543752bfe286e80432a28ffb
+C:/Codex/mps-j2cl/tests/completion_matching/CompletionMatchingTest.java,test fixture or browser test entry,be060395863f22fd30e8e79f6643f04a8429e6b4b84328a75ea3a1a81ef36da0
+C:/Codex/mps-j2cl/tests/completion_matching/entry.js,test fixture or browser test entry,e4874204286644a98b0cf602ec19ff5c67426f598990c2f6f703d775d733cadd
+C:/Codex/mps-j2cl/tests/core/KernelSmokeTest.java,test fixture or browser test entry,586e5e0995182d3aed6525bf21d32b024b0e0b6bffc33caeb82ceec524c065b8
+C:/Codex/mps-j2cl/tests/core/entry.js,test fixture or browser test entry,e66c2e28d982b5ac6534eda4e42888e83779856c133f9a68123d1bfd6aa0c967
+C:/Codex/mps-j2cl/tests/dynamic_components/DynamicComponentGcTest.java,test fixture or browser test entry,a4173522f5fb24c325fb80906814f9c6151ca8151c5e733fec5fd03f8039d5a6
+C:/Codex/mps-j2cl/tests/dynamic_components/DynamicComponentLifecycleTest.java,test fixture or browser test entry,3b56a9a558e76c51c633adffc2f1120d666952d9d462a156a8e1b73714b5cb25
+C:/Codex/mps-j2cl/tests/dynamic_components/README.md,test fixture or browser test entry,14bf21153efaa99d734ca324ceeb99cc24935332b27a85ace1a58e6f2d89435a
+C:/Codex/mps-j2cl/tests/dynamic_components/entry.js,test fixture or browser test entry,349d1626b268de731735607e9edf916d824b22cba85c31fcaae2ee2d98035aa1
+C:/Codex/mps-j2cl/tests/editor_live/EditorLiveTest.java,test fixture or browser test entry,1d813fc4e2559213a1d27c3afcb7ff8f8cb651f2aa7d11693653c7461423ee9f
+C:/Codex/mps-j2cl/tests/editor_live/EditorResourceContracts.java,test fixture or browser test entry,7dda4986b3cf41ece795e049578bac4f8af7901bec7f79c005901e5a8678213f
+C:/Codex/mps-j2cl/tests/editor_live/ExpressionLanguage.java,test fixture or browser test entry,31838d81ae04d7dcc2660f3bf35a9ea8fb4fbe1102ba25c7b48194c3ac01c83c
+C:/Codex/mps-j2cl/tests/editor_live/FindUsagesContracts.java,test fixture or browser test entry,657e8ddc01c107f89de529db5046aa5ab9aa513d1acd9ac24d3195ed3a293919
+C:/Codex/mps-j2cl/tests/editor_live/README.md,test fixture or browser test entry,6c8b7ac8c9906bd570fdfcf602704bdd77cbc0ddaab2402f8dc781a4c3aafd16
+C:/Codex/mps-j2cl/tests/editor_live/entry.js,test fixture or browser test entry,a9c559e68823974a406de49b9cc38d0c6cd79afc53392c078f6f63ec202aeb1a
+C:/Codex/mps-j2cl/tests/editor_runtime/EditorRuntimeContractsTest.java,test fixture or browser test entry,db619b6a02fdebb1aa4cd0ab022cb8d2b7762e40d86963d58887972219883bb1
+C:/Codex/mps-j2cl/tests/editor_runtime/entry.js,test fixture or browser test entry,7ccc67d0ee833f5c86c0c574414d0f1965cb851a2cee2b3ef91c0a7b966616cf
+C:/Codex/mps-j2cl/tests/editor_utilities/EditorUtilitiesTest.java,test fixture or browser test entry,19ba7fd8bff3ce79b55a0e7f334cd23637a2ad81b5918ac35392090402999088
+C:/Codex/mps-j2cl/tests/editor_utilities/README.md,test fixture or browser test entry,4a8da732fa8bf3f3413c65af41a8cf336b5b0eebc21369d889dbee4dbbdfb8e3
+C:/Codex/mps-j2cl/tests/editor_utilities/entry.js,test fixture or browser test entry,b612e68dd73e54e1e20f7c4cf762cec18d454caae7499c48c3a47c5752d86bf1
+C:/Codex/mps-j2cl/tests/editor_utilities/jvm-baseline.json,test fixture or browser test entry,5432f0820b7a400bbbe482e732117eeeb2a0205e94c9275edc750c06faa5f0b9
+C:/Codex/mps-j2cl/tests/editor_utilities/jvm-expected.txt,test fixture or browser test entry,9581a9442d10f0b335615b104f6c926351321fa452a80122169b3b74c931fd69
+C:/Codex/mps-j2cl/tests/formatting/FormattingCases.java,test fixture or browser test entry,0a970039c72f869808b617e13272a73b601c816ba9d346dbfdb5f670b565a923
+C:/Codex/mps-j2cl/tests/formatting/FormattingGolden.java,test fixture or browser test entry,8b5605f8198bf936624eb68db19a348e1000fec2d5f99720aebb915faa93ed39
+C:/Codex/mps-j2cl/tests/formatting/FormattingTest.java,test fixture or browser test entry,b1a8e3bbbdacca7f1bc32a3e2d44978282bb24564047ed7161d458876d77ac8e
+C:/Codex/mps-j2cl/tests/formatting/GenerateFormattingGolden.java,test fixture or browser test entry,01320d77e501789723a798fd1ca231c8906f3b14777635b20986c48a4955a2b2
+C:/Codex/mps-j2cl/tests/formatting/entry.js,test fixture or browser test entry,bc5fa001cf7a31e501a0318839fca1dbf2c3c893050ef10f3c3c9666c8717ea4
+C:/Codex/mps-j2cl/tests/icon_creation/IconCreationJvmTest.java,test fixture or browser test entry,c9939ae963aafbbebdc8e5fc860b1498028ba80f79c3813e2e9eda2243c9f3ea
+C:/Codex/mps-j2cl/tests/icon_creation/IconCreationTest.java,test fixture or browser test entry,1a972051db7a7289ab09b111028cf137b5658e110ad29f54ae27d7924f7eba9d
+C:/Codex/mps-j2cl/tests/icon_creation/entry.js,test fixture or browser test entry,13eaabb0a73f5049011db8a78cc9e87f778fae4d479b0e7670e465761681141a
+C:/Codex/mps-j2cl/tests/intellij_stubs/IntelliJBrowserTest.java,test fixture or browser test entry,0b290be7fde30a9cfaa69ca783a483e5ae9322ff01ecdfe1ca94866deb4473c1
+C:/Codex/mps-j2cl/tests/intellij_stubs/IntelliJContractsTest.java,test fixture or browser test entry,49cd3ca13e74ea20b80b9beb5cbed460e6ac259f402d7e4dfa9f50e478545b9a
+C:/Codex/mps-j2cl/tests/intellij_stubs/entry.js,test fixture or browser test entry,c0a11b2ced8f9053a36a84282c591fbdb41f04809913b9ae40324a2e38d56fd6
+C:/Codex/mps-j2cl/tests/jdom_util/JDOMUtilTest.java,test fixture or browser test entry,3f5811f5f1850167f79bcbe4f422d7eeb776b86629a849d190cc67e2ec444d32
+C:/Codex/mps-j2cl/tests/jdom_util/entry.js,test fixture or browser test entry,f86f7fe8cd04550de1428e1d305b501af83ac5ed7155ca30bef33ed632bf54b3
+C:/Codex/mps-j2cl/tests/kernel_utilities/KernelUtilitiesTest.java,test fixture or browser test entry,c24480d28d3aab02c3527bdb5b86d50e42b15dce5321a61e0c6dbe14d0480cbd
+C:/Codex/mps-j2cl/tests/kernel_utilities/README.md,test fixture or browser test entry,db6fa5e5d08b6d2da9e3fd32fd50c7bf8292af9cecea9bbcd7165d65c69b6fd2
+C:/Codex/mps-j2cl/tests/kernel_utilities/entry.js,test fixture or browser test entry,95971560f31a14f31b3a43c58814765f21d4df87f44ebd7677064fc90e6f192c
+C:/Codex/mps-j2cl/tests/kernel_utilities/jvm-baseline.json,test fixture or browser test entry,ec7d1e100568dbbb26fa85c989c1853c8613b17331f9852e48f9bfd91eba2840
+C:/Codex/mps-j2cl/tests/kernel_utilities/jvm-expected.txt,test fixture or browser test entry,6e74436498bb26918291bb1ea700cfce9a8abdeb68653352b5988ee038063f07
+C:/Codex/mps-j2cl/tests/keystroke/KeyStrokeTest.java,test fixture or browser test entry,915a08cdc39b6208f3b80d5708bb2ee86471924cad5b15c3da2eb812e6e67838
+C:/Codex/mps-j2cl/tests/keystroke/entry.js,test fixture or browser test entry,beda46dc15fae71f17573d040a047fe31dc34f85f2fccf77e8d207a77f3b0663
+C:/Codex/mps-j2cl/tests/keystroke/jvm-expected.txt,test fixture or browser test entry,0b2219a5c3d1374f6d8f3e4f66f7331c398feade9a16f21744d24efd635fd414
+C:/Codex/mps-j2cl/tests/modifiers/ModifierTest.java,test fixture or browser test entry,a68ca3627d508463448e8e6a47af420bbb528561b75dd51e6c26585563ea8a41
+C:/Codex/mps-j2cl/tests/modifiers/entry.js,test fixture or browser test entry,e7187e1e44a9fea9deaf08d83bd906bf46996be6fd43d4b3adde37bd1a75d286
+C:/Codex/mps-j2cl/tests/openapi/IdentifierBoundaryCases.java,test fixture or browser test entry,946b36c5c81dd4f7ba53d0bfc303e057c368077e3e2195657db5379da5c0d9ac
+C:/Codex/mps-j2cl/tests/openapi/SModelNameTest.java,test fixture or browser test entry,89bfc942763fddb77d31fa36a8ed5901638efc80dad9b9c5441434901b251357
+C:/Codex/mps-j2cl/tests/openapi/entry.js,test fixture or browser test entry,c93d7a76229218cebba5bf34588fcf01415f42af5590e6c00ffa098cf894870e
+C:/Codex/mps-j2cl/tests/openapi/jvm-baseline.json,test fixture or browser test entry,6fbb6e0c0c13522b86e7124fe60faeb88fbc919ad86018a01e3d08a978c9df33
+C:/Codex/mps-j2cl/tests/openapi/jvm-expected.txt,test fixture or browser test entry,6ac7afbfcfd34382d7386768b491723e019b2540dec479e225271598cf39c6e8
+C:/Codex/mps-j2cl/tests/query_methods/QueryMethodsTest.java,test fixture or browser test entry,14e28c8141a64657d0977574c6d2eb8521e7e2e81f959f3341322d8eb27f8ec6
+C:/Codex/mps-j2cl/tests/query_methods/entry.js,test fixture or browser test entry,57d674451cdaf868a0f7cf5a30e7111c0f49e820582a99fb7c8bc1d7c1a3629c
+C:/Codex/mps-j2cl/tests/regex/README.md,test fixture or browser test entry,a56ed95366e2828c1160bccd44e28c4769ad49482062d8561b38e9cbb0e12249
+C:/Codex/mps-j2cl/tests/regex/RegexSubsetTest.java,test fixture or browser test entry,fa0360719b91f4424076ecf172009cafea55b86ce6e14d21219532c7b762af2c
+C:/Codex/mps-j2cl/tests/regex/RegexUnicodeDump.java,test fixture or browser test entry,a54e01d18bb7190c64cf5abd261f2383e12b2b9d23348dba5cb4ccdc63554f8b
+C:/Codex/mps-j2cl/tests/regex/entry.js,test fixture or browser test entry,c9224b35870580e23419001f4a9b19faaf89714b54300e2225e54a3dfd647232
+C:/Codex/mps-j2cl/tests/regex/jvm-baseline.json,test fixture or browser test entry,863ba62714bfcfaba9f40efd97541795363a0b7f4caa39f0b84a6e526d3610f3
+C:/Codex/mps-j2cl/tests/regex/jvm-expected.txt,test fixture or browser test entry,bdbf1d0a6faba6ff852e8dead01c8c0f6fa61952408f50e61e0e0a7824b440fd
+C:/Codex/mps-j2cl/tests/runtime_factories/ModuleRuntimeFactoryTest.java,test fixture or browser test entry,7f4a1af6c0258e17e57299eaeb6cb2880df65d088215b8db0f48b453fac5c8ff
+C:/Codex/mps-j2cl/tests/runtime_factories/RuntimeTestLoaders.java,test fixture or browser test entry,49bb147261f30b108355b02dd0bf4fa2dc60c85f640c3f9d44235d6666a4d16d
+C:/Codex/mps-j2cl/tests/runtime_factories/entry.js,test fixture or browser test entry,30f9ca70830c1dcc58512592405f5c5d9ca9ae2c7498d0c6d93bed0755311c7b
+C:/Codex/mps-j2cl/tests/runtime_support/CharacterBoundaryCases.java,test fixture or browser test entry,335348fed02209c7582d127a147b84fbcc6551dad53a788e9e03505e78d54dbf
+C:/Codex/mps-j2cl/tests/runtime_support/CharacterSupportTest.java,test fixture or browser test entry,6ca9eafd0b8b239fc0770306c08fa1c96e17e3f2ecb7ec4820c9d555cb0da69c
+C:/Codex/mps-j2cl/tests/runtime_support/RuntimeSupportTest.java,test fixture or browser test entry,178509fd8a97e4bcc003da66cc07662fc3146db8dbe580efc551557e8d2d1300
+C:/Codex/mps-j2cl/tests/runtime_support/entry.js,test fixture or browser test entry,2659e2e2e9975cbd7f931fcb11ac4f30d96999eeb9b5af239f6f874a2164bfaf
+C:/Codex/mps-j2cl/tests/runtime_support/jvm-expected.txt,test fixture or browser test entry,78c174fb45c9d2b90ddcdb79c1b6a526cb35dcd3b8d40319f267da30941d4c92
+C:/Codex/mps-j2cl/tests/runtime_support/jvm/CharacterDataOracle.java,test fixture or browser test entry,969172efeb910719857a0465fd9a0b87644dee290c1d0d858f4920d1434e4643
+C:/Codex/mps-j2cl/tests/runtime_support/jvm/UuidParseOracle.java,test fixture or browser test entry,8b5ac978f276c9476d47a3071aa17f96ed986eca71fa5736b44de566921c4fd5
+C:/Codex/mps-j2cl/tests/smodel/ActionDispatcherFailureTest.java,test fixture or browser test entry,d25a35805274690dcce8f04a6818a062c6c95bf158cb4d8b8db475be740accb1
+C:/Codex/mps-j2cl/tests/smodel/IconResourceTest.java,test fixture or browser test entry,92525cd28cad9a588dfbec5a722eb750287cb00d5edb2a21a9bbd5a6bee8a41b
+C:/Codex/mps-j2cl/tests/smodel/ProcessCanceledException.java,test fixture or browser test entry,e6dd05ada6b9ffbea2cfc404d25a9bccbe2838fd5416c2e351649785cfdac1e5
+C:/Codex/mps-j2cl/tests/smodel/SModelAdaptationTest.java,test fixture or browser test entry,c947c69e40e9eded22c333437a89198ccc5c80400fef2d6a3c300dd7fcacefcf
+C:/Codex/mps-j2cl/tests/smodel/entry.js,test fixture or browser test entry,5593b60a0ae9b03051d67ceb9bea78fa0e6fbd4d4fd51ba449568b30aee8f062
+C:/Codex/mps-j2cl/tests/swing_editor/BrowserSwingEditorTest.java,test fixture or browser test entry,67675916c8562f1c724cb841dcd24d3f66b40b7ccdb1f18613ce4277a25092b2
+C:/Codex/mps-j2cl/tests/swing_editor/SwingEditorControlsTest.java,test fixture or browser test entry,adb1d1e103157bd654033ef7e8c98f0970899a5774f9a141d2660a9f6f25f13e
+C:/Codex/mps-j2cl/tests/swing_editor/SwingEditorTest.java,test fixture or browser test entry,12e83f3a9e410e30af50171101685fd3e4457048ce00d2938ec29b54aa871fa9
+C:/Codex/mps-j2cl/tests/swing_editor/controls-entry.js,test fixture or browser test entry,e3fc8f2dd8a525b14b60de39b35a10380439122b9dfe667bf38cba7d88c442e7
+C:/Codex/mps-j2cl/tests/swing_editor/controls-jvm-expected.txt,test fixture or browser test entry,b8d7d0fab78fac47c0840ec2fee6ebd6f0502a5cc205c2473d9197185ca9c100
+C:/Codex/mps-j2cl/tests/swing_editor/entry.js,test fixture or browser test entry,2ecb7a671ecb5563c83d9278e3f5429214544e6041a68cc5d934b4074bd152a2
+C:/Codex/mps-j2cl/tests/swing_editor/jvm-expected.txt,test fixture or browser test entry,08da3b4687acd259be5acc7a1f20ac5ec44b14458200250327e42897d5a4c7b0
+C:/Codex/mps-j2cl/tests/swing_editor/native-entry.js,test fixture or browser test entry,a038c987c6b5c66544b7646f094e33628211e048e2fcf3f1b0db6d7e2eb1bd8d
+C:/Codex/mps-j2cl/tests/swing_utilities/SwingUtilitiesTest.java,test fixture or browser test entry,e7132b202357e820d08623a3239f5119ad680806467fa4406cd865400ab62514
+C:/Codex/mps-j2cl/tests/swing_utilities/entry.js,test fixture or browser test entry,61677dbdb5f980592ecef7a474581d6c4f5f7db27ad8b46db73ac821d4dd8f66
+C:/Codex/mps-j2cl/tests/swing_utilities/jvm-expected.txt,test fixture or browser test entry,5cbab7d5491decc1f213aa8dc39be9b80dd9c5fd29c053da003a09da7b2541bf
+C:/Codex/mps-j2cl/tests/typechecking/BrowserPlatformTest.java,test fixture or browser test entry,c0a05f38fc68b616a30d57ac5c480d03e0da7cd1eca2014bff2ee19f88a075bf
+C:/Codex/mps-j2cl/tests/typechecking/FoundationJreJvm.java,test fixture or browser test entry,3e8393e151d5c1dc6397c20cb3e20000a7be839f7baceb5df65a1d86eaa73429
+C:/Codex/mps-j2cl/tests/typechecking/FoundationJreTest.java,test fixture or browser test entry,4c2aa1d9d7ed5ab5b7e200d504de6b3f91c77f37d336e3ed489d3bd72fcee645
+C:/Codex/mps-j2cl/tests/typechecking/FoundationTimeOracle.java,test fixture or browser test entry,01cc1d78560f6e93bddaaef7182b6ba468a4170e2f1a8ae2b3cd9541c92e149e
+C:/Codex/mps-j2cl/tests/typechecking/TypecheckingFoundationTest.java,test fixture or browser test entry,b8bb9cf4f3c0281edcdc2d87eabb5839809a4feee4023393c897a813725ce96a
+C:/Codex/mps-j2cl/tests/typechecking/entry.js,test fixture or browser test entry,a300eb46819b99641e8f46383981bf179cd10c06e9bace987b73470dc6e981ed
+C:/Codex/mps-j2cl/tests/typechecking/jre-entry.js,test fixture or browser test entry,a7ff0d9ac6a4f175562903c7360477e4d8a0419e8d4e92675c9bb652a3f51d98
+C:/Codex/mps-j2cl/tests/typechecking/platform-entry.js,test fixture or browser test entry,22d7e19d2d27b992cf45e7d6bc093a8d8b228cf63438f46fcd5d5f9ec53379ec
+C:/Codex/mps-j2cl/tests/typechecking/time-jvm-expected.txt,test fixture or browser test entry,bbff8e1c1dc901e4cb33283f1f05bab0bbc1c970fb85cf29e0483b73850254b1
+C:/Codex/mps-j2cl/tests/util/UtilCompatibilityTest.java,test fixture or browser test entry,fefc2ddb29d09f98d25b7ab4ac135202c17b51bfb7dca5f56bf4e3dc96bc8e3a
+C:/Codex/mps-j2cl/tests/util/entry.js,test fixture or browser test entry,625d78596d5c9b6f31c21b14cc201a78e69cef9b3fcdb3a564a53d095705a27b
+C:/Codex/mps-j2cl/tests/vfs/ArchiveBoundaryTest.java,test fixture or browser test entry,967165db3aa7b4ddd1a148f73c9f8e5f28deb2947f27813e759904ab0a6f7a9e
+C:/Codex/mps-j2cl/tests/vfs/VfsLexicalTest.java,test fixture or browser test entry,2507b181ac968eb74eff700fd2a138838bd50fd43398dd726022443cb673b5ab
+C:/Codex/mps-j2cl/tests/vfs/entry.js,test fixture or browser test entry,2e9fbc3ae89821de24b10684a9877226a7aa7f462fc7ef99814d316877fc6ce4
+C:/Codex/mps-j2cl/tests/vfs/jvm-baseline.json,test fixture or browser test entry,25076cb9b57b94af7dbe392b4314744350702170eb8a6bdb6b6275e23f2b1241
+C:/Codex/mps-j2cl/tests/vfs/jvm-expected.txt,test fixture or browser test entry,a3f882454b7f7205411544180af290a7beeaf9737013b026c20be51621e6667c
+C:/Codex/mps-j2cl/third_party/intellij-stubs/README.md,"external compatibility source, patch, build metadata, or provenance",54cccb249150b998243b322280f17769cfe29c8827a17b15be24256cf694ded4
+C:/Codex/mps-j2cl/third_party/intellij-stubs/intellij-stubs.iml,"external compatibility source, patch, build metadata, or provenance",d0de0c1734ed7f7dc4192b9a70182fc2e60f4e48a77f51e15508b00731c5a623
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/codeInsight/CodeInsightSettings.java,runtime or demo sources/assets (detailed in dedicated inventory),7eae71e46bc2b99e9f24b6916f3f638f9d60b962df3705ee6093ad910c7fc416
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/codeInsight/documentation/DocFontSizePopup.java,runtime or demo sources/assets (detailed in dedicated inventory),fd77abfadc34b1df7e6bbe57c73d1396ae4602d1c8fb6a3da3bf6358b70fcc23
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/codeInsight/documentation/DocumentationFontSize.java,runtime or demo sources/assets (detailed in dedicated inventory),9baf6549e3d49a9a320d76cfe934cc8ca451d77d8c4260a0f9aaf84cce00dcbd
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/codeInsight/hint/HintManagerImpl.java,runtime or demo sources/assets (detailed in dedicated inventory),36e10315c5a7a92dee38856d46f4a02f7a90d929963db221be886b2463cd88e6
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/codeInsight/hint/HintUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),8ed845e026eec21901da628b69328ae6934d479b1fcb3289768a14339f50918d
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/codeInsight/hint/LineTooltipRenderer.java,runtime or demo sources/assets (detailed in dedicated inventory),0aebc03e2f63a3fe8d4aa139a15f2f0cde85d718ab6d9aef8fbf550e6b52542a
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/codeInsight/hint/TooltipController.java,runtime or demo sources/assets (detailed in dedicated inventory),b4c646a6bf2a875624c80c82d4ca3eaa0a5d598c549c35c28c307666a99c1274
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/codeInsight/hint/TooltipGroup.java,runtime or demo sources/assets (detailed in dedicated inventory),c466cd0d7cbd99a1402805c496aee1f283fd82296a424620d5aff58667ca27ab
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/codeInsight/hint/TooltipRenderer.java,runtime or demo sources/assets (detailed in dedicated inventory),9af0ab0a97c1f46cc885a2d3f87dd7fb3c597557f18baaa785333dcb4cd029e3
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/compat/BrowserApplication.java,runtime or demo sources/assets (detailed in dedicated inventory),08c8c0242bcfeb281586bb61cdd3f866bb1e288a02cb8740e8f676d0313998cd
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/compat/BrowserComponentManager.java,runtime or demo sources/assets (detailed in dedicated inventory),00c3b51b00a53b2c175b0ca72f27b95a41e1e7473f5636d00c5839cdbb294645
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/compat/BrowserEdtExecutor.java,runtime or demo sources/assets (detailed in dedicated inventory),f63560c950dbd63b52044835930f2c3b4ca85bbf838a17783c23a6ff4fc14bdb
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/compat/BrowserIcons.java,runtime or demo sources/assets (detailed in dedicated inventory),0cb4cbf7fc9580b4146b694b23cf04fc7c6c25513214c07b0055ee1632d4f8cb
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/compat/BrowserMessageBus.java,runtime or demo sources/assets (detailed in dedicated inventory),54f67c36215dbf5414303bf8ddd1f02f2d4ff2192c95730229b9665233c6a08c
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/compat/BrowserProject.java,runtime or demo sources/assets (detailed in dedicated inventory),5a1e1b432ec2e8c557e9e27aa8f1d685eddaa5af5e3552f68abfddecd982d5fd
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/diagnostic/StartUpPerformanceService.java,runtime or demo sources/assets (detailed in dedicated inventory),7e20fe97f40bbdf579713cadfd2b8832db65a942747d56f0bbbc21f44d40bd40
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/execution/process/ProcessIOExecutorService.java,runtime or demo sources/assets (detailed in dedicated inventory),0d1e3417f60eef0009546b11a13ffb42d1b6e5dbcea96089bc0167af668cb95f
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/featureStatistics/FeatureUsageTracker.java,runtime or demo sources/assets (detailed in dedicated inventory),417c4b4c37d06388ded4bfc7843c110d464d8e517fa6ea2f645096a207b89055
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/icons/AllIcons.java,runtime or demo sources/assets (detailed in dedicated inventory),6569a7e403986595ad534718777ac3288b9b1b585995b13bef7a1653c0e8ccd0
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/BrowserUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),ead216f06770e2e599f505b23a011af15e6d764d6a8c8d76c6250c87e3c6d4dc
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/CopyPasteManagerEx.java,runtime or demo sources/assets (detailed in dedicated inventory),15bf64fd7a147b1217ff863cb47c87b2af1ac80ff94d6285df5622908b587dfe
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/CopyProvider.java,runtime or demo sources/assets (detailed in dedicated inventory),640372f8ecadff48e77c952687ecf42bde1934dc0613a89297de3101d6eb2e98
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/CutProvider.java,runtime or demo sources/assets (detailed in dedicated inventory),be081c83ec66f725e748f0e935e931ebf23be6a9ad59aa2487b449b794fa7568
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/DataManager.java,runtime or demo sources/assets (detailed in dedicated inventory),1fe0dddd35ada26ccf2c2942430f6b44694a67b4f8604685af07b467a867abd6
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/HelpTooltipManager.java,runtime or demo sources/assets (detailed in dedicated inventory),7bd8da10d3568e3bdd739ee4214681748abc48c046ee582da4af09da360fbb18
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/IdeBundle.java,runtime or demo sources/assets (detailed in dedicated inventory),3a4741d1bb96b48fb8cb5fb89520e08089ee508bdc0048de4a23a6a07243f47b
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/IdeEventQueue.java,runtime or demo sources/assets (detailed in dedicated inventory),8a3bd33fa4f0f225f63ac297167083a0a621a601bc3a9847f57bb970b449cfa3
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/IdeTooltip.java,runtime or demo sources/assets (detailed in dedicated inventory),39c9e2d7b82b76c4fad129f6347e89c4a8cbff36803a5d71937d10ef9278b0bd
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/IdeTooltipManager.java,runtime or demo sources/assets (detailed in dedicated inventory),719071aca2751d47ab89afc268d39d4fda112fcecc58fb9e775040f65fab9e07
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/PasteProvider.java,runtime or demo sources/assets (detailed in dedicated inventory),5d1a6c635e39b473dc4c37fc7a536f113b039ab154ed90ccd6c69fd080f43b21
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/PowerSaveMode.java,runtime or demo sources/assets (detailed in dedicated inventory),77e068fb81f4421aa080487881810cf44d1bb47798ff9e2a33748142986d3f8e
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/actions/RecentProjectsGroup.java,runtime or demo sources/assets (detailed in dedicated inventory),8710abcf50f0ef483068a01b651faa14610ef07c567eb8fafd52927c085c99b0
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/lightEdit/LightEditCompatible.java,runtime or demo sources/assets (detailed in dedicated inventory),b623ca8a42365eaa774220553a25aafd3c53a9feee86fcff3a37ce94a4f874d0
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/plugins/newui/EmptyCaret.java,runtime or demo sources/assets (detailed in dedicated inventory),6b809ac444b5de64b44dfa09c8cdeab41c772a6c928a404c47851a515396ef7d
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/ui/AntialiasingType.java,runtime or demo sources/assets (detailed in dedicated inventory),097ed41c63b512944308354e02d04e0688a1f4d3b0a5eb5dad94976bbcd617bf
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/ui/UISettings.java,runtime or demo sources/assets (detailed in dedicated inventory),69ea9cab4d21bb61c25d3f1e34bea25d3573fc9d616622091d2941568526ea19
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/ui/UISettingsListener.java,runtime or demo sources/assets (detailed in dedicated inventory),3cdc76103a45eb08deddc646de6f6da0a177b366535392ac31d321c74449af61
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ide/ui/customization/CustomActionsSchema.java,runtime or demo sources/assets (detailed in dedicated inventory),49b3453233e342d5183266484c0e744656aa60b33e4d3745cc91a1a885b86320
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/lang/documentation/DocumentationMarkup.java,runtime or demo sources/assets (detailed in dedicated inventory),4fb1a77963722276d46d4fbd67ab171ca1bb93e6560532e2eb95f57629081f34
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/notification/Notification.java,runtime or demo sources/assets (detailed in dedicated inventory),1a301ae6b8605c1c60521fb98a004fa988b1b48a042c4b39073f6c18c2240a50
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/notification/NotificationType.java,runtime or demo sources/assets (detailed in dedicated inventory),cec54ad8ada05ccfbab3b6c06862c65fb2e7c33dbee9ef4a2dab5898d51d28fb
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/notification/Notifications.java,runtime or demo sources/assets (detailed in dedicated inventory),3790ce70e97f1bbe15a9ec78ebb97d41b65c1f1be276c953908d4b609bead881
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/Disposable.java,runtime or demo sources/assets (detailed in dedicated inventory),6f2271b2fe48a9a7293b00f5a8f80b2467116dfe2a912bc0f59694446a5872a7
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionGroup.java,runtime or demo sources/assets (detailed in dedicated inventory),f2ecf98e7c664360582e005f3f843b2e0bd540aef431093c458b96f674bf8977
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionInGroup.java,runtime or demo sources/assets (detailed in dedicated inventory),3e3b9e876466a0cab5d6864af5727483f61235a095ebcaae40fddb2269da0ee2
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionManager.java,runtime or demo sources/assets (detailed in dedicated inventory),76c33234e2235fe4d88cf0c23dcc406e617ce4e6253092541f034992f7bc22e6
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionPlaces.java,runtime or demo sources/assets (detailed in dedicated inventory),c5fc802cfb90eba8ea57661e1e41610a62688617b2595fa9651003ca943148a0
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionPopupMenu.java,runtime or demo sources/assets (detailed in dedicated inventory),a9e5b5b470a869e23aef7ea568af9c985bd0fe11f72552aee4820e599535f37f
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionToolbar.java,runtime or demo sources/assets (detailed in dedicated inventory),bc3f6e957602436111e61152ea9b25ae924c326f68fef026ede3085c78e918aa
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionUiKind.java,runtime or demo sources/assets (detailed in dedicated inventory),7027c8fee4c21e11ecd6e7d0af91d8ae05fd797a2f4a1ab0181bd038cab03653
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionUpdateThread.java,runtime or demo sources/assets (detailed in dedicated inventory),622529d5b6767e9e94d954109b71e669c75ba0c7e3cbe3b6e7b88408ea73acb2
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/AnAction.java,runtime or demo sources/assets (detailed in dedicated inventory),f909daab2481ac35d302bda51b0631f2920c0d9da2d4a2c0bfd2a859a09fe7a3
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/AnActionEvent.java,runtime or demo sources/assets (detailed in dedicated inventory),8d9d8434083c4357eca9dd64271ce1468e04e0901bf512803f62dd5f30d0f35b
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/Anchor.java,runtime or demo sources/assets (detailed in dedicated inventory),6aba55073b43b898e6c7911f5a38c14625c7554af3101829657a200ab02170df
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/CommonDataKeys.java,runtime or demo sources/assets (detailed in dedicated inventory),178fd3c4554e9e7966cc0bd43a8e75612f82012556db7c188e27f83e58e32592
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/Constraints.java,runtime or demo sources/assets (detailed in dedicated inventory),ccd95f9cac534783d51a473ff7e2633e0779175a3bfef29139600eb5fdc23039
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/CustomShortcutSet.java,runtime or demo sources/assets (detailed in dedicated inventory),e49fa4c6f90e7094dc7e8bfe8e0d45a3fd53d02dbb9f8d9f7738d9a8c434f2b1
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/CustomizedDataContext.java,runtime or demo sources/assets (detailed in dedicated inventory),6deea0d53e048604509afeec83ba00318c7bd3790fa37e361f367a17757aafb3
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DataContext.java,runtime or demo sources/assets (detailed in dedicated inventory),f0e750b6c4c257c4025eb96a69b05486d2b5ea44099d469239bcb030fbe6ef84
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DataKey.java,runtime or demo sources/assets (detailed in dedicated inventory),1bd142b82c842353fbc9af1c28a2f04d81f68aba4ee568f4b1d5d8182d5433db
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DataMap.java,runtime or demo sources/assets (detailed in dedicated inventory),8122245059344afc9aabc54f2ed5d6696a6ea8d0efd740f8e322f4c3ce9231b1
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DataProvider.java,runtime or demo sources/assets (detailed in dedicated inventory),8c9b46486fdbc4ebafac2548e00b8b2bcc1aef392a93bc205d32e96b413791fe
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DataSink.java,runtime or demo sources/assets (detailed in dedicated inventory),bb56503c0ee759ebfa4e7061e680aaf172671f6843530dc42dbeb0828bb67267
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DataSnapshotProvider.java,runtime or demo sources/assets (detailed in dedicated inventory),ea33bfa26abe2b891d517bc4ee96bf95b14b237280a92ced855bb55fbba0df26
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java,runtime or demo sources/assets (detailed in dedicated inventory),cf95ecccac11eabaab7abe55138b3b59300afffb9735aee7faa6c8afc58229cc
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/IdeActions.java,runtime or demo sources/assets (detailed in dedicated inventory),3a13f788a2704729fb213faa0cad5810c41e1d59cd9cadc8d1ee7b6b960bd1fd
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/KeyboardShortcut.java,runtime or demo sources/assets (detailed in dedicated inventory),b0b7478f9e3abfe9f763a178bdae8456e58b39ffe6545a628e5db0e9e2303074
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/PlatformDataKeys.java,runtime or demo sources/assets (detailed in dedicated inventory),b07446aa02434c7cd59defe4d85f2d3ee2323a144bf04ae7149865d5e8438996
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/Presentation.java,runtime or demo sources/assets (detailed in dedicated inventory),1067cacc7da05494b55c08f14fbebf00e37f330c9f7ae526926ab35e6f0fe145
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/Separator.java,runtime or demo sources/assets (detailed in dedicated inventory),896da4b184255174f464e6fd7a86baa5a1594605eb5c590b08f6585aec8a9628
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/Shortcut.java,runtime or demo sources/assets (detailed in dedicated inventory),f8a853ecf4e1bf19e2ac5b927b4f3c83fa9f19c785ce99152ea6d71e7da69f97
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ShortcutSet.java,runtime or demo sources/assets (detailed in dedicated inventory),d6075393fdd2b56268df2975c6a1152c10bc86ff1ec937d12590a62cb6294c35
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ToggleAction.java,runtime or demo sources/assets (detailed in dedicated inventory),718f4e8e678fd356e179058169ba57ac6f8ba7e4a15992f4202758de01663a51
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/UiDataProvider.java,runtime or demo sources/assets (detailed in dedicated inventory),43e41b50e01d2691e2f0a96c1abe1764aa205c74ee4dc00ced5adca2a9798fd8
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ex/ActionManagerEx.java,runtime or demo sources/assets (detailed in dedicated inventory),d923b3c847d0fc2ba3c433f3a756e5fc9282e0d357c87abbf4e7930668ce575e
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ex/ActionUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),5202992e9832d20a08d3057eb3ad50153755590b3269b8e02adfc7482062f85b
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/impl/ActionButton.java,runtime or demo sources/assets (detailed in dedicated inventory),862561765b350cb04bb73c90c8cb2202c786e2946fc853d67b5693628c80a214
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/impl/SimpleDataContext.java,runtime or demo sources/assets (detailed in dedicated inventory),5847be50f3549824aa3ab683470750cac0392e671da79e044b00da978b3b758b
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/application/Application.java,runtime or demo sources/assets (detailed in dedicated inventory),0ed4d16d6389d0319a23fcf6af9c4670834c724b57bc48ec0c3842a5ba3625b5
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/application/ApplicationListener.java,runtime or demo sources/assets (detailed in dedicated inventory),2464f6ecc5a2c99e17162f3d63de7b92ae55ab5fedff2b259ead6625e3441ebe
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/application/ApplicationManager.java,runtime or demo sources/assets (detailed in dedicated inventory),a94039989730403a2846831e4181c2449db2a10ca7e0e279924b0db593c9af81
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/application/ModalityState.java,runtime or demo sources/assets (detailed in dedicated inventory),93c6b4811f07653e35efc45f41bf308b14a33bcb06df1d8b4fc3204e7b74c9e5
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/command/CommandEvent.java,runtime or demo sources/assets (detailed in dedicated inventory),bf5ef35983352ff7b38a95079ab06707319ac53e879f456b10ab4e90d8e69f47
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/command/CommandListener.java,runtime or demo sources/assets (detailed in dedicated inventory),46fa892ce49952d85248cb33bdc517c962a9a9ff3a3626cbd90a70b2a76fab72
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/command/CommandProcessor.java,runtime or demo sources/assets (detailed in dedicated inventory),eab643087e81006ae36e7ea69af091d99e9db35379a1ec02377ca9be00d5e205
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/command/UndoConfirmationPolicy.java,runtime or demo sources/assets (detailed in dedicated inventory),9eff134cb2c89121f7a640bc2c3510ee1c68f002acaf674a619e6af8835140ea
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/command/undo/BasicUndoableAction.java,runtime or demo sources/assets (detailed in dedicated inventory),2980751de825d6fbbebb9aa62dda8ea5db6422ca9a3a80b50e959dc359cdd867
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/command/undo/DocumentReference.java,runtime or demo sources/assets (detailed in dedicated inventory),7da6fd446a89ab5dd8cc405f8ddd245d73495c453c45429c6be9d51fcdf703a1
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/command/undo/UndoManager.java,runtime or demo sources/assets (detailed in dedicated inventory),e0b01c97e6cfa432eda1818c3615cc3be8325a0c7c97dbfd96a434f158eecace
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/command/undo/UndoableAction.java,runtime or demo sources/assets (detailed in dedicated inventory),92211aa660a633c769c4ceb0f7429e920c97897d279b4ff0f57f0c0e8a36b634
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/command/undo/UnexpectedUndoException.java,runtime or demo sources/assets (detailed in dedicated inventory),072c81559570db792b1f00915115e3383d141f2625c5d9eca6f6c996414d0d67
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/components/ApplicationComponent.java,runtime or demo sources/assets (detailed in dedicated inventory),75cffddbe64c619d9466eabd885e7b3f036474283e0620793e1a9084c68b03bb
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/components/BaseComponent.java,runtime or demo sources/assets (detailed in dedicated inventory),5a919c6d1b69a227ace18af047af18599281fea9b6b5e43177c564c2f0c15e88
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/components/ComponentManager.java,runtime or demo sources/assets (detailed in dedicated inventory),b185ed406d0a436c03996520e4e01bcc94724fcc981f81ff80a787ceb569c4ba
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/components/PersistentStateComponent.java,runtime or demo sources/assets (detailed in dedicated inventory),e0eb7a30b081d2de1c11e5036b9725308cfe3a83f84b2145bac77597e53a7fb7
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/components/ProjectComponent.java,runtime or demo sources/assets (detailed in dedicated inventory),5d8e8e1fb6f35ad24bfbef6badf1c7f9d5503b5ab9dcb591735aa7996556518e
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/components/RoamingType.java,runtime or demo sources/assets (detailed in dedicated inventory),174e656b0a19efc48379c8fde32cf57a42a8469674eaffcd6603ec98768de560
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/components/State.java,runtime or demo sources/assets (detailed in dedicated inventory),5f1a392410e2169468024fe5b6dd0bb27027ae4d0e201d358722de4510ec72f8
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/components/Storage.java,runtime or demo sources/assets (detailed in dedicated inventory),28f8988c555ce33c9a5078850ef7abc83b303685242849693d25bff5531888c5
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/components/StoragePathMacros.java,runtime or demo sources/assets (detailed in dedicated inventory),a2ffb160c1dc4373c89df3ed7bb8a0e202753a0b1c7c03cb6276be2191b95bc9
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/diagnostic/Logger.java,runtime or demo sources/assets (detailed in dedicated inventory),c04025aa1722a6c8182722ecd42343eb03da45ce018c46d39325c1772eaadb7d
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/Document.java,runtime or demo sources/assets (detailed in dedicated inventory),db77e48e6521f29ff287255221122677d268b2606b31241ab8ca250fc8f3e310
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/Editor.java,runtime or demo sources/assets (detailed in dedicated inventory),14fc135d4175676a816399a4aa076d6a3a032c62ac27698a74ca1b4562b24e83
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/EditorCoreUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),70982830d913085c45266a5083eda15261ba614d79ee919e440d100f27cc55a6
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/LogicalPosition.java,runtime or demo sources/assets (detailed in dedicated inventory),10c3366197002f8d9cd9642e7f6d123e638f7f5b202e49ec8978f34a8af5c2a5
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/ScrollType.java,runtime or demo sources/assets (detailed in dedicated inventory),82620017302747bfd1a76e7e2cf3b54ad0c5fabb56389d47ba7aec8f961cb3eb
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/ScrollingModel.java,runtime or demo sources/assets (detailed in dedicated inventory),ddd0f64de7fda6421dc58318ee1bc930e46232d170bcd0c5696a77d5df1dd6c3
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/CodeInsightColors.java,runtime or demo sources/assets (detailed in dedicated inventory),10d35ad3d4c595d6f4ac581e71ef891ce00c77f130db7b481ea17fd30814bd90
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/ColorKey.java,runtime or demo sources/assets (detailed in dedicated inventory),af5407de86cc1187cc0fb403866ef5273a91ed9baa54ede3042dd8840dcf11f9
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/EditorColors.java,runtime or demo sources/assets (detailed in dedicated inventory),d1321c247630e5f37280328294af6ab5b6d4489bba30a46bd12e33fc417a5f8f
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/EditorColorsListener.java,runtime or demo sources/assets (detailed in dedicated inventory),43a32fc9dab1019abbcb425f2befc1108076e27f1f85bd1b47b26e1057d0912a
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/EditorColorsManager.java,runtime or demo sources/assets (detailed in dedicated inventory),ae4919c321de6a58adaa82786ff994e9cb5fa1b65840a464384426d8a324768e
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java,runtime or demo sources/assets (detailed in dedicated inventory),bf0a629952a4ef95dcb4b321826c05bcbce1f79cb5605fa4517cd5b04e36e1b1
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/EditorColorsUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),7b7e1422450e6a4a1ab05063d496fc315916235118526e551a76326e6fc01a8b
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/FontPreferences.java,runtime or demo sources/assets (detailed in dedicated inventory),b91341d6d133db3065f6091869922e7a886991dabea03b1483b828b5db3d29df
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/ModifiableFontPreferences.java,runtime or demo sources/assets (detailed in dedicated inventory),2e82a3c1c91fbdfb34d70d3b0cb78539133efe5022c32b5e870e771c3661b00a
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/TextAttributesKey.java,runtime or demo sources/assets (detailed in dedicated inventory),ddb8b93f3e5ac699e946a37f79b55cd8e4717e24fe247161cc86b5d76b566f71
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/event/VisibleAreaEvent.java,runtime or demo sources/assets (detailed in dedicated inventory),16b0ecbdd400d9e99f5934e8bb8b80cf29844fd11cf9279dd1ad01465f2226ac
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/event/VisibleAreaListener.java,runtime or demo sources/assets (detailed in dedicated inventory),9758fc04be32194cd1bbaab0aee7babb7268efaa3a0e0bd33a9d400a2f312259
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/ex/EditorSettingsExternalizable.java,runtime or demo sources/assets (detailed in dedicated inventory),001a1d82c512170e77bf6548ca13e8b2fe378d4b98509a86e84f2452b2621b18
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/ex/util/EditorUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),15b81a51da74c0f061e49cb2c5315456811b50c0aa3dc05b265686a2d63f7734
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/impl/EditorCssFontResolver.java,runtime or demo sources/assets (detailed in dedicated inventory),1dfc58abc0f4e03fa6bfa62f8dad0a5d75224fa69fbca18854f24ab546775bf6
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/impl/EditorHeaderComponent.java,runtime or demo sources/assets (detailed in dedicated inventory),9bb053a97fc70ab28a56529bb3d0bf1eb903d894a1cb6d760821004a016a6ce3
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/impl/EditorImpl.java,runtime or demo sources/assets (detailed in dedicated inventory),e15a5ac6841ab051c6b6329a0fe2b89e65cbf050772d5736db509ad673df2818
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/impl/FontInfo.java,runtime or demo sources/assets (detailed in dedicated inventory),8b39d980d5782bcda29547792c69001bb8f77d3fb53ea816f567fd84ad7bb93e
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/impl/view/FontLayoutService.java,runtime or demo sources/assets (detailed in dedicated inventory),16e6f07bb85b6563bb6e2b61d614c57f01f40d515d76b60fa673f329191be1a7
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/markup/EffectType.java,runtime or demo sources/assets (detailed in dedicated inventory),87ba84ebfbcddf2c19b7dfd7d6cda3b6df748b8fb985690deeae6f12149071f8
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/editor/markup/TextAttributes.java,runtime or demo sources/assets (detailed in dedicated inventory),df5edeb6d947307ecc61cdbdf27bededcca93c28059542f18acc060eab271dc4
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/extensions/AreaInstance.java,runtime or demo sources/assets (detailed in dedicated inventory),a483a0063b07c77a9936d6f2b6d805a983a77a524f99ef8f4535328d615db547
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/extensions/ExtensionPointName.java,runtime or demo sources/assets (detailed in dedicated inventory),22798e425368081bdcf7ed3fb2cc968a9b4048d94ca1ea19a5ee56f013dde75f
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/extensions/PluginId.java,runtime or demo sources/assets (detailed in dedicated inventory),b1b02f037196e38ebe59d0e4e462f643c63a5ff475b3a592d0ce17136e743c58
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/fileEditor/FileEditor.java,runtime or demo sources/assets (detailed in dedicated inventory),5cfb951ca8ec78e8b98a61bf14c5e2423244ad55819ee2549ec9971f0912d4ef
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/fileEditor/FileEditorManager.java,runtime or demo sources/assets (detailed in dedicated inventory),4b0c13a5bde16500cf9bdcda321b639bae597f6f2f82473a25c934e81fbd629d
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/keymap/Keymap.java,runtime or demo sources/assets (detailed in dedicated inventory),eae958732a5ffc530ff9d9f08520e1176da84f5143cd8afcc904d24ba7229ae2
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/keymap/KeymapManager.java,runtime or demo sources/assets (detailed in dedicated inventory),b56238b37bed847b3f97558a3b6e109529908f5c037a67381d2bfea39a66f47d
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/keymap/KeymapUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),6cae4fd25473116fb9c440d6573f30d64270f5a40f906fb98f0a988871c33ead
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/options/FontSize.java,runtime or demo sources/assets (detailed in dedicated inventory),9ffd817dbda5cacfb9c4bd5cef69d18550f86715f6f2f2a9a120b12c078f4bff
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/progress/EmptyProgressIndicator.java,runtime or demo sources/assets (detailed in dedicated inventory),f29ed46e1b3534c71c9df0b0dcb38b8fcba71d92c512ffd68573a689f1b468ce
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/progress/ProcessCanceledException.java,runtime or demo sources/assets (detailed in dedicated inventory),3ec766809e62b5d7d5fdb3e7e26b9aa3bbedaff5fd438031ec38f823e7de15a6
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/progress/ProgressIndicator.java,runtime or demo sources/assets (detailed in dedicated inventory),d2db4539a562a8d14fc73d7254e463185c92213fcff934c87b440a82484c6d47
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/progress/ProgressManager.java,runtime or demo sources/assets (detailed in dedicated inventory),80d7ac845c83f8034d0b8146341941689cfa8b5ae03e4a8eb6d132cef7968bed
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/progress/util/ProgressIndicatorBase.java,runtime or demo sources/assets (detailed in dedicated inventory),bbb8b1ca6aa0307205c0c029c7f6e092f69b1d1c40b3fb3c777e7e7e769fa569
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/project/DumbAware.java,runtime or demo sources/assets (detailed in dedicated inventory),8e718b9709b617eea4bfe61b1edf9c837e0c25ebc22347e897e52865cc779748
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/project/DumbAwareAction.java,runtime or demo sources/assets (detailed in dedicated inventory),c51fcde4db932112d1a6d58764361ecbacd9b3aa3f35cf0dcee9712066168b48
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/project/DumbService.java,runtime or demo sources/assets (detailed in dedicated inventory),e1ce4ffa36991f7029d166072321206f8f6476316ec1faa89618a278299a9020
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/project/IndexNotReadyException.java,runtime or demo sources/assets (detailed in dedicated inventory),61373ef2e95b019ed1d73ee15ff57834dc91e8c16717535388ca1de49171d095
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/project/Project.java,runtime or demo sources/assets (detailed in dedicated inventory),8133d30665620a2529d1da2ae48a6e5c027270f701c6bc1cd3b4a65b7e29df6a
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/JBPopupMenu.java,runtime or demo sources/assets (detailed in dedicated inventory),a9642c0da7bdd306d9e19f51c7d8398ebe20177594c6af6c47c9f62bb73978d5
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/MessageType.java,runtime or demo sources/assets (detailed in dedicated inventory),f17d1e0a80be93c9e3c9557aaf475d56090cf5ec55d3a57e267ff7b58b717454
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/Messages.java,runtime or demo sources/assets (detailed in dedicated inventory),3f82665f133a9190fa1bca8a3e55199b91a7184ed5a9e6cd7c22a53153789e11
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/Balloon.java,runtime or demo sources/assets (detailed in dedicated inventory),88a558d887f03aa02636adf69cfd96e3ab653621929f0e564a113cc8b7e50a4d
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/BalloonBuilder.java,runtime or demo sources/assets (detailed in dedicated inventory),aff8a18051bf0bdeaaf73a6ba84dabb6bb3ed7bda4e4de0d9280f5e4f407a403
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/ComponentPopupBuilder.java,runtime or demo sources/assets (detailed in dedicated inventory),4d5332c48c4e8aa6887f2e1d68f6e3440db675f72cfea16ed4a3e6fe4284776b
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/JBPopup.java,runtime or demo sources/assets (detailed in dedicated inventory),c0713e0aa5e94b05df9ea9deac48be90049cce6c2c6142a2402fb91306fe336b
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/JBPopupFactory.java,runtime or demo sources/assets (detailed in dedicated inventory),3442fd6ec5f852bc440c0713b32f487bed8b19c465a38959419d31bb9e97adba
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/ListPopup.java,runtime or demo sources/assets (detailed in dedicated inventory),42ea2552bd9e6f66fc8b7f700e82d22b848d4e02a22d121db7ea855ac71436bb
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/ListPopupStep.java,runtime or demo sources/assets (detailed in dedicated inventory),9b28efa93963c70aadc3472874dfb68e7d20d39045af006df4ce84f1025539ef
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/ListSeparator.java,runtime or demo sources/assets (detailed in dedicated inventory),357341960015e646af91d5c820bd2629a8d39fc881c875c353ca680e58cc2331
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/MnemonicNavigationFilter.java,runtime or demo sources/assets (detailed in dedicated inventory),ca5397311a64045177eafffd70e04c6552d7003924e8c29dd0cbe4114dfb6039
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/PopupStep.java,runtime or demo sources/assets (detailed in dedicated inventory),1baea44bba84f919a61b806a2a0f68e7eefc3a8bd6c94359f55052616211947a
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/SpeedSearchFilter.java,runtime or demo sources/assets (detailed in dedicated inventory),339e7dbe6ea420695ccc1bc26877818c9b5e7c6df35714ce9c587ae5b1fea4a6
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/util/BaseListPopupStep.java,runtime or demo sources/assets (detailed in dedicated inventory),50b5188b6fb8041109e6a006601fc4a69534f97c2e1009452a7120ec2cb60ec2
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/CheckedDisposable.java,runtime or demo sources/assets (detailed in dedicated inventory),7ede58559785806c8b9368e6fb5c8154ff892823a144c5074ae1094b2c9eea42
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/Computable.java,runtime or demo sources/assets (detailed in dedicated inventory),437cd313ac7c8706d74df4e7c10d77353ac394cb5aba30fe9ea6b59256c5cf95
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/Condition.java,runtime or demo sources/assets (detailed in dedicated inventory),227eca4ecd58b28ec471ae1e8c87800b9bf5c7f8db22f1b337821a4203de8d94
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/Disposer.java,runtime or demo sources/assets (detailed in dedicated inventory),da0ec572904c2a94e3bede5b5eebb6ee089d3a38f38672c4d81e7cc2bf102394
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/IconLoader.java,runtime or demo sources/assets (detailed in dedicated inventory),58fa17b1da2adeb6f92352769ae05e4627097e788ee0aef7c28a9a880c46ba37
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/InvalidDataException.java,runtime or demo sources/assets (detailed in dedicated inventory),f7cf8658eec16499ea16cf3097a4691409972890b9e7f51fca9acecec0e262e6
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/Key.java,runtime or demo sources/assets (detailed in dedicated inventory),68daab288bb4c29c9f65433181eb537ff5e312bc9e9fba3c9059427f90429405
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/NlsActions.java,runtime or demo sources/assets (detailed in dedicated inventory),3914a9adefe3a6f5c578ce846d1dddc6b59596b719916573ae6317bac641363d
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/NlsSafe.java,runtime or demo sources/assets (detailed in dedicated inventory),08a467df64a348384c366aaf39045c582debee18824b6641e243cf88cca14269
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/Pair.java,runtime or demo sources/assets (detailed in dedicated inventory),9fc42ac19519f3351700abad1473abbf11a418d323dd4988e1554c3dd63fad56
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/Ref.java,runtime or demo sources/assets (detailed in dedicated inventory),6b15788e856c8be3710d07f12fa2971fd47b028fe26a6a57641c7867b4d42680
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/ScalableIcon.java,runtime or demo sources/assets (detailed in dedicated inventory),9a4fe677c1d15fb7e27c47a2332fd3c421a3048ea8c6ce6d3d8566c18618fa4d
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/SystemInfo.java,runtime or demo sources/assets (detailed in dedicated inventory),700256c5f7d76e03a5cd16c02dd51a35b0d7ffa5bae5c879bfc14c6dae9695f3
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/TextRange.java,runtime or demo sources/assets (detailed in dedicated inventory),3474eb91cf1abf7d7ff45c35a6216e3651c8bdcff4406823aa7e36c48c7104e7
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/ThrowableComputable.java,runtime or demo sources/assets (detailed in dedicated inventory),ed35943c1e1b927176b583e1436255d65dd62e00ba38218bf2617e95d64a4d05
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/UserDataHolder.java,runtime or demo sources/assets (detailed in dedicated inventory),0a00e8509d293a8d17eb91b478e7ef78eaa0c762e24b59fb1f4d07d9494e9e7a
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/UserDataHolderBase.java,runtime or demo sources/assets (detailed in dedicated inventory),66b252d8fa220fddadf0b93f02bc39be730457dbcf272473a36922b307728c2f
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/registry/Registry.java,runtime or demo sources/assets (detailed in dedicated inventory),515d3383d78b5325528d361126acaeb58b9c1ec6a15dff029286c1f7a945da85
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/text/HtmlBuilder.java,runtime or demo sources/assets (detailed in dedicated inventory),c18c1416b23412aa9068928a189e0c213073f445effe2fc7aea5102e7ea77549
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/text/HtmlChunk.java,runtime or demo sources/assets (detailed in dedicated inventory),80bce598652323e0d0ab4ece1e3ef11171f1dc78c005a542a0f5788f05e674a3
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/text/StringUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),4912b299c3ea62a3cca2c1145f97ec3ab5d5a755d25f230a75a4f414406a9e29
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/util/text/Strings.java,runtime or demo sources/assets (detailed in dedicated inventory),af84c7565e5d9d5419c5d22d2cec2353d4c30dabe3b2f564e0ea2ca11df9f7a3
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/vfs/VirtualFile.java,runtime or demo sources/assets (detailed in dedicated inventory),bfd1f25b9f5416291401948a2c42547a427c22baaf97a79f80e716fdd4b07bff
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/vfs/VirtualFileManager.java,runtime or demo sources/assets (detailed in dedicated inventory),d6cc6eaa30fce3429a413b2306c08faa677294a44e70969e681234d42d1bd59f
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/vfs/VirtualFileSystem.java,runtime or demo sources/assets (detailed in dedicated inventory),6ffa23b4951abcb1fe02b7cb7c87a6422b67827485b8d751edc4787f1408426c
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/wm/IdeFocusManager.java,runtime or demo sources/assets (detailed in dedicated inventory),a0e321c4d2b8c7dd08bd7fae03fbd143f80221a4278f0ec1ac4d7b3a794d3c7c
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/wm/IdeFrame.java,runtime or demo sources/assets (detailed in dedicated inventory),ce0791c9076461b9fad9042fe666476ab016b254f5d415236f1363e39ae56620
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/wm/IdeGlassPane.java,runtime or demo sources/assets (detailed in dedicated inventory),ab22d9f48a1d09e9df9c2a91020776fea6cb96bdfe41cbd9785f3705ff1eea49
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/wm/StatusBar.java,runtime or demo sources/assets (detailed in dedicated inventory),20373d6ce2cef1cc0df9aa97343a4b4b144f55a052568d370af50f148194d4c0
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/wm/ToolWindow.java,runtime or demo sources/assets (detailed in dedicated inventory),86c63b967aa533dfbe477112d3491cbd11e20dfc6bbeec39bca0d83aaedaeeea
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/wm/ToolWindowManager.java,runtime or demo sources/assets (detailed in dedicated inventory),0b9d78f8bf3814bfebef6bc7127f643eb7c86e37459118cfb1b4fab353c31552
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/wm/WindowManager.java,runtime or demo sources/assets (detailed in dedicated inventory),7c02352720971bed99c611b52dd32b46ffea55b8a1624380201bff89c946e675
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/wm/ex/StatusBarEx.java,runtime or demo sources/assets (detailed in dedicated inventory),200e002c44b2cf02c4048f38919f322e8a9c29d04a42e9da2ef7bdf22d5e0fc0
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/wm/ex/ToolWindowEx.java,runtime or demo sources/assets (detailed in dedicated inventory),16a0355b1fc1261dd866c306d32b2dd7b5912e53ac66720367adea53c7843d83
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/openapi/wm/impl/IdeRootPane.java,runtime or demo sources/assets (detailed in dedicated inventory),76b5d90a2d4893586e48831d12b81212b82ba1054585233e0286f02d8b668a3c
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/psi/codeStyle/MinusculeMatcher.java,runtime or demo sources/assets (detailed in dedicated inventory),e449a0650e0b05a075fb0fd0d23f232db9d08e76383efcde4e32d125c3e86615
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/psi/codeStyle/NameUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),323c330740bce3f96775259c23c26a7e1b45fd7fbb10e7fdb7cb34e1c69730d6
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/reference/SoftReference.java,runtime or demo sources/assets (detailed in dedicated inventory),50e6060f330d18a7468d4de472db7425b02bcec74c36226077aaf497b808f536
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/CollectionListModel.java,runtime or demo sources/assets (detailed in dedicated inventory),f65b5fc99638e2274f03b67a936d785b47ac6be235ecdb166138ec02138dcf7b
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/ColorUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),fa636dd669c945b274859a9583679eff8dbb1fe9ad2c853ee68c5eb2f1fe01d8
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/DarculaColors.java,runtime or demo sources/assets (detailed in dedicated inventory),741bfe2a3793878dec293a4f09698fc7934a188e83de3119cdce899a9800380f
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/DirtyUI.java,runtime or demo sources/assets (detailed in dedicated inventory),8791edd84e2f3d270dc099ba246c12cb4427c91cac1aee410a10d9eb6404a906
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/Gray.java,runtime or demo sources/assets (detailed in dedicated inventory),0e62e4a1ee99a17b90fcbf1d0a31b929034ef842e8a8134e191962a521a385f2
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/HintHint.java,runtime or demo sources/assets (detailed in dedicated inventory),77bfcd0dc814be0730f437c62fe56e99401501333503a28bf48fdf5dca621c9a
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/HyperlinkLabel.java,runtime or demo sources/assets (detailed in dedicated inventory),49094daba6bd8d3b9b4129df03cf995e9373f8bf39598ddbaec7330274cae90a
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/IconManager.java,runtime or demo sources/assets (detailed in dedicated inventory),26e7aa2f177e97bffd46dbe0027614ac2c0684aec82fea972b936a66d6afba8b
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/IdeBorderFactory.java,runtime or demo sources/assets (detailed in dedicated inventory),e46b8a9895434c6fe387bee0b9a4d54f2a06aafd290e24b3ef266d94a791b70d
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/JBColor.java,runtime or demo sources/assets (detailed in dedicated inventory),5bc9c5e7390fbcb5e2286ea3d3a4368944a54c095e003d1f526d5796f4d261a7
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/LayeredIcon.java,runtime or demo sources/assets (detailed in dedicated inventory),761b5d1cae6fa4719c11d21e7e9257d26694b2069f8f16b701560ece8987d71f
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/LightColors.java,runtime or demo sources/assets (detailed in dedicated inventory),5df8719f042c5ed1b4cb942ac730b54c5546691903376e6691e6a66fa8715a2c
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/LightweightHint.java,runtime or demo sources/assets (detailed in dedicated inventory),ec462a76be3060b3fa71b7f408410b6f55f8bc974822462d879d3011b11011eb
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/NewUI.java,runtime or demo sources/assets (detailed in dedicated inventory),f9fcbcb2e551cd1ef24a24c3a69b1b44c12324689751220310657933cfcd11cc
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/ScrollPaneFactory.java,runtime or demo sources/assets (detailed in dedicated inventory),f4aab01b2d75230c092b526d08a430d34cb43b5de2f2c16ae2f508d27aaf55ed
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/SideBorder.java,runtime or demo sources/assets (detailed in dedicated inventory),f20ff0fab40cb294eaead976b709244b1018827c8d6cf52355ee4b6b7ab5d120
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/SimpleColoredComponent.java,runtime or demo sources/assets (detailed in dedicated inventory),76da2ef8014d29dc9d905e9083907c65b33cfd83c2b5304e2845e48afd812894
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/SimpleTextAttributes.java,runtime or demo sources/assets (detailed in dedicated inventory),984dfd292172d2bb97af8353c0a9c18310258913f2123b45b0876a25d4e47245
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/UserActivityProviderComponent.java,runtime or demo sources/assets (detailed in dedicated inventory),fe1a83ca62b3fe25f2c8916d6eac519c3614047bcb761ea66e97af0e179b3d18
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/awt/RelativePoint.java,runtime or demo sources/assets (detailed in dedicated inventory),aed7bf6369dca7091faef2362ca664aadda4bfe26746350a74ca7229c0421070
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/components/Interpolable.java,runtime or demo sources/assets (detailed in dedicated inventory),394750dd2f26fbc627339a48a18f7f8df234cd244c30052a05d5ae82cc0fc1ee
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/components/JBLayeredPane.java,runtime or demo sources/assets (detailed in dedicated inventory),404e43db5f4bfd0dbaa031d465c008bccf7a271c9e08b483fbe54e92bc006d40
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/components/JBList.java,runtime or demo sources/assets (detailed in dedicated inventory),a7da25c4c7999d244e9f33672ac819333f6c334870153385f2a7613f046f743a
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/components/JBScrollBar.java,runtime or demo sources/assets (detailed in dedicated inventory),1bf7b917571d1bca61db42e0179ae01bf56fed7f683cb5c39ffe2b8ae52d99a3
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/components/JBScrollPane.java,runtime or demo sources/assets (detailed in dedicated inventory),9133209b805b7611fb2458251d32241fa5d8ed59fab2d59d27417ae62cb5edc8
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/components/panels/NonOpaquePanel.java,runtime or demo sources/assets (detailed in dedicated inventory),a771959e5c6296cc5e2a18225340cd43ef65ea57b6915f64da1e5fa5d4fe1525
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/content/Content.java,runtime or demo sources/assets (detailed in dedicated inventory),bfd8b57c366812682f0cfed039afd82c5da87400bd3c0df8e9ecf1024c6184de
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/content/ContentFactory.java,runtime or demo sources/assets (detailed in dedicated inventory),2c171525bb30a0a43c4ab13f1789f3005b2e7265f3839fa48320566b7082467d
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/content/ContentManager.java,runtime or demo sources/assets (detailed in dedicated inventory),66986024f9039778203d83345903efbb726d9e5fe69a006873682b1446f4ba0f
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/paint/LinePainter2D.java,runtime or demo sources/assets (detailed in dedicated inventory),f2a5642e5386322ba0b0e56e084517b7e322c8c877ea3542d1fb005c7b622031
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/popup/AbstractPopup.java,runtime or demo sources/assets (detailed in dedicated inventory),b382e2ae13d0b3ab9fbff9734215afbc371200493c3036891a567dc942010247
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/popup/ClosableByLeftArrow.java,runtime or demo sources/assets (detailed in dedicated inventory),db99c59d98738a6fb76c6136f4c2e041b84f176e2900ddf8ba72d8562465d617
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/scale/JBUIScale.java,runtime or demo sources/assets (detailed in dedicated inventory),3f353e31ee4afbb6b3b43830467a7d2241d5c279ad991dfb1bc7863400a8dacf
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/ui/speedSearch/SpeedSearchUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),d8830d868cd44e9c2fc514b15faa1b370fd3f032041201bf02fcc93683f8a256
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/unscramble/AnalyzeStacktraceUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),ac70b096e84e0d015f994aa3e623b31dbcc8dabce68211bed8489abf953ef3ab
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/Alarm.java,runtime or demo sources/assets (detailed in dedicated inventory),926f8a7d6a0f3a09e3cc3ae5466fe88723cfded08c15eb7e76b2404539996072
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/AlarmFactory.java,runtime or demo sources/assets (detailed in dedicated inventory),779c598f224462a8f6edf8189a1b9eabdb21a5a0adb180397c454574838ad50e
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/ArrayUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),17057cae00196003953fb63bfa4f4e0bc2fa4a76170568d1faf4d70265015e8d
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/ConcurrencyUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),841f47d218e7b87c151e6ab1dcf7326a9627105b4f4d365bb8328773d6753fc7
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/IconUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),eb43a5f6112e8f9fe7064661d824ec0d7d8cb896a7de6b4b93ccad0ff768188b
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/IncorrectOperationException.java,runtime or demo sources/assets (detailed in dedicated inventory),610a6eec2d6c3508d853910a63bee8ee77709f5d85d1dc9f2c0d7e8d27e83636
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/LocalTimeCounter.java,runtime or demo sources/assets (detailed in dedicated inventory),e11c9942a7112794be922a27b2ba1a65a49ccae592cbaca8c838dffd03d8e381
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/ThrowableRunnable.java,runtime or demo sources/assets (detailed in dedicated inventory),17467879d63af4acfc1bea2184c22973b0ba470507c36a15dbbeb1ee2597b66c
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/concurrency/EdtExecutorService.java,runtime or demo sources/assets (detailed in dedicated inventory),436278506d6ae913af9c58a7e1ea5e45a682ab40c564d76d29c5b8d4846c1cbb
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/concurrency/annotations/RequiresEdt.java,runtime or demo sources/assets (detailed in dedicated inventory),3ea11fc78b80ee13e34abbfecc861c7165eaab9e066dc28b5df8e2a055ade472
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/containers/ContainerUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),697b7151b6f791ad8499dec4ea1a7b017ac656e108de5273c87d090f2788567a
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/containers/FList.java,runtime or demo sources/assets (detailed in dedicated inventory),518852ee0754237b3d3de26ef671b4e1ea037db1cac071475755de7b12eb0bf8
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/containers/SortedList.java,runtime or demo sources/assets (detailed in dedicated inventory),254d72353863cb1d2d92b815fa33ebfe490d3803d602ee081660b5c3fbb54583
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/io/URLUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),497c7fb20f971d090655e9ad64347f5782d3196c1d34b85d9cbcd20b87fdfc73
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/messages/MessageBus.java,runtime or demo sources/assets (detailed in dedicated inventory),ea9820952f7c5bea188ef550af2ce7e93e9a70ff91653d0f372a44a58c20ca6e
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/messages/MessageBusConnection.java,runtime or demo sources/assets (detailed in dedicated inventory),6e4b77b565352349ea417beb5f994edd86e256056589852285c1350249bb76d7
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/messages/SimpleMessageBusConnection.java,runtime or demo sources/assets (detailed in dedicated inventory),4c989e25b419b0c979d060b6f41c28d1ce71f67c7a5e61fd430fdbc66f9c9211
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/messages/Topic.java,runtime or demo sources/assets (detailed in dedicated inventory),2b8e30301ecad4887f64bfeef241b0eb016ac43e04d482bf01f4f4ef0f478163
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/text/Matcher.java,runtime or demo sources/assets (detailed in dedicated inventory),80e0de239202525798af5801c8b8ca7ab1ff0a05529ffdfb48bbbdc4c0fd5a27
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/ui/AbstractLayoutManager.java,runtime or demo sources/assets (detailed in dedicated inventory),f0ccb365403ea6f685eaaec0e2fc473915957f88a15ffe8b27467efab8eff52d
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/ui/ButtonlessScrollBarUI.java,runtime or demo sources/assets (detailed in dedicated inventory),87409a2202a13524bf113e36030c995263022736251934ca1e675e90d5a03c23
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/ui/JBDimension.java,runtime or demo sources/assets (detailed in dedicated inventory),3350ecc14357500131e808b21db225f319428bcb6802eb73284cba9713183e41
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/ui/JBUI.java,runtime or demo sources/assets (detailed in dedicated inventory),4fffb94e5dcb8ddce853ff9e95c2c289797f14fecfde04e434406b1cfa49f19e
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/ui/MouseEventAdapter.java,runtime or demo sources/assets (detailed in dedicated inventory),eb71cdca2c9277dd54907422f48dd6fdc78825a9d78476321186ba4cd95d68e7
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/ui/StartupUiUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),59b8d7a81d9ac9e59125333a4a3608182ea872e9bc7492e02d5009c77849ef3d
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/ui/UIUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),a37473d65b14d106b5254122636f129aa818e5aa8df8456b423d31cce60a1134
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/ui/accessibility/ScreenReader.java,runtime or demo sources/assets (detailed in dedicated inventory),23a2c5a836310356938ae75d6d6e3be5616d0c2192172d31a1fb2581f68fdc05
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/ui/update/MergingUpdateQueue.java,runtime or demo sources/assets (detailed in dedicated inventory),d45fe32e4e837146cdf613308a6d7389c7dc6ad2111feb00a21e50c37a3224cc
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/ui/update/Update.java,runtime or demo sources/assets (detailed in dedicated inventory),54c455f2bef6e9fc0dae5a56ed0cfd11f7e7dc5c77cc051604f96b340e0dda8c
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/xmlb/XmlSerializerUtil.java,runtime or demo sources/assets (detailed in dedicated inventory),f8821e98d161c1ff846eeb2868261e06a33b1680a1e0036c2e44bf09900ac249
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/AbstractCollection.java,runtime or demo sources/assets (detailed in dedicated inventory),e894df14616feea022664433c8bce811cc9b5b7a359214c0f85e4abf57552af6
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/Attribute.java,runtime or demo sources/assets (detailed in dedicated inventory),20a8d17257820b7e58ea1f05a0bcd7476158f1dc05a5d8fca31cf8cacb7761e4
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/CollectionBean.java,runtime or demo sources/assets (detailed in dedicated inventory),ff2880bf1be480c7f38d2e1109bfd0924bb416a771ff771d12737679c58a7ab6
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/MapAnnotation.java,runtime or demo sources/assets (detailed in dedicated inventory),6e8900c777d8893bac59d10cc13a5c6f4e6306d5716837df2e517fd0ad5cb507
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/OptionTag.java,runtime or demo sources/assets (detailed in dedicated inventory),24bbe25a694fea48fa0554259af95a1979d917933909d04d8b0b9d58aa63b14e
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/Property.java,runtime or demo sources/assets (detailed in dedicated inventory),866f356a55c16bd06395b2282de05d7a7d31bc50ccd8cc89bd67a93bae420d7c
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/Tag.java,runtime or demo sources/assets (detailed in dedicated inventory),904794650231318fd96020477090a5351a627449f7f6d526cc9a1b1b100857c7
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/Text.java,runtime or demo sources/assets (detailed in dedicated inventory),a6fd8267a078269350c826f962cae2cc46befedff0c78a28629b904190c3043a
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/Transient.java,runtime or demo sources/assets (detailed in dedicated inventory),4dd69ba6c7a9ac1acbd62878430a9ec5863e46103f3b531fe7e893ceccfaf1a3
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/XCollection.java,runtime or demo sources/assets (detailed in dedicated inventory),c0ff17265c546aad67c24e0c6b6562389a8fc9cc4f9cd6a87825c5e8a42b7533
+C:/Codex/mps-j2cl/third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/XMap.java,runtime or demo sources/assets (detailed in dedicated inventory),0d09d7b2e28ad38680925ca6d323449e1afb833552433900a392a35999cc0197
+C:/Codex/mps-j2cl/third_party/j2cl/composed.patch,"external compatibility source, patch, build metadata, or provenance",fa440fd73d459a9ea085d39fe524c0afa3d5bf4affb093ecbdab6f93eb18f26f
+C:/Codex/mps-j2cl/third_party/j2cl/composition.json,"external compatibility source, patch, build metadata, or provenance",5beab0f86d3100e4fa0304e099b876813c0098b7bbc0795c22ff3ec9c5b8f6f0
+C:/Codex/mps-j2cl/third_party/j2cl/j2cl.iml,"external compatibility source, patch, build metadata, or provenance",1b9305452be1c30e229ad74eaf961d70849d638f9a59dc24b18482fccc5f8b20
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/RUNTIME-APIS.md,"external compatibility source, patch, build metadata, or provenance",daa9985a49fdeac9a903e348fd402e836d06664866771290df05c870d77c569c
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/api-support.patch,"external compatibility source, patch, build metadata, or provenance",22bbb84e0f7bd056c327d4adb45632c5e82f9e639198cc8e2a221f15b997af6f
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/provenance.json,"external compatibility source, patch, build metadata, or provenance",4b18cf5e36074a75f72ae3b4994537f0eb38c9ef183b1c612bf885495b8cb28a
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/module-info.java,"external compatibility source, patch, build metadata, or provenance",1771b3d96c93eb14712c44660be6c586b4f380ee0ecadc4fa3476e7645c027e3
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/io/InputStream.java,"external compatibility source, patch, build metadata, or provenance",76b531441f642f667da63cc2310f4cd3e8a37e4426b2f34ea54064b1e2b66ede
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/io/PrintStream.java,"external compatibility source, patch, build metadata, or provenance",7993b68dbb65ba56cf4ca5c9e367eabebfd23676aece3eb02983c142bf14480e
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/io/Reader.java,"external compatibility source, patch, build metadata, or provenance",1f3a72e4dd93ea4bbb2a01ba265b3dfdbe7ad4d12227512501b916d2d7384c87
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/Character.java,"external compatibility source, patch, build metadata, or provenance",e589670e7d63c3375b6dfbddacb568f020d6f8195928e428197fa8726a6b4ffc
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/Deprecated.java,"external compatibility source, patch, build metadata, or provenance",ede00b2bad6ce0f2ad70acf2d46d72aa5477f420d3bad0a80b0e58e415fdb50c
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/LinkageError.java,"external compatibility source, patch, build metadata, or provenance",e5d3d41f0c86358ea1ad003bc6cb1f7cd58f2b2a111e3bbf492dfa0a91c891d9
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/Long.java,"external compatibility source, patch, build metadata, or provenance",b043e6c4e082e3e6dee9a89867556ba5dffe3aa815565e4c3d755aec2a9094c1
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/NoClassDefFoundError.java,"external compatibility source, patch, build metadata, or provenance",6be3a199c64b3fcc414489705ce419e0602c471fa733098e5ca8abd3e6e026b1
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/NoSuchMethodException.java,"external compatibility source, patch, build metadata, or provenance",89614cae430e38b884e0953e8b9bc75b00940432773e4861193db981290725cb
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/OutOfMemoryError.java,"external compatibility source, patch, build metadata, or provenance",0861434b3520e3380aa0d6c640cd27c610ed67a9769c4db1233ebe9dc4ceb1ed
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/String.java,"external compatibility source, patch, build metadata, or provenance",8ff1d815a7f7d5ae26cb5acb530408e905256a384fdc603f79b43657433579bf
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/System.java,"external compatibility source, patch, build metadata, or provenance",c865ca160e594ccd66a7abe53156244288b3e49fd5d08c175101c0e6718bf194
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/VirtualMachineError.java,"external compatibility source, patch, build metadata, or provenance",95ad015863389daa913c0fc3109ea926b71c0b3e302d0446ab202184ba4875d6
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/ref/PhantomReference.java,"external compatibility source, patch, build metadata, or provenance",93fbdcf11a320e3305a9c17a9e85292175219b6a21c78be6c90401a372c98f2f
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/ref/Reference.java,"external compatibility source, patch, build metadata, or provenance",c759a39c8a0e36a078f23abd00361dd56ce11a980163b2bc34e9e5b3c13c0a27
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/ref/ReferenceQueue.java,"external compatibility source, patch, build metadata, or provenance",bc33ee8ddb0eb8475970b847300338e97b43cb6204090d21b5ec734ca493ba27
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/ref/SoftReference.java,"external compatibility source, patch, build metadata, or provenance",967b370d12e00b7aeef65d0ef09b122a6380050415e54a59a36ccd22337852f8
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/ref/WeakReference.java,"external compatibility source, patch, build metadata, or provenance",2c592b24db7d63112aa36c26b0a0f3cf19c3d021f29a7d050c61cdcf886c3b27
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/reflect/InvocationTargetException.java,"external compatibility source, patch, build metadata, or provenance",8aeb880e146980bef1de7956e94f0b50b4b8b41b60b4661a1e91687787a3be65
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/lang/reflect/Modifier.java,"external compatibility source, patch, build metadata, or provenance",e7a31ef82eeaa2f7f47bb526a210d3b82234e89f4b290cab9647423e19809920
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/security/SecureRandom.java,"external compatibility source, patch, build metadata, or provenance",d6daa65bf8312cfa341682cebd94fea61e0db3848758c55b9753532d3b1ec9f1
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/time/DateTimeException.java,"external compatibility source, patch, build metadata, or provenance",8cfed9e41bb162dc19c0a20c19b5a3322cb4b0767932f0358109bfa264bd1700
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/time/Duration.java,"external compatibility source, patch, build metadata, or provenance",31d136dc19daf5dd1410945373c4537cb224fa579d35183760439be785f217d9
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/time/Instant.java,"external compatibility source, patch, build metadata, or provenance",5c98cb2a94ece356cf8eb0209d8579d9a644a58a785311fdf976f8548b63a20f
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/util/Collections.java,"external compatibility source, patch, build metadata, or provenance",061a24421a40bba419c43f7bb2c79aa35ab5454781b3c9596e79e76de9f388a8
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/util/List.java,"external compatibility source, patch, build metadata, or provenance",d425983deeed907919a4c905681498e5f9831de5827ea2277ce881f6c8a674f6
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/util/StringTokenizer.java,"external compatibility source, patch, build metadata, or provenance",04aa66dc7891b447a02c76f72cf85bb5dbab763850294bc001e7c53cc069ccb0
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/util/UUID.java,"external compatibility source, patch, build metadata, or provenance",c7de83a529414fb1083ed5fb0aa97ec3159c499042e53b027ae43ca5bc8f6d8f
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/util/WeakHashMap.java,"external compatibility source, patch, build metadata, or provenance",a494bca3a9d71bb8611e9e85fc2317f78c6797256f6b8bd9e7dfd81cf88d7336
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/util/logging/LogRecord.java,"external compatibility source, patch, build metadata, or provenance",22f8b2daaded44d5fd2c071dadc7050e1a2164a200945c1a2221339c3b8c525f
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/util/regex/JavaRegexUnicodeData.java,"external compatibility source, patch, build metadata, or provenance",a45a970ea2d7137a0ac3d609121b18c256815630a0d53597186f372d6379d2d1
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/util/regex/Matcher.java,"external compatibility source, patch, build metadata, or provenance",376b8006ac587337576dd3bc253fc8619a6b94f990d3735b214bba209c9541c8
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/util/regex/Pattern.java,"external compatibility source, patch, build metadata, or provenance",b8ddd733d97c9680d47bf50775f15bc33c0bdff4e1a86aee0a2e1fa246ce3fc3
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/util/regex/PatternSyntaxException.java,"external compatibility source, patch, build metadata, or provenance",f36b27a1f2f4aba7169889dfe4e88cc2c097cd1cd609472e54133add59fd9146
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/java/util/stream/Stream.java,"external compatibility source, patch, build metadata, or provenance",27fd2b529f85434e17114aff9706ac3ed5799575066c5c25ab543404bf05de07
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/javaemul/internal/CharacterData.java,"external compatibility source, patch, build metadata, or provenance",0c90ba96a866c0204480225388ed4cd8e4f8b273528fb6ba0437f7f3f9e64276
+C:/Codex/mps-j2cl/third_party/j2cl/api-support/jre/java/javaemul/internal/MpsFormatter.java,"external compatibility source, patch, build metadata, or provenance",89bea9e5137c54f2d28c56e123b23d24b47966654f44fc8d8af1c4910c88c125
+C:/Codex/mps-j2cl/third_party/j2cl/mps-support/classloader-provenance.json,"external compatibility source, patch, build metadata, or provenance",2c660932d86d49495cf7f85e025d3a2af2968f658a95b0f672d7f705e8f388c7
+C:/Codex/mps-j2cl/third_party/j2cl/mps-support/classloader.patch,"external compatibility source, patch, build metadata, or provenance",a641c3a0c94faeff151c09a8638239db163ed85cab82bc10233619fbf3f3abe4
+C:/Codex/mps-j2cl/third_party/j2cl/mps-support/jre/java/java/lang/ClassLoader.java,"external compatibility source, patch, build metadata, or provenance",8a584b52d1531d54ab611516e6353950d3a22336b386bc3c87d1786e95321825
+C:/Codex/mps-j2cl/third_party/j2cl/type-support/README.md,"external compatibility source, patch, build metadata, or provenance",17f1aec4b3691f4a9b74403877b79653583abef0d580ff34273b682a5e22674d
+C:/Codex/mps-j2cl/third_party/j2cl/type-support/class-type-support.patch,"external compatibility source, patch, build metadata, or provenance",8d10ba38d98d5c78da8a3b45522900a6f2bb37b290a62493554d12a58f239be4
+C:/Codex/mps-j2cl/third_party/webawt/elemental2-1.3.2-w3c-css.patch,"external compatibility source, patch, build metadata, or provenance",3015962cd007fc0ebfeff36932a307c47d9962ece07db5f7455a35e25ef88768
+C:/Codex/mps-j2cl/third_party/webawt/view-provenance.json,"external compatibility source, patch, build metadata, or provenance",fb0ef1afb73e82e30561a8e29c6b13599bc136b7ec3d3d84fd6c5bdcab8ba6e3
+C:/Codex/mps-j2cl/third_party/webawt/webawt.iml,"external compatibility source, patch, build metadata, or provenance",b265f4f2ddee3bf40e5790e8dfa9aece9c269462c34bb98dd3a28c6d88e0cb41
+C:/Codex/mps-j2cl/third_party/webawt/src/main/java/java/awt/AWTKeyStroke.java,"external compatibility source, patch, build metadata, or provenance",a022ac3896c5a6351052eae2ed604e0896e9bb143d5879d403f282c523cdcdaf
+C:/Codex/mps-j2cl/third_party/webswing/webswing.iml,"external compatibility source, patch, build metadata, or provenance",93ea4a47a51bbc65a63e06fe3f53220911ab294927b68e106536cd144816220c
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/AbstractButton.java,"external compatibility source, patch, build metadata, or provenance",a47e3bb8492c4a04d0529a54122e7b248ec10c11e635f8e9166eeadb6f3a48c3
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/BorderFactory.java,"external compatibility source, patch, build metadata, or provenance",64c92ebe746f6057be7251490bc572a64d6481298fbdca426215541de40f13ea
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/BrowserInputMethodSupport.java,"external compatibility source, patch, build metadata, or provenance",4b17b73e78cb5b8343d4225223ce249d04630f867a2a0d22bb52d27b6618b724
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/BrowserPaintSurface.java,"external compatibility source, patch, build metadata, or provenance",3f81b3c4dd45ee18450d73cfb8d77feadefab55433bf5b13e9f62549015de153
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/BrowserRendererSnapshot.java,"external compatibility source, patch, build metadata, or provenance",6458204dafb63d18928137567b532ed6271803bbb2474d3f004faf06ed952503
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/DefaultListCellRenderer.java,"external compatibility source, patch, build metadata, or provenance",b75e58c4e5be2fbe976a74bfc09bd438074a742994d7c3e1cb1b1d1f69ecb2e9
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/ImageIcon.java,"external compatibility source, patch, build metadata, or provenance",783dcdac6118096160cbd54a4cbebbce4eec9742c0d08df8bc950ad30c750f2f
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/JComponent.java,"external compatibility source, patch, build metadata, or provenance",6488f9768d5ea42e7a364feca097ad73fc1bb3d3d55457cbff6bc37e4f464d25
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/JDialog.java,"external compatibility source, patch, build metadata, or provenance",c63f39be358acd9a3c434973e33e7ed8da92bc54ccc29f5b86f67e2af4acd483
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/JEditorPane.java,"external compatibility source, patch, build metadata, or provenance",aa1f311bade138562efdddeae1cffeef349f5615e81d5fbc796c0828bb24843f
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/JLayeredPane.java,"external compatibility source, patch, build metadata, or provenance",088048c61fd52cef11b6da4ffa6b4b8c2fe475128682980eac5dd0566c77d601
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/JList.java,"external compatibility source, patch, build metadata, or provenance",d711b573bbd2a826797d463fb79c69e85ec25e364f211177f0f22d84341df178
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/JMenu.java,"external compatibility source, patch, build metadata, or provenance",ea94b14539f98c7545f3f9f7d97aaa7430220d6a9ce2b0c8f2f7747628ac996f
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/JMenuItem.java,"external compatibility source, patch, build metadata, or provenance",cda3051f5e6adcc29f229101bae735e7d1ab81789aceaa7e2c3d78a8c38a2a5d
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/JPopupMenu.java,"external compatibility source, patch, build metadata, or provenance",56f4bb554c447069249bb7cab09bdb00bd1512a0f6627068fb43d679011f50c5
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/JRootPane.java,"external compatibility source, patch, build metadata, or provenance",08a7cae7fcc23d51b3b8e28714d3797c2575f6d21e12c4a6e2632007b03e5c4c
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/JScrollBar.java,"external compatibility source, patch, build metadata, or provenance",6db9cae66e238731ce1bd26a67fac270bd25210409c988b963dbac68b9b5f351
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/JScrollPane.java,"external compatibility source, patch, build metadata, or provenance",9acbfeb6470467ec7d0989a46a07e1f76c68546de983c6c18520d25d09c2f597
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/JViewport.java,"external compatibility source, patch, build metadata, or provenance",a8b8ad48ecacf8a9e97090ec29483afc3264cd12707e74845dd28d8e91d8ba9d
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/JWindow.java,"external compatibility source, patch, build metadata, or provenance",cd5f56a4c49466733e231f67570b3f6b96b7dde4b117f8e048bfc12df6864527
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/KeyStroke.java,"external compatibility source, patch, build metadata, or provenance",d07a3dc6b4361facfed8de379142fd39d31b9624d857339c9f5b0573a8479db9
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/LayoutFocusTraversalPolicy.java,"external compatibility source, patch, build metadata, or provenance",e689518596129a93140ad4755a2b17815a7d0b56451b74eabd9ab1708a463fb4
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/RepaintManager.java,"external compatibility source, patch, build metadata, or provenance",c8e081e16c18e8a1a5d79360b59c59c24fa1dbea4157d91d41b3795084c57c45
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/Scrollable.java,"external compatibility source, patch, build metadata, or provenance",1a7ec2c3061c879bf263503f51da3e56fa3be8b3882a6affe8f46c19b8456ae7
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/SwingUtilities.java,"external compatibility source, patch, build metadata, or provenance",f55f087eed1b7bb0cec828d7f8d56fdd421f2c48c1b72ebaa377b015d6f8ee3b
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/border/CompoundBorder.java,"external compatibility source, patch, build metadata, or provenance",607f93c87fc413ed40479c7c018f96f82856fd7dc95d05eb70a797dece9ff1eb
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/border/MatteBorder.java,"external compatibility source, patch, build metadata, or provenance",61790d479410019b04db791d574088de5c83d64e6992fe9f2700d6f3e5b5981d
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/event/CaretEvent.java,"external compatibility source, patch, build metadata, or provenance",e6bab83342973f62b8ed50ef8a89fc301b9a8d4a584f5c3e839edd832f8c7b58
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/event/CaretListener.java,"external compatibility source, patch, build metadata, or provenance",8ba4abf5148a7c64178c08160b5346dbdcb659306804519d6cdc3c0e6805bedb
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/event/EventListenerList.java,"external compatibility source, patch, build metadata, or provenance",cdd64ed6799d43818a51469acb28d29c613c3e949a010b9918a6be2fce0788b0
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/event/HyperlinkEvent.java,"external compatibility source, patch, build metadata, or provenance",d2ee203720087ee086d55861716bcd419e53df7d802baa272376fbd576d80cf6
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/event/HyperlinkListener.java,"external compatibility source, patch, build metadata, or provenance",4ff08fb3c5c2f555c1274a86a3f6cb7284dbf1510331031ccf64a033488cc00f
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/event/MenuEvent.java,"external compatibility source, patch, build metadata, or provenance",9b42ecb727dc2f8728c581fe6b23379c2d29da05caaa3d83fa1217b21fa765af
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/event/MenuListener.java,"external compatibility source, patch, build metadata, or provenance",f855217435938a98e08ece6bbe44661d856fc4ce55804c7cc7024aaa005bc2a9
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/event/PopupMenuEvent.java,"external compatibility source, patch, build metadata, or provenance",be1c5113890e1ca40effea7473d2fa82467ebb4aba84c650002b209465a05bd4
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/event/PopupMenuListener.java,"external compatibility source, patch, build metadata, or provenance",7cea49e2ac307c3f527886247783f5d060cbeee316cf7b31b171179275ddfba8
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/plaf/MenuItemUI.java,"external compatibility source, patch, build metadata, or provenance",d729eac22926f7a66d1bfa8bf9d91eaf416683ce5a8fb5e21f4aebee4842716f
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/plaf/ScrollBarUI.java,"external compatibility source, patch, build metadata, or provenance",52e1eed8515ed7c257612cd2950bee8d1f4a0edd2e1e293cedca254c7d91ba57
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/plaf/basic/BasicButtonUI.java,"external compatibility source, patch, build metadata, or provenance",925ef22fa8f234be869ee5e6456dd58ea583d86f3d9898bbe6ec01472a7d9cfd
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/plaf/basic/BasicMenuItemUI.java,"external compatibility source, patch, build metadata, or provenance",31688e9c4ec6f9b2bb8df435b302157ef0b4f2664a479f8f2098f29199e2a401
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/plaf/basic/BasicScrollBarUI.java,"external compatibility source, patch, build metadata, or provenance",2d8f525c008126ba159b1bb4a0e825f8ab16d1bbdbfdc8c11a2e9e15c1036c58
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/text/DefaultCaret.java,"external compatibility source, patch, build metadata, or provenance",55d3054faf2fbe97a68b27d92a1f558d47e0db133177e5ccd905fc7079868500
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/text/DefaultEditorKit.java,"external compatibility source, patch, build metadata, or provenance",b9876f84c161ac207cd5fc2d8a6cb2c5ed8a20b3184c9751d6ccaa80e581b773
+C:/Codex/mps-j2cl/third_party/webswing/src/main/java/javax/swing/text/JTextComponent.java,"external compatibility source, patch, build metadata, or provenance",9a5cb7d48449cb9dd5c2158ba4163517fb8ba6f5547b0c8a4e25953b8a5843bc
+C:/Codex/mps-j2cl/tools/JavaCharacterData.java,"inventory, adaptation, generation, build, or validation tooling",43591d2d23808bf2c6f526f27db9938eb007b894b411a0b63339d522d54717b0
+C:/Codex/mps-j2cl/tools/JavaIdentifiers.java,"inventory, adaptation, generation, build, or validation tooling",2f6275ba4d44e184d7e91dd20d94c94715483dd5951adb6fb44ecd8181576876
+C:/Codex/mps-j2cl/tools/bazel.sh,"inventory, adaptation, generation, build, or validation tooling",a44b7680d80036150434d07f0a4f4656b991c399d58cdc400f4ee52c47d0a830
+C:/Codex/mps-j2cl/tools/bootstrap.ps1,"inventory, adaptation, generation, build, or validation tooling",7140f76fb2ec8ea366c6078f24971a3c35b67522f0381f199e01aed06f445afc
+C:/Codex/mps-j2cl/tools/bootstrap.py,"inventory, adaptation, generation, build, or validation tooling",06b34bcbda5def7c3e1ff3ad19289e371bc5d6cef16ce9834c62eb3dd7857287
+C:/Codex/mps-j2cl/tools/check_editor_keycodes.py,"inventory, adaptation, generation, build, or validation tooling",53530951352aa47fedaaab15cbf560b2be4e0f5cfb269e339820c596140499f7
+C:/Codex/mps-j2cl/tools/check_formatting.py,"inventory, adaptation, generation, build, or validation tooling",0bca1e8eb0239257f5fd597543b69bf4a0a86af3f1d00cc00214d51c112a3127
+C:/Codex/mps-j2cl/tools/check_generated.py,"inventory, adaptation, generation, build, or validation tooling",4c71367e349557357c2f68d803d81fc50cbbe83b7a9b4ef27adb985cefd78b13
+C:/Codex/mps-j2cl/tools/check_sources.py,"inventory, adaptation, generation, build, or validation tooling",71a1f1eef610c66cebe221b0898d668ce062ac0fa22d863b65a808370db1e9cc
+C:/Codex/mps-j2cl/tools/compose_jre.py,"inventory, adaptation, generation, build, or validation tooling",0175e4daac87d1251328e1743708ba11bf869862718790c39710e5bae96c62b8
+C:/Codex/mps-j2cl/tools/fetch_j2cl.py,"inventory, adaptation, generation, build, or validation tooling",12ee841fa35595616e1ee1444fd65d5473b652de5430901025dff2eeb649a536
+C:/Codex/mps-j2cl/tools/inventory_browser.py,"inventory, adaptation, generation, build, or validation tooling",5130a4c5c862831b2f494970f661473221a9b05a711c5e6c778f312c7ba4b3fb
+C:/Codex/mps-j2cl/tools/inventory_financial.py,"inventory, adaptation, generation, build, or validation tooling",4d40db7a9eacab47c82c0040d40d6f5542753fb3eb74c7504e517b5edc0e8d6c
+C:/Codex/mps-j2cl/tools/inventory_intellij.py,"inventory, adaptation, generation, build, or validation tooling",13f73f7c7a6be060c47d9b886f2f02ae6594730bc6e93aa315f182359a23710c
+C:/Codex/mps-j2cl/tools/inventory_mps.py,"inventory, adaptation, generation, build, or validation tooling",1233b420a0b5f29b9c716a19009dd1baacab47a9e23686c1726f504ec5dedd67
+C:/Codex/mps-j2cl/tools/make_api_patch.py,"inventory, adaptation, generation, build, or validation tooling",bc5ffca72789005d24433e79d17f99503ece847c7f182c34223d70244b39c884
+C:/Codex/mps-j2cl/tools/make_character_data.py,"inventory, adaptation, generation, build, or validation tooling",8c23384b9df8270d1ca0d38118411cd5ea18d85dae70494fbed923e861b78efa
+C:/Codex/mps-j2cl/tools/make_classloader_patch.py,"inventory, adaptation, generation, build, or validation tooling",028ab86944a599bb370cfe78207a4af939ba8012561d7b02f60395891f930c0b
+C:/Codex/mps-j2cl/tools/make_dynamic_components_patch.py,"inventory, adaptation, generation, build, or validation tooling",448c830a502c2eca089c9933f607f6b2b504f42746da2bbaa09f827350ccbf3f
+C:/Codex/mps-j2cl/tools/make_regex_unicode_data.py,"inventory, adaptation, generation, build, or validation tooling",3c19f766820bf783cbac1fca7b9dfec774ab227540cdda96be0492be1c855b44
+C:/Codex/mps-j2cl/tools/make_type_support_patch.py,"inventory, adaptation, generation, build, or validation tooling",c8a702821ed03b859c9d91c1e162debcfeaf87d2606d9a994e28e4e8b5f09cda
+C:/Codex/mps-j2cl/tools/make_vfs_patch.py,"inventory, adaptation, generation, build, or validation tooling",c08e83ab714270e2c6189dfa849db86bfd8f5b43c4f2cf2f76eb6adb81dc36e1
+C:/Codex/mps-j2cl/tools/prepare_action_dispatcher.py,"inventory, adaptation, generation, build, or validation tooling",a9793314cbc1aa282d831951b4b3e1bc528ab38aacc72ab1dc8217b69ec3b2bd
+C:/Codex/mps-j2cl/tools/prepare_api_basics.py,"inventory, adaptation, generation, build, or validation tooling",9bc39f43046b249a6b003af00d18e6617a3c0a82a1e054434440c98fb2692827
+C:/Codex/mps-j2cl/tools/prepare_dependency_views.py,"inventory, adaptation, generation, build, or validation tooling",51179bffe9d744adb2545ac074f3790cd68b2c5770db2825edb12351ad3eb46b
+C:/Codex/mps-j2cl/tools/prepare_editor_assets.py,"inventory, adaptation, generation, build, or validation tooling",602b781a7732e158682e012e54ac2e5798b54bf6918a3861b12c4d09203f5d01
+C:/Codex/mps-j2cl/tools/prepare_editor_companions.py,"inventory, adaptation, generation, build, or validation tooling",6acfc56e009f36e9147b68ed776e55569488ae937687d79e15a8f7fc68801264
+C:/Codex/mps-j2cl/tools/prepare_editor_runtime.py,"inventory, adaptation, generation, build, or validation tooling",a7019846ac4991b9ae586a9ec324de4a5365ba052a337648c5ef11bd9b9e726b
+C:/Codex/mps-j2cl/tools/prepare_editor_shortcuts.py,"inventory, adaptation, generation, build, or validation tooling",02aaa3381c9a4fcc07b41324b27ddf350b21c139543540ec52165f8f275f9fad
+C:/Codex/mps-j2cl/tools/prepare_financial_adapters.py,"inventory, adaptation, generation, build, or validation tooling",e316c650b093a6526bdff22d602dcc9cbdc8fa539efe800613850585386062e0
+C:/Codex/mps-j2cl/tools/prepare_kernel_jre.py,"inventory, adaptation, generation, build, or validation tooling",4b8ce9acc760f503283ce36c0a3e57764da53e699b8d1c66d66bee5497d6139b
+C:/Codex/mps-j2cl/tools/prepare_kernel_platform.py,"inventory, adaptation, generation, build, or validation tooling",117f30d00fffa647335be839e26f36d22ecc39270c3ec07bae53435681082ad8
+C:/Codex/mps-j2cl/tools/prepare_kernel_utilities.py,"inventory, adaptation, generation, build, or validation tooling",12f57d05efd92b6f23fcdf2ff4b8662b780cf0bc487313c991d90e7769968f7d
+C:/Codex/mps-j2cl/tools/prepare_module_reference.py,"inventory, adaptation, generation, build, or validation tooling",b603ba7979ae9467c293381109783620759f8160ce37d244a58b3d1222e9f5d9
+C:/Codex/mps-j2cl/tools/prepare_openapi.py,"inventory, adaptation, generation, build, or validation tooling",bdab60ca32199c7f6f8445444b6c904042ba9ce31b6e39887c8e04131fd5570c
+C:/Codex/mps-j2cl/tools/prepare_pattern_util.py,"inventory, adaptation, generation, build, or validation tooling",0ca04dabe14b2f38d2eafce6fa5e9b015a5eeec473c8668ecd03c29be72b610f
+C:/Codex/mps-j2cl/tools/prepare_runtime_flags.py,"inventory, adaptation, generation, build, or validation tooling",76aac04d78af49b5dfbed8afd578fb26fe9f7ce585720322dc9a2795cfd95182
+C:/Codex/mps-j2cl/tools/probe_regex_anchors.mjs,"inventory, adaptation, generation, build, or validation tooling",15b53c7ff1f0afb2a05d45e5b8bbbc679ac0d39723cf3c54abf8acb47ddcc1c0
+C:/Codex/mps-j2cl/tools/run_core_oracle.py,"inventory, adaptation, generation, build, or validation tooling",19ecf5cb37a5512d2b99c2ddbba9984a118d2634b834b16db174cfc53a750a59
+C:/Codex/mps-j2cl/tools/run_core_oracles.py,"inventory, adaptation, generation, build, or validation tooling",5849982e7414570f9e4ffc80583bec3c4dbdb7626b1eae1b3e019b1df6ada05e
+C:/Codex/mps-j2cl/tools/run_dynamic_components_oracle.py,"inventory, adaptation, generation, build, or validation tooling",c0aaf2fea0f2a0d23d7319eb630817936f9b6bb913faded544e0b113c4beb5a5
+C:/Codex/mps-j2cl/tools/run_editor_utilities_oracle.py,"inventory, adaptation, generation, build, or validation tooling",a42d29ae180ccab7e5627867016b97e553ed328376f35f66689cb4e88f67a597
+C:/Codex/mps-j2cl/tools/run_foundation_time_oracle.py,"inventory, adaptation, generation, build, or validation tooling",a2aa4db1f300e232544ed8e55b65269e347774d262484247e2797b2f25863a9e
+C:/Codex/mps-j2cl/tools/run_intellij_contracts.py,"inventory, adaptation, generation, build, or validation tooling",cda1e558ed6d1e257eae4de8c1dff8d96a2815fc9f0f5f9b11390cfa357357ac
+C:/Codex/mps-j2cl/tools/run_kernel_utilities_oracle.py,"inventory, adaptation, generation, build, or validation tooling",3b8d28a65ca55c36e09ed4470c7da02978c126984edfc209fba76e7c54e8849f
+C:/Codex/mps-j2cl/tools/run_keystroke_oracle.py,"inventory, adaptation, generation, build, or validation tooling",c8dd3158184807acec90262f2944298adfcc9e5d862560f78e76c85f675bfcfa
+C:/Codex/mps-j2cl/tools/run_openapi_oracle.py,"inventory, adaptation, generation, build, or validation tooling",ff548f134e87ef7a0e30b60d15fe024f099c013d1f3f2fdfe103c7c3eba23886
+C:/Codex/mps-j2cl/tools/run_regex_oracle.py,"inventory, adaptation, generation, build, or validation tooling",0f18edb9b306c59975d81f0124eb13e0d46cbd65c868d7e5e50de37a5986fe4d
+C:/Codex/mps-j2cl/tools/run_runtime_oracle.py,"inventory, adaptation, generation, build, or validation tooling",2f7ae8b3a96a9be15c445d6de8f238129e2f31a56947f18b17e5a4e0351ab2b0
+C:/Codex/mps-j2cl/tools/run_swing_controls_oracle.py,"inventory, adaptation, generation, build, or validation tooling",513f311d3a670e731f916e599567b131426ab10c132444b5baaf7612f6f5abb3
+C:/Codex/mps-j2cl/tools/run_swing_editor_oracle.py,"inventory, adaptation, generation, build, or validation tooling",8786ab3a50abdb87a0b077096b34918d0c4c12f5e4bafd2eab613716a4cf9911
+C:/Codex/mps-j2cl/tools/run_swing_utilities_oracle.py,"inventory, adaptation, generation, build, or validation tooling",cd1ad85e475757d98bd79a4b51bc46a54710e294d07f7a806efebed70303aca5
+C:/Codex/mps-j2cl/tools/run_vfs_oracle.py,"inventory, adaptation, generation, build, or validation tooling",e9fcf236246c996f9a805d470c548ecff0d12dc911dd9ab9519728a0496a4bc8
+C:/Codex/mps-j2cl/tools/serve_editor_demo.py,"inventory, adaptation, generation, build, or validation tooling",a830b2b49e8240106f3e06b343d2d4edadb010fe248bd58afbedaccc069256be
+C:/Codex/mps-j2cl/tools/serve_financial_demo.py,"inventory, adaptation, generation, build, or validation tooling",9e220ad58bbb14531cf2328f8b000fb99314ca94d4ca2f07806055caee2a0a19
+C:/Codex/mps-j2cl/tools/summarize_validation.py,"inventory, adaptation, generation, build, or validation tooling",73773bbe3a97c983dc22ab5a1d6c22e41cabbaa2407623af8444c49e418b2e05
+C:/Codex/mps-j2cl/tools/test_browser.mjs,"inventory, adaptation, generation, build, or validation tooling",903a57ce983449e82a9cec83dfda6a57fa6f0ce6d0772bb6491f39202bcfce21
+C:/Codex/mps-j2cl/tools/test_dynamic_components.mjs,"inventory, adaptation, generation, build, or validation tooling",5c431661b083ccf8aa5802db40640edccf5b3c4f6c721968f786b77e5bd59406
+C:/Codex/mps-j2cl/tools/test_editor_demo.mjs,"inventory, adaptation, generation, build, or validation tooling",6f7b7e5dc3bf0166ff9aceb6771e7b5a39145dbf95f0712c92d8d9ca85349028
+C:/Codex/mps-j2cl/tools/test_editor_live.mjs,"inventory, adaptation, generation, build, or validation tooling",165e72fb38fe3eafd011e7a555dcf667a67cf1fb96604145db3fa1f99d4553ac
+C:/Codex/mps-j2cl/tools/test_financial_demo.mjs,"inventory, adaptation, generation, build, or validation tooling",eb6f9eaa6d66c9c59e4d0ed050adde34adbcc11705528ba4577a75d9574608e0
+C:/Codex/mps-j2cl/tools/test_foundation_gc.mjs,"inventory, adaptation, generation, build, or validation tooling",9dadf13255eb0499183666ef7f52efda46ff8f1313529957d7ff0e2c8449a1c9
+C:/Codex/mps-j2cl/tools/test_icon_png.mjs,"inventory, adaptation, generation, build, or validation tooling",63ca711de65fe6b86d16e2d2cac0927f72face8c61eadb156bf807568c308c55
+C:/Codex/mps-j2cl/tools/test_weakset_gc.mjs,"inventory, adaptation, generation, build, or validation tooling",5168fa8533dd0d5e5a674adc70c5fafc3dd5d3c8f1d4c377800d682a6a258098
+C:/Codex/mps-j2cl/tools/validate.ps1,"inventory, adaptation, generation, build, or validation tooling",19ff8ded6cda1192a62b0c397103017f256a897801e34f94153cf0722482a231
+C:/Codex/mps-j2cl/tools/validate.py,"inventory, adaptation, generation, build, or validation tooling",f4f9979f8aa3c4729fe3d3408579acfb07f8ca0fa61d79a1298098d5339fc8a5

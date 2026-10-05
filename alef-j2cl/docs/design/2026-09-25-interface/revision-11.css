@@ -1,0 +1,10 @@
+/* Match the Model project tree to the comparison tree's outline icons. */
+.project .tree-group{display:grid;grid-template-columns:13px 16px minmax(0,1fr);column-gap:8px;align-items:center;padding-left:9px;padding-right:9px}
+.project .tree-group>.svg{width:16px;height:16px;stroke-width:1.6}
+.project .tree-group>.svg:first-child{width:13px;height:13px}
+.project .tree button{display:grid;grid-template-columns:13px 16px minmax(0,1fr) auto;column-gap:8px;align-items:center;padding-left:9px;padding-right:9px}
+.project .tree-node-icon{grid-column:2;display:flex;width:16px;height:16px;align-items:center;justify-content:center;color:var(--muted)}
+.project .tree-node-icon>.svg{width:16px;height:16px;stroke-width:1.6}
+.project .tree button.selected .tree-node-icon{color:inherit}
+.project .tree button .label{grid-column:3}
+.project .tree button>.dot{grid-column:4}

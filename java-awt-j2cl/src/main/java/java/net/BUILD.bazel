@@ -1,0 +1,24 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+load("//config:net_profile.bzl", "external_net")
+
+package(default_visibility = ["//visibility:public"])
+
+external_net(name = "external_jre", build_setting_default = False)
+config_setting(name = "external_jre_enabled", flag_values = {":external_jre": "true"})
+
+# J2CL adds an implicit JRE dep when its macro sees srcs. Keep the empty
+# provider separate so a configured empty list cannot retain that dependency.
+j2cl_library(
+    name = "uri-standalone-j2cl",
+    srcs = ["URI.java", "URISyntaxException.java", "MalformedURLException.java", "URL.java"],
+)
+
+j2cl_library(name = "uri-external-jre-j2cl")
+
+alias(
+    name = "uri-j2cl",
+    actual = select({
+        ":external_jre_enabled": ":uri-external-jre-j2cl",
+        "//conditions:default": ":uri-standalone-j2cl",
+    }),
+)

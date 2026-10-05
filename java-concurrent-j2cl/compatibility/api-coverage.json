@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "j2cl_version": "20260402",
+  "mps_commit": "1ae803e4f8c52e470c94563059eca4b4b8397c8c",
+  "inventory_sha256": "5c295b5983c0560f0553d47f7829e7ea1c469794416c0b55c0bd3bfe2d26198b",
+  "header_jar_sha256": "20a7b883f06a1a7c4a99c97474f66d87ce0a88d8278a8f9574d42449c4e8a9f3",
+  "scope": "Compiled class membership only; this is not proof of method parity or complete MPS compatibility.",
+  "summary": {
+    "inventoried_classes": 50,
+    "inventoried_concurrent_classes": 48,
+    "emitted_classes": 50,
+    "overlay_classes": 37,
+    "upstream_classes": 13
+  },
+  "missing_classes": [],
+  "classes": [
+    {
+      "name": "java.lang.Thread",
+      "source_owner": "overlay",
+      "compiled_class": "java/lang/Thread.class",
+      "emitted": true,
+      "referencing_files": 60
+    },
+    {
+      "name": "java.lang.ThreadLocal",
+      "source_owner": "overlay",
+      "compiled_class": "java/lang/ThreadLocal.class",
+      "emitted": true,
+      "referencing_files": 18
+    },
+    {
+      "name": "java.util.concurrent.ArrayBlockingQueue",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/ArrayBlockingQueue.class",
+      "emitted": true,
+      "referencing_files": 5
+    },
+    {
+      "name": "java.util.concurrent.BlockingQueue",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/BlockingQueue.class",
+      "emitted": true,
+      "referencing_files": 3
+    },
+    {
+      "name": "java.util.concurrent.BrokenBarrierException",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/BrokenBarrierException.class",
+      "emitted": true,
+      "referencing_files": 5
+    },
+    {
+      "name": "java.util.concurrent.Callable",
+      "source_owner": "upstream_j2cl",
+      "compiled_class": "java/util/concurrent/Callable.class",
+      "emitted": true,
+      "referencing_files": 11
+    },
+    {
+      "name": "java.util.concurrent.CancellationException",
+      "source_owner": "upstream_j2cl",
+      "compiled_class": "java/util/concurrent/CancellationException.class",
+      "emitted": true,
+      "referencing_files": 5
+    },
+    {
+      "name": "java.util.concurrent.CompletableFuture",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/CompletableFuture.class",
+      "emitted": true,
+      "referencing_files": 8
+    },
+    {
+      "name": "java.util.concurrent.CompletionException",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/CompletionException.class",
+      "emitted": true,
+      "referencing_files": 1
+    },
+    {
+      "name": "java.util.concurrent.CompletionStage",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/CompletionStage.class",
+      "emitted": true,
+      "referencing_files": 6
+    },
+    {
+      "name": "java.util.concurrent.ConcurrentHashMap",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/ConcurrentHashMap.class",
+      "emitted": true,
+      "referencing_files": 55
+    },
+    {
+      "name": "java.util.concurrent.ConcurrentLinkedDeque",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/ConcurrentLinkedDeque.class",
+      "emitted": true,
+      "referencing_files": 2
+    },
+    {
+      "name": "java.util.concurrent.ConcurrentLinkedQueue",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/ConcurrentLinkedQueue.class",
+      "emitted": true,
+      "referencing_files": 9
+    },
+    {
+      "name": "java.util.concurrent.ConcurrentMap",
+      "source_owner": "upstream_j2cl",
+      "compiled_class": "java/util/concurrent/ConcurrentMap.class",
+      "emitted": true,
+      "referencing_files": 26
+    },
+    {
+      "name": "java.util.concurrent.CopyOnWriteArrayList",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/CopyOnWriteArrayList.class",
+      "emitted": true,
+      "referencing_files": 40
+    },
+    {
+      "name": "java.util.concurrent.CopyOnWriteArraySet",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/CopyOnWriteArraySet.class",
+      "emitted": true,
+      "referencing_files": 1
+    },
+    {
+      "name": "java.util.concurrent.CountDownLatch",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/CountDownLatch.class",
+      "emitted": true,
+      "referencing_files": 16
+    },
+    {
+      "name": "java.util.concurrent.CyclicBarrier",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/CyclicBarrier.class",
+      "emitted": true,
+      "referencing_files": 7
+    },
+    {
+      "name": "java.util.concurrent.DelayQueue",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/DelayQueue.class",
+      "emitted": true,
+      "referencing_files": 1
+    },
+    {
+      "name": "java.util.concurrent.Delayed",
+      "source_owner": "upstream_j2cl",
+      "compiled_class": "java/util/concurrent/Delayed.class",
+      "emitted": true,
+      "referencing_files": 1
+    },
+    {
+      "name": "java.util.concurrent.ExecutionException",
+      "source_owner": "upstream_j2cl",
+      "compiled_class": "java/util/concurrent/ExecutionException.class",
+      "emitted": true,
+      "referencing_files": 18
+    },
+    {
+      "name": "java.util.concurrent.Executor",
+      "source_owner": "upstream_j2cl",
+      "compiled_class": "java/util/concurrent/Executor.class",
+      "emitted": true,
+      "referencing_files": 10
+    },
+    {
+      "name": "java.util.concurrent.ExecutorService",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/ExecutorService.class",
+      "emitted": true,
+      "referencing_files": 7
+    },
+    {
+      "name": "java.util.concurrent.Executors",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/Executors.class",
+      "emitted": true,
+      "referencing_files": 7
+    },
+    {
+      "name": "java.util.concurrent.ForkJoinPool",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/ForkJoinPool.class",
+      "emitted": true,
+      "referencing_files": 1
+    },
+    {
+      "name": "java.util.concurrent.Future",
+      "source_owner": "upstream_j2cl",
+      "compiled_class": "java/util/concurrent/Future.class",
+      "emitted": true,
+      "referencing_files": 31
+    },
+    {
+      "name": "java.util.concurrent.FutureTask",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/FutureTask.class",
+      "emitted": true,
+      "referencing_files": 2
+    },
+    {
+      "name": "java.util.concurrent.LinkedBlockingQueue",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/LinkedBlockingQueue.class",
+      "emitted": true,
+      "referencing_files": 4
+    },
+    {
+      "name": "java.util.concurrent.LinkedTransferQueue",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/LinkedTransferQueue.class",
+      "emitted": true,
+      "referencing_files": 1
+    },
+    {
+      "name": "java.util.concurrent.RejectedExecutionException",
+      "source_owner": "upstream_j2cl",
+      "compiled_class": "java/util/concurrent/RejectedExecutionException.class",
+      "emitted": true,
+      "referencing_files": 1
+    },
+    {
+      "name": "java.util.concurrent.RejectedExecutionHandler",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/RejectedExecutionHandler.class",
+      "emitted": true,
+      "referencing_files": 1
+    },
+    {
+      "name": "java.util.concurrent.RunnableFuture",
+      "source_owner": "upstream_j2cl",
+      "compiled_class": "java/util/concurrent/RunnableFuture.class",
+      "emitted": true,
+      "referencing_files": 5
+    },
+    {
+      "name": "java.util.concurrent.ScheduledExecutorService",
+      "source_owner": "upstream_j2cl",
+      "compiled_class": "java/util/concurrent/ScheduledExecutorService.class",
+      "emitted": true,
+      "referencing_files": 5
+    },
+    {
+      "name": "java.util.concurrent.ScheduledFuture",
+      "source_owner": "upstream_j2cl",
+      "compiled_class": "java/util/concurrent/ScheduledFuture.class",
+      "emitted": true,
+      "referencing_files": 6
+    },
+    {
+      "name": "java.util.concurrent.Semaphore",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/Semaphore.class",
+      "emitted": true,
+      "referencing_files": 10
+    },
+    {
+      "name": "java.util.concurrent.ThreadFactory",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/ThreadFactory.class",
+      "emitted": true,
+      "referencing_files": 1
+    },
+    {
+      "name": "java.util.concurrent.ThreadLocalRandom",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/ThreadLocalRandom.class",
+      "emitted": true,
+      "referencing_files": 1
+    },
+    {
+      "name": "java.util.concurrent.ThreadPoolExecutor",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/ThreadPoolExecutor.class",
+      "emitted": true,
+      "referencing_files": 2
+    },
+    {
+      "name": "java.util.concurrent.TimeUnit",
+      "source_owner": "upstream_j2cl",
+      "compiled_class": "java/util/concurrent/TimeUnit.class",
+      "emitted": true,
+      "referencing_files": 48
+    },
+    {
+      "name": "java.util.concurrent.TimeoutException",
+      "source_owner": "upstream_j2cl",
+      "compiled_class": "java/util/concurrent/TimeoutException.class",
+      "emitted": true,
+      "referencing_files": 6
+    },
+    {
+      "name": "java.util.concurrent.atomic.AtomicBoolean",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/atomic/AtomicBoolean.class",
+      "emitted": true,
+      "referencing_files": 30
+    },
+    {
+      "name": "java.util.concurrent.atomic.AtomicInteger",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/atomic/AtomicInteger.class",
+      "emitted": true,
+      "referencing_files": 38
+    },
+    {
+      "name": "java.util.concurrent.atomic.AtomicLong",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/atomic/AtomicLong.class",
+      "emitted": true,
+      "referencing_files": 3
+    },
+    {
+      "name": "java.util.concurrent.atomic.AtomicMarkableReference",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/atomic/AtomicMarkableReference.class",
+      "emitted": true,
+      "referencing_files": 2
+    },
+    {
+      "name": "java.util.concurrent.atomic.AtomicReference",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/atomic/AtomicReference.class",
+      "emitted": true,
+      "referencing_files": 68
+    },
+    {
+      "name": "java.util.concurrent.locks.Condition",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/locks/Condition.class",
+      "emitted": true,
+      "referencing_files": 2
+    },
+    {
+      "name": "java.util.concurrent.locks.Lock",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/locks/Lock.class",
+      "emitted": true,
+      "referencing_files": 5
+    },
+    {
+      "name": "java.util.concurrent.locks.ReadWriteLock",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/locks/ReadWriteLock.class",
+      "emitted": true,
+      "referencing_files": 4
+    },
+    {
+      "name": "java.util.concurrent.locks.ReentrantLock",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/locks/ReentrantLock.class",
+      "emitted": true,
+      "referencing_files": 4
+    },
+    {
+      "name": "java.util.concurrent.locks.ReentrantReadWriteLock",
+      "source_owner": "overlay",
+      "compiled_class": "java/util/concurrent/locks/ReentrantReadWriteLock.class",
+      "emitted": true,
+      "referencing_files": 5
+    }
+  ]
+}

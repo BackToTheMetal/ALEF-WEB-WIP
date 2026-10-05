@@ -1,0 +1,62 @@
+[
+  {
+    "path": "core/aspects/constraints/constraints-runtime/source/jetbrains/mps/core/aspects/constraints/rules/kinds/PredefinedRuleKinds.java",
+    "upstream_sha256": "1af3260f6da963569a74cba138db3fe5ebf2b900bca90f0288ef2cc6f029b40f",
+    "replacement_sha256": "4e47a1e69cf9b3bf8c729aea372d141b18187d9edb23ff19ec9fea74fe573ce6"
+  },
+  {
+    "path": "core/kernel/kernelSolution/source_gen/jetbrains/mps/util/StringsIO.java",
+    "upstream_sha256": "001090777fa410c480392e52c4d8daf66aa4d609f0b23da859607a5d8bff46d9",
+    "replacement_sha256": "011798766d5fab3b9119bbfaba4ba04bf3d604a00fbc9cae8281c375046233b3"
+  },
+  {
+    "path": "core/kernel/source/jetbrains/mps/classloading/ClassLoaderManager.java",
+    "upstream_sha256": "9aa8f707c4bfea4b5c8ac2a5ed043688f57b45aa31c67edf52fcddcaf3ac9da3",
+    "replacement_sha256": "51e3c07be94fcdc6754434ca9f04f16555256239d4a899c1aaee19cc83bb6b9c"
+  },
+  {
+    "path": "core/kernel/source/jetbrains/mps/classloading/MPSClassLoadersRegistry.java",
+    "upstream_sha256": "571df650e845f02c474fe97a4605cc4d24f292f72adb79d84b431d16d90f8609",
+    "replacement_sha256": "dcc31811c8bd57d888e4bb5178dd3b14a87767b3b75315d5a6038ca78b34b5b1"
+  },
+  {
+    "path": "core/kernel/source/jetbrains/mps/extapi/persistence/FileKindIsNotAllowedException.java",
+    "upstream_sha256": "49970723cf95ea63fb88645ff1b14b0d56870dfcb2c652426a5dbfd36233f931",
+    "replacement_sha256": "9084df5ccf9a72e439a60d8fe9b5b9ad179ce5ae97c1a61378b460128a51fb5a"
+  },
+  {
+    "path": "core/kernel/source/jetbrains/mps/extapi/persistence/SourcePaths.java",
+    "upstream_sha256": "fc1266a7ac235d7a73ca385c754175cc7f51d6cf0c6386a055c5b0b854f049c9",
+    "replacement_sha256": "807043123a619983024b5a435176085e4e7eea3b8a6c25b032445080486ae6c6"
+  },
+  {
+    "path": "core/kernel/source/jetbrains/mps/generator/cache/ParseFacility.java",
+    "upstream_sha256": "7003c79e6b72439876f7035ec4bc02981649fdc355923e6b908538f21091b01b",
+    "replacement_sha256": "8a50b5150f42a30ce767c60c10420cc9146c359e9da10ed8f5f398842976562b"
+  },
+  {
+    "path": "core/kernel/source/jetbrains/mps/messages/Message.java",
+    "upstream_sha256": "37d7c32857305ab8beb5423a65278a02f3f165e1575bc014c1b01748a57a3f08",
+    "replacement_sha256": "a73ed5b6dded20df60ffcaf7101ee05dca2cc7b6b38ebcbd248d9ded6dd162d8"
+  },
+  {
+    "path": "core/project/source/jetbrains/mps/project/validation/ConceptMissingError.java",
+    "upstream_sha256": "88267c75c7742d1d4944000eb4b675ae9aee43b373369ecbb732b45c90b1d336",
+    "replacement_sha256": "f4fb114b17439ff30090a3426e284321aac0568a37106210e5d2ec7c2042e6de"
+  },
+  {
+    "path": "core/project/source/jetbrains/mps/reloading/FileClassPathItem.java",
+    "upstream_sha256": "912562d65fa00c4d896baa660fb7169c76698efcfa9db92077e681c2f4dfb0df",
+    "replacement_sha256": "e4e43262935eb0947035a8d1e7d3bb014cff5c1f49bda37578570d192629a5be"
+  },
+  {
+    "path": "core/project/source/jetbrains/mps/reloading/JarFileClassPathItem.java",
+    "upstream_sha256": "61e1b355e1807d19b6e8b86622f17b4ccaa94abc69bd17618e3bf327b08d476e",
+    "replacement_sha256": "39284299a6081e91a1e88cc14ef6d8062e212d7c7c34cddee39566da2f8d8baf"
+  },
+  {
+    "path": "core/project/source/jetbrains/mps/reloading/LocalResourceClassPathItem.java",
+    "upstream_sha256": "7727f1757e57b41a67ea8ea555c33a1775ed4fcd0b4edd6dc10bc97d4e60aa08",
+    "replacement_sha256": "69ddd83965858384e05cde9ef9e78f1ca00d2ae823f2bb0b2ce3a8226aa4520e"
+  }
+]

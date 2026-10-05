@@ -1,0 +1,369 @@
+{
+  "inspection_date": "2026-09-29",
+  "scope": "Integrated ALEF application",
+  "local_configuration": "Storage selector inspected; secrets and configuration bytes intentionally excluded.",
+  "sources": {
+    "S01": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\example\\interface.js",
+        "sha256": "be2e045a8e31abfcca76f71b238a01714d34800ad894e4354374f91c3fd9db5a",
+        "lines": 339
+      }
+    ],
+    "S02": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\example\\backend.js",
+        "sha256": "3fd3512d1a5a8489a0169a799485dd97f83b424b1ca7298f7c0306bc60b631c0",
+        "lines": 474
+      }
+    ],
+    "S03": [
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\WorkspaceService.java",
+        "sha256": "fbd4a44784737f45258fdf42a944cc1602f37b0f97b653d27b41551875c36400",
+        "lines": 381
+      }
+    ],
+    "S04": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\example\\BackendModelBridge.java",
+        "sha256": "9d8df61a5f15f0ce7a7726d2769e29f4f4c212baa310d13296c5ff97a5aa136e",
+        "lines": 310
+      }
+    ],
+    "S05": [
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\PackageService.java",
+        "sha256": "302a08ebcce86e44743bb558f13f210a6d76301dc536b65ad9ab638c51b4890e",
+        "lines": 239
+      }
+    ],
+    "S06": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\example\\saved-workspace.js",
+        "sha256": "01927561212f339ea3728ad78aac6906bc10d11db8b483a3179b4375ae413668",
+        "lines": 35
+      }
+    ],
+    "S07": [
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\PublicationCoordinator.java",
+        "sha256": "c3707576a886ebc9a370c59754d4c9b6dfda4ae9ae7dfd15d292bc6507eb770e",
+        "lines": 69
+      }
+    ],
+    "S08": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\example\\BrowserComparisonSession.java",
+        "sha256": "d1db11db5cbfcc46e6cf0066eec03601875d6387168f3ddf7899a06122b1380e",
+        "lines": 79
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\example\\model-diff.js",
+        "sha256": "39b8d381d329d502c3fbd69c9b372f1ff969f80ba034e872f218005a6ab84a3a",
+        "lines": 66
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\example\\mps-diff.js",
+        "sha256": "0f09a24792b724bd69ad8eb6411d5941facff72493c2803841db38ccc9e6beac",
+        "lines": 81
+      }
+    ],
+    "S09": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\example\\BrowserComparisonEditor.java",
+        "sha256": "107354dd320c1134ea9804b7265dbdfc93b9838dd7625b7b5f12aff5dcc44e04",
+        "lines": 182
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\example\\ComparisonTextDiff.java",
+        "sha256": "617629a9ef1a92e5dbe6d7fffc957489bbe8e609cdad7c123395cb48d35fa072",
+        "lines": 81
+      }
+    ],
+    "S10": [
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\SecurityConfiguration.java",
+        "sha256": "0987cf611c6d743b11562cc484062102289b87ca2eddfae4984ff4155c25d43b",
+        "lines": 42
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\SessionFreshness.java",
+        "sha256": "be5040b4a0ab0b9640d03f9767642852580297bd8b02ccb566e637417e573ea2",
+        "lines": 62
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\DurableAuthorizedClients.java",
+        "sha256": "225a0db823ccd3e6f8fb94101f8a224d1981e65be3ac037eacc14c1c101bc12b",
+        "lines": 33
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\SessionCipher.java",
+        "sha256": "bdb860f44ff5cf6283bcef13171638ff557ef577bf6f73c4da5ac2d29e9f5690",
+        "lines": 24
+      }
+    ],
+    "S11": [
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\WorkerSupervisor.java",
+        "sha256": "39f4c0e8418a6e57406774350b1e88e3ed3f3b868b471a82538833f7984e5c44",
+        "lines": 86
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\WorkspaceConfiguration.java",
+        "sha256": "bffc1d10dc4b5c32e21b090b82d525346ef8ed5be6efecdf41112dcbc2c68122",
+        "lines": 45
+      }
+    ],
+    "S12": [
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-workspace-store\\src\\main\\java\\nl\\alef\\backend\\workspace\\RevisionStore.java",
+        "sha256": "13f978d9c80307aecc4c12dfbd4fd159047292565a3eb4136bb87f389f7d5c54",
+        "lines": 34
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\ModelStoreConfiguration.java",
+        "sha256": "99b922495ee500861149618fa542d7a5e499f1980b0e1946c66f4a776ebae94a",
+        "lines": 25
+      }
+    ],
+    "S13": [
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\PackageComposer.java",
+        "sha256": "1d2e66e4fe0a9a20800974719345f1089b11dda24963c39dbd6864c888ee8ec2",
+        "lines": 61
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\ReleaseBuilder.java",
+        "sha256": "5fe2591d26351e00853620a6d8da51bd825a1ea1fedbbd1d51067c0970ec71c2",
+        "lines": 87
+      }
+    ],
+    "S14": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\docs\\package-test-report.md",
+        "sha256": "f2a619f5fee86be599c12cae944ef2af5a7feb21d450983e5979e628350ad7a5",
+        "lines": 84
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\example\\package-checks.js",
+        "sha256": "bb626ebae5cdfdc237747ec2ec8c895c965b10e943b72de2bc936e7448e60d37",
+        "lines": 44
+      }
+    ],
+    "S15": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\docs\\package-deletion.md",
+        "sha256": "dcef4daabcb1500274a43906f26595bd372e21dcba7b9aa1c3725db7fe976d84",
+        "lines": 46
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\PackageService.java",
+        "sha256": "302a08ebcce86e44743bb558f13f210a6d76301dc536b65ad9ab638c51b4890e",
+        "lines": 239
+      }
+    ],
+    "S16": [
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-runtime-mps\\src\\main\\java\\nl\\alef\\backend\\runtime\\mps\\RuntimeWorker.java",
+        "sha256": "222f0900f8bb5918be3872582eabae62f0182307aeafd541daa1242965d2bb32",
+        "lines": 457
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\ReleaseBuilder.java",
+        "sha256": "5fe2591d26351e00853620a6d8da51bd825a1ea1fedbbd1d51067c0970ec71c2",
+        "lines": 87
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\ReleaseToolchain.java",
+        "sha256": "7b1cac506b2c27eba8d930bfcfd6d9b7963713384be2c12800ed9280367f2079",
+        "lines": 45
+      }
+    ],
+    "S17": [
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\DeploymentService.java",
+        "sha256": "646caff37c1a8de778be91a0b0440a440cb33b15a01b3517759283c019798aeb",
+        "lines": 213
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\ExecutionPlatformAdapter.java",
+        "sha256": "af9629e3b285c5e87bed7b68ba82698e2f45984811e53130cc00946ab5baf364",
+        "lines": 18
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\DurableStubAdapter.java",
+        "sha256": "59322c20794ed3e66a8bb346e1ef08c049659137d26f6b7bc9654a992ef34084",
+        "lines": 56
+      }
+    ],
+    "S18": [
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\PackageContentsStore.java",
+        "sha256": "0b0b10a9d4d5a5b8edf08340413a721fde45a72fc953c3cb56ed2511c4cae438",
+        "lines": 103
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\src\\main\\java\\nl\\alef\\backend\\application\\PackageContents.java",
+        "sha256": "a739051ccb5c4b1877e5471f6d8f1834159bc8e5d7f7ba00f4419edf98e55709",
+        "lines": 41
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\docs\\package-contents-cache.md",
+        "sha256": "29edb8609902db415511aa07494a7fadf510eaf82a53da009d493f2e57ac3b71",
+        "lines": 38
+      }
+    ],
+    "S19": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\source-lock.json",
+        "sha256": "566b310dcee5b07b7fe859d394dc1ffb19be97d696cf53197e6c193ac17de07e",
+        "lines": 14
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\BUILD.bazel",
+        "sha256": "e5071c5cd6a193243f3416de073195db48810c3a008e3ae645796962b3bf9d44",
+        "lines": 193
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\README.md",
+        "sha256": "4befe31828818c4a731ce2dc766f048f07502da2d3c5e2734b57c3f19ad557b9",
+        "lines": 394
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\build.gradle",
+        "sha256": "aad533bb6ffcc2c94474acd13e55e479adc49086b91d74437273e2b763af1a14",
+        "lines": 22
+      }
+    ],
+    "S20": [
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\docs\\running-the-application.md",
+        "sha256": "84f0c2a17a428c0cbc868d1289d7bb6c7d9d089f85d662225b5905d4340b5ae8",
+        "lines": 243
+      }
+    ],
+    "S21": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\prepare.py",
+        "sha256": "02c6fbb4d1b43606357528caf9b3cf18ff9e1a71fb2fa185b3bf72a5efed557d",
+        "lines": 169
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\adapt_translators.py",
+        "sha256": "eb5a02aef304b9d2c801aec8e605f4e7b1afd116c13f5678d77f4f1a094c02d8",
+        "lines": 292
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\mps-access.json",
+        "sha256": "8dfa0773e1f0866adc4e76028068d0ecef5273b4fdcba6573b4b013e7467f7af",
+        "lines": 98
+      }
+    ],
+    "S22": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\out\\backend-browser-artifacts.json",
+        "sha256": "db452eaf391462c45153d53144ba18c06eb96665608df7d27edfea59359eee79",
+        "lines": 22
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\package_backend_browser.py",
+        "sha256": "3b61dfcb93b7a1493c00b24c870dcdd393a631900b3ca7046b9d3a4bf1eb8f09",
+        "lines": 24
+      }
+    ],
+    "S23": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\docs\\editor-refresh-investigation.md",
+        "sha256": "e434ad65d0e4db24a5ed2ab9f5a277e5d03f998b0dc2281fb88aa53c591718d1",
+        "lines": 111
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\docs\\design\\IMPLEMENTATION-23.md",
+        "sha256": "b9049e76430cda22483a6413d85b6f3116effcb3b26afa9889926403eb742f43",
+        "lines": 410
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\adapt_editor_updates.py",
+        "sha256": "9042be635838e1349ff0e72bda681d9e7ed08aac38edf3678a4179770b5cc1f5",
+        "lines": 101
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\adapt_tables.py",
+        "sha256": "734b8cfd072cfe732a4ac5d58eedafb18f1779a3f89d1f4245219a53a0462360",
+        "lines": 154
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\adapt_backend_guard.py",
+        "sha256": "5a784cb830cfb1bf8e9ec9c4e5dea9faab0c3b20b40c580d5c796311f5a86a9e",
+        "lines": 91
+      }
+    ],
+    "S24": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\test_interface.mjs",
+        "sha256": "b2a499e6823993fae5364943f4a0d3aeabf4270dc74994e2389d31012a4e0c57",
+        "lines": 179
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\test_package_change_removal.mjs",
+        "sha256": "22fdf70bf1f754963c3633272a12a1ff60c77166d7053c9ef97006871dc9ade9",
+        "lines": 100
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\verify_package_change_removal_live.mjs",
+        "sha256": "7bf774f3587886b2bbb8a8e9e88f364201b8d795c0ec2c55107f49ba84fd8936",
+        "lines": 39
+      }
+    ],
+    "S25": [
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\build\\test-results\\test\\TEST-nl.alef.backend.application.PackageWorkflowTest.xml",
+        "sha256": "8a64adaa26968ff84e2b477f07a93a365cb03e08a441371a4e2e4eac092ee857",
+        "lines": 852
+      },
+      {
+        "path": "C:\\Users\\niekh\\Documents\\ChatGPT\\ALEFBackend\\alef-application\\build\\test-results\\test\\TEST-nl.alef.backend.application.DeploymentRecoveryTest.xml",
+        "sha256": "6ec6c3c9a37a97a83a92fe14887e009b2fb5dc69738fb29894eabe40920dafe8",
+        "lines": 267
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\test_debug_results.mjs",
+        "sha256": "81caecb060dc668931cc14a1e35b1393b818efb5d85befdf0fd9d3d74f4371ea",
+        "lines": 287
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\test_editor_updates.mjs",
+        "sha256": "6985beaa14790cb0ec1539f03ce1d3e99c35092f149a2605354bb4b6fedb83a5",
+        "lines": 79
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\test_mps_text_layout.mjs",
+        "sha256": "3f0c3e0626d9da58424f896a829337c3d18be63b46649199e68956e329bbf254",
+        "lines": 116
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\test_mps_diff_live.mjs",
+        "sha256": "c0a0f67de9ecaba7fcebc762f15f8ed030579b10eea0f6a097a1438cb966e085",
+        "lines": 106
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\test_save_without_reload.mjs",
+        "sha256": "6a797407b9c538acc723f80d7430a81e28b70296882571652b3a48bc6b65bbad",
+        "lines": 142
+      },
+      {
+        "path": "C:\\Codex\\alef-j2cl\\tools\\test_editor_locks.mjs",
+        "sha256": "22fe3caa5a5c87537dbeeea1e5b493a8705047e6149cece7b066e4dcc1712a13",
+        "lines": 145
+      }
+    ],
+    "S26": [
+      {
+        "path": "C:\\Codex\\alef-j2cl\\docs\\java-mps-runtime-plan.md",
+        "sha256": "a0eee228333656aa5622da16f49110fe08dbad008e4a08e10573ce88ef374d54",
+        "lines": 178
+      }
+    ]
+  }
+}

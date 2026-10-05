@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="testjar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mps/testbench/tests/jetbrains/mps/vfs/testjar.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

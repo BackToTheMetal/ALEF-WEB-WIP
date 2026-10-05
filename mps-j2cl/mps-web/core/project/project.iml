@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="module" module-name="mps-platform2" />
+    <orderEntry type="module" module-name="browser" />
+    <orderEntry type="module" module-name="util4" />
+    <orderEntry type="module" module-name="logging2" />
+    <orderEntry type="module" module-name="mps-platform" />
+    <orderEntry type="module" module-name="smodel2" />
+    <orderEntry type="module" module-name="mps-workbench" />
+    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="openapi2" />
+    <orderEntry type="module" module-name="core" />
+    <orderEntry type="module" module-name="smodel" />
+    <orderEntry type="module" module-name="util2" />
+    <orderEntry type="module" module-name="kernelSolution2" />
+    <orderEntry type="module" module-name="kernel2" />
+    <orderEntry type="module" module-name="testbench" />
+    <orderEntry type="module" module-name="openapi" />
+    <orderEntry type="module" module-name="vfs" />
+    <orderEntry type="module" module-name="persistence" />
+    <orderEntry type="module" module-name="project-check" />
+    <orderEntry type="module" module-name="project3" />
+    <orderEntry type="module" module-name="kernelSolution" />
+    <orderEntry type="module" module-name="vfs2" />
+  </component>
+</module>

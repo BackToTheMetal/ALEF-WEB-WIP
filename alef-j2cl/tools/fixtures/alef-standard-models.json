@@ -1,0 +1,1740 @@
+{
+  "description": "Read-only standard models exported by the ALEF workspace snapshot API. Kept separate from editable Sportclub examples to test real backend startup and debugging.",
+  "models": [
+    {
+      "moduleId": "471364db-8078-4933-b2ef-88232bfa34fc",
+      "moduleName": "gegevensspraak",
+      "modelId": "r:c71b9efb-c880-476d-a07a-2493b4c1967f",
+      "name": "gegevensspraak.base",
+      "reference": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+      "readOnly": true,
+      "roots": [
+        {
+          "id": "8575784694972431599",
+          "concept": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938",
+          "conceptName": "gegevensspraak.structure.ObjectModel",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "base"
+          },
+          "children": [
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "9056413454190183086",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835724",
+                "conceptName": "gegevensspraak.structure.EenheidSysteem",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Tijd"
+                },
+                "children": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                    "node": {
+                      "id": "9056413454191548501",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706",
+                      "conceptName": "gegevensspraak.structure.Tijdseenheid",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "milliseconde",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "ms",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706/595463697531275616": "58tBIcSIKQD/MILLISECONDE"
+                      },
+                      "children": [
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/37217438344644908",
+                          "node": {
+                            "id": "9056413454190183456",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896",
+                            "conceptName": "gegevensspraak.structure.Omrekenfactor",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640897": "1000"
+                            },
+                            "children": [],
+                            "references": [
+                              {
+                                "role": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640899",
+                                "kind": "STATIC",
+                                "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                                "nodeId": "9056413454191548502",
+                                "resolveInfo": "seconde"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                    "node": {
+                      "id": "9056413454191548502",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706",
+                      "conceptName": "gegevensspraak.structure.Tijdseenheid",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "seconde",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "s",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706/595463697531275616": "58tBIcSIKQx/SECONDE"
+                      },
+                      "children": [
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/37217438344644908",
+                          "node": {
+                            "id": "9056413454190183461",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896",
+                            "conceptName": "gegevensspraak.structure.Omrekenfactor",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640897": "60"
+                            },
+                            "children": [],
+                            "references": [
+                              {
+                                "role": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640899",
+                                "kind": "STATIC",
+                                "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                                "nodeId": "9056413454191548503",
+                                "resolveInfo": "minuut"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                    "node": {
+                      "id": "9056413454191548503",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706",
+                      "conceptName": "gegevensspraak.structure.Tijdseenheid",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "minuut",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706/595463697531275616": "58tBIcSIKQq/MINUUT"
+                      },
+                      "children": [
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/37217438344644908",
+                          "node": {
+                            "id": "9056413454190183496",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896",
+                            "conceptName": "gegevensspraak.structure.Omrekenfactor",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640897": "60"
+                            },
+                            "children": [],
+                            "references": [
+                              {
+                                "role": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640899",
+                                "kind": "STATIC",
+                                "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                                "nodeId": "9056413454191548504",
+                                "resolveInfo": "uur"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                    "node": {
+                      "id": "9056413454191548504",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706",
+                      "conceptName": "gegevensspraak.structure.Tijdseenheid",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "uur",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178052": "true",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "u",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706/595463697531275616": "58tBIcSIKQk/UUR"
+                      },
+                      "children": [
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/37217438344644908",
+                          "node": {
+                            "id": "9056413454190183522",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896",
+                            "conceptName": "gegevensspraak.structure.Omrekenfactor",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640897": "24"
+                            },
+                            "children": [],
+                            "references": [
+                              {
+                                "role": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640899",
+                                "kind": "STATIC",
+                                "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                                "nodeId": "9056413454191548505",
+                                "resolveInfo": "dag"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                    "node": {
+                      "id": "9056413454191548505",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706",
+                      "conceptName": "gegevensspraak.structure.Tijdseenheid",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "dag",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "dg",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706/595463697531275616": "58tBIcSIKQf/DAG"
+                      },
+                      "children": [],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                    "node": {
+                      "id": "9056413454191548506",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706",
+                      "conceptName": "gegevensspraak.structure.Tijdseenheid",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "week",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "wk",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706/595463697531275616": "58tBIcSIKQb/WEEK"
+                      },
+                      "children": [
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/37217438344644908",
+                          "node": {
+                            "id": "9056413454190183523",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896",
+                            "conceptName": "gegevensspraak.structure.Omrekenfactor",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640897": "7"
+                            },
+                            "children": [],
+                            "references": [
+                              {
+                                "role": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640899",
+                                "kind": "STATIC",
+                                "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                                "nodeId": "9056413454191548505",
+                                "resolveInfo": "dag"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                    "node": {
+                      "id": "9056413454191548507",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706",
+                      "conceptName": "gegevensspraak.structure.Tijdseenheid",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "maand",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "mnd",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706/595463697531275616": "5ZzkcdUMWK0/MAAND"
+                      },
+                      "children": [],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                    "node": {
+                      "id": "9056413454191548508",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706",
+                      "conceptName": "gegevensspraak.structure.Tijdseenheid",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "kwartaal",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "kw",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706/595463697531275616": "58tBIcSIKQ8/KWARTAAL",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178052": "true"
+                      },
+                      "children": [
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/37217438344644908",
+                          "node": {
+                            "id": "9056413454190183525",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896",
+                            "conceptName": "gegevensspraak.structure.Omrekenfactor",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640897": "3"
+                            },
+                            "children": [],
+                            "references": [
+                              {
+                                "role": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640899",
+                                "kind": "STATIC",
+                                "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                                "nodeId": "9056413454191548507",
+                                "resolveInfo": "maand"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  },
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                    "node": {
+                      "id": "9056413454191548509",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706",
+                      "conceptName": "gegevensspraak.structure.Tijdseenheid",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "jaar",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "jr",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/5190602618610719706/595463697531275616": "58tBIcSIKQ7/JAAR",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178052": "true"
+                      },
+                      "children": [
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/37217438344644908",
+                          "node": {
+                            "id": "9056413454190183556",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896",
+                            "conceptName": "gegevensspraak.structure.Omrekenfactor",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640897": "12"
+                            },
+                            "children": [],
+                            "references": [
+                              {
+                                "role": "471364db-8078-4933-b2ef-88232bfa34fc/37217438344640896/37217438344640899",
+                                "kind": "STATIC",
+                                "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                                "nodeId": "9056413454191548507",
+                                "resolveInfo": "maand"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": []
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "105466127328190010",
+                "concept": "09c04f52-88c5-4bd6-a481-cabab9f61ff5/4485080112264973245",
+                "conceptName": "contexts.structure.Witruimte",
+                "properties": {},
+                "children": [],
+                "references": []
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "1252169908608940954",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5636224356220873837",
+                "conceptName": "gegevensspraak.structure.Dagsoort",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "schrikkeldag"
+                },
+                "children": [],
+                "references": []
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "1252169908608941572",
+                "concept": "09c04f52-88c5-4bd6-a481-cabab9f61ff5/4485080112264973245",
+                "conceptName": "contexts.structure.Witruimte",
+                "properties": {},
+                "children": [],
+                "references": []
+              }
+            }
+          ],
+          "references": []
+        },
+        {
+          "id": "3777331527569534443",
+          "concept": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527381085874",
+          "conceptName": "gegevensspraak.structure.Woordenlijst",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "ww"
+          },
+          "children": [
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527381085874/3777331527381085875",
+              "node": {
+                "id": "3777331527569534444",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013",
+                "conceptName": "gegevensspraak.structure.Werkwoord",
+                "properties": {
+                  "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200242014": "hebben"
+                },
+                "children": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200378235",
+                    "node": {
+                      "id": "3777331527569534448",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358",
+                      "conceptName": "gegevensspraak.structure.OnregelmatigWerkwoordVervoeging",
+                      "properties": {
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959368": "heeft",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959359": "had",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959364": "gehad",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959373": "hebben",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959361": "hadden"
+                      },
+                      "children": [],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/3777331527569534440",
+                    "kind": "STATIC",
+                    "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                    "nodeId": "3777331527569534444",
+                    "resolveInfo": "hebben"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527381085874/3777331527381085875",
+              "node": {
+                "id": "3777331527569534451",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013",
+                "conceptName": "gegevensspraak.structure.Werkwoord",
+                "properties": {
+                  "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200242014": "zijn"
+                },
+                "children": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200378235",
+                    "node": {
+                      "id": "3777331527569534457",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358",
+                      "conceptName": "gegevensspraak.structure.OnregelmatigWerkwoordVervoeging",
+                      "properties": {
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959368": "is",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959359": "was",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959364": "geweest",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959373": "zijn",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959361": "waren"
+                      },
+                      "children": [],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/3777331527569534440",
+                    "kind": "STATIC",
+                    "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                    "nodeId": "3777331527569534451",
+                    "resolveInfo": "zijn"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527381085874/3777331527381085875",
+              "node": {
+                "id": "3777331527569534460",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013",
+                "conceptName": "gegevensspraak.structure.Werkwoord",
+                "properties": {
+                  "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200242014": "worden"
+                },
+                "children": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200378235",
+                    "node": {
+                      "id": "3777331527569534468",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527541899386",
+                      "conceptName": "gegevensspraak.structure.SterkeWerkwoordVervoeging",
+                      "properties": {
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527541899386/3777331527541899387": "e",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527541899386/3777331527541899389": "o"
+                      },
+                      "children": [],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/3777331527569534440",
+                    "kind": "STATIC",
+                    "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                    "nodeId": "3777331527569534451",
+                    "resolveInfo": "zijn"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527381085874/3777331527381085875",
+              "node": {
+                "id": "7440637677380172453",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013",
+                "conceptName": "gegevensspraak.structure.Werkwoord",
+                "properties": {
+                  "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200242014": "moeten"
+                },
+                "children": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200378235",
+                    "node": {
+                      "id": "7440637677380172463",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358",
+                      "conceptName": "gegevensspraak.structure.OnregelmatigWerkwoordVervoeging",
+                      "properties": {
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959368": "moet",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959359": "moest",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959364": "gemoeten",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959373": "moeten",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959361": "moesten"
+                      },
+                      "children": [],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/3777331527569534440",
+                    "kind": "STATIC",
+                    "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                    "nodeId": "3777331527569534444",
+                    "resolveInfo": "hebben"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527381085874/3777331527381085875",
+              "node": {
+                "id": "7440637677380172466",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013",
+                "conceptName": "gegevensspraak.structure.Werkwoord",
+                "properties": {
+                  "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200242014": "mogen"
+                },
+                "children": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200378235",
+                    "node": {
+                      "id": "7440637677380172478",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358",
+                      "conceptName": "gegevensspraak.structure.OnregelmatigWerkwoordVervoeging",
+                      "properties": {
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959368": "mag",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959359": "mocht",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959364": "gemogen",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959373": "mogen",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959361": "mochten"
+                      },
+                      "children": [],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/3777331527569534440",
+                    "kind": "STATIC",
+                    "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                    "nodeId": "3777331527569534444",
+                    "resolveInfo": "hebben"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527381085874/3777331527381085875",
+              "node": {
+                "id": "4494442317230364608",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013",
+                "conceptName": "gegevensspraak.structure.Werkwoord",
+                "properties": {
+                  "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200242014": "voldoen"
+                },
+                "children": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200378235",
+                    "node": {
+                      "id": "4494442317231221355",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358",
+                      "conceptName": "gegevensspraak.structure.OnregelmatigWerkwoordVervoeging",
+                      "properties": {
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959368": "voldoet",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959359": "voldeed",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959364": "voldaan",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959373": "voldoen",
+                        "471364db-8078-4933-b2ef-88232bfa34fc/3777331527538959358/3777331527538959361": "voldeden"
+                      },
+                      "children": [],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/3777331527569534440",
+                    "kind": "STATIC",
+                    "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                    "nodeId": "3777331527569534444",
+                    "resolveInfo": "hebben"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527381085874/3777331527381085875",
+              "node": {
+                "id": "2993711078605799016",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013",
+                "conceptName": "gegevensspraak.structure.Werkwoord",
+                "properties": {
+                  "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200242014": "vullen"
+                },
+                "children": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200378235",
+                    "node": {
+                      "id": "2993711078605799032",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527541875066",
+                      "conceptName": "gegevensspraak.structure.ZwakkeWerkwoordVervoeging",
+                      "properties": {},
+                      "children": [],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/3777331527569534440",
+                    "kind": "STATIC",
+                    "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                    "nodeId": "3777331527569534444",
+                    "resolveInfo": "hebben"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527381085874/3777331527381085875",
+              "node": {
+                "id": "1554089216764458555",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013",
+                "conceptName": "gegevensspraak.structure.Werkwoord",
+                "properties": {
+                  "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200242014": "stellen"
+                },
+                "children": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200378235",
+                    "node": {
+                      "id": "1554089216764458557",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527541875066",
+                      "conceptName": "gegevensspraak.structure.ZwakkeWerkwoordVervoeging",
+                      "properties": {},
+                      "children": [],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/3777331527569534440",
+                    "kind": "STATIC",
+                    "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                    "nodeId": "3777331527569534444",
+                    "resolveInfo": "hebben"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527381085874/3777331527381085875",
+              "node": {
+                "id": "1554089216764458559",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013",
+                "conceptName": "gegevensspraak.structure.Werkwoord",
+                "properties": {
+                  "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200242014": "berekenen"
+                },
+                "children": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200378235",
+                    "node": {
+                      "id": "1554089216764458561",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527541875066",
+                      "conceptName": "gegevensspraak.structure.ZwakkeWerkwoordVervoeging",
+                      "properties": {},
+                      "children": [],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/3777331527569534440",
+                    "kind": "STATIC",
+                    "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                    "nodeId": "3777331527569534444",
+                    "resolveInfo": "hebben"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527381085874/3777331527381085875",
+              "node": {
+                "id": "1554089216764458563",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013",
+                "conceptName": "gegevensspraak.structure.Werkwoord",
+                "properties": {
+                  "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200242014": "initialiseren"
+                },
+                "children": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/4770892935200378235",
+                    "node": {
+                      "id": "1554089216764458565",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/3777331527541875066",
+                      "conceptName": "gegevensspraak.structure.ZwakkeWerkwoordVervoeging",
+                      "properties": {},
+                      "children": [],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/4770892935200242013/3777331527569534440",
+                    "kind": "STATIC",
+                    "model": "r:c71b9efb-c880-476d-a07a-2493b4c1967f(gegevensspraak.base)",
+                    "nodeId": "3777331527569534444",
+                    "resolveInfo": "hebben"
+                  }
+                ]
+              }
+            }
+          ],
+          "references": []
+        }
+      ]
+    },
+    {
+      "moduleId": "8270cb09-651a-458a-9f4e-86e3e4423c92",
+      "moduleName": "standaardFuncties",
+      "modelId": "r:4172b106-22c7-49a2-9043-c1e488e6f56c",
+      "name": "standaard.funcs",
+      "reference": "r:4172b106-22c7-49a2-9043-c1e488e6f56c(standaard.funcs)",
+      "readOnly": true,
+      "roots": [
+        {
+          "id": "2451177311548673779",
+          "concept": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938",
+          "conceptName": "gegevensspraak.structure.ObjectModel",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Weekdagen en Valuta",
+            "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/4052215732068852742": "true"
+          },
+          "children": [
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "2451177311548673787",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5636224356220873837",
+                "conceptName": "gegevensspraak.structure.Dagsoort",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "maandag"
+                },
+                "children": [],
+                "references": []
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "2451177311548673793",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5636224356220873837",
+                "conceptName": "gegevensspraak.structure.Dagsoort",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "dinsdag"
+                },
+                "children": [],
+                "references": []
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "2451177311548673797",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5636224356220873837",
+                "conceptName": "gegevensspraak.structure.Dagsoort",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "woensdag"
+                },
+                "children": [],
+                "references": []
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "2451177311548673802",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5636224356220873837",
+                "conceptName": "gegevensspraak.structure.Dagsoort",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "donderdag"
+                },
+                "children": [],
+                "references": []
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "2451177311548673808",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5636224356220873837",
+                "conceptName": "gegevensspraak.structure.Dagsoort",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "vrijdag"
+                },
+                "children": [],
+                "references": []
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "2451177311548673815",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5636224356220873837",
+                "conceptName": "gegevensspraak.structure.Dagsoort",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "zaterdag"
+                },
+                "children": [],
+                "references": []
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "2451177311548673823",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/5636224356220873837",
+                "conceptName": "gegevensspraak.structure.Dagsoort",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "zondag"
+                },
+                "children": [],
+                "references": []
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "105466127328460400",
+                "concept": "09c04f52-88c5-4bd6-a481-cabab9f61ff5/4485080112264973245",
+                "conceptName": "contexts.structure.Witruimte",
+                "properties": {},
+                "children": [],
+                "references": []
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "3218209149464787292",
+                "concept": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152178966",
+                "conceptName": "gegevensspraak.structure.Domein",
+                "properties": {
+                  "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Valuta ISO-4217"
+                },
+                "children": [
+                  {
+                    "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152178966/5917060184181531817",
+                    "node": {
+                      "id": "3218209149464765642",
+                      "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835724",
+                      "conceptName": "gegevensspraak.structure.EenheidSysteem",
+                      "properties": {
+                        "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Valuta"
+                      },
+                      "children": [
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765643",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "euro",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "EUR",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "€"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765644",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "ATS",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Oostenrijkse schilling",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "Oostenrijkse schillings"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765645",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "AUD",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Australische dollar",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "$",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "Australische dollars"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765646",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "BEF",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Belgische frank"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765647",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "BRL",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Braziliaanse real",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "R$",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "Braziliaanse reals"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765648",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "CAD",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Canadese dollar",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "$",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "Canadese dollars"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765649",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "CHF",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Zwitserse frank"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765650",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "CYP",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Cypriotisch pond"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765651",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "CNY",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Chinese renminbi",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "¥"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765652",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "CZK",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Tsjechische kroon"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765653",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "DEM",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Duitse mark"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765654",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "DKK",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Deense kroon",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "kr"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765655",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "EEK",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Estische kroon"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765656",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "ESP",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Spaanse peseta"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765657",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "FIM",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Finse markka"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765658",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "FRF",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Franse frank"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765659",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "GBP",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Brits pond sterling",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "£",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "Britse ponden sterling"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765660",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "GRD",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Griekse drachme"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765661",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "HKD",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Hongkongse dollar",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "Hongkongse dollars"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765662",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "HUF",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Hongaarse forint",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "Ft"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765663",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "IDR",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Indonesische roepia",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "Rp"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765664",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "IEP",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Ierse pond"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765665",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "ILS",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Israëlische sjekel",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "₪"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765666",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "INR",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Indiase roepie"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765667",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "ISK",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "IJslandse kroon"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765668",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "ITL",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Italiaanse lire"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765669",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "JPY",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Japanse yen",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "¥"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765670",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "KRW",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Zuid-Koreaanse won",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "Zuid-Koreaanse wons"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765671",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "LTL",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Litouwse litas",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "Litouwse litas"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765672",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "LUF",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Luxemburgse frank"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765673",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "LVL",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Letse lats",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "Letse lats"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765674",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "MTL",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Maltese lira"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765675",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "MXN",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Mexicaanse peso"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765676",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "MYR",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Maleisische ringgit"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765677",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "NOK",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Noorse kroon"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765678",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "NZD",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Nieuw-Zeelandse dollar",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "Nieuw-Zeelandse dollars"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765679",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "PHP",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Filipijnse peso",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "₱"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765680",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "PLN",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Poolse zloty"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765681",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "RON",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Roemeense leu"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765682",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "RUB",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Russische roebel",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "₽"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765683",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "SEK",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Zweedse kroon"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765684",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "SGD",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Singaporese dollar",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "Singaporese dollars"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765685",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "SIT",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Sloveense tolar"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765686",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "SKK",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Slowaakse kroon"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765687",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "TRY",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Turkse lira"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765688",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "TWD",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Taiwanese dollar",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "Taiwanese dollars"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765689",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "USD",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "US dollar",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "$",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "US dollars"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        },
+                        {
+                          "role": "471364db-8078-4933-b2ef-88232bfa34fc/5970487230362917627/4145085948684469801",
+                          "node": {
+                            "id": "3218209149464765690",
+                            "concept": "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305",
+                            "conceptName": "gegevensspraak.structure.BasisEenheid",
+                            "properties": {
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/1788186806698835697": "ZAR",
+                              "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "Zuid-Afrikaanse rand",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/1788186806698835305/4293565939193811574": "R",
+                              "471364db-8078-4933-b2ef-88232bfa34fc/8989128614612178023/8989128614612178055": "Zuid-Afrikaanse rand"
+                            },
+                            "children": [],
+                            "references": []
+                          }
+                        }
+                      ],
+                      "references": []
+                    }
+                  }
+                ],
+                "references": []
+              }
+            },
+            {
+              "role": "471364db-8078-4933-b2ef-88232bfa34fc/653687101152179938/653687101152179939",
+              "node": {
+                "id": "105466127328460401",
+                "concept": "09c04f52-88c5-4bd6-a481-cabab9f61ff5/4485080112264973245",
+                "conceptName": "contexts.structure.Witruimte",
+                "properties": {},
+                "children": [],
+                "references": []
+              }
+            }
+          ],
+          "references": []
+        }
+      ]
+    },
+    {
+      "moduleId": "7bbaf860-5f96-44b4-9731-6e00ae137ece",
+      "moduleName": "regelspraak",
+      "modelId": "r:b1fbbf4f-983a-46db-824c-f5a0c310c50c",
+      "name": "regelspraak.dummyslots",
+      "reference": "r:b1fbbf4f-983a-46db-824c-f5a0c310c50c(regelspraak.dummyslots)",
+      "readOnly": true,
+      "roots": [
+        {
+          "id": "6621513416126039120",
+          "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/2775788965350599330",
+          "conceptName": "regelspraak.structure.LInconsistentRef",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "<inconsistent>"
+          },
+          "children": [],
+          "references": []
+        },
+        {
+          "id": "6621513416164578316",
+          "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/4807329109093794555",
+          "conceptName": "regelspraak.structure.LDummySlot",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "<gevuurd>"
+          },
+          "children": [],
+          "references": []
+        },
+        {
+          "id": "2317534982093390494",
+          "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/2317534982089031056",
+          "conceptName": "regelspraak.structure.LConsistentRef",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "<consistent>"
+          },
+          "children": [],
+          "references": []
+        },
+        {
+          "id": "6191152939808168513",
+          "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/6191152939808142270",
+          "conceptName": "regelspraak.structure.LConsistentRegels",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "<consistent-R>"
+          },
+          "children": [],
+          "references": []
+        },
+        {
+          "id": "6191152939808168514",
+          "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/5796443823623848917",
+          "conceptName": "regelspraak.structure.LInconsistentRegels",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "<inconsistent-R>"
+          },
+          "children": [],
+          "references": []
+        },
+        {
+          "id": "8521502724492089252",
+          "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/6164932834573113067",
+          "conceptName": "regelspraak.structure.LDummyRulesArgument",
+          "properties": {},
+          "children": [],
+          "references": []
+        },
+        {
+          "id": "112977207441652943",
+          "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/112977207347479863",
+          "conceptName": "regelspraak.structure.LDummyConstructiesArgument",
+          "properties": {},
+          "children": [],
+          "references": []
+        }
+      ]
+    },
+    {
+      "moduleId": "d8af31be-1847-4d5b-8686-78e232d4e0f8",
+      "moduleName": "servicespraak",
+      "modelId": "r:44625420-04ca-4c1c-a0b5-1647b2e7d755",
+      "name": "servicespraak.dummyslots",
+      "reference": "r:44625420-04ca-4c1c-a0b5-1647b2e7d755(servicespraak.dummyslots)",
+      "readOnly": true,
+      "roots": [
+        {
+          "id": "6621513416164587707",
+          "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/4807329109093794555",
+          "conceptName": "regelspraak.structure.LDummySlot",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "<resultaatcode>"
+          },
+          "children": [],
+          "references": []
+        },
+        {
+          "id": "6621513416164587710",
+          "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/4807329109093794555",
+          "conceptName": "regelspraak.structure.LDummySlot",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "<resultaatmelding>"
+          },
+          "children": [],
+          "references": []
+        },
+        {
+          "id": "6621513416164587715",
+          "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/4807329109093794555",
+          "conceptName": "regelspraak.structure.LDummySlot",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "<consistent>"
+          },
+          "children": [],
+          "references": []
+        }
+      ]
+    },
+    {
+      "moduleId": "8bc962c0-cb3c-49f0-aa03-23c3bc0304b0",
+      "moduleName": "testspraak",
+      "modelId": "r:9c594f45-de1e-4b0c-9668-f3aaf6385637",
+      "name": "testspraak.dummyslots",
+      "reference": "r:9c594f45-de1e-4b0c-9668-f3aaf6385637(testspraak.dummyslots)",
+      "readOnly": true,
+      "roots": [
+        {
+          "id": "5696347358796695142",
+          "concept": "7bbaf860-5f96-44b4-9731-6e00ae137ece/4807329109093794555",
+          "conceptName": "regelspraak.structure.LDummySlot",
+          "properties": {
+            "ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001": "<match>"
+          },
+          "children": [],
+          "references": []
+        }
+      ]
+    }
+  ]
+}

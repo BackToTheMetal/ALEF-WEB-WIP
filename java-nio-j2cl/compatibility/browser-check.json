@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "javascript": "/home/niekh/.cache/bazel/_bazel_niekh/c88ab810e92c24569ce5cc701f385864/execroot/_main/bazel-out/k8-fastbuild/bin/src/test/consumer/application.js",
+  "browser": "/home/niekh/.cache/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-linux64/chrome-headless-shell",
+  "exit_code": 0,
+  "timed_out": false,
+  "result": "PASS: 56 NIO runtime checks; no storage backend"
+}

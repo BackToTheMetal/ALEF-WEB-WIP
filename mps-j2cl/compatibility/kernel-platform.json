@@ -1,0 +1,17 @@
+[
+  {
+    "path": "core/kernel/source/jetbrains/mps/reloading/SDKDiscovery.java",
+    "upstream_sha256": "99291f33750650b73251a1a3932158a4f58fbf9fdea6fa70e3347dfd02905c50",
+    "replacement_sha256": "a8959a204eaf5f0fb90048681e8ffab00f2e6e55bb79f2ef5da0fd10a772904c"
+  },
+  {
+    "path": "core/kernel/source/jetbrains/mps/util/UnzipUtil.java",
+    "upstream_sha256": "7cffda625ea3e9c8f697ebba6e9927d8d488b926b2ca03731109df845a6944f3",
+    "replacement_sha256": "605ff255f40b0a4a834d6e3a34a2d18448d088f8061eeeac9303301ae4af3883"
+  },
+  {
+    "path": "core/kernel/source/jetbrains/mps/util/PathManager.java",
+    "upstream_sha256": "5333f88d293b4ef50b990112b4068c8fd75bc0a7c30141e46ed7be7cb7d4b955",
+    "replacement_sha256": "f23d747b7ceaf2034a2af4e0c261b11723432762f3b8684f7f24ffd09ac4a0b3"
+  }
+]

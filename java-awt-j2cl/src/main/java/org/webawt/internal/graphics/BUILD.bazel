@@ -1,0 +1,8 @@
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["CanvasGraphics2D.java", "CopyAreaBounds.java", "PreparedShape.java"])
+
+alias(
+    name = "canvas-graphics-j2cl",
+    actual = "//src/main/java/java/awt:graphics-api-j2cl",
+)

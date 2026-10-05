@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="500" height="222" preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 222" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="500" height="222"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-222)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="500" height="222" rx="4" ry="0" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.5; fill: rgb(98%,98%,99%); fill-rule: evenodd;"/>
+			<rect x="5.0" y="177" width="94.0" height="33" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="33.993408203125" y="190.5" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,381) scale(1,-1)">Browser</text>
+			<path d="M 52,173 L 52,18 Z" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 3;"/>
+			<rect x="203.0" y="177" width="94.0" height="33" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="218.24072265625" y="190.5" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,381) scale(1,-1)">Backend / jobs</text>
+			<path d="M 250,173 L 250,18 Z" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 3;"/>
+			<rect x="401.0" y="177" width="94.0" height="33" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="412.74267578125" y="190.5" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,381) scale(1,-1)">Target simulator</text>
+			<path d="M 448,173 L 448,18 Z" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 3;"/>
+			<text x="67.8243408203125" y="162" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,324) scale(1,-1)">Deploy approved digest with expected target state</text>
+			<polyline points="52 157, 250 157" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="250 157, 245.6121 159.3971, 245.6121 154.6029" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="275.2030029296875" y="139" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,278) scale(1,-1)">Submit durable operation after dispatch gate</text>
+			<polyline points="250 134, 448 134" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="448 134, 443.6121 136.3971, 443.6121 131.6029" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="280.4178466796875" y="116" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,232) scale(1,-1)">Accepted, refused, or uncertain response</text>
+			<polyline points="448 111, 250 111" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="250 111, 254.3879 108.6029, 254.3879 113.3971" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="290.4190673828125" y="93" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,186) scale(1,-1)">Lookup / observe original operation</text>
+			<polyline points="250 88, 448 88" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="448 88, 443.6121 90.39713, 443.6121 85.60287" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="284.169677734375" y="70" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,140) scale(1,-1)">Observed installed digest and outcome</text>
+			<polyline points="448 65, 250 65" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="250 65, 254.3879 62.60287, 254.3879 67.39713" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="85.7540283203125" y="47" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,94) scale(1,-1)">Display progress and installed package</text>
+			<polyline points="250 42, 52 42" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="52 42, 56.38791 39.60287, 56.38791 44.39713" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="119.932861328125" y="12" style="font-family: Body; font-size: 7.5px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,24) scale(1,-1)">Promotion: same digest must already be installed in the previous environment.</text>
+		</g>
+	</g>
+</svg>

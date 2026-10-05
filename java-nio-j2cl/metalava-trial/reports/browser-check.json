@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "result": "PASS: 7 Metalava operations throw RuntimeException(Stub!); J2CL UTF-8 preserved",
+  "browser": "/home/niekh/.cache/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-linux64/chrome-headless-shell",
+  "javascript_sha256": "3984694191d59e543e70a7713071b3bb5c226da5f0052c90b93875fc5c98acec"
+}

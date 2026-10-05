@@ -1,0 +1,10 @@
+/* One shared icon column in workspace and release comparison trees. */
+.change-tree .group-label{display:grid;grid-template-columns:13px 16px minmax(0,1fr);column-gap:8px;align-items:center}
+.change-tree .group-label>.svg{width:16px;height:16px;stroke-width:1.6}
+.change-tree .group-label>.svg:first-child{width:13px;height:13px}
+.change-tree button{display:grid;grid-template-columns:13px 16px minmax(0,1fr) auto;column-gap:8px;align-items:center;padding-left:9px;padding-right:9px}
+.change-tree .tree-node-icon{grid-column:2;display:flex;width:16px;height:16px;align-items:center;justify-content:center;color:var(--muted)}
+.change-tree .tree-node-icon>.svg{width:16px;height:16px;stroke-width:1.6}
+.change-tree button.active .tree-node-icon{color:inherit}
+.change-tree .change-name{grid-column:3}
+.change-tree .change-kind{grid-column:4}

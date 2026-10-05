@@ -1,0 +1,7 @@
+/.work/
+/out/
+/bazel-*
+/MODULE.bazel.lock
+/upstream-src/
+__pycache__/
+/node_modules/

@@ -1,0 +1,2697 @@
+{
+  "schemaVersion": 1,
+  "methodCount": 84,
+  "verifiedOnBothBackends": 83,
+  "complete": true,
+  "methods": [
+    {
+      "method": "addRenderingHints(Map)",
+      "signature": "public void addRenderingHints(java.util.Map<?, ?>);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transform and hint queries"
+      ],
+      "observable": "Copied hint maps and transform snapshots, individual hint getters, anchored rotation/shear/concatenation and restored-transform pixel vectors."
+    },
+    {
+      "method": "clearRect(int,int,int,int)",
+      "signature": "public void clearRect(int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Clear with background"
+      ],
+      "observable": "Rotated/scaled clearing respects the clip, replaces with cyan or alpha zero despite DST, and preserves state; alpha is reported."
+    },
+    {
+      "method": "clip(Shape)",
+      "signature": "public void clip(java.awt.Shape);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Intersect transformed clips"
+      ],
+      "observable": "Intersection bounds and pixels; mutation of the original shape leaves the clip unchanged."
+    },
+    {
+      "method": "clipRect(int,int,int,int)",
+      "signature": "public void clipRect(int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Intersect transformed clips"
+      ],
+      "observable": "Intersection bounds and pixels; mutation of the original shape leaves the clip unchanged."
+    },
+    {
+      "method": "copyArea(int,int,int,int,int,int)",
+      "signature": "public void copyArea(int, int, int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java",
+            "src/test/browser/com/webawt/browser/Elemental2BrowserDocumentTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Scaled clipped copy",
+        "Overlapping copy",
+        "Copy composite and limits",
+        "Image and copy composites"
+      ],
+      "observable": "Scaled source, fixed destination clip, overlap snapshot, bounded SRC and unchanged DST pixels. Rotation, reflection and shear explicitly fail: UnsupportedOperationException in stock J2CL, InternalError in the JDK. Zero-area requests are harmless."
+    },
+    {
+      "method": "create()",
+      "signature": "public java.awt.Graphics create();",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Child graphics isolation"
+      ],
+      "observable": "Child and sibling pixels, isolated parent state, and parent usability after child disposal."
+    },
+    {
+      "method": "create(int,int,int,int)",
+      "signature": "public java.awt.Graphics create(int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Child graphics isolation"
+      ],
+      "observable": "Child and sibling pixels, isolated parent state, and parent usability after child disposal."
+    },
+    {
+      "method": "dispose()",
+      "signature": "public void dispose();",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Child graphics isolation"
+      ],
+      "observable": "Child and sibling pixels, isolated parent state, and parent usability after child disposal."
+    },
+    {
+      "method": "draw(Shape)",
+      "signature": "public void draw(java.awt.Shape);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transformed strokes",
+        "Custom paint lifecycle"
+      ],
+      "observable": "The vertical green line expands to the expected width under nonuniform scaling and remains bounded by the fixed clip. Custom Paint also colors the stroked line outline."
+    },
+    {
+      "method": "draw3DRect(int,int,int,int,boolean)",
+      "signature": "public void draw3DRect(int, int, int, int, boolean);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Raised and sunken rectangles"
+      ],
+      "observable": "Bright/dark raised and sunken border vectors and restored parent color."
+    },
+    {
+      "method": "drawArc(int,int,int,int,int,int)",
+      "signature": "public void drawArc(int, int, int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Custom stroke primitives",
+        "Dashed primitives"
+      ],
+      "observable": "Fifth tile: 360-degree arc stroke and right-side dash gap, empty/filled center distinguishes BasicStroke and the custom stroke."
+    },
+    {
+      "method": "drawBytes(byte[],int,int,int,int)",
+      "signature": "public void drawBytes(byte[], int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/TextScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/TextScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Plain text overloads"
+      ],
+      "observable": "Only the requested unsigned Latin-1 byte slice is painted; byte 233 becomes accented-e, with a separate visible row and invalid-range regression. Modern-browser rasterization is required for BufferedImage; attributed runs, glyph outlines and hint parity are not covered. Canvas rejects source-unbounded text composites explicitly."
+    },
+    {
+      "method": "drawChars(char[],int,int,int,int)",
+      "signature": "public void drawChars(char[], int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/TextScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/TextScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Plain text overloads"
+      ],
+      "observable": "Only the requested AV plus accented-e char slice is painted; a separate visible row and native-oracle comparison establish the inherited overload. Modern-browser rasterization is required for BufferedImage; attributed runs, glyph outlines and hint parity are not covered. Canvas rejects source-unbounded text composites explicitly."
+    },
+    {
+      "method": "drawGlyphVector(GlyphVector,float,float)",
+      "signature": "public void drawGlyphVector(java.awt.font.GlyphVector, float, float);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/AttributedScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/AttributedScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Positioned glyphs and carets"
+      ],
+      "observable": "Per-glyph position and rotation paint visible reference-font ink; caret navigation skips combining and surrogate interiors."
+    },
+    {
+      "method": "drawImage(BufferedImage,BufferedImageOp,int,int)",
+      "signature": "public void drawImage(java.awt.image.BufferedImage, java.awt.image.BufferedImageOp, int, int);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Affine and filtered images"
+      ],
+      "observable": "Center image: null operation preserves original colored/transparent quadrants. Right image: non-null rescale produces white opaque quadrants and preserves transparency. Graphics transform and clip remain unchanged."
+    },
+    {
+      "method": "drawImage(Image,AffineTransform,ImageObserver)",
+      "signature": "public boolean drawImage(java.awt.Image, java.awt.geom.AffineTransform, java.awt.image.ImageObserver);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Affine and filtered images"
+      ],
+      "observable": "Left image: rotated 90 degrees and scaled 1.5x under a fixed clip; colored and clipped-away quadrant pixels, unchanged graphics transform/clip, and true return."
+    },
+    {
+      "method": "drawImage(Image,int,int,Color,ImageObserver)",
+      "signature": "public boolean drawImage(java.awt.Image, int, int, java.awt.Color, java.awt.image.ImageObserver);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Image overloads"
+      ],
+      "observable": "Top-right tile: natural size with cyan replacing the transparent quadrant; opaque quadrants are unchanged; returns true."
+    },
+    {
+      "method": "drawImage(Image,int,int,ImageObserver)",
+      "signature": "public boolean drawImage(java.awt.Image, int, int, java.awt.image.ImageObserver);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Image overloads",
+        "Image and copy composites"
+      ],
+      "observable": "Top-left tile: natural 40x40 size; blue/green/yellow quadrants and transparent quadrant retaining red; returns true."
+    },
+    {
+      "method": "drawImage(Image,int,int,int,int,Color,ImageObserver)",
+      "signature": "public boolean drawImage(java.awt.Image, int, int, int, int, java.awt.Color, java.awt.image.ImageObserver);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Image overloads"
+      ],
+      "observable": "Bottom-left tile: 60x60 scaled placement and cyan replacement of transparency; returns true."
+    },
+    {
+      "method": "drawImage(Image,int,int,int,int,ImageObserver)",
+      "signature": "public boolean drawImage(java.awt.Image, int, int, int, int, java.awt.image.ImageObserver);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Image overloads"
+      ],
+      "observable": "Top-center tile: scales to 60x60; quadrant pixels land at scaled positions and transparency retains red; returns true."
+    },
+    {
+      "method": "drawImage(Image,int,int,int,int,int,int,int,int,Color,ImageObserver)",
+      "signature": "public boolean drawImage(java.awt.Image, int, int, int, int, int, int, int, int, java.awt.Color, java.awt.image.ImageObserver);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Image overloads"
+      ],
+      "observable": "Bottom-right tile: reversed source endpoints mirror all four quadrants, with cyan behind transparency; returns true."
+    },
+    {
+      "method": "drawImage(Image,int,int,int,int,int,int,int,int,ImageObserver)",
+      "signature": "public boolean drawImage(java.awt.Image, int, int, int, int, int, int, int, int, java.awt.image.ImageObserver);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Image overloads",
+        "Image and copy composites"
+      ],
+      "observable": "Bottom-center tile: reversed destination endpoints mirror all four source quadrants, including transparent red; returns true."
+    },
+    {
+      "method": "drawLine(int,int,int,int)",
+      "signature": "public void drawLine(int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transformed strokes",
+        "Caps and joins",
+        "Custom stroke primitives",
+        "Dashed primitives"
+      ],
+      "observable": "Scaled default/explicit widths, butt/round/square cap pixels, dash gaps and custom-stroke output in the first primitive tile."
+    },
+    {
+      "method": "drawOval(int,int,int,int)",
+      "signature": "public void drawOval(int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Custom stroke primitives",
+        "Dashed primitives"
+      ],
+      "observable": "Fourth tile: stroked top and left dash gap, empty center with BasicStroke, filled center with a custom stroke."
+    },
+    {
+      "method": "drawPolygon(Polygon)",
+      "signature": "public void drawPolygon(java.awt.Polygon);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Custom stroke primitives",
+        "Dashed primitives"
+      ],
+      "observable": "Eighth tile exercises the Polygon overload: dashed rectangle stroke/gap/interior pixels and one complete custom-stroke call."
+    },
+    {
+      "method": "drawPolygon(int[],int[],int)",
+      "signature": "public void drawPolygon(int[], int[], int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Custom stroke primitives",
+        "Dashed primitives"
+      ],
+      "observable": "Seventh tile: closed triangle has blue stroke and red dash-gap/interior pixels; custom-stroke bounds fill the center."
+    },
+    {
+      "method": "drawPolyline(int[],int[],int)",
+      "signature": "public void drawPolyline(int[], int[], int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Dash phase and joins",
+        "Caps and joins",
+        "Custom stroke primitives",
+        "Dashed primitives"
+      ],
+      "observable": "Dash phase crosses segment boundaries; miter/round/bevel and miter-limit pixels match JDK; the custom stroke sees one complete path."
+    },
+    {
+      "method": "drawRect(int,int,int,int)",
+      "signature": "public void drawRect(int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Dash phase and joins",
+        "Custom stroke primitives",
+        "Dashed primitives"
+      ],
+      "observable": "Second primitive tile and the larger closed rectangle: phase continues around corners and a custom stroke receives the entire rectangle once."
+    },
+    {
+      "method": "drawRenderableImage(RenderableImage,AffineTransform)",
+      "signature": "public void drawRenderableImage(java.awt.image.renderable.RenderableImage, java.awt.geom.AffineTransform);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/RenderedImageScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/RenderedImageScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Rendered and renderable images"
+      ],
+      "observable": "Nonzero rendered origin pixels; renderable factory receives the combined transform once and graphics transform is restored."
+    },
+    {
+      "method": "drawRenderedImage(RenderedImage,AffineTransform)",
+      "signature": "public void drawRenderedImage(java.awt.image.RenderedImage, java.awt.geom.AffineTransform);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/RenderedImageScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/RenderedImageScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Rendered and renderable images"
+      ],
+      "observable": "Nonzero rendered origin pixels; renderable factory receives the combined transform once and graphics transform is restored."
+    },
+    {
+      "method": "drawRoundRect(int,int,int,int,int,int)",
+      "signature": "public void drawRoundRect(int, int, int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Custom stroke primitives",
+        "Dashed primitives"
+      ],
+      "observable": "Third tile: curved outline stroke and dash-gap pixels, plus filled bounds from the custom stroke."
+    },
+    {
+      "method": "drawString(AttributedCharacterIterator,float,float)",
+      "signature": "public void drawString(java.text.AttributedCharacterIterator, float, float);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/AttributedScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/AttributedScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Attributed text overloads"
+      ],
+      "observable": "Both attributed overloads retain per-run font, foreground and iterator range; blue/green ink appears on both surfaces."
+    },
+    {
+      "method": "drawString(AttributedCharacterIterator,int,int)",
+      "signature": "public void drawString(java.text.AttributedCharacterIterator, int, int);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/AttributedScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/AttributedScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Attributed text overloads"
+      ],
+      "observable": "Both attributed overloads retain per-run font, foreground and iterator range; blue/green ink appears on both surfaces."
+    },
+    {
+      "method": "drawString(String,float,float)",
+      "signature": "public void drawString(java.lang.String, float, float);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/TextScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/TextScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Plain text overloads",
+        "Transformed text",
+        "Clipped translucent text",
+        "Text clearing and limits"
+      ],
+      "observable": "Fractional baselines and combining accents retain glyph coverage; transformed and clipped floating-position strings agree with the independent native oracle. Modern-browser rasterization is required for BufferedImage; attributed runs, glyph outlines and hint parity are not covered. Canvas rejects source-unbounded text composites explicitly."
+    },
+    {
+      "method": "drawString(String,int,int)",
+      "signature": "public void drawString(java.lang.String, int, int);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/TextScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/TextScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Plain text overloads",
+        "Transformed text",
+        "Clipped translucent text",
+        "Text clearing and limits"
+      ],
+      "observable": "Integer-baseline whole-run glyph pixels, rotation/scale/shear, font transforms, clipping, half alpha and CLEAR; native-oracle pixels and shared JDK ink regions. Modern-browser rasterization is required for BufferedImage; attributed runs, glyph outlines and hint parity are not covered. Canvas rejects source-unbounded text composites explicitly."
+    },
+    {
+      "method": "fill(Shape)",
+      "signature": "public void fill(java.awt.Shape);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Texture paint",
+        "Custom paint lifecycle",
+        "Gradient cycles and transforms",
+        "Composite rules"
+      ],
+      "observable": "Shape interiors, clipping and untouched bounding-box corners; tiled texture and custom contexts; transformed/cyclic/color-space gradients and all 12 AlphaComposite rules."
+    },
+    {
+      "method": "fill3DRect(int,int,int,int,boolean)",
+      "signature": "public void fill3DRect(int, int, int, int, boolean);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Raised and sunken rectangles"
+      ],
+      "observable": "Bright/dark raised and sunken border vectors and restored parent color."
+    },
+    {
+      "method": "fillArc(int,int,int,int,int,int)",
+      "signature": "public void fillArc(int, int, int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Filled primitive overloads"
+      ],
+      "observable": "Distinct interior and exterior pixel vectors identify every filled primitive and polygon overload."
+    },
+    {
+      "method": "fillOval(int,int,int,int)",
+      "signature": "public void fillOval(int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Filled primitive overloads"
+      ],
+      "observable": "Distinct interior and exterior pixel vectors identify every filled primitive and polygon overload."
+    },
+    {
+      "method": "fillPolygon(Polygon)",
+      "signature": "public void fillPolygon(java.awt.Polygon);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Filled primitive overloads"
+      ],
+      "observable": "Distinct interior and exterior pixel vectors identify every filled primitive and polygon overload."
+    },
+    {
+      "method": "fillPolygon(int[],int[],int)",
+      "signature": "public void fillPolygon(int[], int[], int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Filled primitive overloads"
+      ],
+      "observable": "Distinct interior and exterior pixel vectors identify every filled primitive and polygon overload."
+    },
+    {
+      "method": "fillRect(int,int,int,int)",
+      "signature": "public void fillRect(int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Clip before translation",
+        "Child graphics isolation"
+      ],
+      "observable": "Red/blue/green/yellow interior and exterior pixel values on both surfaces."
+    },
+    {
+      "method": "fillRoundRect(int,int,int,int,int,int)",
+      "signature": "public void fillRoundRect(int, int, int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Filled primitive overloads"
+      ],
+      "observable": "Distinct interior and exterior pixel vectors identify every filled primitive and polygon overload."
+    },
+    {
+      "method": "finalize()",
+      "signature": "public void finalize();",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Paint modes and diagnostics"
+      ],
+      "observable": "Double XOR restores BufferedImage pixels; Canvas rejects XOR explicitly; paint-mode recovery and child finalization preserve parent color and output."
+    },
+    {
+      "method": "getBackground()",
+      "signature": "public java.awt.Color getBackground();",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Clear with background"
+      ],
+      "observable": "Rotated/scaled clearing respects the clip, replaces with cyan or alpha zero despite DST, and preserves state; alpha is reported."
+    },
+    {
+      "method": "getClip()",
+      "signature": "public java.awt.Shape getClip();",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Clip before translation"
+      ],
+      "observable": "Fixed surface clip, inverse user-space bounds, and interior/exterior pixels."
+    },
+    {
+      "method": "getClipBounds()",
+      "signature": "public java.awt.Rectangle getClipBounds();",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Clip before translation"
+      ],
+      "observable": "Fixed surface clip, inverse user-space bounds, and interior/exterior pixels."
+    },
+    {
+      "method": "getClipBounds(Rectangle)",
+      "signature": "public java.awt.Rectangle getClipBounds(java.awt.Rectangle);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Clip before translation"
+      ],
+      "observable": "Fixed surface clip, inverse user-space bounds, and interior/exterior pixels."
+    },
+    {
+      "method": "getClipRect()",
+      "signature": "public java.awt.Rectangle getClipRect();",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Hit clip and device queries"
+      ],
+      "observable": "Clip hit/miss and stroked hit results, compatible device color model, visible clipping vectors."
+    },
+    {
+      "method": "getColor()",
+      "signature": "public java.awt.Color getColor();",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Raised and sunken rectangles"
+      ],
+      "observable": "Bright/dark raised and sunken border vectors and restored parent color."
+    },
+    {
+      "method": "getComposite()",
+      "signature": "public java.awt.Composite getComposite();",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Composite rules",
+        "Custom composite policy"
+      ],
+      "observable": "Reports each selected rule and retained composite identity after rejection; WebAWT rejects custom Composite and JDK accepts it."
+    },
+    {
+      "method": "getDeviceConfiguration()",
+      "signature": "public java.awt.GraphicsConfiguration getDeviceConfiguration();",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Hit clip and device queries"
+      ],
+      "observable": "Clip hit/miss and stroked hit results, compatible device color model, visible clipping vectors."
+    },
+    {
+      "method": "getFont()",
+      "signature": "public java.awt.Font getFont();",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/FontScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/FontScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Font state and metrics"
+      ],
+      "observable": "Reports selected font identity before and after null selection, explicit metrics queries and child disposal."
+    },
+    {
+      "method": "getFontMetrics()",
+      "signature": "public java.awt.FontMetrics getFontMetrics();",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/FontScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/FontScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Font state and metrics",
+        "Font render context"
+      ],
+      "observable": "Current-font widths control checked bar endpoints on both backends; pinned font agrees with native browser advances within 0.05px and JDK samples within 2px. Metrics retain their FRC snapshot."
+    },
+    {
+      "method": "getFontMetrics(Font)",
+      "signature": "public java.awt.FontMetrics getFontMetrics(java.awt.Font);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/FontScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/FontScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Font state and metrics"
+      ],
+      "observable": "Explicit 12px font metrics produce shorter blue bars without changing the selected 24px font; metrics retain the requested font."
+    },
+    {
+      "method": "getFontRenderContext()",
+      "signature": "public java.awt.font.FontRenderContext getFontRenderContext();",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/FontScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/FontScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Font render context"
+      ],
+      "observable": "Retains scale/shear and explicit text AA/fractional hints, excludes translation, returns defensive transforms and immutable snapshots; later changes affect only new contexts."
+    },
+    {
+      "method": "getPaint()",
+      "signature": "public java.awt.Paint getPaint();",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Texture paint",
+        "Custom paint lifecycle",
+        "Image and copy composites"
+      ],
+      "observable": "Paint identity is retained through null assignment, failures and image/copy operations; setColor is reflected by getPaint."
+    },
+    {
+      "method": "getRenderingHint(Key)",
+      "signature": "public java.lang.Object getRenderingHint(java.awt.RenderingHints$Key);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transform and hint queries"
+      ],
+      "observable": "Copied hint maps and transform snapshots, individual hint getters, anchored rotation/shear/concatenation and restored-transform pixel vectors."
+    },
+    {
+      "method": "getRenderingHints()",
+      "signature": "public java.awt.RenderingHints getRenderingHints();",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transform and hint queries"
+      ],
+      "observable": "Copied hint maps and transform snapshots, individual hint getters, anchored rotation/shear/concatenation and restored-transform pixel vectors."
+    },
+    {
+      "method": "getStroke()",
+      "signature": "public java.awt.Stroke getStroke();",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transformed strokes",
+        "Dash phase and joins",
+        "Custom stroke primitives"
+      ],
+      "observable": "Identity checks retain the supplied BasicStroke/custom Stroke before and after drawing and child disposal; the page reports successful checks."
+    },
+    {
+      "method": "getTransform()",
+      "signature": "public java.awt.geom.AffineTransform getTransform();",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transform and hint queries"
+      ],
+      "observable": "Copied hint maps and transform snapshots, individual hint getters, anchored rotation/shear/concatenation and restored-transform pixel vectors."
+    },
+    {
+      "method": "hit(Rectangle,Shape,boolean)",
+      "signature": "public boolean hit(java.awt.Rectangle, java.awt.Shape, boolean);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Hit clip and device queries"
+      ],
+      "observable": "Clip hit/miss and stroked hit results, compatible device color model, visible clipping vectors."
+    },
+    {
+      "method": "hitClip(int,int,int,int)",
+      "signature": "public boolean hitClip(int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Hit clip and device queries"
+      ],
+      "observable": "Clip hit/miss and stroked hit results, compatible device color model, visible clipping vectors."
+    },
+    {
+      "method": "rotate(double)",
+      "signature": "public void rotate(double);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Clear with background"
+      ],
+      "observable": "Rotated/scaled clearing respects the clip, replaces with cyan or alpha zero despite DST, and preserves state; alpha is reported."
+    },
+    {
+      "method": "rotate(double,double,double)",
+      "signature": "public void rotate(double, double, double);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transform and hint queries"
+      ],
+      "observable": "Copied hint maps and transform snapshots, individual hint getters, anchored rotation/shear/concatenation and restored-transform pixel vectors."
+    },
+    {
+      "method": "scale(double,double)",
+      "signature": "public void scale(double, double);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Clear with background"
+      ],
+      "observable": "Rotated/scaled clearing respects the clip, replaces with cyan or alpha zero despite DST, and preserves state; alpha is reported."
+    },
+    {
+      "method": "setBackground(Color)",
+      "signature": "public void setBackground(java.awt.Color);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Clear with background"
+      ],
+      "observable": "Rotated/scaled clearing respects the clip, replaces with cyan or alpha zero despite DST, and preserves state; alpha is reported."
+    },
+    {
+      "method": "setClip(Shape)",
+      "signature": "public void setClip(java.awt.Shape);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Intersect transformed clips"
+      ],
+      "observable": "Intersection bounds and pixels; mutation of the original shape leaves the clip unchanged."
+    },
+    {
+      "method": "setClip(int,int,int,int)",
+      "signature": "public void setClip(int, int, int, int);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Clip before translation"
+      ],
+      "observable": "Fixed surface clip, inverse user-space bounds, and interior/exterior pixels."
+    },
+    {
+      "method": "setColor(Color)",
+      "signature": "public void setColor(java.awt.Color);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Clip before translation",
+        "Child graphics isolation"
+      ],
+      "observable": "Red/blue/green/yellow interior and exterior pixel values on both surfaces."
+    },
+    {
+      "method": "setComposite(Composite)",
+      "signature": "public void setComposite(java.awt.Composite);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Composite rules",
+        "Image and copy composites",
+        "Custom composite policy"
+      ],
+      "observable": "All 12 rules affect only the source footprint; CLEAR ignores source alpha; SRC preserves transparent source pixels; global alpha and DST have observable effects. Null and unsupported custom composites leave state unchanged."
+    },
+    {
+      "method": "setFont(Font)",
+      "signature": "public void setFont(java.awt.Font);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/FontScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/FontScenarios.java",
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Font state and metrics"
+      ],
+      "observable": "Selected font and 12/24px sizes determine visible bar widths; null preserves the current font and child font changes are isolated."
+    },
+    {
+      "method": "setPaint(Paint)",
+      "signature": "public void setPaint(java.awt.Paint);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/PaintScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Texture paint",
+        "Custom paint lifecycle",
+        "Gradient cycles and transforms"
+      ],
+      "observable": "Paint affects fill and stroke pixels; null is ignored, non-color paint retains the current color, and setColor replaces paint. Canvas native text rejects arbitrary paints explicitly."
+    },
+    {
+      "method": "setPaintMode()",
+      "signature": "public void setPaintMode();",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Paint modes and diagnostics"
+      ],
+      "observable": "Double XOR restores BufferedImage pixels; Canvas rejects XOR explicitly; paint-mode recovery and child finalization preserve parent color and output."
+    },
+    {
+      "method": "setRenderingHint(Key,Object)",
+      "signature": "public void setRenderingHint(java.awt.RenderingHints$Key, java.lang.Object);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transform and hint queries"
+      ],
+      "observable": "Copied hint maps and transform snapshots, individual hint getters, anchored rotation/shear/concatenation and restored-transform pixel vectors."
+    },
+    {
+      "method": "setRenderingHints(Map)",
+      "signature": "public void setRenderingHints(java.util.Map<?, ?>);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transform and hint queries"
+      ],
+      "observable": "Copied hint maps and transform snapshots, individual hint getters, anchored rotation/shear/concatenation and restored-transform pixel vectors."
+    },
+    {
+      "method": "setStroke(Stroke)",
+      "signature": "public void setStroke(java.awt.Stroke);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "samples/dual_showcase/StrokeScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transformed strokes",
+        "Dash phase and joins",
+        "Caps and joins",
+        "Custom stroke primitives"
+      ],
+      "observable": "Selected widths, dash phase, caps, joins and custom outlines have visible effects; a child stroke does not change its parent."
+    },
+    {
+      "method": "setTransform(AffineTransform)",
+      "signature": "public void setTransform(java.awt.geom.AffineTransform);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transform and hint queries"
+      ],
+      "observable": "Copied hint maps and transform snapshots, individual hint getters, anchored rotation/shear/concatenation and restored-transform pixel vectors."
+    },
+    {
+      "method": "setXORMode(Color)",
+      "signature": "public void setXORMode(java.awt.Color);",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "unavailable",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Paint modes and diagnostics"
+      ],
+      "observable": "Double XOR restores BufferedImage pixels; Canvas rejects XOR explicitly; paint-mode recovery and child finalization preserve parent color and output."
+    },
+    {
+      "method": "shear(double,double)",
+      "signature": "public void shear(double, double);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transform and hint queries"
+      ],
+      "observable": "Copied hint maps and transform snapshots, individual hint getters, anchored rotation/shear/concatenation and restored-transform pixel vectors."
+    },
+    {
+      "method": "toString()",
+      "signature": "public java.lang.String toString();",
+      "declaredBy": "java.awt.Graphics",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/Graphics.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Paint modes and diagnostics"
+      ],
+      "observable": "Double XOR restores BufferedImage pixels; Canvas rejects XOR explicitly; paint-mode recovery and child finalization preserve parent color and output."
+    },
+    {
+      "method": "transform(AffineTransform)",
+      "signature": "public void transform(java.awt.geom.AffineTransform);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/CoreGraphicsScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Transform and hint queries"
+      ],
+      "observable": "Copied hint maps and transform snapshots, individual hint getters, anchored rotation/shear/concatenation and restored-transform pixel vectors."
+    },
+    {
+      "method": "translate(double,double)",
+      "signature": "public void translate(double, double);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Intersect transformed clips"
+      ],
+      "observable": "Intersection bounds and pixels; mutation of the original shape leaves the clip unchanged."
+    },
+    {
+      "method": "translate(int,int)",
+      "signature": "public void translate(int, int);",
+      "declaredBy": "java.awt.Graphics2D",
+      "backends": {
+        "Canvas": {
+          "implementation": "src/main/java/org/webawt/internal/graphics/CanvasGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/portable/com/webawt/portable/CanvasGraphicsJ2clTest.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/DualShowcaseDesktopSmokeTest.java"
+          ]
+        },
+        "BufferedImage": {
+          "implementation": "src/main/java/java/awt/image/BufferedImageGraphics2D.java",
+          "coverage": "verified",
+          "evidence": [
+            "samples/dual_showcase/GraphicsStateScenarios.java",
+            "src/test/dualshowcase/org/webawt/samples/dualshowcase/GraphicsStateAssertions.java",
+            "src/test/playwright/com/webawt/playwright/DualShowcasePlaywrightTest.java"
+          ]
+        }
+      },
+      "page": "Rendering lab / Graphics state",
+      "scenarios": [
+        "Clip before translation"
+      ],
+      "observable": "Fixed surface clip, inverse user-space bounds, and interior/exterior pixels."
+    }
+  ]
+}

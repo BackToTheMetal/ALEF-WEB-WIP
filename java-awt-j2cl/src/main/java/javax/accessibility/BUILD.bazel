@@ -1,0 +1,8 @@
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["Accessible.java", "AccessibleAction.java", "AccessibleBundle.java", "AccessibleContext.java", "AccessibleIcon.java", "AccessibleRelation.java", "AccessibleRelationSet.java", "AccessibleRole.java", "AccessibleSelection.java", "AccessibleState.java", "AccessibleStateSet.java", "AccessibleTable.java", "AccessibleValue.java", "AccessibleComponent.java"])
+
+alias(
+    name = "accessibility-j2cl",
+    actual = "//src/main/java/java/awt:graphics-api-j2cl",
+)

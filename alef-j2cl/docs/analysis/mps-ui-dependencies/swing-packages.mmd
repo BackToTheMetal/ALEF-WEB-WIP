@@ -1,0 +1,40 @@
+flowchart LR
+  classDef browser fill:#d9eee3,stroke:#548768,color:#142e20;
+  classDef desktop fill:#fff0cd,stroke:#aa8735,color:#352909;
+  classDef auxiliary fill:#e8e1f4,stroke:#8c78ae,color:#30223f;
+  classDef absent fill:#f1f3f5,stroke:#a8adb5,color:#434851;
+  p0["javax.swing<br/>70 MPS types · 36 browser"]:::browser
+  p1["javax.swing.border<br/>7 MPS types · 4 browser"]:::browser
+  p2["javax.swing.colorchooser<br/>No direct reference found"]:::absent
+  p3["javax.swing.event<br/>24 MPS types · 8 browser"]:::browser
+  p4["javax.swing.filechooser<br/>No direct reference found"]:::absent
+  p5["javax.swing.plaf<br/>2 MPS types · 2 browser"]:::browser
+  p6["javax.swing.plaf.basic<br/>3 MPS types · 2 browser"]:::browser
+  p7["javax.swing.plaf.metal<br/>1 auxiliary type · 0 MPS"]:::auxiliary
+  p8["javax.swing.plaf.multi<br/>No direct reference found"]:::absent
+  p9["javax.swing.plaf.nimbus<br/>No direct reference found"]:::absent
+  p10["javax.swing.plaf.synth<br/>No direct reference found"]:::absent
+  p11["javax.swing.table<br/>9 MPS types · 0 browser"]:::desktop
+  p12["javax.swing.text<br/>10 MPS types · 2 browser"]:::browser
+  p13["javax.swing.text.html<br/>5 MPS types · 1 browser"]:::browser
+  p14["javax.swing.text.html.parser<br/>No direct reference found"]:::absent
+  p15["javax.swing.text.rtf<br/>No direct reference found"]:::absent
+  p16["javax.swing.tree<br/>10 MPS types · 1 browser"]:::browser
+  p17["javax.swing.undo<br/>No direct reference found"]:::absent
+  p0 --- p1
+  p0 --- p2
+  p0 --- p3
+  p0 --- p4
+  p0 --- p5
+  p5 --- p6
+  p5 --- p7
+  p5 --- p8
+  p5 --- p9
+  p5 --- p10
+  p0 --- p11
+  p0 --- p12
+  p12 --- p13
+  p13 --- p14
+  p12 --- p15
+  p0 --- p16
+  p0 --- p17

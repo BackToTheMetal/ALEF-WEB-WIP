@@ -1,0 +1,10 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
+load("@rules_closure//closure:defs.bzl", "closure_js_library")
+
+j2cl_library(
+    name = "probe",
+    srcs = ["NioProbe.java", "SignatureProbe.java"],
+    deps = ["//:java-nio", "//src/test/mps/supported:mps-readable", "@j2cl//:jsinterop-annotations-j2cl"],
+)
+closure_js_library(name = "entry", srcs = ["entry.js"], deps = [":probe"])
+j2cl_application(name = "application", entry_points = ["nio.probe"], deps = [":entry"])

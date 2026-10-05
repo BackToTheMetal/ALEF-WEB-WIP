@@ -1,0 +1,9 @@
+module(name = "walkingkooka_java_time", version = "0.1.0")
+bazel_dep(name = "j2cl", version = "20260402")
+bazel_dep(name = "rules_closure", version = "0.16.0")
+single_version_override(
+    module_name = "j2cl",
+    version = "20260402",
+    patches = ["//:patches/j2cl-java-time.patch"],
+    patch_strip = 1,
+)

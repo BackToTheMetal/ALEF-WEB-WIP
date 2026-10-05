@@ -1,0 +1,9 @@
+{
+  "j2cl": "20260402",
+  "reflection_base": {
+    "owner": "java-io-j2cl",
+    "source": "overlay/jre/java/java/lang/ReflectiveOperationException.java",
+    "sha256": "3f6c94f39c458a193eda55d8ec5b41dbb6fdb05b384e518e86f01547c25fa623",
+    "consumer_rule": "Apply only when not already supplied by a composed java-io JRE."
+  }
+}

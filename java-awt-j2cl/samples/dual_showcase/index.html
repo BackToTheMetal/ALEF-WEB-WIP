@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WebAWT dual-runtime showcase</title>
+    <style>
+        html, body {
+            box-sizing: border-box;
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            background: #e9eef5;
+            color: #1e232d;
+            font-family: system-ui, sans-serif;
+            padding: 16px;
+        }
+        #webawt-root {
+            height: calc(100vh - 32px);
+            min-height: 720px;
+            min-width: 1080px;
+        }
+        #load-error {
+            background: #fff1f1;
+            border: 1px solid #b51f1f;
+            display: none;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="load-error" role="alert"></div>
+    <div id="webawt-root"></div>
+    <script src="/bazel-bin/samples/dual_showcase/browser_application.js"></script>
+    <script>
+        if (typeof webawtDualShowcaseMount === 'function') {
+            webawtDualShowcaseMount('webawt-root');
+        } else {
+            const error = document.getElementById('load-error');
+            error.textContent = 'Build //samples/dual_showcase:browser_application, then serve the repository root.';
+            error.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

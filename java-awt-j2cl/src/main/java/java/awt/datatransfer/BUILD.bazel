@@ -1,0 +1,18 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(default_visibility = ["//visibility:public"])
+
+j2cl_library(
+    name = "datatransfer-j2cl",
+    srcs = [
+        "Clipboard.java",
+        "ClipboardOwner.java",
+        "DataFlavor.java",
+        "FlavorEvent.java",
+        "FlavorListener.java",
+        "FlavorMap.java",
+        "StringSelection.java",
+        "Transferable.java",
+        "UnsupportedFlavorException.java",
+    ],
+)

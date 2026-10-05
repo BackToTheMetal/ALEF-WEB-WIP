@@ -1,0 +1,199 @@
+{
+  "scope": "UniversalOptimizedNodeIdMap, StringBasedNodeIdMap, INodeIdToNodeMap, ObjectIdentityHashingStrategy",
+  "completeMpsInventory": false,
+  "testBoundary": "Test-only model tokens; actual map and hashing strategy sources are unchanged",
+  "references": [
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java",
+      "line": 18,
+      "source": "import gnu.trove.THashMap;",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java",
+      "line": 32,
+      "source": "return myOtherMap.size() + myStringBasedIds.size();",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java",
+      "line": 38,
+      "source": "return myStringBasedIds.get(((StringBasedId) key).getId());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java",
+      "line": 40,
+      "source": "return myOtherMap.get(key);",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java",
+      "line": 46,
+      "source": "return myStringBasedIds.put(((StringBasedId) key).getId(), value);",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java",
+      "line": 48,
+      "source": "return myOtherMap.put(key, value);",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java",
+      "line": 54,
+      "source": "return myStringBasedIds.containsKey(((StringBasedId) key).getId());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java",
+      "line": 57,
+      "source": "return myOtherMap.containsKey(key);",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java",
+      "line": 63,
+      "source": "return myStringBasedIds.remove(((StringBasedId) key).getId());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java",
+      "line": 66,
+      "source": "return myOtherMap.remove(key);",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java",
+      "line": 72,
+      "source": "res.addAll(myOtherMap.values());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java",
+      "line": 73,
+      "source": "res.addAll(myStringBasedIds.values());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 18,
+      "source": "import gnu.trove.THashMap;",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 19,
+      "source": "import gnu.trove.TLongObjectHashMap;",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 37,
+      "source": "return myRegularMap.size() + myStringBasedIdMap.size() + myOtherMap.size();",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 43,
+      "source": "return myRegularMap.get(((Regular) key).getId());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 45,
+      "source": "return myStringBasedIdMap.get(((StringBasedId) key).getId());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 47,
+      "source": "return myOtherMap.get(key);",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 54,
+      "source": "return myRegularMap.put(((Regular) key).getId(), value);",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 56,
+      "source": "return myStringBasedIdMap.put(((StringBasedId) key).getId(), value);",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 58,
+      "source": "return myOtherMap.put(key, value);",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 65,
+      "source": "return myRegularMap.containsKey(((Regular) key).getId());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 67,
+      "source": "return myStringBasedIdMap.containsKey(((StringBasedId) key).getId());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 69,
+      "source": "return myOtherMap.containsKey(key);",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 76,
+      "source": "return myRegularMap.remove(((Regular) key).getId());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 78,
+      "source": "return myStringBasedIdMap.remove(((StringBasedId) key).getId());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 80,
+      "source": "return myOtherMap.remove(key);",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 86,
+      "source": "ArrayList<SNode> rv = new ArrayList<>(myRegularMap.size() + myStringBasedIdMap.size() + myOtherMap.size());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 87,
+      "source": "rv.addAll((Collection) Arrays.asList(myRegularMap.getValues()));",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 88,
+      "source": "rv.addAll(myStringBasedIdMap.values());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "line": 89,
+      "source": "rv.addAll(myOtherMap.values());",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/util/ObjectIdentityHashingStrategy.java",
+      "line": 6,
+      "source": "import gnu.trove.TObjectHashingStrategy;",
+      "validation": "Compiled and executed by shared MpsScenarios against both implementations"
+    }
+  ]
+}

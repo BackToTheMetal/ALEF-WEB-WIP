@@ -1,0 +1,23 @@
+{
+  "artifact": "/home/niekh/.cache/bazel/_bazel_niekh/1d2b0f813e56ca37f1021037df20540a/execroot/_main/bazel-out/k8-fastbuild/bin/external/j2cl+/jre/java/libjre_bootclasspath-hjar.jar",
+  "reference_jdk": "21.0.12.1+1-1-26.04.4-Ubuntu",
+  "types": 163,
+  "members_checked": 1174,
+  "missing": [],
+  "excluded": [
+    {
+      "type": "java.nio.channels.FileChannel",
+      "member": "public java.lang.foreign.MemorySegment map(java.nio.channels.FileChannel.MapMode,long,long,java.lang.foreign.Arena) throws java.io.IOException",
+      "reason": "Java 21 preview foreign memory API"
+    }
+  ],
+  "status": "PASS",
+  "interface_order_normalized": [
+    "java.nio.CharBuffer",
+    "java.nio.channels.DatagramChannel",
+    "java.nio.channels.FileChannel",
+    "java.nio.channels.Pipe.SinkChannel",
+    "java.nio.channels.SocketChannel"
+  ],
+  "scope": "Public/protected non-preview declarations; excludes sealed restrictions, annotations, constant values and runtime semantics."
+}

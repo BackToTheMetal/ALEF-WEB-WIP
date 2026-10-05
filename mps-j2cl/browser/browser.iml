@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/financial" isTestSource="false" packagePrefix="jetbrains.mps.smodel.persistence.def.v9" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="lib2" level="project" />
+    <orderEntry type="module" module-name="components" />
+    <orderEntry type="module" module-name="editing-runtime" />
+    <orderEntry type="module" module-name="tests" />
+    <orderEntry type="module" module-name="webswing" />
+    <orderEntry type="module" module-name="editing-runtime2" />
+    <orderEntry type="module" module-name="mps-platform" />
+    <orderEntry type="module" module-name="constraints" />
+    <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="module" module-name="mps-workbench" />
+    <orderEntry type="module" module-name="mps-ui" />
+    <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="smodel" />
+    <orderEntry type="module" module-name="editorlang-runtime" />
+    <orderEntry type="module" module-name="typechecking2" />
+    <orderEntry type="module" module-name="kernel2" />
+    <orderEntry type="module" module-name="platform4" />
+    <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="xmlPersistence" />
+    <orderEntry type="module" module-name="project-check" />
+    <orderEntry type="module" module-name="jetbrains.mps.ide" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="platform2" />
+    <orderEntry type="module" module-name="mps-platform2" />
+    <orderEntry type="module" module-name="webawt" />
+    <orderEntry type="module" module-name="editor-runtime2" />
+    <orderEntry type="module" module-name="smodel2" />
+    <orderEntry type="module" module-name="mps-editor" />
+    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="openapi2" />
+    <orderEntry type="module" module-name="behavior-api" />
+    <orderEntry type="module" module-name="core" />
+    <orderEntry type="module" module-name="jetbrains.mps.ide.platform2" />
+    <orderEntry type="module" module-name="typechecking" />
+    <orderEntry type="module" module-name="intellij-stubs" />
+    <orderEntry type="module" module-name="kernelSolution2" />
+    <orderEntry type="module" module-name="typesystemIntegration" />
+    <orderEntry type="module" module-name="testbench" />
+    <orderEntry type="module" module-name="project" />
+    <orderEntry type="module" module-name="intentions-runtime" />
+    <orderEntry type="module" module-name="openapi" />
+    <orderEntry type="module" module-name="jetbrains.mps.ide.platform" />
+    <orderEntry type="module" module-name="persistence" />
+    <orderEntry type="module" module-name="typesystemEngine2" />
+    <orderEntry type="module" module-name="editor-api" />
+    <orderEntry type="module" module-name="project3" />
+  </component>
+</module>

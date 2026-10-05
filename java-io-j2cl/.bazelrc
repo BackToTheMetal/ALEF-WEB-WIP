@@ -1,0 +1,17 @@
+startup --host_jvm_args=-Xmx1024m
+build --announce_rc
+build --jobs=1
+build --local_resources=memory=4096
+build --action_env=JAVA_TOOL_OPTIONS=-Xmx1024m
+build --java_language_version=21
+build --java_runtime_version=remotejdk_21
+build --tool_java_language_version=21
+build --tool_java_runtime_version=remotejdk_21
+build --strategy=J2cl=worker
+build --strategy=Closure=worker
+build --strategy=Javac=worker
+build --worker_max_instances=1
+build --worker_max_multiplex_instances=1
+build --worker_max_instances=Javac=1
+test --local_test_jobs=1
+test --test_output=errors

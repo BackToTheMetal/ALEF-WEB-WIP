@@ -1,0 +1,402 @@
+load(":editor-action-sources.bzl", "EDITOR_ACTION_SOURCES")
+load("@j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
+load("@rules_closure//closure:defs.bzl", "closure_js_library")
+load(":mps-rules.bzl", "mps_projects")
+load(":editor-jre-tests.bzl", "editor_jre_tests")
+load(":editor-foundation-tests.bzl", "editor_foundation_tests")
+load(":intellij-stubs.bzl", "intellij_stubs")
+load(":completion-matching-tests.bzl", "completion_matching_tests")
+load(":editor-live-tests.bzl", "editor_live_tests")
+load(":editor-runtime-tests.bzl", "editor_runtime_tests")
+load(":financial-calculations.bzl", "financial_calculations")
+
+exports_files([
+    "source-lock.json",
+    "third_party/j2cl/composed.patch",
+    "third_party/j2cl/type-support/class-type-support.patch",
+    "third_party/j2cl/swing-support/j2cl-invocation-support.patch",
+    "third_party/j2cl/mps-support/classloader.patch",
+    "third_party/j2cl/api-support/api-support.patch",
+    "third_party/webawt/elemental2-1.3.2-w3c-css.patch",
+])
+
+alias(
+    name = "jre",
+    actual = "@j2cl//:jre",
+    visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "class_support_fixtures",
+    srcs = ["tests/class_support/FixtureTypes.java"],
+)
+
+j2cl_library(
+    name = "class_support",
+    srcs = ["tests/class_support/ClassSupportTest.java", "tests/class_support/InteropBoundaryTest.java"],
+    deps = [":class_support_fixtures", "@j2cl//:jsinterop-annotations-j2cl"],
+)
+
+closure_js_library(
+    name = "class_support_entry",
+    srcs = ["tests/class_support/entry.js"],
+    deps = [":class_support"],
+)
+
+j2cl_application(
+    name = "class_support_browser",
+    entry_points = ["mpsj2cl.classsupport.entry"],
+    deps = [":class_support_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_application(
+    name = "class_support_stripped",
+    entry_points = ["mpsj2cl.classsupport.entry"],
+    deps = [":class_support_entry"],
+    jre_class_metadata = "STRIPPED",
+)
+
+mps_projects()
+editor_jre_tests()
+editor_foundation_tests()
+intellij_stubs()
+completion_matching_tests()
+editor_live_tests()
+editor_runtime_tests()
+financial_calculations()
+
+j2cl_library(
+    name = "browser_editor_host",
+    srcs = EDITOR_ACTION_SOURCES + [
+        "browser/src/mpsj2cl/editor/BrowserEditorActionBindings.java",
+        "browser/src/mpsj2cl/editor/BrowserEditorShortcuts.java",
+        "browser/src/mpsj2cl/editor/BrowserEditorHost.java",
+        "browser/src/mpsj2cl/editor/BrowserStyleRegistry.java",
+        "browser/src/jetbrains/mps/classloading/BrowserEditorClassLoader.java",
+    ],
+    deps = [":mps_typesystemintegration", ":mps_typechecking", ":browser_selection_factories", ":browser_mps_assets", ":browser_platform", ":browser_model_access", ":mps_editor_runtime", ":mps_editing_runtime", ":mps_intentions_runtime", ":mps_mps_platform", ":mps_findusages_runtime", ":intellij_stubs", ":mps_kernel", "@webawt//:webawt", "@javax-swing-j2cl//src/main:javax-swing-j2cl"],
+)
+
+j2cl_library(
+    name = "browser_mps_assets",
+    srcs = ["browser/src/mpsj2cl/editor/BrowserMpsAssets.java", "browser/src/mpsj2cl/editor/BrowserMpsAssetData.java", "browser/src/mpsj2cl/editor/BrowserResourceIcon.java"],
+    deps = [":intellij_stubs", "@webawt//:webawt", "@javax-swing-j2cl//src/main:javax-swing-j2cl"],
+)
+
+j2cl_library(
+    name = "browser_platform",
+    srcs = ["browser/src/jetbrains/mps/core/platform/BrowserPlatform.java"],
+    deps = [":mps_platform", ":mps_kernel", ":mps_typechecking", ":mps_typesystemengine"],
+)
+
+j2cl_library(
+    name = "browser_model_access",
+    srcs = ["browser/src/jetbrains/mps/smodel/BrowserModelAccess.java"],
+    deps = [":mps_kernel", ":intellij_stubs"],
+)
+
+j2cl_library(
+    name = "kernel_utilities_test",
+    srcs = ["tests/kernel_utilities/KernelUtilitiesTest.java"],
+    deps = [":mps_kernel", ":mps_openapi", ":mps_collections_runtime"],
+)
+
+closure_js_library(
+    name = "kernel_utilities_entry",
+    srcs = ["tests/kernel_utilities/entry.js"],
+    deps = [":kernel_utilities_test"],
+)
+
+j2cl_application(
+    name = "kernel_utilities_browser",
+    entry_points = ["mpsj2cl.kernelutilities.entry"],
+    deps = [":kernel_utilities_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "modifier_test",
+    srcs = ["tests/modifiers/ModifierTest.java"],
+)
+
+closure_js_library(
+    name = "modifier_entry",
+    srcs = ["tests/modifiers/entry.js"],
+    deps = [":modifier_test"],
+)
+
+j2cl_application(
+    name = "modifier_browser",
+    entry_points = ["mpsj2cl.modifiers.entry"],
+    deps = [":modifier_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "regex_test",
+    srcs = ["tests/regex/RegexSubsetTest.java"],
+)
+
+closure_js_library(
+    name = "regex_entry",
+    srcs = ["tests/regex/entry.js"],
+    deps = [":regex_test"],
+)
+
+j2cl_application(
+    name = "regex_browser",
+    entry_points = ["mpsj2cl.regex.entry"],
+    deps = [":regex_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "dynamic_components_test",
+    srcs = glob(["tests/dynamic_components/*.java"]),
+    deps = [":mps_kernel", ":mps_components"],
+)
+
+closure_js_library(
+    name = "dynamic_components_entry",
+    srcs = ["tests/dynamic_components/entry.js"],
+    deps = [":dynamic_components_test"],
+)
+
+j2cl_application(
+    name = "dynamic_components_browser",
+    entry_points = ["mpsj2cl.dynamiccomponents.entry"],
+    deps = [":dynamic_components_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "icon_creation_test",
+    srcs = ["tests/icon_creation/IconCreationTest.java"],
+    deps = [":mps_kernel", "@webawt//:webawt"],
+)
+
+closure_js_library(
+    name = "icon_creation_entry",
+    srcs = ["tests/icon_creation/entry.js"],
+    deps = [":icon_creation_test"],
+)
+
+j2cl_application(
+    name = "icon_creation_browser",
+    entry_points = ["mpsj2cl.icons.entry"],
+    deps = [":icon_creation_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "formatting_test",
+    srcs = ["tests/formatting/FormattingCases.java", "tests/formatting/FormattingGolden.java", "tests/formatting/FormattingTest.java"],
+)
+
+closure_js_library(
+    name = "formatting_entry",
+    srcs = ["tests/formatting/entry.js"],
+    deps = [":formatting_test"],
+)
+
+j2cl_application(
+    name = "formatting_browser",
+    entry_points = ["mpsj2cl.formatting.entry"],
+    deps = [":formatting_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "vfs_test",
+    srcs = glob(["tests/vfs/*.java"]),
+    deps = [":mps_vfs"],
+)
+
+closure_js_library(
+    name = "vfs_entry",
+    srcs = ["tests/vfs/entry.js"],
+    deps = [":vfs_test"],
+)
+
+j2cl_application(
+    name = "vfs_browser",
+    entry_points = ["mpsj2cl.vfs.entry"],
+    deps = [":vfs_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "runtime_test",
+    srcs = glob(["tests/runtime_factories/*.java", "tests/query_methods/*.java"]) + ["tests/classloader/ModuleClassLoaderTest.java"],
+    deps = [":mps_kernel", ":mps_openapi", ":mps_components"],
+)
+
+closure_js_library(
+    name = "runtime_entry",
+    srcs = ["tests/runtime_factories/entry.js"],
+    deps = [":runtime_test"],
+)
+
+j2cl_application(
+    name = "runtime_browser",
+    entry_points = ["mpsj2cl.deployment.entry"],
+    deps = [":runtime_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "runtime_support_test",
+    srcs = glob(["tests/runtime_support/*.java"]),
+)
+
+closure_js_library(
+    name = "runtime_support_entry",
+    srcs = ["tests/runtime_support/entry.js"],
+    deps = [":runtime_support_test"],
+)
+
+j2cl_application(
+    name = "runtime_support_browser",
+    entry_points = ["mpsj2cl.runtime.entry"],
+    deps = [":runtime_support_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_application(
+    name = "runtime_support_stripped",
+    entry_points = ["mpsj2cl.runtime.entry"],
+    deps = [":runtime_support_entry"],
+    jre_class_metadata = "STRIPPED",
+)
+
+j2cl_library(
+    name = "api_basics_test",
+    srcs = ["tests/api_basics/CoreApiTest.java"],
+)
+
+closure_js_library(
+    name = "api_basics_entry",
+    srcs = ["tests/api_basics/entry.js"],
+    deps = [":api_basics_test"],
+)
+
+j2cl_application(
+    name = "api_basics_browser",
+    entry_points = ["mpsj2cl.apibasics.entry"],
+    deps = [":api_basics_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "util_test",
+    srcs = ["tests/util/UtilCompatibilityTest.java"],
+    deps = [":mps_util_core"],
+)
+
+closure_js_library(
+    name = "util_entry",
+    srcs = ["tests/util/entry.js"],
+    deps = [":util_test"],
+)
+
+j2cl_application(
+    name = "util_browser",
+    entry_points = ["mpsj2cl.utilcompat.entry"],
+    deps = [":util_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "core_test",
+    srcs = ["tests/core/KernelSmokeTest.java"],
+    deps = [":mps_kernel", ":mps_smodel", ":mps_openapi", ":mps_collections_runtime", ":mps_tuples_runtime"],
+)
+
+closure_js_library(
+    name = "core_entry",
+    srcs = ["tests/core/entry.js"],
+    deps = [":core_test"],
+)
+
+j2cl_application(
+    name = "core_browser",
+    entry_points = ["mpsj2cl.core.entry"],
+    deps = [":core_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "openapi_test",
+    srcs = glob(["tests/openapi/*.java"]),
+    deps = [":mps_openapi"],
+)
+
+closure_js_library(
+    name = "openapi_entry",
+    srcs = ["tests/openapi/entry.js"],
+    deps = [":openapi_test"],
+)
+
+j2cl_application(
+    name = "openapi_browser",
+    entry_points = ["mpsj2cl.openapi.entry"],
+    deps = [":openapi_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "classloader_test",
+    srcs = ["tests/classloader/ClassLoaderTest.java"],
+)
+
+closure_js_library(
+    name = "classloader_entry",
+    srcs = ["tests/classloader/entry.js"],
+    deps = [":classloader_test"],
+)
+
+j2cl_application(
+    name = "classloader_browser",
+    entry_points = ["mpsj2cl.classloading.entry"],
+    deps = [":classloader_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "smodel_test",
+    srcs = glob(["tests/smodel/*.java"]),
+    deps = [":mps_openapi", ":mps_smodel"],
+)
+
+closure_js_library(
+    name = "smodel_entry",
+    srcs = ["tests/smodel/entry.js"],
+    deps = [":smodel_test"],
+)
+
+j2cl_application(
+    name = "smodel_browser",
+    entry_points = ["mpsj2cl.smodel.entry"],
+    deps = [":smodel_entry"],
+    jre_class_metadata = "SIMPLE",
+)
+
+j2cl_library(
+    name = "jdom_util_test",
+    srcs = ["tests/jdom_util/JDOMUtilTest.java"],
+    deps = [":mps_kernel", "@org_jdom_j2cl//:jdom", "@org_jdom_j2cl//:sax-api"],
+)
+
+closure_js_library(
+    name = "jdom_entry",
+    srcs = ["tests/jdom_util/entry.js"],
+    deps = [":jdom_util_test"],
+)
+
+j2cl_application(
+    name = "jdom_browser",
+    entry_points = ["mpsj2cl.xml.entry"],
+    deps = [":jdom_entry"],
+    jre_class_metadata = "SIMPLE",
+)

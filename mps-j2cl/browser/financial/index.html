@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Financial calculations · MPS in the browser</title>
+<style>
+  body { margin: 24px; background: #f4f6f8; color: #182331; font: 15px system-ui, sans-serif; }
+  h1 { margin: 0 0 8px; font-size: 25px; }
+  p { margin: 8px 0 16px; }
+  button { padding: 8px 14px; margin: 0 8px 14px 0; cursor: pointer; }
+  #status { display: inline-block; margin-left: 12px; }
+  #financial-editor { position: relative; width: 1120px; height: 650px; background: white; border: 1px solid #ccd4de; }
+</style>
+<h1>Financial calculations</h1>
+<p>Edit the Savings calculator using the MPS financialCalculations language. Click a cell to edit; use Ctrl+Space for completion and Alt+Enter for intentions.</p>
+<button id="rename" disabled>Rename calculator</button><button id="close" disabled>Close editor</button>
+<span id="status" role="status">Loading language runtime…</span>
+<div id="financial-editor"></div>
+<p>Ctrl+Z undoes; Ctrl+Shift+Z redoes. This is an in-memory model: reload the page to reset it.</p>
+<script src="/financial.js"></script>
+<script>
+  const state = document.getElementById('status');
+  let runtimeError = '';
+  window.addEventListener('error', event => { runtimeError = event.message; state.textContent = runtimeError; state.style.color = '#b32121'; });
+  document.getElementById('rename').onclick = () => window.financialFocusName();
+  document.getElementById('close').onclick = () => window.financialClose();
+  setInterval(() => {
+    if (!window.financialStatus) return;
+    const status = window.financialStatus();
+    state.textContent = runtimeError || (status === 'READY' ? 'Ready · ' + window.financialName() : status);
+    document.getElementById('rename').disabled = status !== 'READY';
+    document.getElementById('close').disabled = status !== 'READY';
+  }, 200);
+</script>
+</html>

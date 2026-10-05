@@ -1,0 +1,14 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(default_visibility = ["//visibility:public"])
+
+j2cl_library(
+    name = "text-j2cl",
+    srcs = [
+        "Annotation.java",
+        "AttributedCharacterIterator.java",
+        "BreakIterator.java",
+        "CharacterIterator.java",
+        "StringCharacterIterator.java",
+    ],
+)

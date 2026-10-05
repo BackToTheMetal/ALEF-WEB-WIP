@@ -1,0 +1,93 @@
+java_binary(
+    name = "playwright_cli",
+    main_class = "com.microsoft.playwright.CLI",
+    runtime_deps = ["@webawt_test_maven//:com_microsoft_playwright_playwright"],
+    testonly = True,
+)
+
+java_test(
+    name = "WebAwtChromiumTest",
+    srcs = ["WebAwtPlaywrightTest.java"],
+    data = ["//samples/showcase:showcase_application"],
+    env = {"WEBAWT_PLAYWRIGHT_BROWSER": "chromium"},
+    size = "large",
+    tags = ["no-sandbox"],
+    test_class = "com.webawt.playwright.WebAwtPlaywrightTest",
+    deps = [
+        "@webawt_test_maven//:com_microsoft_playwright_playwright",
+        "@webawt_test_maven//:junit_junit",
+    ],
+)
+
+java_test(
+    name = "WebAwtFirefoxTest",
+    srcs = ["WebAwtPlaywrightTest.java"],
+    data = ["//samples/showcase:showcase_application"],
+    env = {"WEBAWT_PLAYWRIGHT_BROWSER": "firefox"},
+    size = "large",
+    tags = ["no-sandbox"],
+    test_class = "com.webawt.playwright.WebAwtPlaywrightTest",
+    deps = [
+        "@webawt_test_maven//:com_microsoft_playwright_playwright",
+        "@webawt_test_maven//:junit_junit",
+    ],
+)
+
+java_test(
+    name = "WebAwtWebKitTest",
+    srcs = ["WebAwtPlaywrightTest.java"],
+    data = ["//samples/showcase:showcase_application"],
+    env = {"WEBAWT_PLAYWRIGHT_BROWSER": "webkit"},
+    size = "large",
+    tags = ["no-sandbox"],
+    test_class = "com.webawt.playwright.WebAwtPlaywrightTest",
+    deps = [
+        "@webawt_test_maven//:com_microsoft_playwright_playwright",
+        "@webawt_test_maven//:junit_junit",
+    ],
+)
+
+java_test(
+    name = "DualShowcaseChromiumTest",
+    srcs = ["DualShowcasePlaywrightTest.java"],
+    data = ["//samples/dual_showcase:browser_application", "//samples/dual_showcase:fonts/DejaVuSans.ttf"],
+    env = {"WEBAWT_PLAYWRIGHT_BROWSER": "chromium"},
+    size = "large",
+    tags = ["no-sandbox"],
+    test_class = "com.webawt.playwright.DualShowcasePlaywrightTest",
+    deps = [
+        "//samples/dual_showcase:shared-jvm",
+        "@webawt_test_maven//:com_microsoft_playwright_playwright",
+        "@webawt_test_maven//:junit_junit",
+    ],
+)
+
+java_test(
+    name = "DualShowcaseFirefoxTest",
+    srcs = ["DualShowcasePlaywrightTest.java"],
+    data = ["//samples/dual_showcase:browser_application", "//samples/dual_showcase:fonts/DejaVuSans.ttf"],
+    env = {"WEBAWT_PLAYWRIGHT_BROWSER": "firefox"},
+    size = "large",
+    tags = ["no-sandbox"],
+    test_class = "com.webawt.playwright.DualShowcasePlaywrightTest",
+    deps = [
+        "//samples/dual_showcase:shared-jvm",
+        "@webawt_test_maven//:com_microsoft_playwright_playwright",
+        "@webawt_test_maven//:junit_junit",
+    ],
+)
+
+java_test(
+    name = "DualShowcaseWebKitTest",
+    srcs = ["DualShowcasePlaywrightTest.java"],
+    data = ["//samples/dual_showcase:browser_application", "//samples/dual_showcase:fonts/DejaVuSans.ttf"],
+    env = {"WEBAWT_PLAYWRIGHT_BROWSER": "webkit"},
+    size = "large",
+    tags = ["no-sandbox"],
+    test_class = "com.webawt.playwright.DualShowcasePlaywrightTest",
+    deps = [
+        "//samples/dual_showcase:shared-jvm",
+        "@webawt_test_maven//:com_microsoft_playwright_playwright",
+        "@webawt_test_maven//:junit_junit",
+    ],
+)

@@ -1,0 +1,6 @@
+{
+  "path": "core/smodel/source/jetbrains/mps/smodel/ActionDispatcher.java",
+  "upstream_sha256": "0689c869d8ce89322106b9422292649e99deef87f0020bc985200395dfbaac3a",
+  "replacement_sha256": "e3ca18a4a9d8beb7d706869855720e306ec163b423971645d2102a903675c826",
+  "contract": "Every finish listener and mandatory cleanup runs; first failure identity retained with later failures suppressed"
+}

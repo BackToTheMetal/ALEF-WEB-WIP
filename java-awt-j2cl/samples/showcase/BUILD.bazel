@@ -1,0 +1,30 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
+load("@rules_closure//closure:defs.bzl", "closure_js_library")
+
+j2cl_library(
+    name = "showcase",
+    srcs = ["Showcase.java"],
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:components-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:image-objects-j2cl",
+        "//src/main/java/java/awt:painting-j2cl",
+        "//src/main/java/java/awt/datatransfer:datatransfer-j2cl",
+        "//src/main/java/org/webawt:webawt-j2cl",
+        "@j2cl//:jsinterop-annotations-j2cl",
+    ],
+)
+
+closure_js_library(
+    name = "app",
+    srcs = ["app.js"],
+    deps = [":showcase"],
+)
+
+j2cl_application(
+    name = "showcase_application",
+    entry_points = ["webawt.showcase.app"],
+    deps = [":app"],
+    visibility = ["//src/test/playwright/com/webawt/playwright:__pkg__"],
+)

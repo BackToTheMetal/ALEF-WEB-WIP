@@ -1,0 +1,30 @@
+{
+  "jdk_home": "/usr/lib/jvm/java-21-openjdk-amd64",
+  "java_version": "openjdk version \"21.0.12.1\" 2026-08-18\nOpenJDK Runtime Environment (build 21.0.12.1+1-1-26.04.4-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-26.04.4-Ubuntu, mixed mode, sharing)",
+  "release": {
+    "IMPLEMENTOR": "\"Ubuntu\"",
+    "JAVA_RUNTIME_VERSION": "\"21.0.12.1+1-1-26.04.4-Ubuntu\"",
+    "JAVA_VERSION": "\"21.0.12.1\"",
+    "JAVA_VERSION_DATE": "\"2026-08-18\"",
+    "LIBC": "\"gnu\"",
+    "MODULES": "\"java.base java.compiler java.datatransfer java.xml java.prefs java.desktop java.instrument java.logging java.management java.security.sasl java.naming java.rmi java.management.rmi java.net.http java.scripting java.security.jgss java.transaction.xa java.sql java.sql.rowset java.xml.crypto java.se java.smartcardio jdk.accessibility jdk.internal.jvmstat jdk.attach jdk.charsets jdk.internal.opt jdk.zipfs jdk.compiler jdk.crypto.ec jdk.crypto.cryptoki jdk.dynalink jdk.internal.ed jdk.editpad jdk.hotspot.agent jdk.httpserver jdk.incubator.vector jdk.internal.le jdk.internal.vm.ci jdk.internal.vm.compiler jdk.internal.vm.compiler.management jdk.jartool jdk.javadoc jdk.jcmd jdk.management jdk.management.agent jdk.jconsole jdk.jdeps jdk.jdwp.agent jdk.jdi jdk.jfr jdk.jlink jdk.jpackage jdk.jshell jdk.jsobject jdk.jstatd jdk.localedata jdk.management.jfr jdk.naming.dns jdk.naming.rmi jdk.net jdk.nio.mapmode jdk.random jdk.sctp jdk.security.auth jdk.security.jgss jdk.unsupported jdk.unsupported.desktop jdk.xml.dom\"",
+    "OS_ARCH": "\"x86_64\"",
+    "OS_NAME": "\"Linux\"",
+    "SOURCE": "\"\""
+  },
+  "input": "JDK java.base.jmod class declarations; no reflection or implementation execution",
+  "scope": "java.nio and every subpackage; public/protected API selected by Metalava",
+  "java_base_jmod_sha256": "24035d069fa6e1cf609a4e34878dcfc59134390784a579e017dc7fb5b9b889ef",
+  "class_entries": {
+    "java-base.jar": 7555,
+    "nio-input.jar": 279
+  },
+  "jar_sha256": {
+    "java-base.jar": "1bce2eabab4cf7552ca7da1e7b5b5625c57a6cbe37d60b5e738398d84c9421db",
+    "nio-input.jar": "c2d0fbeb2f78660afac141c296fa5e5e16b1b9ec81e42923b555ed1f793c2f13"
+  },
+  "metalava": "com.android.tools.metalava:metalava:1.0.0-alpha15",
+  "source_zip": "/mnt/c/Codex/java-nio-j2cl/metalava-trial/.cache/jdk-source/extracted/usr/lib/jvm/openjdk-21/lib/src.zip",
+  "source_zip_sha256": "05834b3ff017ade9853ae9e9764c437937802662c773bb6e6449c541c78535f4",
+  "source_files": 238
+}

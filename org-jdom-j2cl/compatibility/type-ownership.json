@@ -1,0 +1,11 @@
+{
+  "j2clVersion": "20260402",
+  "owners": [
+    {"types":"java.lang.*, java.util.*, supported java.io.*","owner":"J2CL JRE","evidence":"Real J2CL compilation of runtime sources and optimized browser execution; cached jre/java/java/lang/Object.java inspected","notes":"No replacement java.* sources shipped. Object.wait/notify/notifyAll/clone are absent. Other inherited Java declarations in the JVM API inventory are JRE-owned, not claims of browser availability."},
+    {"types":"org.jdom.*","owner":"//:jdom","notes":"Matched fork plus explicit profile changes; do not combine with another org.jdom implementation"},
+    {"types":"org.xml.sax.* and javax.xml.XMLConstants","owner":"//:sax-api on J2CL; java.xml module on JVM","notes":"Mutually exclusive source profiles; implemented narrow SAX API listed in src/sax"},
+    {"types":"java.io.File, java.net.URL","owner":"Not supplied here","notes":"Related build overloads excluded; coordinate with external I/O owners before restoring signatures"},
+    {"types":"javax.xml.parsers.*, org.w3c.dom.*, javax.xml.transform.*","owner":"Not supplied here","notes":"JVM reference harness only; use MpsXml/PortableXmlReader in the browser"},
+    {"types":"jsinterop.annotations.*","owner":"J2CL test/example dependency only","notes":"Runtime implementation is pure Java"}
+  ]
+}

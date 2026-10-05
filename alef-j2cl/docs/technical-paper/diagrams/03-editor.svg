@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="500" height="268" preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 268" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="500" height="268"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-268)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="500" height="268" rx="4" ry="0" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.5; fill: rgb(98%,98%,99%); fill-rule: evenodd;"/>
+			<rect x="5.0" y="223" width="94.0" height="33" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="33.993408203125" y="236.5" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,473) scale(1,-1)">Browser</text>
+			<path d="M 52,219 L 52,18 Z" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 3;"/>
+			<rect x="203.0" y="223" width="94.0" height="33" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="231.241943359375" y="236.5" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,473) scale(1,-1)">Backend</text>
+			<path d="M 250,219 L 250,18 Z" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 3;"/>
+			<rect x="401.0" y="223" width="94.0" height="33" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="418.486328125" y="236.5" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,473) scale(1,-1)">Native worker</text>
+			<path d="M 448,219 L 448,18 Z" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 3;"/>
+			<text x="102.217041015625" y="208" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,416) scale(1,-1)">Request authorized snapshot</text>
+			<polyline points="52 203, 250 203" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="250 203, 245.6121 205.3971, 245.6121 200.6029" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="84.917236328125" y="185" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,370) scale(1,-1)">Graph + versions + language fingerprint</text>
+			<polyline points="250 180, 52 180" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="52 180, 56.38791 177.6029, 56.38791 182.3971" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="116.1861572265625" y="162" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,324) scale(1,-1)">Acquire editing lease</text>
+			<polyline points="52 157, 250 157" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="250 157, 245.6121 159.3971, 245.6121 154.6029" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="102.2225341796875" y="139" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,278) scale(1,-1)">Confirmed client-bound lease</text>
+			<polyline points="250 134, 52 134" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="52 134, 56.38791 131.6029, 56.38791 136.3971" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="109.3123779296875" y="116" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,232) scale(1,-1)">Save captured dirty roots</text>
+			<polyline points="52 111, 250 111" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="250 111, 245.6121 113.3971, 245.6121 108.6029" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="281.664794921875" y="93" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,186) scale(1,-1)">Represent and serialize proposed nodes</text>
+			<polyline points="250 88, 448 88" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="448 88, 443.6121 90.39713, 443.6121 85.60287" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="276.874755859375" y="70" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,140) scale(1,-1)">Native proposal; durable publication follows</text>
+			<polyline points="448 65, 250 65" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="250 65, 254.3879 62.60287, 254.3879 67.39713" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="100.4482421875" y="47" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,94) scale(1,-1)">Accepted operation + versions</text>
+			<polyline points="250 42, 52 42" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="52 42, 56.38791 39.60287, 56.38791 44.39713" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="122.642822265625" y="12" style="font-family: Body; font-size: 7.5px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,24) scale(1,-1)">Browser acknowledges metadata in place; existing editor and history remain.</text>
+		</g>
+	</g>
+</svg>

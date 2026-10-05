@@ -1,0 +1,24 @@
+{
+  "reference_java_major": 21,
+  "metalava_version": "1.0.0-alpha15",
+  "j2cl_version": "20260402",
+  "packages": [
+    "java.nio",
+    "java.nio.channels",
+    "java.nio.channels.spi",
+    "java.nio.charset",
+    "java.nio.charset.spi",
+    "java.nio.file",
+    "java.nio.file.attribute",
+    "java.nio.file.spi"
+  ],
+  "preserve_existing_j2cl_types": {
+    "java.nio.charset.Charset": "Preserve the parent profile's augmented J2CL charset implementation, required by java.lang.String.",
+    "java.nio.charset.StandardCharsets": "Preserve the parent profile's supported UTF-8 and ISO-8859-1 constants and implementation.",
+    "java.nio.charset.IllegalCharsetNameException": "Already owned by upstream J2CL.",
+    "java.nio.charset.UnsupportedCharsetException": "Already owned by upstream J2CL."
+  },
+  "excluded_j2cl_members": {
+    "java.nio.channels.FileChannel#map(java.nio.channels.FileChannel.MapMode,long,long,java.lang.foreign.Arena)": "Java 21 preview foreign-memory API; foreign memory types are absent from this J2CL profile."
+  }
+}

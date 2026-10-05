@@ -1,0 +1,420 @@
+macro:	false|false|
+scan:	
+shrink:	
+macro:plain/path	false|false|
+scan:plain/path	
+shrink:plain/path	plain/path
+macro:$	false|false|
+scan:$	
+shrink:$	$
+macro:{	false|false|
+scan:{	
+shrink:{	{
+macro:}	false|false|
+scan:}	
+shrink:}	}
+macro:$$	false|false|
+scan:$$	
+shrink:$$	$$
+macro:$a	false|false|
+scan:$a	
+shrink:$a	$a
+macro:${}	true|true|${}
+scan:${}	0:3:${}|
+shrink:${}	${}
+macro:${a}	true|true|${a}
+scan:${a}	0:4:${a}|
+shrink:${a}	${a}
+macro:${a}/b	true|true|${a}
+scan:${a}/b	0:4:${a}|
+shrink:${a}/b	${a}/b
+macro:a/${b}	true|false|${b}
+scan:a/${b}	2:6:${b}|
+shrink:a/${b}	a/${b}
+macro:${a}${b}	true|true|${a}|${b}
+scan:${a}${b}	0:4:${a}|4:8:${b}|
+shrink:${a}${b}	${a}${b}
+macro:${a}x}	true|true|${a}x}
+scan:${a}x}	0:6:${a}x}|
+shrink:${a}x}	${a}x}
+macro:${a}}	true|true|${a}}
+scan:${a}}	0:5:${a}}|
+shrink:${a}}	${a}}
+macro:${a}x}tail	true|true|${a}x}
+scan:${a}x}tail	0:6:${a}x}|
+shrink:${a}x}tail	${a}x}tail
+macro:${a$b}	false|false|
+scan:${a$b}	
+shrink:${a$b}	${a$b}
+macro:${a{b}	false|false|
+scan:${a{b}	
+shrink:${a{b}	${a{b}
+macro:${a${b}}	true|false|${b}}
+scan:${a${b}}	3:8:${b}}|
+shrink:${a${b}}	${a${b}}
+macro:$${b}	true|false|${b}
+scan:$${b}	1:5:${b}|
+shrink:$${b}	$${b}
+macro:${}${}	true|true|${}|${}
+scan:${}${}	0:3:${}|3:6:${}|
+shrink:${}${}	${}${}
+macro:${a\nb}	true|true|${a\nb}
+scan:${a\nb}	0:6:${a\nb}|
+shrink:${a\nb}	${a\nb}
+macro:${a\r\nb}	true|true|${a\r\nb}
+scan:${a\r\nb}	0:7:${a\r\nb}|
+shrink:${a\r\nb}	${a\r\nb}
+macro:${\0}	true|true|${\0}
+scan:${\0}	0:4:${\0}|
+shrink:${\0}	${\0}
+macro:${😀}	true|true|${😀}
+scan:${😀}	0:5:${😀}|
+shrink:${😀}	${😀}
+macro:before/${a}/after/${b}	true|false|${a}|${b}
+scan:before/${a}/after/${b}	7:11:${a}|18:22:${b}|
+shrink:before/${a}/after/${b}	before/${a}/after/${b}
+macro:${a	false|false|
+scan:${a	
+shrink:${a	${a
+macro:${a}$x}	true|true|${a}
+scan:${a}$x}	0:4:${a}|
+shrink:${a}$x}	${a}$x}
+macro:${a}{b}	true|true|${a}
+scan:${a}{b}	0:4:${a}|
+shrink:${a}{b}	${a}{b}
+macro:${a}\n}	true|true|${a}\n}
+scan:${a}\n}	0:6:${a}\n}|
+shrink:${a}\n}	${a}\n}
+macro:${a} ${b} tail	true|true|${a}|${b}
+scan:${a} ${b} tail	0:4:${a}|5:9:${b}|
+shrink:${a} ${b} tail	${a} ${b} tail
+5461 exhaustive macro inputs	.........................................................AD................................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD................................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD................................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD................................................................AD............................CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.....................AD............................................BF.BF.BF.BF.................AF................AF............................BF.BF.BF.BF.................AF................AF................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD................................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD................................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD................................................................AD............................CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.....................AD............................................BF.BF.BF.BF.................AF................AF............................BF.BF.BF.BF.................AF................AF................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD................................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD................................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD................................................................AD............................CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.....................AD............................................BF.BF.BF.BF.................AF................AF............................BF.BF.BF.BF.................AF................AF................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD................................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD............................DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.ADDG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.DG.....................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD................................................................AD............................CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.....................AD............................................BG.BG.BG.BG.................AG................AG............................BG.BG.BG.BG.................AG................AG................................................AD............................CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.CG.....................AD............................................BG.BG.BG.BG.................AG................AG............................BG.BG.BG.BG.................AG................AG................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD................................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD................................................................AD............................CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.CF.....................AD............................................BF.BF.BF.BF.................AF................AF............................BF.BF.BF.BF.................AF................AF................................................AD................................................................AD............................................BE.BE.BE.BE.................AE................AE................................................AD............................
+parts:/:	null|[]
+path:/:	|true|false|null|[null]|null
+normal-path:/:	
+parent-path:/:	null
+copy-path:/:	true|true
+parts:/:.	null|[.]
+path:/:.	.|true|false|null|[null, .]|.
+normal-path:/:.	
+parent-path:/:.	
+copy-path:/:.	true|true
+parts:/:..	null|[..]
+path:/:..	..|true|false|null|[null, ..]|..
+normal-path:/:..	..
+parent-path:/:..	
+copy-path:/:..	true|true
+parts:/:/	/|[]
+path:/:/	/|false|false|/|[/]|/
+normal-path:/:/	/
+parent-path:/:/	null
+copy-path:/:/	true|true
+parts:/:/a	/|[a]
+path:/:/a	/a|false|false|/|[/, a]|a
+normal-path:/:/a	/a
+parent-path:/:/a	/
+copy-path:/:/a	true|true
+parts:/:/a/	/|[a]
+path:/:/a/	/a|false|false|/|[/, a]|a
+normal-path:/:/a/	/a
+parent-path:/:/a/	/
+copy-path:/:/a/	true|true
+parts:/:/a//b	/|[a, b]
+path:/:/a//b	/a/b|false|false|/|[/, a, b]|b
+normal-path:/:/a//b	/a/b
+parent-path:/:/a//b	/a
+copy-path:/:/a//b	true|true
+parts:/:a/b	null|[a, b]
+path:/:a/b	a/b|true|false|null|[null, a, b]|b
+normal-path:/:a/b	a/b
+parent-path:/:a/b	a
+copy-path:/:a/b	true|true
+parts:/:a/./b	null|[a, ., b]
+path:/:a/./b	a/./b|true|false|null|[null, a, ., b]|b
+normal-path:/:a/./b	a/b
+parent-path:/:a/./b	a/.
+copy-path:/:a/./b	true|true
+parts:/:a/b/../c	null|[a, b, .., c]
+path:/:a/b/../c	a/b/../c|true|false|null|[null, a, b, .., c]|c
+normal-path:/:a/b/../c	a/c
+parent-path:/:a/b/../c	a/b/..
+copy-path:/:a/b/../c	true|true
+parts:/:/a/../b	/|[a, .., b]
+path:/:/a/../b	/a/../b|false|false|/|[/, a, .., b]|b
+normal-path:/:/a/../b	/b
+parent-path:/:/a/../b	/a/..
+copy-path:/:/a/../b	true|true
+parts:/:/a/../../b	/|[a, .., .., b]
+path:/:/a/../../b	/a/../../b|false|false|/|[/, a, .., .., b]|b
+normal-path:/:/a/../../b	/../b
+parent-path:/:/a/../../b	/a/../..
+copy-path:/:/a/../../b	true|true
+parts:/:/a///./b//../c/	/|[a, ., b, .., c]
+path:/:/a///./b//../c/	/a/./b/../c|false|false|/|[/, a, ., b, .., c]|c
+normal-path:/:/a///./b//../c/	/a/c
+parent-path:/:/a///./b//../c/	/a/./b/..
+copy-path:/:/a///./b//../c/	true|true
+parts:/://host/share	//host/share|[]
+path:/://host/share	//host/share|false|false|//host/share|[//host/share]|//host/share
+normal-path:/://host/share	//host/share
+parent-path:/://host/share	null
+copy-path:/://host/share	true|true
+parts:/://host/share/a/b	//host/share|[a, b]
+path:/://host/share/a/b	//host/share/a/b|false|false|//host/share|[//host/share, a, b]|b
+normal-path:/://host/share/a/b	//host/share/a/b
+parent-path:/://host/share/a/b	//host/share/a
+copy-path:/://host/share/a/b	true|true
+parts:/:///host/share/a	/|[host, share, a]
+path:/:///host/share/a	/host/share/a|false|false|/|[/, host, share, a]|a
+normal-path:/:///host/share/a	/host/share/a
+parent-path:/:///host/share/a	/host/share
+copy-path:/:///host/share/a	true|true
+parts:/://host//share/a	/|[host, share, a]
+path:/://host//share/a	/host/share/a|false|false|/|[/, host, share, a]|a
+normal-path:/://host//share/a	/host/share/a
+parent-path:/://host//share/a	/host/share
+copy-path:/://host//share/a	true|true
+parts:/:/a!/b	/|[a!, b]
+path:/:/a!/b	/a!/b|false|false|/|[/, a!, b]|b
+normal-path:/:/a!/b	/a!/b
+parent-path:/:/a!/b	/a!
+copy-path:/:/a!/b	true|true
+parts:/:/a.jar!/b	/|[a.jar!, b]
+path:/:/a.jar!/b	/a.jar!/b|false|true|/|[/, a.jar, null, b]|b
+normal-path:/:/a.jar!/b	/a.jar!/b
+parent-path:/:/a.jar!/b	/a.jar!/
+copy-path:/:/a.jar!/b	true|true
+parts:/:/a.JAR!/b/	/|[a.JAR!, b]
+path:/:/a.JAR!/b/	/a.JAR!/b|false|true|/|[/, a.JAR, null, b]|b
+normal-path:/:/a.JAR!/b/	/a.JAR!/b
+parent-path:/:/a.JAR!/b/	/a.JAR!/
+copy-path:/:/a.JAR!/b/	true|true
+parts:/:/a.zip!/b.jar!/c	/|[a.zip!, b.jar!, c]
+path:/:/a.zip!/b.jar!/c	/a.zip!/b.jar!/c|false|true|/|[/, a.zip, null, b.jar, null, c]|c
+normal-path:/:/a.zip!/b.jar!/c	/a.zip!/b.jar!/c
+parent-path:/:/a.zip!/b.jar!/c	/a.zip!/b.jar!/
+copy-path:/:/a.zip!/b.jar!/c	true|true
+parts:/:/a.jar!/	/|[a.jar!]
+path:/:/a.jar!/	/a.jar!/|false|true|/|[/, a.jar, null]|null
+normal-path:/:/a.jar!/	/a.jar!/
+parent-path:/:/a.jar!/	/a.jar
+copy-path:/:/a.jar!/	true|true
+parts:/:/a.zip!/x!/y	/|[a.zip!, x!, y]
+path:/:/a.zip!/x!/y	/a.zip!/x!/y|false|true|/|[/, a.zip, null, x!, y]|y
+normal-path:/:/a.zip!/x!/y	/a.zip!/x!/y
+parent-path:/:/a.zip!/x!/y	/a.zip!/x!
+copy-path:/:/a.zip!/x!/y	true|true
+parts:/:/x.jar!/a/../b	/|[x.jar!, a, .., b]
+path:/:/x.jar!/a/../b	/x.jar!/a/../b|false|true|/|[/, x.jar, null, a, .., b]|b
+normal-path:/:/x.jar!/a/../b	/x.jar!/b
+parent-path:/:/x.jar!/a/../b	/x.jar!/a/..
+copy-path:/:/x.jar!/a/../b	true|true
+parts:/:/x!x/a	/|[x!x, a]
+path:/:/x!x/a	/x!x/a|false|false|/|[/, x!x, a]|a
+normal-path:/:/x!x/a	/x!x/a
+parent-path:/:/x!x/a	/x!x
+copy-path:/:/x!x/a	true|true
+parts:/:/white space/😀/x	/|[white space, 😀, x]
+path:/:/white space/😀/x	/white space/😀/x|false|false|/|[/, white space, 😀, x]|x
+normal-path:/:/white space/😀/x	/white space/😀/x
+parent-path:/:/white space/😀/x	/white space/😀
+copy-path:/:/white space/😀/x	true|true
+parts:/:/name.with.dots/..hidden/file	/|[name.with.dots, ..hidden, file]
+path:/:/name.with.dots/..hidden/file	/name.with.dots/..hidden/file|false|false|/|[/, name.with.dots, ..hidden, file]|file
+normal-path:/:/name.with.dots/..hidden/file	/name.with.dots/..hidden/file
+parent-path:/:/name.with.dots/..hidden/file	/name.with.dots/..hidden
+copy-path:/:/name.with.dots/..hidden/file	true|true
+parts:\\:	null|[]
+path:\\:	|true|false|null|[null]|null
+normal-path:\\:	
+parent-path:\\:	null
+copy-path:\\:	true|true
+parts:\\:.	null|[.]
+path:\\:.	.|true|false|null|[null, .]|.
+normal-path:\\:.	
+parent-path:\\:.	
+copy-path:\\:.	true|true
+parts:\\:..	null|[..]
+path:\\:..	..|true|false|null|[null, ..]|..
+normal-path:\\:..	..
+parent-path:\\:..	
+copy-path:\\:..	true|true
+parts:\\:C:\\	C:|[]
+path:\\:C:\\	C:|false|false|C:|[C:]|C:
+normal-path:\\:C:\\	C:
+parent-path:\\:C:\\	null
+copy-path:\\:C:\\	true|true
+parts:\\:C:\\a	C:|[a]
+path:\\:C:\\a	C:\\a|false|false|C:|[C:, a]|a
+normal-path:\\:C:\\a	C:\\a
+parent-path:\\:C:\\a	C:
+copy-path:\\:C:\\a	true|true
+parts:\\:C:\\a\\	C:|[a]
+path:\\:C:\\a\\	C:\\a|false|false|C:|[C:, a]|a
+normal-path:\\:C:\\a\\	C:\\a
+parent-path:\\:C:\\a\\	C:
+copy-path:\\:C:\\a\\	true|true
+parts:\\:C:\\a\\\\b	C:|[a, b]
+path:\\:C:\\a\\\\b	C:\\a\\b|false|false|C:|[C:, a, b]|b
+normal-path:\\:C:\\a\\\\b	C:\\a\\b
+parent-path:\\:C:\\a\\\\b	C:\\a
+copy-path:\\:C:\\a\\\\b	true|true
+parts:\\:a\\b	null|[a, b]
+path:\\:a\\b	a\\b|true|false|null|[null, a, b]|b
+normal-path:\\:a\\b	a\\b
+parent-path:\\:a\\b	a
+copy-path:\\:a\\b	true|true
+parts:\\:a\\.\\b	null|[a, ., b]
+path:\\:a\\.\\b	a\\.\\b|true|false|null|[null, a, ., b]|b
+normal-path:\\:a\\.\\b	a\\b
+parent-path:\\:a\\.\\b	a\\.
+copy-path:\\:a\\.\\b	true|true
+parts:\\:C:\\a\\..\\b	C:|[a, .., b]
+path:\\:C:\\a\\..\\b	C:\\a\\..\\b|false|false|C:|[C:, a, .., b]|b
+normal-path:\\:C:\\a\\..\\b	C:\\b
+parent-path:\\:C:\\a\\..\\b	C:\\a\\..
+copy-path:\\:C:\\a\\..\\b	true|true
+parts:\\:\\\\host\\share	\\\\host\\share|[]
+path:\\:\\\\host\\share	\\\\host\\share|false|false|\\\\host\\share|[\\\\host\\share]|\\\\host\\share
+normal-path:\\:\\\\host\\share	\\\\host\\share
+parent-path:\\:\\\\host\\share	null
+copy-path:\\:\\\\host\\share	true|true
+parts:\\:\\\\host\\share\\a\\b	\\\\host\\share|[a, b]
+path:\\:\\\\host\\share\\a\\b	\\\\host\\share\\a\\b|false|false|\\\\host\\share|[\\\\host\\share, a, b]|b
+normal-path:\\:\\\\host\\share\\a\\b	\\\\host\\share\\a\\b
+parent-path:\\:\\\\host\\share\\a\\b	\\\\host\\share\\a
+copy-path:\\:\\\\host\\share\\a\\b	true|true
+parts:\\:\\\\host\\\\share\\a	PathParseException:The path \\\\host\\\\share\\a is invalid: Cannot parse '\\\\host\\\\share\\a'; the current drive is impossible to resolve without addressing the physical file system
+path:\\:\\\\host\\\\share\\a	PathParseException:The path \\\\host\\\\share\\a is invalid: Cannot parse '\\\\host\\\\share\\a'; the current drive is impossible to resolve without addressing the physical file system
+normal-path:\\:\\\\host\\\\share\\a	PathParseException:The path \\\\host\\\\share\\a is invalid: Cannot parse '\\\\host\\\\share\\a'; the current drive is impossible to resolve without addressing the physical file system
+parent-path:\\:\\\\host\\\\share\\a	PathParseException:The path \\\\host\\\\share\\a is invalid: Cannot parse '\\\\host\\\\share\\a'; the current drive is impossible to resolve without addressing the physical file system
+copy-path:\\:\\\\host\\\\share\\a	PathParseException:The path \\\\host\\\\share\\a is invalid: Cannot parse '\\\\host\\\\share\\a'; the current drive is impossible to resolve without addressing the physical file system
+parts:\\:\\rooted	PathParseException:The path \\rooted is invalid: Cannot parse '\\rooted'; the current drive is impossible to resolve without addressing the physical file system
+path:\\:\\rooted	PathParseException:The path \\rooted is invalid: Cannot parse '\\rooted'; the current drive is impossible to resolve without addressing the physical file system
+normal-path:\\:\\rooted	PathParseException:The path \\rooted is invalid: Cannot parse '\\rooted'; the current drive is impossible to resolve without addressing the physical file system
+parent-path:\\:\\rooted	PathParseException:The path \\rooted is invalid: Cannot parse '\\rooted'; the current drive is impossible to resolve without addressing the physical file system
+copy-path:\\:\\rooted	PathParseException:The path \\rooted is invalid: Cannot parse '\\rooted'; the current drive is impossible to resolve without addressing the physical file system
+parts:\\:C:\\a.jar!/b	C:|[a.jar!/b]
+path:\\:C:\\a.jar!/b	C:\\a.jar!/b|false|true|C:|[C:, a.jar, null, b]|b
+normal-path:\\:C:\\a.jar!/b	C:\\a.jar!/b
+parent-path:\\:C:\\a.jar!/b	C:\\a.jar!/
+copy-path:\\:C:\\a.jar!/b	true|true
+parts:\\:C:\\a.zip!/b.jar!/c	C:|[a.zip!/b.jar!/c]
+path:\\:C:\\a.zip!/b.jar!/c	C:\\a.zip!/b.jar!/c|false|true|C:|[C:, a.zip, null, b.jar, null, c]|c
+normal-path:\\:C:\\a.zip!/b.jar!/c	C:\\a.zip!/b.jar!/c
+parent-path:\\:C:\\a.zip!/b.jar!/c	C:\\a.zip!/b.jar!/
+copy-path:\\:C:\\a.zip!/b.jar!/c	true|true
+parts:\\:C:\\white space\\😀\\x	C:|[white space, 😀, x]
+path:\\:C:\\white space\\😀\\x	C:\\white space\\😀\\x|false|false|C:|[C:, white space, 😀, x]|x
+normal-path:\\:C:\\white space\\😀\\x	C:\\white space\\😀\\x
+parent-path:\\:C:\\white space\\😀\\x	C:\\white space\\😀
+copy-path:\\:C:\\white space\\😀\\x	true|true
+normalize:	
+strip:	
+extension:	|null
+archive:	null|false|-1
+normalize:.	
+strip:.	.
+extension:.	|
+archive:.	null|false|-1
+normalize:./	.
+strip:./	.
+extension:./	|/
+archive:./	null|false|-1
+normalize:/	/
+strip:/	/
+extension:/	/|null
+archive:/	null|false|-1
+normalize:/a//b/./	/a/b
+strip:/a//b/./	/a//b/.
+extension:/a//b/./	/a//b/|/
+archive:/a//b/./	null|false|-1
+normalize://host/share//a/	//host/share/a
+strip://host/share//a/	//host/share//a
+extension://host/share//a/	//host/share//a/|null
+archive://host/share//a/	null|false|-1
+normalize:\\\\host\\share\\\\a\\	//host/share/a
+strip:\\\\host\\share\\\\a\\	\\\\host\\share\\\\a
+extension:\\\\host\\share\\\\a\\	\\\\host\\share\\\\a\\|null
+archive:\\\\host\\share\\\\a\\	null|false|-1
+normalize:C:\\a\\\\b\\.\\	C:/a/b
+strip:C:\\a\\\\b\\.\\	C:\\a\\\\b\\.
+extension:C:\\a\\\\b\\.\\	C:\\a\\\\b\\|\\
+archive:C:\\a\\\\b\\.\\	null|false|-1
+normalize:/x.jar!/	/x.jar!/
+strip:/x.jar!/	/x.jar!/
+extension:/x.jar!/	/x|jar!/
+archive:/x.jar!/	/x.jar|false|6
+normalize:/x.jar!/a/	/x.jar!/a
+strip:/x.jar!/a/	/x.jar!/a
+extension:/x.jar!/a/	/x|jar!/a/
+archive:/x.jar!/a/	/x.jar|false|6
+normalize:/x!/a/	/x!/a
+strip:/x!/a/	/x!/a
+extension:/x!/a/	/x!/a/|null
+archive:/x!/a/	/x|false|-1
+normalize:/a/../b	/a/../b
+strip:/a/../b	/a/../b
+extension:/a/../b	/a/.|/b
+archive:/a/../b	null|false|-1
+normalize:///a////b	//a/b
+strip:///a////b	///a////b
+extension:///a////b	///a////b|null
+archive:///a////b	null|false|-1
+normalize:/.///./a/././b/.	/a/b
+strip:/.///./a/././b/.	/.///./a/././b/.
+extension:/.///./a/././b/.	/.///./a/././b/|
+archive:/.///./a/././b/.	null|false|-1
+normalize:a.b	a.b
+strip:a.b	a.b
+extension:a.b	a|b
+archive:a.b	null|false|-1
+normalize:.hidden	.hidden
+strip:.hidden	.hidden
+extension:.hidden	|hidden
+archive:.hidden	null|false|-1
+normalize:x.	x.
+strip:x.	x.
+extension:x.	x|
+archive:x.	null|false|-1
+normalize:x	x
+strip:x	x
+extension:x	x|null
+archive:x	null|false|-1
+relative:[/a/b, /a/c, /]	b
+relative:[/a/b/, /a/c/, /]	../b/
+relative:[/, /a/, /]	PathResolutionException:No common path element found for '/' and '/a/'
+relative:[a.b.c, a.b.d, .]	c
+relative:[a|b|c, a|b|d|, |]	..|c
+relative:[a\\b\\c, a\\b\\d\\, \\]	..\\c
+relative:[a::b::c, a::b::d::, ::]	..::c
+relative:[same, same, ]	
+relative:[abcd, abxy, ]	....cd
+relative:[x, y, /]	PathResolutionException:No common path element found for 'x' and 'y'
+relative:[, , /]	
+parents:/a/b/../c	/a/c
+parents:/a/..	/
+parents:/../a	/a
+parents:/a/b/../../c	/c
+parents:C:/a/../b	C:/b
+unresolved-state	false
+unresolved-file	IllegalStateException:Shall make sure the path spec is resolved() first
+unresolved-path	IllegalStateException:Shall make sure the path spec is resolved() first
+failed-resolution	false|false
+resolved-state	true|/workspace/module.msd
+resolved-shrink	/workspace/module.msd|hint=${home}/module.msd
+file-spec	/workspace/module.msd|true
+bundle	false|/unresolved;${home}/module.msd
+local-url:plain.txt	file:/mps-j2cl-oracle/plain.txt
+jar-url:plain.txt	jar:file:/mps-j2cl-oracle/archive.jar!/plain.txt
+local-url:white space	file:/mps-j2cl-oracle/white%20space
+jar-url:white space	jar:file:/mps-j2cl-oracle/archive.jar!/white%20space
+local-url:a#b%c?d	file:/mps-j2cl-oracle/a%23b%25c%3Fd
+jar-url:a#b%c?d	jar:file:/mps-j2cl-oracle/archive.jar!/a%23b%25c%3Fd
+local-url:a[b]	file:/mps-j2cl-oracle/a%5Bb%5D
+jar-url:a[b]	jar:file:/mps-j2cl-oracle/archive.jar!/a%5Bb%5D
+local-url:é😀	file:/mps-j2cl-oracle/é😀
+jar-url:é😀	jar:file:/mps-j2cl-oracle/archive.jar!/%C3%A9%F0%9F%98%80
+local-url:a;b:c@d&x=y+z,$!()'	file:/mps-j2cl-oracle/a;b:c@d&x=y+z,$!()'
+jar-url:a;b:c@d&x=y+z,$!()'	jar:file:/mps-j2cl-oracle/archive.jar!/a;b:c@d&x=y+z,$!()'
+qualified	file:///workspace/a.mps|QP{file#/workspace/a.mps}

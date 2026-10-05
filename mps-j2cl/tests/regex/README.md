@@ -1,0 +1,21 @@
+The browser Pattern/Matcher facade validates a defined Java regex subset before passing translated syntax to native Unicode RegExp. It preserves the Pattern/Matcher return types used by MPS constrained datatypes, aliases, Java names, and flavour serialization.
+
+Supported operations: Pattern.compile(regex), compile(regex, 0), compile(regex, CASE_INSENSITIVE), matcher, matches, pattern, flags, quote; Matcher.matches, find, find(start), reset, reset(input), start, end, group, group(index), groupCount.
+
+Supported syntax: literal Unicode text, quoted blocks, ASCII shorthand classes, ordinary and negated character classes, positive nested class unions, ranges, capturing and noncapturing groups, alternation, ordinary and reluctant quantifiers, default anchors, Java beginning/end anchors, ASCII word boundaries (\\b and \\B), hexadecimal and basic control escapes. Native Unicode matching preserves supplementary code points. The translator handles Java's ASCII whitespace shorthand, NEL as a dot-excluded line terminator, and the complete-input requirement of matches().
+
+CASE_INSENSITIVE follows Java 21's ASCII-only contract. Literal letters and class members are closed under ASCII case mapping before matching, including quoted/hexadecimal letters, unions, ranges, and negation. Native RegExp's i flag is deliberately absent: its Unicode folding would incorrectly match Kelvin signs, long s, and other non-ASCII pairs. Source contract: [Java 21 Pattern](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Pattern.html).
+
+Word boundaries use ASCII word characters plus Java 21's nonspacing-mark/base-character rule. Fixed-size lookaround assertions use generated Java 21 nonspacing-mark and BMP letter/digit ranges, independently of the browser's Unicode version. They preserve Java's backwards scan by UTF-16 unit when determining a mark's base. Boundary-pattern searches make sticky attempts at UTF-16 candidate positions; this preserves matches starting inside a surrogate pair that native Unicode global scanning skips. No input-dependent regex or position table is generated. `tools/make_regex_unicode_data.py --check` verifies the pinned ranges against Java 21. The oracle includes combining marks, supplementary marks/bases, 10,006-character word search, and supplementary-heavy search. Implementation contract: [OpenJDK 21 Pattern Bound and hasBaseCharacter](https://github.com/openjdk/jdk21u/blob/master/src/java.base/share/classes/java/util/regex/Pattern.java).
+
+Unsupported Java features throw UnsupportedOperationException during compile: flags other than CASE_INSENSITIVE, backreferences, lookarounds, atomic/named groups, possessive quantifiers, repeated or counted groups containing nested captures, class intersection, negated nested classes, ranges crossing nested classes, complement shorthand inside classes, Unicode property/grapheme/line-break escapes, grapheme boundaries, and braced code-point escapes. Repeated nested captures are rejected because Java preserves earlier captures that ECMAScript resets. Invalid syntax in the supported subset throws PatternSyntaxException; diagnostic wording may differ from the JVM. This is not a complete implementation of java.util.regex.
+
+RegexSubsetTest.run() emits exact JVM golden results for all supported cases, including the literal MPS expressions, NEL and other line endings, quoted terminators, nested unions, astral/lone-surrogate inputs, zero-length find progress, explicit offsets inside a surrogate pair, capture groups, reset, and syntax failures. runUnsupported() is the browser-only rejection suite.
+
+Standalone boundary quantifiers such as \\b?, \\B*, and \\b{0,2} are supported. Quantified groups containing word boundaries fail explicitly: Java and ECMAScript disagree about their empty-alternative preference and optional empty captures (for example (?:\\b|a)* and (\\b)?a). Unquantified boundary groups and captures remain available.
+
+Validation: the current 12,675-row Java 21.0.12 oracle passed in development and
+optimized J2CL builds in Chromium, Firefox, and WebKit. This includes the mark/base
+boundary correction, UTF-16 candidate positions, nested literal-hyphen regression,
+ASCII case folding, and moderate long-input searches. Exact bundle hashes and
+results are in `out/regex-browser-results.json`.

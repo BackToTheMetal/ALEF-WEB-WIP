@@ -1,0 +1,14 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+# Declarations are supplied by the root-owned JRE overlay; this is a consumer anchor.
+j2cl_library(
+    name = "java-nio",
+    srcs = ["src/main/java/org/javanioj2cl/NioProfile.java"],
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "overlay-sources",
+    srcs = glob(["src/main/super/**/*.java"]),
+    visibility = ["//visibility:public"],
+)

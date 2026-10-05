@@ -1,0 +1,17 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library", "j2cl_test")
+
+j2cl_library(
+    name = "consumer-j2cl",
+    srcs = ["JavaIoConsumer.java"],
+    visibility = ["//visibility:public"],
+)
+
+j2cl_test(
+    name = "JavaIoJ2clTest",
+    srcs = ["JavaIoJ2clTest.java"],
+    test_class = "com.javaioj2cl.JavaIoJ2clTest",
+    deps = [
+        ":consumer-j2cl",
+        "@j2cl//:junit",
+    ],
+)

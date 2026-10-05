@@ -1,0 +1,38 @@
+module(name = "mps_extensions_j2cl", version = "0.1.0")
+
+bazel_dep(name = "j2cl", version = "20260402")
+bazel_dep(name = "rules_closure", version = "0.16.0")
+bazel_dep(name = "gnu_trove_j2cl", version = "0.1.0")
+bazel_dep(name = "org_jdom_j2cl", version = "0.1.0")
+bazel_dep(name = "webawt", version = "0.1.0")
+bazel_dep(name = "javax-swing-j2cl", version = "0.1.0")
+bazel_dep(name = "elemental2", version = "1.3.2")
+
+local_path_override(module_name = "gnu_trove_j2cl", path = "../gnu-trove-j2cl")
+local_path_override(module_name = "org_jdom_j2cl", path = "../org-jdom-j2cl")
+local_path_override(module_name = "webawt", path = "../mps-j2cl/.work/dependency-views/webawt")
+local_path_override(module_name = "javax-swing-j2cl", path = "../mps-j2cl/.work/dependency-views/webswing")
+
+single_version_override(
+    module_name = "elemental2",
+    version = "1.3.2",
+    patch_strip = 1,
+    patches = ["//:third_party/webawt/elemental2-1.3.2-w3c-css.patch"],
+)
+
+# java.* sources are compiled once, into J2CL's java.base bootclasspath.
+single_version_override(
+    module_name = "j2cl",
+    version = "20260402",
+    patch_strip = 1,
+    patches = [
+        "//:third_party/j2cl/composed.patch",
+        "//:third_party/j2cl/type-support/class-type-support.patch",
+        "//:third_party/j2cl/mps-support/classloader.patch",
+        "//:third_party/j2cl/api-support/api-support.patch",
+    ],
+)
+
+
+bazel_dep(name = "mps_j2cl", version = "0.1.0")
+local_path_override(module_name = "mps_j2cl", path = ".work/mps-j2cl")

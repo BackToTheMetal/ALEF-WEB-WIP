@@ -1,0 +1,16 @@
+{
+  "mps": {
+    "url": "https://github.com/JetBrains/MPS.git",
+    "commit": "d2589ed55bbc9445b660769fcc17da97e8e395a6"
+  },
+  "bazel": "8.3.1",
+  "j2cl": {
+    "version": "20260402",
+    "archive_sha256": "d1419aecefec2727d3449f10a772d973ff5d3a7a7470367d1cfc2c782c7d6e66"
+  },
+  "jetbrains_annotations": {
+    "version": "26.0.2",
+    "source_sha256": "a3bea3ada0af186437f8f3a089e6b0f52ac5aa068c1cb829058fb8a5069f6b0f"
+  },
+  "jre_composition": "third_party/j2cl/composition.json"
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "j2clVersion": "20260402",
+  "inventoryState": "generated-from-pinned-source",
+  "publicTopLevelTypeCount": 250,
+  "knownPackageRoots": [
+    "java.io",
+    "java.lang",
+    "java.math",
+    "java.nio.charset",
+    "java.security",
+    "java.sql",
+    "java.util"
+  ],
+  "confirmedMissingTypesRelevantToAwt": [
+    "java.io.File",
+    "java.io.FilenameFilter",
+    "java.lang.reflect.InvocationTargetException",
+    "java.net.URI",
+    "java.net.URL",
+    "java.text.AttributedCharacterIterator",
+    "java.text.BreakIterator",
+    "java.text.CharacterIterator",
+    "javax.accessibility.Accessible",
+    "javax.accessibility.AccessibleContext"
+  ],
+  "notes": [
+    "The authoritative inventory is compatibility/j2cl-jre-api.json and was generated from the Bazel-resolved source tree for J2CL 20260402.",
+    "Types missing from a J2CL-owned package may require an upstream change or a pinned J2CL JRE patch.",
+    "FileDialog and printing APIs are excluded regardless of dependency availability."
+  ]
+}

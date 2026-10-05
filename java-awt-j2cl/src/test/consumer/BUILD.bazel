@@ -1,0 +1,21 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+j2cl_library(
+    name = "consumer-probes-j2cl",
+    srcs = glob(["generated/*.java"]),
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:awt-foundation-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:desktop-j2cl",
+        "//src/main/java/java/awt:image-core-j2cl",
+        "//src/main/java/java/awt:image-ops-j2cl",
+        "//src/main/java/java/awt:image-renderable-j2cl",
+        "//src/main/java/java/awt:painting-j2cl",
+        "//src/main/java/java/awt/color:color-space-j2cl",
+        "//src/main/java/java/awt/datatransfer:datatransfer-j2cl",
+        "//src/main/java/java/beans:beans-j2cl",
+        "//src/main/java/java/net:uri-j2cl",
+        "//src/main/java/java/text:text-j2cl",
+    ],
+)

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "bundles": [
+    {
+      "name": "point",
+      "path": "bazel-bin/samples/point/point_application.js",
+      "rawBytes": 7430,
+      "maxRawBytes": 8192,
+      "gzipBytes": 3122,
+      "maxGzipBytes": 3584
+    },
+    {
+      "name": "showcase",
+      "path": "bazel-bin/samples/showcase/showcase_application.js",
+      "rawBytes": 187431,
+      "maxRawBytes": 192512,
+      "gzipBytes": 61067,
+      "maxGzipBytes": 62464
+    },
+    {
+      "name": "dual-showcase",
+      "path": "bazel-bin/samples/dual_showcase/browser_application.js",
+      "rawBytes": 369838,
+      "maxRawBytes": 376832,
+      "gzipBytes": 124290,
+      "maxGzipBytes": 126976
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library", "j2cl_application")
+load("@rules_closure//closure:defs.bzl", "closure_js_library")
+load(":runtime-sources.bzl", "RUNTIME_SOURCES")
+load(":runtime-rules.bzl", "extension_runtimes")
+
+package(default_visibility = ["//visibility:public"])
+exports_files(glob(["third_party/**/*.patch"]))
+extension_runtimes()
+
+j2cl_library(
+    name = "contracts",
+    srcs = ["tests/RuntimeContracts.java", "tests/SpecializedLanguage.java", "tests/AttributeCoreLanguage.java", "@mps_j2cl//:tests/editor_live/ExpressionLanguage.java"],
+    deps = [":runtime", "@mps_j2cl//:browser_editor_host", "@mps_j2cl//:browser_platform", "@mps_j2cl//:mps_editor_runtime", "@mps_j2cl//:mps_kernel", "@mps_j2cl//:mps_typesystemengine", "@mps_j2cl//:mps_intentions_runtime", "@webawt//:webawt", "@javax-swing-j2cl//src/main:javax-swing-j2cl"],
+)
+closure_js_library(name = "contracts_entry", srcs = ["tests/entry.js"], deps = [":contracts"])
+j2cl_application(name = "contracts_browser", entry_points = ["extensionsj2cl.entry"], deps = [":contracts_entry"], jre_class_metadata = "SIMPLE")
+j2cl_application(name = "contracts_stripped", entry_points = ["extensionsj2cl.entry"], deps = [":contracts_entry"], jre_class_metadata = "STRIPPED")

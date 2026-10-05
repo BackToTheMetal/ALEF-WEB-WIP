@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="xmlunit-1.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mps/tools/tools/lib/xmlunit-1.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "j2cl_version": "20260402",
+  "patch_order": [
+    "third_party/j2cl/composed.patch",
+    "third_party/j2cl/type-support/class-type-support.patch",
+    "third_party/j2cl/mps-support/classloader.patch"
+  ],
+  "source": {
+    "path": "third_party/j2cl/mps-support/jre/java/java/lang/ClassLoader.java",
+    "sha256": "8a584b52d1531d54ab611516e6353950d3a22336b386bc3c87d1786e95321825"
+  },
+  "generator": {
+    "path": "tools/make_classloader_patch.py",
+    "sha256": "028ab86944a599bb370cfe78207a4af939ba8012561d7b02f60395891f930c0b"
+  },
+  "preimage": {
+    "provider": "java-nio-j2cl via composed.patch",
+    "path": "jre/java/java/lang/ClassLoader.java",
+    "sha256": "a4700772578a9796be8576e73956e75d4b46c521347835aa97b1653ed91fd680"
+  },
+  "output_sha256": "8a584b52d1531d54ab611516e6353950d3a22336b386bc3c87d1786e95321825",
+  "patch_sha256": "a641c3a0c94faeff151c09a8638239db163ed85cab82bc10233619fbf3f3abe4",
+  "contract": [
+    "Explicit binary-name to Class registration; normal misses throw ClassNotFoundException.",
+    "Classes are already compiled/linked by J2CL; JVM defineClass fails explicitly.",
+    "Resources are registered byte copies opened as independent buffered streams.",
+    "Resource URLs are opaque registry identifiers; URL.openStream/network/filesystem loading are not provided.",
+    "Only ClassLoader.java changes; Class and existing exception types retain their other providers."
+  ]
+}

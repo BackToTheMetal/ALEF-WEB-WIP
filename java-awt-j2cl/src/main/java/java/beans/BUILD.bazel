@@ -1,0 +1,17 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(default_visibility = ["//visibility:public"])
+
+j2cl_library(
+    name = "beans-j2cl",
+    srcs = [
+        "IndexedPropertyChangeEvent.java",
+        "ListenerRegistry.java",
+        "PropertyChangeEvent.java",
+        "PropertyChangeListener.java",
+        "PropertyChangeSupport.java",
+        "PropertyVetoException.java",
+        "VetoableChangeListener.java",
+        "VetoableChangeSupport.java",
+    ],
+)

@@ -1,0 +1,3 @@
+/* Collapse the unused package column so a lone lock sits at the row's right edge. */
+.project .tree button:has(> .tree-package.absent){grid-template-columns:13px 16px minmax(0,1fr) 6px 16px}
+.project .tree-package.absent{display:none}

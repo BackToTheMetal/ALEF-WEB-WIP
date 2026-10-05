@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "projectLicense": "Apache-2.0",
+  "publicationReview": {
+    "status": "pending",
+    "evidence": "docs/architecture/0003-source-provenance.md",
+    "reason": "Original-source policy is recorded; independent prepublication provenance/legal review has not been recorded."
+  },
+  "records": [
+    {
+      "paths": ["src/main/java/**", "src/test/**", "tools/**", "samples/**/*.java"],
+      "origin": "Project implementation under ADR 0003; no complete historical authorship audit is claimed",
+      "license": "Apache-2.0",
+      "reviewStatus": "policy-recorded-history-review-pending"
+    },
+    {
+      "paths": ["third_party/patches/elemental2-1.3.2-w3c-css.patch"],
+      "origin": "Two Elemental2 build changes described in ADR 0004; applied to Elemental2 1.3.2",
+      "upstream": "https://github.com/google/elemental2",
+      "license": "Apache-2.0",
+      "modifications": "Remove obsolete w3c_css patch application and include web_animations extern",
+      "evidence": "docs/architecture/0004-elemental2-css-extern-backport.md",
+      "reviewStatus": "recorded"
+    },
+    {
+      "paths": ["samples/dual_showcase/fonts/DejaVuSans.ttf"],
+      "origin": "DejaVu fonts; retained Bitstream Vera notices and public-domain DejaVu changes",
+      "upstream": "https://dejavu-fonts.github.io/",
+      "licenseFile": "samples/dual_showcase/fonts/LICENSE.txt",
+      "reviewStatus": "notice-preserved"
+    }
+  ]
+}

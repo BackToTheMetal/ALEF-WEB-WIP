@@ -1,0 +1,21 @@
+{
+  "profile": {
+    "locales": ",en,en-US,en-GB,nl,nl-NL",
+    "defaultLocale": "en-US",
+    "currencies": "XXX",
+    "timeZones": "UTC,GMT,Europe/Amsterdam,Europe/London,America/New_York,Australia/Sydney,Asia/Tokyo",
+    "defaultTimeZone": "UTC"
+  },
+  "java": "openjdk version \"21.0.12\" 2026-07-21\nOpenJDK Runtime Environment (build 21.0.12+8-1-26.04-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.12+8-1-26.04-Ubuntu, mixed mode, sharing)",
+  "tzdbVersion": "2026b",
+  "tzdbSha256": "5906b44e25a8a730131d7ba1beb5d15af27043f6536f1a169ca8a5d8b8bed8f8",
+  "providers": {
+    "walkingkooka/j2cl/java/text/generated/DateFormatProvider.java": "b4941826d304ed03a5d52349b96ba519feefe77332b7eb4e20d6259d7bc81f5d",
+    "walkingkooka/j2cl/java/text/generated/DateFormatSymbolsProvider.java": "f512285713fc2cd7cdb75b02d90309d3cf2f90368ee63cd89503e789a6e52192",
+    "walkingkooka/j2cl/java/text/generated/DecimalFormatProvider.java": "cdecc286ca12437ed8b21f30fce7db6da467d577abfd94f179cc9091c41b6169",
+    "walkingkooka/j2cl/java/text/generated/DecimalFormatSymbolsProvider.java": "8dd56cdb9ff8a9c19dd349d3df8932c7d3fd702d24fa991a94695ac72c1b26ea",
+    "walkingkooka/j2cl/java/util/currency/generated/CurrencyProvider.java": "abba83ed46cf97eb691e703d3ddb160a3a0b1797e589d7834d2831b1c8258260",
+    "walkingkooka/j2cl/java/util/locale/generated/LocaleProvider.java": "5b32fe2893c190496f0b00a00fb7c2319ed7623dfe4be8d7f485cabd47230d6b",
+    "walkingkooka/j2cl/java/util/timezone/generated/TimeZoneProvider.java": "6eeb9465100129ab90cebd63fc3b394eb069112c77082afc028378ff33adc3aa"
+  }
+}

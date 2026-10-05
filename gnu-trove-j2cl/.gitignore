@@ -1,0 +1,6 @@
+/bazel-*
+/out/
+/node_modules/
+/third_party/reference-src/
+/third_party/intellij-deps-trove4j-*/
+__pycache__/

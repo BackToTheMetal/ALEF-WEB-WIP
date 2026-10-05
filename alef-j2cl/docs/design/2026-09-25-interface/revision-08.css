@@ -1,0 +1,31 @@
+/* File chrome only. Generated editor, inspector, and other views are unchanged. */
+.file-toolbar{display:flex;align-items:center;gap:9px;min-height:48px;padding:7px 14px;border-bottom:1px solid var(--line);background:#fff;flex-shrink:0;font-size:11px;position:relative;z-index:5}
+.file-version{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.file-version-state{color:var(--muted)}
+.file-save-state{color:var(--muted);white-space:nowrap;font-size:11px}
+.file-save-state.pending{color:var(--amber)}
+.file-toolbar button{font-size:11px}
+.file-toolbar .file-lock{padding:6px 9px;white-space:nowrap;background:transparent;border-color:transparent;color:var(--muted)}
+.file-toolbar .file-lock.held{color:var(--green)}
+.file-toolbar .file-lock:hover{border-color:var(--line);background:#f8faf7}
+.file-toolbar .file-save{padding:6px 11px;white-space:nowrap}
+.file-toolbar .svg{width:15px;height:15px}
+.file-menu{position:relative;flex-shrink:0}
+.file-menu>summary{display:flex;align-items:center;gap:6px;padding:6px 7px;cursor:pointer;list-style:none;border-radius:4px;color:var(--muted);white-space:nowrap}
+.file-menu>summary::-webkit-details-marker{display:none}
+.file-menu[open]>summary,.file-menu>summary:hover{background:#eef3ef;color:var(--green)}
+.file-menu>summary:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.file-menu-panel{position:absolute;right:0;top:calc(100% + 6px);z-index:20;width:265px;padding:10px;background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 6px 22px #203c2521;white-space:normal}
+.file-menu-heading{display:flex;flex-direction:column;gap:4px;padding:3px 6px 10px;border-bottom:1px solid var(--line);margin-bottom:8px;font-size:12px}
+.file-menu-heading .muted{font-size:11px}
+.file-inclusion{display:flex;align-items:center;gap:8px;font-size:12px;padding:6px;cursor:pointer}
+.file-inclusion input{accent-color:var(--green);margin:0;width:14px;height:14px}
+.file-menu-note{font-size:11px;color:var(--muted);line-height:1.5;margin:3px 6px 8px}
+.file-toolbar .file-menu-action{display:flex;width:100%;text-align:left;justify-content:flex-start;background:transparent;border:0;padding:8px 6px;font-size:12px}
+.file-menu-action:hover{background:#f2f6f2}
+.file-toolbar .file-secondary-menu{width:180px}
+.file-overflow>summary{padding:7px 5px}
+.workspace-editor .editor-review-feedback{margin:0 0 10px}
+.workspace-editor .context-feedback:not([open]){padding:8px 10px}
+@media(max-width:1000px){.file-toolbar{gap:6px;padding:7px 12px}.file-toolbar .root-ver{font-size:11px}}
+@media(max-width:600px){.file-toolbar{flex-wrap:wrap;padding:6px 10px;gap:5px}.file-version{gap:5px}.file-toolbar .release-number{display:none}.file-menu-panel{right:-85px;width:min(265px,calc(100vw - 30px))}.file-overflow .file-menu-panel{right:0}.file-toolbar .file-lock{padding:6px}.file-toolbar .file-save{padding:6px 8px}}

@@ -1,0 +1,7 @@
+{
+  "name": "mps-xml-compat-validation",
+  "private": true,
+  "version": "0.1.0",
+  "devDependencies": {"playwright": "1.62.0"},
+  "scripts": {"test:browser": "node scripts/test-browser.mjs"}
+}

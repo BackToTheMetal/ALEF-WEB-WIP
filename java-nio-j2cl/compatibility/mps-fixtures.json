@@ -1,0 +1,20 @@
+{
+  "revision": "1ae803e4f8c52e470c94563059eca4b4b8397c8c",
+  "files": [
+    {
+      "source": "languages/baseLanguage/baseLanguage/sandbox/source_gen/jetbrains/mps/baseLanguage/sandbox/internal/InternalAnonymousClassUsage.java",
+      "fixture": "supported/InternalAnonymousClassUsage.java",
+      "sha256": "8d0095f528cb34501a347d45dd0282c86712a6da89f2c767e150fa3d7c76322e"
+    },
+    {
+      "source": "core/make-runtime/source/jetbrains/mps/make/FileWithPosition.java",
+      "fixture": "blockers/FileWithPosition.java",
+      "sha256": "7726ec2aad2abb8e7d8e53c9ffeb162598a39163119624443ca49ae0a1af779d"
+    },
+    {
+      "source": "core/openapi/source/org/jetbrains/mps/annotations/Immutable.java",
+      "fixture": "blockers/Immutable.java",
+      "sha256": "a78183500de71e505c803add05a2c7947d23a642059b5846b9200e264d10ad7c"
+    }
+  ]
+}

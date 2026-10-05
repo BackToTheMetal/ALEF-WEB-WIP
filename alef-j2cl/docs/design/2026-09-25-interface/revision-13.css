@@ -1,0 +1,18 @@
+/* Collapsed project panel has a deliberate rail, separate from file tabs. */
+.project-rail{display:none}
+@media(min-width:801px){
+  .workbench.no-tree{grid-template-columns:44px minmax(0,1fr)}
+  .workbench.no-tree .project{visibility:visible;background:#fff7ef}
+  .workbench.no-tree .project>:not(.project-rail){display:none}
+  .workbench.no-tree .project-rail{display:flex;justify-content:center;padding:6px 0}
+  .project-rail button{width:32px;height:92px;padding:9px 0;display:flex;flex-direction:column;justify-content:flex-start;gap:11px;border:0;border-radius:5px;background:transparent;color:var(--accent)}
+  .project-rail button:hover{background:#ffe8d5}
+  .project-rail button:focus-visible{outline-offset:1px}
+  .project-rail .svg{width:18px;height:18px}
+  .project-rail-label{writing-mode:vertical-rl;font-size:11px;letter-spacing:.2px}
+  .workbench.no-tree .tabs>.mobile-only{display:none}
+}
+@media(max-width:800px){
+  .workbench.no-tree{grid-template-columns:minmax(0,1fr)}
+  .workbench .tabs>[data-action="toggle-tree"]{width:44px;height:42px;align-self:stretch;border:0;border-right:1px solid var(--line);border-radius:0;padding:0;background:#fff2e6;color:var(--accent)}
+}

@@ -1,0 +1,39 @@
+name: Validate Trove J2CL
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * 1'
+jobs:
+  compatibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: bazel-contrib/setup-bazel@0.15.0
+        with:
+          bazelisk-cache: true
+          disk-cache: true
+          repository-cache: true
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium firefox webkit
+      - run: bash tools/validate.sh
+        env:
+          TROVE_SEEDS_FILE: ${{ github.event_name == 'schedule' && 'tests/campaign-seeds.json' || 'tests/seeds.json' }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: compatibility-results
+          path: |
+            out/*.txt
+            out/*.json
+            out/*.tar.gz

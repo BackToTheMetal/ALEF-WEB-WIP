@@ -1,0 +1,23 @@
+{
+  "producer": "Installed JetBrains MPS 2025.3, MPS-253.28294.432, ModelWriter9; synthetic model created through MPS Java APIs",
+  "generator": "tests/reference/MpsFixtureGenerator.java",
+  "scope": "One property-bearing root, node/concept identity, metadata, single-file XML9 and file-per-root header/root documents; not a complete persistence corpus",
+  "streams": {
+    "stream-0.xml": "1234.mpsr",
+    "stream-1.xml": ".model"
+  },
+  "files": [
+    {
+      "path": "single.xml",
+      "sha256": "02daeac561a66c2e30e284836516a59377d74268d3b6c9c4ae49b90702eec651"
+    },
+    {
+      "path": "stream-0.xml",
+      "sha256": "c3b982cfcc75128cc5fd6d9add1f8cf9e9cb8214490ee97072a5d7b78163bcd2"
+    },
+    {
+      "path": "stream-1.xml",
+      "sha256": "0d0b0d454de451711fc45570b6de1774a893ba050833073d26fe862402c8ae33"
+    }
+  ]
+}

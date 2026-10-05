@@ -1,0 +1,7 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+j2cl_library(
+    name = "mps-cache",
+    srcs = ["jetbrains/mps/util/SimpleLRUCache.java"],
+    visibility = ["//visibility:public"],
+)

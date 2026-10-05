@@ -1,0 +1,457 @@
+
+Usage: metalava main [options] [source-files]...
+
+  The default sub-command that is run if no sub-command is specified.
+
+Options:
+  -h, --help                                 Show this message and exit
+
+Sources:
+
+  Options that control which source files will be processed.
+
+  --source-model-provider [psi|turbine]      (default: psi)
+  --source-path <path>                       A : separated list of directories containing source files (organized in a
+                                             standard Java package hierarchy).
+  --source-files <files>                     A comma separated list of source files to be parsed. Can also be @ followed
+                                             by a path to a text file containing paths to the full set of files to
+                                             parse.,
+  --java-source <level>                      Sets the source level for Java source files. (default: 1.8)
+  --kotlin-source <level>                    Sets the source level for Kotlin source files. (default: 1.9)
+  --classpath <paths>                        One or more directories or jars (separated by `:`) containing classes that
+                                             should be on the classpath when parsing the source files.
+  --project <xmlfile>                        Project description written in XML according to Lint's project model.
+  --stub-packages <package-list>             List of packages (separated by :) which will be used to filter out
+                                             irrelevant classes. If specified, only classes in these packages will be
+                                             included in signature files, stubs, etc.. This is not limited to just the
+                                             stubs; the --stub-packages name is historical.
+
+                                             See `metalava help package-filters` for more information.
+  --compiled-sources <path>                  Jar file with the compiled version of --source-files, loaded in addition to
+                                             the source files. Used to include the bytecode version of Kotlin source
+                                             APIs.
+  --jdk-home <dir>                           If set, add the Java APIs from the given JDK to the classpath.
+  --sdk-home <dir>                           If set, locate the `android.jar` file from the given Android SDK.
+  --compile-sdk-version <api>                Use the given API level.
+  --merge-qualifier-annotations <file-or-dir>
+                                             An external annotations file to merge and overlay the sources, or a
+                                             directory of such files. Should be used for annotations intended for
+                                             inclusion in the API to be written out, e.g. nullability. Formats supported
+                                             are: IntelliJ's external annotations database format, .jar or .zip files
+                                             containing those, Android signature files, and Java stub files.
+  --merge-inclusion-annotations <file-or-dir>
+                                             An external annotations file to merge and overlay the sources, or a
+                                             directory of such files. Should be used for annotations which determine
+                                             inclusion in the API to be written out, i.e. show and hide. The only format
+                                             supported is Java stub files.
+  --ignore-comments                          Ignore any comments in source files.
+
+Nullability Validation:
+
+  Options control nullability validation.
+
+  --nullability-errors-non-fatal             Specifies that errors encountered during validation of nullability
+                                             annotations should not be treated as errors. They will be written out to
+                                             the file specified in --nullability-warnings-txt instead.
+  --nullability-warnings-txt <file>          Specifies where to write warnings encountered during validation of
+                                             nullability annotations. (Does not trigger validation by itself.)
+  --validate-nullability-from-merged-stubs   Triggers validation of nullability annotations for any class where
+                                             --merge-qualifier-annotations includes a Java stub file.
+  --validate-nullability-from-list <file>    Triggers validation of nullability annotations for any class listed in the
+                                             named file (one top-level class per line, # prefix for comment line).
+
+Issue Reporting:
+
+  Options that control which issues are reported, the severity of the reports, how, when and where they are reported.
+
+  See `metalava help issues` for more help including a table of the available issues and their category and default
+  severity.
+
+  --error <id>                               Report issues of the given id as errors.
+  --error-when-new <id>                      Report issues of the given id as warnings in existing code and errors in
+                                             new code. The latter behavior relies on infrastructure that handles
+                                             checking changes to the code detecting the (ErrorWhenNew) text in the
+                                             output and preventing the change from being made.
+  --warning <id>                             Report issues of the given id as warnings.
+  --hide <id>                                Hide/skip issues of the given id.
+  --error-category <name>                    Report all issues in the given category as errors.
+  --error-when-new-category <name>           Report all issues in the given category as errors-when-new.
+  --warning-category <name>                  Report all issues in the given category as warnings.
+  --hide-category <name>                     Hide/skip all issues in the given category.
+  --warnings-as-errors                       Promote all warnings to errors. That includes both `warning` and
+                                             `warning-error-when-new`.
+  --treat-as-error [inherit|hidden|info|warning|warning_error_when_new|error]
+                                             Treat all issues of the specified severity as if they were errors.
+  --report-even-if-suppressed <file>         Write all issues into the given file, even if suppressed (via annotation or
+                                             baseline) but not if hidden (by '--hide' or '--hide-category').
+  --repeat-errors-max <n>                    When specified, repeat at most N errors before finishing. (default: 0)
+
+Baseline Files:
+
+  Options that provide general control over baseline files.
+
+  --delete-empty-baselines                   If true, if after updating a baseline file is empty then it will be
+                                             deleted.
+  --pass-baseline-updates                    Normally, encountering errors will fail the build, even when updating
+                                             baselines. This flag will record issues in baseline files but otherwise
+                                             ignore them so that all the baselines in the source tree can be updated in
+                                             one go.
+
+General Reporting:
+
+  Options that control the reporting of general issues, i.e. not API lint or compatibility check issues.
+
+  --baseline <file>                          An optional baseline file that contains a list of known general issues
+                                             which should be ignored. If this does not exist and --update-baseline is
+                                             not specified then it will be created and populated with all the known
+                                             general issues.
+  --update-baseline <file>                   An optional file into which a list of the latest general issues found will
+                                             be written. If --baseline is specified then any issues listed in there will
+                                             be copied into this file; that minimizes the amount of churn in the
+                                             baseline file when updating by not removing legacy issues that have been
+                                             fixed. If --delete-empty-baselines is specified and this baseline is empty
+                                             then the file will be deleted.
+
+Config Files:
+
+  Options that control the configuration files.
+
+  --config-file <file>                       A configuration file that can be consumed by Metalava. This can be
+                                             specified multiple times in which case later config files will
+                                             override/merge with earlier ones.
+
+Api Selection:
+
+  Options that select which parts of the source files will be part of the generated API.
+
+  --api-surface <surface>                    The API surface currently being generated. Must correspond to an
+                                             <api-surface> element in a --config-file.
+  --show-unannotated                         Include un-annotated public APIs in the signature file as well. (default:
+                                             true if no --show*-annotation options specified)
+  --show-annotation <annotation-filter>      Unhide any hidden elements that are also annotated with the given
+                                             annotation.
+  --hide-annotation <annotation-filter>      Treat any elements annotated with the given annotation as hidden.
+  --exclude-annotation <annotation-classes>  A comma separated list of fully qualified names of annotation classes that
+                                             must be stripped from metalava's outputs.
+  --pass-through-annotation <annotation-classes>
+                                             A comma separated list of fully qualified names of annotation classes that
+                                             must be passed through unchanged.
+  --suppress-compatibility-meta-annotation <meta-annotation-class>
+                                             Suppress compatibility checks for any elements within the scope of an
+                                             annotation which is itself annotated with the given
+                                             `meta-annotation-class`.
+  --typedefs-in-signatures [none|ref|inline]
+                                             Whether to include typedef annotations in signature files.
+
+                                             none (default) - will not include typedef annotations in signature.
+
+                                             ref - will include just a reference to the typedef class, which is not
+                                             itself part of the API and is not included as a class
+
+                                             inline - will include the constants themselves into each usage site
+
+Api Lint:
+
+  Options controlling API linting.
+
+  --api-lint                                 Check API for Android API best practices.
+  --api-lint-previous-api <file>             An API signature file that defines, albeit maybe only partially, a
+                                             previously released API.
+
+                                             If the API surface extends another API surface then this must include all
+                                             the corresponding signature files in order from the outermost API surface
+                                             that does not extend any API surface to the innermost one that represents
+                                             the API surface being generated.
+
+                                             API Lint issues found in the previously released API will be ignored.
+  --error-message:api-lint <message>         If set, this is output when errors are detected in --api-lint.
+  --api-lint-allowed-acronym <acronym>       An acronym that should be allowed by API lint. Can be specified multiple
+                                             times.
+  --baseline:api-lint <file>                 An optional baseline file that contains a list of known API lint issues
+                                             which should be ignored. If this does not exist and
+                                             --update-baseline:api-lint is not specified then it will be created and
+                                             populated with all the known API lint issues.
+  --update-baseline:api-lint <file>          An optional file into which a list of the latest API lint issues found will
+                                             be written. If --baseline:api-lint is specified then any issues listed in
+                                             there will be copied into this file; that minimizes the amount of churn in
+                                             the baseline file when updating by not removing legacy issues that have
+                                             been fixed. If --delete-empty-baselines is specified and this baseline is
+                                             empty then the file will be deleted.
+
+Multiplatform API Options:
+
+  Options controlling the handling of multiplatform API operations
+
+  --multiplatform-enabled                    Flag to enable Multiplatform API operation.
+  --multiplatform-api-sources <file>         Directory containing multiplatform API signature files to parse as source.
+  --multiplatform-api-directory <file>       Directory to put multiplatform API signature files.
+  --multiplatform-compatibility-api <file>   Check compatibility of the previously released multiplatform API. The
+                                             provided file should be a directory containing multiplatform API signature
+                                             files of the previously released API surface.
+
+Compatibility Checks:
+
+  Options controlling which, if any, compatibility checks are performed against a previously released API.
+
+  --check-compatibility [enabled|disabled]   Determines whether the --check-compatibility:api:released and
+                                             --check-compatibility:removed:released cause a compatibility check to be
+                                             performed. This must be set to `disabled` when those options are only
+                                             provided to supply the previously released API to which flagged APIs are
+                                             reverted.
+
+                                             enabled (default) - Compatibility checks are performed.
+
+                                             disabled - Compatibility checks are NOT performed.
+  --check-compatibility:api:released <file>  Check compatibility of the previously released API.
+
+                                             When multiple files are provided any files that are a delta on another file
+                                             must come after the other file, e.g. if `system` is a delta on `public`
+                                             then `public` must come first, then `system`. Or, in other words, they must
+                                             be provided in order from the narrowest API to the widest API.
+  --check-compatibility:removed:released <file>
+                                             Check compatibility of the previously released but since removed APIs.
+
+                                             When multiple files are provided any files that are a delta on another file
+                                             must come after the other file, e.g. if `system` is a delta on `public`
+                                             then `public` must come first, then `system`. Or, in other words, they must
+                                             be provided in order from the narrowest API to the widest API.
+  --api-compat-annotation <annotation>       Specify an annotation important for API compatibility.
+
+                                             Adding/removing this annotation will be considered an incompatible change.
+                                             The fully qualified name of the annotation should be passed.
+  --error-message:compatibility:released <message>
+                                             If set, this is output when errors are detected in
+                                             --check-compatibility:api:released or
+                                             --check-compatibility:removed:released.
+  --baseline:compatibility:released <file>   An optional baseline file that contains a list of known compatibility
+                                             issues which should be ignored. If this does not exist and
+                                             --update-baseline:compatibility:released is not specified then it will be
+                                             created and populated with all the known compatibility issues.
+  --update-baseline:compatibility:released <file>
+                                             An optional file into which a list of the latest compatibility issues found
+                                             will be written. If --baseline:compatibility:released is specified then any
+                                             issues listed in there will be copied into this file; that minimizes the
+                                             amount of churn in the baseline file when updating by not removing legacy
+                                             issues that have been fixed. If --delete-empty-baselines is specified and
+                                             this baseline is empty then the file will be deleted.
+
+Signature File Output:
+
+  Options controlling the signature file output. The format of the generated file is determined by the options in the
+  `Signature Format Output` section.
+
+  --api <file>                               Output file into which the API signature will be generated. If this is not
+                                             specified then no API signature file will be created.
+  --removed-api <file>                       Output file into which the API signatures for removed APIs will be
+                                             generated. If this is not specified then no removed API signature file will
+                                             be created.
+  --delete-empty-removed-signatures          Deletes removed signature files if they are empty.
+
+Signature Format Output:
+
+  Options controlling the format of the generated signature files.
+
+  See `metalava help signature-file-formats` for more information.
+
+  --format-defaults <defaults>               Specifies defaults for format properties.
+
+                                             A comma separated list of `<property>=<value>` assignments where
+                                             `<property>` is one of the following:
+                                             * `add-additional-overrides`
+                                             * `flagged-api-inheritance`
+                                             * `java-record-classes`
+                                             * `java-sealed-classes`
+                                             * `normalize-abstract-modifier`
+                                             * `normalize-final-modifier`
+                                             * `overloaded-method-order`
+                                             * `sort-whole-extends-list`
+                                             * `strip-java-lang-prefix`
+                                             * `type-argument-spacing`
+
+                                             See `metalava help signature-file-formats` for more information on the
+                                             properties.
+  --format <specifier>                       Specifies the output signature file format.
+
+                                             <specifier> - which has the following syntax:
+
+                                             <version>[:<property>=<value>[,<property>=<value>]*]
+
+                                             See `metalava help signature-file-formats` for more help including a list
+                                             of the available `<version>`s and `<property>=<value>`s. (default: 2.0)
+  --use-same-format-as <file>                Specifies that the output format should be the same as the format used in
+                                             the specified file. It is an error if the file does not exist. If the file
+                                             is empty then this will behave as if it was not specified. If the file is
+                                             not a valid signature file then it will fail. Otherwise, the format read
+                                             from the file will be used.
+
+                                             If this is specified (and the file is not empty) then this will be used in
+                                             preference to most of the other options in this group. Those options will
+                                             be validated but otherwise ignored.
+
+                                             The intention is that the other options will be used to specify the default
+                                             for new empty API files (e.g. created using `touch`) while this option is
+                                             used to specify the format for generating updates to the existing non-empty
+                                             files.
+  --format-overrides <overrides>             Specifies overrides for format properties. Intended for use with
+                                             --use-same-format-as to change individual properties within a signature
+                                             file.
+
+                                             A comma separated list of `<property>=<value>` assignments where
+                                             `<property>` can be any property supported by signature file formats.
+
+                                             See `metalava help signature-file-formats` for more information on the
+                                             properties.
+
+Stub Generation:
+
+  Options controlling the generation of stub files.
+
+  --stubs <dir>                              Base directory to output the generated stub source files for the API, if
+                                             specified.
+
+                                             At most one of this and --doc-stubs can be provided.
+  --doc-stubs <dir>                          Generate documentation stub source files for the API. Documentation stub
+                                             files are similar to regular stub files, but there are some differences.
+                                             For example, in the stub files, we'll use special annotations like
+                                             @RecentlyNonNull instead of @NonNull to indicate that an element is
+                                             recently marked as non null, whereas in the documentation stubs we'll just
+                                             list this as @NonNull. Another difference is that items annotated with a
+                                             `<api-surfaces>/<doc-only>` configured annotation are included in
+                                             documentation stubs, but not regular stubs, etc.
+
+                                             At most one of this and --stubs can be provided.
+  --include-annotations / --exclude-all-annotations
+                                             Include/exclude annotations such as @Nullable in/from the stub files.
+                                             (default: exclude)
+  --exclude-documentation-from-stubs         Exclude element documentation (javadoc and kdoc) from the generated stubs.
+                                             Copyright notices are not affected by this, they are always included.
+                                             Documentation stubs (--doc-stubs) are not affected either. (default:
+                                             exclude)
+  --enhance-documentation                    Enhance documentation in various ways, for example auto-generating
+                                             documentation based on source annotations present in the code. This is
+                                             implied by --doc-stubs. (default: do not enhance unless --doc-stubs is
+                                             specified)
+  --migrate-nullness <api-file>              Compare nullness information with the previous stable API and mark newly
+                                             annotated APIs as recently added. That replaces the annotations with a
+                                             special form of annotation that will cause the Kotlin compiler to treat
+                                             nullability issues as warnings not errors. The intent is that this will
+                                             make it possible to fix existing app code incrementally after a release
+                                             rather than having to fix it all at once.
+  --force-convert-to-warning-nullability-annotations <package1:-package2:...>
+                                             On every API declared in a class referenced by the given filter, makes
+                                             nullability issues appear to callers as warnings rather than errors by
+                                             replacing @Nullable/@NonNull in these APIs with
+                                             @RecentlyNullable/@RecentlyNonNull.
+
+                                             See `metalava help package-filters` for more information.
+  --apply-api-levels <api-versions.xml>      Reads an XML file containing API level descriptions and merges the
+                                             information into the documentation.
+  --api-version-label <api-version>:<label>  Specifies a label to use in place of the `<api-version>` when augmenting
+                                             the Javadoc to include information about the history of an API item, e.g.
+                                             in `@apiSince` and `@deprecatedSince` doc tags. This can be specified
+                                             multiple times to provide labels for multiple different versions.
+
+                                             See --api-version-for-sources for acceptable `<api-version>`s.
+
+                                             This only has an effect when generating doc stubs, or enhancing the javadoc
+                                             of normal stubs. It has no effect on the generation of the API history.
+
+Api Levels Generation:
+
+  Options controlling the API levels file, e.g. `api-versions.xml` file.
+
+  --generate-api-levels <xmlfile>            Reads android.jar SDK files and generates an XML file recording the API
+                                             level for each class, method and field. if --api-version-for-sources is
+                                             provided, sources will also be included in the file with the api level
+                                             --api-version-for-sources
+  --api-version-for-sources <api-version>    Sets the API version of unfinalized apis in the current source code. This
+                                             supports a single integer level, `major.minor`, `major.minor.patch` and
+                                             `major.minor.patch-quality` formats. Where `major`, `minor` and `patch` are
+                                             all non-negative integers and `quality` is an alphanumeric string.
+  --remove-missing-class-references-in-api-levels
+                                             Removes references to missing classes when generating the API levels XML
+                                             file. This can happen when generating the XML file for the non-updatable
+                                             portions of the module-lib sdk, as those non-updatable portions can
+                                             reference classes that are part of an updatable apex.
+  --api-version-range <api-version>:<api-version>
+                                             The optional range of historical versions that can be included in the API
+                                             version history. The `from` and `to` parts of the range are separated by a
+                                             `:` and are both inclusive. See --api-version-for-sources for acceptable
+                                             `<api-version>`s.
+
+                                             If unspecified, version history will default to include every historical
+                                             version.
+  --sdk-extension-version-range <api-version>:<api-version>
+                                             The optional range of historical sdk extensions versions that can be
+                                             included in the API version history. The `from` and `to` parts of the range
+                                             are separated by a `:` and are both inclusive. See
+                                             --api-version-for-sources for acceptable `<api-version>`s.
+
+                                             If unspecified then allow every historical version.
+  --android-jar-pattern <historical-api-pattern>
+                                             Pattern to use to locate Android JAR files. Must end with `.jar`.
+
+                                             See `metalava help historical-api-patterns` for more information.
+  --api-version-signature-pattern <historical-api-pattern>
+                                             Pattern to use to locate signature files. Typically ends with `.txt`.
+
+                                             See `metalava help historical-api-patterns` for more information.
+  --sdk-extensions-info <sdk-info-file>      Points to map of extension SDK APIs to include, if any. The file is a plain
+                                             text file and describes, per extension SDK, what APIs from that extension
+                                             to include in the file created via --generate-api-levels. The format of
+                                             each line is one of the following: \"<module-name> <pattern> <ext-name>
+                                             [<ext-name> [...]]\", where <module-name> is the name of the mainline
+                                             module this line refers to, <pattern> is a common Java name prefix of the
+                                             APIs this line refers to, and <ext-name> is a list of extension SDK names
+                                             in which these SDKs first appeared, or \"<ext-name> <ext-id> <type>\",
+                                             where <ext-name> is the name of an SDK, <ext-id> its numerical ID and
+                                             <type> is one of \"platform\" (the Android platform SDK), \"platform-ext\"
+                                             (an extension to the Android platform SDK), \"standalone\" (a separate
+                                             SDK). Fields are separated by whitespace. A mainline module may be listed
+                                             multiple times. The special pattern \"*\" refers to all APIs in the given
+                                             mainline module. Lines beginning with # are comments.
+
+                                             If specified then the --android-jar-pattern must include at least one
+                                             pattern that uses `{version:extension}` and `{module}` placeholders and
+                                             that pattern must match at least one file.
+  --api-version-for-sdk-extension <api-version>
+                                             SDK extension APIs can be added between SDK versions and they do not become
+                                             available in an SDK version until the next SDK version is released.
+                                             However, when generating an API history it is required that every API is in
+                                             an API version, even those added as part of an SDK extension.
+
+                                             If an SDK extension is being prepared for inclusion in an SDK version then
+                                             this should be the SDK version. If an SDK extension is being prepared
+                                             between SDK versions than this should be a magic version number that
+                                             indicates that it the newly added SDK extension APIs are not yet present in
+                                             any SDK version.
+
+                                             In the latter case the --api-version-label should be used when generating
+                                             documentation from that `api-versions.xml` file to give the magic version a
+                                             meaningful name in the documentation.
+  --generate-api-version-history <output-file>
+                                             Reads API signature files and generates a JSON or XML file depending on the
+                                             extension, which must be one of `json` or `xml` respectively. The JSON file
+                                             will record the API version in which each class, method, and field. was
+                                             added in and (if applicable) deprecated in. The XML file will include that
+                                             information and more but will be optimized to exclude information from
+                                             class members which is the same as the containing class.
+  --api-version-signature-files <files>      An ordered list of text API signature files. The oldest API version should
+                                             be first, the newest last. This should not include a signature file for the
+                                             current API version, which will be parsed from the provided source files.
+                                             Not required to generate API version JSON if the current version is the
+                                             only version.
+
+Miscellaneous:
+
+  Miscellaneous options.
+
+  --proguard <file>                          Write a ProGuard keep file for the API.
+  --sdk-values <dir>                         Write SDK values files to the given directory.
+  --extract-annotations <zipfile>            Extracts source annotations from the source files and writes them into the
+                                             given zip file.
+  --manifest <file>                          A manifest file, used to check permissions to cross check APIs and retrieve
+                                             min_sdk_version. (default: no manifest)
+
+Arguments:
+  source-files                               Additional source files to append to --source-files

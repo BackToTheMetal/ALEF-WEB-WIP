@@ -1,0 +1,6 @@
+{
+  "name": "gnu-trove-j2cl-validation",
+  "private": true,
+  "version": "0.1.0",
+  "devDependencies": { "playwright": "1.62.0" }
+}

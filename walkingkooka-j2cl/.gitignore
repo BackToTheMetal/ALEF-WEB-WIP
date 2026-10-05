@@ -1,0 +1,7 @@
+/upstream/
+/out/
+/out-*.log
+/bazel-*
+/node_modules/
+/.idea/
+__pycache__/

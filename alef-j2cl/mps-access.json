@@ -1,0 +1,98 @@
+[
+  {
+    "original": "editor/editorlang-runtime/source/jetbrains/mps/editor/runtime/style/StyleImpl.java",
+    "replacement": "j2cl-src/mps/editor/editorlang-runtime/source/jetbrains/mps/editor/runtime/style/StyleImpl.java",
+    "base": "../mps-j2cl/mps/editor/editorlang-runtime/source/jetbrains/mps/editor/runtime/style/StyleImpl.java",
+    "base_sha256": "6c532a4a12fabe9b50070faffc5265931be997c7a9aadf74806affe02485923b"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Basic.java",
+    "replacement": "j2cl-src/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Basic.java",
+    "base": "../mps-j2cl/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Basic.java",
+    "base_sha256": "ebd0fb7faff019c3973593c991a9178a4bb572c708aa7158a9aa2ad454e386c8"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Collection.java",
+    "replacement": "j2cl-src/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Collection.java",
+    "base": "../mps-j2cl/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Collection.java",
+    "base_sha256": "5a9ffbf2298c9346dcf3adb7492207fc62832e4c6bef9450230cbba1483411c7"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Label.java",
+    "replacement": "j2cl-src/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Label.java",
+    "base": "../mps-extensions-j2cl/j2cl-src/jetbrains/mps/nodeEditor/cells/EditorCell_Label.java",
+    "base_sha256": "46b44b0201947da29bc8f5743153e28d5b82e49ed2211ea61e97c389ebfa65de"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/TextLine.java",
+    "replacement": "j2cl-src/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/TextLine.java",
+    "base": "../mps-j2cl/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/TextLine.java",
+    "base_sha256": "b5c52396b1a36e5edc87919e8fd650f44067ba110d1facff60a84f5bcb8636ec"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/cellLayout/CellLayout_Vertical.java",
+    "replacement": "j2cl-src/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cellLayout/CellLayout_Vertical.java",
+    "base": "../mps-j2cl/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cellLayout/CellLayout_Vertical.java",
+    "base_sha256": "dbd120ec9b2af9890db61e8178006c5d8d87fdfe2ecd6dd1649d77a7d1db1a70"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorFontMetricsImpl.java",
+    "replacement": "j2cl-src/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorFontMetricsImpl.java",
+    "base": "../mps-j2cl/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorFontMetricsImpl.java",
+    "base_sha256": "518c1e74db71e83d57318049e4b6cc6622591cb08771b76a77cd2b96c87958ca"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeItemCellRenderer.java",
+    "replacement": "j2cl-src/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeItemCellRenderer.java",
+    "base": "../mps-j2cl/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeItemCellRenderer.java",
+    "base_sha256": "5cff54623286a43e1492f977147edd8fcd61762b42f586628f1039074dae5414"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeSubstituteChooserUi.java",
+    "replacement": "j2cl-src/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeSubstituteChooserUi.java",
+    "base": "../mps-j2cl/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeSubstituteChooserUi.java",
+    "base_sha256": "14fe56d48b488cafde56862554ee59eb667df428f136e213ce73657e5a3c046e"
+  },
+  {
+    "original": "core/kernel/source/jetbrains/mps/smodel/SNode.java",
+    "replacement": "j2cl-src/mps/core/kernel/source/jetbrains/mps/smodel/SNode.java",
+    "base": "../mps-j2cl/mps/core/kernel/source/jetbrains/mps/smodel/SNode.java",
+    "base_sha256": "b7f49ab336989066a7a0c1150f46c372d52ea0a2a403504affe1e52f141dfdea"
+  },
+  {
+    "original": "core/kernel/source/jetbrains/mps/smodel/SModel.java",
+    "replacement": "j2cl-src/mps/core/kernel/source/jetbrains/mps/smodel/SModel.java",
+    "base": "../mps-j2cl/mps/core/kernel/source/jetbrains/mps/smodel/SModel.java",
+    "base_sha256": "211d3a47302659d72393c3df50800dd1c58b10e224c94a663d8ad2a5f9730e1e"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/checking/QuickFixRuntimeEditorWrapper.java",
+    "replacement": "j2cl-src/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/checking/QuickFixRuntimeEditorWrapper.java",
+    "base": "../mps-j2cl/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/checking/QuickFixRuntimeEditorWrapper.java",
+    "base_sha256": "0538b2403b7756e49c436d9166349279c436515391cd25cf1aa805dca8f71249"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponent.java",
+    "replacement": "j2cl-src/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponent.java",
+    "base": "../mps-extensions-j2cl/j2cl-src/jetbrains/mps/nodeEditor/EditorComponent.java",
+    "base_sha256": "059a0aaaaa26746940f5c80501300e09a134f293a3ba0fd51c48caedf6e18781"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/ui/InputMethodListenerImpl.java",
+    "replacement": "j2cl-src/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/ui/InputMethodListenerImpl.java",
+    "base": "../mps-j2cl/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/ui/InputMethodListenerImpl.java",
+    "base_sha256": "40bcccc9d886e6a0ace540c3d995cfc1c7ac8d71363c44b7ba35d723dda7092e"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdaterImpl.java",
+    "replacement": "j2cl-src/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdaterImpl.java",
+    "base": "../mps-extensions-j2cl/j2cl-src/jetbrains/mps/nodeEditor/updater/UpdaterImpl.java",
+    "base_sha256": "2bf0598a02cf005fdcccac566be6e29c026e1ee926003df4413e9622f4520513"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdaterModelListener.java",
+    "replacement": "j2cl-src/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdaterModelListener.java",
+    "base": "../mps-j2cl/mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdaterModelListener.java",
+    "base_sha256": "f7e3da220ccc35e7bf0669d88bed40cd4bea6175bb60ca2b532a59d9ac4026db"
+  }
+]

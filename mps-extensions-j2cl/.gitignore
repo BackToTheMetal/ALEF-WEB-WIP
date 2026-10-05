@@ -1,0 +1,6 @@
+.work/
+out/
+bazel-*
+__pycache__/
+upstream-src/
+mps-extensions/

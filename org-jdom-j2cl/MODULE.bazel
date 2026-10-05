@@ -1,0 +1,3 @@
+module(name = "org_jdom_j2cl", version = "0.1.0")
+bazel_dep(name = "j2cl", version = "20260402")
+bazel_dep(name = "rules_closure", version = "0.16.0")

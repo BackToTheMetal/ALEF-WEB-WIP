@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="500" height="221" preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 221" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="500" height="221"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-221)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="500" height="221" rx="4" ry="0" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.5; fill: rgb(98%,98%,99%); fill-rule: evenodd;"/>
+			<rect x="10" y="151" width="147" height="57" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="41.99804687499999" y="181.85" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,363) scale(1,-1)">Pinned ALEF / MPS</text>
+			<text x="36.946582031249996" y="169.85" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,339) scale(1,-1)">Language models + source</text>
+			<rect x="178" y="151" width="147" height="57" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="217.980712890625" y="181.85" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,363) scale(1,-1)">Generated Java</text>
+			<text x="200.88603515625" y="169.85" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,339) scale(1,-1)">Editors + language semantics</text>
+			<rect x="346" y="151" width="144" height="57" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="373.489990234375" y="181.85" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,363) scale(1,-1)">Browser adaptations</text>
+			<text x="376.9264404296875" y="169.85" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,339) scale(1,-1)">MPS, Swing, AWT, JRE</text>
+			<polyline points="157 179.5, 178 179.5" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="178 179.5, 173.6121 181.8971, 173.6121 177.1029" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="102" y="69" width="296" height="42" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="200.229736328125" y="92.35" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,184) scale(1,-1)">Bazel + J2CL + Closure</text>
+			<text x="174.6712158203125" y="80.35" style="font-family: Body; font-size: 7.7px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,160) scale(1,-1)">Explicit selection; one provider for each type</text>
+			<polyline points="251.5 151, 250 111" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="250 111, 252.5599 115.295, 247.769 115.4747" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<polyline points="418 151, 250 111" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="250 111, 254.8238 109.6844, 253.7134 114.3483" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="102" y="12" width="296" height="32" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="189.25" y="25.0" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,50) scale(1,-1)">One optimized editor bundle</text>
+			<polyline points="250 69, 250 44" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="250 44, 252.3971 48.38791, 247.6029 48.38791" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+		</g>
+	</g>
+</svg>

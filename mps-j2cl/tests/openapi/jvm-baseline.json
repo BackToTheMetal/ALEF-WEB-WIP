@@ -1,0 +1,7 @@
+{
+  "java_version": "21.0.12.1",
+  "mps_revision": "d2589ed55bbc9445b660769fcc17da97e8e395a6",
+  "oracle_source": "mps/core/openapi/source/org/jetbrains/mps/openapi/model/SModelName.java",
+  "oracle_resources": "mps/core/resources_en/source/jetbrains/mps/project/validation/CoreBundle.properties",
+  "unicode_note": "Identifier behavior is pinned to this JDK 21 runtime; JDK 25 Unicode parity is not claimed."
+}

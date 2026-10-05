@@ -1,0 +1,281 @@
+{
+  "repository": "https://github.com/JetBrains/intellij-community",
+  "tag": "idea/262.8665.258",
+  "commit": "1822802cd32c2268237bc2734326fc8d51cf1f67",
+  "sourceTree": "1d885766394b747b6e99bd36af06bc317393959f",
+  "sourcePath": "platform/util/jdom/src",
+  "files": [
+    {
+      "path": "org/jdom/Attribute.java",
+      "sha256": "c05638b432c33e500f4ee31bb2faf4f87bdde46ce76f5b32b3ec718ca1f8b77e"
+    },
+    {
+      "path": "org/jdom/AttributeList.java",
+      "sha256": "b4a72dd29116c08d0ae7f101945f243e661469074baefcef997e24befecc34da"
+    },
+    {
+      "path": "org/jdom/AttributeType.java",
+      "sha256": "6367ea026c88d31f56639bb837bc9b1ee0a11e68a501894acc8264c2201ee934"
+    },
+    {
+      "path": "org/jdom/CDATA.java",
+      "sha256": "a8143a8015396cc2fcc9a03d4fd4f113f0ad381fd729ef0de400af153e6cd316"
+    },
+    {
+      "path": "org/jdom/CloneBase.java",
+      "sha256": "8edfb3889368a12a6dcd7032643056a54a0b381a5fd6ccde5c08932b0450fb2e"
+    },
+    {
+      "path": "org/jdom/Comment.java",
+      "sha256": "c953ebbd99d44c093d0a6f6d8ac61a9c7fd98cff08720976034226b6ed010df3"
+    },
+    {
+      "path": "org/jdom/Content.java",
+      "sha256": "bb01c9ba231827de29300b420a4844fa3f1df6eaa4cb61be9c78d5a6ff518db7"
+    },
+    {
+      "path": "org/jdom/ContentList.java",
+      "sha256": "63028ff92b6528dd5afd3b3b3f4e357813f52780ede174aae5010a720432ef48"
+    },
+    {
+      "path": "org/jdom/DataConversionException.java",
+      "sha256": "eb7d972a8a73f1dd0c387f05dbd4bea03701942025c0cd94822c2b886b012dbd"
+    },
+    {
+      "path": "org/jdom/DefaultJDOMFactory.java",
+      "sha256": "bf4b9135c834248e1d0683c99d94d633b8e5bf9fab221eb5baeb6c7efccc07a7"
+    },
+    {
+      "path": "org/jdom/DescendantIterator.java",
+      "sha256": "6b019c7eb9e2eaca31acfc6fd26c499f2c237c495a7ae96971ba47c86fe888c4"
+    },
+    {
+      "path": "org/jdom/DocType.java",
+      "sha256": "1309e5996608161d09f7f12df52d6ae48de8786ff4ee4c434ed68f8898157c5c"
+    },
+    {
+      "path": "org/jdom/Document.java",
+      "sha256": "815b88b654cdba76e5541088b35ce1c46cec8b551e95b98fa8f552f948831efd"
+    },
+    {
+      "path": "org/jdom/Element.java",
+      "sha256": "b9f18163ee195417f9e31577e424ff0b30c705d63de26abd0719eec4e9ab030c"
+    },
+    {
+      "path": "org/jdom/EntityRef.java",
+      "sha256": "4da2c9293d77894096fe926a842261dccdd2a2dce4f5d9513b1054ce2709419e"
+    },
+    {
+      "path": "org/jdom/FilterIterator.java",
+      "sha256": "4aebefc78ddb69a88a88421a6b00f8dddd6350b702aa95d170d79ef556395e0e"
+    },
+    {
+      "path": "org/jdom/IllegalAddException.java",
+      "sha256": "152f717f2cd0a07118878173401bad42df58db6adabd454448a48ff6b5ed9d0e"
+    },
+    {
+      "path": "org/jdom/IllegalDataException.java",
+      "sha256": "b0eb53c959b4503e4957d02bda87959bd08786894942114258c8398f2ae7cc1e"
+    },
+    {
+      "path": "org/jdom/IllegalNameException.java",
+      "sha256": "0e0221cc2f7795f0460e45433e905efb5f4700ca3be54b75831c89bd5518e06a"
+    },
+    {
+      "path": "org/jdom/JDOMConstants.java",
+      "sha256": "bde7749859655db8f9bfaef1a2d6ca0794caadfdc91de3232f56c89b24a415ee"
+    },
+    {
+      "path": "org/jdom/JDOMException.java",
+      "sha256": "4d9c6eb91a2fd4314d299984b4be44b7d36b74c48ec05e03e4429762643ea40b"
+    },
+    {
+      "path": "org/jdom/JDOMFactory.java",
+      "sha256": "8b8ad772d48d3060f78bea29dce2efad3b1aea29e6ee4b7f5193e6df2cc36078"
+    },
+    {
+      "path": "org/jdom/Namespace.java",
+      "sha256": "def448f28b28e6fabdddab51c7d94f8053f2237637296f988bce599a0b200a36"
+    },
+    {
+      "path": "org/jdom/Parent.java",
+      "sha256": "5bcff903524b2a5cb8ea8379d66bc8e575941784e1f985cf8cdb65505e8b6e21"
+    },
+    {
+      "path": "org/jdom/ProcessingInstruction.java",
+      "sha256": "80194657495743c80a56f0cbbb64b77b14fcefdae00b8c21542ea3b0f839577c"
+    },
+    {
+      "path": "org/jdom/Text.java",
+      "sha256": "260cadadead11aeed1a3f1518c257eb4a59c6428fc2d71082edcb2b232aca0df"
+    },
+    {
+      "path": "org/jdom/Verifier.java",
+      "sha256": "45ab2d2cb66b3b55c219367e96a826af32fdc4893ef11276ccf9c7b164a07932"
+    },
+    {
+      "path": "org/jdom/filter/AbstractFilter.java",
+      "sha256": "7efb3bf670cf8484485e1148d4949d79b8519c003da68f6dd7e39772e6251825"
+    },
+    {
+      "path": "org/jdom/filter/ElementFilter.java",
+      "sha256": "67f2d1f53c42b5d9c70349063e7781862c1f60ac6bde18f8d4d4ea0933a4b31f"
+    },
+    {
+      "path": "org/jdom/filter/Filter.java",
+      "sha256": "ed9d0f1452dc805896c93b4bece9fb96956ed7f0298bbb015d1c344708d29b1f"
+    },
+    {
+      "path": "org/jdom/filter2/AbstractFilter.java",
+      "sha256": "ca6d4541175829851af2b8b121e32662b666cfc906bc228ef79e019c6942aac4"
+    },
+    {
+      "path": "org/jdom/filter2/AndFilter.java",
+      "sha256": "b4a47002f984eea2b6539b047580f3d42f8c5fba17292cc094c08f4fdb094728"
+    },
+    {
+      "path": "org/jdom/filter2/ElementFilter.java",
+      "sha256": "271fa67178f71a8bb3e8287e00d3ff9bdfe95bff55044da51a5178079de9723d"
+    },
+    {
+      "path": "org/jdom/filter2/Filter.java",
+      "sha256": "fab493c8452113a8e3f052963d24bf225fef3a5ddb332cae42b89b6ff07fd2f6"
+    },
+    {
+      "path": "org/jdom/filter2/Filters.java",
+      "sha256": "d17747510d40a2ce45bf1037093210e965cc21f002a1110f8bb6047b03fdb945"
+    },
+    {
+      "path": "org/jdom/filter2/NegateFilter.java",
+      "sha256": "3a008c83196570d05760d28c186e938a21b02153e1711408865fc56557733e69"
+    },
+    {
+      "path": "org/jdom/filter2/OrFilter.java",
+      "sha256": "a419891465704356eaa319063487a6ad8493d2b59d7030c90a4a2f2e4593f94c"
+    },
+    {
+      "path": "org/jdom/filter2/PassThroughFilter.java",
+      "sha256": "25244da3f6c0631eaad16f7998d4bb1a73a2f7f5c756ecd1b2ac5bc2bb9045c9"
+    },
+    {
+      "path": "org/jdom/input/DOMBuilder.java",
+      "sha256": "d9493e6befc5e9d2971c149d3abc155c64afb046fe552f49541537e48a4c08b9"
+    },
+    {
+      "path": "org/jdom/input/JDOMParseException.java",
+      "sha256": "6a73208a0bd1f850ea17c6a28191f510a7562b6cf1b23ea44daf7e810e4a28ba"
+    },
+    {
+      "path": "org/jdom/input/SAXBuilder.java",
+      "sha256": "966413cf29efb97a5624999d60e2906432634c111108496df9b3b06efd15212b"
+    },
+    {
+      "path": "org/jdom/input/sax/BuilderErrorHandler.java",
+      "sha256": "0e30f44ce06b83d9875c44308e67932c9ad230be0a6ebde4a5eb76176b5a7823"
+    },
+    {
+      "path": "org/jdom/input/sax/DefaultSAXHandlerFactory.java",
+      "sha256": "31a4a2628af587567c7b04975e9537b51ee63af7769d729dae2b6f02f818b05b"
+    },
+    {
+      "path": "org/jdom/input/sax/SAXBuilderEngine.java",
+      "sha256": "2bc2b62416297583f3e4d71d6e5feffd718f710b950a848c385e1f79f32054d7"
+    },
+    {
+      "path": "org/jdom/input/sax/SAXEngine.java",
+      "sha256": "fbf68b002893ffe4a542e75d18b2d39ad9994b78badcb8ae260e4ef1bf44a084"
+    },
+    {
+      "path": "org/jdom/input/sax/SAXHandler.java",
+      "sha256": "74d7c76f8c82dd662f111a775de357bf4e278a243637c151bd8f5a74ef4161da"
+    },
+    {
+      "path": "org/jdom/input/sax/SAXHandlerFactory.java",
+      "sha256": "e7e75b96df4cecef3d50a89851d4a98576a7e42d435d927a1ff9bce63e93fc7d"
+    },
+    {
+      "path": "org/jdom/input/sax/TextBuffer.java",
+      "sha256": "9fed9c83db0cd769f371bd23f7cda0751ce74cfa6468b2d40a36e9080365b753"
+    },
+    {
+      "path": "org/jdom/input/sax/XMLReaderJDOMFactory.java",
+      "sha256": "af4c9f5ec5c709e358e60ca67e0d48ce7934866ac8356c3dfacd1784fe1028af"
+    },
+    {
+      "path": "org/jdom/input/sax/XMLReaders.java",
+      "sha256": "47419432b5e3ce63d7fec04d15d9ea880ce4c4b0693815ef9dbfdbcb40ab59e0"
+    },
+    {
+      "path": "org/jdom/output/EscapeStrategy.java",
+      "sha256": "e4d5022030ea3c6be4b28b9f41d935826ce5776578156b92c5721463974e4f8b"
+    },
+    {
+      "path": "org/jdom/output/Format.java",
+      "sha256": "d0e2811425fe7c9733524e6e721900f2ccfc0691fe66f754566a5f812da20332"
+    },
+    {
+      "path": "org/jdom/output/FormatStack.java",
+      "sha256": "340191c19a9ffa3a46dcaae91cc676e1e6e907a24407dc7cbcd115e3f077df0b"
+    },
+    {
+      "path": "org/jdom/output/NamespaceStack.java",
+      "sha256": "068f183d3d7109a3c1bb0ae671236104f31f22c4027e80a3af6060fd11a74828"
+    },
+    {
+      "path": "org/jdom/output/XMLOutputter.java",
+      "sha256": "e435982519a5698f38e6c844bea6ef6b9494fe0c733e5aa2756726a2a242d62d"
+    },
+    {
+      "path": "org/jdom/util/NamespaceStack.java",
+      "sha256": "1870262e44bae59df6a5276ea7000e6aab37d58f31bcba1cfbb18eea26ef229b"
+    },
+    {
+      "path": "org/jdom/xpath/XPath.java",
+      "sha256": "a1fceb7ba5ba0a405fff5f4b1382809049a6dd5be2ff8d24e2d3cb96e7afd75a"
+    },
+    {
+      "path": "org/jdom/xpath/XPathDiagnostic.java",
+      "sha256": "b0c986551d249729701e725fd2f8043913f19168f93f025206a8389ec4558edb"
+    },
+    {
+      "path": "org/jdom/xpath/XPathExpression.java",
+      "sha256": "7752cb4481cedc2bfd5aa652866a8b42c49d3a709a5d66335028dda1c6aec468"
+    },
+    {
+      "path": "org/jdom/xpath/XPathFactory.java",
+      "sha256": "43db299fc4870da94d3c54a7af14dc702e322f51f9c0c70989e1b3b7d5c0d1b9"
+    },
+    {
+      "path": "org/jdom/xpath/jaxen/JaxenCompiled.java",
+      "sha256": "90501214f2ebbf83fd8f3aee12d9e480131c4379b2202b812f8fdd0a1b9581ac"
+    },
+    {
+      "path": "org/jdom/xpath/jaxen/JaxenXPathFactory.java",
+      "sha256": "20507ed1f751d760c311329edd3de56d9b777290b053f3088eca41743c8cb08c"
+    },
+    {
+      "path": "org/jdom/xpath/jaxen/JDOMCoreNavigator.java",
+      "sha256": "b95a7abab33c999d6dfb2b306900832540ca71bb486200a40152bd6ba401df24"
+    },
+    {
+      "path": "org/jdom/xpath/jaxen/JDOMNavigator.java",
+      "sha256": "6d98341234ca3ffe0d06e65e96c11547428205d90592d12b6b462b338cb0fdd0"
+    },
+    {
+      "path": "org/jdom/xpath/jaxen/JDOMXPath.java",
+      "sha256": "ac84a54ba26de98e085a9d1189e8340c441a0aa74b59b47891728ae986933a90"
+    },
+    {
+      "path": "org/jdom/xpath/jaxen/NamespaceContainer.java",
+      "sha256": "989ec9c002ff0a46ceb0f660796907995a2fb4899dffd579d075bd6f446e13ef"
+    },
+    {
+      "path": "org/jdom/xpath/util/AbstractXPathCompiled.java",
+      "sha256": "88205fc2f27b1f2c087f5f7270b0de912f22b1034c80e5af4f1a50fd53fc7424"
+    },
+    {
+      "path": "org/jdom/xpath/util/XPathDiagnosticImpl.java",
+      "sha256": "9b34299725e509e7e603d71652989354c8f6c17efa986d902ba0fe12e6a18b23"
+    }
+  ]
+}

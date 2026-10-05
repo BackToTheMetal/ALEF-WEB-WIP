@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "check": "Two independent source generation runs produced identical relative paths and file bytes",
+  "first_raw_tree_sha256": "4a1b95f6430bd1905689d82eebb2d5a1379be1fd6b635e15fd8237c7065c87cb",
+  "second_raw_tree_sha256": "4a1b95f6430bd1905689d82eebb2d5a1379be1fd6b635e15fd8237c7065c87cb"
+}

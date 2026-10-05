@@ -1,0 +1,4465 @@
+diff --git a/jre/java/java/lang/IllegalMonitorStateException.java b/jre/java/java/lang/IllegalMonitorStateException.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/lang/IllegalMonitorStateException.java
+@@ -0,0 +1,7 @@
++package java.lang;
++
++/** Signals an unbalanced lock/condition operation in the main-thread profile. */
++public class IllegalMonitorStateException extends RuntimeException {
++  public IllegalMonitorStateException() {}
++  public IllegalMonitorStateException(String message) { super(message); }
++}
+diff --git a/jre/java/java/lang/IllegalThreadStateException.java b/jre/java/java/lang/IllegalThreadStateException.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/lang/IllegalThreadStateException.java
+@@ -0,0 +1,6 @@
++package java.lang;
++
++public class IllegalThreadStateException extends IllegalArgumentException {
++  public IllegalThreadStateException() {}
++  public IllegalThreadStateException(String message) { super(message); }
++}
+diff --git a/jre/java/java/lang/Thread.java b/jre/java/java/lang/Thread.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/lang/Thread.java
+@@ -0,0 +1,88 @@
++package java.lang;
++
++import java.util.Objects;
++
++/** Main-thread source compatibility. start() invokes run() inline exactly once. */
++public class Thread implements Runnable {
++  public static final int MIN_PRIORITY = 1;
++  public static final int NORM_PRIORITY = 5;
++  public static final int MAX_PRIORITY = 10;
++  private static long nextId;
++  private static final ThreadGroup MAIN_GROUP = new ThreadGroup("main");
++  private static final Thread MAIN = new Thread("browser-main");
++  private static UncaughtExceptionHandler defaultHandler;
++  private final long id = ++nextId;
++  private Runnable target;
++  private String name;
++  private ThreadGroup group;
++  private boolean started;
++  private boolean alive;
++  private boolean interrupted;
++  private boolean daemon;
++  private int priority = NORM_PRIORITY;
++  private UncaughtExceptionHandler handler;
++  public Thread() { this((Runnable) null); }
++  public Thread(Runnable target) { this(null, target, "main-task-" + (nextId + 1)); }
++  public Thread(String name) { this(null, null, name); }
++  public Thread(Runnable target, String name) { this(null, target, name); }
++  public Thread(ThreadGroup group, Runnable target) { this(group, target, "main-task-" + (nextId + 1)); }
++  public Thread(ThreadGroup group, String name) { this(group, null, name); }
++  public Thread(ThreadGroup group, Runnable target, String name) {
++    this.group = group == null ? MAIN_GROUP : group; this.target = target; this.name = Objects.requireNonNull(name);
++  }
++  public Thread(ThreadGroup group, Runnable target, String name, long stackSize) { this(group, target, name); }
++  @Override public void run() { if (target != null) target.run(); }
++  @SuppressWarnings("DoNotCall") // This profile intentionally executes Thread.run on the main thread.
++  public void start() {
++    if (started || this == MAIN) throw new IllegalThreadStateException("Thread already started");
++    started = true; alive = true;
++    try { run(); }
++    catch (RuntimeException | Error failure) {
++      UncaughtExceptionHandler selected = getUncaughtExceptionHandler();
++      if (selected == null) throw failure;
++      selected.uncaughtException(this, failure);
++    } finally { alive = false; target = null; }
++  }
++  public static Thread currentThread() { return MAIN; }
++  public static boolean interrupted() { boolean old = MAIN.interrupted; MAIN.interrupted = false; return old; }
++  public void interrupt() { interrupted = true; }
++  public boolean isInterrupted() { return interrupted; }
++  public boolean isAlive() { return this == MAIN || alive; }
++  public long getId() { return id; }
++  public String getName() { return name; }
++  public void setName(String name) { this.name = Objects.requireNonNull(name); }
++  public int getPriority() { return priority; }
++  public void setPriority(int value) {
++    if (value < MIN_PRIORITY || value > MAX_PRIORITY) throw new IllegalArgumentException(); priority = value;
++  }
++  public void setDaemon(boolean daemon) {
++    if (isAlive()) throw new IllegalThreadStateException(); this.daemon = daemon;
++  }
++  public boolean isDaemon() { return daemon; }
++  public ThreadGroup getThreadGroup() { return group; }
++  public void join() throws InterruptedException {
++    if (Thread.interrupted()) throw new InterruptedException();
++    if (isAlive()) throw new IllegalStateException("Cannot join running work on the browser main thread");
++  }
++  public void join(long millis) throws InterruptedException {
++    if (millis < 0) throw new IllegalArgumentException(); join();
++  }
++  public void join(long millis, int nanos) throws InterruptedException {
++    if (nanos < 0 || nanos > 999999) throw new IllegalArgumentException(); join(millis);
++  }
++  public static void yield() {}
++  public static void sleep(long millis) throws InterruptedException { sleep(millis, 0); }
++  public static void sleep(long millis, int nanos) throws InterruptedException {
++    if (millis < 0 || nanos < 0 || nanos > 999999) throw new IllegalArgumentException();
++    if (Thread.interrupted()) throw new InterruptedException();
++    if (millis > 0 || nanos > 0) throw new IllegalStateException("Use ScheduledExecutorService instead of blocking Thread.sleep");
++  }
++  public enum State { NEW, RUNNABLE, BLOCKED, WAITING, TIMED_WAITING, TERMINATED }
++  public State getState() { return isAlive() ? State.RUNNABLE : started ? State.TERMINATED : State.NEW; }
++  public interface UncaughtExceptionHandler { void uncaughtException(Thread thread, Throwable failure); }
++  public void setUncaughtExceptionHandler(UncaughtExceptionHandler handler) { this.handler = handler; }
++  public UncaughtExceptionHandler getUncaughtExceptionHandler() { return handler != null ? handler : defaultHandler; }
++  public static void setDefaultUncaughtExceptionHandler(UncaughtExceptionHandler handler) { defaultHandler = handler; }
++  public static UncaughtExceptionHandler getDefaultUncaughtExceptionHandler() { return defaultHandler; }
++  @Override public String toString() { return "Thread[" + name + "," + priority + "]"; }
++}
+diff --git a/jre/java/java/lang/ThreadGroup.java b/jre/java/java/lang/ThreadGroup.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/lang/ThreadGroup.java
+@@ -0,0 +1,17 @@
++package java.lang;
++
++/** Naming metadata only; there are no browser worker groups. */
++public class ThreadGroup implements Thread.UncaughtExceptionHandler {
++  private final String name;
++  private final ThreadGroup parent;
++  public ThreadGroup(String name) { this(null, name); }
++  public ThreadGroup(ThreadGroup parent, String name) { this.parent = parent; this.name = name; }
++  public String getName() { return name; }
++  public ThreadGroup getParent() { return parent; }
++  public int activeCount() { return 0; }
++  public void uncaughtException(Thread thread, Throwable failure) {
++    if (parent != null) parent.uncaughtException(thread, failure);
++    else if (Thread.getDefaultUncaughtExceptionHandler() != null) Thread.getDefaultUncaughtExceptionHandler().uncaughtException(thread, failure);
++    else throw new RuntimeException(failure);
++  }
++}
+diff --git a/jre/java/java/lang/ThreadLocal.java b/jre/java/java/lang/ThreadLocal.java
+--- a/jre/java/java/lang/ThreadLocal.java
++++ b/jre/java/java/lang/ThreadLocal.java
+@@ -21,29 +21,41 @@
+ import java.util.function.Supplier;
+ 
+ /**
+- * Provides an implementation of {@link java.lang.ThreadLocal} for GWT.
++ * One lazily initialized value for the browser main thread.
+  *
+  * @param <T> value type.
+  */
+ public class ThreadLocal<T> {
+ 
+   private T value;
++  private boolean initialized;
++
++  public ThreadLocal() {}
++
++  protected T initialValue() { return null; }
+ 
+   public T get() {
++    if (!initialized) {
++      value = initialValue();
++      initialized = true;
++    }
+     return value;
+   }
+ 
+   public void set(T value) {
+     this.value = value;
++    initialized = true;
+   }
+ 
+   public void remove() {
+     value = null;
++    initialized = false;
+   }
+ 
+   public static <S> ThreadLocal<S> withInitial(Supplier<? extends S> supplier) {
+-    ThreadLocal<S> threadLocal = new ThreadLocal<>();
+-    threadLocal.set(supplier.get());
+-    return threadLocal;
++    java.util.Objects.requireNonNull(supplier);
++    return new ThreadLocal<S>() {
++      @Override protected S initialValue() { return supplier.get(); }
++    };
+   }
+ }
+diff --git a/jre/java/java/util/concurrent/AbstractExecutorService.java b/jre/java/java/util/concurrent/AbstractExecutorService.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/AbstractExecutorService.java
+@@ -0,0 +1,85 @@
++package java.util.concurrent;
++
++import java.util.ArrayList;
++import java.util.Collection;
++import java.util.List;
++import java.util.Objects;
++
++/** Shared inline submission and bulk-execution implementation. */
++public abstract class AbstractExecutorService implements ExecutorService {
++  protected <T> RunnableFuture<T> newTaskFor(Runnable task, T value) {
++    return new FutureTask<>(task, value);
++  }
++  protected <T> RunnableFuture<T> newTaskFor(Callable<T> task) { return new FutureTask<>(task); }
++  @Override public Future<?> submit(Runnable task) { return submit(task, null); }
++  @Override public <T> Future<T> submit(Runnable task, T result) {
++    RunnableFuture<T> future = newTaskFor(task, result); execute(future); return future;
++  }
++  @Override public <T> Future<T> submit(Callable<T> task) {
++    RunnableFuture<T> future = newTaskFor(task); execute(future); return future;
++  }
++  @Override public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks)
++      throws InterruptedException {
++    List<Future<T>> futures = prepare(tasks);
++    boolean success = false;
++    try {
++      for (Future<T> future : futures) execute((Runnable) future);
++      for (Future<T> future : futures) {
++        if (!future.isDone()) {
++          try { future.get(); }
++          catch (ExecutionException | CancellationException ignored) { /* Results retain failures. */ }
++        }
++      }
++      success = true;
++      return futures;
++    } finally {
++      if (!success) for (Future<T> future : futures) if (!future.isDone()) future.cancel(false);
++    }
++  }
++  @Override public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks,
++      long timeout, TimeUnit unit) throws InterruptedException {
++    long budget = Objects.requireNonNull(unit).toNanos(timeout);
++    long start = System.nanoTime();
++    List<Future<T>> futures = prepare(tasks);
++    try {
++      for (Future<T> future : futures) {
++        if (budget <= 0 || System.nanoTime() - start >= budget) break;
++        execute((Runnable) future);
++      }
++      return futures;
++    } finally {
++      for (Future<T> future : futures) if (!future.isDone()) future.cancel(false);
++    }
++  }
++  private <T> List<Future<T>> prepare(Collection<? extends Callable<T>> tasks) {
++    Objects.requireNonNull(tasks);
++    List<Future<T>> futures = new ArrayList<>();
++    for (Callable<T> task : tasks) futures.add(newTaskFor(Objects.requireNonNull(task)));
++    return futures;
++  }
++  @Override public <T> T invokeAny(Collection<? extends Callable<T>> tasks)
++      throws InterruptedException, ExecutionException {
++    try { return invokeAnyInternal(tasks, false, 0); }
++    catch (TimeoutException impossible) { throw new AssertionError(impossible); }
++  }
++  @Override public <T> T invokeAny(Collection<? extends Callable<T>> tasks, long timeout,
++      TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
++    return invokeAnyInternal(tasks, true, Objects.requireNonNull(unit).toNanos(timeout));
++  }
++  private <T> T invokeAnyInternal(Collection<? extends Callable<T>> tasks, boolean timed,
++      long budget) throws InterruptedException, ExecutionException, TimeoutException {
++    Objects.requireNonNull(tasks);
++    if (tasks.isEmpty()) throw new IllegalArgumentException("tasks must not be empty");
++    for (Callable<T> task : tasks) Objects.requireNonNull(task);
++    long start = System.nanoTime();
++    ExecutionException last = null;
++    for (Callable<T> task : tasks) {
++      if (timed && (budget <= 0 || System.nanoTime() - start >= budget)) throw new TimeoutException();
++      Future<T> future = submit(task);
++      try { return future.get(); }
++      catch (ExecutionException failure) { last = failure; }
++      finally { if (!future.isDone()) future.cancel(false); }
++    }
++    throw last;
++  }
++}
+diff --git a/jre/java/java/util/concurrent/ArrayBlockingQueue.java b/jre/java/java/util/concurrent/ArrayBlockingQueue.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/ArrayBlockingQueue.java
+@@ -0,0 +1,24 @@
++package java.util.concurrent;
++
++import java.util.Collection;
++import java.util.Objects;
++
++/** Fixed-capacity FIFO contract; fairness has no scheduling effect on one thread. */
++public class ArrayBlockingQueue<E> extends MainThreadBlockingQueue<E> {
++  public ArrayBlockingQueue(int capacity) {
++    super(capacity);
++  }
++
++  public ArrayBlockingQueue(int capacity, boolean fair) {
++    this(capacity);
++  }
++
++  public ArrayBlockingQueue(int capacity, boolean fair, Collection<? extends E> collection) {
++    this(capacity, fair);
++    Objects.requireNonNull(collection);
++    if (collection.size() > capacity) {
++      throw new IllegalArgumentException("Collection exceeds queue capacity");
++    }
++    addAll(collection);
++  }
++}
+diff --git a/jre/java/java/util/concurrent/BlockingQueue.java b/jre/java/java/util/concurrent/BlockingQueue.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/BlockingQueue.java
+@@ -0,0 +1,15 @@
++package java.util.concurrent;
++
++import java.util.Collection;
++import java.util.Queue;
++
++/** Blocking queue signatures with synchronous operations in this profile. */
++public interface BlockingQueue<E> extends Queue<E> {
++  void put(E element) throws InterruptedException;
++  boolean offer(E element, long timeout, TimeUnit unit) throws InterruptedException;
++  E take() throws InterruptedException;
++  E poll(long timeout, TimeUnit unit) throws InterruptedException;
++  int remainingCapacity();
++  int drainTo(Collection<? super E> collection);
++  int drainTo(Collection<? super E> collection, int maxElements);
++}
+diff --git a/jre/java/java/util/concurrent/BrokenBarrierException.java b/jre/java/java/util/concurrent/BrokenBarrierException.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/BrokenBarrierException.java
+@@ -0,0 +1,10 @@
++package java.util.concurrent;
++
++/** Indicates that a barrier generation failed or was interrupted. */
++public class BrokenBarrierException extends Exception {
++  public BrokenBarrierException() {}
++
++  public BrokenBarrierException(String message) {
++    super(message);
++  }
++}
+diff --git a/jre/java/java/util/concurrent/CompletableFuture.java b/jre/java/java/util/concurrent/CompletableFuture.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/CompletableFuture.java
+@@ -0,0 +1,352 @@
++package java.util.concurrent;
++
++import java.util.ArrayDeque;
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Objects;
++import java.util.function.BiConsumer;
++import java.util.function.BiFunction;
++import java.util.function.Consumer;
++import java.util.function.Function;
++import java.util.function.Supplier;
++
++/** Completion stages executed on the browser main thread, including Async methods. */
++public class CompletableFuture<T> implements Future<T>, CompletionStage<T> {
++  private static final Executor DIRECT = Runnable::run;
++  private static final ArrayDeque<Runnable> NOTIFICATIONS = new ArrayDeque<>();
++  private static boolean notifying;
++  private T value;
++  private Throwable failure;
++  private boolean done;
++  private final List<Runnable> listeners = new ArrayList<>();
++
++  private static void dispatch(Runnable listener) {
++    NOTIFICATIONS.add(listener);
++    if (notifying) return;
++    notifying = true;
++    try { while (!NOTIFICATIONS.isEmpty()) NOTIFICATIONS.remove().run(); }
++    finally { notifying = false; }
++  }
++  private void observe(Runnable listener) { if (done) listener.run(); else listeners.add(listener); }
++
++  /** Owns input registrations only until a race has a winner or is completed externally. */
++  private static final class CompletionRace {
++    private final List<RaceRegistration> registrations = new ArrayList<>();
++    private boolean closed;
++
++    void observe(CompletableFuture<?> source, Runnable action) {
++      if (closed) return;
++      RaceRegistration registration = new RaceRegistration(source, action);
++      registrations.add(registration);
++      source.observe(registration);
++    }
++
++    void close() {
++      if (closed) return;
++      closed = true;
++      for (RaceRegistration registration : registrations) registration.dispose();
++      registrations.clear();
++    }
++  }
++
++  private static final class RaceRegistration implements Runnable {
++    private CompletableFuture<?> source;
++    private Runnable action;
++
++    RaceRegistration(CompletableFuture<?> source, Runnable action) {
++      this.source = source;
++      this.action = action;
++    }
++
++    void dispose() {
++      if (source != null) source.listeners.remove(this);
++      source = null;
++      action = null;
++    }
++
++    @Override public void run() {
++      Runnable pending = action;
++      dispose();
++      // A losing notification may already be queued when the winner disposes it.
++      if (pending != null) pending.run();
++    }
++  }
++  private void helpComplete() {
++    // Nested callbacks may synchronously finish another source. Its notifications
++    // are already runnable, so process them before deciding that a get would block.
++    while (!done && !NOTIFICATIONS.isEmpty()) NOTIFICATIONS.remove().run();
++  }
++  private boolean finish(T result, Throwable error) {
++    if (done) return false;
++    value = result; failure = error; done = true;
++    List<Runnable> pending = new ArrayList<>(listeners); listeners.clear();
++    // Enqueue the whole batch before draining to avoid recursive completion chains.
++    dispatch(() -> { for (Runnable listener : pending) dispatch(listener); });
++    return true;
++  }
++  public boolean complete(T value) { return finish(value, null); }
++  public boolean completeExceptionally(Throwable failure) { return finish(null, Objects.requireNonNull(failure)); }
++  @Override public boolean cancel(boolean mayInterruptIfRunning) {
++    return completeExceptionally(new CancellationException()) || isCancelled();
++  }
++  @Override public boolean isCancelled() { return failure instanceof CancellationException; }
++  @Override public boolean isDone() { return done; }
++  public boolean isCompletedExceptionally() { return failure != null; }
++  private static Throwable unwrapped(Throwable failure) {
++    return failure instanceof CompletionException && failure.getCause() != null ? failure.getCause() : failure;
++  }
++  private static CompletionException completion(Throwable failure) {
++    return failure instanceof CompletionException ? (CompletionException) failure : new CompletionException(failure);
++  }
++  private void relayFailure(Throwable failure) { completeExceptionally(completion(failure)); }
++  @Override public T get() throws InterruptedException, ExecutionException {
++    helpComplete();
++    if (!done) throw new IllegalStateException("Future is pending; use a completion stage on the browser main thread");
++    return getResult();
++  }
++  private T getResult() throws ExecutionException {
++    if (isCancelled()) throw (CancellationException) failure;
++    if (failure != null) throw new ExecutionException(unwrapped(failure));
++    return value;
++  }
++  @Override public T get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
++    Objects.requireNonNull(unit);
++    helpComplete();
++    if (!done) throw new TimeoutException("Future is pending on the browser main thread");
++    return getResult();
++  }
++  public T join() {
++    helpComplete();
++    if (!done) throw new IllegalStateException("Future is pending; use a completion stage on the browser main thread");
++    if (isCancelled()) throw (CancellationException) failure;
++    if (failure != null) throw completion(failure);
++    return value;
++  }
++  public T getNow(T valueIfAbsent) { return done ? join() : valueIfAbsent; }
++  public void obtrudeValue(T value) { this.value = value; failure = null; if (!done) finish(value, null); }
++  public void obtrudeException(Throwable failure) {
++    Objects.requireNonNull(failure); this.failure = failure; value = null; if (!done) finish(null, failure);
++  }
++  public int getNumberOfDependents() { return listeners.size(); }
++  @Override public CompletableFuture<T> toCompletableFuture() { return this; }
++  public Executor defaultExecutor() { return DIRECT; }
++  public <U> CompletableFuture<U> newIncompleteFuture() { return new CompletableFuture<>(); }
++  public CompletableFuture<T> copy() { return thenApply(Function.identity()); }
++  public CompletionStage<T> minimalCompletionStage() { return new MinimalCompletionStage<>(copy()); }
++
++  private static <U> void execute(Executor executor, CompletableFuture<U> result, Supplier<? extends U> action) {
++    try {
++      executor.execute(() -> {
++        if (result.isDone()) return;
++        try { result.complete(action.get()); }
++        catch (Throwable failure) { result.relayFailure(failure); }
++      });
++    } catch (Throwable failure) { result.relayFailure(failure); }
++  }
++  public static <U> CompletableFuture<U> completedFuture(U value) {
++    CompletableFuture<U> result = new CompletableFuture<>(); result.complete(value); return result;
++  }
++  public static <U> CompletableFuture<U> failedFuture(Throwable failure) {
++    CompletableFuture<U> result = new CompletableFuture<>(); result.completeExceptionally(failure); return result;
++  }
++  public static <U> CompletionStage<U> completedStage(U value) { return new MinimalCompletionStage<>(completedFuture(value)); }
++  public static <U> CompletionStage<U> failedStage(Throwable failure) { return new MinimalCompletionStage<>(failedFuture(failure)); }
++  public static CompletableFuture<Void> runAsync(Runnable action) { return runAsync(action, DIRECT); }
++  public static CompletableFuture<Void> runAsync(Runnable action, Executor executor) {
++    Objects.requireNonNull(action); return supplyAsync(() -> { action.run(); return null; }, executor);
++  }
++  public static <U> CompletableFuture<U> supplyAsync(Supplier<U> action) { return supplyAsync(action, DIRECT); }
++  public static <U> CompletableFuture<U> supplyAsync(Supplier<U> action, Executor executor) {
++    Objects.requireNonNull(action); Objects.requireNonNull(executor);
++    CompletableFuture<U> result = new CompletableFuture<>();
++    executeSubmission(executor, result, action); return result;
++  }
++  private static <U> void executeSubmission(Executor executor, CompletableFuture<U> result, Supplier<? extends U> action) {
++    // Submission itself rejects synchronously; exceptions from the body belong to the future.
++    executor.execute(() -> {
++      if (result.isDone()) return;
++      try { result.complete(action.get()); }
++      catch (Throwable failure) { result.relayFailure(failure); }
++    });
++  }
++
++  @Override public <U> CompletableFuture<U> thenApply(Function<? super T, ? extends U> fn) { return thenApplyAsync(fn, DIRECT); }
++  @Override public <U> CompletableFuture<U> thenApplyAsync(Function<? super T, ? extends U> fn) { return thenApplyAsync(fn, defaultExecutor()); }
++  @Override public <U> CompletableFuture<U> thenApplyAsync(Function<? super T, ? extends U> fn, Executor executor) {
++    Objects.requireNonNull(fn); Objects.requireNonNull(executor);
++    CompletableFuture<U> result = newIncompleteFuture();
++    observe(() -> { if (failure != null) result.relayFailure(failure); else execute(executor, result, () -> fn.apply(value)); });
++    return result;
++  }
++  @Override public CompletableFuture<Void> thenAccept(Consumer<? super T> action) { return thenAcceptAsync(action, DIRECT); }
++  @Override public CompletableFuture<Void> thenAcceptAsync(Consumer<? super T> action) { return thenAcceptAsync(action, defaultExecutor()); }
++  @Override public CompletableFuture<Void> thenAcceptAsync(Consumer<? super T> action, Executor executor) {
++    Objects.requireNonNull(action); return thenApplyAsync(v -> { action.accept(v); return null; }, executor);
++  }
++  @Override public CompletableFuture<Void> thenRun(Runnable action) { return thenRunAsync(action, DIRECT); }
++  @Override public CompletableFuture<Void> thenRunAsync(Runnable action) { return thenRunAsync(action, defaultExecutor()); }
++  @Override public CompletableFuture<Void> thenRunAsync(Runnable action, Executor executor) {
++    Objects.requireNonNull(action); return thenApplyAsync(v -> { action.run(); return null; }, executor);
++  }
++
++  @Override public <U> CompletableFuture<U> thenCompose(Function<? super T, ? extends CompletionStage<U>> fn) { return thenComposeAsync(fn, DIRECT); }
++  @Override public <U> CompletableFuture<U> thenComposeAsync(Function<? super T, ? extends CompletionStage<U>> fn) { return thenComposeAsync(fn, defaultExecutor()); }
++  @Override public <U> CompletableFuture<U> thenComposeAsync(Function<? super T, ? extends CompletionStage<U>> fn, Executor executor) {
++    Objects.requireNonNull(fn); Objects.requireNonNull(executor);
++    CompletableFuture<U> result = newIncompleteFuture();
++    observe(() -> {
++      if (failure != null) { result.relayFailure(failure); return; }
++      try {
++        executor.execute(() -> {
++          if (result.isDone()) return;
++          try {
++            CompletableFuture<U> next = Objects.requireNonNull(fn.apply(value)).toCompletableFuture();
++            next.observe(() -> { if (next.failure != null) result.relayFailure(next.failure); else result.complete(next.value); });
++          } catch (Throwable error) { result.relayFailure(error); }
++        });
++      } catch (Throwable error) { result.relayFailure(error); }
++    });
++    return result;
++  }
++  @Override public CompletableFuture<T> exceptionally(Function<Throwable, ? extends T> fn) {
++    Objects.requireNonNull(fn);
++    return handle((v, error) -> error == null ? v : fn.apply(error));
++  }
++  @Override public <U> CompletableFuture<U> handle(BiFunction<? super T, Throwable, ? extends U> fn) { return handleAsync(fn, DIRECT); }
++  @Override public <U> CompletableFuture<U> handleAsync(BiFunction<? super T, Throwable, ? extends U> fn) { return handleAsync(fn, defaultExecutor()); }
++  @Override public <U> CompletableFuture<U> handleAsync(BiFunction<? super T, Throwable, ? extends U> fn, Executor executor) {
++    Objects.requireNonNull(fn); Objects.requireNonNull(executor);
++    CompletableFuture<U> result = newIncompleteFuture();
++    observe(() -> execute(executor, result, () -> fn.apply(value, failure))); return result;
++  }
++  @Override public CompletableFuture<T> whenComplete(BiConsumer<? super T, ? super Throwable> action) { return whenCompleteAsync(action, DIRECT); }
++  @Override public CompletableFuture<T> whenCompleteAsync(BiConsumer<? super T, ? super Throwable> action) { return whenCompleteAsync(action, defaultExecutor()); }
++  @Override public CompletableFuture<T> whenCompleteAsync(BiConsumer<? super T, ? super Throwable> action, Executor executor) {
++    Objects.requireNonNull(action); Objects.requireNonNull(executor);
++    CompletableFuture<T> result = newIncompleteFuture();
++    observe(() -> execute(executor, result, () -> {
++      try { action.accept(value, failure); }
++      catch (Throwable error) { throw completion(failure == null ? error : failure); }
++      if (failure != null) throw completion(failure);
++      return value;
++    })); return result;
++  }
++
++  public static CompletableFuture<Void> allOf(CompletableFuture<?>... futures) {
++    Objects.requireNonNull(futures);
++    for (CompletableFuture<?> future : futures) Objects.requireNonNull(future);
++    CompletableFuture<Void> result = new CompletableFuture<>();
++    if (futures.length == 0) { result.complete(null); return result; }
++    CompletableFuture<?>[] copy = java.util.Arrays.copyOf(futures, futures.length);
++    int[] remaining = {copy.length};
++    for (CompletableFuture<?> future : copy) future.observe(() -> {
++      if (--remaining[0] != 0) return;
++      for (CompletableFuture<?> part : copy) if (part.failure != null) { result.relayFailure(part.failure); return; }
++      result.complete(null);
++    });
++    return result;
++  }
++  public static CompletableFuture<Object> anyOf(CompletableFuture<?>... futures) {
++    Objects.requireNonNull(futures);
++    for (CompletableFuture<?> future : futures) Objects.requireNonNull(future);
++    CompletableFuture<Object> result = new CompletableFuture<>();
++    if (futures.length == 0) return result;
++    CompletionRace race = new CompletionRace();
++    result.observe(race::close);
++    for (CompletableFuture<?> future : futures) race.observe(future, () -> {
++      race.close();
++      if (future.failure != null) result.relayFailure(future.failure); else result.complete(future.value);
++    });
++    return result;
++  }
++  public CompletableFuture<T> completeAsync(Supplier<? extends T> supplier) { return completeAsync(supplier, defaultExecutor()); }
++  public CompletableFuture<T> completeAsync(Supplier<? extends T> supplier, Executor executor) {
++    Objects.requireNonNull(supplier); Objects.requireNonNull(executor); executeSubmission(executor, this, supplier); return this;
++  }
++  public CompletableFuture<T> orTimeout(long timeout, TimeUnit unit) {
++    return timeoutAfter(null, timeout, unit, true);
++  }
++  public CompletableFuture<T> completeOnTimeout(T value, long timeout, TimeUnit unit) {
++    return timeoutAfter(value, timeout, unit, false);
++  }
++  private CompletableFuture<T> timeoutAfter(T value, long timeout, TimeUnit unit, boolean exceptional) {
++    Objects.requireNonNull(unit);
++    if (!done) {
++      ScheduledThreadPoolExecutor timer = new ScheduledThreadPoolExecutor(1);
++      ScheduledFuture<?> scheduled = timer.schedule(() -> {
++        if (exceptional) completeExceptionally(new TimeoutException()); else complete(value);
++      }, timeout, unit);
++      observe(() -> { scheduled.cancel(false); timer.shutdown(); });
++    }
++    return this;
++  }
++  public static Executor delayedExecutor(long delay, TimeUnit unit) { return delayedExecutor(delay, unit, DIRECT); }
++  public static Executor delayedExecutor(long delay, TimeUnit unit, Executor executor) {
++    Objects.requireNonNull(unit); Objects.requireNonNull(executor);
++    return task -> {
++      Objects.requireNonNull(task);
++      ScheduledThreadPoolExecutor timer = new ScheduledThreadPoolExecutor(1);
++      timer.schedule(() -> { try { executor.execute(task); } finally { timer.shutdown(); } }, delay, unit);
++    };
++  }
++
++
++  @Override public <U, V> CompletableFuture<V> thenCombine(CompletionStage<? extends U> other, BiFunction<? super T, ? super U, ? extends V> fn) { return thenCombineAsync(other, fn, DIRECT); }
++  @Override public <U, V> CompletableFuture<V> thenCombineAsync(CompletionStage<? extends U> other, BiFunction<? super T, ? super U, ? extends V> fn) { return thenCombineAsync(other, fn, defaultExecutor()); }
++  @Override public <U, V> CompletableFuture<V> thenCombineAsync(CompletionStage<? extends U> other, BiFunction<? super T, ? super U, ? extends V> fn, Executor executor) {
++    Objects.requireNonNull(other); Objects.requireNonNull(fn); Objects.requireNonNull(executor);
++    CompletableFuture<? extends U> second = other.toCompletableFuture();
++    CompletableFuture<V> result = newIncompleteFuture();
++    boolean[] triggered = {false};
++    Runnable check = () -> {
++      if (!done || !second.done || triggered[0]) return;
++      triggered[0] = true;
++      if (failure != null) result.relayFailure(failure);
++      else if (second.failure != null) result.relayFailure(second.failure);
++      else execute(executor, result, () -> fn.apply(value, second.value));
++    };
++    observe(check); second.observe(check); return result;
++  }
++  @Override public <U> CompletableFuture<Void> thenAcceptBoth(CompletionStage<? extends U> other, BiConsumer<? super T, ? super U> action) { return thenAcceptBothAsync(other, action, DIRECT); }
++  @Override public <U> CompletableFuture<Void> thenAcceptBothAsync(CompletionStage<? extends U> other, BiConsumer<? super T, ? super U> action) { return thenAcceptBothAsync(other, action, defaultExecutor()); }
++  @Override public <U> CompletableFuture<Void> thenAcceptBothAsync(CompletionStage<? extends U> other, BiConsumer<? super T, ? super U> action, Executor executor) {
++    Objects.requireNonNull(action); return thenCombineAsync(other, (a, b) -> { action.accept(a, b); return null; }, executor);
++  }
++  @Override public CompletableFuture<Void> runAfterBoth(CompletionStage<?> other, Runnable action) { return runAfterBothAsync(other, action, DIRECT); }
++  @Override public CompletableFuture<Void> runAfterBothAsync(CompletionStage<?> other, Runnable action) { return runAfterBothAsync(other, action, defaultExecutor()); }
++  @Override public CompletableFuture<Void> runAfterBothAsync(CompletionStage<?> other, Runnable action, Executor executor) {
++    Objects.requireNonNull(action); return thenCombineAsync(other, (a, b) -> { action.run(); return null; }, executor);
++  }
++  @Override public <U> CompletableFuture<U> applyToEither(CompletionStage<? extends T> other, Function<? super T, U> fn) { return applyToEitherAsync(other, fn, DIRECT); }
++  @Override public <U> CompletableFuture<U> applyToEitherAsync(CompletionStage<? extends T> other, Function<? super T, U> fn) { return applyToEitherAsync(other, fn, defaultExecutor()); }
++  @Override public <U> CompletableFuture<U> applyToEitherAsync(CompletionStage<? extends T> other, Function<? super T, U> fn, Executor executor) {
++    Objects.requireNonNull(other); Objects.requireNonNull(fn); Objects.requireNonNull(executor);
++    CompletableFuture<? extends T> second = other.toCompletableFuture();
++    return either(second, selected -> fn.apply(selected == this ? value : second.value), executor);
++  }
++  private <U> CompletableFuture<U> either(CompletableFuture<?> second,
++      Function<CompletableFuture<?>, U> fn, Executor executor) {
++    CompletableFuture<U> result = newIncompleteFuture();
++    CompletionRace race = new CompletionRace();
++    result.observe(race::close);
++    Runnable check = () -> {
++      if (race.closed || (!done && !second.done)) return;
++      race.close();
++      CompletableFuture<?> selected = done ? this : second;
++      if (selected.failure != null) result.relayFailure(selected.failure);
++      else execute(executor, result, () -> fn.apply(selected));
++    };
++    race.observe(this, check); race.observe(second, check); return result;
++  }
++  @Override public CompletableFuture<Void> acceptEither(CompletionStage<? extends T> other, Consumer<? super T> action) { return acceptEitherAsync(other, action, DIRECT); }
++  @Override public CompletableFuture<Void> acceptEitherAsync(CompletionStage<? extends T> other, Consumer<? super T> action) { return acceptEitherAsync(other, action, defaultExecutor()); }
++  @Override public CompletableFuture<Void> acceptEitherAsync(CompletionStage<? extends T> other, Consumer<? super T> action, Executor executor) {
++    Objects.requireNonNull(action); return applyToEitherAsync(other, value -> { action.accept(value); return null; }, executor);
++  }
++  @Override public CompletableFuture<Void> runAfterEither(CompletionStage<?> other, Runnable action) { return runAfterEitherAsync(other, action, DIRECT); }
++  @Override public CompletableFuture<Void> runAfterEitherAsync(CompletionStage<?> other, Runnable action) { return runAfterEitherAsync(other, action, defaultExecutor()); }
++  @Override public CompletableFuture<Void> runAfterEitherAsync(CompletionStage<?> other, Runnable action, Executor executor) {
++    Objects.requireNonNull(other); Objects.requireNonNull(action); Objects.requireNonNull(executor);
++    return either(other.toCompletableFuture(), selected -> { action.run(); return null; }, executor);
++  }
++}
+diff --git a/jre/java/java/util/concurrent/CompletionException.java b/jre/java/java/util/concurrent/CompletionException.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/CompletionException.java
+@@ -0,0 +1,8 @@
++package java.util.concurrent;
++
++public class CompletionException extends RuntimeException {
++  protected CompletionException() {}
++  protected CompletionException(String message) { super(message); }
++  public CompletionException(String message, Throwable cause) { super(message, cause); }
++  public CompletionException(Throwable cause) { super(cause); }
++}
+diff --git a/jre/java/java/util/concurrent/CompletionService.java b/jre/java/java/util/concurrent/CompletionService.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/CompletionService.java
+@@ -0,0 +1,9 @@
++package java.util.concurrent;
++
++public interface CompletionService<V> {
++  Future<V> submit(Callable<V> task);
++  Future<V> submit(Runnable task, V result);
++  Future<V> take() throws InterruptedException;
++  Future<V> poll();
++  Future<V> poll(long timeout, TimeUnit unit) throws InterruptedException;
++}
+diff --git a/jre/java/java/util/concurrent/CompletionStage.java b/jre/java/java/util/concurrent/CompletionStage.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/CompletionStage.java
+@@ -0,0 +1,46 @@
++package java.util.concurrent;
++
++import java.util.function.*;
++
++/** Java 8 completion-stage API, with inline main-thread async execution. */
++public interface CompletionStage<T> {
++  <U> CompletionStage<U> thenApply(Function<? super T, ? extends U> fn);
++  <U> CompletionStage<U> thenApplyAsync(Function<? super T, ? extends U> fn);
++  <U> CompletionStage<U> thenApplyAsync(Function<? super T, ? extends U> fn, Executor executor);
++  CompletionStage<Void> thenAccept(Consumer<? super T> action);
++  CompletionStage<Void> thenAcceptAsync(Consumer<? super T> action);
++  CompletionStage<Void> thenAcceptAsync(Consumer<? super T> action, Executor executor);
++  CompletionStage<Void> thenRun(Runnable action);
++  CompletionStage<Void> thenRunAsync(Runnable action);
++  CompletionStage<Void> thenRunAsync(Runnable action, Executor executor);
++  <U, V> CompletionStage<V> thenCombine(CompletionStage<? extends U> other, BiFunction<? super T, ? super U, ? extends V> fn);
++  <U, V> CompletionStage<V> thenCombineAsync(CompletionStage<? extends U> other, BiFunction<? super T, ? super U, ? extends V> fn);
++  <U, V> CompletionStage<V> thenCombineAsync(CompletionStage<? extends U> other, BiFunction<? super T, ? super U, ? extends V> fn, Executor executor);
++  <U> CompletionStage<Void> thenAcceptBoth(CompletionStage<? extends U> other, BiConsumer<? super T, ? super U> action);
++  <U> CompletionStage<Void> thenAcceptBothAsync(CompletionStage<? extends U> other, BiConsumer<? super T, ? super U> action);
++  <U> CompletionStage<Void> thenAcceptBothAsync(CompletionStage<? extends U> other, BiConsumer<? super T, ? super U> action, Executor executor);
++  CompletionStage<Void> runAfterBoth(CompletionStage<?> other, Runnable action);
++  CompletionStage<Void> runAfterBothAsync(CompletionStage<?> other, Runnable action);
++  CompletionStage<Void> runAfterBothAsync(CompletionStage<?> other, Runnable action, Executor executor);
++  <U> CompletionStage<U> applyToEither(CompletionStage<? extends T> other, Function<? super T, U> fn);
++  <U> CompletionStage<U> applyToEitherAsync(CompletionStage<? extends T> other, Function<? super T, U> fn);
++  <U> CompletionStage<U> applyToEitherAsync(CompletionStage<? extends T> other, Function<? super T, U> fn, Executor executor);
++  CompletionStage<Void> acceptEither(CompletionStage<? extends T> other, Consumer<? super T> action);
++  CompletionStage<Void> acceptEitherAsync(CompletionStage<? extends T> other, Consumer<? super T> action);
++  CompletionStage<Void> acceptEitherAsync(CompletionStage<? extends T> other, Consumer<? super T> action, Executor executor);
++  CompletionStage<Void> runAfterEither(CompletionStage<?> other, Runnable action);
++  CompletionStage<Void> runAfterEitherAsync(CompletionStage<?> other, Runnable action);
++  CompletionStage<Void> runAfterEitherAsync(CompletionStage<?> other, Runnable action, Executor executor);
++  <U> CompletionStage<U> thenCompose(Function<? super T, ? extends CompletionStage<U>> fn);
++  <U> CompletionStage<U> thenComposeAsync(Function<? super T, ? extends CompletionStage<U>> fn);
++  <U> CompletionStage<U> thenComposeAsync(Function<? super T, ? extends CompletionStage<U>> fn, Executor executor);
++  CompletionStage<T> whenComplete(BiConsumer<? super T, ? super Throwable> action);
++  CompletionStage<T> whenCompleteAsync(BiConsumer<? super T, ? super Throwable> action);
++  CompletionStage<T> whenCompleteAsync(BiConsumer<? super T, ? super Throwable> action, Executor executor);
++  <U> CompletionStage<U> handle(BiFunction<? super T, Throwable, ? extends U> fn);
++  <U> CompletionStage<U> handleAsync(BiFunction<? super T, Throwable, ? extends U> fn);
++  <U> CompletionStage<U> handleAsync(BiFunction<? super T, Throwable, ? extends U> fn, Executor executor);
++  CompletionStage<T> exceptionally(Function<Throwable, ? extends T> fn);
++  CompletableFuture<T> toCompletableFuture();
++}
++
+diff --git a/jre/java/java/util/concurrent/ConcurrentHashMap.java b/jre/java/java/util/concurrent/ConcurrentHashMap.java
+--- a/jre/java/java/util/concurrent/ConcurrentHashMap.java
++++ b/jre/java/java/util/concurrent/ConcurrentHashMap.java
+@@ -20,19 +20,31 @@
+ 
+ import static javaemul.internal.InternalPreconditions.checkNotNull;
+ 
++import java.util.AbstractCollection;
+ import java.util.AbstractMap;
++import java.util.AbstractSet;
++import java.util.ArrayList;
++import java.util.Collection;
+ import java.util.Collections;
+ import java.util.Enumeration;
+ import java.util.HashMap;
+-import java.util.HashSet;
++import java.util.Iterator;
++import java.util.List;
++import java.util.Objects;
+ import java.util.Map;
+ import java.util.Set;
++import java.util.Spliterator;
++import java.util.Spliterators;
++import java.util.function.BiFunction;
++import java.util.function.Predicate;
+ 
+ /**
+- * Minimal emulation of {@link java.util.concurrent.ConcurrentHashMap}.
++ * Main-thread emulation of {@link java.util.concurrent.ConcurrentHashMap}.
+  *
+  * <p>Note that the javascript is single-threaded, it is essentially a {@link java.util.HashMap},
+- * implementing the new methods introduced by {@link ConcurrentMap}.
++ * implementing the new methods introduced by {@link ConcurrentMap}. Iterators capture entries at
++ * construction so callbacks may mutate the live map without invalidating traversal. Entry updates
++ * and iterator removals still write through to the live map.
+  *
+  * @param <K> key type
+  * @param <V> value type
+@@ -40,6 +52,7 @@
+ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements ConcurrentMap<K, V> {
+ 
+   private final Map<K, V> backingMap;
++  private final Set<Entry<K, V>> entries = new EntrySet();
+ 
+   public ConcurrentHashMap() {
+     this.backingMap = new HashMap<K, V>();
+@@ -54,7 +67,8 @@
+   }
+ 
+   public ConcurrentHashMap(Map<? extends K, ? extends V> t) {
+-    this.backingMap = new HashMap<K, V>(t);
++    this();
++    putAll(t);
+   }
+ 
+   public V putIfAbsent(K key, V value) {
+@@ -127,7 +141,7 @@
+ 
+   @Override
+   public Set<Entry<K, V>> entrySet() {
+-    return backingMap.entrySet();
++    return entries;
+   }
+ 
+   public boolean contains(Object value) {
+@@ -143,6 +157,130 @@
+   }
+ 
+   public static <T> Set<T> newKeySet() {
+-    return new HashSet<>();
++    return Collections.newSetFromMap(new ConcurrentHashMap<T, Boolean>());
++  }
++
++  @Override
++  public int size() {
++    return backingMap.size();
++  }
++
++  @Override
++  public boolean isEmpty() {
++    return backingMap.isEmpty();
++  }
++
++  @Override
++  public void clear() {
++    backingMap.clear();
++  }
++
++  @Override
++  public Collection<V> values() {
++    return new AbstractCollection<V>() {
++      @Override public int size() { return ConcurrentHashMap.this.size(); }
++      @Override public void clear() { ConcurrentHashMap.this.clear(); }
++      @Override public boolean contains(Object value) { return containsValue(value); }
++      @Override public Iterator<V> iterator() {
++        Iterator<Entry<K, V>> iterator = entries.iterator();
++        return new Iterator<V>() {
++          @Override public boolean hasNext() { return iterator.hasNext(); }
++          @Override public V next() { return iterator.next().getValue(); }
++          @Override public void remove() { iterator.remove(); }
++        };
++      }
++      @Override public boolean removeIf(Predicate<? super V> filter) {
++        Objects.requireNonNull(filter);
++        return removeMatching(entry -> filter.test(entry.getValue()));
++      }
++    };
++  }
++
++  @Override
++  public void replaceAll(BiFunction<? super K, ? super V, ? extends V> function) {
++    Objects.requireNonNull(function);
++    for (Entry<K, V> entry : entries) {
++      K key = entry.getKey();
++      V previous = entry.getValue();
++      do {
++        V replacement = Objects.requireNonNull(function.apply(key, previous));
++        if (replace(key, previous, replacement)) break;
++        // A reentrant callback may remove or replace this mapping.
++        previous = get(key);
++      } while (previous != null);
++    }
++  }
++
++  private boolean removeMatching(Predicate<? super Entry<K, V>> filter) {
++    boolean changed = false;
++    for (Entry<K, V> entry : entries) {
++      V previous = entry.getValue();
++      if (filter.test(entry) && remove(entry.getKey(), previous)) changed = true;
++    }
++    return changed;
++  }
++
++  private final class WriteThroughEntry extends SimpleEntry<K, V> {
++    WriteThroughEntry(K key, V value) { super(key, value); }
++
++    @Override public V setValue(V value) {
++      Objects.requireNonNull(value);
++      put(getKey(), value);
++      return super.setValue(value);
++    }
++  }
++
++  private final class EntrySet extends AbstractSet<Entry<K, V>> {
++    @Override public int size() { return ConcurrentHashMap.this.size(); }
++    @Override public void clear() { ConcurrentHashMap.this.clear(); }
++
++    @Override public Iterator<Entry<K, V>> iterator() {
++      List<Entry<K, V>> snapshot = new ArrayList<>();
++      for (Entry<K, V> entry : backingMap.entrySet()) {
++        snapshot.add(new WriteThroughEntry(entry.getKey(), entry.getValue()));
++      }
++      Iterator<Entry<K, V>> iterator = snapshot.iterator();
++      return new Iterator<Entry<K, V>>() {
++        private Entry<K, V> current;
++        @Override public boolean hasNext() { return iterator.hasNext(); }
++        @Override public Entry<K, V> next() {
++          current = iterator.next();
++          return current;
++        }
++        @Override public void remove() {
++          if (current == null) throw new IllegalStateException();
++          ConcurrentHashMap.this.remove(current.getKey());
++          current = null;
++        }
++      };
++    }
++
++    @Override public Spliterator<Entry<K, V>> spliterator() {
++      return Spliterators.spliteratorUnknownSize(iterator(),
++          Spliterator.CONCURRENT | Spliterator.DISTINCT | Spliterator.NONNULL);
++    }
++
++    @Override public boolean contains(Object object) {
++      if (!(object instanceof Entry)) return false;
++      Entry<?, ?> entry = (Entry<?, ?>) object;
++      return entry.getKey() != null && entry.getValue() != null
++          && entry.getValue().equals(get(entry.getKey()));
++    }
++
++    @Override public boolean remove(Object object) {
++      if (!(object instanceof Entry)) return false;
++      Entry<?, ?> entry = (Entry<?, ?>) object;
++      return entry.getKey() != null && entry.getValue() != null
++          && ConcurrentHashMap.this.remove(entry.getKey(), entry.getValue());
++    }
++
++    @Override public boolean add(Entry<K, V> entry) {
++      return !Objects.equals(put(entry.getKey(), entry.getValue()), entry.getValue());
++    }
++
++    @Override public boolean removeIf(Predicate<? super Entry<K, V>> filter) {
++      Objects.requireNonNull(filter);
++      return removeMatching(filter);
++    }
+   }
+ }
+diff --git a/jre/java/java/util/concurrent/ConcurrentLinkedDeque.java b/jre/java/java/util/concurrent/ConcurrentLinkedDeque.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/ConcurrentLinkedDeque.java
+@@ -0,0 +1,301 @@
++package java.util.concurrent;
++
++import java.io.Serializable;
++import java.util.AbstractCollection;
++import java.util.Collection;
++import java.util.Deque;
++import java.util.Iterator;
++import java.util.NoSuchElementException;
++import java.util.Objects;
++import java.util.Spliterator;
++import java.util.Spliterators;
++
++/** A main-thread deque with removable, weakly consistent iterators. */
++public class ConcurrentLinkedDeque<E> extends AbstractCollection<E>
++    implements Deque<E>, Serializable {
++  private Node<E> first;
++  private Node<E> last;
++  private int size;
++
++  private static final class Node<E> {
++    final E element;
++    Node<E> previous;
++    Node<E> next;
++    boolean removed;
++
++    Node(E element) {
++      this.element = Objects.requireNonNull(element);
++    }
++  }
++
++  public ConcurrentLinkedDeque() {}
++
++  public ConcurrentLinkedDeque(Collection<? extends E> collection) {
++    addAll(collection);
++  }
++
++  @Override
++  public void addFirst(E element) {
++    Node<E> node = new Node<>(element);
++    node.next = first;
++    if (first == null) {
++      last = node;
++    } else {
++      first.previous = node;
++    }
++    first = node;
++    size++;
++  }
++
++  @Override
++  public void addLast(E element) {
++    Node<E> node = new Node<>(element);
++    node.previous = last;
++    if (last == null) {
++      first = node;
++    } else {
++      last.next = node;
++    }
++    last = node;
++    size++;
++  }
++
++  @Override
++  public boolean offerFirst(E element) {
++    addFirst(element);
++    return true;
++  }
++
++  @Override
++  public boolean offerLast(E element) {
++    addLast(element);
++    return true;
++  }
++
++  @Override
++  public E peekFirst() {
++    return first == null ? null : first.element;
++  }
++
++  @Override
++  public E peekLast() {
++    return last == null ? null : last.element;
++  }
++
++  @Override
++  public E getFirst() {
++    return requireElement(peekFirst());
++  }
++
++  @Override
++  public E getLast() {
++    return requireElement(peekLast());
++  }
++
++  @Override
++  public E pollFirst() {
++    return first == null ? null : unlink(first);
++  }
++
++  @Override
++  public E pollLast() {
++    return last == null ? null : unlink(last);
++  }
++
++  @Override
++  public E removeFirst() {
++    return requireElement(pollFirst());
++  }
++
++  @Override
++  public E removeLast() {
++    return requireElement(pollLast());
++  }
++
++  @Override
++  public boolean offer(E element) {
++    return offerLast(element);
++  }
++
++  @Override
++  public boolean add(E element) {
++    return offerLast(element);
++  }
++
++  @Override
++  public E poll() {
++    return pollFirst();
++  }
++
++  @Override
++  public E peek() {
++    return peekFirst();
++  }
++
++  @Override
++  public E remove() {
++    return removeFirst();
++  }
++
++  @Override
++  public E pop() {
++    return removeFirst();
++  }
++
++  @Override
++  public E element() {
++    return getFirst();
++  }
++
++  @Override
++  public void push(E element) {
++    addFirst(element);
++  }
++
++  @Override
++  public boolean removeFirstOccurrence(Object object) {
++    if (object == null) {
++      return false;
++    }
++    for (Node<E> node = first; node != null; node = node.next) {
++      if (object.equals(node.element)) {
++        unlink(node);
++        return true;
++      }
++    }
++    return false;
++  }
++
++  @Override
++  public boolean removeLastOccurrence(Object object) {
++    if (object == null) {
++      return false;
++    }
++    for (Node<E> node = last; node != null; node = node.previous) {
++      if (object.equals(node.element)) {
++        unlink(node);
++        return true;
++      }
++    }
++    return false;
++  }
++
++  @Override
++  public boolean remove(Object object) {
++    return removeFirstOccurrence(object);
++  }
++
++  @Override
++  public int size() {
++    return size;
++  }
++
++  @Override
++  public boolean addAll(Collection<? extends E> collection) {
++    Objects.requireNonNull(collection);
++    if (collection == this) {
++      throw new IllegalArgumentException("Cannot add a deque to itself");
++    }
++    // Validate before linking, as the JDK concurrent deque does.
++    java.util.ArrayList<E> snapshot = new java.util.ArrayList<>(collection);
++    for (E element : snapshot) {
++      Objects.requireNonNull(element);
++    }
++    for (E element : snapshot) {
++      addLast(element);
++    }
++    return !snapshot.isEmpty();
++  }
++
++  @Override
++  public void clear() {
++    while (first != null) {
++      unlink(first);
++    }
++  }
++
++  private E unlink(Node<E> node) {
++    if (!node.removed) {
++      if (node.previous == null) {
++        first = node.next;
++      } else {
++        node.previous.next = node.next;
++      }
++      if (node.next == null) {
++        last = node.previous;
++      } else {
++        node.next.previous = node.previous;
++      }
++      node.removed = true;
++      size--;
++    }
++    // Retain links so an existing iterator can continue after removal.
++    return node.element;
++  }
++
++  private E requireElement(E element) {
++    if (element == null) {
++      throw new NoSuchElementException();
++    }
++    return element;
++  }
++
++  @Override
++  public Iterator<E> iterator() {
++    return new DequeIterator(false);
++  }
++
++  @Override
++  public Iterator<E> descendingIterator() {
++    return new DequeIterator(true);
++  }
++
++  @Override
++  public Spliterator<E> spliterator() {
++    return Spliterators.spliteratorUnknownSize(iterator(),
++        Spliterator.CONCURRENT | Spliterator.NONNULL | Spliterator.ORDERED);
++  }
++
++  private final class DequeIterator implements Iterator<E> {
++    private final boolean descending;
++    private Node<E> next;
++    private Node<E> returned;
++
++    DequeIterator(boolean descending) {
++      this.descending = descending;
++      next = descending ? last : first;
++    }
++
++    private void skipRemoved() {
++      while (next != null && next.removed) {
++        next = descending ? next.previous : next.next;
++      }
++    }
++
++    @Override
++    public boolean hasNext() {
++      skipRemoved();
++      return next != null;
++    }
++
++    @Override
++    public E next() {
++      skipRemoved();
++      if (next == null) {
++        throw new NoSuchElementException();
++      }
++      returned = next;
++      next = descending ? next.previous : next.next;
++      return returned.element;
++    }
++
++    @Override
++    public void remove() {
++      if (returned == null) {
++        throw new IllegalStateException();
++      }
++      unlink(returned);
++      returned = null;
++    }
++  }
++}
+diff --git a/jre/java/java/util/concurrent/ConcurrentLinkedQueue.java b/jre/java/java/util/concurrent/ConcurrentLinkedQueue.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/ConcurrentLinkedQueue.java
+@@ -0,0 +1,68 @@
++package java.util.concurrent;
++
++import java.io.Serializable;
++import java.util.AbstractQueue;
++import java.util.Collection;
++import java.util.Iterator;
++import java.util.Objects;
++import java.util.Spliterator;
++
++/** FIFO data semantics without native concurrency. */
++public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Serializable {
++  private final ConcurrentLinkedDeque<E> data = new ConcurrentLinkedDeque<>();
++
++  public ConcurrentLinkedQueue() {}
++
++  public ConcurrentLinkedQueue(Collection<? extends E> collection) {
++    data.addAll(collection);
++  }
++
++  @Override
++  public boolean offer(E element) {
++    return data.offerLast(element);
++  }
++
++  @Override
++  public E poll() {
++    return data.pollFirst();
++  }
++
++  @Override
++  public E peek() {
++    return data.peekFirst();
++  }
++
++  @Override
++  public int size() {
++    return data.size();
++  }
++
++  @Override
++  public Iterator<E> iterator() {
++    return data.iterator();
++  }
++
++  @Override
++  public Spliterator<E> spliterator() {
++    return data.spliterator();
++  }
++
++  @Override
++  public boolean remove(Object object) {
++    return data.removeFirstOccurrence(object);
++  }
++
++  @Override
++  public boolean addAll(Collection<? extends E> collection) {
++    Objects.requireNonNull(collection);
++    if (collection == this) {
++      throw new IllegalArgumentException("Cannot add a queue to itself");
++    }
++    return data.addAll(collection);
++  }
++
++  @Override
++  public void clear() {
++    data.clear();
++  }
++}
+diff --git a/jre/java/java/util/concurrent/CopyOnWriteArrayList.java b/jre/java/java/util/concurrent/CopyOnWriteArrayList.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/CopyOnWriteArrayList.java
+@@ -0,0 +1,443 @@
++package java.util.concurrent;
++
++import java.io.Serializable;
++import java.util.AbstractList;
++import java.util.ArrayList;
++import java.util.Arrays;
++import java.util.Collection;
++import java.util.Collections;
++import java.util.Comparator;
++import java.util.ConcurrentModificationException;
++import java.util.Iterator;
++import java.util.List;
++import java.util.ListIterator;
++import java.util.Objects;
++import java.util.RandomAccess;
++import java.util.Spliterator;
++import java.util.Spliterators;
++import java.util.function.Predicate;
++import java.util.function.UnaryOperator;
++
++/** Snapshot iteration is preserved even though mutations all occur on one thread. */
++public class CopyOnWriteArrayList<E> extends AbstractList<E>
++    implements RandomAccess, Cloneable, Serializable {
++  // A published list is never mutated. Iterators and views can retain its identity.
++  private ArrayList<E> data;
++
++  public CopyOnWriteArrayList() {
++    data = new ArrayList<>();
++  }
++
++  public CopyOnWriteArrayList(Collection<? extends E> collection) {
++    data = new ArrayList<>(Objects.requireNonNull(collection));
++  }
++
++  public CopyOnWriteArrayList(E[] array) {
++    data = new ArrayList<>(Arrays.asList(Objects.requireNonNull(array)));
++  }
++
++  @Override
++  public int size() {
++    return data.size();
++  }
++
++  @Override
++  public E get(int index) {
++    return data.get(index);
++  }
++
++  @Override
++  public E set(int index, E element) {
++    E previous = data.get(index);
++    if (previous != element) {
++      ArrayList<E> updated = new ArrayList<>(data);
++      updated.set(index, element);
++      data = updated;
++    }
++    return previous;
++  }
++
++  @Override
++  public boolean add(E element) {
++    add(data.size(), element);
++    return true;
++  }
++
++  @Override
++  public void add(int index, E element) {
++    ArrayList<E> updated = new ArrayList<>(data);
++    updated.add(index, element);
++    data = updated;
++  }
++
++  @Override
++  public E remove(int index) {
++    ArrayList<E> updated = new ArrayList<>(data);
++    E previous = updated.remove(index);
++    data = updated;
++    return previous;
++  }
++
++  @Override
++  public boolean remove(Object object) {
++    int index = data.indexOf(object);
++    if (index < 0) {
++      return false;
++    }
++    remove(index);
++    return true;
++  }
++
++  @Override
++  protected void removeRange(int fromIndex, int toIndex) {
++    checkRange(fromIndex, toIndex, data.size());
++    ArrayList<E> updated = new ArrayList<>(data);
++    updated.subList(fromIndex, toIndex).clear();
++    data = updated;
++  }
++
++  public boolean addIfAbsent(E element) {
++    if (data.contains(element)) {
++      return false;
++    }
++    return add(element);
++  }
++
++  public int addAllAbsent(Collection<? extends E> collection) {
++    Objects.requireNonNull(collection);
++    ArrayList<E> updated = new ArrayList<>(data);
++    int added = 0;
++    for (E element : collection) {
++      if (!updated.contains(element)) {
++        updated.add(element);
++        added++;
++      }
++    }
++    if (added != 0) {
++      data = updated;
++    }
++    return added;
++  }
++
++  @Override
++  public boolean addAll(Collection<? extends E> collection) {
++    return addAll(size(), collection);
++  }
++
++  @Override
++  public boolean addAll(int index, Collection<? extends E> collection) {
++    Objects.requireNonNull(collection);
++    ArrayList<E> updated = new ArrayList<>(data);
++    boolean changed = updated.addAll(index, collection);
++    if (changed) {
++      data = updated;
++    }
++    return changed;
++  }
++
++  @Override
++  public boolean removeAll(Collection<?> collection) {
++    Objects.requireNonNull(collection);
++    return removeIf(collection::contains);
++  }
++
++  @Override
++  public boolean retainAll(Collection<?> collection) {
++    Objects.requireNonNull(collection);
++    return removeIf(element -> !collection.contains(element));
++  }
++
++  @Override
++  public boolean removeIf(Predicate<? super E> filter) {
++    return removeMatching(filter, 0, size());
++  }
++
++  private boolean removeMatching(Predicate<? super E> filter, int fromIndex, int toIndex) {
++    Objects.requireNonNull(filter);
++    ArrayList<E> expected = data;
++    ArrayList<E> updated = new ArrayList<>(expected.size());
++    for (int index = 0; index < expected.size(); index++) {
++      E element = expected.get(index);
++      if (index < fromIndex || index >= toIndex || !filter.test(element)) {
++        updated.add(element);
++      }
++    }
++    if (data != expected) {
++      throw new ConcurrentModificationException();
++    }
++    if (updated.size() == expected.size()) {
++      return false;
++    }
++    data = updated;
++    return true;
++  }
++
++  @Override
++  public void replaceAll(UnaryOperator<E> operator) {
++    Objects.requireNonNull(operator);
++    ArrayList<E> updated = new ArrayList<>(data);
++    updated.replaceAll(operator);
++    data = updated;
++  }
++
++  @Override
++  public void sort(Comparator<? super E> comparator) {
++    ArrayList<E> updated = new ArrayList<>(data);
++    updated.sort(comparator);
++    data = updated;
++  }
++
++  @Override
++  public void clear() {
++    data = new ArrayList<>();
++  }
++
++  @Override
++  public int indexOf(Object object) {
++    return data.indexOf(object);
++  }
++
++  public int indexOf(E element, int index) {
++    ArrayList<E> snapshot = data;
++    if (index < 0) {
++      throw new IndexOutOfBoundsException();
++    }
++    for (int current = index; current < snapshot.size(); current++) {
++      if (Objects.equals(element, snapshot.get(current))) {
++        return current;
++      }
++    }
++    return -1;
++  }
++
++  @Override
++  public int lastIndexOf(Object object) {
++    return data.lastIndexOf(object);
++  }
++
++  public int lastIndexOf(E element, int index) {
++    ArrayList<E> snapshot = data;
++    if (index >= snapshot.size()) {
++      throw new IndexOutOfBoundsException();
++    }
++    for (int current = index; current >= 0; current--) {
++      if (Objects.equals(element, snapshot.get(current))) {
++        return current;
++      }
++    }
++    return -1;
++  }
++
++  public Object clone() {
++    return new CopyOnWriteArrayList<>(data);
++  }
++
++  @Override
++  public Object[] toArray() {
++    return data.toArray();
++  }
++
++  @Override
++  public <T> T[] toArray(T[] array) {
++    return data.toArray(array);
++  }
++
++  @Override
++  public Iterator<E> iterator() {
++    return listIterator();
++  }
++
++  @Override
++  public ListIterator<E> listIterator() {
++    return listIterator(0);
++  }
++
++  @Override
++  public ListIterator<E> listIterator(int index) {
++    return Collections.unmodifiableList(data).listIterator(index);
++  }
++
++  @Override
++  public Spliterator<E> spliterator() {
++    return Spliterators.spliterator(data, Spliterator.IMMUTABLE | Spliterator.ORDERED);
++  }
++
++  @Override
++  public List<E> subList(int fromIndex, int toIndex) {
++    checkRange(fromIndex, toIndex, size());
++    return new SnapshotSubList(fromIndex, toIndex - fromIndex);
++  }
++
++  private static void checkRange(int fromIndex, int toIndex, int size) {
++    if (fromIndex < 0 || toIndex > size || fromIndex > toIndex) {
++      throw new IndexOutOfBoundsException();
++    }
++  }
++
++  private final class SnapshotSubList extends AbstractList<E> implements RandomAccess {
++    private final int offset;
++    private int length;
++    private ArrayList<E> expected;
++
++    SnapshotSubList(int offset, int length) {
++      this.offset = offset;
++      this.length = length;
++      expected = data;
++    }
++
++    private void checkUnmodified() {
++      if (expected != data) {
++        throw new ConcurrentModificationException();
++      }
++    }
++
++    private void checkIndex(int index, boolean insertion) {
++      checkUnmodified();
++      if (index < 0 || (insertion ? index > length : index >= length)) {
++        throw new IndexOutOfBoundsException();
++      }
++    }
++
++    @Override
++    public int size() {
++      checkUnmodified();
++      return length;
++    }
++
++    @Override
++    public E get(int index) {
++      checkIndex(index, false);
++      return data.get(offset + index);
++    }
++
++    @Override
++    public E set(int index, E element) {
++      checkIndex(index, false);
++      E previous = CopyOnWriteArrayList.this.set(offset + index, element);
++      expected = data;
++      return previous;
++    }
++
++    @Override
++    public void add(int index, E element) {
++      checkIndex(index, true);
++      CopyOnWriteArrayList.this.add(offset + index, element);
++      expected = data;
++      length++;
++    }
++
++    @Override
++    public boolean addAll(Collection<? extends E> collection) {
++      return addAll(size(), collection);
++    }
++
++    @Override
++    public boolean addAll(int index, Collection<? extends E> collection) {
++      checkIndex(index, true);
++      int before = data.size();
++      boolean changed = CopyOnWriteArrayList.this.addAll(offset + index, collection);
++      length += data.size() - before;
++      expected = data;
++      return changed;
++    }
++
++    @Override
++    public E remove(int index) {
++      checkIndex(index, false);
++      E previous = CopyOnWriteArrayList.this.remove(offset + index);
++      expected = data;
++      length--;
++      return previous;
++    }
++
++    @Override
++    public boolean remove(Object object) {
++      int index = indexOf(object);
++      if (index < 0) {
++        return false;
++      }
++      remove(index);
++      return true;
++    }
++
++    @Override
++    protected void removeRange(int fromIndex, int toIndex) {
++      checkUnmodified();
++      checkRange(fromIndex, toIndex, length);
++      CopyOnWriteArrayList.this.removeRange(offset + fromIndex, offset + toIndex);
++      length -= toIndex - fromIndex;
++      expected = data;
++    }
++
++    @Override
++    public boolean removeAll(Collection<?> collection) {
++      Objects.requireNonNull(collection);
++      return removeIf(collection::contains);
++    }
++
++    @Override
++    public boolean retainAll(Collection<?> collection) {
++      Objects.requireNonNull(collection);
++      return removeIf(element -> !collection.contains(element));
++    }
++
++    @Override
++    public boolean removeIf(Predicate<? super E> filter) {
++      checkUnmodified();
++      int before = data.size();
++      boolean changed = removeMatching(filter, offset, offset + length);
++      length += data.size() - before;
++      expected = data;
++      return changed;
++    }
++
++    @Override
++    public void replaceAll(UnaryOperator<E> operator) {
++      Objects.requireNonNull(operator);
++      checkUnmodified();
++      ArrayList<E> updated = new ArrayList<>(data);
++      updated.subList(offset, offset + length).replaceAll(operator);
++      data = updated;
++      expected = data;
++    }
++
++    @Override
++    public void sort(Comparator<? super E> comparator) {
++      checkUnmodified();
++      ArrayList<E> updated = new ArrayList<>(data);
++      updated.subList(offset, offset + length).sort(comparator);
++      data = updated;
++      expected = data;
++    }
++
++    @Override
++    public Iterator<E> iterator() {
++      return listIterator();
++    }
++
++    @Override
++    public ListIterator<E> listIterator() {
++      return listIterator(0);
++    }
++
++    @Override
++    public ListIterator<E> listIterator(int index) {
++      checkIndex(index, true);
++      return Collections.unmodifiableList(data.subList(offset, offset + length)).listIterator(index);
++    }
++
++    @Override
++    public Spliterator<E> spliterator() {
++      checkUnmodified();
++      return Spliterators.spliterator(data.subList(offset, offset + length),
++          Spliterator.IMMUTABLE | Spliterator.ORDERED);
++    }
++
++    @Override
++    public List<E> subList(int fromIndex, int toIndex) {
++      checkUnmodified();
++      checkRange(fromIndex, toIndex, length);
++      return new SnapshotSubList(offset + fromIndex, toIndex - fromIndex);
++    }
++  }
++}
+diff --git a/jre/java/java/util/concurrent/CopyOnWriteArraySet.java b/jre/java/java/util/concurrent/CopyOnWriteArraySet.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/CopyOnWriteArraySet.java
+@@ -0,0 +1,78 @@
++package java.util.concurrent;
++
++import java.io.Serializable;
++import java.util.AbstractSet;
++import java.util.Collection;
++import java.util.Iterator;
++import java.util.Spliterator;
++import java.util.Spliterators;
++import java.util.function.Predicate;
++
++/** An insertion-ordered set with immutable iterator snapshots. */
++public class CopyOnWriteArraySet<E> extends AbstractSet<E> implements Serializable {
++  private final CopyOnWriteArrayList<E> data;
++
++  public CopyOnWriteArraySet() {
++    data = new CopyOnWriteArrayList<>();
++  }
++
++  public CopyOnWriteArraySet(Collection<? extends E> collection) {
++    this();
++    data.addAllAbsent(collection);
++  }
++
++  @Override
++  public int size() {
++    return data.size();
++  }
++
++  @Override
++  public boolean contains(Object object) {
++    return data.contains(object);
++  }
++
++  @Override
++  public boolean add(E element) {
++    return data.addIfAbsent(element);
++  }
++
++  @Override
++  public boolean addAll(Collection<? extends E> collection) {
++    return data.addAllAbsent(collection) != 0;
++  }
++
++  @Override
++  public boolean remove(Object object) {
++    return data.remove(object);
++  }
++
++  @Override
++  public boolean removeAll(Collection<?> collection) {
++    return data.removeAll(collection);
++  }
++
++  @Override
++  public boolean retainAll(Collection<?> collection) {
++    return data.retainAll(collection);
++  }
++
++  @Override
++  public boolean removeIf(Predicate<? super E> filter) {
++    return data.removeIf(filter);
++  }
++
++  @Override
++  public void clear() {
++    data.clear();
++  }
++
++  @Override
++  public Iterator<E> iterator() {
++    return data.iterator();
++  }
++
++  @Override
++  public Spliterator<E> spliterator() {
++    return Spliterators.spliterator(data.toArray(), Spliterator.IMMUTABLE | Spliterator.DISTINCT);
++  }
++}
+diff --git a/jre/java/java/util/concurrent/CountDownLatch.java b/jre/java/java/util/concurrent/CountDownLatch.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/CountDownLatch.java
+@@ -0,0 +1,49 @@
++package java.util.concurrent;
++
++import java.util.Objects;
++
++/** A countdown whose already-completed waits succeed synchronously. */
++public class CountDownLatch {
++  private int count;
++
++  public CountDownLatch(int count) {
++    if (count < 0) {
++      throw new IllegalArgumentException("count < 0");
++    }
++    this.count = count;
++  }
++
++  public void await() throws InterruptedException {
++    checkInterrupted();
++    if (count != 0) {
++      throw new IllegalStateException("CountDownLatch.await cannot block the browser main thread");
++    }
++  }
++
++  public boolean await(long timeout, TimeUnit unit) throws InterruptedException {
++    Objects.requireNonNull(unit);
++    checkInterrupted();
++    return count == 0;
++  }
++
++  public void countDown() {
++    if (count != 0) {
++      count--;
++    }
++  }
++
++  public long getCount() {
++    return count;
++  }
++
++  private static void checkInterrupted() throws InterruptedException {
++    if (Thread.interrupted()) {
++      throw new InterruptedException();
++    }
++  }
++
++  @Override
++  public String toString() {
++    return super.toString() + "[Count = " + count + "]";
++  }
++}
+diff --git a/jre/java/java/util/concurrent/CyclicBarrier.java b/jre/java/java/util/concurrent/CyclicBarrier.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/CyclicBarrier.java
+@@ -0,0 +1,94 @@
++package java.util.concurrent;
++
++import java.util.Objects;
++
++/**
++ * A one-party barrier runs its action inline on each arrival. A multi-party barrier
++ * cannot complete synchronously: an untimed arrival fails explicitly, a timed arrival
++ * times out immediately, and either failure breaks the generation until reset.
++ */
++public class CyclicBarrier {
++  private final int parties;
++  private final Runnable barrierAction;
++  private boolean broken;
++  private boolean runningAction;
++
++  public CyclicBarrier(int parties) {
++    this(parties, null);
++  }
++
++  public CyclicBarrier(int parties, Runnable barrierAction) {
++    if (parties <= 0) {
++      throw new IllegalArgumentException("parties must be positive");
++    }
++    this.parties = parties;
++    this.barrierAction = barrierAction;
++  }
++
++  public int getParties() {
++    return parties;
++  }
++
++  public int await() throws InterruptedException, BrokenBarrierException {
++    checkArrival();
++    if (parties != 1) {
++      broken = true;
++      throw new IllegalStateException("CyclicBarrier.await cannot block the browser main thread");
++    }
++    return runBarrierAction();
++  }
++
++  /** Insufficient arrivals time out immediately, irrespective of the supplied duration. */
++  public int await(long timeout, TimeUnit unit)
++      throws InterruptedException, BrokenBarrierException, TimeoutException {
++    Objects.requireNonNull(unit);
++    checkArrival();
++    if (parties != 1) {
++      broken = true;
++      throw new TimeoutException("CyclicBarrier cannot await other parties on the browser main thread");
++    }
++    return runBarrierAction();
++  }
++
++  public boolean isBroken() {
++    return broken;
++  }
++
++  /** Starts a fresh generation; no tasks are blocked or resumed by this operation. */
++  public void reset() {
++    broken = false;
++  }
++
++  public int getNumberWaiting() {
++    return runningAction ? 1 : 0;
++  }
++
++  private void checkArrival() throws InterruptedException, BrokenBarrierException {
++    if (broken) {
++      throw new BrokenBarrierException();
++    }
++    if (Thread.interrupted()) {
++      broken = true;
++      throw new InterruptedException();
++    }
++    if (runningAction) {
++      broken = true;
++      throw new IllegalStateException("A barrier action cannot reenter its own barrier");
++    }
++  }
++
++  private int runBarrierAction() {
++    runningAction = true;
++    try {
++      if (barrierAction != null) {
++        barrierAction.run();
++      }
++      return 0;
++    } catch (RuntimeException | Error failure) {
++      broken = true;
++      throw failure;
++    } finally {
++      runningAction = false;
++    }
++  }
++}
+diff --git a/jre/java/java/util/concurrent/DelayQueue.java b/jre/java/java/util/concurrent/DelayQueue.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/DelayQueue.java
+@@ -0,0 +1,162 @@
++package java.util.concurrent;
++
++import java.util.AbstractQueue;
++import java.util.ArrayList;
++import java.util.Collection;
++import java.util.Iterator;
++import java.util.Objects;
++import java.util.PriorityQueue;
++
++/**
++ * Priority-ordered delayed elements using only Java state. Expiry is read from each
++ * element's getDelay method; this queue neither advances a clock nor schedules a callback.
++ */
++public class DelayQueue<E extends Delayed> extends AbstractQueue<E> implements BlockingQueue<E> {
++  private final PriorityQueue<E> data = new PriorityQueue<>();
++
++  public DelayQueue() {}
++
++  public DelayQueue(Collection<? extends E> collection) {
++    addAll(collection);
++  }
++
++  @Override
++  public boolean offer(E element) {
++    return data.offer(Objects.requireNonNull(element));
++  }
++
++  /** An unbounded insertion executes immediately and does not consume interruption. */
++  @Override
++  public void put(E element) {
++    offer(element);
++  }
++
++  /** Capacity never requires a wait; the timeout has no scheduling effect. */
++  @Override
++  public boolean offer(E element, long timeout, TimeUnit unit) {
++    Objects.requireNonNull(unit);
++    return offer(element);
++  }
++
++  /** Returns and removes the first element only when its delay is nonpositive. */
++  @Override
++  public E poll() {
++    E first = data.peek();
++    return first == null || first.getDelay(TimeUnit.NANOSECONDS) > 0 ? null : data.poll();
++  }
++
++  /** An empty queue or an unexpired head cannot suspend the browser main thread. */
++  @Override
++  public E take() throws InterruptedException {
++    checkInterrupted();
++    E element = poll();
++    if (element == null) {
++      throw new IllegalStateException("DelayQueue.take cannot block the browser main thread");
++    }
++    return element;
++  }
++
++  /** A failed timed wait returns null immediately, without removing unexpired data. */
++  @Override
++  public E poll(long timeout, TimeUnit unit) throws InterruptedException {
++    Objects.requireNonNull(unit);
++    checkInterrupted();
++    return poll();
++  }
++
++  /** Peeking exposes the first element even when it has not expired. */
++  @Override
++  public E peek() {
++    return data.peek();
++  }
++
++  @Override
++  public int size() {
++    return data.size();
++  }
++
++  @Override
++  public int remainingCapacity() {
++    return Integer.MAX_VALUE;
++  }
++
++  @Override
++  public int drainTo(Collection<? super E> collection) {
++    return drainTo(collection, Integer.MAX_VALUE);
++  }
++
++  /** Transfers only expired elements, preserving each item if destination.add throws. */
++  @Override
++  public int drainTo(Collection<? super E> collection, int maxElements) {
++    Objects.requireNonNull(collection);
++    if (collection == this) {
++      throw new IllegalArgumentException("Cannot drain a queue to itself");
++    }
++    int transferred = 0;
++    while (transferred < maxElements) {
++      E first = data.peek();
++      if (first == null || first.getDelay(TimeUnit.NANOSECONDS) > 0) {
++        break;
++      }
++      collection.add(first);
++      data.poll();
++      transferred++;
++    }
++    return transferred;
++  }
++
++  @Override
++  public boolean remove(Object object) {
++    return data.remove(object);
++  }
++
++  @Override
++  public boolean contains(Object object) {
++    return data.contains(object);
++  }
++
++  @Override
++  public void clear() {
++    data.clear();
++  }
++
++  /** Snapshot traversal is unordered; iterator removal targets the returned object identity. */
++  @Override
++  public Iterator<E> iterator() {
++    Iterator<E> snapshot = new ArrayList<>(data).iterator();
++    return new Iterator<E>() {
++      private E returned;
++
++      @Override
++      public boolean hasNext() {
++        return snapshot.hasNext();
++      }
++
++      @Override
++      public E next() {
++        returned = snapshot.next();
++        return returned;
++      }
++
++      @Override
++      public void remove() {
++        if (returned == null) {
++          throw new IllegalStateException();
++        }
++        for (Iterator<E> live = data.iterator(); live.hasNext(); ) {
++          if (live.next() == returned) {
++            live.remove();
++            break;
++          }
++        }
++        returned = null;
++      }
++    };
++  }
++
++  private static void checkInterrupted() throws InterruptedException {
++    if (Thread.interrupted()) {
++      throw new InterruptedException();
++    }
++  }
++}
+diff --git a/jre/java/java/util/concurrent/ExecutorCompletionService.java b/jre/java/java/util/concurrent/ExecutorCompletionService.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/ExecutorCompletionService.java
+@@ -0,0 +1,22 @@
++package java.util.concurrent;
++
++import java.util.Objects;
++
++public class ExecutorCompletionService<V> implements CompletionService<V> {
++  private final Executor executor;
++  private final BlockingQueue<Future<V>> completed;
++  public ExecutorCompletionService(Executor executor) { this(executor, new LinkedBlockingQueue<>()); }
++  public ExecutorCompletionService(Executor executor, BlockingQueue<Future<V>> queue) {
++    this.executor = Objects.requireNonNull(executor); completed = Objects.requireNonNull(queue);
++  }
++  @Override public Future<V> submit(Callable<V> task) {
++    FutureTask<V> future = new FutureTask<V>(task) {
++      @Override protected void done() { completed.add(this); }
++    };
++    executor.execute(future); return future;
++  }
++  @Override public Future<V> submit(Runnable task, V result) { return submit(Executors.callable(task, result)); }
++  @Override public Future<V> take() throws InterruptedException { return completed.take(); }
++  @Override public Future<V> poll() { return completed.poll(); }
++  @Override public Future<V> poll(long timeout, TimeUnit unit) throws InterruptedException { return completed.poll(timeout, unit); }
++}
+diff --git a/jre/java/java/util/concurrent/ExecutorService.java b/jre/java/java/util/concurrent/ExecutorService.java
+--- a/jre/java/java/util/concurrent/ExecutorService.java
++++ b/jre/java/java/util/concurrent/ExecutorService.java
+@@ -32,10 +32,8 @@
+ 
+   boolean isTerminated();
+ 
+-  // Blocking calls cannot be emulated on web. Subclasses of this class in shared code should mark
+-  // their override with @GwtIncompatible.
+-  // @GwtIncompatible("blocking")
+-  // boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException;
++  // Tests the current state; waiting would prevent the browser from making progress.
++  boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException;
+ 
+   <T> Future<T> submit(Callable<T> task);
+ 
+diff --git a/jre/java/java/util/concurrent/Executors.java b/jre/java/java/util/concurrent/Executors.java
+--- a/jre/java/java/util/concurrent/Executors.java
++++ b/jre/java/java/util/concurrent/Executors.java
+@@ -14,6 +14,49 @@
+ 
+ /** Emulation of executors. */
+ public class Executors {
++
++  public static ExecutorService newSingleThreadExecutor() { return newFixedThreadPool(1); }
++  public static ExecutorService newWorkStealingPool() { return new ForkJoinPool(); }
++  public static ExecutorService newWorkStealingPool(int parallelism) { return new ForkJoinPool(parallelism); }
++  public static ExecutorService newSingleThreadExecutor(ThreadFactory factory) { return newFixedThreadPool(1, factory); }
++  public static ExecutorService newFixedThreadPool(int count) { return newFixedThreadPool(count, defaultThreadFactory()); }
++  public static ExecutorService newFixedThreadPool(int count, ThreadFactory factory) {
++    return new ThreadPoolExecutor(count, count, 0, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(), factory);
++  }
++  public static ExecutorService newCachedThreadPool() { return newCachedThreadPool(defaultThreadFactory()); }
++  public static ExecutorService newCachedThreadPool(ThreadFactory factory) {
++    return new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS, new LinkedBlockingQueue<>(), factory);
++  }
++  public static ScheduledExecutorService newSingleThreadScheduledExecutor() { return newScheduledThreadPool(1); }
++  public static ScheduledExecutorService newSingleThreadScheduledExecutor(ThreadFactory factory) { return newScheduledThreadPool(1, factory); }
++  public static ScheduledExecutorService newScheduledThreadPool(int count) { return new ScheduledThreadPoolExecutor(count); }
++  public static ScheduledExecutorService newScheduledThreadPool(int count, ThreadFactory factory) { return new ScheduledThreadPoolExecutor(count, factory); }
++  public static ThreadFactory defaultThreadFactory() { return Thread::new; }
++  public static ExecutorService unconfigurableExecutorService(ExecutorService executor) {
++    return new DelegatingExecutor(java.util.Objects.requireNonNull(executor));
++  }
++  public static ScheduledExecutorService unconfigurableScheduledExecutorService(ScheduledExecutorService executor) {
++    return new DelegatingScheduler(java.util.Objects.requireNonNull(executor));
++  }
++
++  private static class DelegatingExecutor extends AbstractExecutorService {
++    final ExecutorService delegate;
++    DelegatingExecutor(ExecutorService delegate) { this.delegate = delegate; }
++    public void execute(Runnable task) { delegate.execute(task); }
++    public void shutdown() { delegate.shutdown(); }
++    public java.util.List<Runnable> shutdownNow() { return delegate.shutdownNow(); }
++    public boolean isShutdown() { return delegate.isShutdown(); }
++    public boolean isTerminated() { return delegate.isTerminated(); }
++    public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException { return delegate.awaitTermination(timeout, unit); }
++  }
++  private static final class DelegatingScheduler extends DelegatingExecutor implements ScheduledExecutorService {
++    final ScheduledExecutorService scheduler;
++    DelegatingScheduler(ScheduledExecutorService scheduler) { super(scheduler); this.scheduler = scheduler; }
++    public ScheduledFuture<?> schedule(Runnable task, long delay, TimeUnit unit) { return scheduler.schedule(task, delay, unit); }
++    public <V> ScheduledFuture<V> schedule(Callable<V> task, long delay, TimeUnit unit) { return scheduler.schedule(task, delay, unit); }
++    public ScheduledFuture<?> scheduleAtFixedRate(Runnable task, long initial, long period, TimeUnit unit) { return scheduler.scheduleAtFixedRate(task, initial, period, unit); }
++    public ScheduledFuture<?> scheduleWithFixedDelay(Runnable task, long initial, long delay, TimeUnit unit) { return scheduler.scheduleWithFixedDelay(task, initial, delay, unit); }
++  }
+ 
+   public static <T> Callable<T> callable(Runnable task, T result) {
+     if (task == null) {
+diff --git a/jre/java/java/util/concurrent/ForkJoinPool.java b/jre/java/java/util/concurrent/ForkJoinPool.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/ForkJoinPool.java
+@@ -0,0 +1,42 @@
++package java.util.concurrent;
++
++/**
++ * Main-thread executor subset used by MPS's background-task scheduler.
++ * ForkJoinTask/work-stealing APIs are deliberately outside this profile.
++ */
++public class ForkJoinPool extends ThreadPoolExecutor {
++  private static final ForkJoinPool COMMON = new ForkJoinPool(1);
++  public ForkJoinPool() { this(1); }
++  public ForkJoinPool(int parallelism) {
++    super(parallelism, parallelism, 0, TimeUnit.NANOSECONDS, new LinkedBlockingQueue<>());
++    if (parallelism > 32767) throw new IllegalArgumentException("parallelism exceeds 32767");
++  }
++  public static ForkJoinPool commonPool() { return COMMON; }
++  public interface ManagedBlocker {
++    boolean block() throws InterruptedException;
++    boolean isReleasable();
++  }
++  public static void managedBlock(ManagedBlocker blocker) throws InterruptedException {
++    java.util.Objects.requireNonNull(blocker);
++    if (Thread.interrupted()) throw new InterruptedException();
++    if (!blocker.isReleasable() && !blocker.block()) {
++      throw new IllegalStateException("ManagedBlocker cannot wait for another browser thread");
++    }
++  }
++  public static int getCommonPoolParallelism() { return 1; }
++  public int getParallelism() { return 1; }
++  public boolean getAsyncMode() { return false; }
++  public boolean isQuiescent() { return getActiveCount() == 0; }
++  public boolean awaitQuiescence(long timeout, TimeUnit unit) {
++    java.util.Objects.requireNonNull(unit); return isQuiescent();
++  }
++  public long getStealCount() { return 0; }
++  public long getQueuedTaskCount() { return 0; }
++  public int getQueuedSubmissionCount() { return 0; }
++  public boolean hasQueuedSubmissions() { return false; }
++  public int getRunningThreadCount() { return getActiveCount(); }
++  @Override public void shutdown() { if (this != COMMON) super.shutdown(); }
++  @Override public java.util.List<Runnable> shutdownNow() {
++    return this == COMMON ? java.util.Collections.emptyList() : super.shutdownNow();
++  }
++}
+diff --git a/jre/java/java/util/concurrent/FutureTask.java b/jre/java/java/util/concurrent/FutureTask.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/FutureTask.java
+@@ -0,0 +1,69 @@
++package java.util.concurrent;
++
++import java.util.Objects;
++
++/** A task whose computation runs at most once, on the caller's main thread. */
++public class FutureTask<V> implements RunnableFuture<V> {
++  private Callable<V> callable;
++  private V value;
++  private Throwable failure;
++  private boolean running;
++  private boolean done;
++  private boolean cancelled;
++
++  public FutureTask(Callable<V> callable) { this.callable = Objects.requireNonNull(callable); }
++  public FutureTask(Runnable runnable, V result) { this(Executors.callable(runnable, result)); }
++
++  @Override public void run() {
++    if (done || running) return;
++    running = true;
++    try {
++      V result;
++      try { result = callable.call(); }
++      catch (Throwable ex) { setException(ex); return; }
++      set(result);
++    }
++    finally { running = false; callable = null; }
++  }
++
++  protected boolean runAndReset() {
++    if (done || running) return false;
++    running = true;
++    try { callable.call(); return !done; }
++    catch (Throwable ex) { setException(ex); return false; }
++    finally { running = false; }
++  }
++
++  protected void set(V result) {
++    if (done) return;
++    value = result; done = true; callable = null; done();
++  }
++  protected void setException(Throwable ex) {
++    if (done) return;
++    failure = ex; done = true; callable = null; done();
++  }
++  protected void done() {}
++  @Override public boolean cancel(boolean mayInterruptIfRunning) {
++    if (done) return false;
++    cancelled = true; done = true;
++    if (!running) callable = null;
++    done(); return true;
++  }
++  @Override public boolean isCancelled() { return cancelled; }
++  @Override public boolean isDone() { return done; }
++  @Override public V get() throws InterruptedException, ExecutionException {
++    if (!done) throw new IllegalStateException("Future is pending; the browser main thread cannot block");
++    return report();
++  }
++  @Override public V get(long timeout, TimeUnit unit)
++      throws InterruptedException, ExecutionException, TimeoutException {
++    Objects.requireNonNull(unit);
++    if (!done) throw new TimeoutException("Future is pending on the browser main thread");
++    return report();
++  }
++  private V report() throws ExecutionException {
++    if (cancelled) throw new CancellationException();
++    if (failure != null) throw new ExecutionException(failure);
++    return value;
++  }
++}
+diff --git a/jre/java/java/util/concurrent/LinkedBlockingQueue.java b/jre/java/java/util/concurrent/LinkedBlockingQueue.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/LinkedBlockingQueue.java
+@@ -0,0 +1,19 @@
++package java.util.concurrent;
++
++import java.util.Collection;
++
++/** Linked FIFO storage with optional capacity and synchronous wait boundaries. */
++public class LinkedBlockingQueue<E> extends MainThreadBlockingQueue<E> {
++  public LinkedBlockingQueue() {
++    super(Integer.MAX_VALUE);
++  }
++
++  public LinkedBlockingQueue(int capacity) {
++    super(capacity);
++  }
++
++  public LinkedBlockingQueue(Collection<? extends E> collection) {
++    this();
++    addAll(collection);
++  }
++}
+diff --git a/jre/java/java/util/concurrent/LinkedTransferQueue.java b/jre/java/java/util/concurrent/LinkedTransferQueue.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/LinkedTransferQueue.java
+@@ -0,0 +1,76 @@
++package java.util.concurrent;
++
++import java.util.Collection;
++import java.util.Objects;
++
++/**
++ * Ordinary FIFO operations run synchronously. Transfer operations cannot rendezvous
++ * with a blocked consumer on the one browser main thread and do not enqueue an item.
++ */
++public class LinkedTransferQueue<E> extends MainThreadBlockingQueue<E> implements TransferQueue<E> {
++  public LinkedTransferQueue() {
++    super(Integer.MAX_VALUE);
++  }
++
++  public LinkedTransferQueue(Collection<? extends E> collection) {
++    this();
++    addAll(collection);
++  }
++
++  /** Unbounded insertion never waits and preserves the current interrupt status. */
++  @Override
++  public void put(E element) {
++    add(element);
++  }
++
++  @Override
++  public boolean offer(E element, long timeout, TimeUnit unit) {
++    Objects.requireNonNull(unit);
++    return offer(element);
++  }
++
++  /** There are no waiting consumers; failure leaves the queue unchanged. */
++  @Override
++  public boolean tryTransfer(E element) {
++    Objects.requireNonNull(element);
++    return false;
++  }
++
++  /** Reports the unsupported rendezvous instead of falsely completing a transfer. */
++  @Override
++  public void transfer(E element) throws InterruptedException {
++    Objects.requireNonNull(element);
++    checkInterrupted();
++    throw new IllegalStateException("LinkedTransferQueue.transfer cannot rendezvous on the browser main thread");
++  }
++
++  /** A timed transfer fails immediately and leaves the queue unchanged. */
++  @Override
++  public boolean tryTransfer(E element, long timeout, TimeUnit unit) throws InterruptedException {
++    Objects.requireNonNull(element);
++    Objects.requireNonNull(unit);
++    checkInterrupted();
++    return false;
++  }
++
++  @Override
++  public boolean hasWaitingConsumer() {
++    return false;
++  }
++
++  @Override
++  public int getWaitingConsumerCount() {
++    return 0;
++  }
++
++  @Override
++  public int remainingCapacity() {
++    return Integer.MAX_VALUE;
++  }
++
++  private static void checkInterrupted() throws InterruptedException {
++    if (Thread.interrupted()) {
++      throw new InterruptedException();
++    }
++  }
++}
+diff --git a/jre/java/java/util/concurrent/MainThreadBlockingQueue.java b/jre/java/java/util/concurrent/MainThreadBlockingQueue.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/MainThreadBlockingQueue.java
+@@ -0,0 +1,134 @@
++package java.util.concurrent;
++
++import java.io.Serializable;
++import java.util.AbstractQueue;
++import java.util.Collection;
++import java.util.Iterator;
++import java.util.Objects;
++import java.util.Spliterator;
++
++/** Shared bounded FIFO implementation; storage capacity is enforced, never waited for. */
++abstract class MainThreadBlockingQueue<E> extends AbstractQueue<E>
++    implements BlockingQueue<E>, Serializable {
++  private final int capacity;
++  private final ConcurrentLinkedQueue<E> data = new ConcurrentLinkedQueue<>();
++
++  MainThreadBlockingQueue(int capacity) {
++    if (capacity <= 0) {
++      throw new IllegalArgumentException("capacity must be positive");
++    }
++    this.capacity = capacity;
++  }
++
++  @Override
++  public int size() {
++    return data.size();
++  }
++
++  @Override
++  public int remainingCapacity() {
++    return capacity - size();
++  }
++
++  @Override
++  public boolean offer(E element) {
++    Objects.requireNonNull(element);
++    return size() < capacity && data.offer(element);
++  }
++
++  @Override
++  public void put(E element) throws InterruptedException {
++    Objects.requireNonNull(element);
++    checkInterrupted();
++    if (!offer(element)) {
++      throw new IllegalStateException("BlockingQueue.put cannot block the browser main thread");
++    }
++  }
++
++  @Override
++  public boolean offer(E element, long timeout, TimeUnit unit) throws InterruptedException {
++    Objects.requireNonNull(element);
++    Objects.requireNonNull(unit);
++    checkInterrupted();
++    return offer(element);
++  }
++
++  @Override
++  public E poll() {
++    return data.poll();
++  }
++
++  @Override
++  public E take() throws InterruptedException {
++    checkInterrupted();
++    E element = poll();
++    if (element == null) {
++      throw new IllegalStateException("BlockingQueue.take cannot block the browser main thread");
++    }
++    return element;
++  }
++
++  @Override
++  public E poll(long timeout, TimeUnit unit) throws InterruptedException {
++    Objects.requireNonNull(unit);
++    checkInterrupted();
++    return poll();
++  }
++
++  @Override
++  public E peek() {
++    return data.peek();
++  }
++
++  @Override
++  public Iterator<E> iterator() {
++    return data.iterator();
++  }
++
++  @Override
++  public Spliterator<E> spliterator() {
++    return data.spliterator();
++  }
++
++  @Override
++  public boolean remove(Object object) {
++    return data.remove(object);
++  }
++
++  @Override
++  public void clear() {
++    data.clear();
++  }
++
++  @Override
++  public int drainTo(Collection<? super E> collection) {
++    return drainTo(collection, Integer.MAX_VALUE);
++  }
++
++  @Override
++  public int drainTo(Collection<? super E> collection, int maxElements) {
++    Objects.requireNonNull(collection);
++    if (collection == this) {
++      throw new IllegalArgumentException("Cannot drain a queue to itself");
++    }
++    int limit = Math.min(size(), Math.max(0, maxElements));
++    int transferred = 0;
++    while (transferred < limit) {
++      E element = data.peek();
++      if (element == null) {
++        break;
++      }
++      // Keep the source element when the destination rejects by throwing.
++      collection.add(element);
++      data.poll();
++      transferred++;
++    }
++    return transferred;
++  }
++
++  private static void checkInterrupted() throws InterruptedException {
++    if (Thread.interrupted()) {
++      throw new InterruptedException();
++    }
++  }
++}
+diff --git a/jre/java/java/util/concurrent/MinimalCompletionStage.java b/jre/java/java/util/concurrent/MinimalCompletionStage.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/MinimalCompletionStage.java
+@@ -0,0 +1,167 @@
++package java.util.concurrent;
++
++import java.util.function.BiConsumer;
++import java.util.function.BiFunction;
++import java.util.function.Consumer;
++import java.util.function.Function;
++
++/** A stage-only view: every conversion exposes a separate, independently mutable future. */
++final class MinimalCompletionStage<T> implements CompletionStage<T> {
++  private final CompletableFuture<T> delegate;
++
++  MinimalCompletionStage(CompletableFuture<T> delegate) {
++    this.delegate = delegate;
++  }
++
++  @Override public <U> CompletionStage<U> thenApply(Function<? super T, ? extends U> fn) {
++    return new MinimalCompletionStage<>(delegate.thenApply(fn));
++  }
++
++  @Override public <U> CompletionStage<U> thenApplyAsync(Function<? super T, ? extends U> fn) {
++    return new MinimalCompletionStage<>(delegate.thenApplyAsync(fn));
++  }
++
++  @Override public <U> CompletionStage<U> thenApplyAsync(Function<? super T, ? extends U> fn, Executor executor) {
++    return new MinimalCompletionStage<>(delegate.thenApplyAsync(fn, executor));
++  }
++
++  @Override public CompletionStage<Void> thenAccept(Consumer<? super T> action) {
++    return new MinimalCompletionStage<>(delegate.thenAccept(action));
++  }
++
++  @Override public CompletionStage<Void> thenAcceptAsync(Consumer<? super T> action) {
++    return new MinimalCompletionStage<>(delegate.thenAcceptAsync(action));
++  }
++
++  @Override public CompletionStage<Void> thenAcceptAsync(Consumer<? super T> action, Executor executor) {
++    return new MinimalCompletionStage<>(delegate.thenAcceptAsync(action, executor));
++  }
++
++  @Override public CompletionStage<Void> thenRun(Runnable action) {
++    return new MinimalCompletionStage<>(delegate.thenRun(action));
++  }
++
++  @Override public CompletionStage<Void> thenRunAsync(Runnable action) {
++    return new MinimalCompletionStage<>(delegate.thenRunAsync(action));
++  }
++
++  @Override public CompletionStage<Void> thenRunAsync(Runnable action, Executor executor) {
++    return new MinimalCompletionStage<>(delegate.thenRunAsync(action, executor));
++  }
++
++  @Override public <U, V> CompletionStage<V> thenCombine(CompletionStage<? extends U> other, BiFunction<? super T, ? super U, ? extends V> fn) {
++    return new MinimalCompletionStage<>(delegate.thenCombine(other, fn));
++  }
++
++  @Override public <U, V> CompletionStage<V> thenCombineAsync(CompletionStage<? extends U> other, BiFunction<? super T, ? super U, ? extends V> fn) {
++    return new MinimalCompletionStage<>(delegate.thenCombineAsync(other, fn));
++  }
++
++  @Override public <U, V> CompletionStage<V> thenCombineAsync(CompletionStage<? extends U> other, BiFunction<? super T, ? super U, ? extends V> fn, Executor executor) {
++    return new MinimalCompletionStage<>(delegate.thenCombineAsync(other, fn, executor));
++  }
++
++  @Override public <U> CompletionStage<Void> thenAcceptBoth(CompletionStage<? extends U> other, BiConsumer<? super T, ? super U> action) {
++    return new MinimalCompletionStage<>(delegate.thenAcceptBoth(other, action));
++  }
++
++  @Override public <U> CompletionStage<Void> thenAcceptBothAsync(CompletionStage<? extends U> other, BiConsumer<? super T, ? super U> action) {
++    return new MinimalCompletionStage<>(delegate.thenAcceptBothAsync(other, action));
++  }
++
++  @Override public <U> CompletionStage<Void> thenAcceptBothAsync(CompletionStage<? extends U> other, BiConsumer<? super T, ? super U> action, Executor executor) {
++    return new MinimalCompletionStage<>(delegate.thenAcceptBothAsync(other, action, executor));
++  }
++
++  @Override public CompletionStage<Void> runAfterBoth(CompletionStage<?> other, Runnable action) {
++    return new MinimalCompletionStage<>(delegate.runAfterBoth(other, action));
++  }
++
++  @Override public CompletionStage<Void> runAfterBothAsync(CompletionStage<?> other, Runnable action) {
++    return new MinimalCompletionStage<>(delegate.runAfterBothAsync(other, action));
++  }
++
++  @Override public CompletionStage<Void> runAfterBothAsync(CompletionStage<?> other, Runnable action, Executor executor) {
++    return new MinimalCompletionStage<>(delegate.runAfterBothAsync(other, action, executor));
++  }
++
++  @Override public <U> CompletionStage<U> applyToEither(CompletionStage<? extends T> other, Function<? super T, U> fn) {
++    return new MinimalCompletionStage<>(delegate.applyToEither(other, fn));
++  }
++
++  @Override public <U> CompletionStage<U> applyToEitherAsync(CompletionStage<? extends T> other, Function<? super T, U> fn) {
++    return new MinimalCompletionStage<>(delegate.applyToEitherAsync(other, fn));
++  }
++
++  @Override public <U> CompletionStage<U> applyToEitherAsync(CompletionStage<? extends T> other, Function<? super T, U> fn, Executor executor) {
++    return new MinimalCompletionStage<>(delegate.applyToEitherAsync(other, fn, executor));
++  }
++
++  @Override public CompletionStage<Void> acceptEither(CompletionStage<? extends T> other, Consumer<? super T> action) {
++    return new MinimalCompletionStage<>(delegate.acceptEither(other, action));
++  }
++
++  @Override public CompletionStage<Void> acceptEitherAsync(CompletionStage<? extends T> other, Consumer<? super T> action) {
++    return new MinimalCompletionStage<>(delegate.acceptEitherAsync(other, action));
++  }
++
++  @Override public CompletionStage<Void> acceptEitherAsync(CompletionStage<? extends T> other, Consumer<? super T> action, Executor executor) {
++    return new MinimalCompletionStage<>(delegate.acceptEitherAsync(other, action, executor));
++  }
++
++  @Override public CompletionStage<Void> runAfterEither(CompletionStage<?> other, Runnable action) {
++    return new MinimalCompletionStage<>(delegate.runAfterEither(other, action));
++  }
++
++  @Override public CompletionStage<Void> runAfterEitherAsync(CompletionStage<?> other, Runnable action) {
++    return new MinimalCompletionStage<>(delegate.runAfterEitherAsync(other, action));
++  }
++
++  @Override public CompletionStage<Void> runAfterEitherAsync(CompletionStage<?> other, Runnable action, Executor executor) {
++    return new MinimalCompletionStage<>(delegate.runAfterEitherAsync(other, action, executor));
++  }
++
++  @Override public <U> CompletionStage<U> thenCompose(Function<? super T, ? extends CompletionStage<U>> fn) {
++    return new MinimalCompletionStage<>(delegate.thenCompose(fn));
++  }
++
++  @Override public <U> CompletionStage<U> thenComposeAsync(Function<? super T, ? extends CompletionStage<U>> fn) {
++    return new MinimalCompletionStage<>(delegate.thenComposeAsync(fn));
++  }
++
++  @Override public <U> CompletionStage<U> thenComposeAsync(Function<? super T, ? extends CompletionStage<U>> fn, Executor executor) {
++    return new MinimalCompletionStage<>(delegate.thenComposeAsync(fn, executor));
++  }
++
++  @Override public CompletionStage<T> whenComplete(BiConsumer<? super T, ? super Throwable> action) {
++    return new MinimalCompletionStage<>(delegate.whenComplete(action));
++  }
++
++  @Override public CompletionStage<T> whenCompleteAsync(BiConsumer<? super T, ? super Throwable> action) {
++    return new MinimalCompletionStage<>(delegate.whenCompleteAsync(action));
++  }
++
++  @Override public CompletionStage<T> whenCompleteAsync(BiConsumer<? super T, ? super Throwable> action, Executor executor) {
++    return new MinimalCompletionStage<>(delegate.whenCompleteAsync(action, executor));
++  }
++
++  @Override public <U> CompletionStage<U> handle(BiFunction<? super T, Throwable, ? extends U> fn) {
++    return new MinimalCompletionStage<>(delegate.handle(fn));
++  }
++
++  @Override public <U> CompletionStage<U> handleAsync(BiFunction<? super T, Throwable, ? extends U> fn) {
++    return new MinimalCompletionStage<>(delegate.handleAsync(fn));
++  }
++
++  @Override public <U> CompletionStage<U> handleAsync(BiFunction<? super T, Throwable, ? extends U> fn, Executor executor) {
++    return new MinimalCompletionStage<>(delegate.handleAsync(fn, executor));
++  }
++
++  @Override public CompletionStage<T> exceptionally(Function<Throwable, ? extends T> fn) {
++    return new MinimalCompletionStage<>(delegate.exceptionally(fn));
++  }
++
++  @Override public CompletableFuture<T> toCompletableFuture() {
++    return delegate.copy();
++  }
++}
+diff --git a/jre/java/java/util/concurrent/RejectedExecutionHandler.java b/jre/java/java/util/concurrent/RejectedExecutionHandler.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/RejectedExecutionHandler.java
+@@ -0,0 +1,5 @@
++package java.util.concurrent;
++
++public interface RejectedExecutionHandler {
++  void rejectedExecution(Runnable task, ThreadPoolExecutor executor);
++}
+diff --git a/jre/java/java/util/concurrent/RunnableScheduledFuture.java b/jre/java/java/util/concurrent/RunnableScheduledFuture.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/RunnableScheduledFuture.java
+@@ -0,0 +1,5 @@
++package java.util.concurrent;
++
++public interface RunnableScheduledFuture<V> extends RunnableFuture<V>, ScheduledFuture<V> {
++  boolean isPeriodic();
++}
+diff --git a/jre/java/java/util/concurrent/ScheduledThreadPoolExecutor.java b/jre/java/java/util/concurrent/ScheduledThreadPoolExecutor.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/ScheduledThreadPoolExecutor.java
+@@ -0,0 +1,217 @@
++package java.util.concurrent;
++
++import java.util.ArrayList;
++import java.util.Collection;
++import java.util.Iterator;
++import java.util.List;
++import java.util.Objects;
++import javaemul.internal.concurrent.MainThreadTimers;
++
++/** Scheduled tasks use browser main-thread timers; direct submissions remain inline. */
++public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements ScheduledExecutorService {
++  private final List<ScheduledTask<?>> scheduled = new ArrayList<>();
++  private final TimerQueue timerQueue;
++  private boolean continuePeriodic;
++  private boolean executeDelayed = true;
++  private boolean removeOnCancel;
++  public ScheduledThreadPoolExecutor(int corePoolSize) { this(corePoolSize, Executors.defaultThreadFactory(), new AbortPolicy()); }
++  public ScheduledThreadPoolExecutor(int corePoolSize, ThreadFactory factory) { this(corePoolSize, factory, new AbortPolicy()); }
++  public ScheduledThreadPoolExecutor(int corePoolSize, RejectedExecutionHandler handler) { this(corePoolSize, Executors.defaultThreadFactory(), handler); }
++  public ScheduledThreadPoolExecutor(int corePoolSize, ThreadFactory factory, RejectedExecutionHandler handler) {
++    this(corePoolSize, factory, handler, new TimerQueue());
++  }
++  private ScheduledThreadPoolExecutor(int corePoolSize, ThreadFactory factory,
++      RejectedExecutionHandler handler, TimerQueue queue) {
++    super(corePoolSize, Integer.MAX_VALUE, 0, TimeUnit.NANOSECONDS, queue, factory, handler);
++    timerQueue = queue;
++    queue.owner = this;
++  }
++  @Override public ScheduledFuture<?> schedule(Runnable task, long delay, TimeUnit unit) { return schedule(Executors.callable(task), delay, unit); }
++  @Override public <V> ScheduledFuture<V> schedule(Callable<V> task, long delay, TimeUnit unit) {
++    return enqueue(task, delay, unit, 0);
++  }
++  @Override public ScheduledFuture<?> scheduleAtFixedRate(Runnable task, long initialDelay, long period, TimeUnit unit) {
++    Objects.requireNonNull(unit);
++    if (period <= 0) throw new IllegalArgumentException("period must be positive");
++    return enqueue(Executors.callable(task), initialDelay, unit, unit.toNanos(period));
++  }
++  @Override public ScheduledFuture<?> scheduleWithFixedDelay(Runnable task, long initialDelay, long delay, TimeUnit unit) {
++    Objects.requireNonNull(unit);
++    if (delay <= 0) throw new IllegalArgumentException("delay must be positive");
++    return enqueue(Executors.callable(task), initialDelay, unit, -unit.toNanos(delay));
++  }
++  private <V> ScheduledFuture<V> enqueue(Callable<V> task, long delay, TimeUnit unit, long period) {
++    Objects.requireNonNull(task); Objects.requireNonNull(unit);
++    ScheduledTask<V> result = new ScheduledTask<>(task, Math.max(0, unit.toNanos(delay)), period);
++    if (isShutdown()) {
++      getRejectedExecutionHandler().rejectedExecution(result, this);
++      result.cancel(false); return result;
++    }
++    scheduled.add(result); timerQueue.addInternal(result); result.arm(); return result;
++  }
++
++  private void detach(Runnable task) {
++    ScheduledTask<?> scheduledTask = (ScheduledTask<?>) task;
++    MainThreadTimers.clearTimeout(scheduledTask.timerId);
++    scheduled.remove(scheduledTask);
++    tryTerminate();
++  }
++
++  /** Queue removals also remove the browser timer; additions must use schedule(). */
++  private static final class TimerQueue extends LinkedBlockingQueue<Runnable> {
++    private ScheduledThreadPoolExecutor owner;
++
++    void addInternal(Runnable task) { super.offer(task); }
++    boolean removeInternal(Object task) { return super.remove(task); }
++
++    @Override public boolean offer(Runnable task) {
++      Objects.requireNonNull(task);
++      throw new UnsupportedOperationException("Add scheduled work through the scheduling methods");
++    }
++    @Override public boolean remove(Object task) {
++      Iterator<Runnable> iterator = super.iterator();
++      while (iterator.hasNext()) {
++        Runnable candidate = iterator.next();
++        if (Objects.equals(task, candidate) && super.remove(candidate)) {
++          owner.detach(candidate);
++          return true;
++        }
++      }
++      return false;
++    }
++    @Override public Runnable peek() {
++      RunnableScheduledFuture<?> first = null;
++      Iterator<Runnable> iterator = super.iterator();
++      while (iterator.hasNext()) {
++        RunnableScheduledFuture<?> candidate = (RunnableScheduledFuture<?>) iterator.next();
++        if (first == null || candidate.compareTo(first) < 0) first = candidate;
++      }
++      return first;
++    }
++    @Override public Runnable poll() {
++      RunnableScheduledFuture<?> first = (RunnableScheduledFuture<?>) peek();
++      if (first == null || first.getDelay(TimeUnit.NANOSECONDS) > 0) return null;
++      remove(first);
++      return first;
++    }
++    @Override public Iterator<Runnable> iterator() {
++      Iterator<Runnable> iterator = super.iterator();
++      return new Iterator<Runnable>() {
++        private Runnable current;
++        private boolean removable;
++        @Override public boolean hasNext() { return iterator.hasNext(); }
++        @Override public Runnable next() {
++          current = iterator.next(); removable = true; return current;
++        }
++        @Override public void remove() {
++          if (!removable) throw new IllegalStateException();
++          removable = false;
++          TimerQueue.this.remove(current);
++        }
++      };
++    }
++    @Override public void clear() {
++      Iterator<Runnable> iterator = iterator();
++      while (iterator.hasNext()) { iterator.next(); iterator.remove(); }
++    }
++    @Override public int drainTo(Collection<? super Runnable> target) {
++      return drainTo(target, Integer.MAX_VALUE);
++    }
++    @Override public int drainTo(Collection<? super Runnable> target, int limit) {
++      Objects.requireNonNull(target);
++      if (target == this) throw new IllegalArgumentException("Cannot drain queue to itself");
++      int transferred = 0;
++      while (transferred < limit) {
++        RunnableScheduledFuture<?> task = (RunnableScheduledFuture<?>) peek();
++        if (task == null || task.getDelay(TimeUnit.NANOSECONDS) > 0) break;
++        target.add(task);
++        remove(task);
++        transferred++;
++      }
++      return transferred;
++    }
++  }
++  private static long addDelay(long start, long delay) {
++    return start > Long.MAX_VALUE - delay ? Long.MAX_VALUE : start + delay;
++  }
++  private final class ScheduledTask<V> extends FutureTask<V> implements RunnableScheduledFuture<V> {
++    private long deadline;
++    private final long period;
++    private double timerId;
++    ScheduledTask(Callable<V> task, long delay, long period) {
++      super(task); deadline = addDelay(System.nanoTime(), delay); this.period = period;
++    }
++    void arm() {
++      long remaining = Math.max(0, deadline - System.nanoTime());
++      double millis = Math.min(2147483647d, Math.ceil(remaining / 1000000d));
++      timerId = MainThreadTimers.setTimeout(this::fire, millis);
++    }
++    void fire() {
++      if (!timerQueue.contains(this)) return;
++      if (getDelay(TimeUnit.NANOSECONDS) > 0) { arm(); return; }
++      if (isDone()) { timerQueue.remove(this); return; }
++      timerQueue.removeInternal(this);
++      try { executeTask(this); }
++      finally {
++        // A throwing executor hook must not leave an unreachable pending timer.
++        if (!isDone() && !timerQueue.contains(this)) cancel(false);
++      }
++    }
++    @Override public void run() {
++      if (isDone()) { timerQueue.remove(this); return; }
++      timerQueue.removeInternal(this);
++      MainThreadTimers.clearTimeout(timerId);
++      if (isShutdown() && (isPeriodic() ? !continuePeriodic : !executeDelayed)) { cancel(false); return; }
++      if (!isPeriodic()) { super.run(); return; }
++      if (super.runAndReset()) {
++        if (isShutdown() && !continuePeriodic) { cancel(false); return; }
++        deadline = period > 0 ? addDelay(deadline, period) : addDelay(System.nanoTime(), -period);
++        if (!scheduled.contains(this)) scheduled.add(this);
++        timerQueue.addInternal(this);
++        arm();
++      }
++    }
++    @Override protected void done() {
++      if (isCancelled() && !removeOnCancel && !isShutdown() && timerQueue.contains(this)) return;
++      timerQueue.removeInternal(this);
++      detach(this);
++    }
++    @Override public boolean isPeriodic() { return period != 0; }
++    @Override public long getDelay(TimeUnit unit) { return Objects.requireNonNull(unit).convert(deadline - System.nanoTime(), TimeUnit.NANOSECONDS); }
++    @Override public int compareTo(Delayed other) {
++      if (other == this) return 0;
++      long a = getDelay(TimeUnit.NANOSECONDS), b = other.getDelay(TimeUnit.NANOSECONDS);
++      return Long.compare(a, b);
++    }
++  }
++  @Override protected boolean hasPendingTasks() { return !scheduled.isEmpty(); }
++  @Override public void shutdown() {
++    super.shutdown(); cancelDisallowed(); tryTerminate();
++  }
++  @Override public List<Runnable> shutdownNow() {
++    List<Runnable> pending = new ArrayList<>(timerQueue);
++    super.shutdown();
++    for (ScheduledTask<?> task : new ArrayList<>(scheduled)) {
++      task.cancel(false);
++      timerQueue.removeInternal(task);
++      detach(task);
++    }
++    tryTerminate(); return pending;
++  }
++  private void cancelDisallowed() {
++    if (!isShutdown()) return;
++    for (ScheduledTask<?> task : new ArrayList<>(scheduled)) {
++      if (task.isCancelled() || (task.isPeriodic() ? !continuePeriodic : !executeDelayed)) {
++        task.cancel(false);
++        timerQueue.removeInternal(task);
++        detach(task);
++      }
++    }
++  }
++  public void setContinueExistingPeriodicTasksAfterShutdownPolicy(boolean value) { continuePeriodic = value; cancelDisallowed(); }
++  public boolean getContinueExistingPeriodicTasksAfterShutdownPolicy() { return continuePeriodic; }
++  public void setExecuteExistingDelayedTasksAfterShutdownPolicy(boolean value) { executeDelayed = value; cancelDisallowed(); }
++  public boolean getExecuteExistingDelayedTasksAfterShutdownPolicy() { return executeDelayed; }
++  public void setRemoveOnCancelPolicy(boolean value) { removeOnCancel = value; }
++  public boolean getRemoveOnCancelPolicy() { return removeOnCancel; }
++}
+diff --git a/jre/java/java/util/concurrent/Semaphore.java b/jre/java/java/util/concurrent/Semaphore.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/Semaphore.java
+@@ -0,0 +1,130 @@
++package java.util.concurrent;
++
++import java.io.Serializable;
++import java.util.Collection;
++import java.util.Collections;
++import java.util.Objects;
++
++/** Plain permit accounting; an unsatisfied blocking acquire fails immediately. */
++public class Semaphore implements Serializable {
++  private int permits;
++  private final boolean fair;
++
++  public Semaphore(int permits) {
++    this(permits, false);
++  }
++
++  public Semaphore(int permits, boolean fair) {
++    this.permits = permits;
++    this.fair = fair;
++  }
++
++  public void acquire() throws InterruptedException {
++    acquire(1);
++  }
++
++  public void acquire(int permits) throws InterruptedException {
++    checkNonnegative(permits);
++    checkInterrupted();
++    acquireUninterruptibly(permits);
++  }
++
++  public void acquireUninterruptibly() {
++    acquireUninterruptibly(1);
++  }
++
++  public void acquireUninterruptibly(int permits) {
++    if (!tryAcquire(permits)) {
++      throw new IllegalStateException("Semaphore.acquire cannot block the browser main thread");
++    }
++  }
++
++  public boolean tryAcquire() {
++    return tryAcquire(1);
++  }
++
++  public boolean tryAcquire(int permits) {
++    checkNonnegative(permits);
++    if (this.permits < permits) {
++      return false;
++    }
++    this.permits -= permits;
++    return true;
++  }
++
++  public boolean tryAcquire(long timeout, TimeUnit unit) throws InterruptedException {
++    return tryAcquire(1, timeout, unit);
++  }
++
++  public boolean tryAcquire(int permits, long timeout, TimeUnit unit) throws InterruptedException {
++    Objects.requireNonNull(unit);
++    checkNonnegative(permits);
++    checkInterrupted();
++    return tryAcquire(permits);
++  }
++
++  public void release() {
++    release(1);
++  }
++
++  public void release(int permits) {
++    checkNonnegative(permits);
++    long updated = (long) this.permits + permits;
++    if (updated > Integer.MAX_VALUE) {
++      throw new Error("Maximum permit count exceeded");
++    }
++    this.permits = (int) updated;
++  }
++
++  public int availablePermits() {
++    return permits;
++  }
++
++  public int drainPermits() {
++    int previous = permits;
++    permits = 0;
++    return previous;
++  }
++
++  protected void reducePermits(int reduction) {
++    checkNonnegative(reduction);
++    long updated = (long) permits - reduction;
++    if (updated < Integer.MIN_VALUE) {
++      throw new Error("Permit count underflow");
++    }
++    permits = (int) updated;
++  }
++
++  public boolean isFair() {
++    return fair;
++  }
++
++  public final boolean hasQueuedThreads() {
++    return false;
++  }
++
++  public final int getQueueLength() {
++    return 0;
++  }
++
++  protected Collection<Thread> getQueuedThreads() {
++    return Collections.emptyList();
++  }
++
++  private static void checkNonnegative(int value) {
++    if (value < 0) {
++      throw new IllegalArgumentException("permits < 0");
++    }
++  }
++
++  private static void checkInterrupted() throws InterruptedException {
++    if (Thread.interrupted()) {
++      throw new InterruptedException();
++    }
++  }
++
++  @Override
++  public String toString() {
++    return super.toString() + "[Permits = " + permits + "]";
++  }
++}
+diff --git a/jre/java/java/util/concurrent/ThreadFactory.java b/jre/java/java/util/concurrent/ThreadFactory.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/ThreadFactory.java
+@@ -0,0 +1,3 @@
++package java.util.concurrent;
++
++public interface ThreadFactory { Thread newThread(Runnable runnable); }
+diff --git a/jre/java/java/util/concurrent/ThreadLocalRandom.java b/jre/java/java/util/concurrent/ThreadLocalRandom.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/ThreadLocalRandom.java
+@@ -0,0 +1,44 @@
++package java.util.concurrent;
++
++import java.util.Random;
++
++/** One ordinary random generator for the browser main thread. */
++public class ThreadLocalRandom extends Random {
++  private static final ThreadLocalRandom INSTANCE = new ThreadLocalRandom();
++  private boolean initialized;
++  private ThreadLocalRandom() { initialized = true; }
++  public static ThreadLocalRandom current() { return INSTANCE; }
++  @Override public void setSeed(long seed) {
++    if (initialized) throw new UnsupportedOperationException("ThreadLocalRandom cannot be reseeded");
++    super.setSeed(seed);
++  }
++  public int nextInt(int origin, int bound) {
++    if (origin >= bound) throw new IllegalArgumentException();
++    int width = bound - origin;
++    if (width > 0) return origin + nextInt(width);
++    int value;
++    do { value = nextInt(); } while (value < origin || value >= bound);
++    return value;
++  }
++  public long nextLong(long bound) {
++    if (bound <= 0) throw new IllegalArgumentException();
++    long bits, value;
++    do { bits = nextLong() >>> 1; value = bits % bound; } while (bits - value + (bound - 1) < 0);
++    return value;
++  }
++  public long nextLong(long origin, long bound) {
++    if (origin >= bound) throw new IllegalArgumentException();
++    long width = bound - origin;
++    if (width > 0) return origin + nextLong(width);
++    long value;
++    do { value = nextLong(); } while (value < origin || value >= bound);
++    return value;
++  }
++  public double nextDouble(double bound) { return nextDouble(0, bound); }
++  public double nextDouble(double origin, double bound) {
++    if (!(origin < bound) || Double.isInfinite(origin) || Double.isInfinite(bound)) throw new IllegalArgumentException();
++    double fraction = nextDouble();
++    double value = origin * (1 - fraction) + bound * fraction;
++    return value < bound ? value : Math.nextDown(bound);
++  }
++}
+diff --git a/jre/java/java/util/concurrent/ThreadPoolExecutor.java b/jre/java/java/util/concurrent/ThreadPoolExecutor.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/ThreadPoolExecutor.java
+@@ -0,0 +1,145 @@
++package java.util.concurrent;
++
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Objects;
++
++/** Source-compatible pool facade: every accepted task executes inline. */
++public class ThreadPoolExecutor extends AbstractExecutorService {
++  private int corePoolSize;
++  private int maximumPoolSize;
++  private long keepAliveNanos;
++  private final BlockingQueue<Runnable> queue;
++  private ThreadFactory threadFactory;
++  private RejectedExecutionHandler handler;
++  private boolean shutdown;
++  private boolean terminationNotified;
++  private boolean coreTimeout;
++  private int active;
++  private long completed;
++  private long submitted;
++
++  public ThreadPoolExecutor(int core, int maximum, long keepAlive, TimeUnit unit,
++      BlockingQueue<Runnable> queue) {
++    this(core, maximum, keepAlive, unit, queue, Executors.defaultThreadFactory(), new AbortPolicy());
++  }
++  public ThreadPoolExecutor(int core, int maximum, long keepAlive, TimeUnit unit,
++      BlockingQueue<Runnable> queue, ThreadFactory factory) {
++    this(core, maximum, keepAlive, unit, queue, factory, new AbortPolicy());
++  }
++  public ThreadPoolExecutor(int core, int maximum, long keepAlive, TimeUnit unit,
++      BlockingQueue<Runnable> queue, RejectedExecutionHandler handler) {
++    this(core, maximum, keepAlive, unit, queue, Executors.defaultThreadFactory(), handler);
++  }
++  public ThreadPoolExecutor(int core, int maximum, long keepAlive, TimeUnit unit,
++      BlockingQueue<Runnable> queue, ThreadFactory factory, RejectedExecutionHandler handler) {
++    if (core < 0 || maximum <= 0 || maximum < core || keepAlive < 0) throw new IllegalArgumentException();
++    corePoolSize = core; maximumPoolSize = maximum;
++    keepAliveNanos = Objects.requireNonNull(unit).toNanos(keepAlive);
++    this.queue = Objects.requireNonNull(queue);
++    threadFactory = Objects.requireNonNull(factory); this.handler = Objects.requireNonNull(handler);
++  }
++  @Override public void execute(Runnable task) {
++    Objects.requireNonNull(task);
++    if (shutdown) { handler.rejectedExecution(task, this); return; }
++    executeTask(task);
++  }
++  protected final void executeTask(Runnable task) {
++    submitted++; active++;
++    try {
++      beforeExecute(Thread.currentThread(), task);
++      Throwable failure = null;
++      try { task.run(); }
++      catch (RuntimeException | Error ex) { failure = ex; throw ex; }
++      finally { afterExecute(task, failure); }
++    } finally {
++      active--; completed++;
++      tryTerminate();
++    }
++  }
++  @Override public void shutdown() {
++    shutdown = true; tryTerminate();
++  }
++  @Override public List<Runnable> shutdownNow() {
++    shutdown = true;
++    List<Runnable> pending = new ArrayList<>();
++    queue.drainTo(pending);
++    // Delay-based queues may refuse to poll unexpired elements. They are still
++    // pending work and must be removed and returned before termination.
++    for (Runnable task : new ArrayList<>(queue)) {
++      if (queue.remove(task)) pending.add(task);
++    }
++    tryTerminate();
++    return pending;
++  }
++  @Override public boolean isShutdown() { return shutdown; }
++  @Override public boolean isTerminated() { return shutdown && active == 0 && !hasPendingTasks(); }
++  public boolean isTerminating() { return shutdown && !isTerminated(); }
++  protected boolean hasPendingTasks() { return !queue.isEmpty(); }
++  protected final void tryTerminate() {
++    if (isTerminated() && !terminationNotified) { terminationNotified = true; terminated(); }
++  }
++  @Override public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
++    Objects.requireNonNull(unit); return isTerminated();
++  }
++  protected void beforeExecute(Thread thread, Runnable task) {}
++  protected void afterExecute(Runnable task, Throwable failure) {}
++  protected void terminated() {}
++  public void setThreadFactory(ThreadFactory factory) { threadFactory = Objects.requireNonNull(factory); }
++  public ThreadFactory getThreadFactory() { return threadFactory; }
++  public void setRejectedExecutionHandler(RejectedExecutionHandler handler) { this.handler = Objects.requireNonNull(handler); }
++  public RejectedExecutionHandler getRejectedExecutionHandler() { return handler; }
++  public void setCorePoolSize(int size) {
++    if (size < 0 || size > maximumPoolSize) throw new IllegalArgumentException(); corePoolSize = size;
++  }
++  public int getCorePoolSize() { return corePoolSize; }
++  public void setMaximumPoolSize(int size) {
++    if (size <= 0 || size < corePoolSize) throw new IllegalArgumentException(); maximumPoolSize = size;
++  }
++  public int getMaximumPoolSize() { return maximumPoolSize; }
++  public void setKeepAliveTime(long time, TimeUnit unit) {
++    if (time < 0 || (time == 0 && coreTimeout)) throw new IllegalArgumentException();
++    keepAliveNanos = Objects.requireNonNull(unit).toNanos(time);
++  }
++  public long getKeepAliveTime(TimeUnit unit) { return Objects.requireNonNull(unit).convert(keepAliveNanos, TimeUnit.NANOSECONDS); }
++  public void allowCoreThreadTimeOut(boolean value) {
++    if (value && keepAliveNanos == 0) throw new IllegalArgumentException(); coreTimeout = value;
++  }
++  public boolean allowsCoreThreadTimeOut() { return coreTimeout; }
++  public boolean prestartCoreThread() { return false; }
++  public int prestartAllCoreThreads() { return 0; }
++  public int getPoolSize() { return active == 0 ? 0 : 1; }
++  public int getActiveCount() { return active == 0 ? 0 : 1; }
++  public int getLargestPoolSize() { return submitted == 0 ? 0 : 1; }
++  public long getTaskCount() { return submitted; }
++  public long getCompletedTaskCount() { return completed; }
++  /** Queue access is for inspection/removal; submit work through execute or submit. */
++  public BlockingQueue<Runnable> getQueue() { return queue; }
++  public boolean remove(Runnable task) {
++    boolean removed = queue.remove(task);
++    tryTerminate();
++    return removed;
++  }
++  public void purge() {
++    queue.removeIf(task -> task instanceof Future && ((Future<?>) task).isCancelled());
++    tryTerminate();
++  }
++  public static class AbortPolicy implements RejectedExecutionHandler {
++    @Override public void rejectedExecution(Runnable task, ThreadPoolExecutor executor) {
++      throw new RejectedExecutionException("Executor is shut down");
++    }
++  }
++  public static class CallerRunsPolicy implements RejectedExecutionHandler {
++    @Override public void rejectedExecution(Runnable task, ThreadPoolExecutor executor) {
++      if (!executor.isShutdown()) task.run();
++    }
++  }
++  public static class DiscardPolicy implements RejectedExecutionHandler {
++    @Override public void rejectedExecution(Runnable task, ThreadPoolExecutor executor) {}
++  }
++  public static class DiscardOldestPolicy implements RejectedExecutionHandler {
++    @Override public void rejectedExecution(Runnable task, ThreadPoolExecutor executor) {
++      if (!executor.isShutdown()) { executor.getQueue().poll(); executor.execute(task); }
++    }
++  }
++}
+diff --git a/jre/java/java/util/concurrent/TransferQueue.java b/jre/java/java/util/concurrent/TransferQueue.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/TransferQueue.java
+@@ -0,0 +1,10 @@
++package java.util.concurrent;
++
++/** Transfer queue API; rendezvous requires a consumer that can run independently. */
++public interface TransferQueue<E> extends BlockingQueue<E> {
++  boolean tryTransfer(E element);
++  void transfer(E element) throws InterruptedException;
++  boolean tryTransfer(E element, long timeout, TimeUnit unit) throws InterruptedException;
++  boolean hasWaitingConsumer();
++  int getWaitingConsumerCount();
++}
+diff --git a/jre/java/java/util/concurrent/atomic/AtomicInteger.java b/jre/java/java/util/concurrent/atomic/AtomicInteger.java
+--- a/jre/java/java/util/concurrent/atomic/AtomicInteger.java
++++ b/jre/java/java/util/concurrent/atomic/AtomicInteger.java
+@@ -17,6 +17,9 @@
+ // CHECKSTYLE_ON
+ 
+ package java.util.concurrent.atomic;
++
++import java.util.function.IntBinaryOperator;
++import java.util.function.IntUnaryOperator;
+ 
+ /**
+  * GWT emulated version of {@link AtomicInteger}. It's a thin wrapper around the primitive {@code
+@@ -57,6 +60,32 @@
+     } else {
+       return false;
+     }
++  }
++
++  public final boolean weakCompareAndSet(int expect, int update) {
++    return compareAndSet(expect, update);
++  }
++
++  public final int getAndUpdate(IntUnaryOperator updateFunction) {
++    int previous = value;
++    value = updateFunction.applyAsInt(previous);
++    return previous;
++  }
++
++  public final int updateAndGet(IntUnaryOperator updateFunction) {
++    value = updateFunction.applyAsInt(value);
++    return value;
++  }
++
++  public final int getAndAccumulate(int x, IntBinaryOperator accumulatorFunction) {
++    int previous = value;
++    value = accumulatorFunction.applyAsInt(previous, x);
++    return previous;
++  }
++
++  public final int accumulateAndGet(int x, IntBinaryOperator accumulatorFunction) {
++    value = accumulatorFunction.applyAsInt(value, x);
++    return value;
+   }
+ 
+   public final int getAndIncrement() {
+diff --git a/jre/java/java/util/concurrent/atomic/AtomicIntegerArray.java b/jre/java/java/util/concurrent/atomic/AtomicIntegerArray.java
+--- a/jre/java/java/util/concurrent/atomic/AtomicIntegerArray.java
++++ b/jre/java/java/util/concurrent/atomic/AtomicIntegerArray.java
+@@ -20,7 +20,7 @@
+ import java.util.function.IntBinaryOperator;
+ import java.util.function.IntUnaryOperator;
+ 
+-public final class AtomicIntegerArray {
++public final class AtomicIntegerArray implements java.io.Serializable {
+   private final int[] array;
+ 
+   public AtomicIntegerArray(int[] array) {
+diff --git a/jre/java/java/util/concurrent/atomic/AtomicLong.java b/jre/java/java/util/concurrent/atomic/AtomicLong.java
+--- a/jre/java/java/util/concurrent/atomic/AtomicLong.java
++++ b/jre/java/java/util/concurrent/atomic/AtomicLong.java
+@@ -17,6 +17,9 @@
+ // CHECKSTYLE_ON
+ 
+ package java.util.concurrent.atomic;
++
++import java.util.function.LongBinaryOperator;
++import java.util.function.LongUnaryOperator;
+ 
+ /**
+  * GWT emulated version of {@link AtomicLong}. It's a thin wrapper around the primitive {@code
+@@ -57,6 +60,32 @@
+     } else {
+       return false;
+     }
++  }
++
++  public final boolean weakCompareAndSet(long expect, long update) {
++    return compareAndSet(expect, update);
++  }
++
++  public final long getAndUpdate(LongUnaryOperator updateFunction) {
++    long previous = value;
++    value = updateFunction.applyAsLong(previous);
++    return previous;
++  }
++
++  public final long updateAndGet(LongUnaryOperator updateFunction) {
++    value = updateFunction.applyAsLong(value);
++    return value;
++  }
++
++  public final long getAndAccumulate(long x, LongBinaryOperator accumulatorFunction) {
++    long previous = value;
++    value = accumulatorFunction.applyAsLong(previous, x);
++    return previous;
++  }
++
++  public final long accumulateAndGet(long x, LongBinaryOperator accumulatorFunction) {
++    value = accumulatorFunction.applyAsLong(value, x);
++    return value;
+   }
+ 
+   public final long getAndIncrement() {
+diff --git a/jre/java/java/util/concurrent/atomic/AtomicLongArray.java b/jre/java/java/util/concurrent/atomic/AtomicLongArray.java
+--- a/jre/java/java/util/concurrent/atomic/AtomicLongArray.java
++++ b/jre/java/java/util/concurrent/atomic/AtomicLongArray.java
+@@ -20,7 +20,7 @@
+ import java.util.function.LongBinaryOperator;
+ import java.util.function.LongUnaryOperator;
+ 
+-public final class AtomicLongArray {
++public final class AtomicLongArray implements java.io.Serializable {
+   private final long[] array;
+ 
+   public AtomicLongArray(long[] array) {
+diff --git a/jre/java/java/util/concurrent/atomic/AtomicMarkableReference.java b/jre/java/java/util/concurrent/atomic/AtomicMarkableReference.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/atomic/AtomicMarkableReference.java
+@@ -0,0 +1,53 @@
++package java.util.concurrent.atomic;
++
++/** A reference and boolean mark stored on the single executing thread. */
++public class AtomicMarkableReference<V> {
++  private V reference;
++  private boolean mark;
++
++  public AtomicMarkableReference(V initialRef, boolean initialMark) {
++    reference = initialRef;
++    mark = initialMark;
++  }
++
++  public V getReference() {
++    return reference;
++  }
++
++  public boolean isMarked() {
++    return mark;
++  }
++
++  public V get(boolean[] markHolder) {
++    markHolder[0] = mark;
++    return reference;
++  }
++
++  public boolean compareAndSet(
++      V expectedReference, V newReference, boolean expectedMark, boolean newMark) {
++    if (reference != expectedReference || mark != expectedMark) {
++      return false;
++    }
++    reference = newReference;
++    mark = newMark;
++    return true;
++  }
++
++  public boolean weakCompareAndSet(
++      V expectedReference, V newReference, boolean expectedMark, boolean newMark) {
++    return compareAndSet(expectedReference, newReference, expectedMark, newMark);
++  }
++
++  public void set(V newReference, boolean newMark) {
++    reference = newReference;
++    mark = newMark;
++  }
++
++  public boolean attemptMark(V expectedReference, boolean newMark) {
++    if (reference != expectedReference) {
++      return false;
++    }
++    mark = newMark;
++    return true;
++  }
++}
+diff --git a/jre/java/java/util/concurrent/atomic/AtomicReference.java b/jre/java/java/util/concurrent/atomic/AtomicReference.java
+--- a/jre/java/java/util/concurrent/atomic/AtomicReference.java
++++ b/jre/java/java/util/concurrent/atomic/AtomicReference.java
+@@ -16,12 +16,15 @@
+ 
+ package java.util.concurrent.atomic;
+ 
++import java.util.function.BinaryOperator;
++import java.util.function.UnaryOperator;
++
+ /**
+  * GWT emulation of AtomicReference.
+  *
+  * @param <V> The type of object referred to by this reference
+  */
+-public class AtomicReference<V> {
++public class AtomicReference<V> implements java.io.Serializable {
+ 
+   private V value;
+ 
+@@ -50,6 +53,28 @@
+     return oldValue;
+   }
+ 
++  public final V getAndUpdate(UnaryOperator<V> updateFunction) {
++    V previous = value;
++    value = updateFunction.apply(previous);
++    return previous;
++  }
++
++  public final V updateAndGet(UnaryOperator<V> updateFunction) {
++    value = updateFunction.apply(value);
++    return value;
++  }
++
++  public final V getAndAccumulate(V x, BinaryOperator<V> accumulatorFunction) {
++    V previous = value;
++    value = accumulatorFunction.apply(previous, x);
++    return previous;
++  }
++
++  public final V accumulateAndGet(V x, BinaryOperator<V> accumulatorFunction) {
++    value = accumulatorFunction.apply(value, x);
++    return value;
++  }
++
+   public final void lazySet(V newValue) {
+     set(newValue);
+   }
+diff --git a/jre/java/java/util/concurrent/atomic/AtomicReferenceArray.java b/jre/java/java/util/concurrent/atomic/AtomicReferenceArray.java
+--- a/jre/java/java/util/concurrent/atomic/AtomicReferenceArray.java
++++ b/jre/java/java/util/concurrent/atomic/AtomicReferenceArray.java
+@@ -19,20 +19,25 @@
+ package java.util.concurrent.atomic;
+ 
+ import java.util.Arrays;
++import java.util.function.BinaryOperator;
++import java.util.function.UnaryOperator;
+ 
+ /**
+  * GWT emulated version of {@link AtomicReferenceArray}.
+  *
+  * @param <V> the element type.
+  */
+-public class AtomicReferenceArray<V> {
++public class AtomicReferenceArray<V> implements java.io.Serializable {
+ 
+   private final V[] values;
+ 
++  @SuppressWarnings("unchecked")
+   public AtomicReferenceArray(V[] array) {
+-    values = Arrays.copyOf(array, array.length);
++    values = (V[]) new Object[array.length];
++    System.arraycopy(array, 0, values, 0, array.length);
+   }
+ 
++  @SuppressWarnings("unchecked")
+   public AtomicReferenceArray(int length) {
+     values = (V[]) new Object[length];
+   }
+@@ -53,6 +58,30 @@
+     V previous = values[i];
+     values[i] = x;
+     return previous;
++  }
++
++  public V getAndUpdate(int i, UnaryOperator<V> updateFunction) {
++    V previous = values[i];
++    values[i] = updateFunction.apply(previous);
++    return previous;
++  }
++
++  public V updateAndGet(int i, UnaryOperator<V> updateFunction) {
++    V updated = updateFunction.apply(values[i]);
++    values[i] = updated;
++    return updated;
++  }
++
++  public V getAndAccumulate(int i, V x, BinaryOperator<V> accumulatorFunction) {
++    V previous = values[i];
++    values[i] = accumulatorFunction.apply(previous, x);
++    return previous;
++  }
++
++  public V accumulateAndGet(int i, V x, BinaryOperator<V> accumulatorFunction) {
++    V updated = accumulatorFunction.apply(values[i], x);
++    values[i] = updated;
++    return updated;
+   }
+ 
+   public void lazySet(int i, V x) {
+diff --git a/jre/java/java/util/concurrent/atomic/AtomicStampedReference.java b/jre/java/java/util/concurrent/atomic/AtomicStampedReference.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/atomic/AtomicStampedReference.java
+@@ -0,0 +1,53 @@
++package java.util.concurrent.atomic;
++
++/** A reference and integer stamp stored on the single executing thread. */
++public class AtomicStampedReference<V> {
++  private V reference;
++  private int stamp;
++
++  public AtomicStampedReference(V initialRef, int initialStamp) {
++    reference = initialRef;
++    stamp = initialStamp;
++  }
++
++  public V getReference() {
++    return reference;
++  }
++
++  public int getStamp() {
++    return stamp;
++  }
++
++  public V get(int[] stampHolder) {
++    stampHolder[0] = stamp;
++    return reference;
++  }
++
++  public boolean compareAndSet(
++      V expectedReference, V newReference, int expectedStamp, int newStamp) {
++    if (reference != expectedReference || stamp != expectedStamp) {
++      return false;
++    }
++    reference = newReference;
++    stamp = newStamp;
++    return true;
++  }
++
++  public boolean weakCompareAndSet(
++      V expectedReference, V newReference, int expectedStamp, int newStamp) {
++    return compareAndSet(expectedReference, newReference, expectedStamp, newStamp);
++  }
++
++  public void set(V newReference, int newStamp) {
++    reference = newReference;
++    stamp = newStamp;
++  }
++
++  public boolean attemptStamp(V expectedReference, int newStamp) {
++    if (reference != expectedReference) {
++      return false;
++    }
++    stamp = newStamp;
++    return true;
++  }
++}
+diff --git a/jre/java/java/util/concurrent/atomic/DoubleAdder.java b/jre/java/java/util/concurrent/atomic/DoubleAdder.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/atomic/DoubleAdder.java
+@@ -0,0 +1,51 @@
++package java.util.concurrent.atomic;
++
++/** A plain double accumulator for the main-thread execution profile. */
++public class DoubleAdder extends Number implements java.io.Serializable {
++  private double value;
++
++  public DoubleAdder() {}
++
++  public void add(double x) {
++    value += x;
++  }
++
++  public double sum() {
++    return value;
++  }
++
++  public void reset() {
++    value = 0;
++  }
++
++  public double sumThenReset() {
++    double previous = value;
++    reset();
++    return previous;
++  }
++
++  @Override
++  public int intValue() {
++    return (int) value;
++  }
++
++  @Override
++  public long longValue() {
++    return (long) value;
++  }
++
++  @Override
++  public float floatValue() {
++    return (float) value;
++  }
++
++  @Override
++  public double doubleValue() {
++    return value;
++  }
++
++  @Override
++  public String toString() {
++    return Double.toString(value);
++  }
++}
+diff --git a/jre/java/java/util/concurrent/atomic/LongAdder.java b/jre/java/java/util/concurrent/atomic/LongAdder.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/atomic/LongAdder.java
+@@ -0,0 +1,59 @@
++package java.util.concurrent.atomic;
++
++/** A plain long accumulator for the main-thread execution profile. */
++public class LongAdder extends Number implements java.io.Serializable {
++  private long value;
++
++  public LongAdder() {}
++
++  public void add(long x) {
++    value += x;
++  }
++
++  public void increment() {
++    add(1);
++  }
++
++  public void decrement() {
++    add(-1);
++  }
++
++  public long sum() {
++    return value;
++  }
++
++  public void reset() {
++    value = 0;
++  }
++
++  public long sumThenReset() {
++    long previous = value;
++    reset();
++    return previous;
++  }
++
++  @Override
++  public int intValue() {
++    return (int) value;
++  }
++
++  @Override
++  public long longValue() {
++    return value;
++  }
++
++  @Override
++  public float floatValue() {
++    return (float) value;
++  }
++
++  @Override
++  public double doubleValue() {
++    return (double) value;
++  }
++
++  @Override
++  public String toString() {
++    return Long.toString(value);
++  }
++}
+diff --git a/jre/java/java/util/concurrent/locks/Condition.java b/jre/java/java/util/concurrent/locks/Condition.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/locks/Condition.java
+@@ -0,0 +1,15 @@
++package java.util.concurrent.locks;
++
++import java.util.Date;
++import java.util.concurrent.TimeUnit;
++
++/** Condition API; a browser main thread cannot suspend for another task. */
++public interface Condition {
++  void await() throws InterruptedException;
++  void awaitUninterruptibly();
++  long awaitNanos(long nanosTimeout) throws InterruptedException;
++  boolean await(long time, TimeUnit unit) throws InterruptedException;
++  boolean awaitUntil(Date deadline) throws InterruptedException;
++  void signal();
++  void signalAll();
++}
+diff --git a/jre/java/java/util/concurrent/locks/Lock.java b/jre/java/java/util/concurrent/locks/Lock.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/locks/Lock.java
+@@ -0,0 +1,13 @@
++package java.util.concurrent.locks;
++
++import java.util.concurrent.TimeUnit;
++
++/** Lock API for the cooperative, single-main-thread runtime. */
++public interface Lock {
++  void lock();
++  void lockInterruptibly() throws InterruptedException;
++  boolean tryLock();
++  boolean tryLock(long time, TimeUnit unit) throws InterruptedException;
++  void unlock();
++  Condition newCondition();
++}
+diff --git a/jre/java/java/util/concurrent/locks/LockSupport.java b/jre/java/java/util/concurrent/locks/LockSupport.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/locks/LockSupport.java
+@@ -0,0 +1,60 @@
++package java.util.concurrent.locks;
++
++import java.util.IdentityHashMap;
++import java.util.Map;
++import java.util.Objects;
++
++/** Permit bookkeeping without suspending the browser event loop. */
++public class LockSupport {
++  private static final Map<Thread, Boolean> permits = new IdentityHashMap<>();
++  private static Object currentBlocker;
++
++  private LockSupport() {}
++
++  public static void setCurrentBlocker(Object blocker) {
++    currentBlocker = blocker;
++  }
++
++  public static void unpark(Thread thread) {
++    if (thread != null) {
++      permits.put(thread, Boolean.TRUE);
++    }
++  }
++
++  public static void park(Object blocker) {
++    if (!consumePermit() && !Thread.currentThread().isInterrupted()) {
++      throw new IllegalStateException("LockSupport.park cannot block the browser main thread");
++    }
++  }
++
++  public static void park() {
++    park(null);
++  }
++
++  public static void parkNanos(Object blocker, long nanos) {
++    if (nanos > 0) {
++      consumePermit();
++    }
++  }
++
++  public static void parkNanos(long nanos) {
++    parkNanos(null, nanos);
++  }
++
++  public static void parkUntil(Object blocker, long deadline) {
++    consumePermit();
++  }
++
++  public static void parkUntil(long deadline) {
++    parkUntil(null, deadline);
++  }
++
++  public static Object getBlocker(Thread thread) {
++    Objects.requireNonNull(thread);
++    return thread == Thread.currentThread() ? currentBlocker : null;
++  }
++
++  private static boolean consumePermit() {
++    return permits.remove(Thread.currentThread()) != null;
++  }
++}
+diff --git a/jre/java/java/util/concurrent/locks/ReadWriteLock.java b/jre/java/java/util/concurrent/locks/ReadWriteLock.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/locks/ReadWriteLock.java
+@@ -0,0 +1,6 @@
++package java.util.concurrent.locks;
++
++public interface ReadWriteLock {
++  Lock readLock();
++  Lock writeLock();
++}
+diff --git a/jre/java/java/util/concurrent/locks/ReentrantLock.java b/jre/java/java/util/concurrent/locks/ReentrantLock.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/locks/ReentrantLock.java
+@@ -0,0 +1,191 @@
++package java.util.concurrent.locks;
++
++import java.io.Serializable;
++import java.util.Collection;
++import java.util.Collections;
++import java.util.Date;
++import java.util.Objects;
++import java.util.concurrent.TimeUnit;
++
++/** A reentrant ownership counter for the one browser main thread. */
++public class ReentrantLock implements Lock, Serializable {
++  private final boolean fair;
++  private int holds;
++
++  public ReentrantLock() {
++    this(false);
++  }
++
++  public ReentrantLock(boolean fair) {
++    this.fair = fair;
++  }
++
++  @Override
++  public void lock() {
++    if (holds == Integer.MAX_VALUE) {
++      throw new Error("Maximum lock count exceeded");
++    }
++    holds++;
++  }
++
++  @Override
++  public void lockInterruptibly() throws InterruptedException {
++    checkInterrupted();
++    lock();
++  }
++
++  @Override
++  public boolean tryLock() {
++    lock();
++    return true;
++  }
++
++  @Override
++  public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
++    Objects.requireNonNull(unit);
++    lockInterruptibly();
++    return true;
++  }
++
++  @Override
++  public void unlock() {
++    checkHeld();
++    holds--;
++  }
++
++  @Override
++  public Condition newCondition() {
++    return new MainThreadCondition(this);
++  }
++
++  public int getHoldCount() {
++    return holds;
++  }
++
++  public boolean isHeldByCurrentThread() {
++    return holds != 0;
++  }
++
++  public boolean isLocked() {
++    return holds != 0;
++  }
++
++  public final boolean isFair() {
++    return fair;
++  }
++
++  protected Thread getOwner() {
++    return holds == 0 ? null : Thread.currentThread();
++  }
++
++  public final boolean hasQueuedThreads() {
++    return false;
++  }
++
++  public final boolean hasQueuedThread(Thread thread) {
++    Objects.requireNonNull(thread);
++    return false;
++  }
++
++  public final int getQueueLength() {
++    return 0;
++  }
++
++  protected Collection<Thread> getQueuedThreads() {
++    return Collections.emptyList();
++  }
++
++  public boolean hasWaiters(Condition condition) {
++    checkCondition(condition);
++    return false;
++  }
++
++  public int getWaitQueueLength(Condition condition) {
++    checkCondition(condition);
++    return 0;
++  }
++
++  protected Collection<Thread> getWaitingThreads(Condition condition) {
++    checkCondition(condition);
++    return Collections.emptyList();
++  }
++
++  private void checkCondition(Condition condition) {
++    Objects.requireNonNull(condition);
++    if (!(condition instanceof MainThreadCondition)
++        || ((MainThreadCondition) condition).owner != this) {
++      throw new IllegalArgumentException("Condition belongs to a different lock");
++    }
++    checkHeld();
++  }
++
++  private void checkHeld() {
++    if (holds == 0) {
++      throw new IllegalMonitorStateException("Current thread does not hold this lock");
++    }
++  }
++
++  static void checkInterrupted() throws InterruptedException {
++    if (Thread.interrupted()) {
++      throw new InterruptedException();
++    }
++  }
++
++  @Override
++  public String toString() {
++    return super.toString() + (holds == 0 ? "[Unlocked]" : "[Locked by main thread]");
++  }
++
++  private static final class MainThreadCondition implements Condition {
++    private final ReentrantLock owner;
++
++    MainThreadCondition(ReentrantLock owner) {
++      this.owner = owner;
++    }
++
++    @Override
++    public void await() throws InterruptedException {
++      checkInterrupted();
++      awaitUninterruptibly();
++    }
++
++    @Override
++    public void awaitUninterruptibly() {
++      owner.checkHeld();
++      throw new IllegalStateException("Condition.await cannot block the browser main thread");
++    }
++
++    @Override
++    public long awaitNanos(long nanosTimeout) throws InterruptedException {
++      checkInterrupted();
++      owner.checkHeld();
++      return Math.min(0L, nanosTimeout);
++    }
++
++    @Override
++    public boolean await(long time, TimeUnit unit) throws InterruptedException {
++      Objects.requireNonNull(unit);
++      checkInterrupted();
++      owner.checkHeld();
++      return false;
++    }
++
++    @Override
++    public boolean awaitUntil(Date deadline) throws InterruptedException {
++      Objects.requireNonNull(deadline);
++      checkInterrupted();
++      owner.checkHeld();
++      return false;
++    }
++
++    @Override
++    public void signal() {
++      owner.checkHeld();
++    }
++
++    @Override
++    public void signalAll() {
++      owner.checkHeld();
++    }
++  }
++}
+diff --git a/jre/java/java/util/concurrent/locks/ReentrantReadWriteLock.java b/jre/java/java/util/concurrent/locks/ReentrantReadWriteLock.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/java/util/concurrent/locks/ReentrantReadWriteLock.java
+@@ -0,0 +1,221 @@
++package java.util.concurrent.locks;
++
++import java.io.Serializable;
++import java.util.Collection;
++import java.util.Collections;
++import java.util.Objects;
++import java.util.concurrent.TimeUnit;
++
++/** Read/write hold counters; upgrading a read lock requires a migration. */
++public class ReentrantReadWriteLock implements ReadWriteLock, Serializable {
++  private final ReentrantLock writer;
++  private final ReadLock readLock;
++  private final WriteLock writeLock;
++  private int reads;
++
++  public ReentrantReadWriteLock() {
++    this(false);
++  }
++
++  public ReentrantReadWriteLock(boolean fair) {
++    writer = new ReentrantLock(fair);
++    readLock = new ReadLock(this);
++    writeLock = new WriteLock(this);
++  }
++
++  @Override
++  public ReadLock readLock() {
++    return readLock;
++  }
++
++  @Override
++  public WriteLock writeLock() {
++    return writeLock;
++  }
++
++  public final boolean isFair() {
++    return writer.isFair();
++  }
++
++  protected Thread getOwner() {
++    return writer.getOwner();
++  }
++
++  public int getReadLockCount() {
++    return reads;
++  }
++
++  public int getReadHoldCount() {
++    return reads;
++  }
++
++  public boolean isWriteLocked() {
++    return writer.isLocked();
++  }
++
++  public boolean isWriteLockedByCurrentThread() {
++    return writer.isHeldByCurrentThread();
++  }
++
++  public int getWriteHoldCount() {
++    return writer.getHoldCount();
++  }
++
++  protected Collection<Thread> getQueuedWriterThreads() {
++    return Collections.emptyList();
++  }
++
++  protected Collection<Thread> getQueuedReaderThreads() {
++    return Collections.emptyList();
++  }
++
++  public final boolean hasQueuedThreads() {
++    return false;
++  }
++
++  public final boolean hasQueuedThread(Thread thread) {
++    Objects.requireNonNull(thread);
++    return false;
++  }
++
++  public final int getQueueLength() {
++    return 0;
++  }
++
++  protected Collection<Thread> getQueuedThreads() {
++    return Collections.emptyList();
++  }
++
++  public boolean hasWaiters(Condition condition) {
++    return writer.hasWaiters(condition);
++  }
++
++  public int getWaitQueueLength(Condition condition) {
++    return writer.getWaitQueueLength(condition);
++  }
++
++  protected Collection<Thread> getWaitingThreads(Condition condition) {
++    return writer.getWaitingThreads(condition);
++  }
++
++  @Override
++  public String toString() {
++    return super.toString() + "[Write locks = " + getWriteHoldCount()
++        + ", Read locks = " + reads + "]";
++  }
++
++  public static class ReadLock implements Lock, Serializable {
++    private final ReentrantReadWriteLock owner;
++
++    protected ReadLock(ReentrantReadWriteLock owner) {
++      this.owner = Objects.requireNonNull(owner);
++    }
++
++    @Override
++    public void lock() {
++      if (owner.reads == 65535) {
++        throw new Error("Maximum read lock count exceeded");
++      }
++      owner.reads++;
++    }
++
++    @Override
++    public void lockInterruptibly() throws InterruptedException {
++      ReentrantLock.checkInterrupted();
++      lock();
++    }
++
++    @Override
++    public boolean tryLock() {
++      lock();
++      return true;
++    }
++
++    @Override
++    public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
++      Objects.requireNonNull(unit);
++      lockInterruptibly();
++      return true;
++    }
++
++    @Override
++    public void unlock() {
++      if (owner.reads == 0) {
++        throw new IllegalMonitorStateException("Current thread does not hold a read lock");
++      }
++      owner.reads--;
++    }
++
++    @Override
++    public Condition newCondition() {
++      throw new UnsupportedOperationException("Read locks do not support conditions");
++    }
++
++    @Override
++    public String toString() {
++      return super.toString() + "[Read locks = " + owner.reads + "]";
++    }
++  }
++
++  public static class WriteLock implements Lock, Serializable {
++    private final ReentrantReadWriteLock owner;
++
++    protected WriteLock(ReentrantReadWriteLock owner) {
++      this.owner = Objects.requireNonNull(owner);
++    }
++
++    @Override
++    public void lock() {
++      if (!tryLock()) {
++        throw new IllegalStateException("A read lock cannot be upgraded on the browser main thread");
++      }
++    }
++
++    @Override
++    public void lockInterruptibly() throws InterruptedException {
++      ReentrantLock.checkInterrupted();
++      lock();
++    }
++
++    @Override
++    public boolean tryLock() {
++      if (owner.reads != 0 && !owner.writer.isHeldByCurrentThread()) {
++        return false;
++      }
++      if (owner.writer.getHoldCount() == 65535) {
++        throw new Error("Maximum write lock count exceeded");
++      }
++      return owner.writer.tryLock();
++    }
++
++    @Override
++    public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
++      Objects.requireNonNull(unit);
++      ReentrantLock.checkInterrupted();
++      return tryLock();
++    }
++
++    @Override
++    public void unlock() {
++      owner.writer.unlock();
++    }
++
++    @Override
++    public Condition newCondition() {
++      return owner.writer.newCondition();
++    }
++
++    public boolean isHeldByCurrentThread() {
++      return owner.writer.isHeldByCurrentThread();
++    }
++
++    public int getHoldCount() {
++      return owner.writer.getHoldCount();
++    }
++
++    @Override
++    public String toString() {
++      return owner.writer.toString();
++    }
++  }
++}
+diff --git a/jre/java/javaemul/internal/concurrent/MainThreadTimers.java b/jre/java/javaemul/internal/concurrent/MainThreadTimers.java
+new file mode 100644
+--- /dev/null
++++ b/jre/java/javaemul/internal/concurrent/MainThreadTimers.java
+@@ -0,0 +1,15 @@
++package javaemul.internal.concurrent;
++
++import jsinterop.annotations.JsFunction;
++import jsinterop.annotations.JsMethod;
++import jsinterop.annotations.JsPackage;
++
++/** J2CL's standard JsInterop bridge to main-thread browser timers. */
++public final class MainThreadTimers {
++  @JsFunction public interface Callback { void run(); }
++  @JsMethod(namespace = JsPackage.GLOBAL, name = "setTimeout")
++  public static native double setTimeout(Callback callback, double milliseconds);
++  @JsMethod(namespace = JsPackage.GLOBAL, name = "clearTimeout")
++  public static native void clearTimeout(double id);
++  private MainThreadTimers() {}
++}
+diff --git a/jre/java/module-info.java b/jre/java/module-info.java
+--- a/jre/java/module-info.java
++++ b/jre/java/module-info.java
+@@ -26,6 +26,7 @@
+   exports java.util;
+   exports java.util.concurrent;
+   exports java.util.concurrent.atomic;
++  exports java.util.concurrent.locks;
+   exports java.util.function;
+   exports java.util.logging;
+   exports java.util.stream;

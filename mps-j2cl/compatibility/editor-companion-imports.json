@@ -1,0 +1,142 @@
+[
+  {
+    "project": "findUsages-runtime",
+    "type": "jetbrains.mps.ide.findusages.model.scopes.ModelsScope",
+    "file": "core/findUsages-runtime/source_gen/jetbrains/mps/ide/findusages/model/scopes/ModelsScope.java"
+  },
+  {
+    "project": "make-runtime",
+    "type": "jetbrains.mps.make.MakeServiceComponent",
+    "file": "core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen/jetbrains/mps/make/MakeServiceComponent.java"
+  },
+  {
+    "project": "mps-icons",
+    "type": "jetbrains.mps.icons.MPSIcons",
+    "file": "workbench/mps-icons/source/jetbrains/mps/icons/MPSIcons.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.actions.MPSActionPlaces",
+    "file": "workbench/mps-platform/source/jetbrains/mps/ide/actions/MPSActionPlaces.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.actions.MPSActions",
+    "file": "workbench/mps-platform/source/jetbrains/mps/ide/actions/MPSActions.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.actions.MPSCommonDataKeys",
+    "file": "workbench/mps-platform/source/jetbrains/mps/ide/actions/MPSCommonDataKeys.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.actions.SNodeActionData",
+    "file": "workbench/mps-platform/source/jetbrains/mps/ide/actions/SNodeActionData.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.datatransfer.CopyPasteUtil",
+    "file": "workbench/mps-platform/jetbrains.mps.ide.platform/source_gen/jetbrains/mps/ide/datatransfer/CopyPasteUtil.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.datatransfer.TextPasteUtil",
+    "file": "workbench/mps-platform/jetbrains.mps.ide.platform/source_gen/jetbrains/mps/ide/datatransfer/TextPasteUtil.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.icons.GlobalIconManager",
+    "file": "workbench/mps-platform/jetbrains.mps.ide.platform/source_gen/jetbrains/mps/ide/icons/GlobalIconManager.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.icons.IdeIcons",
+    "file": "workbench/mps-platform/source/jetbrains/mps/ide/icons/IdeIcons.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.MPSCoreComponents",
+    "file": "workbench/mps-platform/source/jetbrains/mps/ide/MPSCoreComponents.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.project.ProjectHelper",
+    "file": "workbench/mps-platform/source/jetbrains/mps/ide/project/ProjectHelper.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.search.SearchHistoryStorage",
+    "file": "workbench/mps-platform/source/jetbrains/mps/ide/search/SearchHistoryStorage.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.ThreadUtils",
+    "file": "workbench/mps-platform/source/jetbrains/mps/ide/ThreadUtils.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.undo.WorkbenchUndoHandler",
+    "file": "workbench/mps-platform/source/jetbrains/mps/ide/undo/WorkbenchUndoHandler.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.ide.util.ColorAndGraphicsUtil",
+    "file": "workbench/mps-platform/source/jetbrains/mps/ide/util/ColorAndGraphicsUtil.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.nodefs.MPSNodeVirtualFile",
+    "file": "workbench/mps-platform/source/jetbrains/mps/nodefs/MPSNodeVirtualFile.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.nodefs.NodeVirtualFileSystem",
+    "file": "workbench/mps-platform/source/jetbrains/mps/nodefs/NodeVirtualFileSystem.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.project.MPSProject",
+    "file": "workbench/mps-platform/source/jetbrains/mps/project/MPSProject.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.workbench.action.ActionUtils",
+    "file": "workbench/mps-platform/source/jetbrains/mps/workbench/action/ActionUtils.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.workbench.action.BaseAction",
+    "file": "workbench/mps-platform/source/jetbrains/mps/workbench/action/BaseAction.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.workbench.action.BaseGroup",
+    "file": "workbench/mps-platform/source/jetbrains/mps/workbench/action/BaseGroup.java"
+  },
+  {
+    "project": "mps-platform",
+    "type": "jetbrains.mps.workbench.ActionPlace",
+    "file": "workbench/mps-platform/source/jetbrains/mps/workbench/ActionPlace.java"
+  },
+  {
+    "project": "mps-ui",
+    "type": "jetbrains.mps.ide.search.AbstractSearchPanel",
+    "file": "workbench/mps-ui/source/jetbrains/mps/ide/search/AbstractSearchPanel.java"
+  },
+  {
+    "project": "scripts-runtime",
+    "type": "jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring",
+    "file": "workbench/scripts-runtime/source/jetbrains/mps/lang/script/runtime/AbstractMigrationRefactoring.java"
+  },
+  {
+    "project": "scripts-runtime",
+    "type": "jetbrains.mps.lang.script.runtime.RefactoringScript",
+    "file": "workbench/scripts-runtime/source/jetbrains/mps/lang/script/runtime/RefactoringScript.java"
+  },
+  {
+    "project": "scripts-runtime",
+    "type": "jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor",
+    "file": "workbench/scripts-runtime/source/jetbrains/mps/lang/script/runtime/ScriptAspectDescriptor.java"
+  }
+]

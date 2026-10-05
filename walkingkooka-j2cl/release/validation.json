@@ -1,0 +1,52 @@
+{
+  "validatedAt": "2026-09-16T18:00:44.591818+00:00",
+  "archive": "walkingkooka-java-time-0.1.0.tar.gz",
+  "sha256": "42a346cca18581bfcce8cca009b0ae23d271ee429cfd099e6c513760a2aa28ce",
+  "jdkReference": "PASS 307 contracts",
+  "browsers": [
+    {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "mode": "development",
+      "summary": "PASS 307 contracts"
+    },
+    {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "mode": "optimized",
+      "summary": "PASS 307 contracts"
+    },
+    {
+      "engine": "firefox",
+      "version": "153.0",
+      "mode": "development",
+      "summary": "PASS 307 contracts"
+    },
+    {
+      "engine": "firefox",
+      "version": "153.0",
+      "mode": "optimized",
+      "summary": "PASS 307 contracts"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "mode": "development",
+      "summary": "PASS 307 contracts"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "mode": "optimized",
+      "summary": "PASS 307 contracts"
+    }
+  ],
+  "archiveConsumer": [
+    {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "mode": "optimized",
+      "summary": "PASS 307 contracts"
+    }
+  ]
+}

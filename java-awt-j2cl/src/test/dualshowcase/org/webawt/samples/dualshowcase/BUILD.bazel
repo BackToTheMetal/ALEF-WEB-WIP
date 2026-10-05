@@ -1,0 +1,23 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_test")
+
+java_test(
+    name = "DualShowcaseJvmTest",
+    srcs = ["DualShowcaseDesktopSmokeTest.java", "GraphicsStateAssertions.java"],
+    test_class = "org.webawt.samples.dualshowcase.DualShowcaseDesktopSmokeTest",
+    deps = [
+        "//samples/dual_showcase:shared-jvm",
+        "@webawt_test_maven//:junit_junit",
+    ],
+)
+
+j2cl_test(
+    name = "DualShowcaseJ2clTest",
+    srcs = ["DualShowcaseSmokeTest.java", "GraphicsStateAssertions.java"],
+    test_class = "org.webawt.samples.dualshowcase.DualShowcaseSmokeTest",
+    deps = [
+        "//samples/dual_showcase:shared-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:painting-j2cl",
+        "@j2cl//:junit",
+    ],
+)

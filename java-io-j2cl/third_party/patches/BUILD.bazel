@@ -1,0 +1,1 @@
+exports_files(["j2cl-java-io.patch"])

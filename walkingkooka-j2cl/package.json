@@ -1,0 +1,6 @@
+{
+  "name": "walkingkooka-java-time-validation",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {"playwright": "1.62.0"}
+}

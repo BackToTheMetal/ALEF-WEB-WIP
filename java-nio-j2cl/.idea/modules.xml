@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/third_party/WebAWT/WebAWT.iml" filepath="$PROJECT_DIR$/third_party/WebAWT/WebAWT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/third_party/java-io-j2cl/java-io-j2cl.iml" filepath="$PROJECT_DIR$/third_party/java-io-j2cl/java-io-j2cl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-nio-j2cl.iml" filepath="$PROJECT_DIR$/java-nio-j2cl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/main.iml" filepath="$PROJECT_DIR$/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/test/mps/mps.iml" filepath="$PROJECT_DIR$/src/test/mps/mps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/out/out.iml" filepath="$PROJECT_DIR$/out/out.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/test/test.iml" filepath="$PROJECT_DIR$/src/test/test.iml" />
+    </modules>
+  </component>
+</project>

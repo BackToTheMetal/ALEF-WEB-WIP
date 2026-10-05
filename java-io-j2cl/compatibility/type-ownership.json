@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "j2clVersion": "20260402",
+  "owners": {
+    "java.io.*": "java-io-j2cl for missing types; stock J2CL retains its existing types",
+    "java.nio.*": "java-nio-j2cl",
+    "java.net.URI": "WebAWT pending shared-JRE coordination",
+    "java.lang.ClassNotFoundException": "java-io-j2cl prerequisite for ObjectInputStream",
+    "java.lang.ReflectiveOperationException": "java-io-j2cl prerequisite hierarchy for ClassNotFoundException"
+  },
+  "jointlyDeferredMembers": [
+    "java.io.File.toPath()",
+    "java.io.File.toURI()"
+  ],
+  "wslBuildLock": "/tmp/j2cl-build.lock"
+}

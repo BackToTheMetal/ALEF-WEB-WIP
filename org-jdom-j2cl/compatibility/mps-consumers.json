@@ -1,0 +1,30 @@
+{
+  "revision": "1ae803e4f8c52e470c94563059eca4b4b8397c8c",
+  "consumers": [
+    {
+      "transformation": "Verbatim source copy",
+      "sha256": "5d740a8e7806d5848b26fbc169bd265d53ca322a40107ef659097b39d2d8bfae",
+      "source": "core/openapi/source/org/jetbrains/mps/openapi/persistence/Memento.java"
+    },
+    {
+      "transformation": "Verbatim source copy",
+      "sha256": "c99b32d9cd7ebee4dc88a4eb0e0b8696cb0f889b17956f3917760b98741a41be",
+      "source": "core/kernel/source/jetbrains/mps/persistence/MementoImpl.java"
+    },
+    {
+      "transformation": "Verbatim source copy",
+      "sha256": "a2207985afc5b914460cd3674b3b5b986c7bb1ab7b0251a698aaec5674a8e824",
+      "source": "core/kernel/source/jetbrains/mps/persistence/MementoUtil.java"
+    },
+    {
+      "transformation": "GeneratedClass annotation/import removed; adaptation notice added; executable code unchanged",
+      "sha256": "b1fe3197760f195487d4a248a5a62296b3c45e7cd51af3198a8bc57bb314506e",
+      "source": "core/kernel/kernelSolution/source_gen/jetbrains/mps/util/xml/XMLSAXHandler.java"
+    },
+    {
+      "transformation": "GeneratedClass annotation/import removed; adaptation notice added; executable code unchanged",
+      "sha256": "cc9148211ccee55be7348330bce896f1a3750daa28e0fea9252a5916e5d0e2a3",
+      "source": "core/kernel/kernelSolution/source_gen/jetbrains/mps/util/xml/BreakParseSAXException.java"
+    }
+  ]
+}

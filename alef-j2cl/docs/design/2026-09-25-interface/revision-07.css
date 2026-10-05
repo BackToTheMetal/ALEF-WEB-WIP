@@ -1,0 +1,19 @@
+/* Focused environment design; model/editor and review styles are unchanged. */
+.app-settings{flex-shrink:0;background:transparent;border:0;color:var(--muted)}
+.app-settings.active{background:#e6efe8;color:var(--green)}
+.promotion-path{display:flex;align-items:center;gap:10px;padding:12px 0 20px;margin:0;list-style:none;flex-wrap:wrap;font-size:12px}
+.promotion-path li{display:flex;align-items:center;gap:9px;color:inherit}
+.path-number{display:grid;place-items:center;width:22px;height:22px;border:1px solid var(--line);border-radius:50%;color:var(--muted);font-size:11px}
+.promotion-path .svg{width:14px;color:var(--muted);margin:0 5px}
+.rollout-context{display:flex;align-items:center;gap:13px;font-size:12px;padding:12px 15px;border:1px solid var(--line);border-bottom:0;background:#fff;border-radius:6px 6px 0 0;flex-wrap:wrap}
+.rollout-context code{color:var(--muted);font-size:11px}
+.path-table table{min-width:650px;width:100%}
+.path-table .path-step{width:36px;color:var(--muted)}
+.path-table .path-actions{width:210px;text-align:right}
+.path-actions button{white-space:normal}
+.order-buttons{white-space:nowrap}.order-buttons button{padding:4px 10px;margin-right:5px}
+.simulation-controls{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+.promotion-destination{display:flex;align-items:center;gap:10px;margin:16px 0;font-size:14px}
+.path-page .page-heading{margin-bottom:10px}
+@media(max-width:900px){.path-page,.environment-settings{padding:20px}.path-table td{padding:14px 12px}.promotion-path{gap:8px;font-size:11px}.promotion-path .svg{margin:0}.path-table .path-actions{width:165px}}
+@media(max-width:600px){.app-settings{width:30px;padding:4px}.path-page .page-heading{flex-wrap:wrap}.path-table table{min-width:570px}.rollout-context .grow{display:none}.promotion-path{row-gap:12px}.path-page .page-heading .grow{flex-basis:auto}}

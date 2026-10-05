@@ -1,0 +1,14 @@
+{
+  "extensions": {
+    "url": "https://github.com/JetBrains/MPS-extensions.git",
+    "commit": "3b2a1c4260c26e9692de48e32ef066db06cbe4fd",
+    "source_archive_url": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/9999.9.3663.3b2a1c4-SNAPSHOT/extensions-9999.9.3663.3b2a1c4-20260904.030301-1.zip",
+    "source_archive_sha256": "ad61c48c6e098124f682b87857998a8a8c6d50b65e229ec2b2a8218ada645851"
+  },
+  "mps": {
+    "workspace": "../mps-j2cl",
+    "commit": "d2589ed55bbc9445b660769fcc17da97e8e395a6"
+  },
+  "bazel": "8.3.1",
+  "j2cl": "20260402"
+}

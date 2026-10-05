@@ -1,0 +1,87 @@
+{
+  "pdf": "C:\\Codex\\alef-j2cl\\output\\pdf\\alef-technical-paper.pdf",
+  "sha256": "5e3e65dd188c79f34dc15dc01c4e23eb42e42135944d19412c50c6030763e12f",
+  "sections": [
+    {
+      "title": "Architecture, implementation and risk",
+      "page": 1
+    },
+    {
+      "title": "1. Scope, evidence and architectural position",
+      "page": 2
+    },
+    {
+      "title": "2. System context: execution and authority",
+      "page": 3
+    },
+    {
+      "title": "3. Components and build composition",
+      "page": 4
+    },
+    {
+      "title": "4. Identity, concurrency and access control",
+      "page": 5
+    },
+    {
+      "title": "5. Workspace loading and the editing loop",
+      "page": 6
+    },
+    {
+      "title": "6. Save publication and recovery",
+      "page": 7
+    },
+    {
+      "title": "7. Read-only MPS comparison",
+      "page": 9
+    },
+    {
+      "title": "8. Editor updates: nodes, cells and pixels",
+      "page": 10
+    },
+    {
+      "title": "9. Package composition and review semantics",
+      "page": 11
+    },
+    {
+      "title": "10. Detailed example: removing package changes",
+      "page": 12
+    },
+    {
+      "title": "11. Package checks and native runtime execution",
+      "page": 13
+    },
+    {
+      "title": "12. Package loading, caching and latency",
+      "page": 14
+    },
+    {
+      "title": "13. Deployment and promotion",
+      "page": 15
+    },
+    {
+      "title": "14. Risk assessment: correctness and security",
+      "page": 17
+    },
+    {
+      "title": "15. Risk assessment: operations and maintainability",
+      "page": 18
+    },
+    {
+      "title": "16. Verification and what the evidence establishes",
+      "page": 19
+    },
+    {
+      "title": "17. Evolution path and engineering priorities",
+      "page": 20
+    },
+    {
+      "title": "Appendix A. Source index and reproducibility",
+      "page": 21
+    },
+    {
+      "title": "Appendix A. Source index, continued",
+      "page": 22
+    }
+  ],
+  "figures": 10
+}

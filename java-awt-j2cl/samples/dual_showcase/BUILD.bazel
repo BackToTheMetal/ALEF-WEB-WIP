@@ -1,0 +1,67 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
+load("@rules_closure//closure:defs.bzl", "closure_js_library")
+
+java_library(
+    name = "shared-jvm",
+    resources = ["fonts/DejaVuSans.ttf"],
+    resource_strip_prefix = "samples/dual_showcase",
+    srcs = ["ClipboardAccess.java", "DualShowcase.java", "KeyboardInputPage.java", "RenderingLabPage.java", "LifecyclePage.java", "GraphicsStateScenarios.java", "StrokeScenarios.java", "PaintScenarios.java", "FontScenarios.java", "TextScenarios.java", "AttributedScenarios.java", "StyledText.java", "CoreGraphicsScenarios.java", "RenderedImageScenarios.java", "PerformanceScenarios.java", "FontLoading.java", "DesktopFonts.java"],
+    visibility = ["//src/test/dualshowcase/org/webawt/samples/dualshowcase:__pkg__", "//src/test/portable/com/webawt/portable:__pkg__", "//src/test/playwright/com/webawt/playwright:__pkg__"],
+)
+
+java_binary(
+    name = "desktop",
+    srcs = ["DesktopLauncher.java"],
+    main_class = "org.webawt.samples.dualshowcase.DesktopLauncher",
+    deps = [":shared-jvm"],
+)
+
+j2cl_library(
+    name = "shared-j2cl",
+    srcs = ["ClipboardAccess.java", "DualShowcase.java", "KeyboardInputPage.java", "RenderingLabPage.java", "LifecyclePage.java", "GraphicsStateScenarios.java", "StrokeScenarios.java", "PaintScenarios.java", "FontScenarios.java", "TextScenarios.java", "AttributedScenarios.java", "StyledText.java", "CoreGraphicsScenarios.java", "RenderedImageScenarios.java", "PerformanceScenarios.java", "FontLoading.java"],
+    visibility = ["//src/test/dualshowcase/org/webawt/samples/dualshowcase:__pkg__", "//src/test/portable/com/webawt/portable:__pkg__", "//src/test/playwright/com/webawt/playwright:__pkg__"],
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "//src/main/java/java/awt:desktop-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/java/awt:image-core-j2cl",
+        "//src/main/java/java/awt:image-ops-j2cl",
+        "//src/main/java/java/awt:painting-j2cl",
+        "//src/main/java/java/awt:font-j2cl",
+        "//src/main/java/java/text:text-j2cl",
+        "//src/main/java/javax/accessibility:accessibility-j2cl",
+        "//src/main/java/java/awt/color:color-space-j2cl",
+        "//src/main/java/java/awt/datatransfer:datatransfer-j2cl",
+        "//src/main/java/java/net:uri-j2cl",
+    ],
+)
+
+j2cl_library(
+    name = "browser",
+    srcs = ["BrowserClipboardAccess.java", "BrowserLauncher.java", "BrowserDiagnostics.java"],
+    deps = [
+        ":shared-j2cl",
+        "//src/main/java/org/webawt/internal/browser:browser-elemental2-j2cl",
+        "//src/main/java/org/webawt/internal/peer:peer-api-j2cl",
+        "@elemental2//:elemental2-dom-j2cl",
+        "//src/main/java/java/awt:graphics-api-j2cl",
+        "//src/main/java/org/webawt:webawt-j2cl",
+        "@j2cl//:jsinterop-annotations-j2cl",
+        "@elemental2//:elemental2-promise-j2cl",
+    ],
+)
+
+closure_js_library(
+    name = "app",
+    srcs = ["app.js"],
+    deps = [":browser"],
+)
+
+j2cl_application(
+    name = "browser_application",
+    entry_points = ["webawt.dual_showcase.app"],
+    deps = [":app"],
+    visibility = ["//src/test/playwright/com/webawt/playwright:__pkg__"],
+)
+
+exports_files(["fonts/DejaVuSans.ttf", "fonts/LICENSE.txt"])

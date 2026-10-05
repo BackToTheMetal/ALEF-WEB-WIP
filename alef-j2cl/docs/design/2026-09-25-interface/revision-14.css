@@ -1,0 +1,41 @@
+/* The release has its own editing surface and scoped root browser. */
+.release-editor{display:grid;grid-template-columns:260px minmax(0,1fr);height:calc(100vh - 320px);min-height:480px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:white}
+.release-editor-project{display:flex;flex-direction:column;min-height:0}
+.release-editor-project .change-project-head{min-height:43px;font-size:12px;padding:12px}
+#release-root-browser{display:flex;flex-direction:column;min-height:0;flex:1}
+.release-root-filters{display:flex;gap:3px;margin:9px 9px 0}
+.release-root-filters button{flex:1;justify-content:center;padding:6px 4px;border:0;font-size:10px;background:transparent;color:var(--muted)}
+.release-root-filters button span{font-size:9px;opacity:.8}
+.release-root-filters button.active{background:#ffe5d0;color:var(--accent)}
+.release-root-search{display:flex;align-items:center;gap:7px;margin:9px;padding:6px 8px;border:1px solid var(--line);border-radius:4px;background:white}
+.release-root-search>.svg{width:15px;height:15px;color:var(--muted)}
+.release-root-search input{min-width:0;width:100%;padding:0;border:0;outline:0;font-size:11px;background:transparent}
+.release-root-tree{overflow:auto;min-height:0;padding-top:0;flex:1}
+.release-root-tree .group-label{white-space:nowrap;overflow:hidden}
+.release-root-tree .group-label span{overflow:hidden;text-overflow:ellipsis}
+.release-root-unchanged{grid-column:4;color:#b9a897;padding:0 4px}
+.release-root-empty,.release-tree-foot{padding:11px 14px;color:var(--muted);font-size:10px}
+.release-tree-foot{border-top:1px solid var(--line)}
+.release-editor-main{display:flex;flex-direction:column;min-width:0;min-height:0}
+.release-file-tabs{display:flex;overflow:auto;flex-shrink:0;min-height:43px;background:#fff9f4;border-bottom:1px solid var(--line)}
+.release-file-tab{display:flex;align-items:stretch;max-width:310px;flex-shrink:0;border-right:1px solid var(--line);border-top:2px solid transparent}
+.release-file-tab.active{background:white;border-top-color:#f97316}
+.release-file-tab>button{border:0;border-radius:0;background:transparent;padding:10px 12px;font-size:11px;min-width:0}
+.release-file-tab>button span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.release-file-tab>.release-tab-close{padding:6px}
+.release-file-tab .svg{width:15px;height:15px;flex-shrink:0}
+.release-editor-scope{color:var(--muted);white-space:nowrap;font-size:11px}
+.release-editor .file-toolbar{min-height:43px;padding:5px 12px}
+.release-editor-canvas{flex:1;overflow:auto;padding:18px 16px;min-height:0}
+.release-editor-canvas>.context-feedback{max-width:620px;margin-bottom:16px}
+#release-file-content{display:block;width:100%;min-height:250px;height:100%;resize:none;white-space:pre;overflow:auto;font:13px/2 Consolas,monospace;tab-size:2;border:1px solid #f0d6bf;border-radius:4px;padding:8px 14px;background:#fffdfb;color:var(--text)}
+#release-file-content:focus{outline:2px solid #f6b483;outline-offset:1px}
+.release-source-line{display:grid;grid-template-columns:26px 28px minmax(0,1fr);gap:10px;align-items:start;min-height:32px;font:13px/32px Consolas,monospace}
+.release-source-line .ln{text-align:right;color:var(--muted);font-size:11px}
+.release-source-line code{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}
+.release-source-line .line-comment{margin-top:4px}
+.release-source>.inline-thread{max-width:650px;margin:8px 0 12px 72px}
+.release-editor-foot{display:flex;align-items:center;gap:10px;min-height:38px;padding:4px 12px;border-top:1px solid var(--line);font-size:10px;color:var(--muted);background:#fffcf9}
+.release-editor-foot button{font-size:10px}
+@media(max-width:1000px){.release-editor{grid-template-columns:220px minmax(0,1fr)}.release-editor-scope{max-width:140px;overflow:hidden;text-overflow:ellipsis}}
+@media(max-width:650px){.release-editor{grid-template-columns:minmax(0,1fr);height:auto;min-height:600px}.release-editor-project{max-height:230px;border-bottom:1px solid var(--line)}.release-editor-main{min-height:420px}.release-editor-canvas{min-height:280px}.release-editor-foot>span:first-child{display:none}}

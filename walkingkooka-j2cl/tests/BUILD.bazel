@@ -1,0 +1,15 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library", "j2cl_application")
+load("@rules_closure//closure:defs.bzl", "closure_js_library")
+
+j2cl_library(
+    name = "contracts",
+    srcs = ["TimeContracts.java", "BrowserEntry.java"],
+    deps = ["//:java-time-j2cl", "@j2cl//:jsinterop-annotations-j2cl"],
+)
+closure_js_library(name = "app", srcs = ["app.js"], deps = [":contracts"])
+j2cl_application(
+    name = "browser",
+    entry_points = ["walkingkooka.time.tests"],
+    deps = [":app"],
+    jre_class_metadata = "SIMPLE",
+)

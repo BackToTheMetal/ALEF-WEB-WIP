@@ -1,0 +1,6 @@
+{
+  "scope": "StringTokenizer Unicode delimiters, lookahead, mutation, exhaustion and null behavior",
+  "jvm": "openjdk version \"21.0.12\" 2026-07-21",
+  "rows": 520,
+  "test_source": "tests/editor_utilities/EditorUtilitiesTest.java"
+}

@@ -1,0 +1,23 @@
+diff --git a/jre/java/BUILD b/jre/java/BUILD
+--- a/jre/java/BUILD
++++ b/jre/java/BUILD
+@@ -142,7 +142,7 @@
+     name = "jre_bootclasspath",
+     srcs = [":jre_java_files"],
+     javacopts = JRE_JAVAC_OPTS + DEFAULT_J2CL_JAVAC_OPTS,
+-    visibility = ["//transpiler/javatests/com/google/j2cl/transpiler:__pkg__"],
++    visibility = ["//visibility:public"],
+     deps = [
+         ":javaemul_internal_annotations",
+         "//third_party:jsinterop-annotations-j2cl_jar",
+diff --git a/transpiler/java/com/google/j2cl/transpiler/BUILD b/transpiler/java/com/google/j2cl/transpiler/BUILD
+--- a/transpiler/java/com/google/j2cl/transpiler/BUILD
++++ b/transpiler/java/com/google/j2cl/transpiler/BUILD
+@@ -43,6 +43,7 @@
+ java_binary(
+     name = "J2clCommandLineRunner",
++    visibility = ["//visibility:public"],
+     jvm_flags = [
+         "-XX:+TieredCompilation",
+     ],
+     main_class = "com.google.j2cl.transpiler.J2clCommandLineRunner",

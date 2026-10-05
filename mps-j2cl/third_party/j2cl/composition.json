@@ -1,0 +1,4170 @@
+{
+  "schema_version": 1,
+  "j2cl": {
+    "version": "20260402",
+    "upstream_archive_sha256": "d1419aecefec2727d3449f10a772d973ff5d3a7a7470367d1cfc2c782c7d6e66",
+    "source": "https://bcr.bazel.build/modules/j2cl/20260402/source.json"
+  },
+  "patch": {
+    "path": "third_party/j2cl/composed.patch",
+    "sha256": "fa440fd73d459a9ea085d39fe524c0afa3d5bf4affb093ecbdab6f93eb18f26f"
+  },
+  "generator": {
+    "path": "tools/compose_jre.py",
+    "sha256": "0175e4daac87d1251328e1743708ba11bf869862718790c39710e5bae96c62b8"
+  },
+  "policy": [
+    "Canonical sources remain owned by the sibling projects; no source trees are copied into mps or mps-web.",
+    "Every emitted source has one provider in J2CL java.base.",
+    "IO and WebAWT canonical sources match NIO's reviewed dependency snapshots.",
+    "Concurrency replaces NIO's signature-only Thread and ThreadFactory.",
+    "WebAWT's ordinary uri-j2cl target must contain no sources when used with this JRE.",
+    "Apply the separate type-support patch after this composition; it is intentionally not incorporated here."
+  ],
+  "source_count": 263,
+  "inputs": [
+    {
+      "source": "../java-awt-j2cl/MODULE.bazel",
+      "sha256": "ac519b6fd124d4172da29587af879c8fd0fa93a6bcf886dabd700068c5abf91f"
+    },
+    {
+      "source": "../java-awt-j2cl/src/main/java/java/net/MalformedURLException.java",
+      "sha256": "b4932df9dbd2aee296a8c70d408b93833728d78b05f78de7f11b72bf53143f0c"
+    },
+    {
+      "source": "../java-awt-j2cl/src/main/java/java/net/URI.java",
+      "sha256": "90f057ccccb53dbeda4fa18f6282219a28421e98fb6d21795242ec50a720f3f8"
+    },
+    {
+      "source": "../java-awt-j2cl/src/main/java/java/net/URISyntaxException.java",
+      "sha256": "d4862662716403292aeeedf72644f2c964c208bd76412f2ac198df1110822437"
+    },
+    {
+      "source": "../java-awt-j2cl/src/main/java/java/net/URL.java",
+      "sha256": "8a72673eeda348dc418e5a0b78df9817a03b5f3b02386544a0174fab0458e592"
+    },
+    {
+      "source": "../java-concurrent-j2cl/MODULE.bazel",
+      "sha256": "064a474cbd7be0fba7242b9ade5c85c13b1120c4e38fe4a5fcf67a3042e02e7b"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/lang/IllegalMonitorStateException.java",
+      "sha256": "564e78a6c5cc4a92d304ec1bd1de466604f8d415c0331c0a97c59410c8d19ac8"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/lang/IllegalThreadStateException.java",
+      "sha256": "6199c33723e50a406736c104d0cd74d5e7751780c964c98c399259d118325786"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/lang/Thread.java",
+      "sha256": "6b96b7d41265c3310acc805434ebc57f8da51117efe9755dcc2200f061774430"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/lang/ThreadGroup.java",
+      "sha256": "d7e633fabe86bc13acab088ad23a3be470fb884a57acc9ab103e60c3444c7d6f"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/lang/ThreadLocal.java",
+      "sha256": "46948a59790f85084650266d808dc31235eb237b3807cdaf31986b034ec6664f"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/AbstractExecutorService.java",
+      "sha256": "165403f72500b32a0632435f70a8312132ef05e94449b17e46f062db383c85d7"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ArrayBlockingQueue.java",
+      "sha256": "f6f304324ff8be413a0052dfc8f6001aa2533c045ec2892a8a962920231b4c26"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/BlockingQueue.java",
+      "sha256": "8769dc6dab913f1046b41e8049163f1f438b716e59ce30ca3df9a4a31339f073"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/BrokenBarrierException.java",
+      "sha256": "00f7e1e43886a407217a092ff8f8797fd0fa46c0cc932b25813f9678f9fe9ef4"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CompletableFuture.java",
+      "sha256": "7041653dfcb4b42859755809bf6663a06103bcbd0ee577fc37a124e7591c83b6"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CompletionException.java",
+      "sha256": "f893f03d5e369b836c66147bb5998d5f621722bd2f75b0f240c20bda7bc22359"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CompletionService.java",
+      "sha256": "30ce209d7c826ddb0d8fb7e86f8079f57c78c276ddd8a5887ea0a2652bf4c20d"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CompletionStage.java",
+      "sha256": "6c0eadf5ffa8ebf71be46818a9d05565756d31410633495a55587fb2476169ba"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ConcurrentHashMap.java",
+      "sha256": "57609825b2fc358a3dc4d0342a5e816811950ede92dc019433eed166908929f6"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ConcurrentLinkedDeque.java",
+      "sha256": "875a5408a4e6bb65d64b028df09cf00edc208970373c4c8d9f3aeadd4c203550"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ConcurrentLinkedQueue.java",
+      "sha256": "198b4e448087680244077bbf731365a28daf02b5d0f65af25fbc5deb6323f071"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CopyOnWriteArrayList.java",
+      "sha256": "b8365bcac81dd8550106e50b432eaa39447589fbecc3539e23c3da3d266dbfd6"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CopyOnWriteArraySet.java",
+      "sha256": "c1cf817eca7ffe7dd3bb422b210fd1f36425ac2583de29795c489f4699947660"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CountDownLatch.java",
+      "sha256": "b1731587bce2ea45752765a4067bc0ae16001f66034302aac0cdbdee41d1d8b6"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CyclicBarrier.java",
+      "sha256": "e18594335fbca0e10b092145fd2a8ccb6dca4da62fea3df4ffe60818cfb407aa"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/DelayQueue.java",
+      "sha256": "acae37ae963f800ca4649934c9219d70af79fc17a24367d062f771c7c26a2403"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ExecutorCompletionService.java",
+      "sha256": "91e682eeea1cdbab0cd6ad16bf14898886c26088fe7b172d795748e4e2537154"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ExecutorService.java",
+      "sha256": "26852c8e1f7574ad77cf581e42215816cdf74a88b62c1fd6d58784bdfa8d5c13"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/Executors.java",
+      "sha256": "e64aee2f5351d210ac4ebc917b4173bed083c4830ece3b7a3b57e44a20c378a3"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ForkJoinPool.java",
+      "sha256": "a044ed49e61be175f2e4037aaac50952d13df264d72a28f1daec97468ee7bdbd"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/FutureTask.java",
+      "sha256": "269574c1682219e7caf5234d5c0927ff405894a0c0aca61977d28b23672ea1b7"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/LinkedBlockingQueue.java",
+      "sha256": "fe6135f725e1fba8d0feab55821557b196ebac3879cfee6081c59d070e04ffcb"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/LinkedTransferQueue.java",
+      "sha256": "4eee6b4aade637555ecaf6f43732ffdc5e84a38a0ad3451aac4a4faa5c8a1868"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/MainThreadBlockingQueue.java",
+      "sha256": "0874e00935952e35b11e3e67cfc00412dbf8f326405c085767e16b6b8d1fddb1"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/MinimalCompletionStage.java",
+      "sha256": "dc312ef69170b22130f5fd045ff4acc26eb341f4e6f2a0d7a2e4c89b8e2dfe31"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/RejectedExecutionHandler.java",
+      "sha256": "ef94065a7d33a3b3482d998be414f71af00110923742d0084ddfccb0a0566281"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/RunnableScheduledFuture.java",
+      "sha256": "b7626a0c0cb26f022c13d0bdb3c477ec9d4d54a6accb8df370a88386adbd6eb9"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ScheduledThreadPoolExecutor.java",
+      "sha256": "6ffc1e3f6990809bf249bb36bcb7af96312bf2641ca026813b5c3786fe69c2a3"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/Semaphore.java",
+      "sha256": "66e71de79be7e0ef47aa1fd90bfe6e82edcb160fcfa53d9828a083d2b4db5340"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ThreadFactory.java",
+      "sha256": "aa948703de3027dc9197e11122285d612727b43ffccd2a36e90791cbdfd5c7c3"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ThreadLocalRandom.java",
+      "sha256": "2026cf5d8c74e7c4a133c4de0cf0ff95dcd961787f8a87eb25f28a2cdc41f4fe"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ThreadPoolExecutor.java",
+      "sha256": "f191ce0716c37772389f6b61854f8ff1189d0377a8f92e2ff2e23abe502233e3"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/TransferQueue.java",
+      "sha256": "acdfc4213ff25a7bfc5592190e784a80983f6784f4851842fce9c3738a03fef6"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicBoolean.java",
+      "sha256": "e48dd67e4e796ef6bb12af183d5c6e0d11caf2e89210bc13fb2f30438f7fe253"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicInteger.java",
+      "sha256": "f3f5e9afd2d3b805caba97d73da9e81423436113fcaa85b67b7f90554e381aae"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicIntegerArray.java",
+      "sha256": "ec7f8dba8564ca531c20498064aa4cb79d854eaef5e81cd65a240b24269fd19f"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicLong.java",
+      "sha256": "c1e901ccfc104e5dd8424af4e57ca92c17ebb54dd9ff7874eb121e4dac3fe92a"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicLongArray.java",
+      "sha256": "37862230f6d08b9f24a626fe9ce007b8b256eceeaf11bed319bab123112508dc"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicMarkableReference.java",
+      "sha256": "509f858cf983abc795209605ac3ee41e7cb19e7744afcab9648769f7bda808af"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicReference.java",
+      "sha256": "6ddd4d96190178467735ddba7469a4fd314e8e3b485a26fd77c093bfb74e78ae"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicReferenceArray.java",
+      "sha256": "4afb91bb47ba31d4f62fb60cd320830af892b7b4430142e4480f276c2586ea70"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicStampedReference.java",
+      "sha256": "c3636e350c79669e1993eeace977dc88480d6ec463f3203fb78e55b081703c04"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/DoubleAdder.java",
+      "sha256": "9174670ce8bef539cdbafb2b3e51e37c4e6ffe102d09f1f49070f68bcfe46df5"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/LongAdder.java",
+      "sha256": "517f5aeab56c8be78ff7c4a5250c34f8dc47c509d8918f9339ec49e1839a1dd7"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/locks/Condition.java",
+      "sha256": "d77bcab5dff40044d29cfe18bdc882dc0743e4473403618ac9e55a5cf2dce5d0"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/locks/Lock.java",
+      "sha256": "72ef9d7603f3e8330ac390417d9eb96ddec4f91c3de2cca9f2b8ef6321e37226"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/locks/LockSupport.java",
+      "sha256": "52df1ececde80d343b48c6f58f583e904bee1b86641f28fe79da189855825788"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/locks/ReadWriteLock.java",
+      "sha256": "003f73249db1f36b4797042d35f6527ae139ef4960969cd364a2fcfe71e22e19"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/locks/ReentrantLock.java",
+      "sha256": "fb3efd8dc0d5ee17f2804af8936b69d270cb308f7b5b76db416ae165b0851866"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/locks/ReentrantReadWriteLock.java",
+      "sha256": "2ecaa1e2dae6d5c7db9a7e402b2b1f09efe23c885296dfc4d428fe7cf15ae8ce"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/javaemul/internal/concurrent/MainThreadTimers.java",
+      "sha256": "60fbace339c046266d1d4ecd35b5665aa3d3702cc25ef8d479503acb6b02476e"
+    },
+    {
+      "source": "../java-concurrent-j2cl/src/main/super/module-info.java",
+      "sha256": "4e3d4cb541e4ce4c82a67ad9a772399f4a0db992932f866c378a9b50e0ea03f1"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/LICENSE",
+      "sha256": "e01c486aa53d7db067b0c0eb9921ad75bde2ac80f51dc9f68ee37c35a3b9832c"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/MODULE.bazel.upstream",
+      "sha256": "660f8a42ce393c0c5ea010a9e265f91debc6e9e0d23e27e48b945ae23de6d586"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/lang/ThreadLocal.java",
+      "sha256": "4d1ab06e29e88603ab2e931988411e56b1adeada6910b9dc87473b03263ddc24"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/Callable.java",
+      "sha256": "18d62f47eadf8eeb161bf726f04efb2fb0ab1669c379fb9a41d30836f616d111"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/CancellationException.java",
+      "sha256": "70705131544e8ffb73cb2d670eb35944e0a8df5f7e5554c2f931af9504284195"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/ConcurrentHashMap.java",
+      "sha256": "73dee2c2b22d25dd502faa0f0f1b5ca80e1e59d160ab9e4c7c88508dafaf9d4a"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/ConcurrentMap.java",
+      "sha256": "2fd75173ed4bf4290aeaa65663ceb78719731ffa2e40d1b35ee14b4f281090fa"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/Delayed.java",
+      "sha256": "230022af4fe8924ce9db4f0773715e2b4e6f7911ad54def16573ecd8bc283f80"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/ExecutionException.java",
+      "sha256": "7cb8705f524f9a0bdaff39e5503560cf3c0c120e2b56ff845ddcfc1bc4feb463"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/Executor.java",
+      "sha256": "bfb1f84005f9d8414abbffbc00959eb23effb3cc81eb07c9e138cdade7140a58"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/ExecutorService.java",
+      "sha256": "c8e9bbb1b859a2c1850293d5640a0a12b1b14c5681f9b40c28832e41a486043e"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/Executors.java",
+      "sha256": "ce573abdf76a3208106d7b45f6ee844b0c4983a52a189d0743fdeaacfe6bfb42"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/Flow.java",
+      "sha256": "848bbf88b6c0f49c584f77c6f71670a3efa7d42c2219a63701752734909b1403"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/Future.java",
+      "sha256": "4de908359d582ae88c35558c200cce3b3c280b9cade767b16c76cc81296312ff"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/RejectedExecutionException.java",
+      "sha256": "39fbeaec976b71cae3aec5c4bbf24d97ff9139ee8c311f1a8560bdc6c7bc786c"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/RunnableFuture.java",
+      "sha256": "b8c52a62988911579561c9e67a9692734f760432f136c6e3db7ad52aaa976b6e"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/ScheduledExecutorService.java",
+      "sha256": "1232fa75a7e563cfb59815599591fd0cc8a067437d7c3b9a94124f49c13b1a59"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/ScheduledFuture.java",
+      "sha256": "3afb267d332d46f6f428453129c4838462d19a3857af6a65e0509e265c2fe5cf"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/TimeUnit.java",
+      "sha256": "fb26c762a6d6a5ec3227453fa816d5be4ab4f81ebeced485cbffa0ed94f050d5"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/TimeoutException.java",
+      "sha256": "c418c09923d04c2f3e71e9046b1baf86a7780d939e81c59163340c637459f5d5"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicBoolean.java",
+      "sha256": "e48dd67e4e796ef6bb12af183d5c6e0d11caf2e89210bc13fb2f30438f7fe253"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicInteger.java",
+      "sha256": "57753e2de2925f6889e2fbaf8202d5639e86d8617ab6555a66cf07bf9e4d0fdc"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicIntegerArray.java",
+      "sha256": "395c9d7ba005eb0144e780cdc8a9480ce19f72e0804c23d1043e6bf9f27b2542"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicLong.java",
+      "sha256": "60ca15a34a7b1e2243cd5bc42706fe0ce7a2417df8796527f112ce8c34827e99"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicLongArray.java",
+      "sha256": "80f5a0840f35b615e260f0765736d5bff604e893a77943ff6bdbc4cf0565f1b1"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicReference.java",
+      "sha256": "a6e0e0c73918c67b71a360f3d2ee96b9a9c763ba376de486f18b6feb92619952"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicReferenceArray.java",
+      "sha256": "48fc65be5aca59ae9fdc774cc9710d0f62a23c101c32f65380ffb3ab5129d312"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/module-info.java",
+      "sha256": "f46a3a07bc2b028211df55a81d3664a03b5208f46d364b488017a3b01a81a43c"
+    },
+    {
+      "source": "../java-concurrent-j2cl/third_party/j2cl-base/provenance.json",
+      "sha256": "86db444326b2b1e2ad7663ea83ded95f3712dee2aeb39605d3ebaa2224bb56e9"
+    },
+    {
+      "source": "../java-io-j2cl/MODULE.bazel",
+      "sha256": "6f61a450499f017b240883a34a1247a3565bed1e8a7793eff8a6830654af2349"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/BufferedInputStream.java",
+      "sha256": "319c682fa353926f602b5dbe67455cfa881840a6d2b381b02d3788d62ee70b08"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/BufferedOutputStream.java",
+      "sha256": "3d2def0c788a921a37ed0b5f7173cb28cda90dbd48d76c045e4d3995c03fba9d"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/BufferedReader.java",
+      "sha256": "13f28aaa52f1ec45244a295318f9b15cbc5a2eb3ba7a29811aec6aefac9bc1dd"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/CharArrayReader.java",
+      "sha256": "8cb7e0efda20ddb2339e247e7175134aa69ab02dc79293e209a8c42fac704589"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/CharArrayWriter.java",
+      "sha256": "663d564688bf67d3ccb3e1fdb42943a4ee51d6ec72e7193d3de3f19720432772"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/DataInput.java",
+      "sha256": "eaf163756e854b38ca96c6e40492af61ae5abdffceb43cdef14cdde0af3b1a27"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/DataInputStream.java",
+      "sha256": "a6d42475945844e35912fdb385ac3bee75b7d54bebac03cb0e824dcef4a6549a"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/DataOutput.java",
+      "sha256": "23fe51835c1d523074c6d2924beb70725b9e0e0d2c971376f76efbf19f721521"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/DataOutputStream.java",
+      "sha256": "ccfcdd123890ed315af30c4ea9aaeec104870afc5961b447a7401d97488a4561"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/EOFException.java",
+      "sha256": "095cd47f39090d8caece082e0fb92ecac9854f6cd1e1472d68901faeb7c4308c"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/File.java",
+      "sha256": "487e2e049bcc44aacd1b4a48016c716a7678ca25460eb4adb6bfbd25fa778f40"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FileFilter.java",
+      "sha256": "21a3fa8339dff44959f025cbda0a1bfa59451ce867b9ae537d68b5202032e1db"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FileInputStream.java",
+      "sha256": "c3af4fff0e6f059b6ac937cb4467758f5d82b5a4e9a8425d48fbda96bab5e7be"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FileNotFoundException.java",
+      "sha256": "844bbaa167b57bf68c47a83ab71cb798f32c59c5b71df7bb01cf5a25d0ce95cc"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FileOutputStream.java",
+      "sha256": "4fb6d436fe51b44577e474f5c93ad2e507420b84bbadd97b9d391c03abfe7785"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FileReader.java",
+      "sha256": "263d3d5615f066bd30f855f6db676008adeee648cc5cf58eb4c3aaf91adb761c"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FileWriter.java",
+      "sha256": "579b5c831238e5015d5a129289d098f818cab4bb4104fdeb2b01e34bceacb8d9"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FilenameFilter.java",
+      "sha256": "8ac097285665553b1a20fcbf8385977df00a278eb62ec65e0268be37a84f4394"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/IOError.java",
+      "sha256": "1025c97bef4f65488a5fe4633de2483368e0c098b60708d2de4983995436b8ca"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/InputStreamReader.java",
+      "sha256": "db543370aa63eea6dee4391ef5b95720df7881084cad3e8d46eafbe147db5002"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/LineNumberReader.java",
+      "sha256": "2ecb80b5b357f6986e8ff1dab992b4c41b5636772876b19bced8fb89c245f5e9"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/NotSerializableException.java",
+      "sha256": "335898459bbaf84806c0527b3b9aca59d8882e0ca1036bd84c9ec76549489dd1"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/ObjectInput.java",
+      "sha256": "8c06ff2e5a998c3cf8022469c0e5270df10d5028324cb60d83d55ce05246b14f"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/ObjectInputStream.java",
+      "sha256": "79c3bc03839c35ae1b0f0cb2c59bc13bfd95641346e5a13700609dae0ad8d48d"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/ObjectOutput.java",
+      "sha256": "f50aea28519d2f42c5e3a882607490f605c769a10d2f298902a1ca1070f23186"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/ObjectOutputStream.java",
+      "sha256": "c9f73e9a227caa59bc8bfef7bac8f047ab994a0de7b776ba027e9f6c7a50d5d3"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/ObjectStreamException.java",
+      "sha256": "53a7981ca1fb18ca7f2cede63f739520751c183730772a5bdf7dd72a21f96acc"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/PipedInputStream.java",
+      "sha256": "51f582c6faabf66bb2ab75a78d044b1938d14b599407306b1889e011791ebfd6"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/PipedOutputStream.java",
+      "sha256": "24272e170b93e38eb66bd18220001d0c2110e28dddadcbc036958db9798be835"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/UTFDataFormatException.java",
+      "sha256": "9a1a71368fcf822c0f71f8b52fa35567a41d70a30aa7095aa10494af77256b1c"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/lang/ClassNotFoundException.java",
+      "sha256": "98c559f3c76b3e87d19131c41e5f07e1781459f0142ffcca9676d9cdf6fb6443"
+    },
+    {
+      "source": "../java-io-j2cl/overlay/jre/java/java/lang/ReflectiveOperationException.java",
+      "sha256": "3f6c94f39c458a193eda55d8ec5b41dbb6fdb05b384e518e86f01547c25fa623"
+    },
+    {
+      "source": "../java-nio-j2cl/MODULE.bazel",
+      "sha256": "f8b3bbec31eec93435a56680addb57e9936af4067eacc7e4ffc2b7311318e1f3"
+    },
+    {
+      "source": "../java-nio-j2cl/compatibility/dependency-snapshots.json",
+      "sha256": "dde288176b4bca8aa3cd14e01936641472637131ddc72a66c50e9abcd1cb336f"
+    },
+    {
+      "source": "../java-nio-j2cl/compatibility/j2cl-baseline.json",
+      "sha256": "93d194b1c587accd8ffaafed4afacf569261a2837fdee4fda7ddc896d0bfdbe7"
+    },
+    {
+      "source": "../java-nio-j2cl/compatibility/j2cl-types.json",
+      "sha256": "ad94146cc4bed6e083dc024c75b1738a139ad0595e21b445fddbc7dcd132ddcb"
+    },
+    {
+      "source": "../java-nio-j2cl/integrations/File.nio-members.java.fragment",
+      "sha256": "6fe66b7aa4a09c7bbbb333183de78bd88ea5b8da5cdbe294816cec6c30175bdf"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/lang/ClassLoader.java",
+      "sha256": "a4700772578a9796be8576e73956e75d4b46c521347835aa97b1653ed91fd680"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/lang/Readable.java",
+      "sha256": "5774d5639bdd3baf00c983a5f1acd6dea4ea49bb3c0f274cabc9ad0583bc557f"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/lang/Thread.java",
+      "sha256": "5405d964b5059111da672bf2a37737f1dc7027a0af2b7684dfbb43371aad3f57"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/net/DatagramSocket.java",
+      "sha256": "16f75c315180ef5238050193ce7ad098e511f88f6b3ef84a15a71a837aabb6f7"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/net/InetAddress.java",
+      "sha256": "b35e483c6d0c4eb19c0b65890f2ad59d82fa4c9b1481fbe9ce769313ab0a86fa"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/net/NetworkInterface.java",
+      "sha256": "3db0aa49fa88fddd4dfa5dba7f120eca11579cba1117b3f1f83b4170e6986280"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/net/ProtocolFamily.java",
+      "sha256": "cd674e02ddeedfe24d71c1988d5521327a2109264f76baa354e4fac3e659b229"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/net/ServerSocket.java",
+      "sha256": "8956ad553b266eaac5cee2ce0672d789dcc453cc5b82c897b0a42932aac4b4ad"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/net/Socket.java",
+      "sha256": "70fb6754b7363017adc3a59abfd3d28577f9ea12f4a8d5b8685720d747c4b899"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/net/SocketAddress.java",
+      "sha256": "0f7aa23acd5b259d8773ac458e363e234ff25cf1eac9ecf8a916a8c0faf86b2e"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/net/SocketOption.java",
+      "sha256": "69eceac7aac0536b2c1f1e153da5d6182ed1d9bb2633344654d13b880c077c54"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/Buffer.java",
+      "sha256": "1c82dabea1d41414f02bf3a0db1015fb95b5754480fa8bd68f551efedad7eec7"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/BufferOverflowException.java",
+      "sha256": "2c3fb8e39944fa3be6dbc2f74f853b45f73ebf909962a40e5db31c670fb482ad"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/BufferUnderflowException.java",
+      "sha256": "689457be204622bd250440cb190547eed9b6323ddad9e6e12e6f40494029f892"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/ByteBuffer.java",
+      "sha256": "6ed0e68cab693871eb84b8bcef6c44d439670679ff36e5c05574440394f94707"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/ByteOrder.java",
+      "sha256": "c43acaff66155318aa0897c4905af6fa428ce1fed3be915941662e9b81b159e8"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/CharBuffer.java",
+      "sha256": "1ee3c8cee0e1404b1f06c66a19a4e79cc5824aaa2ec63b7c27a93dc92bdfde4d"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/DoubleBuffer.java",
+      "sha256": "5b641904ab823726a037c6b4c7028dcd1743a725d02f6ea96122f2a3124ce743"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/FloatBuffer.java",
+      "sha256": "9e750613dea4415e572123d1b6b6e2f1820389d605eaa5c79466685fc7544085"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/IntBuffer.java",
+      "sha256": "c475994a091763c0fce398f2f1f872c554ab7cfa307ed3664eff0f6aa8c7339e"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/InvalidMarkException.java",
+      "sha256": "e42f52eafcb8637fa8bd7c6e25d716978dae109ce3904eb7f5a352649bf9a589"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/LongBuffer.java",
+      "sha256": "de2f9733d7ce58446013782c0099d23248712a827e552323491bb26795a2a704"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/MappedByteBuffer.java",
+      "sha256": "d6bab49ebdea60e031312e36a861ce34c0afa0c7f50e846c853be296374111dd"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/ReadOnlyBufferException.java",
+      "sha256": "a416ed783eb3727d726f23608e2b9e6a6c84a95a4699c9cd03f0581d75819558"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/ShortBuffer.java",
+      "sha256": "ade408290a1206584b10086efda0f285a48db0f55fdab191ea23b9042f7ec6f5"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AcceptPendingException.java",
+      "sha256": "0dc2b674fa046e1b8eca1e5218b6f5872f2ce5d8bdd1abea2284ea651f00dd62"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AlreadyBoundException.java",
+      "sha256": "5fe5b98cadcaf1c22248c57d0bb43fe41bb776ab224c337f6e05126498c7872e"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AlreadyConnectedException.java",
+      "sha256": "97e0b53ff46ffe84aa00829aadccae15f5a5f5822f7972c1a141e34b7a965712"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousByteChannel.java",
+      "sha256": "88cf358056488759e82062694de2c7f7b5497d8572ae8a12b9c4af7b6249a4a5"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousChannel.java",
+      "sha256": "d0180ce51317d513f0a4d6f08cf07ff15fbef4d82b92d630fbb9e0bb5a19b4f6"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousChannelGroup.java",
+      "sha256": "3f6755f9608c63f9507a50c908c526d61eb093e9555263143a8d4238225a0ae6"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousCloseException.java",
+      "sha256": "e7641f6a40445cccb19d8af5d6ea44199ddb35989c1f93044dec99a2297b05cb"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousFileChannel.java",
+      "sha256": "9c307a957b7dc928e355eb3cfb69d3c2d7af4b0a06d9d8ffc5949e2bc2bbf3cd"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousServerSocketChannel.java",
+      "sha256": "c5aca671606ec37d00f92caaf99f95b13b173082468ccc174fa258367a04e714"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousSocketChannel.java",
+      "sha256": "3acf0e8446d8be394e11221a2d6e0bc5aa4d8f38257fbb83c977b45c3fd0ef6d"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ByteChannel.java",
+      "sha256": "e5d03ba40038cb126ddf8a72ddee5935431b4bce810beeb4c2069e3a748f1352"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/CancelledKeyException.java",
+      "sha256": "c54a9fc975efdf49bb1cc3a32e45b635325049674afe1f731c472d98f4a08654"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/Channel.java",
+      "sha256": "9c0602bb7279945cb45eaede642ba631d3eeb0c999a2805d505c7e69212f4cb1"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/Channels.java",
+      "sha256": "e9a615f4e86036d1353e3a93bcf1527303c9f0fbdd2d4ca04aa63294163fcbea"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ClosedByInterruptException.java",
+      "sha256": "663bb61635208f17609fa41ed6cc383dba4238650b48cf3c0a6bc0eaa33c21ab"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ClosedChannelException.java",
+      "sha256": "657d61be10480de054974f2b905fb3b0dc57022a41803e485f99254df10c0aec"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ClosedSelectorException.java",
+      "sha256": "674f166ac72ed2e89421ddf8505ba2cd217a52a4c781f643c83cbca0678397cb"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/CompletionHandler.java",
+      "sha256": "8cc6b97362c1ae6c10b7ba8ccb27784f220db623090aedc2e818a78b64cc97fd"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ConnectionPendingException.java",
+      "sha256": "a45faae884313b0d43df0fa1f6314b9f9511d7740ca904f709b9397fcf69a004"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/DatagramChannel.java",
+      "sha256": "d0a47833cc6b1489bad4f94fd3607ce78a04693d5fada45cabd246faf99effe6"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/FileChannel.java",
+      "sha256": "c4ba253925f3662e0af927aaf470ae180fe065827c1fbbdea8aabdd0d872297e"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/FileLock.java",
+      "sha256": "6f0ea778902344bb03d1d54c9f7dbc5a98c274c7d670ee74b7fda2626cfb0a95"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/FileLockInterruptionException.java",
+      "sha256": "70c302085c710509c6e7d3d4301ef5bc5babad98595de19a5420242385046c3b"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/GatheringByteChannel.java",
+      "sha256": "190924a0caee75a278f248c3dd9d81a04f3be0c46fee63e4cacdcba79e7fcd56"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/IllegalBlockingModeException.java",
+      "sha256": "6f82d80ec7d7f9a5b6c4f35c2055d68fbe223d4d973b2884bcd5dffc6f6381e5"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/IllegalChannelGroupException.java",
+      "sha256": "103d6ec6707685f88a4fdf7e1f1115d18834e38fc580ff2b94092280eddbfbf8"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/IllegalSelectorException.java",
+      "sha256": "5cb09744944e72d88e6d1cf97d342d57bcf6a069fe0bdf049057a3a09891022e"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/InterruptedByTimeoutException.java",
+      "sha256": "6aad0e7160e821ef28e6228d958776c308243c7c1c61094357f8825ba9343105"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/InterruptibleChannel.java",
+      "sha256": "2f48dd465a79a6ad22edd19edef0b509679d11ab512c6b0c2cec140b0c4976bf"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/MembershipKey.java",
+      "sha256": "3996bca2f17e85393e2825fb56a2e3bb84c07c06a36f3592004964682c9df71c"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/MulticastChannel.java",
+      "sha256": "e024ed39e9402ec6366aca552db6ed0ec7bcfce787f4496d9345650639308880"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/NetworkChannel.java",
+      "sha256": "314be28757ee4c6993cb788cd23aa56ac14e3feb4c74954b8e843b20fbb355bb"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/NoConnectionPendingException.java",
+      "sha256": "37a82e34be73899ebbc1839eb5753e0a2491df11dea238af4e6941e3008af946"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/NonReadableChannelException.java",
+      "sha256": "6b13abe139da7b86b0b483f063c7602e45d7fde22d7c354d0b0625e6a70abb70"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/NonWritableChannelException.java",
+      "sha256": "54c4ebc3d987df51293c9beac292c89e99e2ba02ea26ad4a9b7a35a8140a26d4"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/NotYetBoundException.java",
+      "sha256": "4a61c7e9a539716b2ba878356506be6ddf619a7bc3021ab4573cc43ed40adfaa"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/NotYetConnectedException.java",
+      "sha256": "7d15d409b0231bc86a9f6b7cdb7e561a8a995a6a51a4501319e92b5dd8eeccb9"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/OverlappingFileLockException.java",
+      "sha256": "8e01e0058480598ebd64a69757645d8cb97951da7c94fd9d4f979db8aa9fb801"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/Pipe.java",
+      "sha256": "8d2e8193e1f86261d8494b6be2044e33dcef372b3842e6ae66eb02e2f5206436"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ReadPendingException.java",
+      "sha256": "79ce167179110f5f6f3a7b71e36e60cf6e511934a6b708b9a86b24800a137739"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ReadableByteChannel.java",
+      "sha256": "ffa20159f05db12bd77ec1790233628ee5f6018a3e32af9abe51fda15507dd94"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ScatteringByteChannel.java",
+      "sha256": "8772f126640c241312d30d22a37237255e936293fac47b40af27c251ca46d092"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/SeekableByteChannel.java",
+      "sha256": "c64baecf2187477d690114f7d2720719442ef5f2c7d1eda4192b33ad77b382b7"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/SelectableChannel.java",
+      "sha256": "2aff60e4e521549a34544502eff7c31eb9c06aeb44bd50a7bf68a8574fb4c587"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/SelectionKey.java",
+      "sha256": "256a8ae2481195a5fd2b9b86c19f1b7f53b6b6a225ddad5242f943671456efd1"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/Selector.java",
+      "sha256": "b6af9fcb954c48375022dfe3caafa2243898e226e8d211cf1c2fa0113f24b97b"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ServerSocketChannel.java",
+      "sha256": "b534a9390ccd2aace95a52079b94c1d1e0c521a221e38e87cf6787df16855bb3"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ShutdownChannelGroupException.java",
+      "sha256": "a34aeb9a7c56e82be1f8ef1e057a1c5e27000ec0466d6af85966f82ba173e6f8"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/SocketChannel.java",
+      "sha256": "47da209f279c6e1f7f501ad85a3c514c42945cb52ffe5217e2820465ccc5549f"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/UnresolvedAddressException.java",
+      "sha256": "5c5d8e862342059059487c5239217ef9bbc091f8f5b703af7baf40bc05f20ae6"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/UnsupportedAddressTypeException.java",
+      "sha256": "b3b4a64f523f3c0cbfb14104d42db5d85c441f39e15ed0d055a5a18ca1acf075"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/WritableByteChannel.java",
+      "sha256": "122d405532b03f3c579c163f91014d92c0b345738e53c7af47abf3e8db49fdde"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/WritePendingException.java",
+      "sha256": "122aca1bb2a0c2cb0204dd3009f75bf2f5adcc00b581b6f2b9df505afe13c013"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/spi/AbstractInterruptibleChannel.java",
+      "sha256": "d262a067eab1a865b41efaa2698c09d5f4d00c6bc4eb95220de76ae09a8ef68f"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/spi/AbstractSelectableChannel.java",
+      "sha256": "002285c2320de4195d1deed85fb66afa29d67b4c9a4c9df7f9c445e247848e6b"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/spi/AbstractSelectionKey.java",
+      "sha256": "494c3587fb4a621e7e8b089b12fc42b260ca1c06e5770e790ac43215cfa82591"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/spi/AbstractSelector.java",
+      "sha256": "44000abf5b7197217b8d14432fcf4112509227e7e43f084c806797f2c1a347fd"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/spi/AsynchronousChannelProvider.java",
+      "sha256": "b11a3af39e249fb5c7aa5da08a80b16f51797560b560f1d2f1324024a21491ce"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/spi/SelectorProvider.java",
+      "sha256": "5421c8059f06c34bcc5aec59179c37664428631c0becdf918e3a27876da1cc80"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/CharacterCodingException.java",
+      "sha256": "36d64ba79b26b720347f4667294ab021e0619d64cd1360d70f236dc1dc825f9f"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/Charset.java",
+      "sha256": "f10e2a359e83cd8c35f93421997973280ffb8960d020d0fa0e036ba7116f59cb"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/CharsetDecoder.java",
+      "sha256": "3bd173080f0fe649375f3a67fc3e7167cdbe06c3814b504b5d5bf1bfd3f632f1"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/CharsetEncoder.java",
+      "sha256": "5a08e517bcf23723a7b4a401996634faa4c7c6045b8f4a8728c99eaf19975d42"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/CoderMalfunctionError.java",
+      "sha256": "79c4de8b9d82149c978ec39350b8fde674d3060114a3f02d99521a579ce4e5a3"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/CoderResult.java",
+      "sha256": "989a68b54f10ce31fc9c9807a2ca8c781148855fb3558ad66facc9907b0c73a0"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/CodingErrorAction.java",
+      "sha256": "ae39850ce171942d8a41876cd7ee73c8bda85676812a195d55ce17f6ea5f0e1e"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/MalformedInputException.java",
+      "sha256": "7606b5135af65354318ab321d117467feafa2fcda4e401160072f2ae66db8994"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/StandardCharsets.java",
+      "sha256": "9267803744a325bf709addf41d24efbf6e2d4451a1fd6d97348d46eb4df9abae"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/UnmappableCharacterException.java",
+      "sha256": "074f3f45550a77d9e2a0dca64424f1e6cb0ab81da4dd6c7a19ca5e6d8ecc4b21"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/spi/CharsetProvider.java",
+      "sha256": "c3e3409920f07faeb8cf6b6386aa98274876d212fe232b1f5ae7f683cde2fc66"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/AccessDeniedException.java",
+      "sha256": "a360de2d14c75e5125a7706c53c48549728f8aae24a67feccc0bf409b386af70"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/AccessMode.java",
+      "sha256": "38b96617a7c9f31d89ae36229f563bb800d4b65549439a1dd6880436f16b8a44"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/AtomicMoveNotSupportedException.java",
+      "sha256": "864388e754fd84bf4f6942bdf1c730ebe372fa2c0bd9b1dbc0397769c66c70e1"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/ClosedDirectoryStreamException.java",
+      "sha256": "739233b9bfbaa83f53ba207cf88305c0e432ef0fd949a216cb04057b21716604"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/ClosedFileSystemException.java",
+      "sha256": "499cf77d27933b61db6a4a56087b9e5fdf5f57d3462b37daded9d1b4ccb4f62c"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/ClosedWatchServiceException.java",
+      "sha256": "4f95d2ee571bc85dde89263cd2ae8292a7c883a73bfb87f612c6c93c75af33ea"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/CopyOption.java",
+      "sha256": "044eb7f29704c671d7092ac84283f8514caab2f7015c2c3aa5d6b638a1d89c7f"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/DirectoryIteratorException.java",
+      "sha256": "5f9f2b2f701206798b372419c8f12b6c87741d0e61ec9ec7a99b819add9bd6f5"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/DirectoryNotEmptyException.java",
+      "sha256": "451d0e0ecdd14474e373a8164ae4d046ef24c0abc420a3033f8d11ae2f9cdb33"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/DirectoryStream.java",
+      "sha256": "9cf69388c089eb5f491f9e4c4f80c90c5d7daf1b40d22ddb33ef2ca68172dc56"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileAlreadyExistsException.java",
+      "sha256": "f0484581981384232a94211d80a9218e99f68e33ad58dd00a1ba1392584a2306"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileStore.java",
+      "sha256": "64726b889ba05fa8a8da98e6fe2101b1d7204d882f133eb906b2cd9ae9930913"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileSystem.java",
+      "sha256": "917d196bd8a5c532925da612f6d3470507f22bda5b30cc8c80d5ab0c4b1f73e4"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileSystemAlreadyExistsException.java",
+      "sha256": "838c9512f1da41fba7448ece8cb26dc15e465ff959717efc3c0dd3f6e66ebc0e"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileSystemException.java",
+      "sha256": "4b145d05824eb9e4f4431fa15a71b3816257a078451a4b0b5b5b37e59b33ca21"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileSystemLoopException.java",
+      "sha256": "a867457159a29ba2c66fe9e58fb1f3f4ce9cbf36cdfb5494bd350f86b865cd33"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileSystemNotFoundException.java",
+      "sha256": "3d6495b435cccb8bc2e7bab8db9a730f17250f9fe195c09ef3bb4acfa490056d"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileSystems.java",
+      "sha256": "d4d43c9d051a7d5a7df98f2da86eda2b67c52a0e1aa059117bdab87b31552747"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileVisitOption.java",
+      "sha256": "7c9480ae16bb79ff659b4f767e6f1c24319593560c85c38c1bfeaea633c02782"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileVisitResult.java",
+      "sha256": "1080100ed185a3a8b38ff9533e7acac62f2796f1b0bf4c79e036713201e947a5"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileVisitor.java",
+      "sha256": "28e67120d68ba981b6015ce7af690011a596ada97fc75411848f26ef5f95d852"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/Files.java",
+      "sha256": "5d95a9f02c4906f013a547f9a01265edd9ed54dbeccee6625abfd9d0e889441b"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/InvalidPathException.java",
+      "sha256": "b21f0cc0dc1017b4e23bad2ea51a3f3b9c134315b8415fd2fa98ed16f6aea2df"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/LinkOption.java",
+      "sha256": "4930765298e521a8644e79217a023b08dcb388114b3a0734eb7335bf78a7c795"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/LinkPermission.java",
+      "sha256": "3269fb1215c8160e27c0b88cf44c277c5b0f0e46f03d5ba1d398fe6c5125c859"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/NoSuchFileException.java",
+      "sha256": "e23cd278ddc81629d7ad8538a97a479fc424a154abad2d130fc63239f4156742"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/NotDirectoryException.java",
+      "sha256": "85837a9ba2c80041011f91346ae4072cdde85bc25d90b842bfc7592ba8a6c5f7"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/NotLinkException.java",
+      "sha256": "d4f7f87f1e6528c0d4a4469552b2699dd244d89ef866d921f71979ef8faab6ba"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/OpenOption.java",
+      "sha256": "a84a2329b3a30aaadf06b0f10637cd504c6e11133cafde56d3b4d023c1b00234"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/Path.java",
+      "sha256": "b4ef8d7c8edf6d2f366426214d7075ab7ba6f1533cd3a6370a17babe0f723800"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/PathMatcher.java",
+      "sha256": "de9062b81715d34f54130294f9c7a59296b731f1c9f48c7527492a1b5f95656e"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/Paths.java",
+      "sha256": "da14ded6527444b53060087f254fb801e72f02a168f57f8b4ababab3d5f88e69"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/ProviderMismatchException.java",
+      "sha256": "8704901e189d25738d97ff7df613416eebc08e2b6bdf2736618f60c913ea8673"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/ProviderNotFoundException.java",
+      "sha256": "3ebf4b8e297f1f5ea4902104226fcf252aa936cb9dc142a5144acd182206e0a1"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/ReadOnlyFileSystemException.java",
+      "sha256": "cfe3836b77f433e3bb5eae34ca008a3a87b58baa4b3b1258a9847c818ccdf9f4"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/SecureDirectoryStream.java",
+      "sha256": "42386c793347c2667f32aab56a214669e4d0e34de5a2013aa26fafe148be2640"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/SimpleFileVisitor.java",
+      "sha256": "6bc484bbb280e9b3009db63d66b2a38baf55e197807b2ed786aa99687bb04749"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/StandardCopyOption.java",
+      "sha256": "21e8cd7f90afdbb8cab6c96939518c031ac172d072fcc3afe4bf866fcb9a5df6"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/StandardOpenOption.java",
+      "sha256": "234d5a1168a374c7643115a166b0e2cbb9c5f2c05f431bcfe3f22a76292ac2f8"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/StandardWatchEventKinds.java",
+      "sha256": "e9598bfa8372249d50fae694940a2a91cb620cb1caa40ac2ec0fec86b2d2720e"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/WatchEvent.java",
+      "sha256": "992843972001bc532fe22188f07f52e871911f642dc3cceeb87fd310826fce0d"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/WatchKey.java",
+      "sha256": "bbbf53f46b468c8b69ed484fee50203965a10645b36b8b71758ad5279fdedfe7"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/WatchService.java",
+      "sha256": "425fefbbdcda1da225886e67b114153a68af8088d77a7a51243bf55e024c17fd"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/Watchable.java",
+      "sha256": "af9a4a0cd7218760448a1cdc58016f9a7720cff1eae5fb07e03fbdd651d98bd9"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/AclEntry.java",
+      "sha256": "4351b467714c70ad06b2ff86c0560a458dbb41f60b8d28a7d909ce2d07f8e3f7"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/AclEntryFlag.java",
+      "sha256": "03a638e90b7092da96f2611336ddd5a295935ee98ad791b2b3462073c2869249"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/AclEntryPermission.java",
+      "sha256": "71e234e9ea4308547c13873fc3962a211150421e8bb4047e51f5b47eb37c8f0c"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/AclEntryType.java",
+      "sha256": "22ed8665a49a0d51c92f7ec8e4c6098101c8e1046f9b39aa3020363dfb30aaf1"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/AclFileAttributeView.java",
+      "sha256": "1ce0bdf42aa47cd70d3db99b80228896e4c60f75352384efc686e2ee6b7e25f3"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/AttributeView.java",
+      "sha256": "c4f62c6b4d1be66ffd5d6357d58ecd4a7b23fdd19fcb8de57d0146a546ad8dc1"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/BasicFileAttributeView.java",
+      "sha256": "616ac0100d7997db4dc176f77d1bcc7675a4946cdfb013512b265394d3fb226d"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/BasicFileAttributes.java",
+      "sha256": "96bf9f53d4191c102ac95ee470c0701bcc0680a8ef3441f9451d0bd735598b02"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/DosFileAttributeView.java",
+      "sha256": "287370eaa22dfe29a88b1c8a2afe39dec791d4675646468f1371c5956065a5e0"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/DosFileAttributes.java",
+      "sha256": "aeefe646c2f2327701fa8e899392636f8d48e405c696a6deb2939c4162454b20"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/FileAttribute.java",
+      "sha256": "c1d70c71f04abf56f6d900357b38f79e7397dd45236049ab8c62f40f2bd81ba2"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/FileAttributeView.java",
+      "sha256": "7b446d2d373610cd9707bda77fcf45bba516b3ea29f437058eb50a1129eb7c18"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/FileOwnerAttributeView.java",
+      "sha256": "ab35691890e9a401d59259f7556c01d96eba2e266d0429e07f64779caa44dda1"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/FileStoreAttributeView.java",
+      "sha256": "dec93eabcfe25436330f2f93087214a267392c018255e176dc0dde67cb4bc320"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/FileTime.java",
+      "sha256": "71e0a6807e0888d4dbd621d3624d534365a60ded521d71e4b020c910a122a6e0"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/GroupPrincipal.java",
+      "sha256": "645733be429663ebb01ebe215161b1b641909a4d36f338f777be3808ee1c33d7"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/PosixFileAttributeView.java",
+      "sha256": "914e7b479fb3aab02f537ab844850c63c02b6207cbb534511fe5c778948d1c06"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/PosixFileAttributes.java",
+      "sha256": "33c680b940a7dd3f02d5cb621c60cb6e770fd0b7252d7c9327021c1edb504e0b"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/PosixFilePermission.java",
+      "sha256": "e09483779baa9c107c0fdb9b011cedaff347fa77f31d2379dfefac050a984ed1"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/PosixFilePermissions.java",
+      "sha256": "8e5c2712312477fd8807f82573359a73434c1b3b3eac72e45217d70e0c699db3"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/UserDefinedFileAttributeView.java",
+      "sha256": "6004dafdd8018e6536270960d5c7de062dbe54cde5cae38ca4873b593e3bb102"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/UserPrincipal.java",
+      "sha256": "07e1ba429c4e8a4dfa101ed2dad77299d67fc8ded4e7358604b7fdf9dc6fac6b"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/UserPrincipalLookupService.java",
+      "sha256": "5b82ea11719cd106260890c3891c39ab33ae66c79401fd06e4d5e07e20c2c3e9"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/UserPrincipalNotFoundException.java",
+      "sha256": "5eee5abb2cc9a83bdaf36f825b9d25c7718687e93070a9c2aad4dada3810cfae"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/spi/FileSystemProvider.java",
+      "sha256": "3e119f95ffd2379daf2f3c345b9e8d0bdbb984031bdda981a65b4679a8c3e517"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/spi/FileTypeDetector.java",
+      "sha256": "483433a4a216b7bb03b722f9dd8d58cc8573028ba6701f42bf9204cb66877828"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/security/BasicPermission.java",
+      "sha256": "b0e7f620957d3047aa19e1c02c7320a69d429e270f69671be6f66d17ccf2b185"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/security/Permission.java",
+      "sha256": "34c43e3ae0680423c32815d2150feb2334f4ce68e6cd35b7900b56b0ffbb7f5a"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/security/Principal.java",
+      "sha256": "9b8978c006cc27409865d1a8647f89ffae19f2a92bd10d760f051dbdbdf459be"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/time/Instant.java",
+      "sha256": "ea5af62ee14d3c9cca338d4e6194a03692bd9cdabf7e7a63c50c5c611a7e0bf8"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/java/util/concurrent/ThreadFactory.java",
+      "sha256": "78c1843eb3bc4b5cc05e52d04918d52471e4474dc255c062887bbf3c8da2e644"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/javaemul/internal/EmulatedCharset.java",
+      "sha256": "74af445cec4da45654abd6e1106fbdadac59d0c8ac1fab1520cfc6bc00d9af0c"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/javaemul/internal/nio/UnsupportedNio.java",
+      "sha256": "bfd5812c0183194bf0fffed00b01de2c5dff8891b0dc5b3c2ebe0b6aef01aef0"
+    },
+    {
+      "source": "../java-nio-j2cl/src/main/super/module-info.java",
+      "sha256": "e9961856593e1f35e3efec6882b97cdec306d78b48a70555be77d3bbac3969c2"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/WebAWT/overlay/java/net/MalformedURLException.java",
+      "sha256": "b4932df9dbd2aee296a8c70d408b93833728d78b05f78de7f11b72bf53143f0c"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/WebAWT/overlay/java/net/URI.java",
+      "sha256": "90f057ccccb53dbeda4fa18f6282219a28421e98fb6d21795242ec50a720f3f8"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/WebAWT/overlay/java/net/URISyntaxException.java",
+      "sha256": "d4862662716403292aeeedf72644f2c964c208bd76412f2ac198df1110822437"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/WebAWT/overlay/java/net/URL.java",
+      "sha256": "8a72673eeda348dc418e5a0b78df9817a03b5f3b02386544a0174fab0458e592"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/j2cl-base/jre/java/java/nio/charset/Charset.java",
+      "sha256": "d63afcaf51786937c72f2a9616c553e79face105abdc2e2a63b07ccb14691caa"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/j2cl-base/jre/java/java/nio/charset/StandardCharsets.java",
+      "sha256": "e4adf4cfbb14621a7e66cd6295a3b65dfad069ad093503e940733ce4db43d9cd"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/j2cl-base/jre/java/javaemul/internal/EmulatedCharset.java",
+      "sha256": "3957f04e48d1e4f1f6b2b839a121fd31b0cf754e0b3deb6a04f982a156dbc841"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/j2cl-base/jre/java/module-info.java",
+      "sha256": "f46a3a07bc2b028211df55a81d3664a03b5208f46d364b488017a3b01a81a43c"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/BufferedInputStream.java",
+      "sha256": "319c682fa353926f602b5dbe67455cfa881840a6d2b381b02d3788d62ee70b08"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/BufferedOutputStream.java",
+      "sha256": "3d2def0c788a921a37ed0b5f7173cb28cda90dbd48d76c045e4d3995c03fba9d"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/BufferedReader.java",
+      "sha256": "13f28aaa52f1ec45244a295318f9b15cbc5a2eb3ba7a29811aec6aefac9bc1dd"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/CharArrayReader.java",
+      "sha256": "8cb7e0efda20ddb2339e247e7175134aa69ab02dc79293e209a8c42fac704589"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/CharArrayWriter.java",
+      "sha256": "663d564688bf67d3ccb3e1fdb42943a4ee51d6ec72e7193d3de3f19720432772"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/DataInput.java",
+      "sha256": "eaf163756e854b38ca96c6e40492af61ae5abdffceb43cdef14cdde0af3b1a27"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/DataInputStream.java",
+      "sha256": "a6d42475945844e35912fdb385ac3bee75b7d54bebac03cb0e824dcef4a6549a"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/DataOutput.java",
+      "sha256": "23fe51835c1d523074c6d2924beb70725b9e0e0d2c971376f76efbf19f721521"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/DataOutputStream.java",
+      "sha256": "ccfcdd123890ed315af30c4ea9aaeec104870afc5961b447a7401d97488a4561"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/EOFException.java",
+      "sha256": "095cd47f39090d8caece082e0fb92ecac9854f6cd1e1472d68901faeb7c4308c"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/File.java",
+      "sha256": "487e2e049bcc44aacd1b4a48016c716a7678ca25460eb4adb6bfbd25fa778f40"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/FileFilter.java",
+      "sha256": "21a3fa8339dff44959f025cbda0a1bfa59451ce867b9ae537d68b5202032e1db"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/FileInputStream.java",
+      "sha256": "c3af4fff0e6f059b6ac937cb4467758f5d82b5a4e9a8425d48fbda96bab5e7be"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/FileNotFoundException.java",
+      "sha256": "844bbaa167b57bf68c47a83ab71cb798f32c59c5b71df7bb01cf5a25d0ce95cc"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/FileOutputStream.java",
+      "sha256": "4fb6d436fe51b44577e474f5c93ad2e507420b84bbadd97b9d391c03abfe7785"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/FileReader.java",
+      "sha256": "263d3d5615f066bd30f855f6db676008adeee648cc5cf58eb4c3aaf91adb761c"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/FileWriter.java",
+      "sha256": "579b5c831238e5015d5a129289d098f818cab4bb4104fdeb2b01e34bceacb8d9"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/FilenameFilter.java",
+      "sha256": "8ac097285665553b1a20fcbf8385977df00a278eb62ec65e0268be37a84f4394"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/IOError.java",
+      "sha256": "1025c97bef4f65488a5fe4633de2483368e0c098b60708d2de4983995436b8ca"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/InputStreamReader.java",
+      "sha256": "db543370aa63eea6dee4391ef5b95720df7881084cad3e8d46eafbe147db5002"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/LineNumberReader.java",
+      "sha256": "2ecb80b5b357f6986e8ff1dab992b4c41b5636772876b19bced8fb89c245f5e9"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/NotSerializableException.java",
+      "sha256": "335898459bbaf84806c0527b3b9aca59d8882e0ca1036bd84c9ec76549489dd1"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/ObjectInput.java",
+      "sha256": "8c06ff2e5a998c3cf8022469c0e5270df10d5028324cb60d83d55ce05246b14f"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/ObjectInputStream.java",
+      "sha256": "79c3bc03839c35ae1b0f0cb2c59bc13bfd95641346e5a13700609dae0ad8d48d"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/ObjectOutput.java",
+      "sha256": "f50aea28519d2f42c5e3a882607490f605c769a10d2f298902a1ca1070f23186"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/ObjectOutputStream.java",
+      "sha256": "c9f73e9a227caa59bc8bfef7bac8f047ab994a0de7b776ba027e9f6c7a50d5d3"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/ObjectStreamException.java",
+      "sha256": "53a7981ca1fb18ca7f2cede63f739520751c183730772a5bdf7dd72a21f96acc"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/PipedInputStream.java",
+      "sha256": "51f582c6faabf66bb2ab75a78d044b1938d14b599407306b1889e011791ebfd6"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/PipedOutputStream.java",
+      "sha256": "24272e170b93e38eb66bd18220001d0c2110e28dddadcbc036958db9798be835"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/io/UTFDataFormatException.java",
+      "sha256": "9a1a71368fcf822c0f71f8b52fa35567a41d70a30aa7095aa10494af77256b1c"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/lang/ClassNotFoundException.java",
+      "sha256": "98c559f3c76b3e87d19131c41e5f07e1781459f0142ffcca9676d9cdf6fb6443"
+    },
+    {
+      "source": "../java-nio-j2cl/third_party/java-io-j2cl/overlay/java/lang/ReflectiveOperationException.java",
+      "sha256": "3f6c94f39c458a193eda55d8ec5b41dbb6fdb05b384e518e86f01547c25fa623"
+    }
+  ],
+  "overrides": [
+    {
+      "path": "jre/java/java/lang/Thread.java",
+      "selected": {
+        "owner": "java-concurrent-j2cl",
+        "source": "../java-concurrent-j2cl/src/main/super/java/lang/Thread.java",
+        "sha256": "6b96b7d41265c3310acc805434ebc57f8da51117efe9755dcc2200f061774430"
+      },
+      "excluded": {
+        "owner": "java-nio-j2cl",
+        "source": "../java-nio-j2cl/src/main/super/java/lang/Thread.java",
+        "sha256": "5405d964b5059111da672bf2a37737f1dc7027a0af2b7684dfbb43371aad3f57"
+      },
+      "reason": "Use the operational main-thread concurrency implementation instead of NIO's signature-only declaration"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/ThreadFactory.java",
+      "selected": {
+        "owner": "java-concurrent-j2cl",
+        "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ThreadFactory.java",
+        "sha256": "aa948703de3027dc9197e11122285d612727b43ffccd2a36e90791cbdfd5c7c3"
+      },
+      "excluded": {
+        "owner": "java-nio-j2cl",
+        "source": "../java-nio-j2cl/src/main/super/java/util/concurrent/ThreadFactory.java",
+        "sha256": "78c1843eb3bc4b5cc05e52d04918d52471e4474dc255c062887bbf3c8da2e644"
+      },
+      "reason": "Use the operational main-thread concurrency implementation instead of NIO's signature-only declaration"
+    }
+  ],
+  "ownership": [
+    {
+      "path": "jre/java/java/io/BufferedInputStream.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/BufferedInputStream.java",
+      "sha256": "319c682fa353926f602b5dbe67455cfa881840a6d2b381b02d3788d62ee70b08",
+      "emitted_sha256": "319c682fa353926f602b5dbe67455cfa881840a6d2b381b02d3788d62ee70b08",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/BufferedOutputStream.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/BufferedOutputStream.java",
+      "sha256": "3d2def0c788a921a37ed0b5f7173cb28cda90dbd48d76c045e4d3995c03fba9d",
+      "emitted_sha256": "3d2def0c788a921a37ed0b5f7173cb28cda90dbd48d76c045e4d3995c03fba9d",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/BufferedReader.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/BufferedReader.java",
+      "sha256": "13f28aaa52f1ec45244a295318f9b15cbc5a2eb3ba7a29811aec6aefac9bc1dd",
+      "emitted_sha256": "13f28aaa52f1ec45244a295318f9b15cbc5a2eb3ba7a29811aec6aefac9bc1dd",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/CharArrayReader.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/CharArrayReader.java",
+      "sha256": "8cb7e0efda20ddb2339e247e7175134aa69ab02dc79293e209a8c42fac704589",
+      "emitted_sha256": "8cb7e0efda20ddb2339e247e7175134aa69ab02dc79293e209a8c42fac704589",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/CharArrayWriter.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/CharArrayWriter.java",
+      "sha256": "663d564688bf67d3ccb3e1fdb42943a4ee51d6ec72e7193d3de3f19720432772",
+      "emitted_sha256": "663d564688bf67d3ccb3e1fdb42943a4ee51d6ec72e7193d3de3f19720432772",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/DataInput.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/DataInput.java",
+      "sha256": "eaf163756e854b38ca96c6e40492af61ae5abdffceb43cdef14cdde0af3b1a27",
+      "emitted_sha256": "eaf163756e854b38ca96c6e40492af61ae5abdffceb43cdef14cdde0af3b1a27",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/DataInputStream.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/DataInputStream.java",
+      "sha256": "a6d42475945844e35912fdb385ac3bee75b7d54bebac03cb0e824dcef4a6549a",
+      "emitted_sha256": "a6d42475945844e35912fdb385ac3bee75b7d54bebac03cb0e824dcef4a6549a",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/DataOutput.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/DataOutput.java",
+      "sha256": "23fe51835c1d523074c6d2924beb70725b9e0e0d2c971376f76efbf19f721521",
+      "emitted_sha256": "23fe51835c1d523074c6d2924beb70725b9e0e0d2c971376f76efbf19f721521",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/DataOutputStream.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/DataOutputStream.java",
+      "sha256": "ccfcdd123890ed315af30c4ea9aaeec104870afc5961b447a7401d97488a4561",
+      "emitted_sha256": "ccfcdd123890ed315af30c4ea9aaeec104870afc5961b447a7401d97488a4561",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/EOFException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/EOFException.java",
+      "sha256": "095cd47f39090d8caece082e0fb92ecac9854f6cd1e1472d68901faeb7c4308c",
+      "emitted_sha256": "095cd47f39090d8caece082e0fb92ecac9854f6cd1e1472d68901faeb7c4308c",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/File.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/File.java",
+      "sha256": "487e2e049bcc44aacd1b4a48016c716a7678ca25460eb4adb6bfbd25fa778f40",
+      "integration": {
+        "operation": "append File.toPath declaration",
+        "source": "../java-nio-j2cl/integrations/File.nio-members.java.fragment",
+        "sha256": "6fe66b7aa4a09c7bbbb333183de78bd88ea5b8da5cdbe294816cec6c30175bdf"
+      },
+      "emitted_sha256": "a925839cfccde56e90d6e90669bf373ce7168d24fdf5b1bd4de6ea5c950672a8",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/FileFilter.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FileFilter.java",
+      "sha256": "21a3fa8339dff44959f025cbda0a1bfa59451ce867b9ae537d68b5202032e1db",
+      "emitted_sha256": "21a3fa8339dff44959f025cbda0a1bfa59451ce867b9ae537d68b5202032e1db",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/FileInputStream.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FileInputStream.java",
+      "sha256": "c3af4fff0e6f059b6ac937cb4467758f5d82b5a4e9a8425d48fbda96bab5e7be",
+      "emitted_sha256": "c3af4fff0e6f059b6ac937cb4467758f5d82b5a4e9a8425d48fbda96bab5e7be",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/FileNotFoundException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FileNotFoundException.java",
+      "sha256": "844bbaa167b57bf68c47a83ab71cb798f32c59c5b71df7bb01cf5a25d0ce95cc",
+      "emitted_sha256": "844bbaa167b57bf68c47a83ab71cb798f32c59c5b71df7bb01cf5a25d0ce95cc",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/FileOutputStream.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FileOutputStream.java",
+      "sha256": "4fb6d436fe51b44577e474f5c93ad2e507420b84bbadd97b9d391c03abfe7785",
+      "emitted_sha256": "4fb6d436fe51b44577e474f5c93ad2e507420b84bbadd97b9d391c03abfe7785",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/FileReader.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FileReader.java",
+      "sha256": "263d3d5615f066bd30f855f6db676008adeee648cc5cf58eb4c3aaf91adb761c",
+      "emitted_sha256": "263d3d5615f066bd30f855f6db676008adeee648cc5cf58eb4c3aaf91adb761c",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/FileWriter.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FileWriter.java",
+      "sha256": "579b5c831238e5015d5a129289d098f818cab4bb4104fdeb2b01e34bceacb8d9",
+      "emitted_sha256": "579b5c831238e5015d5a129289d098f818cab4bb4104fdeb2b01e34bceacb8d9",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/FilenameFilter.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/FilenameFilter.java",
+      "sha256": "8ac097285665553b1a20fcbf8385977df00a278eb62ec65e0268be37a84f4394",
+      "emitted_sha256": "8ac097285665553b1a20fcbf8385977df00a278eb62ec65e0268be37a84f4394",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/IOError.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/IOError.java",
+      "sha256": "1025c97bef4f65488a5fe4633de2483368e0c098b60708d2de4983995436b8ca",
+      "emitted_sha256": "1025c97bef4f65488a5fe4633de2483368e0c098b60708d2de4983995436b8ca",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/InputStreamReader.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/InputStreamReader.java",
+      "sha256": "db543370aa63eea6dee4391ef5b95720df7881084cad3e8d46eafbe147db5002",
+      "emitted_sha256": "db543370aa63eea6dee4391ef5b95720df7881084cad3e8d46eafbe147db5002",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/LineNumberReader.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/LineNumberReader.java",
+      "sha256": "2ecb80b5b357f6986e8ff1dab992b4c41b5636772876b19bced8fb89c245f5e9",
+      "emitted_sha256": "2ecb80b5b357f6986e8ff1dab992b4c41b5636772876b19bced8fb89c245f5e9",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/NotSerializableException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/NotSerializableException.java",
+      "sha256": "335898459bbaf84806c0527b3b9aca59d8882e0ca1036bd84c9ec76549489dd1",
+      "emitted_sha256": "335898459bbaf84806c0527b3b9aca59d8882e0ca1036bd84c9ec76549489dd1",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/ObjectInput.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/ObjectInput.java",
+      "sha256": "8c06ff2e5a998c3cf8022469c0e5270df10d5028324cb60d83d55ce05246b14f",
+      "emitted_sha256": "8c06ff2e5a998c3cf8022469c0e5270df10d5028324cb60d83d55ce05246b14f",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/ObjectInputStream.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/ObjectInputStream.java",
+      "sha256": "79c3bc03839c35ae1b0f0cb2c59bc13bfd95641346e5a13700609dae0ad8d48d",
+      "emitted_sha256": "79c3bc03839c35ae1b0f0cb2c59bc13bfd95641346e5a13700609dae0ad8d48d",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/ObjectOutput.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/ObjectOutput.java",
+      "sha256": "f50aea28519d2f42c5e3a882607490f605c769a10d2f298902a1ca1070f23186",
+      "emitted_sha256": "f50aea28519d2f42c5e3a882607490f605c769a10d2f298902a1ca1070f23186",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/ObjectOutputStream.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/ObjectOutputStream.java",
+      "sha256": "c9f73e9a227caa59bc8bfef7bac8f047ab994a0de7b776ba027e9f6c7a50d5d3",
+      "emitted_sha256": "c9f73e9a227caa59bc8bfef7bac8f047ab994a0de7b776ba027e9f6c7a50d5d3",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/ObjectStreamException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/ObjectStreamException.java",
+      "sha256": "53a7981ca1fb18ca7f2cede63f739520751c183730772a5bdf7dd72a21f96acc",
+      "emitted_sha256": "53a7981ca1fb18ca7f2cede63f739520751c183730772a5bdf7dd72a21f96acc",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/PipedInputStream.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/PipedInputStream.java",
+      "sha256": "51f582c6faabf66bb2ab75a78d044b1938d14b599407306b1889e011791ebfd6",
+      "emitted_sha256": "51f582c6faabf66bb2ab75a78d044b1938d14b599407306b1889e011791ebfd6",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/PipedOutputStream.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/PipedOutputStream.java",
+      "sha256": "24272e170b93e38eb66bd18220001d0c2110e28dddadcbc036958db9798be835",
+      "emitted_sha256": "24272e170b93e38eb66bd18220001d0c2110e28dddadcbc036958db9798be835",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/io/UTFDataFormatException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/io/UTFDataFormatException.java",
+      "sha256": "9a1a71368fcf822c0f71f8b52fa35567a41d70a30aa7095aa10494af77256b1c",
+      "emitted_sha256": "9a1a71368fcf822c0f71f8b52fa35567a41d70a30aa7095aa10494af77256b1c",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/lang/ClassLoader.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/lang/ClassLoader.java",
+      "sha256": "a4700772578a9796be8576e73956e75d4b46c521347835aa97b1653ed91fd680",
+      "emitted_sha256": "a4700772578a9796be8576e73956e75d4b46c521347835aa97b1653ed91fd680",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/lang/ClassNotFoundException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/lang/ClassNotFoundException.java",
+      "sha256": "98c559f3c76b3e87d19131c41e5f07e1781459f0142ffcca9676d9cdf6fb6443",
+      "emitted_sha256": "98c559f3c76b3e87d19131c41e5f07e1781459f0142ffcca9676d9cdf6fb6443",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/lang/IllegalMonitorStateException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/lang/IllegalMonitorStateException.java",
+      "sha256": "564e78a6c5cc4a92d304ec1bd1de466604f8d415c0331c0a97c59410c8d19ac8",
+      "emitted_sha256": "564e78a6c5cc4a92d304ec1bd1de466604f8d415c0331c0a97c59410c8d19ac8",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/lang/IllegalThreadStateException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/lang/IllegalThreadStateException.java",
+      "sha256": "6199c33723e50a406736c104d0cd74d5e7751780c964c98c399259d118325786",
+      "emitted_sha256": "6199c33723e50a406736c104d0cd74d5e7751780c964c98c399259d118325786",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/lang/Readable.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/lang/Readable.java",
+      "sha256": "5774d5639bdd3baf00c983a5f1acd6dea4ea49bb3c0f274cabc9ad0583bc557f",
+      "emitted_sha256": "5774d5639bdd3baf00c983a5f1acd6dea4ea49bb3c0f274cabc9ad0583bc557f",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/lang/ReflectiveOperationException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-io-j2cl",
+      "source": "../java-io-j2cl/overlay/jre/java/java/lang/ReflectiveOperationException.java",
+      "sha256": "3f6c94f39c458a193eda55d8ec5b41dbb6fdb05b384e518e86f01547c25fa623",
+      "emitted_sha256": "3f6c94f39c458a193eda55d8ec5b41dbb6fdb05b384e518e86f01547c25fa623",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/lang/Thread.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/lang/Thread.java",
+      "sha256": "6b96b7d41265c3310acc805434ebc57f8da51117efe9755dcc2200f061774430",
+      "emitted_sha256": "6b96b7d41265c3310acc805434ebc57f8da51117efe9755dcc2200f061774430",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/lang/ThreadGroup.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/lang/ThreadGroup.java",
+      "sha256": "d7e633fabe86bc13acab088ad23a3be470fb884a57acc9ab103e60c3444c7d6f",
+      "emitted_sha256": "d7e633fabe86bc13acab088ad23a3be470fb884a57acc9ab103e60c3444c7d6f",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/lang/ThreadLocal.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/lang/ThreadLocal.java",
+      "sha256": "46948a59790f85084650266d808dc31235eb237b3807cdaf31986b034ec6664f",
+      "emitted_sha256": "46948a59790f85084650266d808dc31235eb237b3807cdaf31986b034ec6664f",
+      "baseline": [
+        {
+          "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/lang/ThreadLocal.java",
+          "sha256": "4d1ab06e29e88603ab2e931988411e56b1adeada6910b9dc87473b03263ddc24"
+        }
+      ],
+      "change": "modified"
+    },
+    {
+      "path": "jre/java/java/net/DatagramSocket.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/net/DatagramSocket.java",
+      "sha256": "16f75c315180ef5238050193ce7ad098e511f88f6b3ef84a15a71a837aabb6f7",
+      "emitted_sha256": "16f75c315180ef5238050193ce7ad098e511f88f6b3ef84a15a71a837aabb6f7",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/net/InetAddress.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/net/InetAddress.java",
+      "sha256": "b35e483c6d0c4eb19c0b65890f2ad59d82fa4c9b1481fbe9ce769313ab0a86fa",
+      "emitted_sha256": "b35e483c6d0c4eb19c0b65890f2ad59d82fa4c9b1481fbe9ce769313ab0a86fa",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/net/MalformedURLException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-awt-j2cl",
+      "source": "../java-awt-j2cl/src/main/java/java/net/MalformedURLException.java",
+      "sha256": "b4932df9dbd2aee296a8c70d408b93833728d78b05f78de7f11b72bf53143f0c",
+      "emitted_sha256": "b4932df9dbd2aee296a8c70d408b93833728d78b05f78de7f11b72bf53143f0c",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/net/NetworkInterface.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/net/NetworkInterface.java",
+      "sha256": "3db0aa49fa88fddd4dfa5dba7f120eca11579cba1117b3f1f83b4170e6986280",
+      "emitted_sha256": "3db0aa49fa88fddd4dfa5dba7f120eca11579cba1117b3f1f83b4170e6986280",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/net/ProtocolFamily.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/net/ProtocolFamily.java",
+      "sha256": "cd674e02ddeedfe24d71c1988d5521327a2109264f76baa354e4fac3e659b229",
+      "emitted_sha256": "cd674e02ddeedfe24d71c1988d5521327a2109264f76baa354e4fac3e659b229",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/net/ServerSocket.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/net/ServerSocket.java",
+      "sha256": "8956ad553b266eaac5cee2ce0672d789dcc453cc5b82c897b0a42932aac4b4ad",
+      "emitted_sha256": "8956ad553b266eaac5cee2ce0672d789dcc453cc5b82c897b0a42932aac4b4ad",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/net/Socket.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/net/Socket.java",
+      "sha256": "70fb6754b7363017adc3a59abfd3d28577f9ea12f4a8d5b8685720d747c4b899",
+      "emitted_sha256": "70fb6754b7363017adc3a59abfd3d28577f9ea12f4a8d5b8685720d747c4b899",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/net/SocketAddress.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/net/SocketAddress.java",
+      "sha256": "0f7aa23acd5b259d8773ac458e363e234ff25cf1eac9ecf8a916a8c0faf86b2e",
+      "emitted_sha256": "0f7aa23acd5b259d8773ac458e363e234ff25cf1eac9ecf8a916a8c0faf86b2e",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/net/SocketOption.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/net/SocketOption.java",
+      "sha256": "69eceac7aac0536b2c1f1e153da5d6182ed1d9bb2633344654d13b880c077c54",
+      "emitted_sha256": "69eceac7aac0536b2c1f1e153da5d6182ed1d9bb2633344654d13b880c077c54",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/net/URI.java",
+      "provider": "J2CL java.base",
+      "owner": "java-awt-j2cl",
+      "source": "../java-awt-j2cl/src/main/java/java/net/URI.java",
+      "sha256": "90f057ccccb53dbeda4fa18f6282219a28421e98fb6d21795242ec50a720f3f8",
+      "emitted_sha256": "90f057ccccb53dbeda4fa18f6282219a28421e98fb6d21795242ec50a720f3f8",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/net/URISyntaxException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-awt-j2cl",
+      "source": "../java-awt-j2cl/src/main/java/java/net/URISyntaxException.java",
+      "sha256": "d4862662716403292aeeedf72644f2c964c208bd76412f2ac198df1110822437",
+      "emitted_sha256": "d4862662716403292aeeedf72644f2c964c208bd76412f2ac198df1110822437",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/net/URL.java",
+      "provider": "J2CL java.base",
+      "owner": "java-awt-j2cl",
+      "source": "../java-awt-j2cl/src/main/java/java/net/URL.java",
+      "sha256": "8a72673eeda348dc418e5a0b78df9817a03b5f3b02386544a0174fab0458e592",
+      "emitted_sha256": "8a72673eeda348dc418e5a0b78df9817a03b5f3b02386544a0174fab0458e592",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/Buffer.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/Buffer.java",
+      "sha256": "1c82dabea1d41414f02bf3a0db1015fb95b5754480fa8bd68f551efedad7eec7",
+      "emitted_sha256": "1c82dabea1d41414f02bf3a0db1015fb95b5754480fa8bd68f551efedad7eec7",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/BufferOverflowException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/BufferOverflowException.java",
+      "sha256": "2c3fb8e39944fa3be6dbc2f74f853b45f73ebf909962a40e5db31c670fb482ad",
+      "emitted_sha256": "2c3fb8e39944fa3be6dbc2f74f853b45f73ebf909962a40e5db31c670fb482ad",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/BufferUnderflowException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/BufferUnderflowException.java",
+      "sha256": "689457be204622bd250440cb190547eed9b6323ddad9e6e12e6f40494029f892",
+      "emitted_sha256": "689457be204622bd250440cb190547eed9b6323ddad9e6e12e6f40494029f892",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/ByteBuffer.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/ByteBuffer.java",
+      "sha256": "6ed0e68cab693871eb84b8bcef6c44d439670679ff36e5c05574440394f94707",
+      "emitted_sha256": "6ed0e68cab693871eb84b8bcef6c44d439670679ff36e5c05574440394f94707",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/ByteOrder.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/ByteOrder.java",
+      "sha256": "c43acaff66155318aa0897c4905af6fa428ce1fed3be915941662e9b81b159e8",
+      "emitted_sha256": "c43acaff66155318aa0897c4905af6fa428ce1fed3be915941662e9b81b159e8",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/CharBuffer.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/CharBuffer.java",
+      "sha256": "1ee3c8cee0e1404b1f06c66a19a4e79cc5824aaa2ec63b7c27a93dc92bdfde4d",
+      "emitted_sha256": "1ee3c8cee0e1404b1f06c66a19a4e79cc5824aaa2ec63b7c27a93dc92bdfde4d",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/DoubleBuffer.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/DoubleBuffer.java",
+      "sha256": "5b641904ab823726a037c6b4c7028dcd1743a725d02f6ea96122f2a3124ce743",
+      "emitted_sha256": "5b641904ab823726a037c6b4c7028dcd1743a725d02f6ea96122f2a3124ce743",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/FloatBuffer.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/FloatBuffer.java",
+      "sha256": "9e750613dea4415e572123d1b6b6e2f1820389d605eaa5c79466685fc7544085",
+      "emitted_sha256": "9e750613dea4415e572123d1b6b6e2f1820389d605eaa5c79466685fc7544085",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/IntBuffer.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/IntBuffer.java",
+      "sha256": "c475994a091763c0fce398f2f1f872c554ab7cfa307ed3664eff0f6aa8c7339e",
+      "emitted_sha256": "c475994a091763c0fce398f2f1f872c554ab7cfa307ed3664eff0f6aa8c7339e",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/InvalidMarkException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/InvalidMarkException.java",
+      "sha256": "e42f52eafcb8637fa8bd7c6e25d716978dae109ce3904eb7f5a352649bf9a589",
+      "emitted_sha256": "e42f52eafcb8637fa8bd7c6e25d716978dae109ce3904eb7f5a352649bf9a589",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/LongBuffer.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/LongBuffer.java",
+      "sha256": "de2f9733d7ce58446013782c0099d23248712a827e552323491bb26795a2a704",
+      "emitted_sha256": "de2f9733d7ce58446013782c0099d23248712a827e552323491bb26795a2a704",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/MappedByteBuffer.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/MappedByteBuffer.java",
+      "sha256": "d6bab49ebdea60e031312e36a861ce34c0afa0c7f50e846c853be296374111dd",
+      "emitted_sha256": "d6bab49ebdea60e031312e36a861ce34c0afa0c7f50e846c853be296374111dd",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/ReadOnlyBufferException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/ReadOnlyBufferException.java",
+      "sha256": "a416ed783eb3727d726f23608e2b9e6a6c84a95a4699c9cd03f0581d75819558",
+      "emitted_sha256": "a416ed783eb3727d726f23608e2b9e6a6c84a95a4699c9cd03f0581d75819558",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/ShortBuffer.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/ShortBuffer.java",
+      "sha256": "ade408290a1206584b10086efda0f285a48db0f55fdab191ea23b9042f7ec6f5",
+      "emitted_sha256": "ade408290a1206584b10086efda0f285a48db0f55fdab191ea23b9042f7ec6f5",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/AcceptPendingException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AcceptPendingException.java",
+      "sha256": "0dc2b674fa046e1b8eca1e5218b6f5872f2ce5d8bdd1abea2284ea651f00dd62",
+      "emitted_sha256": "0dc2b674fa046e1b8eca1e5218b6f5872f2ce5d8bdd1abea2284ea651f00dd62",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/AlreadyBoundException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AlreadyBoundException.java",
+      "sha256": "5fe5b98cadcaf1c22248c57d0bb43fe41bb776ab224c337f6e05126498c7872e",
+      "emitted_sha256": "5fe5b98cadcaf1c22248c57d0bb43fe41bb776ab224c337f6e05126498c7872e",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/AlreadyConnectedException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AlreadyConnectedException.java",
+      "sha256": "97e0b53ff46ffe84aa00829aadccae15f5a5f5822f7972c1a141e34b7a965712",
+      "emitted_sha256": "97e0b53ff46ffe84aa00829aadccae15f5a5f5822f7972c1a141e34b7a965712",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/AsynchronousByteChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousByteChannel.java",
+      "sha256": "88cf358056488759e82062694de2c7f7b5497d8572ae8a12b9c4af7b6249a4a5",
+      "emitted_sha256": "88cf358056488759e82062694de2c7f7b5497d8572ae8a12b9c4af7b6249a4a5",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/AsynchronousChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousChannel.java",
+      "sha256": "d0180ce51317d513f0a4d6f08cf07ff15fbef4d82b92d630fbb9e0bb5a19b4f6",
+      "emitted_sha256": "d0180ce51317d513f0a4d6f08cf07ff15fbef4d82b92d630fbb9e0bb5a19b4f6",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/AsynchronousChannelGroup.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousChannelGroup.java",
+      "sha256": "3f6755f9608c63f9507a50c908c526d61eb093e9555263143a8d4238225a0ae6",
+      "emitted_sha256": "3f6755f9608c63f9507a50c908c526d61eb093e9555263143a8d4238225a0ae6",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/AsynchronousCloseException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousCloseException.java",
+      "sha256": "e7641f6a40445cccb19d8af5d6ea44199ddb35989c1f93044dec99a2297b05cb",
+      "emitted_sha256": "e7641f6a40445cccb19d8af5d6ea44199ddb35989c1f93044dec99a2297b05cb",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/AsynchronousFileChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousFileChannel.java",
+      "sha256": "9c307a957b7dc928e355eb3cfb69d3c2d7af4b0a06d9d8ffc5949e2bc2bbf3cd",
+      "emitted_sha256": "9c307a957b7dc928e355eb3cfb69d3c2d7af4b0a06d9d8ffc5949e2bc2bbf3cd",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/AsynchronousServerSocketChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousServerSocketChannel.java",
+      "sha256": "c5aca671606ec37d00f92caaf99f95b13b173082468ccc174fa258367a04e714",
+      "emitted_sha256": "c5aca671606ec37d00f92caaf99f95b13b173082468ccc174fa258367a04e714",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/AsynchronousSocketChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/AsynchronousSocketChannel.java",
+      "sha256": "3acf0e8446d8be394e11221a2d6e0bc5aa4d8f38257fbb83c977b45c3fd0ef6d",
+      "emitted_sha256": "3acf0e8446d8be394e11221a2d6e0bc5aa4d8f38257fbb83c977b45c3fd0ef6d",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/ByteChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ByteChannel.java",
+      "sha256": "e5d03ba40038cb126ddf8a72ddee5935431b4bce810beeb4c2069e3a748f1352",
+      "emitted_sha256": "e5d03ba40038cb126ddf8a72ddee5935431b4bce810beeb4c2069e3a748f1352",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/CancelledKeyException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/CancelledKeyException.java",
+      "sha256": "c54a9fc975efdf49bb1cc3a32e45b635325049674afe1f731c472d98f4a08654",
+      "emitted_sha256": "c54a9fc975efdf49bb1cc3a32e45b635325049674afe1f731c472d98f4a08654",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/Channel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/Channel.java",
+      "sha256": "9c0602bb7279945cb45eaede642ba631d3eeb0c999a2805d505c7e69212f4cb1",
+      "emitted_sha256": "9c0602bb7279945cb45eaede642ba631d3eeb0c999a2805d505c7e69212f4cb1",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/Channels.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/Channels.java",
+      "sha256": "e9a615f4e86036d1353e3a93bcf1527303c9f0fbdd2d4ca04aa63294163fcbea",
+      "emitted_sha256": "e9a615f4e86036d1353e3a93bcf1527303c9f0fbdd2d4ca04aa63294163fcbea",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/ClosedByInterruptException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ClosedByInterruptException.java",
+      "sha256": "663bb61635208f17609fa41ed6cc383dba4238650b48cf3c0a6bc0eaa33c21ab",
+      "emitted_sha256": "663bb61635208f17609fa41ed6cc383dba4238650b48cf3c0a6bc0eaa33c21ab",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/ClosedChannelException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ClosedChannelException.java",
+      "sha256": "657d61be10480de054974f2b905fb3b0dc57022a41803e485f99254df10c0aec",
+      "emitted_sha256": "657d61be10480de054974f2b905fb3b0dc57022a41803e485f99254df10c0aec",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/ClosedSelectorException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ClosedSelectorException.java",
+      "sha256": "674f166ac72ed2e89421ddf8505ba2cd217a52a4c781f643c83cbca0678397cb",
+      "emitted_sha256": "674f166ac72ed2e89421ddf8505ba2cd217a52a4c781f643c83cbca0678397cb",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/CompletionHandler.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/CompletionHandler.java",
+      "sha256": "8cc6b97362c1ae6c10b7ba8ccb27784f220db623090aedc2e818a78b64cc97fd",
+      "emitted_sha256": "8cc6b97362c1ae6c10b7ba8ccb27784f220db623090aedc2e818a78b64cc97fd",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/ConnectionPendingException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ConnectionPendingException.java",
+      "sha256": "a45faae884313b0d43df0fa1f6314b9f9511d7740ca904f709b9397fcf69a004",
+      "emitted_sha256": "a45faae884313b0d43df0fa1f6314b9f9511d7740ca904f709b9397fcf69a004",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/DatagramChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/DatagramChannel.java",
+      "sha256": "d0a47833cc6b1489bad4f94fd3607ce78a04693d5fada45cabd246faf99effe6",
+      "emitted_sha256": "d0a47833cc6b1489bad4f94fd3607ce78a04693d5fada45cabd246faf99effe6",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/FileChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/FileChannel.java",
+      "sha256": "c4ba253925f3662e0af927aaf470ae180fe065827c1fbbdea8aabdd0d872297e",
+      "emitted_sha256": "c4ba253925f3662e0af927aaf470ae180fe065827c1fbbdea8aabdd0d872297e",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/FileLock.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/FileLock.java",
+      "sha256": "6f0ea778902344bb03d1d54c9f7dbc5a98c274c7d670ee74b7fda2626cfb0a95",
+      "emitted_sha256": "6f0ea778902344bb03d1d54c9f7dbc5a98c274c7d670ee74b7fda2626cfb0a95",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/FileLockInterruptionException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/FileLockInterruptionException.java",
+      "sha256": "70c302085c710509c6e7d3d4301ef5bc5babad98595de19a5420242385046c3b",
+      "emitted_sha256": "70c302085c710509c6e7d3d4301ef5bc5babad98595de19a5420242385046c3b",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/GatheringByteChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/GatheringByteChannel.java",
+      "sha256": "190924a0caee75a278f248c3dd9d81a04f3be0c46fee63e4cacdcba79e7fcd56",
+      "emitted_sha256": "190924a0caee75a278f248c3dd9d81a04f3be0c46fee63e4cacdcba79e7fcd56",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/IllegalBlockingModeException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/IllegalBlockingModeException.java",
+      "sha256": "6f82d80ec7d7f9a5b6c4f35c2055d68fbe223d4d973b2884bcd5dffc6f6381e5",
+      "emitted_sha256": "6f82d80ec7d7f9a5b6c4f35c2055d68fbe223d4d973b2884bcd5dffc6f6381e5",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/IllegalChannelGroupException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/IllegalChannelGroupException.java",
+      "sha256": "103d6ec6707685f88a4fdf7e1f1115d18834e38fc580ff2b94092280eddbfbf8",
+      "emitted_sha256": "103d6ec6707685f88a4fdf7e1f1115d18834e38fc580ff2b94092280eddbfbf8",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/IllegalSelectorException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/IllegalSelectorException.java",
+      "sha256": "5cb09744944e72d88e6d1cf97d342d57bcf6a069fe0bdf049057a3a09891022e",
+      "emitted_sha256": "5cb09744944e72d88e6d1cf97d342d57bcf6a069fe0bdf049057a3a09891022e",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/InterruptedByTimeoutException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/InterruptedByTimeoutException.java",
+      "sha256": "6aad0e7160e821ef28e6228d958776c308243c7c1c61094357f8825ba9343105",
+      "emitted_sha256": "6aad0e7160e821ef28e6228d958776c308243c7c1c61094357f8825ba9343105",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/InterruptibleChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/InterruptibleChannel.java",
+      "sha256": "2f48dd465a79a6ad22edd19edef0b509679d11ab512c6b0c2cec140b0c4976bf",
+      "emitted_sha256": "2f48dd465a79a6ad22edd19edef0b509679d11ab512c6b0c2cec140b0c4976bf",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/MembershipKey.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/MembershipKey.java",
+      "sha256": "3996bca2f17e85393e2825fb56a2e3bb84c07c06a36f3592004964682c9df71c",
+      "emitted_sha256": "3996bca2f17e85393e2825fb56a2e3bb84c07c06a36f3592004964682c9df71c",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/MulticastChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/MulticastChannel.java",
+      "sha256": "e024ed39e9402ec6366aca552db6ed0ec7bcfce787f4496d9345650639308880",
+      "emitted_sha256": "e024ed39e9402ec6366aca552db6ed0ec7bcfce787f4496d9345650639308880",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/NetworkChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/NetworkChannel.java",
+      "sha256": "314be28757ee4c6993cb788cd23aa56ac14e3feb4c74954b8e843b20fbb355bb",
+      "emitted_sha256": "314be28757ee4c6993cb788cd23aa56ac14e3feb4c74954b8e843b20fbb355bb",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/NoConnectionPendingException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/NoConnectionPendingException.java",
+      "sha256": "37a82e34be73899ebbc1839eb5753e0a2491df11dea238af4e6941e3008af946",
+      "emitted_sha256": "37a82e34be73899ebbc1839eb5753e0a2491df11dea238af4e6941e3008af946",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/NonReadableChannelException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/NonReadableChannelException.java",
+      "sha256": "6b13abe139da7b86b0b483f063c7602e45d7fde22d7c354d0b0625e6a70abb70",
+      "emitted_sha256": "6b13abe139da7b86b0b483f063c7602e45d7fde22d7c354d0b0625e6a70abb70",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/NonWritableChannelException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/NonWritableChannelException.java",
+      "sha256": "54c4ebc3d987df51293c9beac292c89e99e2ba02ea26ad4a9b7a35a8140a26d4",
+      "emitted_sha256": "54c4ebc3d987df51293c9beac292c89e99e2ba02ea26ad4a9b7a35a8140a26d4",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/NotYetBoundException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/NotYetBoundException.java",
+      "sha256": "4a61c7e9a539716b2ba878356506be6ddf619a7bc3021ab4573cc43ed40adfaa",
+      "emitted_sha256": "4a61c7e9a539716b2ba878356506be6ddf619a7bc3021ab4573cc43ed40adfaa",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/NotYetConnectedException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/NotYetConnectedException.java",
+      "sha256": "7d15d409b0231bc86a9f6b7cdb7e561a8a995a6a51a4501319e92b5dd8eeccb9",
+      "emitted_sha256": "7d15d409b0231bc86a9f6b7cdb7e561a8a995a6a51a4501319e92b5dd8eeccb9",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/OverlappingFileLockException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/OverlappingFileLockException.java",
+      "sha256": "8e01e0058480598ebd64a69757645d8cb97951da7c94fd9d4f979db8aa9fb801",
+      "emitted_sha256": "8e01e0058480598ebd64a69757645d8cb97951da7c94fd9d4f979db8aa9fb801",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/Pipe.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/Pipe.java",
+      "sha256": "8d2e8193e1f86261d8494b6be2044e33dcef372b3842e6ae66eb02e2f5206436",
+      "emitted_sha256": "8d2e8193e1f86261d8494b6be2044e33dcef372b3842e6ae66eb02e2f5206436",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/ReadPendingException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ReadPendingException.java",
+      "sha256": "79ce167179110f5f6f3a7b71e36e60cf6e511934a6b708b9a86b24800a137739",
+      "emitted_sha256": "79ce167179110f5f6f3a7b71e36e60cf6e511934a6b708b9a86b24800a137739",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/ReadableByteChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ReadableByteChannel.java",
+      "sha256": "ffa20159f05db12bd77ec1790233628ee5f6018a3e32af9abe51fda15507dd94",
+      "emitted_sha256": "ffa20159f05db12bd77ec1790233628ee5f6018a3e32af9abe51fda15507dd94",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/ScatteringByteChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ScatteringByteChannel.java",
+      "sha256": "8772f126640c241312d30d22a37237255e936293fac47b40af27c251ca46d092",
+      "emitted_sha256": "8772f126640c241312d30d22a37237255e936293fac47b40af27c251ca46d092",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/SeekableByteChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/SeekableByteChannel.java",
+      "sha256": "c64baecf2187477d690114f7d2720719442ef5f2c7d1eda4192b33ad77b382b7",
+      "emitted_sha256": "c64baecf2187477d690114f7d2720719442ef5f2c7d1eda4192b33ad77b382b7",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/SelectableChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/SelectableChannel.java",
+      "sha256": "2aff60e4e521549a34544502eff7c31eb9c06aeb44bd50a7bf68a8574fb4c587",
+      "emitted_sha256": "2aff60e4e521549a34544502eff7c31eb9c06aeb44bd50a7bf68a8574fb4c587",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/SelectionKey.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/SelectionKey.java",
+      "sha256": "256a8ae2481195a5fd2b9b86c19f1b7f53b6b6a225ddad5242f943671456efd1",
+      "emitted_sha256": "256a8ae2481195a5fd2b9b86c19f1b7f53b6b6a225ddad5242f943671456efd1",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/Selector.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/Selector.java",
+      "sha256": "b6af9fcb954c48375022dfe3caafa2243898e226e8d211cf1c2fa0113f24b97b",
+      "emitted_sha256": "b6af9fcb954c48375022dfe3caafa2243898e226e8d211cf1c2fa0113f24b97b",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/ServerSocketChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ServerSocketChannel.java",
+      "sha256": "b534a9390ccd2aace95a52079b94c1d1e0c521a221e38e87cf6787df16855bb3",
+      "emitted_sha256": "b534a9390ccd2aace95a52079b94c1d1e0c521a221e38e87cf6787df16855bb3",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/ShutdownChannelGroupException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/ShutdownChannelGroupException.java",
+      "sha256": "a34aeb9a7c56e82be1f8ef1e057a1c5e27000ec0466d6af85966f82ba173e6f8",
+      "emitted_sha256": "a34aeb9a7c56e82be1f8ef1e057a1c5e27000ec0466d6af85966f82ba173e6f8",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/SocketChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/SocketChannel.java",
+      "sha256": "47da209f279c6e1f7f501ad85a3c514c42945cb52ffe5217e2820465ccc5549f",
+      "emitted_sha256": "47da209f279c6e1f7f501ad85a3c514c42945cb52ffe5217e2820465ccc5549f",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/UnresolvedAddressException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/UnresolvedAddressException.java",
+      "sha256": "5c5d8e862342059059487c5239217ef9bbc091f8f5b703af7baf40bc05f20ae6",
+      "emitted_sha256": "5c5d8e862342059059487c5239217ef9bbc091f8f5b703af7baf40bc05f20ae6",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/UnsupportedAddressTypeException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/UnsupportedAddressTypeException.java",
+      "sha256": "b3b4a64f523f3c0cbfb14104d42db5d85c441f39e15ed0d055a5a18ca1acf075",
+      "emitted_sha256": "b3b4a64f523f3c0cbfb14104d42db5d85c441f39e15ed0d055a5a18ca1acf075",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/WritableByteChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/WritableByteChannel.java",
+      "sha256": "122d405532b03f3c579c163f91014d92c0b345738e53c7af47abf3e8db49fdde",
+      "emitted_sha256": "122d405532b03f3c579c163f91014d92c0b345738e53c7af47abf3e8db49fdde",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/WritePendingException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/WritePendingException.java",
+      "sha256": "122aca1bb2a0c2cb0204dd3009f75bf2f5adcc00b581b6f2b9df505afe13c013",
+      "emitted_sha256": "122aca1bb2a0c2cb0204dd3009f75bf2f5adcc00b581b6f2b9df505afe13c013",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/spi/AbstractInterruptibleChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/spi/AbstractInterruptibleChannel.java",
+      "sha256": "d262a067eab1a865b41efaa2698c09d5f4d00c6bc4eb95220de76ae09a8ef68f",
+      "emitted_sha256": "d262a067eab1a865b41efaa2698c09d5f4d00c6bc4eb95220de76ae09a8ef68f",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/spi/AbstractSelectableChannel.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/spi/AbstractSelectableChannel.java",
+      "sha256": "002285c2320de4195d1deed85fb66afa29d67b4c9a4c9df7f9c445e247848e6b",
+      "emitted_sha256": "002285c2320de4195d1deed85fb66afa29d67b4c9a4c9df7f9c445e247848e6b",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/spi/AbstractSelectionKey.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/spi/AbstractSelectionKey.java",
+      "sha256": "494c3587fb4a621e7e8b089b12fc42b260ca1c06e5770e790ac43215cfa82591",
+      "emitted_sha256": "494c3587fb4a621e7e8b089b12fc42b260ca1c06e5770e790ac43215cfa82591",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/spi/AbstractSelector.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/spi/AbstractSelector.java",
+      "sha256": "44000abf5b7197217b8d14432fcf4112509227e7e43f084c806797f2c1a347fd",
+      "emitted_sha256": "44000abf5b7197217b8d14432fcf4112509227e7e43f084c806797f2c1a347fd",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/spi/AsynchronousChannelProvider.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/spi/AsynchronousChannelProvider.java",
+      "sha256": "b11a3af39e249fb5c7aa5da08a80b16f51797560b560f1d2f1324024a21491ce",
+      "emitted_sha256": "b11a3af39e249fb5c7aa5da08a80b16f51797560b560f1d2f1324024a21491ce",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/channels/spi/SelectorProvider.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/channels/spi/SelectorProvider.java",
+      "sha256": "5421c8059f06c34bcc5aec59179c37664428631c0becdf918e3a27876da1cc80",
+      "emitted_sha256": "5421c8059f06c34bcc5aec59179c37664428631c0becdf918e3a27876da1cc80",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/charset/CharacterCodingException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/CharacterCodingException.java",
+      "sha256": "36d64ba79b26b720347f4667294ab021e0619d64cd1360d70f236dc1dc825f9f",
+      "emitted_sha256": "36d64ba79b26b720347f4667294ab021e0619d64cd1360d70f236dc1dc825f9f",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/charset/Charset.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/Charset.java",
+      "sha256": "f10e2a359e83cd8c35f93421997973280ffb8960d020d0fa0e036ba7116f59cb",
+      "emitted_sha256": "f10e2a359e83cd8c35f93421997973280ffb8960d020d0fa0e036ba7116f59cb",
+      "baseline": [
+        {
+          "source": "../java-nio-j2cl/third_party/j2cl-base/jre/java/java/nio/charset/Charset.java",
+          "sha256": "d63afcaf51786937c72f2a9616c553e79face105abdc2e2a63b07ccb14691caa"
+        }
+      ],
+      "change": "modified"
+    },
+    {
+      "path": "jre/java/java/nio/charset/CharsetDecoder.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/CharsetDecoder.java",
+      "sha256": "3bd173080f0fe649375f3a67fc3e7167cdbe06c3814b504b5d5bf1bfd3f632f1",
+      "emitted_sha256": "3bd173080f0fe649375f3a67fc3e7167cdbe06c3814b504b5d5bf1bfd3f632f1",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/charset/CharsetEncoder.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/CharsetEncoder.java",
+      "sha256": "5a08e517bcf23723a7b4a401996634faa4c7c6045b8f4a8728c99eaf19975d42",
+      "emitted_sha256": "5a08e517bcf23723a7b4a401996634faa4c7c6045b8f4a8728c99eaf19975d42",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/charset/CoderMalfunctionError.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/CoderMalfunctionError.java",
+      "sha256": "79c4de8b9d82149c978ec39350b8fde674d3060114a3f02d99521a579ce4e5a3",
+      "emitted_sha256": "79c4de8b9d82149c978ec39350b8fde674d3060114a3f02d99521a579ce4e5a3",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/charset/CoderResult.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/CoderResult.java",
+      "sha256": "989a68b54f10ce31fc9c9807a2ca8c781148855fb3558ad66facc9907b0c73a0",
+      "emitted_sha256": "989a68b54f10ce31fc9c9807a2ca8c781148855fb3558ad66facc9907b0c73a0",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/charset/CodingErrorAction.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/CodingErrorAction.java",
+      "sha256": "ae39850ce171942d8a41876cd7ee73c8bda85676812a195d55ce17f6ea5f0e1e",
+      "emitted_sha256": "ae39850ce171942d8a41876cd7ee73c8bda85676812a195d55ce17f6ea5f0e1e",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/charset/MalformedInputException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/MalformedInputException.java",
+      "sha256": "7606b5135af65354318ab321d117467feafa2fcda4e401160072f2ae66db8994",
+      "emitted_sha256": "7606b5135af65354318ab321d117467feafa2fcda4e401160072f2ae66db8994",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/charset/StandardCharsets.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/StandardCharsets.java",
+      "sha256": "9267803744a325bf709addf41d24efbf6e2d4451a1fd6d97348d46eb4df9abae",
+      "emitted_sha256": "9267803744a325bf709addf41d24efbf6e2d4451a1fd6d97348d46eb4df9abae",
+      "baseline": [
+        {
+          "source": "../java-nio-j2cl/third_party/j2cl-base/jre/java/java/nio/charset/StandardCharsets.java",
+          "sha256": "e4adf4cfbb14621a7e66cd6295a3b65dfad069ad093503e940733ce4db43d9cd"
+        }
+      ],
+      "change": "modified"
+    },
+    {
+      "path": "jre/java/java/nio/charset/UnmappableCharacterException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/UnmappableCharacterException.java",
+      "sha256": "074f3f45550a77d9e2a0dca64424f1e6cb0ab81da4dd6c7a19ca5e6d8ecc4b21",
+      "emitted_sha256": "074f3f45550a77d9e2a0dca64424f1e6cb0ab81da4dd6c7a19ca5e6d8ecc4b21",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/charset/spi/CharsetProvider.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/charset/spi/CharsetProvider.java",
+      "sha256": "c3e3409920f07faeb8cf6b6386aa98274876d212fe232b1f5ae7f683cde2fc66",
+      "emitted_sha256": "c3e3409920f07faeb8cf6b6386aa98274876d212fe232b1f5ae7f683cde2fc66",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/AccessDeniedException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/AccessDeniedException.java",
+      "sha256": "a360de2d14c75e5125a7706c53c48549728f8aae24a67feccc0bf409b386af70",
+      "emitted_sha256": "a360de2d14c75e5125a7706c53c48549728f8aae24a67feccc0bf409b386af70",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/AccessMode.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/AccessMode.java",
+      "sha256": "38b96617a7c9f31d89ae36229f563bb800d4b65549439a1dd6880436f16b8a44",
+      "emitted_sha256": "38b96617a7c9f31d89ae36229f563bb800d4b65549439a1dd6880436f16b8a44",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/AtomicMoveNotSupportedException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/AtomicMoveNotSupportedException.java",
+      "sha256": "864388e754fd84bf4f6942bdf1c730ebe372fa2c0bd9b1dbc0397769c66c70e1",
+      "emitted_sha256": "864388e754fd84bf4f6942bdf1c730ebe372fa2c0bd9b1dbc0397769c66c70e1",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/ClosedDirectoryStreamException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/ClosedDirectoryStreamException.java",
+      "sha256": "739233b9bfbaa83f53ba207cf88305c0e432ef0fd949a216cb04057b21716604",
+      "emitted_sha256": "739233b9bfbaa83f53ba207cf88305c0e432ef0fd949a216cb04057b21716604",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/ClosedFileSystemException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/ClosedFileSystemException.java",
+      "sha256": "499cf77d27933b61db6a4a56087b9e5fdf5f57d3462b37daded9d1b4ccb4f62c",
+      "emitted_sha256": "499cf77d27933b61db6a4a56087b9e5fdf5f57d3462b37daded9d1b4ccb4f62c",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/ClosedWatchServiceException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/ClosedWatchServiceException.java",
+      "sha256": "4f95d2ee571bc85dde89263cd2ae8292a7c883a73bfb87f612c6c93c75af33ea",
+      "emitted_sha256": "4f95d2ee571bc85dde89263cd2ae8292a7c883a73bfb87f612c6c93c75af33ea",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/CopyOption.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/CopyOption.java",
+      "sha256": "044eb7f29704c671d7092ac84283f8514caab2f7015c2c3aa5d6b638a1d89c7f",
+      "emitted_sha256": "044eb7f29704c671d7092ac84283f8514caab2f7015c2c3aa5d6b638a1d89c7f",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/DirectoryIteratorException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/DirectoryIteratorException.java",
+      "sha256": "5f9f2b2f701206798b372419c8f12b6c87741d0e61ec9ec7a99b819add9bd6f5",
+      "emitted_sha256": "5f9f2b2f701206798b372419c8f12b6c87741d0e61ec9ec7a99b819add9bd6f5",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/DirectoryNotEmptyException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/DirectoryNotEmptyException.java",
+      "sha256": "451d0e0ecdd14474e373a8164ae4d046ef24c0abc420a3033f8d11ae2f9cdb33",
+      "emitted_sha256": "451d0e0ecdd14474e373a8164ae4d046ef24c0abc420a3033f8d11ae2f9cdb33",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/DirectoryStream.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/DirectoryStream.java",
+      "sha256": "9cf69388c089eb5f491f9e4c4f80c90c5d7daf1b40d22ddb33ef2ca68172dc56",
+      "emitted_sha256": "9cf69388c089eb5f491f9e4c4f80c90c5d7daf1b40d22ddb33ef2ca68172dc56",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/FileAlreadyExistsException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileAlreadyExistsException.java",
+      "sha256": "f0484581981384232a94211d80a9218e99f68e33ad58dd00a1ba1392584a2306",
+      "emitted_sha256": "f0484581981384232a94211d80a9218e99f68e33ad58dd00a1ba1392584a2306",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/FileStore.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileStore.java",
+      "sha256": "64726b889ba05fa8a8da98e6fe2101b1d7204d882f133eb906b2cd9ae9930913",
+      "emitted_sha256": "64726b889ba05fa8a8da98e6fe2101b1d7204d882f133eb906b2cd9ae9930913",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/FileSystem.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileSystem.java",
+      "sha256": "917d196bd8a5c532925da612f6d3470507f22bda5b30cc8c80d5ab0c4b1f73e4",
+      "emitted_sha256": "917d196bd8a5c532925da612f6d3470507f22bda5b30cc8c80d5ab0c4b1f73e4",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/FileSystemAlreadyExistsException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileSystemAlreadyExistsException.java",
+      "sha256": "838c9512f1da41fba7448ece8cb26dc15e465ff959717efc3c0dd3f6e66ebc0e",
+      "emitted_sha256": "838c9512f1da41fba7448ece8cb26dc15e465ff959717efc3c0dd3f6e66ebc0e",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/FileSystemException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileSystemException.java",
+      "sha256": "4b145d05824eb9e4f4431fa15a71b3816257a078451a4b0b5b5b37e59b33ca21",
+      "emitted_sha256": "4b145d05824eb9e4f4431fa15a71b3816257a078451a4b0b5b5b37e59b33ca21",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/FileSystemLoopException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileSystemLoopException.java",
+      "sha256": "a867457159a29ba2c66fe9e58fb1f3f4ce9cbf36cdfb5494bd350f86b865cd33",
+      "emitted_sha256": "a867457159a29ba2c66fe9e58fb1f3f4ce9cbf36cdfb5494bd350f86b865cd33",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/FileSystemNotFoundException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileSystemNotFoundException.java",
+      "sha256": "3d6495b435cccb8bc2e7bab8db9a730f17250f9fe195c09ef3bb4acfa490056d",
+      "emitted_sha256": "3d6495b435cccb8bc2e7bab8db9a730f17250f9fe195c09ef3bb4acfa490056d",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/FileSystems.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileSystems.java",
+      "sha256": "d4d43c9d051a7d5a7df98f2da86eda2b67c52a0e1aa059117bdab87b31552747",
+      "emitted_sha256": "d4d43c9d051a7d5a7df98f2da86eda2b67c52a0e1aa059117bdab87b31552747",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/FileVisitOption.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileVisitOption.java",
+      "sha256": "7c9480ae16bb79ff659b4f767e6f1c24319593560c85c38c1bfeaea633c02782",
+      "emitted_sha256": "7c9480ae16bb79ff659b4f767e6f1c24319593560c85c38c1bfeaea633c02782",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/FileVisitResult.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileVisitResult.java",
+      "sha256": "1080100ed185a3a8b38ff9533e7acac62f2796f1b0bf4c79e036713201e947a5",
+      "emitted_sha256": "1080100ed185a3a8b38ff9533e7acac62f2796f1b0bf4c79e036713201e947a5",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/FileVisitor.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/FileVisitor.java",
+      "sha256": "28e67120d68ba981b6015ce7af690011a596ada97fc75411848f26ef5f95d852",
+      "emitted_sha256": "28e67120d68ba981b6015ce7af690011a596ada97fc75411848f26ef5f95d852",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/Files.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/Files.java",
+      "sha256": "5d95a9f02c4906f013a547f9a01265edd9ed54dbeccee6625abfd9d0e889441b",
+      "emitted_sha256": "5d95a9f02c4906f013a547f9a01265edd9ed54dbeccee6625abfd9d0e889441b",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/InvalidPathException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/InvalidPathException.java",
+      "sha256": "b21f0cc0dc1017b4e23bad2ea51a3f3b9c134315b8415fd2fa98ed16f6aea2df",
+      "emitted_sha256": "b21f0cc0dc1017b4e23bad2ea51a3f3b9c134315b8415fd2fa98ed16f6aea2df",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/LinkOption.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/LinkOption.java",
+      "sha256": "4930765298e521a8644e79217a023b08dcb388114b3a0734eb7335bf78a7c795",
+      "emitted_sha256": "4930765298e521a8644e79217a023b08dcb388114b3a0734eb7335bf78a7c795",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/LinkPermission.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/LinkPermission.java",
+      "sha256": "3269fb1215c8160e27c0b88cf44c277c5b0f0e46f03d5ba1d398fe6c5125c859",
+      "emitted_sha256": "3269fb1215c8160e27c0b88cf44c277c5b0f0e46f03d5ba1d398fe6c5125c859",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/NoSuchFileException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/NoSuchFileException.java",
+      "sha256": "e23cd278ddc81629d7ad8538a97a479fc424a154abad2d130fc63239f4156742",
+      "emitted_sha256": "e23cd278ddc81629d7ad8538a97a479fc424a154abad2d130fc63239f4156742",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/NotDirectoryException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/NotDirectoryException.java",
+      "sha256": "85837a9ba2c80041011f91346ae4072cdde85bc25d90b842bfc7592ba8a6c5f7",
+      "emitted_sha256": "85837a9ba2c80041011f91346ae4072cdde85bc25d90b842bfc7592ba8a6c5f7",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/NotLinkException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/NotLinkException.java",
+      "sha256": "d4f7f87f1e6528c0d4a4469552b2699dd244d89ef866d921f71979ef8faab6ba",
+      "emitted_sha256": "d4f7f87f1e6528c0d4a4469552b2699dd244d89ef866d921f71979ef8faab6ba",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/OpenOption.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/OpenOption.java",
+      "sha256": "a84a2329b3a30aaadf06b0f10637cd504c6e11133cafde56d3b4d023c1b00234",
+      "emitted_sha256": "a84a2329b3a30aaadf06b0f10637cd504c6e11133cafde56d3b4d023c1b00234",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/Path.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/Path.java",
+      "sha256": "b4ef8d7c8edf6d2f366426214d7075ab7ba6f1533cd3a6370a17babe0f723800",
+      "emitted_sha256": "b4ef8d7c8edf6d2f366426214d7075ab7ba6f1533cd3a6370a17babe0f723800",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/PathMatcher.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/PathMatcher.java",
+      "sha256": "de9062b81715d34f54130294f9c7a59296b731f1c9f48c7527492a1b5f95656e",
+      "emitted_sha256": "de9062b81715d34f54130294f9c7a59296b731f1c9f48c7527492a1b5f95656e",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/Paths.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/Paths.java",
+      "sha256": "da14ded6527444b53060087f254fb801e72f02a168f57f8b4ababab3d5f88e69",
+      "emitted_sha256": "da14ded6527444b53060087f254fb801e72f02a168f57f8b4ababab3d5f88e69",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/ProviderMismatchException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/ProviderMismatchException.java",
+      "sha256": "8704901e189d25738d97ff7df613416eebc08e2b6bdf2736618f60c913ea8673",
+      "emitted_sha256": "8704901e189d25738d97ff7df613416eebc08e2b6bdf2736618f60c913ea8673",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/ProviderNotFoundException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/ProviderNotFoundException.java",
+      "sha256": "3ebf4b8e297f1f5ea4902104226fcf252aa936cb9dc142a5144acd182206e0a1",
+      "emitted_sha256": "3ebf4b8e297f1f5ea4902104226fcf252aa936cb9dc142a5144acd182206e0a1",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/ReadOnlyFileSystemException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/ReadOnlyFileSystemException.java",
+      "sha256": "cfe3836b77f433e3bb5eae34ca008a3a87b58baa4b3b1258a9847c818ccdf9f4",
+      "emitted_sha256": "cfe3836b77f433e3bb5eae34ca008a3a87b58baa4b3b1258a9847c818ccdf9f4",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/SecureDirectoryStream.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/SecureDirectoryStream.java",
+      "sha256": "42386c793347c2667f32aab56a214669e4d0e34de5a2013aa26fafe148be2640",
+      "emitted_sha256": "42386c793347c2667f32aab56a214669e4d0e34de5a2013aa26fafe148be2640",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/SimpleFileVisitor.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/SimpleFileVisitor.java",
+      "sha256": "6bc484bbb280e9b3009db63d66b2a38baf55e197807b2ed786aa99687bb04749",
+      "emitted_sha256": "6bc484bbb280e9b3009db63d66b2a38baf55e197807b2ed786aa99687bb04749",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/StandardCopyOption.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/StandardCopyOption.java",
+      "sha256": "21e8cd7f90afdbb8cab6c96939518c031ac172d072fcc3afe4bf866fcb9a5df6",
+      "emitted_sha256": "21e8cd7f90afdbb8cab6c96939518c031ac172d072fcc3afe4bf866fcb9a5df6",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/StandardOpenOption.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/StandardOpenOption.java",
+      "sha256": "234d5a1168a374c7643115a166b0e2cbb9c5f2c05f431bcfe3f22a76292ac2f8",
+      "emitted_sha256": "234d5a1168a374c7643115a166b0e2cbb9c5f2c05f431bcfe3f22a76292ac2f8",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/StandardWatchEventKinds.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/StandardWatchEventKinds.java",
+      "sha256": "e9598bfa8372249d50fae694940a2a91cb620cb1caa40ac2ec0fec86b2d2720e",
+      "emitted_sha256": "e9598bfa8372249d50fae694940a2a91cb620cb1caa40ac2ec0fec86b2d2720e",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/WatchEvent.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/WatchEvent.java",
+      "sha256": "992843972001bc532fe22188f07f52e871911f642dc3cceeb87fd310826fce0d",
+      "emitted_sha256": "992843972001bc532fe22188f07f52e871911f642dc3cceeb87fd310826fce0d",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/WatchKey.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/WatchKey.java",
+      "sha256": "bbbf53f46b468c8b69ed484fee50203965a10645b36b8b71758ad5279fdedfe7",
+      "emitted_sha256": "bbbf53f46b468c8b69ed484fee50203965a10645b36b8b71758ad5279fdedfe7",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/WatchService.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/WatchService.java",
+      "sha256": "425fefbbdcda1da225886e67b114153a68af8088d77a7a51243bf55e024c17fd",
+      "emitted_sha256": "425fefbbdcda1da225886e67b114153a68af8088d77a7a51243bf55e024c17fd",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/Watchable.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/Watchable.java",
+      "sha256": "af9a4a0cd7218760448a1cdc58016f9a7720cff1eae5fb07e03fbdd651d98bd9",
+      "emitted_sha256": "af9a4a0cd7218760448a1cdc58016f9a7720cff1eae5fb07e03fbdd651d98bd9",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/AclEntry.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/AclEntry.java",
+      "sha256": "4351b467714c70ad06b2ff86c0560a458dbb41f60b8d28a7d909ce2d07f8e3f7",
+      "emitted_sha256": "4351b467714c70ad06b2ff86c0560a458dbb41f60b8d28a7d909ce2d07f8e3f7",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/AclEntryFlag.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/AclEntryFlag.java",
+      "sha256": "03a638e90b7092da96f2611336ddd5a295935ee98ad791b2b3462073c2869249",
+      "emitted_sha256": "03a638e90b7092da96f2611336ddd5a295935ee98ad791b2b3462073c2869249",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/AclEntryPermission.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/AclEntryPermission.java",
+      "sha256": "71e234e9ea4308547c13873fc3962a211150421e8bb4047e51f5b47eb37c8f0c",
+      "emitted_sha256": "71e234e9ea4308547c13873fc3962a211150421e8bb4047e51f5b47eb37c8f0c",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/AclEntryType.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/AclEntryType.java",
+      "sha256": "22ed8665a49a0d51c92f7ec8e4c6098101c8e1046f9b39aa3020363dfb30aaf1",
+      "emitted_sha256": "22ed8665a49a0d51c92f7ec8e4c6098101c8e1046f9b39aa3020363dfb30aaf1",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/AclFileAttributeView.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/AclFileAttributeView.java",
+      "sha256": "1ce0bdf42aa47cd70d3db99b80228896e4c60f75352384efc686e2ee6b7e25f3",
+      "emitted_sha256": "1ce0bdf42aa47cd70d3db99b80228896e4c60f75352384efc686e2ee6b7e25f3",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/AttributeView.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/AttributeView.java",
+      "sha256": "c4f62c6b4d1be66ffd5d6357d58ecd4a7b23fdd19fcb8de57d0146a546ad8dc1",
+      "emitted_sha256": "c4f62c6b4d1be66ffd5d6357d58ecd4a7b23fdd19fcb8de57d0146a546ad8dc1",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/BasicFileAttributeView.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/BasicFileAttributeView.java",
+      "sha256": "616ac0100d7997db4dc176f77d1bcc7675a4946cdfb013512b265394d3fb226d",
+      "emitted_sha256": "616ac0100d7997db4dc176f77d1bcc7675a4946cdfb013512b265394d3fb226d",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/BasicFileAttributes.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/BasicFileAttributes.java",
+      "sha256": "96bf9f53d4191c102ac95ee470c0701bcc0680a8ef3441f9451d0bd735598b02",
+      "emitted_sha256": "96bf9f53d4191c102ac95ee470c0701bcc0680a8ef3441f9451d0bd735598b02",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/DosFileAttributeView.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/DosFileAttributeView.java",
+      "sha256": "287370eaa22dfe29a88b1c8a2afe39dec791d4675646468f1371c5956065a5e0",
+      "emitted_sha256": "287370eaa22dfe29a88b1c8a2afe39dec791d4675646468f1371c5956065a5e0",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/DosFileAttributes.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/DosFileAttributes.java",
+      "sha256": "aeefe646c2f2327701fa8e899392636f8d48e405c696a6deb2939c4162454b20",
+      "emitted_sha256": "aeefe646c2f2327701fa8e899392636f8d48e405c696a6deb2939c4162454b20",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/FileAttribute.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/FileAttribute.java",
+      "sha256": "c1d70c71f04abf56f6d900357b38f79e7397dd45236049ab8c62f40f2bd81ba2",
+      "emitted_sha256": "c1d70c71f04abf56f6d900357b38f79e7397dd45236049ab8c62f40f2bd81ba2",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/FileAttributeView.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/FileAttributeView.java",
+      "sha256": "7b446d2d373610cd9707bda77fcf45bba516b3ea29f437058eb50a1129eb7c18",
+      "emitted_sha256": "7b446d2d373610cd9707bda77fcf45bba516b3ea29f437058eb50a1129eb7c18",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/FileOwnerAttributeView.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/FileOwnerAttributeView.java",
+      "sha256": "ab35691890e9a401d59259f7556c01d96eba2e266d0429e07f64779caa44dda1",
+      "emitted_sha256": "ab35691890e9a401d59259f7556c01d96eba2e266d0429e07f64779caa44dda1",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/FileStoreAttributeView.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/FileStoreAttributeView.java",
+      "sha256": "dec93eabcfe25436330f2f93087214a267392c018255e176dc0dde67cb4bc320",
+      "emitted_sha256": "dec93eabcfe25436330f2f93087214a267392c018255e176dc0dde67cb4bc320",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/FileTime.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/FileTime.java",
+      "sha256": "71e0a6807e0888d4dbd621d3624d534365a60ded521d71e4b020c910a122a6e0",
+      "emitted_sha256": "71e0a6807e0888d4dbd621d3624d534365a60ded521d71e4b020c910a122a6e0",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/GroupPrincipal.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/GroupPrincipal.java",
+      "sha256": "645733be429663ebb01ebe215161b1b641909a4d36f338f777be3808ee1c33d7",
+      "emitted_sha256": "645733be429663ebb01ebe215161b1b641909a4d36f338f777be3808ee1c33d7",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/PosixFileAttributeView.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/PosixFileAttributeView.java",
+      "sha256": "914e7b479fb3aab02f537ab844850c63c02b6207cbb534511fe5c778948d1c06",
+      "emitted_sha256": "914e7b479fb3aab02f537ab844850c63c02b6207cbb534511fe5c778948d1c06",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/PosixFileAttributes.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/PosixFileAttributes.java",
+      "sha256": "33c680b940a7dd3f02d5cb621c60cb6e770fd0b7252d7c9327021c1edb504e0b",
+      "emitted_sha256": "33c680b940a7dd3f02d5cb621c60cb6e770fd0b7252d7c9327021c1edb504e0b",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/PosixFilePermission.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/PosixFilePermission.java",
+      "sha256": "e09483779baa9c107c0fdb9b011cedaff347fa77f31d2379dfefac050a984ed1",
+      "emitted_sha256": "e09483779baa9c107c0fdb9b011cedaff347fa77f31d2379dfefac050a984ed1",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/PosixFilePermissions.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/PosixFilePermissions.java",
+      "sha256": "8e5c2712312477fd8807f82573359a73434c1b3b3eac72e45217d70e0c699db3",
+      "emitted_sha256": "8e5c2712312477fd8807f82573359a73434c1b3b3eac72e45217d70e0c699db3",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/UserDefinedFileAttributeView.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/UserDefinedFileAttributeView.java",
+      "sha256": "6004dafdd8018e6536270960d5c7de062dbe54cde5cae38ca4873b593e3bb102",
+      "emitted_sha256": "6004dafdd8018e6536270960d5c7de062dbe54cde5cae38ca4873b593e3bb102",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/UserPrincipal.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/UserPrincipal.java",
+      "sha256": "07e1ba429c4e8a4dfa101ed2dad77299d67fc8ded4e7358604b7fdf9dc6fac6b",
+      "emitted_sha256": "07e1ba429c4e8a4dfa101ed2dad77299d67fc8ded4e7358604b7fdf9dc6fac6b",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/UserPrincipalLookupService.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/UserPrincipalLookupService.java",
+      "sha256": "5b82ea11719cd106260890c3891c39ab33ae66c79401fd06e4d5e07e20c2c3e9",
+      "emitted_sha256": "5b82ea11719cd106260890c3891c39ab33ae66c79401fd06e4d5e07e20c2c3e9",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/attribute/UserPrincipalNotFoundException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/attribute/UserPrincipalNotFoundException.java",
+      "sha256": "5eee5abb2cc9a83bdaf36f825b9d25c7718687e93070a9c2aad4dada3810cfae",
+      "emitted_sha256": "5eee5abb2cc9a83bdaf36f825b9d25c7718687e93070a9c2aad4dada3810cfae",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/spi/FileSystemProvider.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/spi/FileSystemProvider.java",
+      "sha256": "3e119f95ffd2379daf2f3c345b9e8d0bdbb984031bdda981a65b4679a8c3e517",
+      "emitted_sha256": "3e119f95ffd2379daf2f3c345b9e8d0bdbb984031bdda981a65b4679a8c3e517",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/nio/file/spi/FileTypeDetector.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/nio/file/spi/FileTypeDetector.java",
+      "sha256": "483433a4a216b7bb03b722f9dd8d58cc8573028ba6701f42bf9204cb66877828",
+      "emitted_sha256": "483433a4a216b7bb03b722f9dd8d58cc8573028ba6701f42bf9204cb66877828",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/security/BasicPermission.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/security/BasicPermission.java",
+      "sha256": "b0e7f620957d3047aa19e1c02c7320a69d429e270f69671be6f66d17ccf2b185",
+      "emitted_sha256": "b0e7f620957d3047aa19e1c02c7320a69d429e270f69671be6f66d17ccf2b185",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/security/Permission.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/security/Permission.java",
+      "sha256": "34c43e3ae0680423c32815d2150feb2334f4ce68e6cd35b7900b56b0ffbb7f5a",
+      "emitted_sha256": "34c43e3ae0680423c32815d2150feb2334f4ce68e6cd35b7900b56b0ffbb7f5a",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/security/Principal.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/security/Principal.java",
+      "sha256": "9b8978c006cc27409865d1a8647f89ffae19f2a92bd10d760f051dbdbdf459be",
+      "emitted_sha256": "9b8978c006cc27409865d1a8647f89ffae19f2a92bd10d760f051dbdbdf459be",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/time/Instant.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/java/time/Instant.java",
+      "sha256": "ea5af62ee14d3c9cca338d4e6194a03692bd9cdabf7e7a63c50c5c611a7e0bf8",
+      "emitted_sha256": "ea5af62ee14d3c9cca338d4e6194a03692bd9cdabf7e7a63c50c5c611a7e0bf8",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/AbstractExecutorService.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/AbstractExecutorService.java",
+      "sha256": "165403f72500b32a0632435f70a8312132ef05e94449b17e46f062db383c85d7",
+      "emitted_sha256": "165403f72500b32a0632435f70a8312132ef05e94449b17e46f062db383c85d7",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/ArrayBlockingQueue.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ArrayBlockingQueue.java",
+      "sha256": "f6f304324ff8be413a0052dfc8f6001aa2533c045ec2892a8a962920231b4c26",
+      "emitted_sha256": "f6f304324ff8be413a0052dfc8f6001aa2533c045ec2892a8a962920231b4c26",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/BlockingQueue.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/BlockingQueue.java",
+      "sha256": "8769dc6dab913f1046b41e8049163f1f438b716e59ce30ca3df9a4a31339f073",
+      "emitted_sha256": "8769dc6dab913f1046b41e8049163f1f438b716e59ce30ca3df9a4a31339f073",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/BrokenBarrierException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/BrokenBarrierException.java",
+      "sha256": "00f7e1e43886a407217a092ff8f8797fd0fa46c0cc932b25813f9678f9fe9ef4",
+      "emitted_sha256": "00f7e1e43886a407217a092ff8f8797fd0fa46c0cc932b25813f9678f9fe9ef4",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/CompletableFuture.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CompletableFuture.java",
+      "sha256": "7041653dfcb4b42859755809bf6663a06103bcbd0ee577fc37a124e7591c83b6",
+      "emitted_sha256": "7041653dfcb4b42859755809bf6663a06103bcbd0ee577fc37a124e7591c83b6",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/CompletionException.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CompletionException.java",
+      "sha256": "f893f03d5e369b836c66147bb5998d5f621722bd2f75b0f240c20bda7bc22359",
+      "emitted_sha256": "f893f03d5e369b836c66147bb5998d5f621722bd2f75b0f240c20bda7bc22359",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/CompletionService.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CompletionService.java",
+      "sha256": "30ce209d7c826ddb0d8fb7e86f8079f57c78c276ddd8a5887ea0a2652bf4c20d",
+      "emitted_sha256": "30ce209d7c826ddb0d8fb7e86f8079f57c78c276ddd8a5887ea0a2652bf4c20d",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/CompletionStage.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CompletionStage.java",
+      "sha256": "6c0eadf5ffa8ebf71be46818a9d05565756d31410633495a55587fb2476169ba",
+      "emitted_sha256": "6c0eadf5ffa8ebf71be46818a9d05565756d31410633495a55587fb2476169ba",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/ConcurrentHashMap.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ConcurrentHashMap.java",
+      "sha256": "57609825b2fc358a3dc4d0342a5e816811950ede92dc019433eed166908929f6",
+      "emitted_sha256": "57609825b2fc358a3dc4d0342a5e816811950ede92dc019433eed166908929f6",
+      "baseline": [
+        {
+          "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/ConcurrentHashMap.java",
+          "sha256": "73dee2c2b22d25dd502faa0f0f1b5ca80e1e59d160ab9e4c7c88508dafaf9d4a"
+        }
+      ],
+      "change": "modified"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/ConcurrentLinkedDeque.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ConcurrentLinkedDeque.java",
+      "sha256": "875a5408a4e6bb65d64b028df09cf00edc208970373c4c8d9f3aeadd4c203550",
+      "emitted_sha256": "875a5408a4e6bb65d64b028df09cf00edc208970373c4c8d9f3aeadd4c203550",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/ConcurrentLinkedQueue.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ConcurrentLinkedQueue.java",
+      "sha256": "198b4e448087680244077bbf731365a28daf02b5d0f65af25fbc5deb6323f071",
+      "emitted_sha256": "198b4e448087680244077bbf731365a28daf02b5d0f65af25fbc5deb6323f071",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/CopyOnWriteArrayList.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CopyOnWriteArrayList.java",
+      "sha256": "b8365bcac81dd8550106e50b432eaa39447589fbecc3539e23c3da3d266dbfd6",
+      "emitted_sha256": "b8365bcac81dd8550106e50b432eaa39447589fbecc3539e23c3da3d266dbfd6",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/CopyOnWriteArraySet.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CopyOnWriteArraySet.java",
+      "sha256": "c1cf817eca7ffe7dd3bb422b210fd1f36425ac2583de29795c489f4699947660",
+      "emitted_sha256": "c1cf817eca7ffe7dd3bb422b210fd1f36425ac2583de29795c489f4699947660",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/CountDownLatch.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CountDownLatch.java",
+      "sha256": "b1731587bce2ea45752765a4067bc0ae16001f66034302aac0cdbdee41d1d8b6",
+      "emitted_sha256": "b1731587bce2ea45752765a4067bc0ae16001f66034302aac0cdbdee41d1d8b6",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/CyclicBarrier.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/CyclicBarrier.java",
+      "sha256": "e18594335fbca0e10b092145fd2a8ccb6dca4da62fea3df4ffe60818cfb407aa",
+      "emitted_sha256": "e18594335fbca0e10b092145fd2a8ccb6dca4da62fea3df4ffe60818cfb407aa",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/DelayQueue.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/DelayQueue.java",
+      "sha256": "acae37ae963f800ca4649934c9219d70af79fc17a24367d062f771c7c26a2403",
+      "emitted_sha256": "acae37ae963f800ca4649934c9219d70af79fc17a24367d062f771c7c26a2403",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/ExecutorCompletionService.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ExecutorCompletionService.java",
+      "sha256": "91e682eeea1cdbab0cd6ad16bf14898886c26088fe7b172d795748e4e2537154",
+      "emitted_sha256": "91e682eeea1cdbab0cd6ad16bf14898886c26088fe7b172d795748e4e2537154",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/ExecutorService.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ExecutorService.java",
+      "sha256": "26852c8e1f7574ad77cf581e42215816cdf74a88b62c1fd6d58784bdfa8d5c13",
+      "emitted_sha256": "26852c8e1f7574ad77cf581e42215816cdf74a88b62c1fd6d58784bdfa8d5c13",
+      "baseline": [
+        {
+          "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/ExecutorService.java",
+          "sha256": "c8e9bbb1b859a2c1850293d5640a0a12b1b14c5681f9b40c28832e41a486043e"
+        }
+      ],
+      "change": "modified"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/Executors.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/Executors.java",
+      "sha256": "e64aee2f5351d210ac4ebc917b4173bed083c4830ece3b7a3b57e44a20c378a3",
+      "emitted_sha256": "e64aee2f5351d210ac4ebc917b4173bed083c4830ece3b7a3b57e44a20c378a3",
+      "baseline": [
+        {
+          "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/Executors.java",
+          "sha256": "ce573abdf76a3208106d7b45f6ee844b0c4983a52a189d0743fdeaacfe6bfb42"
+        }
+      ],
+      "change": "modified"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/ForkJoinPool.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ForkJoinPool.java",
+      "sha256": "a044ed49e61be175f2e4037aaac50952d13df264d72a28f1daec97468ee7bdbd",
+      "emitted_sha256": "a044ed49e61be175f2e4037aaac50952d13df264d72a28f1daec97468ee7bdbd",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/FutureTask.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/FutureTask.java",
+      "sha256": "269574c1682219e7caf5234d5c0927ff405894a0c0aca61977d28b23672ea1b7",
+      "emitted_sha256": "269574c1682219e7caf5234d5c0927ff405894a0c0aca61977d28b23672ea1b7",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/LinkedBlockingQueue.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/LinkedBlockingQueue.java",
+      "sha256": "fe6135f725e1fba8d0feab55821557b196ebac3879cfee6081c59d070e04ffcb",
+      "emitted_sha256": "fe6135f725e1fba8d0feab55821557b196ebac3879cfee6081c59d070e04ffcb",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/LinkedTransferQueue.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/LinkedTransferQueue.java",
+      "sha256": "4eee6b4aade637555ecaf6f43732ffdc5e84a38a0ad3451aac4a4faa5c8a1868",
+      "emitted_sha256": "4eee6b4aade637555ecaf6f43732ffdc5e84a38a0ad3451aac4a4faa5c8a1868",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/MainThreadBlockingQueue.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/MainThreadBlockingQueue.java",
+      "sha256": "0874e00935952e35b11e3e67cfc00412dbf8f326405c085767e16b6b8d1fddb1",
+      "emitted_sha256": "0874e00935952e35b11e3e67cfc00412dbf8f326405c085767e16b6b8d1fddb1",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/MinimalCompletionStage.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/MinimalCompletionStage.java",
+      "sha256": "dc312ef69170b22130f5fd045ff4acc26eb341f4e6f2a0d7a2e4c89b8e2dfe31",
+      "emitted_sha256": "dc312ef69170b22130f5fd045ff4acc26eb341f4e6f2a0d7a2e4c89b8e2dfe31",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/RejectedExecutionHandler.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/RejectedExecutionHandler.java",
+      "sha256": "ef94065a7d33a3b3482d998be414f71af00110923742d0084ddfccb0a0566281",
+      "emitted_sha256": "ef94065a7d33a3b3482d998be414f71af00110923742d0084ddfccb0a0566281",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/RunnableScheduledFuture.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/RunnableScheduledFuture.java",
+      "sha256": "b7626a0c0cb26f022c13d0bdb3c477ec9d4d54a6accb8df370a88386adbd6eb9",
+      "emitted_sha256": "b7626a0c0cb26f022c13d0bdb3c477ec9d4d54a6accb8df370a88386adbd6eb9",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/ScheduledThreadPoolExecutor.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ScheduledThreadPoolExecutor.java",
+      "sha256": "6ffc1e3f6990809bf249bb36bcb7af96312bf2641ca026813b5c3786fe69c2a3",
+      "emitted_sha256": "6ffc1e3f6990809bf249bb36bcb7af96312bf2641ca026813b5c3786fe69c2a3",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/Semaphore.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/Semaphore.java",
+      "sha256": "66e71de79be7e0ef47aa1fd90bfe6e82edcb160fcfa53d9828a083d2b4db5340",
+      "emitted_sha256": "66e71de79be7e0ef47aa1fd90bfe6e82edcb160fcfa53d9828a083d2b4db5340",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/ThreadFactory.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ThreadFactory.java",
+      "sha256": "aa948703de3027dc9197e11122285d612727b43ffccd2a36e90791cbdfd5c7c3",
+      "emitted_sha256": "aa948703de3027dc9197e11122285d612727b43ffccd2a36e90791cbdfd5c7c3",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/ThreadLocalRandom.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ThreadLocalRandom.java",
+      "sha256": "2026cf5d8c74e7c4a133c4de0cf0ff95dcd961787f8a87eb25f28a2cdc41f4fe",
+      "emitted_sha256": "2026cf5d8c74e7c4a133c4de0cf0ff95dcd961787f8a87eb25f28a2cdc41f4fe",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/ThreadPoolExecutor.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/ThreadPoolExecutor.java",
+      "sha256": "f191ce0716c37772389f6b61854f8ff1189d0377a8f92e2ff2e23abe502233e3",
+      "emitted_sha256": "f191ce0716c37772389f6b61854f8ff1189d0377a8f92e2ff2e23abe502233e3",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/TransferQueue.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/TransferQueue.java",
+      "sha256": "acdfc4213ff25a7bfc5592190e784a80983f6784f4851842fce9c3738a03fef6",
+      "emitted_sha256": "acdfc4213ff25a7bfc5592190e784a80983f6784f4851842fce9c3738a03fef6",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/atomic/AtomicBoolean.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicBoolean.java",
+      "sha256": "e48dd67e4e796ef6bb12af183d5c6e0d11caf2e89210bc13fb2f30438f7fe253",
+      "emitted_sha256": "e48dd67e4e796ef6bb12af183d5c6e0d11caf2e89210bc13fb2f30438f7fe253",
+      "baseline": [
+        {
+          "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicBoolean.java",
+          "sha256": "e48dd67e4e796ef6bb12af183d5c6e0d11caf2e89210bc13fb2f30438f7fe253"
+        }
+      ],
+      "change": "unchanged"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/atomic/AtomicInteger.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicInteger.java",
+      "sha256": "f3f5e9afd2d3b805caba97d73da9e81423436113fcaa85b67b7f90554e381aae",
+      "emitted_sha256": "f3f5e9afd2d3b805caba97d73da9e81423436113fcaa85b67b7f90554e381aae",
+      "baseline": [
+        {
+          "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicInteger.java",
+          "sha256": "57753e2de2925f6889e2fbaf8202d5639e86d8617ab6555a66cf07bf9e4d0fdc"
+        }
+      ],
+      "change": "modified"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/atomic/AtomicIntegerArray.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicIntegerArray.java",
+      "sha256": "ec7f8dba8564ca531c20498064aa4cb79d854eaef5e81cd65a240b24269fd19f",
+      "emitted_sha256": "ec7f8dba8564ca531c20498064aa4cb79d854eaef5e81cd65a240b24269fd19f",
+      "baseline": [
+        {
+          "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicIntegerArray.java",
+          "sha256": "395c9d7ba005eb0144e780cdc8a9480ce19f72e0804c23d1043e6bf9f27b2542"
+        }
+      ],
+      "change": "modified"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/atomic/AtomicLong.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicLong.java",
+      "sha256": "c1e901ccfc104e5dd8424af4e57ca92c17ebb54dd9ff7874eb121e4dac3fe92a",
+      "emitted_sha256": "c1e901ccfc104e5dd8424af4e57ca92c17ebb54dd9ff7874eb121e4dac3fe92a",
+      "baseline": [
+        {
+          "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicLong.java",
+          "sha256": "60ca15a34a7b1e2243cd5bc42706fe0ce7a2417df8796527f112ce8c34827e99"
+        }
+      ],
+      "change": "modified"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/atomic/AtomicLongArray.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicLongArray.java",
+      "sha256": "37862230f6d08b9f24a626fe9ce007b8b256eceeaf11bed319bab123112508dc",
+      "emitted_sha256": "37862230f6d08b9f24a626fe9ce007b8b256eceeaf11bed319bab123112508dc",
+      "baseline": [
+        {
+          "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicLongArray.java",
+          "sha256": "80f5a0840f35b615e260f0765736d5bff604e893a77943ff6bdbc4cf0565f1b1"
+        }
+      ],
+      "change": "modified"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/atomic/AtomicMarkableReference.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicMarkableReference.java",
+      "sha256": "509f858cf983abc795209605ac3ee41e7cb19e7744afcab9648769f7bda808af",
+      "emitted_sha256": "509f858cf983abc795209605ac3ee41e7cb19e7744afcab9648769f7bda808af",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/atomic/AtomicReference.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicReference.java",
+      "sha256": "6ddd4d96190178467735ddba7469a4fd314e8e3b485a26fd77c093bfb74e78ae",
+      "emitted_sha256": "6ddd4d96190178467735ddba7469a4fd314e8e3b485a26fd77c093bfb74e78ae",
+      "baseline": [
+        {
+          "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicReference.java",
+          "sha256": "a6e0e0c73918c67b71a360f3d2ee96b9a9c763ba376de486f18b6feb92619952"
+        }
+      ],
+      "change": "modified"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/atomic/AtomicReferenceArray.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicReferenceArray.java",
+      "sha256": "4afb91bb47ba31d4f62fb60cd320830af892b7b4430142e4480f276c2586ea70",
+      "emitted_sha256": "4afb91bb47ba31d4f62fb60cd320830af892b7b4430142e4480f276c2586ea70",
+      "baseline": [
+        {
+          "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/java/util/concurrent/atomic/AtomicReferenceArray.java",
+          "sha256": "48fc65be5aca59ae9fdc774cc9710d0f62a23c101c32f65380ffb3ab5129d312"
+        }
+      ],
+      "change": "modified"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/atomic/AtomicStampedReference.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/AtomicStampedReference.java",
+      "sha256": "c3636e350c79669e1993eeace977dc88480d6ec463f3203fb78e55b081703c04",
+      "emitted_sha256": "c3636e350c79669e1993eeace977dc88480d6ec463f3203fb78e55b081703c04",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/atomic/DoubleAdder.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/DoubleAdder.java",
+      "sha256": "9174670ce8bef539cdbafb2b3e51e37c4e6ffe102d09f1f49070f68bcfe46df5",
+      "emitted_sha256": "9174670ce8bef539cdbafb2b3e51e37c4e6ffe102d09f1f49070f68bcfe46df5",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/atomic/LongAdder.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/atomic/LongAdder.java",
+      "sha256": "517f5aeab56c8be78ff7c4a5250c34f8dc47c509d8918f9339ec49e1839a1dd7",
+      "emitted_sha256": "517f5aeab56c8be78ff7c4a5250c34f8dc47c509d8918f9339ec49e1839a1dd7",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/locks/Condition.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/locks/Condition.java",
+      "sha256": "d77bcab5dff40044d29cfe18bdc882dc0743e4473403618ac9e55a5cf2dce5d0",
+      "emitted_sha256": "d77bcab5dff40044d29cfe18bdc882dc0743e4473403618ac9e55a5cf2dce5d0",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/locks/Lock.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/locks/Lock.java",
+      "sha256": "72ef9d7603f3e8330ac390417d9eb96ddec4f91c3de2cca9f2b8ef6321e37226",
+      "emitted_sha256": "72ef9d7603f3e8330ac390417d9eb96ddec4f91c3de2cca9f2b8ef6321e37226",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/locks/LockSupport.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/locks/LockSupport.java",
+      "sha256": "52df1ececde80d343b48c6f58f583e904bee1b86641f28fe79da189855825788",
+      "emitted_sha256": "52df1ececde80d343b48c6f58f583e904bee1b86641f28fe79da189855825788",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/locks/ReadWriteLock.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/locks/ReadWriteLock.java",
+      "sha256": "003f73249db1f36b4797042d35f6527ae139ef4960969cd364a2fcfe71e22e19",
+      "emitted_sha256": "003f73249db1f36b4797042d35f6527ae139ef4960969cd364a2fcfe71e22e19",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/locks/ReentrantLock.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/locks/ReentrantLock.java",
+      "sha256": "fb3efd8dc0d5ee17f2804af8936b69d270cb308f7b5b76db416ae165b0851866",
+      "emitted_sha256": "fb3efd8dc0d5ee17f2804af8936b69d270cb308f7b5b76db416ae165b0851866",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/java/util/concurrent/locks/ReentrantReadWriteLock.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/java/util/concurrent/locks/ReentrantReadWriteLock.java",
+      "sha256": "2ecaa1e2dae6d5c7db9a7e402b2b1f09efe23c885296dfc4d428fe7cf15ae8ce",
+      "emitted_sha256": "2ecaa1e2dae6d5c7db9a7e402b2b1f09efe23c885296dfc4d428fe7cf15ae8ce",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/javaemul/internal/EmulatedCharset.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/javaemul/internal/EmulatedCharset.java",
+      "sha256": "74af445cec4da45654abd6e1106fbdadac59d0c8ac1fab1520cfc6bc00d9af0c",
+      "emitted_sha256": "74af445cec4da45654abd6e1106fbdadac59d0c8ac1fab1520cfc6bc00d9af0c",
+      "baseline": [
+        {
+          "source": "../java-nio-j2cl/third_party/j2cl-base/jre/java/javaemul/internal/EmulatedCharset.java",
+          "sha256": "3957f04e48d1e4f1f6b2b839a121fd31b0cf754e0b3deb6a04f982a156dbc841"
+        }
+      ],
+      "change": "modified"
+    },
+    {
+      "path": "jre/java/javaemul/internal/concurrent/MainThreadTimers.java",
+      "provider": "J2CL java.base",
+      "owner": "java-concurrent-j2cl",
+      "source": "../java-concurrent-j2cl/src/main/super/javaemul/internal/concurrent/MainThreadTimers.java",
+      "sha256": "60fbace339c046266d1d4ecd35b5665aa3d3702cc25ef8d479503acb6b02476e",
+      "emitted_sha256": "60fbace339c046266d1d4ecd35b5665aa3d3702cc25ef8d479503acb6b02476e",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/javaemul/internal/nio/UnsupportedNio.java",
+      "provider": "J2CL java.base",
+      "owner": "java-nio-j2cl",
+      "source": "../java-nio-j2cl/src/main/super/javaemul/internal/nio/UnsupportedNio.java",
+      "sha256": "bfd5812c0183194bf0fffed00b01de2c5dff8891b0dc5b3c2ebe0b6aef01aef0",
+      "emitted_sha256": "bfd5812c0183194bf0fffed00b01de2c5dff8891b0dc5b3c2ebe0b6aef01aef0",
+      "baseline": [],
+      "change": "added"
+    },
+    {
+      "path": "jre/java/module-info.java",
+      "provider": "J2CL java.base",
+      "owner": "mps-j2cl composition",
+      "sources": [
+        {
+          "owner": "java-nio-j2cl",
+          "source": "../java-nio-j2cl/src/main/super/module-info.java",
+          "sha256": "e9961856593e1f35e3efec6882b97cdec306d78b48a70555be77d3bbac3969c2"
+        },
+        {
+          "owner": "java-concurrent-j2cl",
+          "source": "../java-concurrent-j2cl/src/main/super/module-info.java",
+          "sha256": "4e3d4cb541e4ce4c82a67ad9a772399f4a0db992932f866c378a9b50e0ea03f1"
+        }
+      ],
+      "integration": {
+        "operation": "union of upstream, NIO and concurrent java.base exports",
+        "added_exports": [
+          "java.net",
+          "java.nio",
+          "java.nio.channels",
+          "java.nio.channels.spi",
+          "java.nio.charset.spi",
+          "java.nio.file",
+          "java.nio.file.attribute",
+          "java.nio.file.spi",
+          "java.time",
+          "java.util.concurrent.locks"
+        ]
+      },
+      "emitted_sha256": "7c9c88f9dc42172246a100e7eb0452e616dbea4b30d7a880d9a8904523a929f1",
+      "baseline": [
+        {
+          "source": "../java-nio-j2cl/third_party/j2cl-base/jre/java/module-info.java",
+          "sha256": "f46a3a07bc2b028211df55a81d3664a03b5208f46d364b488017a3b01a81a43c"
+        },
+        {
+          "source": "../java-concurrent-j2cl/third_party/j2cl-base/jre/java/module-info.java",
+          "sha256": "f46a3a07bc2b028211df55a81d3664a03b5208f46d364b488017a3b01a81a43c"
+        }
+      ],
+      "change": "modified"
+    }
+  ]
+}

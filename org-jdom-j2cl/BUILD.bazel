@@ -1,0 +1,14 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+j2cl_library(
+    name = "sax-api",
+    srcs = glob(["src/sax/java/**/*.java"]),
+    visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "jdom",
+    srcs = glob(["src/main/java/**/*.java"]),
+    deps = [":sax-api"],
+    visibility = ["//visibility:public"],
+)

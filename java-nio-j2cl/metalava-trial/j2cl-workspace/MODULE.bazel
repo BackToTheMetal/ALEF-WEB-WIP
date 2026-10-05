@@ -1,0 +1,9 @@
+module(name = "metalava_nio_trial")
+bazel_dep(name = "j2cl", version = "20260402")
+bazel_dep(name = "rules_closure", version = "0.16.0")
+single_version_override(
+    module_name = "j2cl",
+    version = "20260402",
+    patches = ["//patches:metalava-nio.patch"],
+    patch_strip = 1,
+)

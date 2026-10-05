@@ -1,0 +1,18 @@
+/* Design revision 03: one release workflow with immutable root manifests. */
+.package-summary{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:0;background:white;border:1px solid var(--line);border-radius:7px;margin:18px 0}
+.package-summary>div{padding:15px 18px;border-right:1px solid var(--line)}
+.package-summary>div:last-child{border:0}.package-summary strong{display:block;font-size:13px;font-weight:600;margin-top:4px}
+.package-summary small{display:block;font-size:11px;color:var(--muted);margin-top:3px}
+.freeze-note{display:flex;align-items:flex-start;gap:10px;padding:13px 16px;background:var(--tint);border:1px solid #d6e4da;border-radius:6px;font-size:12px;margin-bottom:18px}
+.freeze-note strong{font-weight:600}.freeze-note small{display:block;font-size:11px;color:var(--muted);margin-top:3px}
+.package-tabs{gap:24px}.manifest-wrap{overflow:auto}.manifest-table{width:100%;border-collapse:collapse;font-size:12px;text-align:left}
+.manifest-table th{background:#fafbf9;padding:12px 17px;font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+.manifest-table td{padding:12px 17px;border-bottom:1px solid var(--line);vertical-align:top}.manifest-table tr:last-child td{border:0}
+.manifest-table small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.manifest-table code{font-size:11px}.manifest-table .pin{display:inline-flex;align-items:center;gap:7px;color:var(--green);white-space:nowrap;font-weight:600}
+.manifest-table .pin .svg{width:13px}.package-root-note{font-size:11px;line-height:1.7;color:var(--muted);padding:12px 17px;background:#fafcf9;border-top:1px solid var(--line)}
+.package-history .release-row{align-items:flex-start}.package-history .release-row.selected{background:#f1f6f1}.package-history code{font-size:11px}.release-progress{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:15px 0;color:var(--muted);font-size:11px}.release-progress .svg{width:12px}.release-progress strong{color:var(--green);font-weight:600}
+.release-table{min-width:650px}.release-table th,.release-table td{padding:18px}.release-table .subline{display:block;font-size:11px;color:var(--muted);margin-top:4px}
+.release-card-footer{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:13px 18px;background:#fafcf9;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+.package-id{font:11px Consolas,monospace;color:var(--muted)}.release-page .immutable-strip{flex-wrap:wrap}.release-page .pr-meta{gap:8px}.release-page .review-rail .primary{margin-top:0}.release-page .decision-actions{gap:8px}.release-page .pr-tabs button{flex-shrink:0}.package-comment{white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:1180px){.package-tabs{flex-wrap:wrap;height:auto;gap:0 20px;padding-bottom:8px}.package-tabs>.grow{display:none}.package-tabs>.revision-select{margin-left:auto}.manifest-table{min-width:590px}}
+@media(max-width:800px){.package-summary{grid-template-columns:1fr}.package-summary>div{border-right:0;border-bottom:1px solid var(--line);padding:10px 14px}.package-summary small{display:inline;margin-left:7px}.package-summary strong{display:inline;margin-left:10px}.package-summary .upper{display:inline}.package-tabs{column-gap:17px!important}.package-tabs>button{font-size:11px}.freeze-note{font-size:11px}.release-page .pr-title h1{font-size:21px}.package-history .release-row{gap:10px}.release-page .immutable-strip code{font-size:10px}.release-page .immutable-strip>.grow{display:none}.release-page .review-rail{margin-top:0}.release-progress{font-size:10px}}

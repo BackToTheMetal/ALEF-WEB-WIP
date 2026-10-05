@@ -1,0 +1,191 @@
+{
+  "j2cl_version": "20260402",
+  "ownership": [
+    {
+      "path": "jre/java/java/io/InputStream.java",
+      "upstream_sha256": "df469c199697fbe23b8efc051f5f2147807a19143afb9ba919ec5f20d4f4d380",
+      "replacement_sha256": "76b531441f642f667da63cc2310f4cd3e8a37e4426b2f34ea54064b1e2b66ede"
+    },
+    {
+      "path": "jre/java/java/io/PrintStream.java",
+      "upstream_sha256": "39cf486a9d594c3c2f889b7d2cefb4fd98daee47bf2926aeb077f285b98ec37e",
+      "replacement_sha256": "7993b68dbb65ba56cf4ca5c9e367eabebfd23676aece3eb02983c142bf14480e"
+    },
+    {
+      "path": "jre/java/java/io/Reader.java",
+      "upstream_sha256": "686c1c7888260370d9dba8574f3b884d81ca60754e4c1cc56d360b42fa4d6c34",
+      "replacement_sha256": "1f3a72e4dd93ea4bbb2a01ba265b3dfdbe7ad4d12227512501b916d2d7384c87"
+    },
+    {
+      "path": "jre/java/java/lang/Character.java",
+      "upstream_sha256": "2154ae02f5631118f5a57d70a1452ad7c74d619f2378b4c3be80675f5655f0b4",
+      "replacement_sha256": "e589670e7d63c3375b6dfbddacb568f020d6f8195928e428197fa8726a6b4ffc"
+    },
+    {
+      "path": "jre/java/java/lang/Deprecated.java",
+      "upstream_sha256": "5f009eb68373bf987eb466fd421abf80f1bcf8d91a06982235118a116ca415f9",
+      "replacement_sha256": "ede00b2bad6ce0f2ad70acf2d46d72aa5477f420d3bad0a80b0e58e415fdb50c"
+    },
+    {
+      "path": "jre/java/java/lang/LinkageError.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "e5d3d41f0c86358ea1ad003bc6cb1f7cd58f2b2a111e3bbf492dfa0a91c891d9"
+    },
+    {
+      "path": "jre/java/java/lang/Long.java",
+      "upstream_sha256": "a953164bf89fdce539fc70077becf0e17790b37be8ab372a2fe9bf69f6580cf2",
+      "replacement_sha256": "b043e6c4e082e3e6dee9a89867556ba5dffe3aa815565e4c3d755aec2a9094c1"
+    },
+    {
+      "path": "jre/java/java/lang/NoClassDefFoundError.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "6be3a199c64b3fcc414489705ce419e0602c471fa733098e5ca8abd3e6e026b1"
+    },
+    {
+      "path": "jre/java/java/lang/NoSuchMethodException.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "89614cae430e38b884e0953e8b9bc75b00940432773e4861193db981290725cb"
+    },
+    {
+      "path": "jre/java/java/lang/OutOfMemoryError.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "0861434b3520e3380aa0d6c640cd27c610ed67a9769c4db1233ebe9dc4ceb1ed"
+    },
+    {
+      "path": "jre/java/java/lang/String.java",
+      "upstream_sha256": "bf9cd280bb6a2f7b43433faab683aceb92b06cbcc7ebbbc0130979c30301a556",
+      "replacement_sha256": "8ff1d815a7f7d5ae26cb5acb530408e905256a384fdc603f79b43657433579bf"
+    },
+    {
+      "path": "jre/java/java/lang/System.java",
+      "upstream_sha256": "4af2b9246edaa603b56b2d881e04b84877a8908780db63db94eea3a3c228c63f",
+      "replacement_sha256": "c865ca160e594ccd66a7abe53156244288b3e49fd5d08c175101c0e6718bf194"
+    },
+    {
+      "path": "jre/java/java/lang/VirtualMachineError.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "95ad015863389daa913c0fc3109ea926b71c0b3e302d0446ab202184ba4875d6"
+    },
+    {
+      "path": "jre/java/java/lang/ref/PhantomReference.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "93fbdcf11a320e3305a9c17a9e85292175219b6a21c78be6c90401a372c98f2f"
+    },
+    {
+      "path": "jre/java/java/lang/ref/Reference.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "c759a39c8a0e36a078f23abd00361dd56ce11a980163b2bc34e9e5b3c13c0a27"
+    },
+    {
+      "path": "jre/java/java/lang/ref/ReferenceQueue.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "bc33ee8ddb0eb8475970b847300338e97b43cb6204090d21b5ec734ca493ba27"
+    },
+    {
+      "path": "jre/java/java/lang/ref/SoftReference.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "967b370d12e00b7aeef65d0ef09b122a6380050415e54a59a36ccd22337852f8"
+    },
+    {
+      "path": "jre/java/java/lang/ref/WeakReference.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "2c592b24db7d63112aa36c26b0a0f3cf19c3d021f29a7d050c61cdcf886c3b27"
+    },
+    {
+      "path": "jre/java/java/lang/reflect/Modifier.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "e7a31ef82eeaa2f7f47bb526a210d3b82234e89f4b290cab9647423e19809920"
+    },
+    {
+      "path": "jre/java/java/security/SecureRandom.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "d6daa65bf8312cfa341682cebd94fea61e0db3848758c55b9753532d3b1ec9f1"
+    },
+    {
+      "path": "jre/java/java/time/DateTimeException.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "8cfed9e41bb162dc19c0a20c19b5a3322cb4b0767932f0358109bfa264bd1700"
+    },
+    {
+      "path": "jre/java/java/time/Duration.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "31d136dc19daf5dd1410945373c4537cb224fa579d35183760439be785f217d9"
+    },
+    {
+      "path": "jre/java/java/time/Instant.java",
+      "upstream_sha256": "ea5af62ee14d3c9cca338d4e6194a03692bd9cdabf7e7a63c50c5c611a7e0bf8",
+      "replacement_sha256": "5c98cb2a94ece356cf8eb0209d8579d9a644a58a785311fdf976f8548b63a20f"
+    },
+    {
+      "path": "jre/java/java/util/Collections.java",
+      "upstream_sha256": "394dd2b3607ed0a67f695b1eba39cfc072e80efebb7c6a54011a701e87f3f2d7",
+      "replacement_sha256": "061a24421a40bba419c43f7bb2c79aa35ab5454781b3c9596e79e76de9f388a8"
+    },
+    {
+      "path": "jre/java/java/util/List.java",
+      "upstream_sha256": "de164961abdf8cc9ae58a9ca0ec357ce8d932ae08c8a5d12afc695bf275434a9",
+      "replacement_sha256": "d425983deeed907919a4c905681498e5f9831de5827ea2277ce881f6c8a674f6"
+    },
+    {
+      "path": "jre/java/java/util/StringTokenizer.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "04aa66dc7891b447a02c76f72cf85bb5dbab763850294bc001e7c53cc069ccb0"
+    },
+    {
+      "path": "jre/java/java/util/UUID.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "c7de83a529414fb1083ed5fb0aa97ec3159c499042e53b027ae43ca5bc8f6d8f"
+    },
+    {
+      "path": "jre/java/java/util/WeakHashMap.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "a494bca3a9d71bb8611e9e85fc2317f78c6797256f6b8bd9e7dfd81cf88d7336"
+    },
+    {
+      "path": "jre/java/java/util/logging/LogRecord.java",
+      "upstream_sha256": "f0f1e832ec97dfdbfbdb42dd8db7b94cf93ae52b008035557a0da7257b07cc54",
+      "replacement_sha256": "22f8b2daaded44d5fd2c071dadc7050e1a2164a200945c1a2221339c3b8c525f"
+    },
+    {
+      "path": "jre/java/java/util/regex/JavaRegexUnicodeData.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "b8fbbc544db47518b977bf04384a71bdb83055693107dec8c00703b5987d95d5"
+    },
+    {
+      "path": "jre/java/java/util/regex/Matcher.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "376b8006ac587337576dd3bc253fc8619a6b94f990d3735b214bba209c9541c8"
+    },
+    {
+      "path": "jre/java/java/util/regex/Pattern.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "b8ddd733d97c9680d47bf50775f15bc33c0bdff4e1a86aee0a2e1fa246ce3fc3"
+    },
+    {
+      "path": "jre/java/java/util/regex/PatternSyntaxException.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "f36b27a1f2f4aba7169889dfe4e88cc2c097cd1cd609472e54133add59fd9146"
+    },
+    {
+      "path": "jre/java/java/util/stream/Stream.java",
+      "upstream_sha256": "d192400abb1313ce1e3709613fc135fd0d048d38b76283d71055c44dd1284778",
+      "replacement_sha256": "27fd2b529f85434e17114aff9706ac3ed5799575066c5c25ab543404bf05de07"
+    },
+    {
+      "path": "jre/java/javaemul/internal/CharacterData.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "0c90ba96a866c0204480225388ed4cd8e4f8b273528fb6ba0437f7f3f9e64276"
+    },
+    {
+      "path": "jre/java/javaemul/internal/MpsFormatter.java",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "replacement_sha256": "89bea9e5137c54f2d28c56e123b23d24b47966654f44fc8d8af1c4910c88c125"
+    },
+    {
+      "path": "jre/java/module-info.java",
+      "upstream_sha256": "7c9c88f9dc42172246a100e7eb0452e616dbea4b30d7a880d9a8904523a929f1",
+      "replacement_sha256": "1771b3d96c93eb14712c44660be6c586b4f380ee0ecadc4fa3476e7645c027e3"
+    }
+  ],
+  "patch_sha256": "c7d32d16ba57400a4f9e32996852ab8fa8b89c4a69961fa7b0fe409de7b8e581"
+}

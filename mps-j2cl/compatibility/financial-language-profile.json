@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "mps_commit": "d2589ed55bbc9445b660769fcc17da97e8e395a6",
+  "scope": "Generated financialCalculations editor and semantic aspects; in-memory browser application",
+  "languages": {
+    "jetbrains.mps.samples.fincalculator": "samples/financialCalculations/languages/calculator/source_gen",
+    "jetbrains.mps.baseLanguage": "languages/baseLanguage/baseLanguage/source_gen",
+    "jetbrains.mps.lang.core": "languages/core/core/source_gen",
+    "jetbrains.mps.lang.traceable": "languages/languageDesign/traceable/source_gen",
+    "jetbrains.mps.execution.util": "languages/util/execution/util/source_gen",
+    "jetbrains.mps.baseLanguage.blTypes": "languages/baseLanguage/blTypes/source_gen"
+  },
+  "source_count": 2359,
+  "source_manifest": "financial-sources.bzl",
+  "overrides": {
+    "mps/languages/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/Language.java": "financial-web/languages/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/Language.java",
+    "mps/languages/core/core/source_gen/jetbrains/mps/lang/core/Language.java": "financial-web/languages/core/core/source_gen/jetbrains/mps/lang/core/Language.java",
+    "mps/languages/languageDesign/traceable/source_gen/jetbrains/mps/lang/traceable/Language.java": "financial-web/languages/languageDesign/traceable/source_gen/jetbrains/mps/lang/traceable/Language.java",
+    "mps/languages/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/ClassifierMethodsHierarchyChecker.java": "financial-web/languages/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/ClassifierMethodsHierarchyChecker.java",
+    "mps/languages/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/check_DynamicReference_NonTypesystemRule.java": "financial-web/languages/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/check_DynamicReference_NonTypesystemRule.java",
+    "mps/languages/util/execution/util/source_gen/jetbrains/mps/execution/util/behavior/IMainClass__BehaviorDescriptor.java": "financial-web/languages/util/execution/util/source_gen/jetbrains/mps/execution/util/behavior/IMainClass__BehaviorDescriptor.java",
+    "mps/languages/baseLanguage/baseLanguage.util/source_gen/jetbrains/mps/baseLanguage/util/ReflectionUtil.java": "financial-web/languages/baseLanguage/baseLanguage.util/source_gen/jetbrains/mps/baseLanguage/util/ReflectionUtil.java",
+    "mps/workbench/mps-refactoring/j.m.refactoring.runtime/source_gen/jetbrains/mps/refactoring/runtime/access/RefactoringAccess.java": "financial-web/workbench/mps-refactoring/j.m.refactoring.runtime/source_gen/jetbrains/mps/refactoring/runtime/access/RefactoringAccess.java",
+    "mps/core/persistence/source/jetbrains/mps/smodel/SModelHeader.java": "financial-web/core/persistence/source/jetbrains/mps/smodel/SModelHeader.java",
+    "mps/core/persistence/source/jetbrains/mps/persistence/MetaModelInfoProvider.java": "financial-web/core/persistence/source/jetbrains/mps/persistence/MetaModelInfoProvider.java"
+  },
+  "accessory_model": {
+    "source": "mps/languages/baseLanguage/blTypes/languageAccessories/primitiveDescriptors.mps",
+    "sha256": "f49b48c11e33a0bacb7023377653ff72ca14bfd093a028cc9d93765316ceadc1",
+    "reader": "MPS ModelReader9Handler"
+  },
+  "support": [
+    "BaseLanguage dataflow used by typechecking",
+    "Generated typesystem structure metadata for runtime variables",
+    "Compiled quick-fix factories"
+  ],
+  "excluded": [
+    "Generation and text generation",
+    "Migrations and make facets",
+    "Desktop execution",
+    "Saving models and user filesystem persistence",
+    "Reflection over JVM stub constants"
+  ]
+}

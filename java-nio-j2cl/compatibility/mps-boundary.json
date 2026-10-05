@@ -1,0 +1,16 @@
+{
+  "fixture": "FileWithPosition.java (unchanged)",
+  "status": "EXPECTED_EXTERNAL_BLOCKER",
+  "nio_signature_errors": false,
+  "missing_external_methods": [
+    "forRemoval()",
+    "format(java.lang.String,java.nio.file.Path,long)",
+    "format(java.lang.String,java.nio.file.Path,long,long)",
+    "since()"
+  ],
+  "remaining_blockers": [
+    "J2CL String.format is unavailable",
+    "J2CL Deprecated lacks since and forRemoval attributes"
+  ],
+  "log": "out/mps-file-position.log"
+}

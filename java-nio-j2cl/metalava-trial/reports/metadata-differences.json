@@ -1,0 +1,158 @@
+{
+  "status": "DIFFERENCES_RECORDED",
+  "scope": "Sealed modifiers and enum declaration order, compared via javac syntax trees",
+  "differences": [
+    {
+      "kind": "enum",
+      "type": "java.nio.file.AccessMode",
+      "reference": [
+        "READ,WRITE,EXECUTE"
+      ],
+      "generated": [
+        "EXECUTE,READ,WRITE"
+      ]
+    },
+    {
+      "kind": "enum",
+      "type": "java.nio.file.FileVisitResult",
+      "reference": [
+        "CONTINUE,TERMINATE,SKIP_SUBTREE,SKIP_SIBLINGS"
+      ],
+      "generated": [
+        "CONTINUE,SKIP_SIBLINGS,SKIP_SUBTREE,TERMINATE"
+      ]
+    },
+    {
+      "kind": "enum",
+      "type": "java.nio.file.StandardCopyOption",
+      "reference": [
+        "REPLACE_EXISTING,COPY_ATTRIBUTES,ATOMIC_MOVE"
+      ],
+      "generated": [
+        "ATOMIC_MOVE,COPY_ATTRIBUTES,REPLACE_EXISTING"
+      ]
+    },
+    {
+      "kind": "enum",
+      "type": "java.nio.file.StandardOpenOption",
+      "reference": [
+        "READ,WRITE,APPEND,TRUNCATE_EXISTING,CREATE,CREATE_NEW,DELETE_ON_CLOSE,SPARSE,SYNC,DSYNC"
+      ],
+      "generated": [
+        "APPEND,CREATE,CREATE_NEW,DELETE_ON_CLOSE,DSYNC,READ,SPARSE,SYNC,TRUNCATE_EXISTING,WRITE"
+      ]
+    },
+    {
+      "kind": "enum",
+      "type": "java.nio.file.attribute.AclEntryFlag",
+      "reference": [
+        "FILE_INHERIT,DIRECTORY_INHERIT,NO_PROPAGATE_INHERIT,INHERIT_ONLY"
+      ],
+      "generated": [
+        "DIRECTORY_INHERIT,FILE_INHERIT,INHERIT_ONLY,NO_PROPAGATE_INHERIT"
+      ]
+    },
+    {
+      "kind": "enum",
+      "type": "java.nio.file.attribute.AclEntryPermission",
+      "reference": [
+        "READ_DATA,WRITE_DATA,APPEND_DATA,READ_NAMED_ATTRS,WRITE_NAMED_ATTRS,EXECUTE,DELETE_CHILD,READ_ATTRIBUTES,WRITE_ATTRIBUTES,DELETE,READ_ACL,WRITE_ACL,WRITE_OWNER,SYNCHRONIZE"
+      ],
+      "generated": [
+        "APPEND_DATA,DELETE,DELETE_CHILD,EXECUTE,READ_ACL,READ_ATTRIBUTES,READ_DATA,READ_NAMED_ATTRS,SYNCHRONIZE,WRITE_ACL,WRITE_ATTRIBUTES,WRITE_DATA,WRITE_NAMED_ATTRS,WRITE_OWNER"
+      ]
+    },
+    {
+      "kind": "enum",
+      "type": "java.nio.file.attribute.AclEntryType",
+      "reference": [
+        "ALLOW,DENY,AUDIT,ALARM"
+      ],
+      "generated": [
+        "ALARM,ALLOW,AUDIT,DENY"
+      ]
+    },
+    {
+      "kind": "enum",
+      "type": "java.nio.file.attribute.PosixFilePermission",
+      "reference": [
+        "OWNER_READ,OWNER_WRITE,OWNER_EXECUTE,GROUP_READ,GROUP_WRITE,GROUP_EXECUTE,OTHERS_READ,OTHERS_WRITE,OTHERS_EXECUTE"
+      ],
+      "generated": [
+        "GROUP_EXECUTE,GROUP_READ,GROUP_WRITE,OTHERS_EXECUTE,OTHERS_READ,OTHERS_WRITE,OWNER_EXECUTE,OWNER_READ,OWNER_WRITE"
+      ]
+    },
+    {
+      "kind": "sealed",
+      "type": "java.nio.Buffer",
+      "reference": [
+        true
+      ],
+      "generated": null
+    },
+    {
+      "kind": "sealed",
+      "type": "java.nio.ByteBuffer",
+      "reference": [
+        true
+      ],
+      "generated": null
+    },
+    {
+      "kind": "sealed",
+      "type": "java.nio.CharBuffer",
+      "reference": [
+        true
+      ],
+      "generated": null
+    },
+    {
+      "kind": "sealed",
+      "type": "java.nio.DoubleBuffer",
+      "reference": [
+        true
+      ],
+      "generated": null
+    },
+    {
+      "kind": "sealed",
+      "type": "java.nio.FloatBuffer",
+      "reference": [
+        true
+      ],
+      "generated": null
+    },
+    {
+      "kind": "sealed",
+      "type": "java.nio.IntBuffer",
+      "reference": [
+        true
+      ],
+      "generated": null
+    },
+    {
+      "kind": "sealed",
+      "type": "java.nio.LongBuffer",
+      "reference": [
+        true
+      ],
+      "generated": null
+    },
+    {
+      "kind": "sealed",
+      "type": "java.nio.MappedByteBuffer",
+      "reference": [
+        true
+      ],
+      "generated": null
+    },
+    {
+      "kind": "sealed",
+      "type": "java.nio.ShortBuffer",
+      "reference": [
+        true
+      ],
+      "generated": null
+    }
+  ]
+}

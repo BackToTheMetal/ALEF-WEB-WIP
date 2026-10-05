@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "tokens": {
+    "Inputstream": {
+      "file": "workbench/mps-workbench/source/jetbrains/mps/ide/java/_JavaLexer.java",
+      "reason": "Javadoc typo, not a type reference"
+    },
+    "WinNTFileSystem": {
+      "file": "core/vfs/source/jetbrains/mps/util/FileUtil.java",
+      "reason": "Stack-trace text in a comment, not a type reference"
+    }
+  }
+}

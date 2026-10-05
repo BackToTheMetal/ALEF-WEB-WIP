@@ -1,0 +1,14 @@
+WebAWT
+Copyright 2026 WebAWT contributors
+
+Original WebAWT code is licensed under the Apache License, Version 2.0.
+The bundled DejaVu Sans demonstration font retains its separate license at
+samples/dual_showcase/fonts/LICENSE.txt.
+
+WebAWT targets J2CL and uses Elemental2 at the browser boundary. Dependency
+authors retain their copyrights. See THIRD_PARTY_NOTICES.md and the release
+SBOM for dependency identities, scope and provenance records.
+
+OpenJDK signatures and black-box behavior define the compatibility reference.
+The source policy prohibits copying OpenJDK implementation bodies or tests.
+This policy is not a completed third-party provenance or legal audit.

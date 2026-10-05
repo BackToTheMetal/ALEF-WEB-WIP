@@ -1,0 +1,8 @@
+bazel-*
+.idea/
+*.iml
+.scannerwork/
+out/
+__pycache__/
+
+node_modules/

@@ -1,0 +1,399 @@
+Starting local Bazel server (8.3.1) and connecting to it...
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+Loading: 0 packages loaded
+    currently loading: 
+Analyzing: target //:application (1 packages loaded, 0 targets configured)
+Analyzing: target //:application (1 packages loaded, 0 targets configured)
+
+DEBUG: /home/niekh/.cache/bazel/_bazel_niekh/1d2b0f813e56ca37f1021037df20540a/external/rules_jvm_external+/private/extensions/maven.bzl:351:18: The maven repository 'maven' has contributions from multiple bzlmod modules, and will be resolved together: ["bazel_worker_java", "j2cl", "rules_closure", "rules_web_testing_java"]
+DEBUG: /home/niekh/.cache/bazel/_bazel_niekh/1d2b0f813e56ca37f1021037df20540a/external/rules_jvm_external+/private/lib/coordinates.bzl:76:18: Assuming com.google.escapevelocity:escapevelocity:jar:1.1 should be interpreted as com.google.escapevelocity:escapevelocity:1.1@jar
+DEBUG: /home/niekh/.cache/bazel/_bazel_niekh/1d2b0f813e56ca37f1021037df20540a/external/rules_jvm_external+/private/lib/coordinates.bzl:76:18: Assuming org.eclipse.jdt:org.eclipse.jdt.core:jar:3.22.0 should be interpreted as org.eclipse.jdt:org.eclipse.jdt.core:3.22.0@jar
+DEBUG: /home/niekh/.cache/bazel/_bazel_niekh/1d2b0f813e56ca37f1021037df20540a/external/rules_jvm_external+/private/lib/coordinates.bzl:76:18: Assuming org.eclipse.platform:org.eclipse.equinox.common:jar:3.12.0 should be interpreted as org.eclipse.platform:org.eclipse.equinox.common:3.12.0@jar
+Analyzing: target //:application (132 packages loaded, 3126 targets configured)
+
+DEBUG: /home/niekh/.cache/bazel/_bazel_niekh/1d2b0f813e56ca37f1021037df20540a/external/rules_jvm_external+/private/rules/coursier.bzl:754:18: Found duplicate artifact versions
+    com.google.guava:guava has multiple versions 33.0.0-jre, 33.2.1-jre
+Please remove duplicate artifacts from the artifact list so you do not get unexpected artifact versions
+Analyzing: target //:application (177 packages loaded, 3296 targets configured)
+
+Analyzing: target //:application (180 packages loaded, 5713 targets configured)
+
+Analyzing: target //:application (238 packages loaded, 7198 targets configured)
+
+Analyzing: target //:application (238 packages loaded, 7198 targets configured)
+
+WARNING: /home/niekh/.cache/bazel/_bazel_niekh/1d2b0f813e56ca37f1021037df20540a/external/rules_closure+/java/com/google/javascript/jscomp/BUILD:19:13: in java_library rule @@rules_closure+//java/com/google/javascript/jscomp:jscomp: target '@@rules_closure+//java/com/google/javascript/jscomp:jscomp' depends on deprecated target '@@rules_closure+//java/io/bazel/rules/closure:build_info_java_proto': Use java_proto_library from @com_google_protobuf//bazel:java_proto_library.bzl
+INFO: Analyzed target //:application (239 packages loaded, 7330 targets configured).
+[1 / 1] no actions running
+[30 / 1,182] [Prepa] JavaToolchainCompileClasses external/rules_java+/toolchains/platformclasspath_classes [for tool]
+[31 / 1,182] JavaToolchainCompileBootClasspath external/rules_java+/toolchains/platformclasspath.jar; 0s linux-sandbox
+[37 / 1,182] [Prepa] Executing genrule @@rules_jvm_external++maven+google_bazel_common_maven//:com_google_j2objc_j2objc_annotations_3_0_0_extension [for tool]
+[44 / 1,182] [Prepa] Executing genrule @@rules_jvm_external++maven+protobuf_maven//:com_google_code_findbugs_jsr305_3_0_2_extension [for tool]
+[53 / 1,182] Building external/protobuf+/java/core/liblite_runtime_only.jar (94 source files) [for tool]; 1s multiplex-worker
+INFO: From Building external/protobuf+/java/core/liblite_runtime_only.jar (94 source files) [for tool]:
+external/protobuf+/java/core/src/main/java/com/google/protobuf/UnsafeUtil.java:270: warning: [removal] AccessController in java.security has been deprecated and marked for removal
+          AccessController.doPrivileged(
+          ^
+[54 / 1,182] [Scann] Compiling upb/mem/arena.c [for tool]
+[73 / 1,182] [Scann] Compiling upb/message/array.c [for tool]
+[93 / 1,182] [Scann] Compiling upb/mini_descriptor/link.c [for tool]
+[105 / 1,182] [Scann] Compiling upb/reflection/message.c [for tool]
+[111 / 1,182] [Scann] Compiling upb/reflection/enum_def.c [for tool]
+[121 / 1,182] Compiling upb_generator/common.cc [for tool]; 0s linux-sandbox
+[123 / 1,182] [Prepa] Linking external/protobuf+/upb_generator/libcommon_stage0.a [for tool]
+[213 / 1,182] Compiling upb_generator/plugin.cc [for tool]; 1s linux-sandbox
+[221 / 1,182] Compiling upb_generator/minitable/fasttable.cc [for tool]; 0s linux-sandbox
+[222 / 1,182] Compiling upb_generator/minitable/generator.cc [for tool]; 0s linux-sandbox
+[223 / 1,182] [Scann] Compiling upb_generator/minitable/main.cc [for tool]
+[224 / 1,182] [Prepa] Linking external/protobuf+/upb_generator/minitable/libgenerator_stage0.a [for tool]
+[360 / 1,182] Compiling src/google/protobuf/compiler/main.cc [for tool]; 1s linux-sandbox
+[365 / 1,182] Compiling upb_generator/c/generator.cc [for tool]; 0s linux-sandbox
+[366 / 1,182] [Prepa] Linking external/protobuf+/upb/message/libcopy.a [for tool]
+[369 / 1,182] [Prepa] Linking external/protobuf+/upb_generator/c/libnames_internal.a [for tool]
+[377 / 1,182] [Prepa] Linking external/abseil-cpp+/absl/base/libraw_logging_internal.a [for tool]
+[385 / 1,182] [Scann] Compiling absl/base/internal/cycleclock.cc [for tool]
+[392 / 1,182] Compiling absl/strings/str_split.cc [for tool]; 0s linux-sandbox
+[397 / 1,182] [Scann] Compiling absl/strings/numbers.cc [for tool]
+[400 / 1,182] [Scann] Compiling absl/strings/internal/memutil.cc [for tool]
+[404 / 1,182] [Scann] Compiling absl/strings/escaping.cc [for tool]
+[406 / 1,182] [Scann] Compiling absl/strings/ascii.cc [for tool]
+[411 / 1,182] Compiling absl/strings/internal/str_format/output.cc [for tool]; 0s linux-sandbox
+[414 / 1,182] [Scann] Compiling absl/strings/internal/str_format/bind.cc [for tool]
+[416 / 1,182] [Scann] Compiling src/google/protobuf/port.cc [for tool]
+[421 / 1,182] [Prepa] Linking external/abseil-cpp+/absl/types/libbad_variant_access.a [for tool]
+[429 / 1,182] [Prepa] Linking external/abseil-cpp+/absl/time/internal/cctz/libcivil_time.a [for tool]
+[433 / 1,182] Compiling absl/time/internal/cctz/src/time_zone_libc.cc [for tool]; 0s linux-sandbox
+[435 / 1,182] Compiling absl/time/internal/cctz/src/time_zone_info.cc [for tool]; 0s linux-sandbox
+[438 / 1,182] [Scann] Compiling absl/time/time.cc [for tool]
+[442 / 1,182] [Scann] Compiling absl/time/duration.cc [for tool]
+[444 / 1,182] [Scann] Compiling absl/debugging/internal/utf8_for_code_point.cc [for tool]
+[451 / 1,182] Compiling absl/debugging/internal/demangle.cc [for tool]; 0s linux-sandbox
+[457 / 1,182] Compiling absl/debugging/internal/address_is_readable.cc [for tool]; 0s linux-sandbox
+[466 / 1,182] [Scann] Compiling absl/synchronization/internal/kernel_timeout.cc [for tool]
+[471 / 1,182] [Scann] Compiling absl/synchronization/internal/win32_waiter.cc [for tool]
+[475 / 1,182] [Scann] Compiling absl/synchronization/internal/pthread_waiter.cc [for tool]
+[478 / 1,182] [Scann] Compiling absl/synchronization/internal/create_thread_identity.cc [for tool]
+[481 / 1,182] [Scann] Compiling absl/profiling/internal/exponential_biased.cc [for tool]
+[486 / 1,182] Compiling absl/crc/internal/cpu_detect.cc [for tool]; 0s linux-sandbox
+[491 / 1,182] Compiling absl/crc/internal/crc_non_temporal_memcpy.cc [for tool]; 0s linux-sandbox
+[494 / 1,182] Compiling absl/crc/crc32c.cc [for tool]; 0s linux-sandbox
+[497 / 1,182] [Prepa] Linking external/abseil-cpp+/absl/crc/libcrc_cord_state.a [for tool]
+[503 / 1,182] [Scann] Compiling absl/strings/internal/cord_rep_consume.cc [for tool]
+[507 / 1,182] Compiling absl/strings/internal/cord_rep_btree.cc [for tool]; 0s linux-sandbox
+[512 / 1,182] [Scann] Compiling absl/strings/cord_buffer.cc [for tool]
+[514 / 1,182] Compiling absl/strings/cord.cc [for tool]; 1s linux-sandbox
+[515 / 1,182] Compiling absl/container/internal/raw_hash_set.cc [for tool]; 0s linux-sandbox
+[520 / 1,182] Compiling absl/log/internal/vlog_config.cc [for tool]; 0s linux-sandbox
+[528 / 1,182] [Scann] Compiling absl/log/internal/globals.cc [for tool]
+[533 / 1,182] [Prepa] Linking external/abseil-cpp+/absl/log/internal/liblog_sink_set.a [for tool]
+[543 / 1,182] [Prepa] Linking external/abseil-cpp+/absl/log/internal/libnullguard.a [for tool]
+[551 / 1,182] [Prepa] Linking external/abseil-cpp+/absl/debugging/libleak_check.a [for tool]
+[556 / 1,182] Compiling absl/status/status.cc [for tool]; 0s linux-sandbox
+[557 / 1,182] Compiling absl/status/internal/status_internal.cc [for tool]; 0s linux-sandbox
+[562 / 1,182] [Scann] Compiling src/google/protobuf/arena.cc [for tool]
+[566 / 1,182] [Scann] Compiling src/google/protobuf/io/io_win32.cc [for tool]
+[571 / 1,182] [Scann] Compiling src/google/protobuf/io/coded_stream.cc [for tool]
+[572 / 1,182] Compiling src/google/protobuf/io/zero_copy_stream.cc [for tool]; 0s linux-sandbox
+[573 / 1,182] Compiling src/google/protobuf/io/tokenizer.cc [for tool]; 0s linux-sandbox
+[577 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/io/libtokenizer.a [for tool]
+[579 / 1,182] Compiling src/google/protobuf/io/printer.cc [for tool]; 1s linux-sandbox
+[583 / 1,182] Compiling uncompr.c [for tool]; 0s linux-sandbox
+[594 / 1,182] [Scann] Compiling compress.c [for tool]
+[600 / 1,182] [Scann] Compiling src/google/protobuf/wire_format_lite.cc [for tool]
+[602 / 1,182] Compiling src/google/protobuf/repeated_field.cc [for tool]; 0s linux-sandbox
+[604 / 1,182] [Scann] Compiling src/google/protobuf/repeated_ptr_field.cc [for tool]
+[606 / 1,182] Compiling src/google/protobuf/message_lite.cc [for tool]; 0s linux-sandbox
+[608 / 1,182] [Scann] Compiling src/google/protobuf/inlined_string_field.cc [for tool]
+[609 / 1,182] Compiling src/google/protobuf/implicit_weak_message.cc [for tool]; 0s linux-sandbox
+[611 / 1,182] [Scann] Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]
+[611 / 1,182] Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 1s linux-sandbox
+[612 / 1,182] [Scann] Compiling src/google/protobuf/generated_enum_util.cc [for tool]
+[613 / 1,182] Compiling src/google/protobuf/extension_set.cc [for tool]; 0s linux-sandbox
+[614 / 1,182] [Scann] Compiling src/google/protobuf/arenaz_sampler.cc [for tool]
+[617 / 1,182] [Scann] Compiling src/google/protobuf/wire_format.cc [for tool]
+[617 / 1,182] Compiling src/google/protobuf/wire_format.cc [for tool]; 1s linux-sandbox
+[618 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/libprotobuf_lite.a [for tool]
+[619 / 1,182] Compiling src/google/protobuf/unknown_field_set.cc [for tool]; 1s linux-sandbox
+[621 / 1,182] Compiling src/google/protobuf/text_format.cc [for tool]; 0s linux-sandbox
+[622 / 1,182] [Scann] Compiling src/google/protobuf/reflection_ops.cc [for tool]
+[623 / 1,182] [Scann] Compiling src/google/protobuf/reflection_mode.cc [for tool]
+[624 / 1,182] Compiling src/google/protobuf/map_field.cc [for tool]; 1s linux-sandbox
+[625 / 1,182] Compiling src/google/protobuf/generated_message_reflection.cc [for tool]; 0s linux-sandbox
+[626 / 1,182] [Scann] Compiling src/google/protobuf/generated_message_bases.cc [for tool]
+[627 / 1,182] [Scann] Compiling src/google/protobuf/feature_resolver.cc [for tool]
+[627 / 1,182] Compiling src/google/protobuf/feature_resolver.cc [for tool]; 1s linux-sandbox
+[628 / 1,182] Compiling src/google/protobuf/extension_set_heavy.cc [for tool]; 0s linux-sandbox
+[629 / 1,182] [Scann] Compiling src/google/protobuf/dynamic_message.cc [for tool]
+[629 / 1,182] Compiling src/google/protobuf/dynamic_message.cc [for tool]; 1s linux-sandbox
+[631 / 1,182] [Scann] Compiling src/google/protobuf/generated_message_tctable_gen.cc [for tool]
+[632 / 1,182] [Scann] Compiling src/google/protobuf/descriptor_database.cc [for tool]
+[632 / 1,182] Compiling src/google/protobuf/descriptor_database.cc [for tool]; 1s linux-sandbox
+[633 / 1,182] [Scann] Compiling src/google/protobuf/cpp_features.pb.cc [for tool]
+[633 / 1,182] Compiling src/google/protobuf/cpp_features.pb.cc [for tool]; 1s linux-sandbox
+[634 / 1,182] Compiling src/google/protobuf/descriptor.pb.cc [for tool]; 0s linux-sandbox
+[635 / 1,182] [Scann] Compiling src/google/protobuf/descriptor.cc [for tool]
+[635 / 1,182] Compiling src/google/protobuf/descriptor.cc [for tool]; 1s linux-sandbox
+[635 / 1,182] Compiling src/google/protobuf/descriptor.cc [for tool]; 11s linux-sandbox
+[636 / 1,182] [Scann] Compiling src/google/protobuf/any.cc [for tool]
+[637 / 1,182] Compiling src/google/protobuf/message.cc [for tool]; 0s linux-sandbox
+[638 / 1,182] [Scann] Compiling upb_generator/common/names.cc [for tool]
+[641 / 1,182] Compiling src/google/protobuf/compiler/retention.cc [for tool]; 0s linux-sandbox
+[642 / 1,182] [Scann] Compiling src/google/protobuf/compiler/plugin.pb.cc [for tool]
+[643 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/compiler/libretention.a [for tool]
+[644 / 1,182] Compiling src/google/protobuf/compiler/code_generator.cc [for tool]; 1s linux-sandbox
+[645 / 1,182] Compiling src/google/protobuf/compiler/plugin.cc [for tool]; 0s linux-sandbox
+[651 / 1,182] [Scann] Compiling absl/log/initialize.cc [for tool]
+[654 / 1,182] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 1s linux-sandbox
+[655 / 1,182] [Prepa] Linking external/protobuf+/upb_generator/minitable/protoc-gen-upb_minitable_stage0 [for tool]
+[657 / 1,182] Compiling src/google/protobuf/compiler/versions.cc [for tool]; 0s linux-sandbox
+[659 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/compiler/libversions.a [for tool]
+[662 / 1,182] [Scann] Compiling src/google/protobuf/compiler/rust/rust_field_type.cc [for tool]
+[665 / 1,182] Compiling src/google/protobuf/compiler/rust/naming.cc [for tool]; 0s linux-sandbox
+[666 / 1,182] [Scann] Compiling src/google/protobuf/compiler/rust/rust_keywords.cc [for tool]
+[667 / 1,182] Compiling src/google/protobuf/compiler/rust/upb_helpers.cc [for tool]; 0s linux-sandbox
+[671 / 1,182] [Scann] Compiling src/google/protobuf/compiler/rust/accessors/unsupported_field.cc [for tool]
+[671 / 1,182] Compiling src/google/protobuf/compiler/rust/accessors/unsupported_field.cc [for tool]; 1s linux-sandbox
+[672 / 1,182] Compiling src/google/protobuf/compiler/rust/accessors/with_presence.cc [for tool]; 1s linux-sandbox
+[673 / 1,182] Compiling src/google/protobuf/compiler/rust/accessors/singular_cord.cc [for tool]; 0s linux-sandbox
+[674 / 1,182] [Scann] Compiling src/google/protobuf/compiler/rust/accessors/singular_string.cc [for tool]
+[674 / 1,182] Compiling src/google/protobuf/compiler/rust/accessors/singular_string.cc [for tool]; 1s linux-sandbox
+[675 / 1,182] Compiling src/google/protobuf/compiler/rust/accessors/singular_message.cc [for tool]; 1s linux-sandbox
+[676 / 1,182] Compiling src/google/protobuf/compiler/rust/accessors/map.cc [for tool]; 0s linux-sandbox
+[677 / 1,182] [Scann] Compiling src/google/protobuf/compiler/rust/accessors/repeated_field.cc [for tool]
+[677 / 1,182] Compiling src/google/protobuf/compiler/rust/accessors/repeated_field.cc [for tool]; 1s linux-sandbox
+[678 / 1,182] Compiling src/google/protobuf/compiler/rust/accessors/accessors.cc [for tool]; 0s linux-sandbox
+[680 / 1,182] Compiling src/google/protobuf/compiler/rust/accessors/default_value.cc [for tool]; 1s linux-sandbox
+[681 / 1,182] Compiling src/google/protobuf/compiler/rust/oneof.cc [for tool]; 0s linux-sandbox
+[682 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/compiler/rust/liboneof.a [for tool]
+[684 / 1,182] Compiling src/google/protobuf/compiler/rust/message.cc [for tool]; 1s linux-sandbox
+[685 / 1,182] Compiling src/google/protobuf/compiler/rust/enum.cc [for tool]; 1s linux-sandbox
+[688 / 1,182] Compiling src/google/protobuf/compiler/rust/crate_mapping.cc [for tool]; 0s linux-sandbox
+[689 / 1,182] [Scann] Compiling src/google/protobuf/compiler/rust/generator.cc [for tool]
+[689 / 1,182] Compiling src/google/protobuf/compiler/rust/generator.cc [for tool]; 1s linux-sandbox
+[692 / 1,182] Compiling src/google/protobuf/compiler/ruby/ruby_generator.cc [for tool]; 0s linux-sandbox
+[693 / 1,182] [Scann] Compiling src/google/protobuf/compiler/python/generator.cc [for tool]
+[693 / 1,182] Compiling src/google/protobuf/compiler/python/generator.cc [for tool]; 1s linux-sandbox
+[694 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/compiler/ruby/libruby.a [for tool]
+[695 / 1,182] Compiling src/google/protobuf/compiler/python/pyi_generator.cc [for tool]; 1s linux-sandbox
+[696 / 1,182] Compiling src/google/protobuf/compiler/python/helpers.cc [for tool]; 0s linux-sandbox
+[697 / 1,182] Compiling src/google/protobuf/compiler/php/names.cc [for tool]; 0s linux-sandbox
+[700 / 1,182] Compiling src/google/protobuf/compiler/php/php_generator.cc [for tool]; 0s linux-sandbox
+[701 / 1,182] [Scann] Compiling src/google/protobuf/compiler/objectivec/line_consumer.cc [for tool]
+[704 / 1,182] Compiling src/google/protobuf/compiler/objectivec/names.cc [for tool]; 0s linux-sandbox
+[705 / 1,182] [Scann] Compiling src/google/protobuf/compiler/objectivec/tf_decode_data.cc [for tool]
+[707 / 1,182] Compiling src/google/protobuf/compiler/objectivec/oneof.cc [for tool]; 0s linux-sandbox
+[708 / 1,182] [Scann] Compiling src/google/protobuf/compiler/objectivec/message_field.cc [for tool]
+[708 / 1,182] Compiling src/google/protobuf/compiler/objectivec/message_field.cc [for tool]; 1s linux-sandbox
+[709 / 1,182] [Scann] Compiling src/google/protobuf/compiler/objectivec/map_field.cc [for tool]
+[709 / 1,182] Compiling src/google/protobuf/compiler/objectivec/map_field.cc [for tool]; 1s linux-sandbox
+[710 / 1,182] Compiling src/google/protobuf/compiler/objectivec/primitive_field.cc [for tool]; 1s linux-sandbox
+[711 / 1,182] Compiling src/google/protobuf/compiler/objectivec/helpers.cc [for tool]; 0s linux-sandbox
+[712 / 1,182] Compiling src/google/protobuf/compiler/objectivec/message.cc [for tool]; 1s linux-sandbox
+[713 / 1,182] [Scann] Compiling src/google/protobuf/compiler/objectivec/import_writer.cc [for tool]
+[713 / 1,182] Compiling src/google/protobuf/compiler/objectivec/import_writer.cc [for tool]; 1s linux-sandbox
+[714 / 1,182] Compiling src/google/protobuf/compiler/objectivec/generator.cc [for tool]; 1s linux-sandbox
+[715 / 1,182] Compiling src/google/protobuf/compiler/objectivec/field.cc [for tool]; 0s linux-sandbox
+[716 / 1,182] [Scann] Compiling src/google/protobuf/compiler/objectivec/file.cc [for tool]
+[716 / 1,182] Compiling src/google/protobuf/compiler/objectivec/file.cc [for tool]; 1s linux-sandbox
+[717 / 1,182] [Scann] Compiling src/google/protobuf/compiler/objectivec/enum.cc [for tool]
+[717 / 1,182] Compiling src/google/protobuf/compiler/objectivec/enum.cc [for tool]; 1s linux-sandbox
+[718 / 1,182] Compiling src/google/protobuf/compiler/objectivec/extension.cc [for tool]; 1s linux-sandbox
+[719 / 1,182] Compiling src/google/protobuf/compiler/java/java_features.pb.cc [for tool]; 0s linux-sandbox
+[720 / 1,182] Compiling src/google/protobuf/compiler/objectivec/enum_field.cc [for tool]; 1s linux-sandbox
+[721 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/compiler/java/libjava_features_bootstrap.a [for tool]
+[724 / 1,182] [Scann] Compiling src/google/protobuf/compiler/java/names.cc [for tool]
+[724 / 1,182] Compiling src/google/protobuf/compiler/java/names.cc [for tool]; 1s linux-sandbox
+[725 / 1,182] Compiling src/google/protobuf/compiler/java/doc_comment.cc [for tool]; 0s linux-sandbox
+[726 / 1,182] [Scann] Compiling src/google/protobuf/compiler/java/helpers.cc [for tool]
+[726 / 1,182] Compiling src/google/protobuf/compiler/java/helpers.cc [for tool]; 1s linux-sandbox
+[727 / 1,182] Compiling src/google/protobuf/compiler/java/field_common.cc [for tool]; 1s linux-sandbox
+[728 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/compiler/java/libhelpers.a [for tool]
+[730 / 1,182] Compiling src/google/protobuf/compiler/java/full/service.cc [for tool]; 1s linux-sandbox
+[731 / 1,182] Compiling src/google/protobuf/compiler/java/internal_helpers.cc [for tool]; 0s linux-sandbox
+INFO: From Compiling src/google/protobuf/compiler/java/internal_helpers.cc [for tool]:
+external/protobuf+/src/google/protobuf/compiler/java/internal_helpers.cc: In lambda function:
+external/protobuf+/src/google/protobuf/compiler/java/internal_helpers.cc:180:29: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::pair<const google::protobuf::EnumValueDescriptor*, const google::protobuf::EnumValueDescriptor*> >::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  180 |           for (int i = 0; i < aliases.size(); i++) {
+      |                           ~~^~~~~~~~~~~~~~~~
+[732 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/compiler/java/full/libservice.a [for tool]
+[734 / 1,182] Compiling src/google/protobuf/compiler/java/lite/string_field.cc [for tool]; 1s linux-sandbox
+[735 / 1,182] [Scann] Compiling src/google/protobuf/compiler/java/lite/primitive_field.cc [for tool]
+[735 / 1,182] Compiling src/google/protobuf/compiler/java/lite/primitive_field.cc [for tool]; 1s linux-sandbox
+[736 / 1,182] [Scann] Compiling src/google/protobuf/compiler/java/lite/message_field.cc [for tool]
+[736 / 1,182] Compiling src/google/protobuf/compiler/java/lite/message_field.cc [for tool]; 1s linux-sandbox
+[737 / 1,182] Compiling src/google/protobuf/compiler/java/lite/make_field_gens.cc [for tool]; 0s linux-sandbox
+[738 / 1,182] Compiling src/google/protobuf/compiler/java/lite/map_field.cc [for tool]; 1s linux-sandbox
+[739 / 1,182] [Scann] Compiling src/google/protobuf/compiler/java/lite/extension.cc [for tool]
+[739 / 1,182] Compiling src/google/protobuf/compiler/java/lite/extension.cc [for tool]; 1s linux-sandbox
+[740 / 1,182] Compiling src/google/protobuf/compiler/java/lite/enum_field.cc [for tool]; 0s linux-sandbox
+[741 / 1,182] [Scann] Compiling src/google/protobuf/compiler/java/lite/extension.cc [for tool]
+[741 / 1,182] Compiling src/google/protobuf/compiler/java/lite/extension.cc [for tool]; 1s linux-sandbox
+[742 / 1,182] Compiling src/google/protobuf/compiler/java/lite/message_builder.cc [for tool]; 1s linux-sandbox
+[744 / 1,182] Compiling src/google/protobuf/compiler/java/lite/message.cc [for tool]; 0s linux-sandbox
+[745 / 1,182] [Scann] Compiling src/google/protobuf/compiler/java/lite/generator_factory.cc [for tool]
+[746 / 1,182] [Scann] Compiling src/google/protobuf/compiler/java/lite/enum.cc [for tool]
+[746 / 1,182] Compiling src/google/protobuf/compiler/java/lite/enum.cc [for tool]; 1s linux-sandbox
+[747 / 1,182] Compiling src/google/protobuf/compiler/java/message_serialization.cc [for tool]; 0s linux-sandbox
+[748 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/compiler/java/lite/liblite.a [for tool]
+[750 / 1,182] Compiling src/google/protobuf/compiler/java/full/string_field.cc [for tool]; 1s linux-sandbox
+[751 / 1,182] Compiling src/google/protobuf/compiler/java/full/primitive_field.cc [for tool]; 1s linux-sandbox
+[752 / 1,182] [Scann] Compiling src/google/protobuf/compiler/java/full/message_field.cc [for tool]
+[752 / 1,182] Compiling src/google/protobuf/compiler/java/full/message_field.cc [for tool]; 1s linux-sandbox
+[753 / 1,182] [Scann] Compiling src/google/protobuf/compiler/java/full/map_field.cc [for tool]
+[753 / 1,182] Compiling src/google/protobuf/compiler/java/full/map_field.cc [for tool]; 1s linux-sandbox
+[754 / 1,182] [Scann] Compiling src/google/protobuf/compiler/java/full/enum_field.cc [for tool]
+[754 / 1,182] Compiling src/google/protobuf/compiler/java/full/enum_field.cc [for tool]; 1s linux-sandbox
+[755 / 1,182] Compiling src/google/protobuf/compiler/java/full/make_field_gens.cc [for tool]; 0s linux-sandbox
+[756 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/compiler/java/full/libfgs.a [for tool]
+[758 / 1,182] Compiling src/google/protobuf/compiler/java/full/enum.cc [for tool]; 1s linux-sandbox
+[759 / 1,182] Compiling src/google/protobuf/compiler/java/full/message_builder.cc [for tool]; 0s linux-sandbox
+[760 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/compiler/java/full/libeg.a [for tool]
+[761 / 1,182] Compiling src/google/protobuf/compiler/java/full/message.cc [for tool]; 1s linux-sandbox
+[762 / 1,182] [Scann] Compiling src/google/protobuf/compiler/java/full/generator_factory.cc [for tool]
+[762 / 1,182] Compiling src/google/protobuf/compiler/java/full/generator_factory.cc [for tool]; 1s linux-sandbox
+[763 / 1,182] Compiling src/google/protobuf/compiler/java/full/extension.cc [for tool]; 0s linux-sandbox
+[764 / 1,182] [Scann] Compiling src/google/protobuf/compiler/java/shared_code_generator.cc [for tool]
+[764 / 1,182] Compiling src/google/protobuf/compiler/java/shared_code_generator.cc [for tool]; 1s linux-sandbox
+[766 / 1,182] Compiling src/google/protobuf/compiler/java/generator.cc [for tool]; 1s linux-sandbox
+[767 / 1,182] Compiling src/google/protobuf/compiler/java/context.cc [for tool]; 0s linux-sandbox
+[768 / 1,182] [Scann] Compiling src/google/protobuf/compiler/kotlin/message.cc [for tool]
+[768 / 1,182] Compiling src/google/protobuf/compiler/kotlin/message.cc [for tool]; 1s linux-sandbox
+[769 / 1,182] Compiling src/google/protobuf/compiler/kotlin/file.cc [for tool]; 1s linux-sandbox
+[770 / 1,182] Compiling src/google/protobuf/compiler/java/file.cc [for tool]; 1s linux-sandbox
+[771 / 1,182] [Scann] Compiling src/google/protobuf/compiler/kotlin/field.cc [for tool]
+[771 / 1,182] Compiling src/google/protobuf/compiler/kotlin/field.cc [for tool]; 1s linux-sandbox
+[772 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/compiler/java/libjava.a [for tool]
+[774 / 1,182] Compiling src/google/protobuf/compiler/kotlin/generator.cc [for tool]; 1s linux-sandbox
+[775 / 1,182] Compiling src/google/protobuf/compiler/csharp/names.cc [for tool]; 0s linux-sandbox
+[778 / 1,182] Compiling src/google/protobuf/compiler/csharp/csharp_wrapper_field.cc [for tool]; 1s linux-sandbox
+[779 / 1,182] Compiling src/google/protobuf/compiler/csharp/csharp_repeated_primitive_field.cc [for tool]; 0s linux-sandbox
+[780 / 1,182] Compiling src/google/protobuf/compiler/csharp/csharp_repeated_enum_field.cc [for tool]; 0s linux-sandbox
+[781 / 1,182] [Scann] Compiling src/google/protobuf/compiler/csharp/csharp_repeated_message_field.cc [for tool]
+[781 / 1,182] Compiling src/google/protobuf/compiler/csharp/csharp_repeated_message_field.cc [for tool]; 1s linux-sandbox
+[783 / 1,182] [Scann] Compiling src/google/protobuf/compiler/csharp/csharp_reflection_class.cc [for tool]
+[783 / 1,182] Compiling src/google/protobuf/compiler/csharp/csharp_reflection_class.cc [for tool]; 1s linux-sandbox
+[784 / 1,182] Compiling src/google/protobuf/compiler/csharp/csharp_primitive_field.cc [for tool]; 1s linux-sandbox
+[785 / 1,182] Compiling src/google/protobuf/compiler/csharp/csharp_message_field.cc [for tool]; 0s linux-sandbox
+[786 / 1,182] [Scann] Compiling src/google/protobuf/compiler/csharp/csharp_helpers.cc [for tool]
+[786 / 1,182] Compiling src/google/protobuf/compiler/csharp/csharp_helpers.cc [for tool]; 1s linux-sandbox
+[787 / 1,182] Compiling src/google/protobuf/compiler/csharp/csharp_message.cc [for tool]; 0s linux-sandbox
+[788 / 1,182] [Scann] Compiling src/google/protobuf/compiler/csharp/csharp_map_field.cc [for tool]
+[789 / 1,182] [Scann] Compiling src/google/protobuf/compiler/csharp/csharp_enum.cc [for tool]
+[789 / 1,182] Compiling src/google/protobuf/compiler/csharp/csharp_enum.cc [for tool]; 1s linux-sandbox
+[790 / 1,182] [Scann] Compiling src/google/protobuf/compiler/csharp/csharp_field_base.cc [for tool]
+[790 / 1,182] Compiling src/google/protobuf/compiler/csharp/csharp_field_base.cc [for tool]; 1s linux-sandbox
+[791 / 1,182] Compiling src/google/protobuf/compiler/csharp/csharp_doc_comment.cc [for tool]; 0s linux-sandbox
+[792 / 1,182] [Scann] Compiling src/google/protobuf/compiler/csharp/csharp_generator.cc [for tool]
+[793 / 1,182] [Scann] Compiling src/google/protobuf/compiler/csharp/csharp_enum_field.cc [for tool]
+[793 / 1,182] Compiling src/google/protobuf/compiler/csharp/csharp_enum_field.cc [for tool]; 1s linux-sandbox
+[797 / 1,182] Compiling src/google/protobuf/compiler/cpp/service.cc [for tool]; 1s linux-sandbox
+[798 / 1,182] Compiling src/google/protobuf/compiler/cpp/tracker.cc [for tool]; 0s linux-sandbox
+[799 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/namespace_printer.cc [for tool]
+[800 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/parse_function_generator.cc [for tool]
+[800 / 1,182] Compiling src/google/protobuf/compiler/cpp/parse_function_generator.cc [for tool]; 1s linux-sandbox
+[801 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/message_layout_helper.cc [for tool]
+[801 / 1,182] Compiling src/google/protobuf/compiler/cpp/message_layout_helper.cc [for tool]; 1s linux-sandbox
+[802 / 1,182] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 1s linux-sandbox
+[803 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/ifndef_guard.cc [for tool]
+[804 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/generator.cc [for tool]
+[804 / 1,182] Compiling src/google/protobuf/compiler/cpp/generator.cc [for tool]; 1s linux-sandbox
+[805 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/field_generators/string_view_field.cc [for tool]
+[805 / 1,182] Compiling src/google/protobuf/compiler/cpp/field_generators/string_view_field.cc [for tool]; 1s linux-sandbox
+[806 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/field_generators/string_field.cc [for tool]
+[806 / 1,182] Compiling src/google/protobuf/compiler/cpp/field_generators/string_field.cc [for tool]; 1s linux-sandbox
+[807 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/field_generators/primitive_field.cc [for tool]
+[807 / 1,182] Compiling src/google/protobuf/compiler/cpp/field_generators/primitive_field.cc [for tool]; 1s linux-sandbox
+[808 / 1,182] Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 0s linux-sandbox
+[809 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/field_generators/message_field.cc [for tool]
+[809 / 1,182] Compiling src/google/protobuf/compiler/cpp/field_generators/message_field.cc [for tool]; 1s linux-sandbox
+[810 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/field_generators/enum_field.cc [for tool]
+[810 / 1,182] Compiling src/google/protobuf/compiler/cpp/field_generators/enum_field.cc [for tool]; 1s linux-sandbox
+[811 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/field_generators/map_field.cc [for tool]
+[811 / 1,182] Compiling src/google/protobuf/compiler/cpp/field_generators/map_field.cc [for tool]; 1s linux-sandbox
+[812 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/field_generators/cord_field.cc [for tool]
+[812 / 1,182] Compiling src/google/protobuf/compiler/cpp/field_generators/cord_field.cc [for tool]; 1s linux-sandbox
+[813 / 1,182] Compiling src/google/protobuf/compiler/cpp/field.cc [for tool]; 1s linux-sandbox
+[814 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/field_chunk.cc [for tool]
+[815 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/extension.cc [for tool]
+[815 / 1,182] Compiling src/google/protobuf/compiler/cpp/extension.cc [for tool]; 1s linux-sandbox
+[816 / 1,182] [Scann] Compiling src/google/protobuf/compiler/cpp/enum.cc [for tool]
+[816 / 1,182] Compiling src/google/protobuf/compiler/cpp/enum.cc [for tool]; 1s linux-sandbox
+[817 / 1,182] [Scann] Compiling src/google/protobuf/compiler/importer.cc [for tool]
+[818 / 1,182] [Prepa] Linking external/protobuf+/src/google/protobuf/compiler/cpp/libcpp.a [for tool]
+[819 / 1,182] Compiling src/google/protobuf/compiler/parser.cc [for tool]; 1s linux-sandbox
+[820 / 1,182] [Scann] Compiling src/google/protobuf/compiler/zip_writer.cc [for tool]
+[822 / 1,182] Compiling src/google/protobuf/compiler/subprocess.cc [for tool]; 0s linux-sandbox
+[823 / 1,182] Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 1s linux-sandbox
+[824 / 1,182] [Prepa] Symlinking virtual .proto sources for @@protobuf+//src/google/protobuf:wrappers_proto [for tool]
+[840 / 1,182] Compiling src/google/protobuf/compiler/main.cc [for tool]; 0s linux-sandbox
+[845 / 1,182] [Prepa] Symlinking virtual .proto sources for @@protobuf+//src/google/protobuf:api_proto [for tool]
+[846 / 1,182] Compiling upb_generator/minitable/generator.cc [for tool]; 1s linux-sandbox
+[847 / 1,182] [Prepa] Executing genrule @@rules_jvm_external++maven+google_bazel_common_maven//:com_google_guava_guava_beta_checker_1_0_extension [for tool]
+[851 / 1,182] [Prepa] Executing genrule @@rules_jvm_external++maven+google_bazel_common_maven//:org_jetbrains_kotlinx_kotlinx_metadata_jvm_0_5_0_extension [for tool]
+[855 / 1,182] [Prepa] Executing genrule @@rules_jvm_external++maven+google_bazel_common_maven//:org_jetbrains_kotlin_kotlin_stdlib_common_1_8_0_extension [for tool]
+[871 / 1,182] [Prepa] Executing genrule @@rules_jvm_external++maven+google_bazel_common_maven//:com_google_devtools_ksp_symbol_processing_api_1_7_0_1_0_6_extension [for tool]
+[885 / 1,182] [Scann] Compiling upb/reflection/message_def.c [for tool]
+[899 / 1,182] [Prepa] Executing genrule @@rules_jvm_external++maven+google_bazel_common_maven//:com_google_auto_service_auto_service_1_1_1_extension [for tool]
+[933 / 1,182] [Prepa] Compiling Java headers external/bazel_worker_api+/libworker_protocol_proto-speed-hjar.jar (1 source jar) [for tool]
+[938 / 1,182] Building external/j2cl+/transpiler/java/com/google/j2cl/transpiler/backend/wasm/libsummary_proto-speed.jar (1 source jar) [for tool]; 0s multiplex-worker
+[943 / 1,182] Building external/protobuf+/java/core/libcore.jar (44 source files, 1 source jar) [for tool]; 0s multiplex-worker
+[944 / 1,182] [Prepa] Compiling Java headers external/j2cl+/jre/java/libjavaemul_internal_annotations-hjar.jar (12 source files)
+[949 / 1,182] [Prepa] Generating sources for primitives @@j2cl+//jre/java/javaemul/internal/vmbootstrap/primitives:src_byteprimitive_java_js
+[975 / 1,182] Stamping the manifest of @@rules_jvm_external++maven+maven//:net_java_dev_jna_jna_platform [for tool]; 0s linux-sandbox
+[980 / 1,182] Creating compile jar for @@rules_jvm_external++maven+maven//:net_java_dev_jna_jna [for tool]; 0s linux-sandbox
+[999 / 1,182] [Prepa] Stamping the manifest of @@rules_jvm_external++maven+maven//:org_osgi_org_osgi_service_prefs [for tool]
+[1,012 / 1,182] [Prepa] Creating compile jar for @@rules_jvm_external++maven+protobuf_maven//:com_google_errorprone_error_prone_annotations [for tool]
+[1,017 / 1,182] [Prepa] Building external/protobuf+/java/util/libutil.jar (8 source files) [for tool]
+[1,027 / 1,182] [Sched] Creating compile jar for @@rules_jvm_external++maven+maven//:org_eclipse_platform_org_eclipse_equinox_common [for tool]
+[1,029 / 1,182] [Prepa] Creating compile jar for @@rules_jvm_external++maven+maven//:com_google_javascript_closure_compiler [for tool]
+[1,030 / 1,182] [Prepa] Stamping the manifest of @@rules_jvm_external++maven+maven//:org_jsoup_jsoup [for tool]
+[1,037 / 1,182] [Prepa] Creating compile jar for @@rules_jvm_external++maven+maven//:com_google_code_findbugs_jsr305 [for tool]
+[1,042 / 1,182] [Prepa] Stamping the manifest of @@rules_jvm_external++maven+maven//:com_google_errorprone_error_prone_annotations [for tool]
+[1,052 / 1,182] Stamping the manifest of @@rules_jvm_external++maven+maven//:com_google_javascript_closure_compiler_unshaded [for tool]; 0s linux-sandbox
+[1,057 / 1,182] [Prepa] Creating compile jar for @@rules_jvm_external++maven+maven//:com_google_protobuf_protobuf_java [for tool]
+[1,064 / 1,182] [Prepa] Stamping the manifest of @@rules_jvm_external++maven+maven//:org_easymock_easymock [for tool]
+[1,071 / 1,182] [Prepa] Creating compile jar for @@rules_jvm_external++maven+maven//:org_hamcrest_hamcrest_core [for tool]
+[1,079 / 1,182] [Prepa] Stamping the manifest of @@rules_jvm_external++maven+google_bazel_common_maven//:com_google_dagger_dagger_compiler [for tool]
+[1,087 / 1,182] [Prepa] Stamping the manifest of @@rules_jvm_external++maven+google_bazel_common_maven//:org_jetbrains_kotlin_kotlin_stdlib [for tool]
+[1,095 / 1,182] [Prepa] Creating compile jar for @@rules_jvm_external++maven+google_bazel_common_maven//:javax_annotation_jsr250_api [for tool]
+[1,103 / 1,182] [Prepa] Creating compile jar for @@rules_jvm_external++maven+google_bazel_common_maven//:com_google_guava_guava [for tool]
+[1,114 / 1,182] [Prepa] Creating compile jar for @@rules_jvm_external++maven+google_bazel_common_maven//:com_google_j2objc_j2objc_annotations [for tool]
+[1,120 / 1,182] Compiling Java headers external/j2cl+/transpiler/java/com/google/j2cl/transpiler/ast/libast-hjar.jar (137 source files) and running annotation processors (J2clAstProcessor) [for tool]; 0s linux-sandbox
+[1,127 / 1,182] Building external/j2cl+/transpiler/java/com/google/j2cl/transpiler/backend/closure/libclosure.jar (14 source files) [for tool]; 0s multiplex-worker
+[1,131 / 1,182] [Prepa] Compiling Java headers external/j2cl+/tools/java/com/google/j2cl/tools/gwtincompatible/libgwtincompatible_lib-hjar.jar (3 source files) [for tool]
+[1,143 / 1,182] [Prepa] Building external/j2cl+/transpiler/java/com/google/j2cl/common/libcommon.jar (13 source files) and running annotation processors (AutoAnnotationProcessor, AutoOneOfProcessor, AutoValueProcessor) [for tool]
+[1,145 / 1,182] [Prepa] Building external/j2cl+/transpiler/java/com/google/j2cl/transpiler/passes/libpasses.jar (195 source files) and running annotation processors (AutoAnnotationProcessor, AutoOneOfProcessor, AutoValueProcessor, J2clAstProcessor) [for tool]
+[1,145 / 1,182] Building external/j2cl+/transpiler/java/com/google/j2cl/transpiler/passes/libpasses.jar (195 source files) and running annotation processors (AutoAnnotationProcessor, AutoOneOfProcessor, AutoValueProcessor, J2clAstProcessor) [for tool]; 1s multiplex-worker
+[1,146 / 1,182] Building external/j2cl+/transpiler/java/com/google/j2cl/transpiler/ast/libast.jar (137 source files) and running annotation processors (AutoAnnotationProcessor, AutoOneOfProcessor, AutoValueProcessor, J2clAstProcessor) [for tool]; 1s multiplex-worker
+INFO: From Building external/j2cl+/transpiler/java/com/google/j2cl/transpiler/ast/libast.jar (137 source files) and running annotation processors (AutoAnnotationProcessor, AutoOneOfProcessor, AutoValueProcessor, J2clAstProcessor) [for tool]:
+warning: File for type 'com.google.j2cl.transpiler.ast.AbstractVisitor' created in the last round will not be subject to annotation processing.
+warning: File for type 'com.google.j2cl.transpiler.ast.AbstractRewriter' created in the last round will not be subject to annotation processing.
+warning: File for type 'com.google.j2cl.transpiler.ast.ProcessorPrivate' created in the last round will not be subject to annotation processing.
+[1,150 / 1,182] [Prepa] Building source jar external/j2cl+/jre/java/libjre-src.jar
+[1,155 / 1,182] Transpiling to JavaScript @@j2cl+//jre/java:jre; 1s multiplex-worker
+INFO: From Transpiling to JavaScript @@j2cl+//jre/java:jre:
+Warning:DirectoryIteratorException.java:29: [unusable-by-js] Return type of 'IOException DirectoryIteratorException.getCause()' is not usable by but exposed to JavaScript.
+Suppress "[unusable-by-js]" warnings by adding a `@SuppressWarnings("unusable-by-js")` annotation to the corresponding member.
+0 error(s), 1 warning(s).
+[1,156 / 1,182] [Prepa] Transpiling to JavaScript @@//:probe
+[1,164 / 1,182] [Prepa] Compiling Java headers external/rules_closure+/java/io/bazel/rules/closure/worker/libworker-hjar.jar (13 source files) and running annotation processors (ComponentProcessor) [for tool]
+[1,165 / 1,182] Compiling Java headers external/rules_closure+/java/com/google/javascript/jscomp/libjscomp-hjar.jar (14 source files) and running annotation processors (ComponentProcessor) [for tool]; 0s linux-sandbox
+[1,168 / 1,182] [Prepa] Building external/rules_closure+/java/io/bazel/rules/closure/ClosureWorker.jar (1 source file) and running annotation processors (ComponentProcessor) [for tool]
+[1,171 / 1,182] [Prepa] Checking 1 JS files in @@rules_closure+//closure/private:base_lib
+[1,178 / 1,182] Checking 1 JS files in @@j2cl+//jre/java:jre; 0s worker
+[1,179 / 1,182] [Prepa] Checking 1 JS files in @@//:probe
+[1,181 / 1,182] Compiling 8 JavaScript files to application.js; 1s worker
+INFO: Found 1 target...
+Target //:application up-to-date:
+  bazel-bin/application.js
+  bazel-bin/application.js.map
+INFO: Elapsed time: 550.998s, Critical Path: 38.01s
+INFO: 1182 processes: 274 internal, 848 linux-sandbox, 60 worker.
+INFO: Build completed successfully, 1182 total actions

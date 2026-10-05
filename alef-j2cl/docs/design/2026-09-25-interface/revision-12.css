@@ -1,0 +1,12 @@
+/* Lock status has its own column; versions and unsaved edits remain separate. */
+.project .tree button{grid-template-columns:13px 16px minmax(0,1fr) 6px 16px;column-gap:6px}
+.project .tree-group{column-gap:6px}
+.project .tree-draft-slot{grid-column:4;width:6px;display:flex;align-items:center;color:var(--amber)}
+.project .tree-lock{grid-column:5;display:flex;align-items:center;justify-content:center;width:16px;height:20px;color:#837b74;cursor:help}
+.project .tree-lock>.svg{width:14px;height:14px;stroke-width:1.6}
+.project .tree-lock.available{visibility:hidden}
+.project .tree-lock.mine{color:var(--success)}
+.project .tree-lock.other{color:#b65a11}
+.project .tree-lock.other-tab{color:#7052a0}
+.project .tree-lock.unknown{color:var(--amber)}
+.project .tree button:hover .tree-lock{filter:brightness(.85)}

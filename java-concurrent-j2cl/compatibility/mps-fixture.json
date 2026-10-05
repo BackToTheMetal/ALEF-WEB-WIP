@@ -1,0 +1,7 @@
+{
+  "commit": "1ae803e4f8c52e470c94563059eca4b4b8397c8c",
+  "upstream": "core/util/source/jetbrains/mps/util/SimpleLRUCache.java",
+  "fixture": "tests/mps/jetbrains/mps/util/SimpleLRUCache.java",
+  "sha256": "01ca2422779aef511dd61bd526cd30f939e30e6a5283eadb690baec4991c4a5e",
+  "modifications": "none; working tree matched pinned HEAD"
+}

@@ -1,0 +1,14 @@
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+Analyzing: target //:application (0 packages loaded, 0 targets configured)
+Analyzing: target //:application (0 packages loaded, 0 targets configured)
+
+INFO: Analyzed target //:application (0 packages loaded, 0 targets configured).
+INFO: Found 1 target...
+Target //:application up-to-date:
+  bazel-bin/application.js
+  bazel-bin/application.js.map
+INFO: Elapsed time: 0.180s, Critical Path: 0.00s
+INFO: 1 process: 1 internal.
+INFO: Build completed successfully, 1 total action

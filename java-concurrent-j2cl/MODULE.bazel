@@ -1,0 +1,13 @@
+module(name = "java_concurrent_j2cl", version = "0.1.0")
+
+bazel_dep(name = "j2cl", version = "20260402")
+bazel_dep(name = "rules_closure", version = "0.16.0")
+
+# java.* declarations belong in J2CL's java.base bootclasspath. A consuming
+# root module must apply this override (and compose it with other JRE overlays).
+single_version_override(
+    module_name = "j2cl",
+    version = "20260402",
+    patch_strip = 1,
+    patches = ["//patches:j2cl-concurrent.patch"],
+)

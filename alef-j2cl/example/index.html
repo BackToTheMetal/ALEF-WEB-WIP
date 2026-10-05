@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ALEF IDE</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/interface.css">
+  <script src="/page.js" type="module"></script>
+  <script src="/backend-mode.js"></script>
+  <script src="/backend.js" type="module"></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="ide">
+    <header class="topbar">
+      <div class="brand"><span class="mark">a</span><strong>ALEF</strong></div>
+      <div class="actions" role="toolbar" aria-label="Editor actions">
+        <button id="undo" class="icon-button" aria-label="Undo" title="Undo (Ctrl / ⌘ Z)" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4 3 8l4 4M3 8h9a5 5 0 0 1 0 10" transform="translate(0 -2)"/></svg></button>
+        <button id="redo" class="icon-button" aria-label="Redo" title="Redo (Ctrl / ⌘ Shift Z)" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m13 4 4 4-4 4m4-4H8a5 5 0 0 0 0 10" transform="translate(0 -2)"/></svg></button>
+        <span class="toolbar-divider"></span><span class="session" title="Changes stay in this browser tab. Reloading starts a new session."><span class="session-dot"></span>Session only</span>
+      </div>
+    </header>
+    <div id="error" role="alert" hidden></div>
+    <div class="project-workspace">
+      <aside class="project-sidebar" aria-label="Project navigation"><mps-project-view id="project-view"></mps-project-view></aside>
+      <div id="project-resizer" role="separator" aria-label="Resize project view" aria-orientation="vertical" tabindex="0"></div>
+      <section class="workspace" aria-label="Workspace editor">
+        <div class="breadcrumbs"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5l3 3v10H4zM9 1.5v3h3M6 8h4M6 11h4"/></svg><span id="editor-path">Select a root in the project view</span><span id="editor-concept"></span></div>
+        <div class="editor-surface">
+          <div id="alef-editor" role="region" aria-label="Node editor">
+            <div id="loading"><span class="loading-ring"></span>Opening workspace…</div>
+            <div id="inspector-resizer" role="separator" aria-label="Resize inspector" aria-orientation="horizontal" tabindex="0"></div>
+            <div class="inspector-heading"><strong>Inspector</strong><span id="inspector-selection">Select a node to inspect</span><button id="toggle-inspector" data-ready disabled aria-expanded="true" title="Collapse inspector">Hide inspector</button></div>
+          </div>
+          <div id="empty-editor" hidden><span class="empty-symbol">◇</span><h1>Your workspace</h1><p>Open a root from the project view to start editing.</p><span>Right-click a package to create a new root.</span></div>
+        </div>
+      </section>
+    </div>
+    <footer class="statusbar"><div id="status" role="status" aria-live="polite"><span class="dot"></span><span id="status-text">Loading language runtime…</span></div><span id="root-count"></span><span class="status-hint">Alt + Enter <span>intentions</span></span><span class="status-mode">Projectional editor</span></footer>
+  </main>
+</body>
+</html>

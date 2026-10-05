@@ -1,0 +1,134 @@
+{
+  "generatedAt": "2026-09-08T06:57:44.3599355Z",
+  "sourceRoot": "C:\\Work\\MPS-Web",
+  "revision": "1ae803e4f8c52e470c94563059eca4b4b8397c8c",
+  "method": "git grep over tracked working-tree Java/Kotlin files; includes generated sources, tests, tools, and samples",
+  "limitation": "Textual inventory, not resolved member usage or runtime reachability; excludes dependency jars, untracked files, and MPS model inspection",
+  "importLineCount": 234,
+  "importingFileCount": 155,
+  "qualifiedReferenceLineCount": 247,
+  "importsByName": [
+    {
+      "name": "org.jdom.Element",
+      "count": 137
+    },
+    {
+      "name": "org.jdom.Document",
+      "count": 38
+    },
+    {
+      "name": "org.jdom.JDOMException",
+      "count": 24
+    },
+    {
+      "name": "org.jdom.Attribute",
+      "count": 8
+    },
+    {
+      "name": "org.jdom.output.XMLOutputter",
+      "count": 4
+    },
+    {
+      "name": "org.jdom.output.Format",
+      "count": 4
+    },
+    {
+      "name": "org.jdom.Text",
+      "count": 3
+    },
+    {
+      "name": "org.jdom.input.SAXBuilder",
+      "count": 3
+    },
+    {
+      "name": "org.jdom.ProcessingInstruction",
+      "count": 1
+    },
+    {
+      "name": "org.jdom.Namespace",
+      "count": 1
+    },
+    {
+      "name": "org.jdom.JDOMFactory",
+      "count": 1
+    },
+    {
+      "name": "org.jdom.filter2.Filters",
+      "count": 1
+    },
+    {
+      "name": "org.jdom.filter2.Filter",
+      "count": 1
+    },
+    {
+      "name": "org.jdom.filter2.AbstractFilter",
+      "count": 1
+    },
+    {
+      "name": "org.jdom.EntityRef",
+      "count": 1
+    },
+    {
+      "name": "org.jdom.DefaultJDOMFactory",
+      "count": 1
+    },
+    {
+      "name": "org.jdom.Content",
+      "count": 1
+    },
+    {
+      "name": "org.jdom.Comment",
+      "count": 1
+    },
+    {
+      "name": "org.jdom.CDATA",
+      "count": 1
+    },
+    {
+      "name": "org.jdom.xpath.XPathExpression",
+      "count": 1
+    },
+    {
+      "name": "org.jdom.xpath.XPathFactory",
+      "count": 1
+    }
+  ],
+  "filesByArea": [
+    {
+      "area": "core",
+      "count": 58
+    },
+    {
+      "area": "plugins",
+      "count": 39
+    },
+    {
+      "area": "workbench",
+      "count": 36
+    },
+    {
+      "area": "tools",
+      "count": 7
+    },
+    {
+      "area": "editor",
+      "count": 5
+    },
+    {
+      "area": "samples",
+      "count": 5
+    },
+    {
+      "area": "jps",
+      "count": 2
+    },
+    {
+      "area": "testbench",
+      "count": 2
+    },
+    {
+      "area": "IdeaPlugin",
+      "count": 1
+    }
+  ]
+}

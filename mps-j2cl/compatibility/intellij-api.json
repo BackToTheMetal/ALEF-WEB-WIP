@@ -1,0 +1,1210 @@
+{
+  "schema_version": 1,
+  "status": "selected compatibility surface compiled and contract-validated; full editor acceptance tracked separately",
+  "source_count": 276,
+  "ownership": "Authored compatibility sources outside mps; no IntelliJ binaries linked",
+  "api_reference": "Pinned MPS Java call sites; selected public signatures and enum values cross-checked against locally installed MPS 2025.3 IntelliJ jars",
+  "dependencies": [
+    "J2CL JRE",
+    "root-selected WebAWT",
+    "root-selected Basic WebSwing",
+    "JetBrains annotation declarations"
+  ],
+  "contracts": [
+    {
+      "area": "services and disposal",
+      "implementation": "Injected services, reverse disposal tree, dependent reads during cleanup, failure aggregation",
+      "tests": "services, disposal"
+    },
+    {
+      "area": "message bus",
+      "implementation": "Typed registered publisher factories, synchronous delivery, hierarchical topic propagation, disconnected disposable connections",
+      "tests": "messages"
+    },
+    {
+      "area": "commands and undo",
+      "implementation": "Nested command frames, grouped history, replay suppression, reverse undo, forward redo, invalidation on playback failure or clearHistory",
+      "tests": "undo"
+    },
+    {
+      "area": "action data",
+      "implementation": "Deferred cached snapshots, parent inheritance, explicit null masking, cyclic dependency detection",
+      "tests": "actions, dataSnapshots"
+    },
+    {
+      "area": "clipboard",
+      "implementation": "WebAWT clipboard and bounded identity-preserving transferable history, custom MPS node flavors retained",
+      "tests": "clipboard"
+    },
+    {
+      "area": "scheduling",
+      "implementation": "Queued Swing event-thread execution, cancellation after posting, bounded periodic scheduling, exceptional completion on periodic failure",
+      "tests": "runAsync"
+    },
+    {
+      "area": "editor presentation",
+      "implementation": "Measured completion fragments with decorations/accessibility, status text, focus adapters, content panels, lightweight popup disposal",
+      "tests": "fragments, popupsAndContents"
+    },
+    {
+      "area": "utilities",
+      "implementation": "Identity keys, ranges, XML/HTML escaping, immutable HTML construction, text and font values",
+      "tests": "keysAndRanges, defensiveCopies, html"
+    }
+  ],
+  "host_ports": [
+    "BrowserUtil.setBrowserOpener",
+    "Notifications.Bus.setBrowserSink",
+    "AnalyzeStacktraceUtil.setBrowserConsoleSink",
+    "VirtualFileManager.registerBrowserFileSystem",
+    "ActionManager.registerAction",
+    "BrowserIcons.register",
+    "BrowserMessageBus.registerPublisher",
+    "ToolWindowManager.registerBrowserToolWindow",
+    "WindowManager.registerBrowserFrame"
+  ],
+  "limitations": [
+    "Only selected IntelliJ members are implemented; metadata annotations do not activate IDE services.",
+    "No IntelliJ project/plugin discovery, persistent settings, native process control, or native window management.",
+    "Browser execution is cooperative; pooled execution does not create parallel browser workers.",
+    "Blocking confirmations and reflective bean copy throw UnsupportedOperationException.",
+    "Two-stroke custom keyboard shortcuts require host dispatch and currently throw.",
+    "Popup decoration/desktop placement flags are compatibility hints; popup parity is limited to the browser profile.",
+    "System clipboard means the WebAWT application clipboard; OS clipboard integration is a separate host concern.",
+    "Symbolic IntelliJ icon artwork is a visible placeholder until the host registers an asset."
+  ],
+  "verification": {
+    "jvm_synchronous_assertions": 147,
+    "jvm_async_scheduler": "passed",
+    "j2cl_surface": "Java transpilation and development/optimized Closure bundles passed",
+    "browser_contracts": "passed: 147 synchronous assertions plus asynchronous scheduler contracts in development/optimized bundles across Chromium, Firefox, and WebKit",
+    "browser_results": "out/intellij_contracts-browser-results.json"
+  },
+  "sources": [
+    {
+      "type": "com.intellij.codeInsight.CodeInsightSettings",
+      "source": "third_party/intellij-stubs/src/com/intellij/codeInsight/CodeInsightSettings.java"
+    },
+    {
+      "type": "com.intellij.codeInsight.documentation.DocFontSizePopup",
+      "source": "third_party/intellij-stubs/src/com/intellij/codeInsight/documentation/DocFontSizePopup.java"
+    },
+    {
+      "type": "com.intellij.codeInsight.documentation.DocumentationFontSize",
+      "source": "third_party/intellij-stubs/src/com/intellij/codeInsight/documentation/DocumentationFontSize.java"
+    },
+    {
+      "type": "com.intellij.codeInsight.hint.HintManagerImpl",
+      "source": "third_party/intellij-stubs/src/com/intellij/codeInsight/hint/HintManagerImpl.java"
+    },
+    {
+      "type": "com.intellij.codeInsight.hint.HintUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/codeInsight/hint/HintUtil.java"
+    },
+    {
+      "type": "com.intellij.codeInsight.hint.LineTooltipRenderer",
+      "source": "third_party/intellij-stubs/src/com/intellij/codeInsight/hint/LineTooltipRenderer.java"
+    },
+    {
+      "type": "com.intellij.codeInsight.hint.TooltipController",
+      "source": "third_party/intellij-stubs/src/com/intellij/codeInsight/hint/TooltipController.java"
+    },
+    {
+      "type": "com.intellij.codeInsight.hint.TooltipGroup",
+      "source": "third_party/intellij-stubs/src/com/intellij/codeInsight/hint/TooltipGroup.java"
+    },
+    {
+      "type": "com.intellij.codeInsight.hint.TooltipRenderer",
+      "source": "third_party/intellij-stubs/src/com/intellij/codeInsight/hint/TooltipRenderer.java"
+    },
+    {
+      "type": "com.intellij.compat.BrowserApplication",
+      "source": "third_party/intellij-stubs/src/com/intellij/compat/BrowserApplication.java"
+    },
+    {
+      "type": "com.intellij.compat.BrowserComponentManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/compat/BrowserComponentManager.java"
+    },
+    {
+      "type": "com.intellij.compat.BrowserEdtExecutor",
+      "source": "third_party/intellij-stubs/src/com/intellij/compat/BrowserEdtExecutor.java"
+    },
+    {
+      "type": "com.intellij.compat.BrowserIcons",
+      "source": "third_party/intellij-stubs/src/com/intellij/compat/BrowserIcons.java"
+    },
+    {
+      "type": "com.intellij.compat.BrowserMessageBus",
+      "source": "third_party/intellij-stubs/src/com/intellij/compat/BrowserMessageBus.java"
+    },
+    {
+      "type": "com.intellij.compat.BrowserProject",
+      "source": "third_party/intellij-stubs/src/com/intellij/compat/BrowserProject.java"
+    },
+    {
+      "type": "com.intellij.diagnostic.StartUpPerformanceService",
+      "source": "third_party/intellij-stubs/src/com/intellij/diagnostic/StartUpPerformanceService.java"
+    },
+    {
+      "type": "com.intellij.execution.process.ProcessIOExecutorService",
+      "source": "third_party/intellij-stubs/src/com/intellij/execution/process/ProcessIOExecutorService.java"
+    },
+    {
+      "type": "com.intellij.featureStatistics.FeatureUsageTracker",
+      "source": "third_party/intellij-stubs/src/com/intellij/featureStatistics/FeatureUsageTracker.java"
+    },
+    {
+      "type": "com.intellij.icons.AllIcons",
+      "source": "third_party/intellij-stubs/src/com/intellij/icons/AllIcons.java"
+    },
+    {
+      "type": "com.intellij.ide.BrowserUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/BrowserUtil.java"
+    },
+    {
+      "type": "com.intellij.ide.CopyPasteManagerEx",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/CopyPasteManagerEx.java"
+    },
+    {
+      "type": "com.intellij.ide.CopyProvider",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/CopyProvider.java"
+    },
+    {
+      "type": "com.intellij.ide.CutProvider",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/CutProvider.java"
+    },
+    {
+      "type": "com.intellij.ide.DataManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/DataManager.java"
+    },
+    {
+      "type": "com.intellij.ide.HelpTooltipManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/HelpTooltipManager.java"
+    },
+    {
+      "type": "com.intellij.ide.IdeBundle",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/IdeBundle.java"
+    },
+    {
+      "type": "com.intellij.ide.IdeEventQueue",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/IdeEventQueue.java"
+    },
+    {
+      "type": "com.intellij.ide.IdeTooltip",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/IdeTooltip.java"
+    },
+    {
+      "type": "com.intellij.ide.IdeTooltipManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/IdeTooltipManager.java"
+    },
+    {
+      "type": "com.intellij.ide.PasteProvider",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/PasteProvider.java"
+    },
+    {
+      "type": "com.intellij.ide.PowerSaveMode",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/PowerSaveMode.java"
+    },
+    {
+      "type": "com.intellij.ide.actions.RecentProjectsGroup",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/actions/RecentProjectsGroup.java"
+    },
+    {
+      "type": "com.intellij.ide.lightEdit.LightEditCompatible",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/lightEdit/LightEditCompatible.java"
+    },
+    {
+      "type": "com.intellij.ide.plugins.newui.EmptyCaret",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/plugins/newui/EmptyCaret.java"
+    },
+    {
+      "type": "com.intellij.ide.ui.AntialiasingType",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/ui/AntialiasingType.java"
+    },
+    {
+      "type": "com.intellij.ide.ui.UISettings",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/ui/UISettings.java"
+    },
+    {
+      "type": "com.intellij.ide.ui.UISettingsListener",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/ui/UISettingsListener.java"
+    },
+    {
+      "type": "com.intellij.ide.ui.customization.CustomActionsSchema",
+      "source": "third_party/intellij-stubs/src/com/intellij/ide/ui/customization/CustomActionsSchema.java"
+    },
+    {
+      "type": "com.intellij.lang.documentation.DocumentationMarkup",
+      "source": "third_party/intellij-stubs/src/com/intellij/lang/documentation/DocumentationMarkup.java"
+    },
+    {
+      "type": "com.intellij.notification.Notification",
+      "source": "third_party/intellij-stubs/src/com/intellij/notification/Notification.java"
+    },
+    {
+      "type": "com.intellij.notification.NotificationType",
+      "source": "third_party/intellij-stubs/src/com/intellij/notification/NotificationType.java"
+    },
+    {
+      "type": "com.intellij.notification.Notifications",
+      "source": "third_party/intellij-stubs/src/com/intellij/notification/Notifications.java"
+    },
+    {
+      "type": "com.intellij.openapi.Disposable",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/Disposable.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.ActionGroup",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionGroup.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.ActionInGroup",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionInGroup.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.ActionManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionManager.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.ActionPlaces",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionPlaces.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.ActionPopupMenu",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionPopupMenu.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.ActionToolbar",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionToolbar.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.ActionUiKind",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionUiKind.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.ActionUpdateThread",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ActionUpdateThread.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.AnAction",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/AnAction.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.AnActionEvent",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/AnActionEvent.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.Anchor",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/Anchor.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.CommonDataKeys",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/CommonDataKeys.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.Constraints",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/Constraints.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.CustomShortcutSet",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/CustomShortcutSet.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.CustomizedDataContext",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/CustomizedDataContext.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.DataContext",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DataContext.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.DataKey",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DataKey.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.DataMap",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DataMap.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.DataProvider",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DataProvider.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.DataSink",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DataSink.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.DataSnapshotProvider",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DataSnapshotProvider.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.DefaultActionGroup",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.IdeActions",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/IdeActions.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.KeyboardShortcut",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/KeyboardShortcut.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.PlatformDataKeys",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/PlatformDataKeys.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.Presentation",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/Presentation.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.Separator",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/Separator.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.Shortcut",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/Shortcut.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.ShortcutSet",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ShortcutSet.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.ToggleAction",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ToggleAction.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.UiDataProvider",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/UiDataProvider.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.ex.ActionManagerEx",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ex/ActionManagerEx.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.ex.ActionUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/ex/ActionUtil.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.impl.ActionButton",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/impl/ActionButton.java"
+    },
+    {
+      "type": "com.intellij.openapi.actionSystem.impl.SimpleDataContext",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/actionSystem/impl/SimpleDataContext.java"
+    },
+    {
+      "type": "com.intellij.openapi.application.Application",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/application/Application.java"
+    },
+    {
+      "type": "com.intellij.openapi.application.ApplicationListener",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/application/ApplicationListener.java"
+    },
+    {
+      "type": "com.intellij.openapi.application.ApplicationManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/application/ApplicationManager.java"
+    },
+    {
+      "type": "com.intellij.openapi.application.ModalityState",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/application/ModalityState.java"
+    },
+    {
+      "type": "com.intellij.openapi.command.CommandEvent",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/command/CommandEvent.java"
+    },
+    {
+      "type": "com.intellij.openapi.command.CommandListener",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/command/CommandListener.java"
+    },
+    {
+      "type": "com.intellij.openapi.command.CommandProcessor",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/command/CommandProcessor.java"
+    },
+    {
+      "type": "com.intellij.openapi.command.UndoConfirmationPolicy",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/command/UndoConfirmationPolicy.java"
+    },
+    {
+      "type": "com.intellij.openapi.command.undo.BasicUndoableAction",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/command/undo/BasicUndoableAction.java"
+    },
+    {
+      "type": "com.intellij.openapi.command.undo.DocumentReference",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/command/undo/DocumentReference.java"
+    },
+    {
+      "type": "com.intellij.openapi.command.undo.UndoManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/command/undo/UndoManager.java"
+    },
+    {
+      "type": "com.intellij.openapi.command.undo.UndoableAction",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/command/undo/UndoableAction.java"
+    },
+    {
+      "type": "com.intellij.openapi.command.undo.UnexpectedUndoException",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/command/undo/UnexpectedUndoException.java"
+    },
+    {
+      "type": "com.intellij.openapi.components.ApplicationComponent",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/components/ApplicationComponent.java"
+    },
+    {
+      "type": "com.intellij.openapi.components.BaseComponent",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/components/BaseComponent.java"
+    },
+    {
+      "type": "com.intellij.openapi.components.ComponentManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/components/ComponentManager.java"
+    },
+    {
+      "type": "com.intellij.openapi.components.PersistentStateComponent",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/components/PersistentStateComponent.java"
+    },
+    {
+      "type": "com.intellij.openapi.components.ProjectComponent",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/components/ProjectComponent.java"
+    },
+    {
+      "type": "com.intellij.openapi.components.RoamingType",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/components/RoamingType.java"
+    },
+    {
+      "type": "com.intellij.openapi.components.State",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/components/State.java"
+    },
+    {
+      "type": "com.intellij.openapi.components.Storage",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/components/Storage.java"
+    },
+    {
+      "type": "com.intellij.openapi.components.StoragePathMacros",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/components/StoragePathMacros.java"
+    },
+    {
+      "type": "com.intellij.openapi.diagnostic.Logger",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/diagnostic/Logger.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.Document",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/Document.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.Editor",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/Editor.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.EditorCoreUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/EditorCoreUtil.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.LogicalPosition",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/LogicalPosition.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.ScrollType",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/ScrollType.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.ScrollingModel",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/ScrollingModel.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.colors.CodeInsightColors",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/CodeInsightColors.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.colors.ColorKey",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/ColorKey.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.colors.EditorColors",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/EditorColors.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.colors.EditorColorsListener",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/EditorColorsListener.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.colors.EditorColorsManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/EditorColorsManager.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.colors.EditorColorsScheme",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.colors.EditorColorsUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/EditorColorsUtil.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.colors.FontPreferences",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/FontPreferences.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.colors.ModifiableFontPreferences",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/ModifiableFontPreferences.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.colors.TextAttributesKey",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/colors/TextAttributesKey.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.event.VisibleAreaEvent",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/event/VisibleAreaEvent.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.event.VisibleAreaListener",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/event/VisibleAreaListener.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.ex.EditorSettingsExternalizable",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/ex/EditorSettingsExternalizable.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.ex.util.EditorUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/ex/util/EditorUtil.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.impl.EditorCssFontResolver",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/impl/EditorCssFontResolver.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.impl.EditorHeaderComponent",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/impl/EditorHeaderComponent.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.impl.EditorImpl",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/impl/EditorImpl.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.impl.FontInfo",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/impl/FontInfo.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.impl.view.FontLayoutService",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/impl/view/FontLayoutService.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.markup.EffectType",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/markup/EffectType.java"
+    },
+    {
+      "type": "com.intellij.openapi.editor.markup.TextAttributes",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/editor/markup/TextAttributes.java"
+    },
+    {
+      "type": "com.intellij.openapi.extensions.AreaInstance",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/extensions/AreaInstance.java"
+    },
+    {
+      "type": "com.intellij.openapi.extensions.ExtensionPointName",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/extensions/ExtensionPointName.java"
+    },
+    {
+      "type": "com.intellij.openapi.extensions.PluginId",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/extensions/PluginId.java"
+    },
+    {
+      "type": "com.intellij.openapi.fileEditor.FileEditor",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/fileEditor/FileEditor.java"
+    },
+    {
+      "type": "com.intellij.openapi.fileEditor.FileEditorManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/fileEditor/FileEditorManager.java"
+    },
+    {
+      "type": "com.intellij.openapi.keymap.Keymap",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/keymap/Keymap.java"
+    },
+    {
+      "type": "com.intellij.openapi.keymap.KeymapManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/keymap/KeymapManager.java"
+    },
+    {
+      "type": "com.intellij.openapi.keymap.KeymapUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/keymap/KeymapUtil.java"
+    },
+    {
+      "type": "com.intellij.openapi.options.FontSize",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/options/FontSize.java"
+    },
+    {
+      "type": "com.intellij.openapi.progress.EmptyProgressIndicator",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/progress/EmptyProgressIndicator.java"
+    },
+    {
+      "type": "com.intellij.openapi.progress.ProcessCanceledException",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/progress/ProcessCanceledException.java"
+    },
+    {
+      "type": "com.intellij.openapi.progress.ProgressIndicator",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/progress/ProgressIndicator.java"
+    },
+    {
+      "type": "com.intellij.openapi.progress.ProgressManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/progress/ProgressManager.java"
+    },
+    {
+      "type": "com.intellij.openapi.progress.util.ProgressIndicatorBase",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/progress/util/ProgressIndicatorBase.java"
+    },
+    {
+      "type": "com.intellij.openapi.project.DumbAware",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/project/DumbAware.java"
+    },
+    {
+      "type": "com.intellij.openapi.project.DumbAwareAction",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/project/DumbAwareAction.java"
+    },
+    {
+      "type": "com.intellij.openapi.project.DumbService",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/project/DumbService.java"
+    },
+    {
+      "type": "com.intellij.openapi.project.IndexNotReadyException",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/project/IndexNotReadyException.java"
+    },
+    {
+      "type": "com.intellij.openapi.project.Project",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/project/Project.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.JBPopupMenu",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/JBPopupMenu.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.MessageType",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/MessageType.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.Messages",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/Messages.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.popup.Balloon",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/Balloon.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.popup.BalloonBuilder",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/BalloonBuilder.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.popup.ComponentPopupBuilder",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/ComponentPopupBuilder.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.popup.JBPopup",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/JBPopup.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.popup.JBPopupFactory",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/JBPopupFactory.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.popup.ListPopup",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/ListPopup.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.popup.ListPopupStep",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/ListPopupStep.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.popup.ListSeparator",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/ListSeparator.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.popup.MnemonicNavigationFilter",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/MnemonicNavigationFilter.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.popup.PopupStep",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/PopupStep.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.popup.SpeedSearchFilter",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/SpeedSearchFilter.java"
+    },
+    {
+      "type": "com.intellij.openapi.ui.popup.util.BaseListPopupStep",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/ui/popup/util/BaseListPopupStep.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.CheckedDisposable",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/CheckedDisposable.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.Computable",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/Computable.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.Condition",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/Condition.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.Disposer",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/Disposer.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.IconLoader",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/IconLoader.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.InvalidDataException",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/InvalidDataException.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.Key",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/Key.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.NlsActions",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/NlsActions.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.NlsSafe",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/NlsSafe.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.Pair",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/Pair.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.Ref",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/Ref.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.ScalableIcon",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/ScalableIcon.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.SystemInfo",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/SystemInfo.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.TextRange",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/TextRange.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.ThrowableComputable",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/ThrowableComputable.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.UserDataHolder",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/UserDataHolder.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.UserDataHolderBase",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/UserDataHolderBase.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.registry.Registry",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/registry/Registry.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.text.HtmlBuilder",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/text/HtmlBuilder.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.text.HtmlChunk",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/text/HtmlChunk.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.text.StringUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/text/StringUtil.java"
+    },
+    {
+      "type": "com.intellij.openapi.util.text.Strings",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/util/text/Strings.java"
+    },
+    {
+      "type": "com.intellij.openapi.vfs.VirtualFile",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/vfs/VirtualFile.java"
+    },
+    {
+      "type": "com.intellij.openapi.vfs.VirtualFileManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/vfs/VirtualFileManager.java"
+    },
+    {
+      "type": "com.intellij.openapi.vfs.VirtualFileSystem",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/vfs/VirtualFileSystem.java"
+    },
+    {
+      "type": "com.intellij.openapi.wm.IdeFocusManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/wm/IdeFocusManager.java"
+    },
+    {
+      "type": "com.intellij.openapi.wm.IdeFrame",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/wm/IdeFrame.java"
+    },
+    {
+      "type": "com.intellij.openapi.wm.IdeGlassPane",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/wm/IdeGlassPane.java"
+    },
+    {
+      "type": "com.intellij.openapi.wm.StatusBar",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/wm/StatusBar.java"
+    },
+    {
+      "type": "com.intellij.openapi.wm.ToolWindow",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/wm/ToolWindow.java"
+    },
+    {
+      "type": "com.intellij.openapi.wm.ToolWindowManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/wm/ToolWindowManager.java"
+    },
+    {
+      "type": "com.intellij.openapi.wm.WindowManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/wm/WindowManager.java"
+    },
+    {
+      "type": "com.intellij.openapi.wm.ex.StatusBarEx",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/wm/ex/StatusBarEx.java"
+    },
+    {
+      "type": "com.intellij.openapi.wm.ex.ToolWindowEx",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/wm/ex/ToolWindowEx.java"
+    },
+    {
+      "type": "com.intellij.openapi.wm.impl.IdeRootPane",
+      "source": "third_party/intellij-stubs/src/com/intellij/openapi/wm/impl/IdeRootPane.java"
+    },
+    {
+      "type": "com.intellij.psi.codeStyle.MinusculeMatcher",
+      "source": "third_party/intellij-stubs/src/com/intellij/psi/codeStyle/MinusculeMatcher.java"
+    },
+    {
+      "type": "com.intellij.psi.codeStyle.NameUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/psi/codeStyle/NameUtil.java"
+    },
+    {
+      "type": "com.intellij.reference.SoftReference",
+      "source": "third_party/intellij-stubs/src/com/intellij/reference/SoftReference.java"
+    },
+    {
+      "type": "com.intellij.ui.CollectionListModel",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/CollectionListModel.java"
+    },
+    {
+      "type": "com.intellij.ui.ColorUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/ColorUtil.java"
+    },
+    {
+      "type": "com.intellij.ui.DarculaColors",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/DarculaColors.java"
+    },
+    {
+      "type": "com.intellij.ui.DirtyUI",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/DirtyUI.java"
+    },
+    {
+      "type": "com.intellij.ui.Gray",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/Gray.java"
+    },
+    {
+      "type": "com.intellij.ui.HintHint",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/HintHint.java"
+    },
+    {
+      "type": "com.intellij.ui.HyperlinkLabel",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/HyperlinkLabel.java"
+    },
+    {
+      "type": "com.intellij.ui.IconManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/IconManager.java"
+    },
+    {
+      "type": "com.intellij.ui.IdeBorderFactory",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/IdeBorderFactory.java"
+    },
+    {
+      "type": "com.intellij.ui.JBColor",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/JBColor.java"
+    },
+    {
+      "type": "com.intellij.ui.LayeredIcon",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/LayeredIcon.java"
+    },
+    {
+      "type": "com.intellij.ui.LightColors",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/LightColors.java"
+    },
+    {
+      "type": "com.intellij.ui.LightweightHint",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/LightweightHint.java"
+    },
+    {
+      "type": "com.intellij.ui.NewUI",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/NewUI.java"
+    },
+    {
+      "type": "com.intellij.ui.ScrollPaneFactory",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/ScrollPaneFactory.java"
+    },
+    {
+      "type": "com.intellij.ui.SideBorder",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/SideBorder.java"
+    },
+    {
+      "type": "com.intellij.ui.SimpleColoredComponent",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/SimpleColoredComponent.java"
+    },
+    {
+      "type": "com.intellij.ui.SimpleTextAttributes",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/SimpleTextAttributes.java"
+    },
+    {
+      "type": "com.intellij.ui.UserActivityProviderComponent",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/UserActivityProviderComponent.java"
+    },
+    {
+      "type": "com.intellij.ui.awt.RelativePoint",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/awt/RelativePoint.java"
+    },
+    {
+      "type": "com.intellij.ui.components.Interpolable",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/components/Interpolable.java"
+    },
+    {
+      "type": "com.intellij.ui.components.JBLayeredPane",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/components/JBLayeredPane.java"
+    },
+    {
+      "type": "com.intellij.ui.components.JBList",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/components/JBList.java"
+    },
+    {
+      "type": "com.intellij.ui.components.JBScrollBar",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/components/JBScrollBar.java"
+    },
+    {
+      "type": "com.intellij.ui.components.JBScrollPane",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/components/JBScrollPane.java"
+    },
+    {
+      "type": "com.intellij.ui.components.panels.NonOpaquePanel",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/components/panels/NonOpaquePanel.java"
+    },
+    {
+      "type": "com.intellij.ui.content.Content",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/content/Content.java"
+    },
+    {
+      "type": "com.intellij.ui.content.ContentFactory",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/content/ContentFactory.java"
+    },
+    {
+      "type": "com.intellij.ui.content.ContentManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/content/ContentManager.java"
+    },
+    {
+      "type": "com.intellij.ui.paint.LinePainter2D",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/paint/LinePainter2D.java"
+    },
+    {
+      "type": "com.intellij.ui.popup.AbstractPopup",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/popup/AbstractPopup.java"
+    },
+    {
+      "type": "com.intellij.ui.popup.ClosableByLeftArrow",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/popup/ClosableByLeftArrow.java"
+    },
+    {
+      "type": "com.intellij.ui.scale.JBUIScale",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/scale/JBUIScale.java"
+    },
+    {
+      "type": "com.intellij.ui.speedSearch.SpeedSearchUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/ui/speedSearch/SpeedSearchUtil.java"
+    },
+    {
+      "type": "com.intellij.unscramble.AnalyzeStacktraceUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/unscramble/AnalyzeStacktraceUtil.java"
+    },
+    {
+      "type": "com.intellij.util.Alarm",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/Alarm.java"
+    },
+    {
+      "type": "com.intellij.util.AlarmFactory",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/AlarmFactory.java"
+    },
+    {
+      "type": "com.intellij.util.ArrayUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/ArrayUtil.java"
+    },
+    {
+      "type": "com.intellij.util.ConcurrencyUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/ConcurrencyUtil.java"
+    },
+    {
+      "type": "com.intellij.util.IconUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/IconUtil.java"
+    },
+    {
+      "type": "com.intellij.util.IncorrectOperationException",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/IncorrectOperationException.java"
+    },
+    {
+      "type": "com.intellij.util.LocalTimeCounter",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/LocalTimeCounter.java"
+    },
+    {
+      "type": "com.intellij.util.ThrowableRunnable",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/ThrowableRunnable.java"
+    },
+    {
+      "type": "com.intellij.util.concurrency.EdtExecutorService",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/concurrency/EdtExecutorService.java"
+    },
+    {
+      "type": "com.intellij.util.concurrency.annotations.RequiresEdt",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/concurrency/annotations/RequiresEdt.java"
+    },
+    {
+      "type": "com.intellij.util.containers.ContainerUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/containers/ContainerUtil.java"
+    },
+    {
+      "type": "com.intellij.util.containers.FList",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/containers/FList.java"
+    },
+    {
+      "type": "com.intellij.util.containers.SortedList",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/containers/SortedList.java"
+    },
+    {
+      "type": "com.intellij.util.io.URLUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/io/URLUtil.java"
+    },
+    {
+      "type": "com.intellij.util.messages.MessageBus",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/messages/MessageBus.java"
+    },
+    {
+      "type": "com.intellij.util.messages.MessageBusConnection",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/messages/MessageBusConnection.java"
+    },
+    {
+      "type": "com.intellij.util.messages.SimpleMessageBusConnection",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/messages/SimpleMessageBusConnection.java"
+    },
+    {
+      "type": "com.intellij.util.messages.Topic",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/messages/Topic.java"
+    },
+    {
+      "type": "com.intellij.util.text.Matcher",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/text/Matcher.java"
+    },
+    {
+      "type": "com.intellij.util.ui.AbstractLayoutManager",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/ui/AbstractLayoutManager.java"
+    },
+    {
+      "type": "com.intellij.util.ui.ButtonlessScrollBarUI",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/ui/ButtonlessScrollBarUI.java"
+    },
+    {
+      "type": "com.intellij.util.ui.JBDimension",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/ui/JBDimension.java"
+    },
+    {
+      "type": "com.intellij.util.ui.JBUI",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/ui/JBUI.java"
+    },
+    {
+      "type": "com.intellij.util.ui.MouseEventAdapter",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/ui/MouseEventAdapter.java"
+    },
+    {
+      "type": "com.intellij.util.ui.StartupUiUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/ui/StartupUiUtil.java"
+    },
+    {
+      "type": "com.intellij.util.ui.UIUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/ui/UIUtil.java"
+    },
+    {
+      "type": "com.intellij.util.ui.accessibility.ScreenReader",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/ui/accessibility/ScreenReader.java"
+    },
+    {
+      "type": "com.intellij.util.ui.update.MergingUpdateQueue",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/ui/update/MergingUpdateQueue.java"
+    },
+    {
+      "type": "com.intellij.util.ui.update.Update",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/ui/update/Update.java"
+    },
+    {
+      "type": "com.intellij.util.xmlb.XmlSerializerUtil",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/xmlb/XmlSerializerUtil.java"
+    },
+    {
+      "type": "com.intellij.util.xmlb.annotations.AbstractCollection",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/AbstractCollection.java"
+    },
+    {
+      "type": "com.intellij.util.xmlb.annotations.Attribute",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/Attribute.java"
+    },
+    {
+      "type": "com.intellij.util.xmlb.annotations.CollectionBean",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/CollectionBean.java"
+    },
+    {
+      "type": "com.intellij.util.xmlb.annotations.MapAnnotation",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/MapAnnotation.java"
+    },
+    {
+      "type": "com.intellij.util.xmlb.annotations.OptionTag",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/OptionTag.java"
+    },
+    {
+      "type": "com.intellij.util.xmlb.annotations.Property",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/Property.java"
+    },
+    {
+      "type": "com.intellij.util.xmlb.annotations.Tag",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/Tag.java"
+    },
+    {
+      "type": "com.intellij.util.xmlb.annotations.Text",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/Text.java"
+    },
+    {
+      "type": "com.intellij.util.xmlb.annotations.Transient",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/Transient.java"
+    },
+    {
+      "type": "com.intellij.util.xmlb.annotations.XCollection",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/XCollection.java"
+    },
+    {
+      "type": "com.intellij.util.xmlb.annotations.XMap",
+      "source": "third_party/intellij-stubs/src/com/intellij/util/xmlb/annotations/XMap.java"
+    }
+  ],
+  "usage_inventory": {
+    "file": "compatibility/intellij-usage.json",
+    "generator": "tools/inventory_intellij.py",
+    "retained_sources": 2052,
+    "overlay_sources": 100,
+    "reference_counts": {
+      "fully_qualified_code": 16,
+      "qualified_imported_type": 490,
+      "qualified_subclass": 82,
+      "type_import": 564
+    },
+    "unresolved_provider_references": 0,
+    "limitations": [
+      "Lexical inventory, not Java symbol or overload resolution",
+      "Resolved provider means the owning top-level source exists; a nested type or member may still be missing",
+      "Instance-member calls and implicit static imports require javac/J2CL for full validation",
+      "Wildcard imports and complex inheritance are recorded but not expanded",
+      "Subclass-qualified references are a conservative superset and may name members declared by the MPS subclass",
+      "Class-name strings are evidence only, not assumed executable reflective loads"
+    ]
+  }
+}

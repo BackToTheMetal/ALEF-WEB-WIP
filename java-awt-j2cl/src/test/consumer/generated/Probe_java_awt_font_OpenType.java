@@ -1,0 +1,63 @@
+package java.awt.font;
+
+// Generated from retained OpenJDK signatures. Compile only; never execute.
+final class Probe_java_awt_font_OpenType {
+    static void call0() { int value = java.awt.font.OpenType.TAG_CMAP; }
+    static void call1() { int value = java.awt.font.OpenType.TAG_HEAD; }
+    static void call2() { int value = java.awt.font.OpenType.TAG_NAME; }
+    static void call3() { int value = java.awt.font.OpenType.TAG_GLYF; }
+    static void call4() { int value = java.awt.font.OpenType.TAG_MAXP; }
+    static void call5() { int value = java.awt.font.OpenType.TAG_PREP; }
+    static void call6() { int value = java.awt.font.OpenType.TAG_HMTX; }
+    static void call7() { int value = java.awt.font.OpenType.TAG_KERN; }
+    static void call8() { int value = java.awt.font.OpenType.TAG_HDMX; }
+    static void call9() { int value = java.awt.font.OpenType.TAG_LOCA; }
+    static void call10() { int value = java.awt.font.OpenType.TAG_POST; }
+    static void call11() { int value = java.awt.font.OpenType.TAG_OS2; }
+    static void call12() { int value = java.awt.font.OpenType.TAG_CVT; }
+    static void call13() { int value = java.awt.font.OpenType.TAG_GASP; }
+    static void call14() { int value = java.awt.font.OpenType.TAG_VDMX; }
+    static void call15() { int value = java.awt.font.OpenType.TAG_VMTX; }
+    static void call16() { int value = java.awt.font.OpenType.TAG_VHEA; }
+    static void call17() { int value = java.awt.font.OpenType.TAG_HHEA; }
+    static void call18() { int value = java.awt.font.OpenType.TAG_TYP1; }
+    static void call19() { int value = java.awt.font.OpenType.TAG_BSLN; }
+    static void call20() { int value = java.awt.font.OpenType.TAG_GSUB; }
+    static void call21() { int value = java.awt.font.OpenType.TAG_DSIG; }
+    static void call22() { int value = java.awt.font.OpenType.TAG_FPGM; }
+    static void call23() { int value = java.awt.font.OpenType.TAG_FVAR; }
+    static void call24() { int value = java.awt.font.OpenType.TAG_GVAR; }
+    static void call25() { int value = java.awt.font.OpenType.TAG_CFF; }
+    static void call26() { int value = java.awt.font.OpenType.TAG_MMSD; }
+    static void call27() { int value = java.awt.font.OpenType.TAG_MMFX; }
+    static void call28() { int value = java.awt.font.OpenType.TAG_BASE; }
+    static void call29() { int value = java.awt.font.OpenType.TAG_GDEF; }
+    static void call30() { int value = java.awt.font.OpenType.TAG_GPOS; }
+    static void call31() { int value = java.awt.font.OpenType.TAG_JSTF; }
+    static void call32() { int value = java.awt.font.OpenType.TAG_EBDT; }
+    static void call33() { int value = java.awt.font.OpenType.TAG_EBLC; }
+    static void call34() { int value = java.awt.font.OpenType.TAG_EBSC; }
+    static void call35() { int value = java.awt.font.OpenType.TAG_LTSH; }
+    static void call36() { int value = java.awt.font.OpenType.TAG_PCLT; }
+    static void call37() { int value = java.awt.font.OpenType.TAG_ACNT; }
+    static void call38() { int value = java.awt.font.OpenType.TAG_AVAR; }
+    static void call39() { int value = java.awt.font.OpenType.TAG_BDAT; }
+    static void call40() { int value = java.awt.font.OpenType.TAG_BLOC; }
+    static void call41() { int value = java.awt.font.OpenType.TAG_CVAR; }
+    static void call42() { int value = java.awt.font.OpenType.TAG_FEAT; }
+    static void call43() { int value = java.awt.font.OpenType.TAG_FDSC; }
+    static void call44() { int value = java.awt.font.OpenType.TAG_FMTX; }
+    static void call45() { int value = java.awt.font.OpenType.TAG_JUST; }
+    static void call46() { int value = java.awt.font.OpenType.TAG_LCAR; }
+    static void call47() { int value = java.awt.font.OpenType.TAG_MORT; }
+    static void call48() { int value = java.awt.font.OpenType.TAG_OPBD; }
+    static void call49() { int value = java.awt.font.OpenType.TAG_PROP; }
+    static void call50() { int value = java.awt.font.OpenType.TAG_TRAK; }
+    static void call51(java.awt.font.OpenType receiver)  { int value = receiver.getVersion(); }
+    static void call52(java.awt.font.OpenType receiver)  { byte[] value = receiver.getFontTable((int) 0); }
+    static void call53(java.awt.font.OpenType receiver)  { byte[] value = receiver.getFontTable((java.lang.String) null); }
+    static void call54(java.awt.font.OpenType receiver)  { byte[] value = receiver.getFontTable((int) 0, (int) 0, (int) 0); }
+    static void call55(java.awt.font.OpenType receiver)  { byte[] value = receiver.getFontTable((java.lang.String) null, (int) 0, (int) 0); }
+    static void call56(java.awt.font.OpenType receiver)  { int value = receiver.getFontTableSize((int) 0); }
+    static void call57(java.awt.font.OpenType receiver)  { int value = receiver.getFontTableSize((java.lang.String) null); }
+}

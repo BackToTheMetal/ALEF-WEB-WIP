@@ -1,0 +1,23 @@
+{
+  "pdf_pages": 22,
+  "figures": 10,
+  "source_groups": 26,
+  "source_files": 62,
+  "extracted_characters": 58625,
+  "checks": {
+    "no_off_page_characters": true,
+    "no_replacement_characters": true,
+    "no_placeholders": true,
+    "all_figures_and_source_groups_present": true,
+    "source_hashes_match": true
+  },
+  "pdf_sha256": "5e3e65dd188c79f34dc15dc01c4e23eb42e42135944d19412c50c6030763e12f",
+  "visual_review": {
+    "all_pages_reviewed": true,
+    "pages_reviewed_at_full_size": [
+      12,
+      17
+    ],
+    "method": "All 22 rendered pages inspected in contact sheets; detailed removal flow and risk table inspected at full page size."
+  }
+}

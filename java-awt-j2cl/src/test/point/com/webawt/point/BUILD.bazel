@@ -1,0 +1,11 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_test")
+
+j2cl_test(
+    name = "PointTest",
+    srcs = ["PointTest.java"],
+    test_class = "com.webawt.point.PointTest",
+    deps = [
+        "//src/main/java/java/awt:awt-j2cl",
+        "@j2cl//:junit",
+    ],
+)

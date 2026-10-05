@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "trove": "org.jetbrains.intellij.deps:trove4j:1.0.20200330",
+  "artifacts": [
+    {
+      "file": "third_party/trove4j-1.0.20200330.jar",
+      "sha256": "c5fd725bffab51846bf3c77db1383c60aaaebfe1b7fe2f00d23fe1b7df0a439d",
+      "url": "https://repo.maven.apache.org/maven2/org/jetbrains/intellij/deps/trove4j/1.0.20200330/trove4j-1.0.20200330.jar"
+    },
+    {
+      "file": "third_party/trove4j-1.0.20200330-sources.jar",
+      "sha256": "2e0174e80b989eb5deafcfb77407c908a0abe1f67a80306f98aeca63246e5481",
+      "url": "https://repo.maven.apache.org/maven2/org/jetbrains/intellij/deps/trove4j/1.0.20200330/trove4j-1.0.20200330-sources.jar"
+    }
+  ],
+  "j2cl": "20260402",
+  "bazel": "8.3.1",
+  "jdk": 21,
+  "playwright": "1.62.0",
+  "mps": {
+    "repository": "https://github.com/JetBrains/MPS",
+    "revision": "fb6524e4726c73081d1e0934b54da5a0f78e7d05",
+    "scope": "UniversalOptimizedNodeIdMap, StringBasedNodeIdMap, INodeIdToNodeMap, ObjectIdentityHashingStrategy",
+    "platformArtifactStatus": "Selected JetBrains compatibility baseline; MPS platform lib/trove.jar is not stored in this source checkout and its binary identity is not asserted.",
+    "additionalDependency": {
+      "path": "languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar",
+      "status": "Separate incompatible baseline, not supported by this artifact",
+      "sha256": "294fb88c272598b9a5dcae15f13d228e64134256de941fbc28917a994beeb075"
+    }
+  },
+  "productionDependencies": [
+    "J2CL emulated JRE"
+  ],
+  "fixtureFiles": [
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/INodeIdToNodeMap.java",
+      "sha256": "8113508a8a0cc387a35c84e31d66e73bb906ae56711330738d525db4ac997d47",
+      "url": "https://raw.githubusercontent.com/JetBrains/MPS/fb6524e4726c73081d1e0934b54da5a0f78e7d05/core/smodel/source/jetbrains/mps/smodel/nodeidmap/INodeIdToNodeMap.java"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java",
+      "sha256": "a67ab61a9d7401e977802b2a106af1fd07c2209aed1d36199ce4aa95ae8136a7",
+      "url": "https://raw.githubusercontent.com/JetBrains/MPS/fb6524e4726c73081d1e0934b54da5a0f78e7d05/core/smodel/source/jetbrains/mps/smodel/nodeidmap/StringBasedNodeIdMap.java"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java",
+      "sha256": "b662ee3e4da0161e78b8c427d54a8cf66659fa0a8dec0104128ab9b85e401ab2",
+      "url": "https://raw.githubusercontent.com/JetBrains/MPS/fb6524e4726c73081d1e0934b54da5a0f78e7d05/core/smodel/source/jetbrains/mps/smodel/nodeidmap/UniversalOptimizedNodeIdMap.java"
+    },
+    {
+      "file": "tests/mps/source/jetbrains/mps/util/ObjectIdentityHashingStrategy.java",
+      "sha256": "8c41829f6255fdf7b0ffbff6990da6b90abb3f61c92a13be4e2a91cd6b146870",
+      "url": "https://raw.githubusercontent.com/JetBrains/MPS/fb6524e4726c73081d1e0934b54da5a0f78e7d05/core/util/source/jetbrains/mps/util/ObjectIdentityHashingStrategy.java"
+    }
+  ]
+}

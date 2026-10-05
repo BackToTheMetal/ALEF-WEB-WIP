@@ -1,0 +1,98 @@
+[
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.editor.querylist.runtime/com/mbeddr/mpsutil/editor/querylist/runtime/QueriesUtil.java",
+    "reason": "Generator-time TemplateQueryContext helper, not editor runtime"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.editor.querylist.runtime/com/mbeddr/mpsutil/editor/querylist/runtime/plugin/ComputationModePreservingNonTypesystemChecker.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.editor.querylist.runtime/com/mbeddr/mpsutil/editor/querylist/runtime/plugin/DefaultQueryListConfig.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.editor.querylist.runtime/com/mbeddr/mpsutil/editor/querylist/runtime/plugin/DisableModelcheck_Action.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.editor.querylist.runtime/com/mbeddr/mpsutil/editor/querylist/runtime/plugin/EnableModelcheck_Action.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.editor.querylist.runtime/com/mbeddr/mpsutil/editor/querylist/runtime/plugin/ExtensionDescriptor.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.editor.querylist.runtime/com/mbeddr/mpsutil/editor/querylist/runtime/plugin/ProjectPlugin_ProjectPluginPart.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.editor.querylist.runtime/com/mbeddr/mpsutil/editor/querylist/runtime/plugin/QueryListChecker.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.editor.querylist.runtime/com/mbeddr/mpsutil/editor/querylist/runtime/plugin/QueryListConfig.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.editor.querylist.runtime/com/mbeddr/mpsutil/editor/querylist/runtime/plugin/Runtime_ApplicationPlugin.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.editor.querylist.runtime/com/mbeddr/mpsutil/editor/querylist/runtime/plugin/Runtime_ProjectPlugin.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.grammarcells.runtime/com/mbeddr/mpsutil/grammarcells/runtime/insertpopup/ActionHandlerImpl.java",
+    "reason": "Desktop IntelliJ popup integration"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.grammarcells.runtime/com/mbeddr/mpsutil/grammarcells/runtime/insertpopup/EditorActionUtils.java",
+    "reason": "Desktop IntelliJ popup integration"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.grammarcells.runtime/com/mbeddr/mpsutil/grammarcells/runtime/insertpopup/InsertActionListPopupStep.java",
+    "reason": "Desktop IntelliJ popup integration"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.grammarcells.runtime/com/mbeddr/mpsutil/grammarcells/runtime/insertpopup/InsertPopupSettings.java",
+    "reason": "Desktop IntelliJ popup integration"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.grammarcells.runtime/com/mbeddr/mpsutil/grammarcells/runtime/insertpopup/InsertUtil.java",
+    "reason": "Desktop IntelliJ popup integration"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.grammarcells.runtime/com/mbeddr/mpsutil/grammarcells/runtime/plugin/ActionPromoter_ApplicationPlugin_AppPluginPart.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.grammarcells.runtime/com/mbeddr/mpsutil/grammarcells/runtime/plugin/ApplicationPlugin_AppPluginPart.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.grammarcells.runtime/com/mbeddr/mpsutil/grammarcells/runtime/plugin/ClearInsertPopupDefaultChoices_Action.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.grammarcells.runtime/com/mbeddr/mpsutil/grammarcells/runtime/plugin/EnableInsertPopup_Action.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.grammarcells.runtime/com/mbeddr/mpsutil/grammarcells/runtime/plugin/ExtensionDescriptor.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.grammarcells.runtime/com/mbeddr/mpsutil/grammarcells/runtime/plugin/GrammarCellKeymapChanges_KeymapChanges.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.grammarcells.runtime/com/mbeddr/mpsutil/grammarcells/runtime/plugin/InsertPopupAction_Action.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  },
+  {
+    "source": "upstream-src/com.mbeddr.mpsutil.grammarcells.runtime/com/mbeddr/mpsutil/grammarcells/runtime/plugin/Runtime_ApplicationPlugin.java",
+    "reason": "Desktop IntelliJ plugin integration and model checker"
+  }
+]

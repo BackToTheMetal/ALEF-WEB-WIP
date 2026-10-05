@@ -1,0 +1,6 @@
+{
+  "java_version": "21.0.12.1",
+  "scope": "Explicitly documented Java 21 regex subset, flags=0 and ASCII CASE_INSENSITIVE, word boundaries; exact result rows",
+  "result_rows": 12675,
+  "test_source": "tests/regex/RegexSubsetTest.java"
+}

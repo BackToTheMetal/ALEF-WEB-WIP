@@ -1,0 +1,372 @@
+diff --git a/jre/java/java/lang/Class.java b/jre/java/java/lang/Class.java
+--- a/jre/java/java/lang/Class.java
++++ b/jre/java/java/lang/Class.java
+@@ -107,6 +107,85 @@
+     return !isArray() && ctor.isPrimitive();
+   }
+ 
++  /** Internal bridge for java.lang.reflect.Array using this Class's exact array metadata. */
++  public Object $newArray(int[] dimensions) {
++    if (dimensions == null) {
++      throw new NullPointerException();
++    }
++    if (dimensions.length == 0 || dimensions.length > 255 - dimensionCount) {
++      throw new IllegalArgumentException("Invalid array component type or dimension count");
++    }
++    for (int length : dimensions) {
++      if (length < 0) {
++        throw new NegativeArraySizeException();
++      }
++    }
++    if (this == void.class) {
++      throw new IllegalArgumentException("void cannot be an array component type");
++    }
++    if (!ctor.isPrimitiveType() && !ctor.hasTypeRelations()) {
++      throw new UnsupportedOperationException("Class array type metadata is unavailable");
++    }
++    return $createReflectively(dimensions, ctor, dimensionCount);
++  }
++
++  @JsMethod(namespace = "vmbootstrap.Arrays")
++  private static native Object $createReflectively(int[] dimensions, Constructor ctor, int existingDimensions);
++
++  /** Tests the runtime Java type without constructing or initializing the target class. */
++  public boolean isInstance(Object object) {
++    return object != null && isAssignableFrom(object.getClass());
++  }
++
++  @SuppressWarnings("unchecked")
++  public T cast(Object object) {
++    if (object != null && !isInstance(object)) {
++      throw new ClassCastException("Cannot cast to " + getName());
++    }
++    return (T) object;
++  }
++
++  @SuppressWarnings("unchecked")
++  public <U> Class<? extends U> asSubclass(Class<U> superClass) {
++    if (superClass == null) {
++      throw new NullPointerException();
++    }
++    if (!superClass.isAssignableFrom(this)) {
++      throw new ClassCastException("Class is not assignable to the requested superclass");
++    }
++    return (Class<? extends U>) this;
++  }
++
++  /** Tests identity or widening reference conversion, with no boxing or numeric widening. */
++  public boolean isAssignableFrom(Class<?> source) {
++    if (source == null) {
++      throw new NullPointerException();
++    }
++    boolean targetPrimitive = !isArray() && ctor.isPrimitiveType();
++    boolean sourcePrimitive = !source.isArray() && source.ctor.isPrimitiveType();
++    if (targetPrimitive || sourcePrimitive) {
++      return this == source;
++    }
++    if (this == Object.class) {
++      return true;
++    }
++    if (source.isArray()) {
++      if (isArray()) {
++        return getComponentType().isAssignableFrom(source.getComponentType());
++      }
++      return this == Cloneable.class || this == Serializable.class;
++    }
++    if (isArray()) {
++      return false;
++    }
++    // Native JsType and JsFunction class literals are erased to shared bootstrap proxies.
++    // They cannot provide a distinct nominal Java relation, so never guess from prototypes.
++    if (!ctor.hasTypeRelations() || !source.ctor.hasTypeRelations()) {
++      throw new UnsupportedOperationException("Class type relation metadata is unavailable");
++    }
++    return ctor.isAssignableFrom(source.ctor);
++  }
++
+   public T[] getEnumConstants() {
+     // TODO(b/30745420): implement
+     throw new UnsupportedOperationException();
+diff --git a/jre/java/java/lang/reflect/Array.java b/jre/java/java/lang/reflect/Array.java
+--- a/jre/java/java/lang/reflect/Array.java
++++ b/jre/java/java/lang/reflect/Array.java
+@@ -356,24 +356,19 @@
+     typedArray[index] = value;
+   }
+ 
+-  // There is a good reason to not implement the generic newInstance methods:
+-  //
+-  // In GWT we would need access from a class literal to the castable type map, which
+-  // could be done, but would require some serious work.
+-  // But it would also mean that we can not compute all Array types being instantiated anymore and
+-  // thus would have to retain more castable type information (bloat).
+-  //
+-  // In J2CL the problem is slightly different. Most checking is deferred to runtime in J2CL and
+-  // we retain constructor functions of leaf types. To ensure that we are not just retaining
+-  // all constructors in a program we make sure that access to these always gets inlined with
+-  // array creation. By allowing a generic method we would not be able to ensure this anymore
+-  // and might cause serious bloat in a program.
+-  // A middle ground for J2CL could be to treat this method special in the compiler and fail the
+-  // compile if its not called with a compile time constant for the class literal.
+-
+-  // Not implemented:
+-  // public static Object newInstance(Class<?> componentType, int... dimensions)
+-  // public static Object newInstance(Class<?> componentType, int length)
++  public static Object newInstance(Class<?> componentType, int length) {
++    if (componentType == null) {
++      throw new NullPointerException();
++    }
++    return componentType.$newArray(new int[] {length});
++  }
++
++  public static Object newInstance(Class<?> componentType, int... dimensions) {
++    if (componentType == null) {
++      throw new NullPointerException();
++    }
++    return componentType.$newArray(dimensions);
++  }
+ 
+   private Array() {}
+ }
+diff --git a/jre/java/javaemul/internal/Constructor.java b/jre/java/javaemul/internal/Constructor.java
+--- a/jre/java/javaemul/internal/Constructor.java
++++ b/jre/java/javaemul/internal/Constructor.java
+@@ -109,6 +109,16 @@
+     return Util.$getPrimitiveConstructor(this);
+   }
+ 
++  @JsOverlay
++  public final boolean hasTypeRelations() {
++    return Util.$hasClassTypeRelations(this);
++  }
++
++  @JsOverlay
++  public final boolean isAssignableFrom(Constructor source) {
++    return Util.$isClassAssignableFrom(this, source);
++  }
++
+   @JsType(isNative = true, namespace = "nativebootstrap")
+   private static class Util {
+     public static int TYPE_ENUM;
+@@ -123,6 +133,10 @@
+ 
+     public static native boolean $isPrimitiveType(Constructor ctor);
+ 
++    public static native boolean $hasClassTypeRelations(Constructor ctor);
++
++    public static native boolean $isClassAssignableFrom(Constructor target, Constructor source);
++
+     public static native Constructor $getPrimitiveConstructor(Constructor ctor);
+ 
+     public static native Constructor $getBoxedConstructor(Constructor ctor);
+diff --git a/jre/java/javaemul/internal/nativebootstrap/Util.impl.java.js b/jre/java/javaemul/internal/nativebootstrap/Util.impl.java.js
+--- a/jre/java/javaemul/internal/nativebootstrap/Util.impl.java.js
++++ b/jre/java/javaemul/internal/nativebootstrap/Util.impl.java.js
+@@ -26,6 +26,87 @@
+  */
+ class Util {
+   /**
++   * Records nominal type relations separately from optional display-name metadata.
++   * The owning constructor at index zero detects inherited or missing metadata.
++   * @param {!Constructor} ctor
++   * @param {!Function} isInstance
++   * @public
++   */
++  static $setClassTypeRelations(ctor, isInstance) {
++    ctor.prototype.$$typeSupertypes = [ctor];
++    // The compiler passes a direct method reference, so Closure retains the actual
++    // predicate even when it moves static constructor properties to free functions.
++    ctor.prototype.$$typeIsInstance = isInstance;
++  }
++
++  /**
++   * @param {!Constructor} ctor
++   * @return {!Function}
++   * @public
++   */
++  static $getClassIsInstance(ctor) {
++    if (Util.$isPrimitiveType(ctor)) {
++      // The existing primitive array predicates accept their unboxed value types.
++      // Type-directed Java stores already perform primitive conversions/checks.
++      return () => true;
++    }
++    const predicate = ctor.prototype.$$typeIsInstance;
++    if (!predicate) {
++      throw new Error('Missing compiler-emitted J2CL array predicate');
++    }
++    return predicate;
++  }
++
++  /**
++   * @param {!Constructor} ctor
++   * @param {!Constructor} superCtor
++   * @public
++   */
++  static $addClassSuperType(ctor, superCtor) {
++    ctor.prototype.$$typeSupertypes.push(superCtor);
++  }
++
++  /**
++   * @param {!Constructor} ctor
++   * @return {boolean}
++   * @public
++   */
++  static $hasClassTypeRelations(ctor) {
++    const types = ctor.prototype.$$typeSupertypes;
++    return !!types && types[0] === ctor;
++  }
++
++  /**
++   * Traverses compiler-emitted constructor identities without instantiation or clinit.
++   * @param {!Constructor} target
++   * @param {!Constructor} source
++   * @return {boolean}
++   * @public
++   */
++  static $isClassAssignableFrom(target, source) {
++    const pending = [source];
++    const visited = new Set();
++    while (pending.length) {
++      const current = pending.pop();
++      if (current === target) {
++        return true;
++      }
++      if (visited.has(current)) {
++        continue;
++      }
++      visited.add(current);
++      const types = current.prototype.$$typeSupertypes;
++      if (!types || types[0] !== current) {
++        throw new Error('Missing compiler-emitted J2CL Class type relations');
++      }
++      for (let i = 1; i < types.length; i++) {
++        pending.push(types[i]);
++      }
++    }
++    return false;
++  }
++
++  /**
+    * Return the value defined by a goog.define or the default value
+    * if it is not defined.
+    *
+diff --git a/jre/java/javaemul/internal/vmbootstrap/Arrays.impl.java.js b/jre/java/javaemul/internal/vmbootstrap/Arrays.impl.java.js
+--- a/jre/java/javaemul/internal/vmbootstrap/Arrays.impl.java.js
++++ b/jre/java/javaemul/internal/vmbootstrap/Arrays.impl.java.js
+@@ -31,6 +31,23 @@
+  * @public
+  */
+ class Arrays {
++  /**
++   * Allocates using Class's retained leaf constructor and exact dimension count.
++   * Null trailing lengths represent component dimensions that remain unallocated.
++   * @param {!Array<number>} dimensions
++   * @param {!Constructor} leafType
++   * @param {number} existingDimensions
++   * @return {!Array<*>}
++   * @public
++   */
++  static $createReflectively(dimensions, leafType, existingDimensions) {
++    const lengths = dimensions.slice();
++    for (let i = 0; i < existingDimensions; i++) {
++      lengths.push(null);
++    }
++    return Arrays.$createInternal_(lengths, leafType, Util.$getClassIsInstance(leafType));
++  }
++
+   /**
+    * Creates, initializes, and returns an array with the given number of
+    * dimensions, lengths and of the given type.
+diff --git a/transpiler/java/com/google/j2cl/transpiler/ast/RuntimeMethods.java b/transpiler/java/com/google/j2cl/transpiler/ast/RuntimeMethods.java
+--- a/transpiler/java/com/google/j2cl/transpiler/ast/RuntimeMethods.java
++++ b/transpiler/java/com/google/j2cl/transpiler/ast/RuntimeMethods.java
+@@ -946,6 +946,22 @@
+                                       .setParameters(TypeDescriptors.get().javaLangString)
+                                       .build())
+                               .put(
++                                  "$setClassTypeRelations",
++                                  MethodInfo.newBuilder()
++                                      .setReturnType(PrimitiveTypes.VOID)
++                                      .setParameters(
++                                          TypeDescriptors.get().javaemulInternalConstructor,
++                                          TypeDescriptors.get().nativeFunction)
++                                      .build())
++                              .put(
++                                  "$addClassSuperType",
++                                  MethodInfo.newBuilder()
++                                      .setReturnType(PrimitiveTypes.VOID)
++                                      .setParameters(
++                                          TypeDescriptors.get().javaemulInternalConstructor,
++                                          TypeDescriptors.get().javaemulInternalConstructor)
++                                      .build())
++                              .put(
+                                   "$setClassMetadata",
+                                   MethodInfo.newBuilder()
+                                       .setReturnType(PrimitiveTypes.VOID)
+diff --git a/transpiler/java/com/google/j2cl/transpiler/passes/ImplementClassMetadataViaConstructors.java b/transpiler/java/com/google/j2cl/transpiler/passes/ImplementClassMetadataViaConstructors.java
+--- a/transpiler/java/com/google/j2cl/transpiler/passes/ImplementClassMetadataViaConstructors.java
++++ b/transpiler/java/com/google/j2cl/transpiler/passes/ImplementClassMetadataViaConstructors.java
+@@ -18,7 +18,11 @@
+ import com.google.j2cl.common.SourcePosition;
+ import com.google.j2cl.transpiler.ast.AbstractRewriter;
+ import com.google.j2cl.transpiler.ast.ArrayTypeDescriptor;
++import com.google.j2cl.transpiler.ast.DeclaredTypeDescriptor;
+ import com.google.j2cl.transpiler.ast.Expression;
++import com.google.j2cl.transpiler.ast.FieldAccess;
++import com.google.j2cl.transpiler.ast.FieldDescriptor;
++import com.google.j2cl.transpiler.ast.JsInfo;
+ import com.google.j2cl.transpiler.ast.JsConstructorReference;
+ import com.google.j2cl.transpiler.ast.Node;
+ import com.google.j2cl.transpiler.ast.NumberLiteral;
+@@ -106,6 +110,35 @@
+       return;
+     }
+ 
++    // Nominal Java type relations are independent of display-name metadata. Native
++    // overlays and JsFunction implementations have erased Class identities.
++    if (!targetTypeDeclaration.isNative() && !targetTypeDeclaration.isJsFunctionImplementation()) {
++      type.addLoadTimeStatement(
++          RuntimeMethods.createUtilMethodCall(
++                  "$setClassTypeRelations",
++                  new JsConstructorReference(type.getDeclaration()),
++                  FieldAccess.Builder.from(
++                          FieldDescriptor.newBuilder()
++                              .setEnclosingTypeDescriptor(
++                                  type.getTypeDescriptor().getIsInstanceMethodDescriptor().getEnclosingTypeDescriptor())
++                              .setTypeDescriptor(TypeDescriptors.get().nativeFunction)
++                              .setName(type.getTypeDescriptor().getIsInstanceMethodDescriptor().getName())
++                              .setOriginalJsInfo(JsInfo.RAW)
++                              .setStatic(true)
++                              .build())
++                      .build())
++              .makeStatement(SourcePosition.NONE));
++      DeclaredTypeDescriptor superType = targetTypeDeclaration.getSuperTypeDescriptor();
++      if (superType != null) {
++        addSuperType(type, superType);
++      }
++      for (DeclaredTypeDescriptor superInterface : targetTypeDeclaration.getInterfaceTypeDescriptors()) {
++        if (!superInterface.isNative() && !superInterface.isJsFunctionInterface()) {
++          addSuperType(type, superInterface);
++        }
++      }
++    }
++
+     String name =
+         targetTypeDeclaration.isNative()
+             // For native types the qualified JavaScript name is more useful to identify the
+@@ -118,6 +151,15 @@
+                 getSetMetadataMethodName(targetTypeDeclaration),
+                 new JsConstructorReference(type.getDeclaration()),
+                 new StringLiteral(name))
++            .makeStatement(SourcePosition.NONE));
++  }
++
++  private static void addSuperType(Type type, DeclaredTypeDescriptor superType) {
++    type.addLoadTimeStatement(
++        RuntimeMethods.createUtilMethodCall(
++                "$addClassSuperType",
++                new JsConstructorReference(type.getDeclaration()),
++                superType.getMetadataConstructorReference())
+             .makeStatement(SourcePosition.NONE));
+   }
+ 

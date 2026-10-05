@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ALEF · Interface design study</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="revision-02.css"><link rel="stylesheet" href="revision-04.css"><link rel="stylesheet" href="revision-06.css"><link rel="stylesheet" href="revision-07.css"><link rel="stylesheet" href="revision-08.css"><link rel="stylesheet" href="revision-09.css"><link rel="stylesheet" href="revision-10.css"><link rel="stylesheet" href="revision-11.css"><link rel="stylesheet" href="revision-12.css"><link rel="stylesheet" href="revision-13.css"><link rel="stylesheet" href="revision-15.css"><link rel="stylesheet" href="revision-16.css"><link rel="stylesheet" href="revision-17.css">
+<link rel="stylesheet" href="revision-19.css">
+<link rel="stylesheet" href="revision-20.css">
+<link rel="stylesheet" href="revision-22.css">
+<link rel="stylesheet" href="revision-23.css">
+</head>
+<body>
+<div class="study"><strong>DESIGN STUDY / 23</strong><span class="study-detail">Proposed layout · illustrative workflow states · no backend connection</span><span class="grow"></span><span class="review-preview"><label for="review-viewer">View as</label><select id="review-viewer" aria-label="Preview identity"><option>author Local</option><option>reviewer Local</option><option>editor Local</option><option>tester Local</option></select></span><label for="state-preview">Preview</label><select id="state-preview"><option value="draft">Unsaved draft</option><option value="saved">Saved / read only</option><option value="lost">Lock lost</option><option value="loading">Loading</option><option value="error">Connection interrupted</option></select><a href="current-interface-desktop.jpg" target="_blank">Current interface ↗</a></div>
+<div class="app"><header class="topbar"><div class="brand"><span class="mark">a</span>ALEF</div><div class="workspace">Shared workspace</div><nav aria-label="Main navigation"><button data-page="model" class="active">Editor</button><button data-page="changes">Compare</button><button data-page="releases">Packaging</button><button data-page="deployments">Deployment</button></nav><span class="grow"></span><span class="connection"><i class="dot"></i> Connected</span><button class="icon app-settings" data-action="environment-settings" aria-label="Settings" title="Settings"><svg class="svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/><path d="m9 3-1 3-3 1-2 5 2 5 3 1 1 3h6l1-3 3-1 2-5-2-5-3-1-1-3Z"/></svg><span class="sr-only">Settings</span></button><div class="identity"><span id="identity-label">author Local</span><div class="avatar" id="avatar">AL</div></div></header><main id="screen"></main><footer class="statusbar"><span class="flex"><i class="dot" style="color:var(--green)"></i><span id="footer-state">All authorized models loaded</span></span><span>6 models · 15 roots</span><span class="grow"></span><span class="right-hint">Shared workspace</span><span class="right-hint mono">master</span></footer></div>
+<div class="toast hidden" id="toast" role="status"></div><div id="modal-host"></div>
+<script src="icons.js"></script><script src="prototype.js"></script><script src="environment-design-16.js"></script><script src="editor-header-20.js"></script><script src="project-tree-20.js"></script><script src="package-builder-19.js"></script><script src="change-tags-18.js"></script><script src="design-21.js"></script>
+</body></html>
+

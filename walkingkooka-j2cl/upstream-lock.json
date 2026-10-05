@@ -1,0 +1,129 @@
+{
+  "j2cl-java-time": {
+    "url": "https://github.com/mP1/j2cl-java-time.git",
+    "commit": "fbf19c461eb231eb11339d88c8a91074fdf902bd",
+    "dependencies": [
+      "j2cl-java-util-Locale",
+      "j2cl-java-io",
+      "j2cl-java-text",
+      "j2cl-java-util-Calendar",
+      "j2cl-java-util-TimeZone",
+      "walkingkooka-text-printer"
+    ]
+  },
+  "j2cl-java-util-Locale": {
+    "url": "https://github.com/mP1/j2cl-java-util-Locale.git",
+    "commit": "55fc297c625d1c207d6fc193b74c76c9d0799533",
+    "dependencies": [
+      "j2cl-java-util-Locale-annotation-processor"
+    ]
+  },
+  "j2cl-java-io": {
+    "url": "https://github.com/mP1/j2cl-java-io.git",
+    "commit": "e61387452a5103bf1c9ac93c494d69425ada9e12",
+    "dependencies": [
+      "walkingkooka"
+    ]
+  },
+  "j2cl-java-text": {
+    "url": "https://github.com/mP1/j2cl-java-text.git",
+    "commit": "85a4d566b54f0fe268dd1aebac0c2714ca6e0046",
+    "dependencies": [
+      "j2cl-java-util-Calendar",
+      "j2cl-java-util-Currency",
+      "j2cl-java-text-annotation-processor"
+    ]
+  },
+  "j2cl-java-util-Calendar": {
+    "url": "https://github.com/mP1/j2cl-java-util-Calendar.git",
+    "commit": "58266a4965f60c4ded3ddb0405a3a592ffecd9c8",
+    "dependencies": [
+      "j2cl-java-util-TimeZone",
+      "j2cl-uber",
+      "walkingkooka"
+    ]
+  },
+  "j2cl-java-util-TimeZone": {
+    "url": "https://github.com/mP1/j2cl-java-util-TimeZone.git",
+    "commit": "d66d622f66b6f601618297d12b0f772559212dba",
+    "dependencies": [
+      "j2cl-java-util-Locale",
+      "j2cl-java-util-TimeZone-annotation-processor",
+      "j2cl-uber",
+      "j2cl-java-util-timezone-ZoneRulesReader"
+    ]
+  },
+  "walkingkooka-text-printer": {
+    "url": "https://github.com/mP1/walkingkooka-text-printer.git",
+    "commit": "781e373390cec320999c5f6da8f6d6ebb5e84604",
+    "dependencies": [
+      "walkingkooka"
+    ]
+  },
+  "j2cl-java-util-Locale-annotation-processor": {
+    "url": "https://github.com/mP1/j2cl-java-util-Locale-annotation-processor.git",
+    "commit": "6b72c1eff16f7ab491e3452de74d2155e1831672",
+    "dependencies": [
+      "j2cl-locale",
+      "j2cl-uber",
+      "walkingkooka-text-printer"
+    ]
+  },
+  "walkingkooka": {
+    "url": "https://github.com/mP1/walkingkooka.git",
+    "commit": "01f6924c7aa30ecf4abc1102989134727529eec7",
+    "dependencies": [
+      "j2cl-uber"
+    ]
+  },
+  "j2cl-java-util-Currency": {
+    "url": "https://github.com/mP1/j2cl-java-util-Currency.git",
+    "commit": "b8a8a3dc381dc1da372bc8c710cf81175af446a3",
+    "dependencies": [
+      "j2cl-java-util-Locale",
+      "j2cl-java-util-currency-annotation-processor"
+    ]
+  },
+  "j2cl-java-text-annotation-processor": {
+    "url": "https://github.com/mP1/j2cl-java-text-annotation-processor.git",
+    "commit": "a61f742f30769d19af01a08eee9620bfd53875ba",
+    "dependencies": [
+      "j2cl-java-util-Locale"
+    ]
+  },
+  "j2cl-uber": {
+    "url": "https://github.com/mP1/j2cl-uber.git",
+    "commit": "42592235ec81048bffca82456655533e9c71a03f",
+    "dependencies": []
+  },
+  "j2cl-java-util-TimeZone-annotation-processor": {
+    "url": "https://github.com/mP1/j2cl-java-util-TimeZone-annotation-processor.git",
+    "commit": "3041df5c2026a33a5dfaddb84c8d9f2195a052e5",
+    "dependencies": [
+      "j2cl-java-util-Locale",
+      "j2cl-java-util-timezone-ZoneRulesReader"
+    ]
+  },
+  "j2cl-java-util-timezone-ZoneRulesReader": {
+    "url": "https://github.com/mP1/j2cl-java-util-timezone-ZoneRulesReader.git",
+    "commit": "f0a711f01274c2094229c22be2c9e6dcb452d114",
+    "dependencies": [
+      "j2cl-locale"
+    ]
+  },
+  "j2cl-locale": {
+    "url": "https://github.com/mP1/j2cl-locale.git",
+    "commit": "d90e89d4617aa534ff628c6ddd4c9f8693a81d1a",
+    "dependencies": [
+      "j2cl-java-io",
+      "walkingkooka-text-printer"
+    ]
+  },
+  "j2cl-java-util-currency-annotation-processor": {
+    "url": "https://github.com/mP1/j2cl-java-util-currency-annotation-processor.git",
+    "commit": "de1624d1b4c24f6b37fc6f064893ef97ee6a15cc",
+    "dependencies": [
+      "j2cl-java-util-Locale"
+    ]
+  }
+}

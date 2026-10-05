@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "j2clVersion": "20260402",
+  "sourceIdentity": "Bazel-resolved @j2cl//jre/java source used by WebAWT",
+  "upstreamTypes": [
+    "java.io.BufferedWriter",
+    "java.io.ByteArrayInputStream",
+    "java.io.ByteArrayOutputStream",
+    "java.io.Closeable",
+    "java.io.FilterInputStream",
+    "java.io.FilterOutputStream",
+    "java.io.Flushable",
+    "java.io.HasSerializableTypeMarker",
+    "java.io.IOException",
+    "java.io.IOUtils",
+    "java.io.InputStream",
+    "java.io.OutputStream",
+    "java.io.OutputStreamWriter",
+    "java.io.PrintStream",
+    "java.io.PrintWriter",
+    "java.io.Reader",
+    "java.io.Serializable",
+    "java.io.StringReader",
+    "java.io.StringWriter",
+    "java.io.UncheckedIOException",
+    "java.io.UnsupportedEncodingException",
+    "java.io.Writer"
+  ]
+}

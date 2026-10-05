@@ -1,0 +1,9 @@
+java-concurrent-j2cl
+
+The atomic and selected java.util.concurrent baseline sources originate in
+Google J2CL 20260402 and retain their upstream copyright/license headers.
+The pinned baseline is recorded in third_party/j2cl-base/provenance.json.
+
+tests/mps/jetbrains/mps/util/SimpleLRUCache.java is an unchanged JetBrains MPS
+Apache-2.0 source fixture. Its revision and checksum are recorded in
+compatibility/mps-fixture.json. No complete MPS distribution is included.

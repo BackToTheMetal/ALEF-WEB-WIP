@@ -1,0 +1,65 @@
+package java.awt.font;
+
+// Generated from retained OpenJDK signatures. Compile only; never execute.
+final class Probe_java_awt_font_TextAttribute {
+    static void call0() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.FAMILY; }
+    static void call1() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.WEIGHT; }
+    static void call2() { java.lang.Float value = java.awt.font.TextAttribute.WEIGHT_EXTRA_LIGHT; }
+    static void call3() { java.lang.Float value = java.awt.font.TextAttribute.WEIGHT_LIGHT; }
+    static void call4() { java.lang.Float value = java.awt.font.TextAttribute.WEIGHT_DEMILIGHT; }
+    static void call5() { java.lang.Float value = java.awt.font.TextAttribute.WEIGHT_REGULAR; }
+    static void call6() { java.lang.Float value = java.awt.font.TextAttribute.WEIGHT_SEMIBOLD; }
+    static void call7() { java.lang.Float value = java.awt.font.TextAttribute.WEIGHT_MEDIUM; }
+    static void call8() { java.lang.Float value = java.awt.font.TextAttribute.WEIGHT_DEMIBOLD; }
+    static void call9() { java.lang.Float value = java.awt.font.TextAttribute.WEIGHT_BOLD; }
+    static void call10() { java.lang.Float value = java.awt.font.TextAttribute.WEIGHT_HEAVY; }
+    static void call11() { java.lang.Float value = java.awt.font.TextAttribute.WEIGHT_EXTRABOLD; }
+    static void call12() { java.lang.Float value = java.awt.font.TextAttribute.WEIGHT_ULTRABOLD; }
+    static void call13() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.WIDTH; }
+    static void call14() { java.lang.Float value = java.awt.font.TextAttribute.WIDTH_CONDENSED; }
+    static void call15() { java.lang.Float value = java.awt.font.TextAttribute.WIDTH_SEMI_CONDENSED; }
+    static void call16() { java.lang.Float value = java.awt.font.TextAttribute.WIDTH_REGULAR; }
+    static void call17() { java.lang.Float value = java.awt.font.TextAttribute.WIDTH_SEMI_EXTENDED; }
+    static void call18() { java.lang.Float value = java.awt.font.TextAttribute.WIDTH_EXTENDED; }
+    static void call19() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.POSTURE; }
+    static void call20() { java.lang.Float value = java.awt.font.TextAttribute.POSTURE_REGULAR; }
+    static void call21() { java.lang.Float value = java.awt.font.TextAttribute.POSTURE_OBLIQUE; }
+    static void call22() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.SIZE; }
+    static void call23() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.TRANSFORM; }
+    static void call24() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.SUPERSCRIPT; }
+    static void call25() { java.lang.Integer value = java.awt.font.TextAttribute.SUPERSCRIPT_SUPER; }
+    static void call26() { java.lang.Integer value = java.awt.font.TextAttribute.SUPERSCRIPT_SUB; }
+    static void call27() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.FONT; }
+    static void call28() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.CHAR_REPLACEMENT; }
+    static void call29() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.FOREGROUND; }
+    static void call30() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.BACKGROUND; }
+    static void call31() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.UNDERLINE; }
+    static void call32() { java.lang.Integer value = java.awt.font.TextAttribute.UNDERLINE_ON; }
+    static void call33() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.STRIKETHROUGH; }
+    static void call34() { java.lang.Boolean value = java.awt.font.TextAttribute.STRIKETHROUGH_ON; }
+    static void call35() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.RUN_DIRECTION; }
+    static void call36() { java.lang.Boolean value = java.awt.font.TextAttribute.RUN_DIRECTION_LTR; }
+    static void call37() { java.lang.Boolean value = java.awt.font.TextAttribute.RUN_DIRECTION_RTL; }
+    static void call38() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.BIDI_EMBEDDING; }
+    static void call39() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.JUSTIFICATION; }
+    static void call40() { java.lang.Float value = java.awt.font.TextAttribute.JUSTIFICATION_FULL; }
+    static void call41() { java.lang.Float value = java.awt.font.TextAttribute.JUSTIFICATION_NONE; }
+    static void call42() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.INPUT_METHOD_HIGHLIGHT; }
+    static void call43() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.INPUT_METHOD_UNDERLINE; }
+    static void call44() { java.lang.Integer value = java.awt.font.TextAttribute.UNDERLINE_LOW_ONE_PIXEL; }
+    static void call45() { java.lang.Integer value = java.awt.font.TextAttribute.UNDERLINE_LOW_TWO_PIXEL; }
+    static void call46() { java.lang.Integer value = java.awt.font.TextAttribute.UNDERLINE_LOW_DOTTED; }
+    static void call47() { java.lang.Integer value = java.awt.font.TextAttribute.UNDERLINE_LOW_GRAY; }
+    static void call48() { java.lang.Integer value = java.awt.font.TextAttribute.UNDERLINE_LOW_DASHED; }
+    static void call49() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.SWAP_COLORS; }
+    static void call50() { java.lang.Boolean value = java.awt.font.TextAttribute.SWAP_COLORS_ON; }
+    static void call51() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.NUMERIC_SHAPING; }
+    static void call52() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.KERNING; }
+    static void call53() { java.lang.Integer value = java.awt.font.TextAttribute.KERNING_ON; }
+    static void call54() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.LIGATURES; }
+    static void call55() { java.lang.Integer value = java.awt.font.TextAttribute.LIGATURES_ON; }
+    static void call56() { java.awt.font.TextAttribute value = java.awt.font.TextAttribute.TRACKING; }
+    static void call57() { java.lang.Float value = java.awt.font.TextAttribute.TRACKING_TIGHT; }
+    static void call58() { java.lang.Float value = java.awt.font.TextAttribute.TRACKING_LOOSE; }
+    static void call59()  { java.awt.font.TextAttribute value = new java.awt.font.TextAttribute((java.lang.String) null); }
+}

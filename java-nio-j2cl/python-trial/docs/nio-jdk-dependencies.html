@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NIO: the extra JDK types it needs</title><style>
+    :root { color-scheme: light dark; --bg: #f6f7f8; --paper: #ffffff; --ink: #17232d; --muted: #52616c; --line: #cbd4db; --source: #086b61; --source-bg: #e8f5f0; --context: #405aa8; --context-bg: #edf0fc; --note: #885314; --note-bg: #fff4df; --code: #132b35; --code-ink: #e7f1f6; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #111a20; --paper: #18252d; --ink: #e7eef3; --muted: #adbeca; --line: #41525e; --source: #8bdbcb; --source-bg: #193d37; --context: #b3c4ff; --context-bg: #273550; --note: #f0c383; --note-bg: #403423; --code: #0e1b22; --code-ink: #e7f1f6; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main, header, footer { width: min(1080px, calc(100% - 40px)); margin-inline: auto; }
+    header { padding: 30px 0 18px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+    header strong { color: var(--ink); letter-spacing: .06em; }
+    a { color: var(--context); text-underline-offset: 3px; }
+    h1 { font-size: clamp(32px, 5vw, 54px); line-height: 1.12; letter-spacing: -.035em; max-width: 840px; margin: 18px 0 22px; }
+    h2 { font-size: clamp(23px, 3vw, 30px); line-height: 1.25; margin: 0 0 14px; letter-spacing: -.02em; }
+    h3 { font-size: 18px; margin: 0 0 8px; }
+    p { margin: 0 0 15px; }
+    .intro { padding: 46px 0 38px; }
+    .intro p { max-width: 810px; font-size: 19px; }
+    .eyebrow { color: var(--muted); font-size: 12px; letter-spacing: .13em; text-transform: uppercase; font-weight: 650; }
+    section { padding: 34px 0; border-top: 1px solid var(--line); }
+    section > p { max-width: 880px; }
+    .number { color: var(--muted); font-weight: 400; margin-right: 12px; }
+    .small { font-size: 13px; color: var(--muted); }
+    .tag { display: inline-block; padding: 3px 10px; border-radius: 5px; font-size: 12px; font-weight: 650; letter-spacing: .025em; }
+    .source { background: var(--source-bg); color: var(--source); }
+    .context { background: var(--context-bg); color: var(--context); }
+    code { font: .9em/1.6 ui-monospace, "Cascadia Code", Consolas, monospace; overflow-wrap: anywhere; }
+    .flow { display: grid; grid-template-columns: minmax(0, 1fr) 35px minmax(0, 1fr) 35px minmax(0, 1fr); align-items: stretch; margin: 23px 0 14px; }
+    .node { padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); min-width: 0; }
+    .node b { display: block; font-size: 18px; margin: 5px 0; line-height: 1.4; }
+    .node p { margin: 7px 0 0; font-size: 14px; color: var(--muted); }
+    .source-node { border-top: 4px solid var(--source); }
+    .context-node { border-top: 4px solid var(--context); }
+    .arrow { display: grid; place-items: center; font-size: 25px; color: var(--muted); }
+    .answer { border-left: 3px solid var(--source); padding: 11px 17px; margin-top: 20px; background: var(--source-bg); }
+    .answer p, .note p { margin: 0; }
+    .note { border-left: 3px solid var(--note); background: var(--note-bg); padding: 14px 18px; margin: 20px 0 0; }
+    pre { background: var(--code); color: var(--code-ink); padding: 23px; border-radius: 10px; white-space: pre-wrap; overflow-wrap: anywhere; margin: 22px 0 12px; }
+    pre code { font-size: 14px; }
+    mark { background: #d7e7ff; color: #172c57; padding: 2px 4px; border-radius: 3px; }
+    .compile-diagram { margin: 24px 0; }
+    .inputs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .drop { text-align: center; font-size: 25px; color: var(--muted); }
+    .compiler { padding: 20px; text-align: center; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; }
+    .compiler strong { display: block; font-size: 21px; }
+    .output { max-width: 560px; margin-inline: auto; text-align: center; }
+    .filter-flow { grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr) 30px minmax(0, 1fr) 30px minmax(0, 1fr); }
+    .filter-flow .node { padding: 16px; }
+    .filter-flow .count { font-size: 29px; font-variant-numeric: tabular-nums; }
+    .choices { display: flex; gap: 8px; flex-wrap: wrap; margin: 20px 0 14px; }
+    button { font: inherit; font-size: 14px; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 9px 13px; cursor: pointer; }
+    button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid var(--context); outline-offset: 3px; }
+    .example { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
+    .route { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 10px 0; font-weight: 600; }
+    .route span:first-child, .route span:last-child { padding: 7px 12px; border-radius: 5px; background: var(--context-bg); color: var(--context); }
+    .example p { margin-bottom: 0; }
+    .comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px; margin-top: 24px; }
+    .comparison article { border-left: 3px solid var(--line); padding-left: 18px; }
+    .comparison p { font-size: 15px; }
+    details { padding: 17px 0; border-top: 1px solid var(--line); }
+    summary { cursor: pointer; font-weight: 650; }
+    details p, details ul { margin-top: 12px; }
+    li { margin: 6px 0; }
+    footer { border-top: 1px solid var(--line); padding: 25px 0 40px; font-size: 13px; color: var(--muted); }
+    @media (max-width: 740px) { .flow, .filter-flow, .inputs, .comparison { grid-template-columns: 1fr; } .arrow { transform: rotate(90deg); height: 34px; } main, header, footer { width: calc(100% - 30px); } .intro { padding-top: 32px; } .inputs { gap: 12px; } .node { padding: 17px; } pre { padding: 16px; } }
+    @media print { :root { color-scheme: light; } body { background: white; color: black; font-size: 11pt; } header, main, footer { width: 100%; } button { display: none; } section, .node, pre, .example { break-inside: avoid; } .intro { padding-top: 20px; } }
+  
+ table { width:100%; border-collapse:collapse; } th,td { padding:12px 14px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); } th { font-size:13px; color:var(--muted); } td { font-size:14px; } td:first-child { width:36%; } .table-wrap { overflow-x:auto; } table code { overflow-wrap:anywhere; } .signature { margin-top:6px; color:var(--muted); }</style></head><body>
+<header><strong>JAVA.NIO / DEPENDENCY ANALYSIS</strong><a href="how-stubs-and-filtering-work.html">Back to the build explanation</a></header>
+<main><div class="intro"><div class="eyebrow">JDK 17.0.16+8 · J2CL 20260402 · 2 October 2026</div>
+<h1>19 extra JDK types are enough for this compilation.</h1>
+<p>The generated NIO API references <strong>58 external types</strong>. J2CL already supplies 41. The remaining 17, plus two required inheritance dependencies, are sufficient to transpile all 156 generated NIO source files.</p>
+<p>This was checked with the actual J2CL compiler. The output file inventory and every file's contents match the existing build using 5,022 extra header classes.</p></div>
+<section><h2>The 17 direct references missing from J2CL</h2>
+<p>These are classes and interfaces. The table shows every NIO type using each one, followed by one actual declaration from the generated sources.</p>
+<div class="table-wrap"><table id="missing-types"><thead><tr><th>Extra JDK type</th><th>Used by NIO · example declaration</th></tr></thead><tbody><tr><td><code>java.io.BufferedReader</code></td><td>file.Files<div class="signature"><code>public static java.io.BufferedReader newBufferedReader(java.nio.file.Path p0, java.nio.charset.Charset p1) throws java.io.IOException</code></div><div class="small">generated/src/java/nio/file/Files.java:54</div></td></tr><tr><td><code>java.io.File</code></td><td>file.Path<div class="signature"><code>public default java.io.File toFile()</code></div><div class="small">generated/src/java/nio/file/Path.java:28</div></td></tr><tr><td><code>java.lang.ClassLoader</code></td><td>file.FileSystems<div class="signature"><code>public static java.nio.file.FileSystem newFileSystem(java.net.URI p0, java.util.Map&lt;java.lang.String, ?&gt; p1, java.lang.ClassLoader p2) throws java.io.IOException</code></div><div class="small">generated/src/java/nio/file/FileSystems.java:9</div></td></tr><tr><td><code>java.lang.Readable</code></td><td>CharBuffer<div class="signature"><code>public abstract class CharBuffer extends java.nio.Buffer implements java.lang.Comparable&lt;java.nio.CharBuffer&gt;, java.lang.Appendable, java.lang.CharSequence, java.lang.Readable</code></div><div class="small">generated/src/java/nio/CharBuffer.java:4</div></td></tr><tr><td><code>java.net.DatagramSocket</code></td><td>channels.DatagramChannel<div class="signature"><code>public abstract java.net.DatagramSocket socket();</code></div><div class="small">generated/src/java/nio/channels/DatagramChannel.java:11</div></td></tr><tr><td><code>java.net.InetAddress</code></td><td>channels.MembershipKey, channels.MulticastChannel<div class="signature"><code>public abstract java.nio.channels.MembershipKey block(java.net.InetAddress p0) throws java.io.IOException;</code></div><div class="small">generated/src/java/nio/channels/MembershipKey.java:8</div></td></tr><tr><td><code>java.net.NetworkInterface</code></td><td>channels.MembershipKey, channels.MulticastChannel<div class="signature"><code>public abstract java.net.NetworkInterface networkInterface();</code></div><div class="small">generated/src/java/nio/channels/MembershipKey.java:12</div></td></tr><tr><td><code>java.net.ProtocolFamily</code></td><td>channels.DatagramChannel, channels.ServerSocketChannel, channels.SocketChannel, channels.spi.SelectorProvider<div class="signature"><code>public static java.nio.channels.DatagramChannel open(java.net.ProtocolFamily p0) throws java.io.IOException</code></div><div class="small">generated/src/java/nio/channels/DatagramChannel.java:7</div></td></tr><tr><td><code>java.net.ServerSocket</code></td><td>channels.ServerSocketChannel<div class="signature"><code>public abstract java.net.ServerSocket socket();</code></div><div class="small">generated/src/java/nio/channels/ServerSocketChannel.java:12</div></td></tr><tr><td><code>java.net.Socket</code></td><td>channels.SocketChannel<div class="signature"><code>public abstract java.net.Socket socket();</code></div><div class="small">generated/src/java/nio/channels/SocketChannel.java:14</div></td></tr><tr><td><code>java.net.SocketAddress</code></td><td>channels.AsynchronousServerSocketChannel, channels.AsynchronousSocketChannel, channels.DatagramChannel, channels.NetworkChannel, channels.ServerSocketChannel, channels.SocketChannel<div class="signature"><code>public final java.nio.channels.AsynchronousServerSocketChannel bind(java.net.SocketAddress p0) throws java.io.IOException</code></div><div class="small">generated/src/java/nio/channels/AsynchronousServerSocketChannel.java:9</div></td></tr><tr><td><code>java.net.SocketOption</code></td><td>channels.AsynchronousServerSocketChannel, channels.AsynchronousSocketChannel, channels.DatagramChannel, channels.NetworkChannel, channels.ServerSocketChannel, channels.SocketChannel<div class="signature"><code>public abstract &lt;T extends java.lang.Object&gt; java.nio.channels.AsynchronousServerSocketChannel setOption(java.net.SocketOption&lt;T&gt; p0, T p1) throws java.io.IOException;</code></div><div class="small">generated/src/java/nio/channels/AsynchronousServerSocketChannel.java:11</div></td></tr><tr><td><code>java.net.URI</code></td><td>file.FileSystems, file.Path, file.Paths, file.spi.FileSystemProvider<div class="signature"><code>public static java.nio.file.FileSystem getFileSystem(java.net.URI p0)</code></div><div class="small">generated/src/java/nio/file/FileSystems.java:7</div></td></tr><tr><td><code>java.security.BasicPermission</code></td><td>file.LinkPermission<div class="signature"><code>public final class LinkPermission extends java.security.BasicPermission</code></div><div class="small">generated/src/java/nio/file/LinkPermission.java:4</div></td></tr><tr><td><code>java.security.Principal</code></td><td>file.attribute.UserPrincipal<div class="signature"><code>public interface UserPrincipal extends java.security.Principal</code></div><div class="small">generated/src/java/nio/file/attribute/UserPrincipal.java:4</div></td></tr><tr><td><code>java.time.Instant</code></td><td>file.attribute.FileTime<div class="signature"><code>public static java.nio.file.attribute.FileTime from(java.time.Instant p0)</code></div><div class="small">generated/src/java/nio/file/attribute/FileTime.java:8</div></td></tr><tr><td><code>java.util.concurrent.ThreadFactory</code></td><td>channels.AsynchronousChannelGroup, channels.spi.AsynchronousChannelProvider<div class="signature"><code>public static java.nio.channels.AsynchronousChannelGroup withFixedThreadPool(int p0, java.util.concurrent.ThreadFactory p1) throws java.io.IOException</code></div><div class="small">generated/src/java/nio/channels/AsynchronousChannelGroup.java:7</div></td></tr></tbody></table></div></section>
+<section><h2>Two more types are required through inheritance</h2>
+<div class="table-wrap"><table><thead><tr><th>Extra JDK type</th><th>Why it is needed</th></tr></thead><tbody>
+<tr><td><code>java.security.Permission</code></td><td><code>LinkPermission</code> extends <code>BasicPermission</code>, which extends <code>Permission</code>. Compilation with only the 17 direct references fails because Permission is missing.</td></tr>
+<tr><td><code>java.security.Guard</code></td><td><code>Permission</code> implements <code>Guard</code>. Adding Permission alone still fails because Guard is missing.</td></tr>
+</tbody></table></div>
+<pre><code>java.nio.file.LinkPermission
+    extends java.security.BasicPermission   [direct dependency]
+        extends java.security.Permission   [extra dependency]
+            implements java.security.Guard [extra dependency]</code></pre></section>
+<section><h2>41 direct references already supplied by J2CL</h2>
+<p>These are dependencies too, but the trial does not need to bring their declarations in from the desktop JDK.</p>
+<div class="table-wrap"><table id="provided-types"><thead><tr><th>Package</th><th>Types</th></tr></thead><tbody><tr><td><code>java.io</code></td><td><code>BufferedWriter</code>, <code>Closeable</code>, <code>IOException</code>, <code>InputStream</code>, <code>OutputStream</code>, <code>Reader</code>, <code>Writer</code></td></tr><tr><td><code>java.lang</code></td><td><code>Appendable</code>, <code>AutoCloseable</code>, <code>CharSequence</code>, <code>Class</code>, <code>Comparable</code>, <code>Enum</code>, <code>Error</code>, <code>Exception</code>, <code>IllegalArgumentException</code>, <code>IllegalStateException</code>, <code>Integer</code>, <code>InterruptedException</code>, <code>Iterable</code>, <code>Long</code>, <code>Object</code>, <code>RuntimeException</code>, <code>String</code>, <code>Throwable</code>, <code>UnsupportedOperationException</code>, <code>Void</code></td></tr><tr><td><code>java.util</code></td><td><code>ConcurrentModificationException</code>, <code>Iterator</code>, <code>List</code>, <code>Locale</code>, <code>Map</code>, <code>Set</code>, <code>SortedMap</code></td></tr><tr><td><code>java.util.concurrent</code></td><td><code>ExecutorService</code>, <code>Future</code>, <code>TimeUnit</code></td></tr><tr><td><code>java.util.function</code></td><td><code>BiPredicate</code>, <code>Consumer</code></td></tr><tr><td><code>java.util.stream</code></td><td><code>IntStream</code>, <code>Stream</code></td></tr></tbody></table></div></section>
+<section><h2>What the compilation experiments established</h2>
+<div class="table-wrap"><table><thead><tr><th>Extra header types</th><th>Result</th></tr></thead><tbody>
+<tr><td>17 direct references</td><td>Fails: <code>java.security.Permission</code> missing.</td></tr>
+<tr><td>17 + Permission = 18</td><td>Fails: <code>java.security.Guard</code> missing.</td></tr>
+<tr><td><strong>17 + Permission + Guard = 19</strong></td><td><strong>Passes.</strong> 156 Java sources and 171 JavaScript implementation modules. Every output file matches the original build, byte for byte.</td></tr>
+<tr><td>19 + three temporal interfaces = 22</td><td>Also passes, but the three extra interfaces are unnecessary for this compilation.</td></tr>
+</tbody></table></div>
+<p style="margin-top:18px">The three temporal interfaces are <code>java.time.temporal.Temporal</code>, <code>TemporalAccessor</code>, and <code>TemporalAdjuster</code>. They appear in Instant's inheritance hierarchy, but the NIO stub compilation succeeds without loading them. A full dependency closure would therefore overstate this particular build's requirements.</p>
+<p>The selected 19-type header JAR is 30,413 bytes; the existing 5,022-type header JAR is 4,962,688 bytes. The normal Bazel build configuration is unchanged. This was an isolated analysis experiment.</p>
+<div class="note"><p><strong>Scope:</strong> these 19 declarations suffice for the current NIO stub transpilation. This is not a complete replacement JDK API or a browser runtime. Consumer code that uses other methods on these JDK types can need additional declarations and runtime implementations.</p></div></section>
+<section><h2>How the list was checked</h2><ol>
+<li>Ran JDK 17 <code>jdeps --api-only -verbose:class -filter:none</code> on the 163 compiled generated NIO types. This covers declarations, generic signatures, and inheritance.</li>
+<li>Compared external type names with the actual pinned J2CL core header JAR. This produced the 41 supplied / 17 missing split.</li>
+<li>Cross-checked against the separately extracted original JDK API. All 57 explicitly referenced external types matched; the compiled enum superclass <code>java.lang.Enum</code> accounts for the 58th.</li>
+<li>Ran ordinary <code>jdeps</code> as well: the throwing bodies add no external type names beyond that union.</li>
+<li>Selected existing declaration-only class files into reduced JARs, ran J2CL under the shared build lock, and compared the successful output with the baseline.</li>
+</ol><p><code>java.io.CharArrayReader</code> is not in the 19-type set. The successful reduced build does not need its declaration.</p>
+<p><a href="../reports/nio-external-dependencies.json">Machine-readable inventory and source evidence</a> · <a href="../reports/dependency-probe/19-types.log">Successful 19-type compiler log</a></p></section>
+</main><footer>Analysis of python-trial's generated JDK 17 NIO API. Public/protected API and stub compilation only; original JDK implementation dependencies are outside this scope. Reports are generated, ignored files.</footer>
+</body></html>

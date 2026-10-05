@@ -1,0 +1,5 @@
+
+  // Integration-only declaration supplied when both IO and NIO overlays are present.
+  public java.nio.file.Path toPath() {
+    throw javaemul.internal.nio.UnsupportedNio.operation("java.io.File.toPath()");
+  }

@@ -1,0 +1,11 @@
+startup --host_jvm_args=-Xmx1g
+build --jobs=1
+build --spawn_strategy=local
+build --java_language_version=21
+build --java_runtime_version=remotejdk_21
+build --tool_java_language_version=21
+build --tool_java_runtime_version=remotejdk_21
+build --worker_max_instances=1
+build --worker_max_multiplex_instances=1
+test --local_test_jobs=1
+test --test_output=errors

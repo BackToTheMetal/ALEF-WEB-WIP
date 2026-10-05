@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="lib3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mps/build/home/.ant/lib/commons-net-1.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mps/build/home/.ant/lib/jsch-0.1.49.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mps/build/home/.ant/lib/jakarta-oro-2.0.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mps/build/home/.ant/lib/ecj.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

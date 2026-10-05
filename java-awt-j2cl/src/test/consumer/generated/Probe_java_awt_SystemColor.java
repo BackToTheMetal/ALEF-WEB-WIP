@@ -1,0 +1,59 @@
+package java.awt;
+
+// Generated from retained OpenJDK signatures. Compile only; never execute.
+final class Probe_java_awt_SystemColor {
+    static void call0() { int value = java.awt.SystemColor.DESKTOP; }
+    static void call1() { int value = java.awt.SystemColor.ACTIVE_CAPTION; }
+    static void call2() { int value = java.awt.SystemColor.ACTIVE_CAPTION_TEXT; }
+    static void call3() { int value = java.awt.SystemColor.ACTIVE_CAPTION_BORDER; }
+    static void call4() { int value = java.awt.SystemColor.INACTIVE_CAPTION; }
+    static void call5() { int value = java.awt.SystemColor.INACTIVE_CAPTION_TEXT; }
+    static void call6() { int value = java.awt.SystemColor.INACTIVE_CAPTION_BORDER; }
+    static void call7() { int value = java.awt.SystemColor.WINDOW; }
+    static void call8() { int value = java.awt.SystemColor.WINDOW_BORDER; }
+    static void call9() { int value = java.awt.SystemColor.WINDOW_TEXT; }
+    static void call10() { int value = java.awt.SystemColor.MENU; }
+    static void call11() { int value = java.awt.SystemColor.MENU_TEXT; }
+    static void call12() { int value = java.awt.SystemColor.TEXT; }
+    static void call13() { int value = java.awt.SystemColor.TEXT_TEXT; }
+    static void call14() { int value = java.awt.SystemColor.TEXT_HIGHLIGHT; }
+    static void call15() { int value = java.awt.SystemColor.TEXT_HIGHLIGHT_TEXT; }
+    static void call16() { int value = java.awt.SystemColor.TEXT_INACTIVE_TEXT; }
+    static void call17() { int value = java.awt.SystemColor.CONTROL; }
+    static void call18() { int value = java.awt.SystemColor.CONTROL_TEXT; }
+    static void call19() { int value = java.awt.SystemColor.CONTROL_HIGHLIGHT; }
+    static void call20() { int value = java.awt.SystemColor.CONTROL_LT_HIGHLIGHT; }
+    static void call21() { int value = java.awt.SystemColor.CONTROL_SHADOW; }
+    static void call22() { int value = java.awt.SystemColor.CONTROL_DK_SHADOW; }
+    static void call23() { int value = java.awt.SystemColor.SCROLLBAR; }
+    static void call24() { int value = java.awt.SystemColor.INFO; }
+    static void call25() { int value = java.awt.SystemColor.INFO_TEXT; }
+    static void call26() { int value = java.awt.SystemColor.NUM_COLORS; }
+    static void call27() { java.awt.SystemColor value = java.awt.SystemColor.desktop; }
+    static void call28() { java.awt.SystemColor value = java.awt.SystemColor.activeCaption; }
+    static void call29() { java.awt.SystemColor value = java.awt.SystemColor.activeCaptionText; }
+    static void call30() { java.awt.SystemColor value = java.awt.SystemColor.activeCaptionBorder; }
+    static void call31() { java.awt.SystemColor value = java.awt.SystemColor.inactiveCaption; }
+    static void call32() { java.awt.SystemColor value = java.awt.SystemColor.inactiveCaptionText; }
+    static void call33() { java.awt.SystemColor value = java.awt.SystemColor.inactiveCaptionBorder; }
+    static void call34() { java.awt.SystemColor value = java.awt.SystemColor.window; }
+    static void call35() { java.awt.SystemColor value = java.awt.SystemColor.windowBorder; }
+    static void call36() { java.awt.SystemColor value = java.awt.SystemColor.windowText; }
+    static void call37() { java.awt.SystemColor value = java.awt.SystemColor.menu; }
+    static void call38() { java.awt.SystemColor value = java.awt.SystemColor.menuText; }
+    static void call39() { java.awt.SystemColor value = java.awt.SystemColor.text; }
+    static void call40() { java.awt.SystemColor value = java.awt.SystemColor.textText; }
+    static void call41() { java.awt.SystemColor value = java.awt.SystemColor.textHighlight; }
+    static void call42() { java.awt.SystemColor value = java.awt.SystemColor.textHighlightText; }
+    static void call43() { java.awt.SystemColor value = java.awt.SystemColor.textInactiveText; }
+    static void call44() { java.awt.SystemColor value = java.awt.SystemColor.control; }
+    static void call45() { java.awt.SystemColor value = java.awt.SystemColor.controlText; }
+    static void call46() { java.awt.SystemColor value = java.awt.SystemColor.controlHighlight; }
+    static void call47() { java.awt.SystemColor value = java.awt.SystemColor.controlLtHighlight; }
+    static void call48() { java.awt.SystemColor value = java.awt.SystemColor.controlShadow; }
+    static void call49() { java.awt.SystemColor value = java.awt.SystemColor.controlDkShadow; }
+    static void call50() { java.awt.SystemColor value = java.awt.SystemColor.scrollbar; }
+    static void call51() { java.awt.SystemColor value = java.awt.SystemColor.info; }
+    static void call52() { java.awt.SystemColor value = java.awt.SystemColor.infoText; }
+    static void call53(java.awt.SystemColor receiver)  { java.lang.String value = receiver.toString(); }
+}

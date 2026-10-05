@@ -1,0 +1,5 @@
+.cache/
+.gradle/
+build/
+__pycache__/
+j2cl-workspace/bazel-*

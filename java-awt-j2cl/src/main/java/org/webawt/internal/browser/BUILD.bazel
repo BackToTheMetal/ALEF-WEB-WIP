@@ -1,0 +1,34 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(default_visibility = ["//visibility:public"])
+
+j2cl_library(
+    name = "browser-elemental2-j2cl",
+    srcs = [
+        "BrowserDocument.java",
+        "BrowserKeyMapping.java",
+        "Elemental2BrowserDocument.java",
+        "Elemental2BrowserScheduler.java",
+        "Elemental2CanvasPeer.java",
+        "Elemental2CheckboxPeer.java",
+        "Elemental2DialogPeer.java",
+        "Elemental2DomPeer.java",
+        "Elemental2DomPeerFactory.java",
+        "Elemental2DisplayMetricsProvider.java",
+        "Elemental2DesktopPeer.java",
+        "Elemental2ImageDecoder.java",
+        "Elemental2FontMeasurementProvider.java",
+        "Elemental2FontRasterizer.java",
+        "Elemental2LabelPeer.java",
+        "Elemental2MenuPeer.java",
+        "Elemental2MenuPeerFactory.java",
+        "Elemental2SystemColorProvider.java",
+        "Elemental2ToolkitProvider.java",
+    ],
+    deps = [
+        "//src/main/java/org/webawt/internal/peer:peer-api-j2cl",
+        "@elemental2//:elemental2-core-j2cl",
+        "@elemental2//:elemental2-dom-j2cl",
+        "@j2cl//:jsinterop-annotations-j2cl",
+    ],
+)

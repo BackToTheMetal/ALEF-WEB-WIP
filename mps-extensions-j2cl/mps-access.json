@@ -1,0 +1,50 @@
+[
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponent.java",
+    "replacement": "jetbrains/mps/nodeEditor/EditorComponent.java",
+    "base": "mps-web/editor/editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponent.java",
+    "base_sha256": "c31a576f6a53dbacf358debc24786c6efe313bdaf2dd1049fa1a95b94ef9432e"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponentActions.java",
+    "replacement": "jetbrains/mps/nodeEditor/EditorComponentActions.java",
+    "base": "mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponentActions.java",
+    "base_sha256": "2e6670abf30449fa8a5414c9b0b0ec6e683bf448f9b4f48370ba397a69b5d51e"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdaterImpl.java",
+    "replacement": "jetbrains/mps/nodeEditor/updater/UpdaterImpl.java",
+    "base": "mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdaterImpl.java",
+    "base_sha256": "de8707b6ec7b4e0b8c0dd04fef40a42f2cb7a5fbcad39760e5d48373b28bd8d5"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Label.java",
+    "replacement": "jetbrains/mps/nodeEditor/cells/EditorCell_Label.java",
+    "base": "mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Label.java",
+    "base_sha256": "8592e22c12f67d68d6b484dd30e20036431587151c0c8faf1d9da463f0253213"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/sidetransform/EditorCell_STHint.java",
+    "replacement": "jetbrains/mps/nodeEditor/sidetransform/EditorCell_STHint.java",
+    "base": "mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/sidetransform/EditorCell_STHint.java",
+    "base_sha256": "ec42d38391fe1db665754b26cc6f97f2fa1276c2b6e260b50d4ec3933f6b3adc"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/cellActions/CellAction_InsertIntoCollection.java",
+    "replacement": "jetbrains/mps/nodeEditor/cellActions/CellAction_InsertIntoCollection.java",
+    "base": "mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/cellActions/CellAction_InsertIntoCollection.java",
+    "base_sha256": "5b8beab962c7db59d9574d71e49b4216de60eac97aa4f43358306c49f87aa325"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/lang/editor/menus/transformation/SubstituteMenuItemAsActionItem.java",
+    "replacement": "jetbrains/mps/lang/editor/menus/transformation/SubstituteMenuItemAsActionItem.java",
+    "base": "mps/editor/editor-runtime/source/jetbrains/mps/lang/editor/menus/transformation/SubstituteMenuItemAsActionItem.java",
+    "base_sha256": "385cb6cecd9175ff865647a4233aea896e97a0bced9a5e3e6c20e7308a4dd9ee"
+  },
+  {
+    "original": "editor/editor-runtime/source/jetbrains/mps/nodeEditor/NodeEditorActions.java",
+    "replacement": "jetbrains/mps/nodeEditor/NodeEditorActions.java",
+    "base": "mps/editor/editor-runtime/source/jetbrains/mps/nodeEditor/NodeEditorActions.java",
+    "base_sha256": "655d7b8450e3a5ba9f7306bbc6484d8eb48d658c6d0db8fd535de3057649b3ce"
+  }
+]

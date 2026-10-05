@@ -1,0 +1,9 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+j2cl_library(
+    name = "mps-readable",
+    srcs = ["InternalAnonymousClassUsage.java"],
+    # The original MPS fixture intentionally creates unused anonymous classes.
+    javacopts = ["-Xep:UnusedAnonymousClass:OFF"],
+    deps = ["//:java-nio"],
+    visibility = ["//visibility:public"],
+)

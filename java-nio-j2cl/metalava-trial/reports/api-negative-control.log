@@ -1,0 +1,19 @@
+{
+  "status": "FAIL",
+  "types": 163,
+  "members_checked": 1170,
+  "missing": [
+    {
+      "type": "java.nio.ByteOrder",
+      "missing": "class"
+    }
+  ],
+  "interface_order_normalized": [
+    "java.nio.CharBuffer",
+    "java.nio.channels.DatagramChannel",
+    "java.nio.channels.FileChannel",
+    "java.nio.channels.Pipe.SinkChannel",
+    "java.nio.channels.SocketChannel"
+  ]
+}
+PASS: missing class rejected; only interface order is normalized, not generic argument order

@@ -1,0 +1,11 @@
+{
+  "mps_revision": "d2589ed55bbc9445b660769fcc17da97e8e395a6",
+  "java_version": "21.0.12.1",
+  "oracle_source_roots": [
+    "mps/core/vfs/source",
+    "mps/core/vfs/deprecated"
+  ],
+  "coverage": "Lexical Path/FileUtil operations, 5461 exhaustive short macro inputs, PathSpec, QualifiedPath, file/JAR URL encoding",
+  "browser_only": "ArchiveBoundaryTest verifies explicit failure for ZIP creation and archive content access",
+  "boundary": "JAR URL ASCII escaping preserves exact Unicode sequences; unlike JDK URI it does not NFC-normalize decomposed text"
+}

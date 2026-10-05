@@ -1,0 +1,40 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(default_visibility = ["//visibility:public"])
+
+j2cl_library(
+    name = "peer-api-j2cl",
+    srcs = [
+        "CanvasPeer.java",
+        "BrowserScheduler.java",
+        "DomPeer.java",
+        "DomPeerFactory.java",
+        "GlyphTextSource.java",
+        "FontMeasurementProvider.java",
+        "FontRasterizer.java",
+        "FontCss.java",
+        "DisplayMetricsProvider.java",
+        "DesktopPeer.java",
+        "ImageDecodeCallback.java",
+        "ImageDecoder.java",
+        "MenuPeer.java",
+        "MenuPeerEntry.java",
+        "MenuPeerFactory.java",
+        "ModelDomPeer.java",
+        "ModelDesktopPeer.java",
+        "ModelMenuPeer.java",
+        "ModelCanvasPeer.java",
+        "PeerInputEvent.java",
+        "PeerDesktopEvent.java",
+        "PeerDesktopEventHandler.java",
+        "PeerCompositionEventHandler.java",
+        "PeerDragEvent.java",
+        "PeerDragEventHandler.java",
+        "PeerDragGestureStarter.java",
+        "PeerDragSourceListener.java",
+        "SystemColorProvider.java",
+        "ToolkitProvider.java",
+        "PeerInputEventHandler.java",
+        "WebAwtRuntime.java",
+    ],
+)

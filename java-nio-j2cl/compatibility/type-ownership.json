@@ -1,0 +1,3849 @@
+{
+  "status": "PASS",
+  "nio_types": [
+    {
+      "type": "java.nio.Buffer",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/Buffer.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.BufferOverflowException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/BufferOverflowException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.BufferUnderflowException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/BufferUnderflowException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.ByteBuffer",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/ByteBuffer.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.ByteOrder",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/ByteOrder.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.CharBuffer",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/CharBuffer.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.DoubleBuffer",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/DoubleBuffer.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.FloatBuffer",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/FloatBuffer.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.IntBuffer",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/IntBuffer.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.InvalidMarkException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/InvalidMarkException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.LongBuffer",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/LongBuffer.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.MappedByteBuffer",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/MappedByteBuffer.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.ReadOnlyBufferException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/ReadOnlyBufferException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.ShortBuffer",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/ShortBuffer.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.AcceptPendingException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/AcceptPendingException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.AlreadyBoundException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/AlreadyBoundException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.AlreadyConnectedException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/AlreadyConnectedException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.AsynchronousByteChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/AsynchronousByteChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.AsynchronousChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/AsynchronousChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.AsynchronousChannelGroup",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/AsynchronousChannelGroup.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.AsynchronousCloseException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/AsynchronousCloseException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.AsynchronousFileChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/AsynchronousFileChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.AsynchronousServerSocketChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/AsynchronousServerSocketChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.AsynchronousSocketChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/AsynchronousSocketChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.ByteChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/ByteChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.CancelledKeyException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/CancelledKeyException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.Channel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/Channel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.Channels",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/Channels.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.ClosedByInterruptException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/ClosedByInterruptException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.ClosedChannelException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/ClosedChannelException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.ClosedSelectorException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/ClosedSelectorException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.CompletionHandler",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/CompletionHandler.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.ConnectionPendingException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/ConnectionPendingException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.DatagramChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/DatagramChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.FileChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/FileChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.FileChannel.MapMode",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/FileChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.FileLock",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/FileLock.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.FileLockInterruptionException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/FileLockInterruptionException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.GatheringByteChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/GatheringByteChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.IllegalBlockingModeException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/IllegalBlockingModeException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.IllegalChannelGroupException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/IllegalChannelGroupException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.IllegalSelectorException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/IllegalSelectorException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.InterruptedByTimeoutException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/InterruptedByTimeoutException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.InterruptibleChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/InterruptibleChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.MembershipKey",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/MembershipKey.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.MulticastChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/MulticastChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.NetworkChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/NetworkChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.NoConnectionPendingException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/NoConnectionPendingException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.NonReadableChannelException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/NonReadableChannelException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.NonWritableChannelException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/NonWritableChannelException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.NotYetBoundException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/NotYetBoundException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.NotYetConnectedException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/NotYetConnectedException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.OverlappingFileLockException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/OverlappingFileLockException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.Pipe",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/Pipe.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.Pipe.SinkChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/Pipe.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.Pipe.SourceChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/Pipe.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.ReadPendingException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/ReadPendingException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.ReadableByteChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/ReadableByteChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.ScatteringByteChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/ScatteringByteChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.SeekableByteChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/SeekableByteChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.SelectableChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/SelectableChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.SelectionKey",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/SelectionKey.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.Selector",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/Selector.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.ServerSocketChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/ServerSocketChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.ShutdownChannelGroupException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/ShutdownChannelGroupException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.SocketChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/SocketChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.UnresolvedAddressException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/UnresolvedAddressException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.UnsupportedAddressTypeException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/UnsupportedAddressTypeException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.WritableByteChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/WritableByteChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.WritePendingException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/WritePendingException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.spi.AbstractInterruptibleChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/spi/AbstractInterruptibleChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.spi.AbstractSelectableChannel",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/spi/AbstractSelectableChannel.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.spi.AbstractSelectionKey",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/spi/AbstractSelectionKey.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.spi.AbstractSelector",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/spi/AbstractSelector.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.spi.AsynchronousChannelProvider",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/spi/AsynchronousChannelProvider.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.channels.spi.SelectorProvider",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/channels/spi/SelectorProvider.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.charset.CharacterCodingException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/charset/CharacterCodingException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.charset.Charset",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/charset/Charset.java",
+        "status": "augmented upstream"
+      }
+    },
+    {
+      "type": "java.nio.charset.CharsetDecoder",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/charset/CharsetDecoder.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.charset.CharsetEncoder",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/charset/CharsetEncoder.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.charset.CoderMalfunctionError",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/charset/CoderMalfunctionError.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.charset.CoderResult",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/charset/CoderResult.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.charset.CodingErrorAction",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/charset/CodingErrorAction.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.charset.IllegalCharsetNameException",
+      "provider": {
+        "owner": "J2CL 20260402",
+        "status": "upstream"
+      }
+    },
+    {
+      "type": "java.nio.charset.MalformedInputException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/charset/MalformedInputException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.charset.StandardCharsets",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/charset/StandardCharsets.java",
+        "status": "augmented upstream"
+      }
+    },
+    {
+      "type": "java.nio.charset.UnmappableCharacterException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/charset/UnmappableCharacterException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.charset.UnsupportedCharsetException",
+      "provider": {
+        "owner": "J2CL 20260402",
+        "status": "upstream"
+      }
+    },
+    {
+      "type": "java.nio.charset.spi.CharsetProvider",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/charset/spi/CharsetProvider.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.AccessDeniedException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/AccessDeniedException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.AccessMode",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/AccessMode.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.AtomicMoveNotSupportedException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/AtomicMoveNotSupportedException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.ClosedDirectoryStreamException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/ClosedDirectoryStreamException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.ClosedFileSystemException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/ClosedFileSystemException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.ClosedWatchServiceException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/ClosedWatchServiceException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.CopyOption",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/CopyOption.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.DirectoryIteratorException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/DirectoryIteratorException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.DirectoryNotEmptyException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/DirectoryNotEmptyException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.DirectoryStream",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/DirectoryStream.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.DirectoryStream.Filter",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/DirectoryStream.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.FileAlreadyExistsException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/FileAlreadyExistsException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.FileStore",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/FileStore.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.FileSystem",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/FileSystem.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.FileSystemAlreadyExistsException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/FileSystemAlreadyExistsException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.FileSystemException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/FileSystemException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.FileSystemLoopException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/FileSystemLoopException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.FileSystemNotFoundException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/FileSystemNotFoundException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.FileSystems",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/FileSystems.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.FileVisitOption",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/FileVisitOption.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.FileVisitResult",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/FileVisitResult.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.FileVisitor",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/FileVisitor.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.Files",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/Files.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.InvalidPathException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/InvalidPathException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.LinkOption",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/LinkOption.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.LinkPermission",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/LinkPermission.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.NoSuchFileException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/NoSuchFileException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.NotDirectoryException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/NotDirectoryException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.NotLinkException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/NotLinkException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.OpenOption",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/OpenOption.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.Path",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/Path.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.PathMatcher",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/PathMatcher.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.Paths",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/Paths.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.ProviderMismatchException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/ProviderMismatchException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.ProviderNotFoundException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/ProviderNotFoundException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.ReadOnlyFileSystemException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/ReadOnlyFileSystemException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.SecureDirectoryStream",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/SecureDirectoryStream.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.SimpleFileVisitor",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/SimpleFileVisitor.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.StandardCopyOption",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/StandardCopyOption.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.StandardOpenOption",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/StandardOpenOption.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.StandardWatchEventKinds",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/StandardWatchEventKinds.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.WatchEvent",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/WatchEvent.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.WatchEvent.Kind",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/WatchEvent.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.WatchEvent.Modifier",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/WatchEvent.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.WatchKey",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/WatchKey.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.WatchService",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/WatchService.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.Watchable",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/Watchable.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.AclEntry",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/AclEntry.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.AclEntry.Builder",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/AclEntry.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.AclEntryFlag",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/AclEntryFlag.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.AclEntryPermission",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/AclEntryPermission.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.AclEntryType",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/AclEntryType.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.AclFileAttributeView",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/AclFileAttributeView.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.AttributeView",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/AttributeView.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.BasicFileAttributeView",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/BasicFileAttributeView.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.BasicFileAttributes",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/BasicFileAttributes.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.DosFileAttributeView",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/DosFileAttributeView.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.DosFileAttributes",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/DosFileAttributes.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.FileAttribute",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/FileAttribute.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.FileAttributeView",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/FileAttributeView.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.FileOwnerAttributeView",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/FileOwnerAttributeView.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.FileStoreAttributeView",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/FileStoreAttributeView.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.FileTime",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/FileTime.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.GroupPrincipal",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/GroupPrincipal.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.PosixFileAttributeView",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/PosixFileAttributeView.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.PosixFileAttributes",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/PosixFileAttributes.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.PosixFilePermission",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/PosixFilePermission.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.PosixFilePermissions",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/PosixFilePermissions.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.UserDefinedFileAttributeView",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/UserDefinedFileAttributeView.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.UserPrincipal",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/UserPrincipal.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.UserPrincipalLookupService",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/UserPrincipalLookupService.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.attribute.UserPrincipalNotFoundException",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/attribute/UserPrincipalNotFoundException.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.spi.FileSystemProvider",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/spi/FileSystemProvider.java",
+        "status": "source"
+      }
+    },
+    {
+      "type": "java.nio.file.spi.FileTypeDetector",
+      "provider": {
+        "owner": "java-nio-j2cl",
+        "source": "src/main/super/java/nio/file/spi/FileTypeDetector.java",
+        "status": "source"
+      }
+    }
+  ],
+  "providers": {
+    "java.io.BufferedWriter": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.ByteArrayInputStream": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.ByteArrayOutputStream": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.Closeable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.FilterInputStream": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.FilterOutputStream": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.Flushable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.HasSerializableTypeMarker": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.IOException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.IOUtils": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.InputStream": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.OutputStream": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.OutputStreamWriter": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.PrintStream": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.PrintWriter": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.Reader": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.Serializable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.StringReader": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.StringWriter": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.UncheckedIOException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.UnsupportedEncodingException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.io.Writer": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.AbstractStringBuilder": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Appendable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.ArithmeticException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.ArrayIndexOutOfBoundsException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.ArrayStoreException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.AssertionError": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.AutoCloseable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Boolean": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Byte": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.CaseMapper": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.CharSequence": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Character": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Class": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.ClassCastException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.CloneNotSupportedException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Cloneable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Comparable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Deprecated": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Double": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Enum": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Error": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Exception": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Float": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.FunctionalInterface": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.HasCharSequenceTypeMarker": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.HasCloneableTypeMarker": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.HasComparableTypeMarker": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.IllegalArgumentException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.IllegalStateException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.IndexOutOfBoundsException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Integer": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.IntegralToString": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.InterruptedException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Iterable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.JsException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Long": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.MatchException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Math": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.NegativeArraySizeException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.NullPointerException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Number": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.NumberFormatException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Object": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Override": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.RealToString": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Record": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Runnable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.RuntimeException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.SafeVarargs": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.SecurityException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Short": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.StackTraceElement": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.StrictMath": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.String": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.StringBuffer": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.StringBuilder": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.StringIndexOutOfBoundsException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.SuppressWarnings": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.System": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.ThreadLocal": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Throwable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.UnsupportedOperationException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.Void": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.annotation.Annotation": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.annotation.AnnotationFormatError": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.annotation.AnnotationTypeMismatchException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.annotation.Documented": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.annotation.ElementType": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.annotation.IncompleteAnnotationException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.annotation.Inherited": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.annotation.Native": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.annotation.Repeatable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.annotation.Retention": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.annotation.RetentionPolicy": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.annotation.Target": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.reflect.Array": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.reflect.Type": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.math.BigDecimal": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.math.BigInteger": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.math.BitLevel": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.math.Conversion": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.math.Division": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.math.Elementary": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.math.Logical": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.math.MathContext": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.math.Multiplication": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.math.Primality": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.math.RoundingMode": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.nio.charset.Charset": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/charset/Charset.java",
+      "status": "augmented upstream"
+    },
+    "java.nio.charset.IllegalCharsetNameException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.nio.charset.StandardCharsets": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/charset/StandardCharsets.java",
+      "status": "augmented upstream"
+    },
+    "java.nio.charset.UnsupportedCharsetException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.security.DigestException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.security.GeneralSecurityException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.security.MessageDigest": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.security.MessageDigestSpi": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.security.NoSuchAlgorithmException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.security.SHA256Digest": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.sql.Date": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.sql.Time": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.sql.Timestamp": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.AbstractCollection": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.AbstractHashMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.AbstractList": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.AbstractMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.AbstractMapEntry": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.AbstractQueue": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.AbstractSequentialList": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.AbstractSet": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.ArrayDeque": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.ArrayList": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.ArrayListBase": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Arrays": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Base64": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.BitSet": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Collection": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Collections": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Comparator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Comparators": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.ConcurrentModificationException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Date": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Deque": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.DoubleSummaryStatistics": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.EmptyStackException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.EnumMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.EnumSet": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Enumeration": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.EventListener": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.EventObject": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.HashMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.HashSet": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.IdentityHashMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.IntSummaryStatistics": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.InternalHashCodeMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.InternalJsMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.InternalStringMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Iterator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.LinkedHashMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.LinkedHashSet": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.LinkedList": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.List": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.ListIterator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Locale": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.LongSummaryStatistics": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Map": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.MissingResourceException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.NavigableMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.NavigableSet": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.NoSuchElementException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Objects": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Optional": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.OptionalDouble": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.OptionalInt": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.OptionalLong": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.PrimitiveIterator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.PriorityQueue": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Queue": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Random": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.RandomAccess": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Set": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.SortedMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.SortedSet": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Spliterator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Spliterators": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Stack": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.StringJoiner": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.TooManyListenersException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.TreeMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.TreeSet": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.Vector": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.Callable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.CancellationException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.ConcurrentHashMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.ConcurrentMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.Delayed": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.ExecutionException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.Executor": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.ExecutorService": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.Executors": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.Flow": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.Future": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.RejectedExecutionException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.RunnableFuture": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.ScheduledExecutorService": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.ScheduledFuture": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.TimeUnit": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.TimeoutException": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.atomic.AtomicBoolean": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.atomic.AtomicInteger": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.atomic.AtomicIntegerArray": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.atomic.AtomicLong": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.atomic.AtomicLongArray": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.atomic.AtomicReference": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.concurrent.atomic.AtomicReferenceArray": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.BiConsumer": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.BiFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.BiPredicate": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.BinaryOperator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.BooleanSupplier": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.Consumer": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.DoubleBinaryOperator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.DoubleConsumer": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.DoubleFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.DoublePredicate": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.DoubleSupplier": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.DoubleToIntFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.DoubleToLongFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.DoubleUnaryOperator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.Function": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.IntBinaryOperator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.IntConsumer": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.IntFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.IntPredicate": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.IntSupplier": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.IntToDoubleFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.IntToLongFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.IntUnaryOperator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.LongBinaryOperator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.LongConsumer": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.LongFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.LongPredicate": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.LongSupplier": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.LongToDoubleFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.LongToIntFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.LongUnaryOperator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.ObjDoubleConsumer": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.ObjIntConsumer": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.ObjLongConsumer": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.Predicate": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.Supplier": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.ToDoubleBiFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.ToDoubleFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.ToIntBiFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.ToIntFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.ToLongBiFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.ToLongFunction": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.function.UnaryOperator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.logging.Formatter": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.logging.Handler": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.logging.Level": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.logging.LogManager": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.logging.LogRecord": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.logging.Logger": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.logging.SimpleConsoleLogHandler": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.BaseStream": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.Collector": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.CollectorImpl": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.Collectors": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.DoubleStream": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.DoubleStreamImpl": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.IntStream": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.IntStreamImpl": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.LongStream": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.LongStreamImpl": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.Stream": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.StreamImpl": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.StreamSupport": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.util.stream.TerminatableStream": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.ArrayHelper": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.ArrayIterator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.ArrayStamper": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.Asserts": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.Casts": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.CharSequences": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.CollectionHelper": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.Comparables": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.ConsoleLogger": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.Constructor": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.EmulatedCharset": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/javaemul/internal/EmulatedCharset.java",
+      "status": "augmented upstream"
+    },
+    "javaemul.internal.Enums": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.Exceptions": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.HashCodes": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.InternalPreconditions": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.J2clSealedTypeMarker": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.JsIterableHelper": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.JsUtils": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.LongUtils": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.MergeSorter": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.NativeRegExp": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.Numbers": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.Objects": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.Platform": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.PrimitiveLists": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.Primitives": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.Ref": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.StringUtil": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.ThrowableUtils": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.ValueType": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.annotations.CompilerHint": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.annotations.DoNotAutobox": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.annotations.ForceInline": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.annotations.HasNoSideEffects": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.annotations.KtDisabled": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.annotations.KtIn": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.annotations.KtName": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.annotations.KtNative": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.annotations.KtOut": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.annotations.KtProperty": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.annotations.UncheckedCast": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javaemul.internal.annotations.Wasm": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javasynth.java.lang.IncompatibleClassChangeError": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javasynth.java.lang.NoSuchFieldError": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javasynth.java.lang.constant.ClassDesc": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javasynth.java.lang.invoke.CallSite": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javasynth.java.lang.invoke.ConstantBootstraps": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javasynth.java.lang.invoke.LambdaMetafactory": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javasynth.java.lang.invoke.MethodHandle": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javasynth.java.lang.invoke.MethodHandles": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javasynth.java.lang.invoke.MethodType": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javasynth.java.lang.invoke.SerializedLambda": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javasynth.java.lang.invoke.TypeDescriptor": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javasynth.java.lang.runtime.ObjectMethods": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javasynth.java.lang.runtime.SwitchBootstraps": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "javax.annotation.processing.Generated": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.io.HasSerializableTypeMarker": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.io.Serializable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.CaseMapper": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.Class": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.Cloneable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.Comparable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.HasCharSequenceTypeMarker": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.HasCloneableTypeMarker": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.HasComparableTypeMarker": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.IntegralToString": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.Iterable": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.Math": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.Number": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.Object": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.RealToString": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.Record": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.RyuDouble": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.RyuFloat": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.lang.String": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.util.ArrayList": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.util.HashMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.util.IdentityHashMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.util.Iterator": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.java.util.LinkedHashMap": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.ArrayHelper": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.ConsoleLogger": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.Constructor": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.Enums": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.HashCodes": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.JsFunctionAdaptor": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.JsObject": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.JsUtils": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.LongUtils": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.Platform": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.PrimitiveLists": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.Primitives": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.ThrowableUtils": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.ValueType": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.WasmAny": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.WasmExtern": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "super-wasm.javaemul.internal.WasmFuncref": {
+      "owner": "J2CL 20260402",
+      "status": "upstream"
+    },
+    "java.lang.ClassLoader": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/lang/ClassLoader.java",
+      "status": "external signature subset"
+    },
+    "java.lang.Readable": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/lang/Readable.java",
+      "status": "external signature subset"
+    },
+    "java.lang.Thread": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/lang/Thread.java",
+      "status": "external signature subset"
+    },
+    "java.net.DatagramSocket": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/net/DatagramSocket.java",
+      "status": "external signature subset"
+    },
+    "java.net.InetAddress": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/net/InetAddress.java",
+      "status": "external signature subset"
+    },
+    "java.net.NetworkInterface": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/net/NetworkInterface.java",
+      "status": "external signature subset"
+    },
+    "java.net.ProtocolFamily": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/net/ProtocolFamily.java",
+      "status": "external signature subset"
+    },
+    "java.net.ServerSocket": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/net/ServerSocket.java",
+      "status": "external signature subset"
+    },
+    "java.net.Socket": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/net/Socket.java",
+      "status": "external signature subset"
+    },
+    "java.net.SocketAddress": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/net/SocketAddress.java",
+      "status": "external signature subset"
+    },
+    "java.net.SocketOption": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/net/SocketOption.java",
+      "status": "external signature subset"
+    },
+    "java.nio.Buffer": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/Buffer.java",
+      "status": "source"
+    },
+    "java.nio.BufferOverflowException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/BufferOverflowException.java",
+      "status": "source"
+    },
+    "java.nio.BufferUnderflowException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/BufferUnderflowException.java",
+      "status": "source"
+    },
+    "java.nio.ByteBuffer": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/ByteBuffer.java",
+      "status": "source"
+    },
+    "java.nio.ByteOrder": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/ByteOrder.java",
+      "status": "source"
+    },
+    "java.nio.CharBuffer": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/CharBuffer.java",
+      "status": "source"
+    },
+    "java.nio.DoubleBuffer": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/DoubleBuffer.java",
+      "status": "source"
+    },
+    "java.nio.FloatBuffer": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/FloatBuffer.java",
+      "status": "source"
+    },
+    "java.nio.IntBuffer": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/IntBuffer.java",
+      "status": "source"
+    },
+    "java.nio.InvalidMarkException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/InvalidMarkException.java",
+      "status": "source"
+    },
+    "java.nio.LongBuffer": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/LongBuffer.java",
+      "status": "source"
+    },
+    "java.nio.MappedByteBuffer": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/MappedByteBuffer.java",
+      "status": "source"
+    },
+    "java.nio.ReadOnlyBufferException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/ReadOnlyBufferException.java",
+      "status": "source"
+    },
+    "java.nio.ShortBuffer": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/ShortBuffer.java",
+      "status": "source"
+    },
+    "java.nio.channels.AcceptPendingException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/AcceptPendingException.java",
+      "status": "source"
+    },
+    "java.nio.channels.AlreadyBoundException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/AlreadyBoundException.java",
+      "status": "source"
+    },
+    "java.nio.channels.AlreadyConnectedException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/AlreadyConnectedException.java",
+      "status": "source"
+    },
+    "java.nio.channels.AsynchronousByteChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/AsynchronousByteChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.AsynchronousChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/AsynchronousChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.AsynchronousChannelGroup": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/AsynchronousChannelGroup.java",
+      "status": "source"
+    },
+    "java.nio.channels.AsynchronousCloseException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/AsynchronousCloseException.java",
+      "status": "source"
+    },
+    "java.nio.channels.AsynchronousFileChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/AsynchronousFileChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.AsynchronousServerSocketChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/AsynchronousServerSocketChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.AsynchronousSocketChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/AsynchronousSocketChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.ByteChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/ByteChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.CancelledKeyException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/CancelledKeyException.java",
+      "status": "source"
+    },
+    "java.nio.channels.Channel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/Channel.java",
+      "status": "source"
+    },
+    "java.nio.channels.Channels": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/Channels.java",
+      "status": "source"
+    },
+    "java.nio.channels.ClosedByInterruptException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/ClosedByInterruptException.java",
+      "status": "source"
+    },
+    "java.nio.channels.ClosedChannelException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/ClosedChannelException.java",
+      "status": "source"
+    },
+    "java.nio.channels.ClosedSelectorException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/ClosedSelectorException.java",
+      "status": "source"
+    },
+    "java.nio.channels.CompletionHandler": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/CompletionHandler.java",
+      "status": "source"
+    },
+    "java.nio.channels.ConnectionPendingException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/ConnectionPendingException.java",
+      "status": "source"
+    },
+    "java.nio.channels.DatagramChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/DatagramChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.FileChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/FileChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.FileLock": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/FileLock.java",
+      "status": "source"
+    },
+    "java.nio.channels.FileLockInterruptionException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/FileLockInterruptionException.java",
+      "status": "source"
+    },
+    "java.nio.channels.GatheringByteChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/GatheringByteChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.IllegalBlockingModeException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/IllegalBlockingModeException.java",
+      "status": "source"
+    },
+    "java.nio.channels.IllegalChannelGroupException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/IllegalChannelGroupException.java",
+      "status": "source"
+    },
+    "java.nio.channels.IllegalSelectorException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/IllegalSelectorException.java",
+      "status": "source"
+    },
+    "java.nio.channels.InterruptedByTimeoutException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/InterruptedByTimeoutException.java",
+      "status": "source"
+    },
+    "java.nio.channels.InterruptibleChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/InterruptibleChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.MembershipKey": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/MembershipKey.java",
+      "status": "source"
+    },
+    "java.nio.channels.MulticastChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/MulticastChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.NetworkChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/NetworkChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.NoConnectionPendingException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/NoConnectionPendingException.java",
+      "status": "source"
+    },
+    "java.nio.channels.NonReadableChannelException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/NonReadableChannelException.java",
+      "status": "source"
+    },
+    "java.nio.channels.NonWritableChannelException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/NonWritableChannelException.java",
+      "status": "source"
+    },
+    "java.nio.channels.NotYetBoundException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/NotYetBoundException.java",
+      "status": "source"
+    },
+    "java.nio.channels.NotYetConnectedException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/NotYetConnectedException.java",
+      "status": "source"
+    },
+    "java.nio.channels.OverlappingFileLockException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/OverlappingFileLockException.java",
+      "status": "source"
+    },
+    "java.nio.channels.Pipe": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/Pipe.java",
+      "status": "source"
+    },
+    "java.nio.channels.ReadPendingException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/ReadPendingException.java",
+      "status": "source"
+    },
+    "java.nio.channels.ReadableByteChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/ReadableByteChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.ScatteringByteChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/ScatteringByteChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.SeekableByteChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/SeekableByteChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.SelectableChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/SelectableChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.SelectionKey": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/SelectionKey.java",
+      "status": "source"
+    },
+    "java.nio.channels.Selector": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/Selector.java",
+      "status": "source"
+    },
+    "java.nio.channels.ServerSocketChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/ServerSocketChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.ShutdownChannelGroupException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/ShutdownChannelGroupException.java",
+      "status": "source"
+    },
+    "java.nio.channels.SocketChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/SocketChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.UnresolvedAddressException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/UnresolvedAddressException.java",
+      "status": "source"
+    },
+    "java.nio.channels.UnsupportedAddressTypeException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/UnsupportedAddressTypeException.java",
+      "status": "source"
+    },
+    "java.nio.channels.WritableByteChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/WritableByteChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.WritePendingException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/WritePendingException.java",
+      "status": "source"
+    },
+    "java.nio.channels.spi.AbstractInterruptibleChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/spi/AbstractInterruptibleChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.spi.AbstractSelectableChannel": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/spi/AbstractSelectableChannel.java",
+      "status": "source"
+    },
+    "java.nio.channels.spi.AbstractSelectionKey": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/spi/AbstractSelectionKey.java",
+      "status": "source"
+    },
+    "java.nio.channels.spi.AbstractSelector": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/spi/AbstractSelector.java",
+      "status": "source"
+    },
+    "java.nio.channels.spi.AsynchronousChannelProvider": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/spi/AsynchronousChannelProvider.java",
+      "status": "source"
+    },
+    "java.nio.channels.spi.SelectorProvider": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/channels/spi/SelectorProvider.java",
+      "status": "source"
+    },
+    "java.nio.charset.CharacterCodingException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/charset/CharacterCodingException.java",
+      "status": "source"
+    },
+    "java.nio.charset.CharsetDecoder": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/charset/CharsetDecoder.java",
+      "status": "source"
+    },
+    "java.nio.charset.CharsetEncoder": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/charset/CharsetEncoder.java",
+      "status": "source"
+    },
+    "java.nio.charset.CoderMalfunctionError": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/charset/CoderMalfunctionError.java",
+      "status": "source"
+    },
+    "java.nio.charset.CoderResult": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/charset/CoderResult.java",
+      "status": "source"
+    },
+    "java.nio.charset.CodingErrorAction": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/charset/CodingErrorAction.java",
+      "status": "source"
+    },
+    "java.nio.charset.MalformedInputException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/charset/MalformedInputException.java",
+      "status": "source"
+    },
+    "java.nio.charset.UnmappableCharacterException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/charset/UnmappableCharacterException.java",
+      "status": "source"
+    },
+    "java.nio.charset.spi.CharsetProvider": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/charset/spi/CharsetProvider.java",
+      "status": "source"
+    },
+    "java.nio.file.AccessDeniedException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/AccessDeniedException.java",
+      "status": "source"
+    },
+    "java.nio.file.AccessMode": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/AccessMode.java",
+      "status": "source"
+    },
+    "java.nio.file.AtomicMoveNotSupportedException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/AtomicMoveNotSupportedException.java",
+      "status": "source"
+    },
+    "java.nio.file.ClosedDirectoryStreamException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/ClosedDirectoryStreamException.java",
+      "status": "source"
+    },
+    "java.nio.file.ClosedFileSystemException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/ClosedFileSystemException.java",
+      "status": "source"
+    },
+    "java.nio.file.ClosedWatchServiceException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/ClosedWatchServiceException.java",
+      "status": "source"
+    },
+    "java.nio.file.CopyOption": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/CopyOption.java",
+      "status": "source"
+    },
+    "java.nio.file.DirectoryIteratorException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/DirectoryIteratorException.java",
+      "status": "source"
+    },
+    "java.nio.file.DirectoryNotEmptyException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/DirectoryNotEmptyException.java",
+      "status": "source"
+    },
+    "java.nio.file.DirectoryStream": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/DirectoryStream.java",
+      "status": "source"
+    },
+    "java.nio.file.FileAlreadyExistsException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/FileAlreadyExistsException.java",
+      "status": "source"
+    },
+    "java.nio.file.FileStore": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/FileStore.java",
+      "status": "source"
+    },
+    "java.nio.file.FileSystem": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/FileSystem.java",
+      "status": "source"
+    },
+    "java.nio.file.FileSystemAlreadyExistsException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/FileSystemAlreadyExistsException.java",
+      "status": "source"
+    },
+    "java.nio.file.FileSystemException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/FileSystemException.java",
+      "status": "source"
+    },
+    "java.nio.file.FileSystemLoopException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/FileSystemLoopException.java",
+      "status": "source"
+    },
+    "java.nio.file.FileSystemNotFoundException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/FileSystemNotFoundException.java",
+      "status": "source"
+    },
+    "java.nio.file.FileSystems": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/FileSystems.java",
+      "status": "source"
+    },
+    "java.nio.file.FileVisitOption": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/FileVisitOption.java",
+      "status": "source"
+    },
+    "java.nio.file.FileVisitResult": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/FileVisitResult.java",
+      "status": "source"
+    },
+    "java.nio.file.FileVisitor": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/FileVisitor.java",
+      "status": "source"
+    },
+    "java.nio.file.Files": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/Files.java",
+      "status": "source"
+    },
+    "java.nio.file.InvalidPathException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/InvalidPathException.java",
+      "status": "source"
+    },
+    "java.nio.file.LinkOption": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/LinkOption.java",
+      "status": "source"
+    },
+    "java.nio.file.LinkPermission": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/LinkPermission.java",
+      "status": "source"
+    },
+    "java.nio.file.NoSuchFileException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/NoSuchFileException.java",
+      "status": "source"
+    },
+    "java.nio.file.NotDirectoryException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/NotDirectoryException.java",
+      "status": "source"
+    },
+    "java.nio.file.NotLinkException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/NotLinkException.java",
+      "status": "source"
+    },
+    "java.nio.file.OpenOption": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/OpenOption.java",
+      "status": "source"
+    },
+    "java.nio.file.Path": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/Path.java",
+      "status": "source"
+    },
+    "java.nio.file.PathMatcher": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/PathMatcher.java",
+      "status": "source"
+    },
+    "java.nio.file.Paths": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/Paths.java",
+      "status": "source"
+    },
+    "java.nio.file.ProviderMismatchException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/ProviderMismatchException.java",
+      "status": "source"
+    },
+    "java.nio.file.ProviderNotFoundException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/ProviderNotFoundException.java",
+      "status": "source"
+    },
+    "java.nio.file.ReadOnlyFileSystemException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/ReadOnlyFileSystemException.java",
+      "status": "source"
+    },
+    "java.nio.file.SecureDirectoryStream": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/SecureDirectoryStream.java",
+      "status": "source"
+    },
+    "java.nio.file.SimpleFileVisitor": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/SimpleFileVisitor.java",
+      "status": "source"
+    },
+    "java.nio.file.StandardCopyOption": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/StandardCopyOption.java",
+      "status": "source"
+    },
+    "java.nio.file.StandardOpenOption": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/StandardOpenOption.java",
+      "status": "source"
+    },
+    "java.nio.file.StandardWatchEventKinds": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/StandardWatchEventKinds.java",
+      "status": "source"
+    },
+    "java.nio.file.WatchEvent": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/WatchEvent.java",
+      "status": "source"
+    },
+    "java.nio.file.WatchKey": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/WatchKey.java",
+      "status": "source"
+    },
+    "java.nio.file.WatchService": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/WatchService.java",
+      "status": "source"
+    },
+    "java.nio.file.Watchable": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/Watchable.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.AclEntry": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/AclEntry.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.AclEntryFlag": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/AclEntryFlag.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.AclEntryPermission": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/AclEntryPermission.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.AclEntryType": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/AclEntryType.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.AclFileAttributeView": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/AclFileAttributeView.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.AttributeView": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/AttributeView.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.BasicFileAttributeView": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/BasicFileAttributeView.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.BasicFileAttributes": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/BasicFileAttributes.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.DosFileAttributeView": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/DosFileAttributeView.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.DosFileAttributes": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/DosFileAttributes.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.FileAttribute": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/FileAttribute.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.FileAttributeView": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/FileAttributeView.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.FileOwnerAttributeView": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/FileOwnerAttributeView.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.FileStoreAttributeView": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/FileStoreAttributeView.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.FileTime": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/FileTime.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.GroupPrincipal": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/GroupPrincipal.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.PosixFileAttributeView": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/PosixFileAttributeView.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.PosixFileAttributes": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/PosixFileAttributes.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.PosixFilePermission": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/PosixFilePermission.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.PosixFilePermissions": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/PosixFilePermissions.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.UserDefinedFileAttributeView": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/UserDefinedFileAttributeView.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.UserPrincipal": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/UserPrincipal.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.UserPrincipalLookupService": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/UserPrincipalLookupService.java",
+      "status": "source"
+    },
+    "java.nio.file.attribute.UserPrincipalNotFoundException": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/attribute/UserPrincipalNotFoundException.java",
+      "status": "source"
+    },
+    "java.nio.file.spi.FileSystemProvider": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/spi/FileSystemProvider.java",
+      "status": "source"
+    },
+    "java.nio.file.spi.FileTypeDetector": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/nio/file/spi/FileTypeDetector.java",
+      "status": "source"
+    },
+    "java.security.BasicPermission": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/security/BasicPermission.java",
+      "status": "external signature subset"
+    },
+    "java.security.Permission": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/security/Permission.java",
+      "status": "external signature subset"
+    },
+    "java.security.Principal": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/security/Principal.java",
+      "status": "external signature subset"
+    },
+    "java.time.Instant": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/time/Instant.java",
+      "status": "external signature subset"
+    },
+    "java.util.concurrent.ThreadFactory": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/java/util/concurrent/ThreadFactory.java",
+      "status": "external signature subset"
+    },
+    "javaemul.internal.nio.UnsupportedNio": {
+      "owner": "java-nio-j2cl",
+      "source": "src/main/super/javaemul/internal/nio/UnsupportedNio.java",
+      "status": "source"
+    },
+    "java.io.BufferedInputStream": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/BufferedInputStream.java",
+      "status": "source"
+    },
+    "java.io.BufferedOutputStream": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/BufferedOutputStream.java",
+      "status": "source"
+    },
+    "java.io.BufferedReader": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/BufferedReader.java",
+      "status": "source"
+    },
+    "java.io.CharArrayReader": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/CharArrayReader.java",
+      "status": "source"
+    },
+    "java.io.CharArrayWriter": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/CharArrayWriter.java",
+      "status": "source"
+    },
+    "java.io.DataInput": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/DataInput.java",
+      "status": "source"
+    },
+    "java.io.DataInputStream": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/DataInputStream.java",
+      "status": "source"
+    },
+    "java.io.DataOutput": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/DataOutput.java",
+      "status": "source"
+    },
+    "java.io.DataOutputStream": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/DataOutputStream.java",
+      "status": "source"
+    },
+    "java.io.EOFException": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/EOFException.java",
+      "status": "source"
+    },
+    "java.io.File": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/File.java",
+      "status": "source"
+    },
+    "java.io.FileFilter": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/FileFilter.java",
+      "status": "source"
+    },
+    "java.io.FileInputStream": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/FileInputStream.java",
+      "status": "source"
+    },
+    "java.io.FileNotFoundException": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/FileNotFoundException.java",
+      "status": "source"
+    },
+    "java.io.FileOutputStream": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/FileOutputStream.java",
+      "status": "source"
+    },
+    "java.io.FileReader": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/FileReader.java",
+      "status": "source"
+    },
+    "java.io.FileWriter": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/FileWriter.java",
+      "status": "source"
+    },
+    "java.io.FilenameFilter": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/FilenameFilter.java",
+      "status": "source"
+    },
+    "java.io.IOError": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/IOError.java",
+      "status": "source"
+    },
+    "java.io.InputStreamReader": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/InputStreamReader.java",
+      "status": "source"
+    },
+    "java.io.LineNumberReader": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/LineNumberReader.java",
+      "status": "source"
+    },
+    "java.io.NotSerializableException": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/NotSerializableException.java",
+      "status": "source"
+    },
+    "java.io.ObjectInput": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/ObjectInput.java",
+      "status": "source"
+    },
+    "java.io.ObjectInputStream": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/ObjectInputStream.java",
+      "status": "source"
+    },
+    "java.io.ObjectOutput": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/ObjectOutput.java",
+      "status": "source"
+    },
+    "java.io.ObjectOutputStream": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/ObjectOutputStream.java",
+      "status": "source"
+    },
+    "java.io.ObjectStreamException": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/ObjectStreamException.java",
+      "status": "source"
+    },
+    "java.io.PipedInputStream": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/PipedInputStream.java",
+      "status": "source"
+    },
+    "java.io.PipedOutputStream": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/PipedOutputStream.java",
+      "status": "source"
+    },
+    "java.io.UTFDataFormatException": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/io/UTFDataFormatException.java",
+      "status": "source"
+    },
+    "java.lang.ClassNotFoundException": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/lang/ClassNotFoundException.java",
+      "status": "source"
+    },
+    "java.lang.ReflectiveOperationException": {
+      "owner": "java-io-j2cl",
+      "source": "third_party/java-io-j2cl/overlay/java/lang/ReflectiveOperationException.java",
+      "status": "source"
+    },
+    "java.net.MalformedURLException": {
+      "owner": "WebAWT",
+      "source": "third_party/WebAWT/overlay/java/net/MalformedURLException.java",
+      "status": "source"
+    },
+    "java.net.URI": {
+      "owner": "WebAWT",
+      "source": "third_party/WebAWT/overlay/java/net/URI.java",
+      "status": "source"
+    },
+    "java.net.URISyntaxException": {
+      "owner": "WebAWT",
+      "source": "third_party/WebAWT/overlay/java/net/URISyntaxException.java",
+      "status": "source"
+    },
+    "java.net.URL": {
+      "owner": "WebAWT",
+      "source": "third_party/WebAWT/overlay/java/net/URL.java",
+      "status": "source"
+    }
+  },
+  "integration_extensions": {
+    "java.io.File.toPath": "integrations/File.nio-members.java.fragment"
+  },
+  "errors": []
+}

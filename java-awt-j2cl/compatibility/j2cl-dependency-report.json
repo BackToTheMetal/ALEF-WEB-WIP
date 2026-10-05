@@ -1,0 +1,1589 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-09-05T06:22:43.4692927Z",
+  "awtInventory": "compatibility/openjdk-awt-api.json",
+  "j2clInventory": "compatibility/j2cl-jre-api.json",
+  "compatibilityManifest": "compatibility/compatibility-manifest.json",
+  "dependencies": [
+    {
+      "type": "java.awt.ActiveEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Adjustable",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.AlphaComposite",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.AWTError",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.AWTEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.AWTEventMulticaster",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.AWTException",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.AWTKeyStroke",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.AWTPermission",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.BasicStroke",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.BorderLayout",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.BufferCapabilities",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.BufferCapabilities$FlipContents",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Button",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Canvas",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.CardLayout",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Checkbox",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.CheckboxGroup",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.CheckboxMenuItem",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Choice",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Color",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.color.CMMException",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.color.ColorSpace",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.color.ICC_ColorSpace",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.color.ICC_Profile",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.color.ICC_ProfileGray",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.color.ICC_ProfileRGB",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.color.ProfileDataException",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Component",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Component$BaselineResizeBehavior",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.ComponentOrientation",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Composite",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.CompositeContext",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Container",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.ContainerOrderFocusTraversalPolicy",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Cursor",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.datatransfer.Clipboard",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.datatransfer.DataFlavor",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.datatransfer.FlavorMap",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.datatransfer.Transferable",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.DefaultFocusTraversalPolicy",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.DefaultKeyboardFocusManager",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Desktop",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.AboutEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.AboutHandler",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.AppEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.AppForegroundEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.AppForegroundListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.AppHiddenEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.AppHiddenListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.AppReopenedEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.AppReopenedListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.FilesEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.OpenFilesEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.OpenFilesHandler",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.OpenURIEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.OpenURIHandler",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.PreferencesEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.PreferencesHandler",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.PrintFilesEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.PrintFilesHandler",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.QuitEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.QuitHandler",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.QuitResponse",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.QuitStrategy",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.ScreenSleepEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.ScreenSleepListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.SystemEventListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.SystemSleepEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.SystemSleepListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.UserSessionEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.UserSessionEvent$Reason",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.desktop.UserSessionListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Desktop$Action",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Dialog",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Dialog$ModalExclusionType",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Dialog$ModalityType",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Dimension",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.DisplayMode",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.Autoscroll",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DnDConstants",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DragGestureEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DragGestureListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DragGestureRecognizer",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DragSource",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DragSourceAdapter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DragSourceContext",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DragSourceDragEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DragSourceDropEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DragSourceEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DragSourceListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DragSourceMotionListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DropTarget",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DropTargetAdapter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DropTargetContext",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DropTargetDragEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DropTargetDropEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DropTargetEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.DropTargetListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.InvalidDnDOperationException",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.dnd.MouseDragGestureRecognizer",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Event",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.ActionEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.ActionListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.AdjustmentEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.AdjustmentListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.AWTEventListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.AWTEventListenerProxy",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.ComponentAdapter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.ComponentEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.ComponentListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.ContainerAdapter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.ContainerEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.ContainerListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.FocusAdapter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.FocusEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.FocusEvent$Cause",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.FocusListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.HierarchyBoundsAdapter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.HierarchyBoundsListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.HierarchyEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.HierarchyListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.InputEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.InputMethodEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.InputMethodListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.InvocationEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.ItemEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.ItemListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.KeyAdapter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.KeyEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.KeyListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.MouseAdapter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.MouseEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.MouseListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.MouseMotionAdapter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.MouseMotionListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.MouseWheelEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.MouseWheelListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.PaintEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.TextEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.TextListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.WindowAdapter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.WindowEvent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.WindowFocusListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.WindowListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.event.WindowStateListener",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.EventQueue",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.FlowLayout",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.FocusTraversalPolicy",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Font",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.FontRenderContext",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.GlyphJustificationInfo",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.GlyphMetrics",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.GlyphVector",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.GraphicAttribute",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.ImageGraphicAttribute",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.LayoutPath",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.LineBreakMeasurer",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.LineMetrics",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.MultipleMaster",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.NumericShaper",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.NumericShaper$Range",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.OpenType",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.ShapeGraphicAttribute",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.TextAttribute",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.TextHitInfo",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.TextLayout",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.TextLayout$CaretPolicy",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.TextMeasurer",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.font.TransformAttribute",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.FontFormatException",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.FontMetrics",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Frame",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.AffineTransform",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.Arc2D",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.Area",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.CubicCurve2D",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.Dimension2D",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.Ellipse2D",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.FlatteningPathIterator",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.GeneralPath",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.IllegalPathStateException",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.Line2D",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.NoninvertibleTransformException",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.Path2D",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.Path2D$Float",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.PathIterator",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.Point2D",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.QuadCurve2D",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.Rectangle2D",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.RectangularShape",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.geom.RoundRectangle2D",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.GradientPaint",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Graphics",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Graphics2D",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.GraphicsConfigTemplate",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.GraphicsConfiguration",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.GraphicsDevice",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.GraphicsDevice$WindowTranslucency",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.GraphicsEnvironment",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.GridBagConstraints",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.GridBagLayout",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.GridBagLayoutInfo",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.GridLayout",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.HeadlessException",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.IllegalComponentStateException",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.im.InputContext",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.im.InputMethodHighlight",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.im.InputMethodRequests",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.im.InputSubset",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.im.spi.InputMethod",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.im.spi.InputMethodContext",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.im.spi.InputMethodDescriptor",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Image",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.AbstractMultiResolutionImage",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.AffineTransformOp",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.AreaAveragingScaleFilter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.BandCombineOp",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.BandedSampleModel",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.BaseMultiResolutionImage",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.BufferedImage",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.BufferedImageFilter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.BufferedImageOp",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.BufferStrategy",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.ByteLookupTable",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.ColorConvertOp",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.ColorModel",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.ComponentColorModel",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.ComponentSampleModel",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.ConvolveOp",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.CropImageFilter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.DataBuffer",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.DataBufferByte",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.DataBufferDouble",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.DataBufferFloat",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.DataBufferInt",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.DataBufferShort",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.DataBufferUShort",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.DirectColorModel",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.FilteredImageSource",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.ImageConsumer",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.ImageFilter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.ImageObserver",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.ImageProducer",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.ImagingOpException",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.IndexColorModel",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.Kernel",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.LookupOp",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.LookupTable",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.MemoryImageSource",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.MultiPixelPackedSampleModel",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.MultiResolutionImage",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.PackedColorModel",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.PixelGrabber",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.PixelInterleavedSampleModel",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.Raster",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.RasterFormatException",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.RasterOp",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.renderable.ContextualRenderedImageFactory",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.renderable.ParameterBlock",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.renderable.RenderableImage",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.renderable.RenderableImageOp",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.renderable.RenderableImageProducer",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.renderable.RenderContext",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.renderable.RenderedImageFactory",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.RenderedImage",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.ReplicateScaleFilter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.RescaleOp",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.RGBImageFilter",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.SampleModel",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.ShortLookupTable",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.SinglePixelPackedSampleModel",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.TileObserver",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.VolatileImage",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.WritableRaster",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.image.WritableRenderedImage",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.ImageCapabilities",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Insets",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.ItemSelectable",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.JobAttributes",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.KeyboardFocusManager",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.KeyEventDispatcher",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.KeyEventPostProcessor",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Label",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.LayoutManager",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.LayoutManager2",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.LinearGradientPaint",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.List",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.MediaTracker",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Menu",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.MenuBar",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.MenuComponent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.MenuContainer",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.MenuItem",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.MenuShortcut",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.MouseInfo",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.MultipleGradientPaint",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.MultipleGradientPaint$ColorSpaceType",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.MultipleGradientPaint$CycleMethod",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.PageAttributes",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Paint",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.PaintContext",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Panel",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Point",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.PointerInfo",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Polygon",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.PopupMenu",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.PrintJob",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.RadialGradientPaint",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Rectangle",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.RenderingHints",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.RenderingHints$Key",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Robot",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Scrollbar",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.ScrollPane",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.ScrollPaneAdjustable",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.SecondaryLoop",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Shape",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.SplashScreen",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Stroke",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.SystemColor",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.SystemTray",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Taskbar",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Taskbar$Feature",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Taskbar$State",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.TextArea",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.TextComponent",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.TextField",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.TexturePaint",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Toolkit",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Transparency",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.TrayIcon",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.TrayIcon$MessageType",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Window",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.awt.Window$Type",
+      "classification": "awt-contract"
+    },
+    {
+      "type": "java.beans.PropertyChangeListener",
+      "classification": "external-unclaimed-package"
+    },
+    {
+      "type": "java.beans.VetoableChangeListener",
+      "classification": "external-unclaimed-package"
+    },
+    {
+      "type": "java.io.File",
+      "classification": "missing-in-j2cl-owned-package"
+    },
+    {
+      "type": "java.io.InputStream",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.io.IOException",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.io.OutputStream",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.io.PrintStream",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.io.PrintWriter",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.io.Serializable",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.Boolean",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.Character",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.Character$Subset",
+      "classification": "missing-in-j2cl-owned-package"
+    },
+    {
+      "type": "java.lang.Class",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.Cloneable",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.Enum",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.Error",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.Exception",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.Float",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.IllegalStateException",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.IndexOutOfBoundsException",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.Integer",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.InterruptedException",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.NullPointerException",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.NumberFormatException",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.Object",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.reflect.InvocationTargetException",
+      "classification": "missing-in-j2cl-owned-package"
+    },
+    {
+      "type": "java.lang.Runnable",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.RuntimeException",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.SecurityException",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.String",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.Throwable",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.lang.UnsupportedOperationException",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.math.BigInteger",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.net.URI",
+      "classification": "external-unclaimed-package"
+    },
+    {
+      "type": "java.net.URL",
+      "classification": "external-unclaimed-package"
+    },
+    {
+      "type": "java.security.BasicPermission",
+      "classification": "missing-in-j2cl-owned-package"
+    },
+    {
+      "type": "java.text.AttributedCharacterIterator",
+      "classification": "external-unclaimed-package"
+    },
+    {
+      "type": "java.text.AttributedCharacterIterator$Attribute",
+      "classification": "external-unclaimed-package"
+    },
+    {
+      "type": "java.text.BreakIterator",
+      "classification": "external-unclaimed-package"
+    },
+    {
+      "type": "java.text.CharacterIterator",
+      "classification": "external-unclaimed-package"
+    },
+    {
+      "type": "java.util.Collection",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.util.Enumeration",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.util.EventListener",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.util.EventListenerProxy",
+      "classification": "missing-in-j2cl-owned-package"
+    },
+    {
+      "type": "java.util.EventObject",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.util.Hashtable",
+      "classification": "missing-in-j2cl-owned-package"
+    },
+    {
+      "type": "java.util.Iterator",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.util.List",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.util.Locale",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.util.Map",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.util.Map$Entry",
+      "classification": "missing-in-j2cl-owned-package"
+    },
+    {
+      "type": "java.util.Properties",
+      "classification": "missing-in-j2cl-owned-package"
+    },
+    {
+      "type": "java.util.ResourceBundle",
+      "classification": "missing-in-j2cl-owned-package"
+    },
+    {
+      "type": "java.util.Set",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.util.TooManyListenersException",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "java.util.Vector",
+      "classification": "stock-j2cl"
+    },
+    {
+      "type": "javax.accessibility.Accessible",
+      "classification": "missing-javax-package"
+    },
+    {
+      "type": "javax.accessibility.AccessibleContext",
+      "classification": "missing-javax-package"
+    },
+    {
+      "type": "javax.swing.JFrame",
+      "classification": "missing-javax-package"
+    },
+    {
+      "type": "javax.swing.JMenuBar",
+      "classification": "missing-javax-package"
+    }
+  ]
+}

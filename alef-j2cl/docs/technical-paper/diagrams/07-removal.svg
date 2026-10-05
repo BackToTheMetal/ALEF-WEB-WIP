@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="500" height="245" preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 245" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="500" height="245"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-245)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="500" height="245" rx="4" ry="0" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.5; fill: rgb(98%,98%,99%); fill-rule: evenodd;"/>
+			<rect x="5.0" y="200" width="94.0" height="33" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="19.493652343749993" y="213.5" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,427) scale(1,-1)">Browser dialog</text>
+			<path d="M 52,196 L 52,18 Z" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 3;"/>
+			<rect x="203.0" y="200" width="94.0" height="33" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="222.984619140625" y="213.5" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,427) scale(1,-1)">Package API</text>
+			<path d="M 250,196 L 250,18 Z" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 3;"/>
+			<rect x="401.0" y="200" width="94.0" height="33" rx="5" ry="0" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="421.98876953125" y="213.5" style="font-family: Body-Bold; font-size: 9px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,427) scale(1,-1)">Governance</text>
+			<path d="M 448,196 L 448,18 Z" style="stroke: rgb(79%,84%,87%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 3;"/>
+			<text x="87.8359375" y="185" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,370) scale(1,-1)">GET contents using package baseline</text>
+			<polyline points="52 180, 250 180" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="250 180, 245.6121 182.3971, 245.6121 177.6029" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="91.6939697265625" y="162" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,324) scale(1,-1)">Included changes + current revision</text>
+			<polyline points="250 157, 52 157" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="52 157, 56.38791 154.6029, 56.38791 159.3971" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="78.1533203125" y="139" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,278) scale(1,-1)">POST selected root IDs + expected revision</text>
+			<polyline points="52 134, 250 134" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="250 134, 245.6121 136.3971, 245.6121 131.6029" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="292.9312744140625" y="116" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,232) scale(1,-1)">Lock; authorize; compare revision</text>
+			<polyline points="250 111, 448 111" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="448 111, 443.6121 113.3971, 443.6121 108.6029" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="279.5865478515625" y="93" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,186) scale(1,-1)">Remove selections; create new candidate</text>
+			<polyline points="250 88, 448 88" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd;"/>
+			<polygon points="448 88, 443.6121 90.39713, 443.6121 85.60287" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="280.2109375" y="70" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,140) scale(1,-1)">Retain new revision and schedule checks</text>
+			<polyline points="448 65, 250 65" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="250 65, 254.3879 62.60287, 254.3879 67.39713" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="84.9263916015625" y="47" style="font-family: Body; font-size: 7.5px;fill: rgb(12%,20%,25%); stroke:none;" transform="translate(0,94) scale(1,-1)">New package state; refresh comparison</text>
+			<polyline points="250 42, 52 42" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.9; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="52 42, 56.38791 39.60287, 56.38791 44.39713" style="stroke: rgb(14%,40%,51%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(14%,40%,51%); fill-rule: evenodd;"/>
+			<text x="133.896484375" y="12" style="font-family: Body; font-size: 7.5px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,24) scale(1,-1)">Cancel: no write. Stale revision: reject. Saved workspace: unchanged.</text>
+		</g>
+	</g>
+</svg>
